@@ -1,0 +1,46 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:five="http://namespaces.zope.org/five">
+ 
+    <!-- TODO: this should not be for all but changed to the collage types
+
+	 edit: actually it applies to all objects, because the class will test
+	 whether it's a Collage-object or not; this may be a bad way to do
+	 it though.
+	 
+      -->
+
+    <browser:page
+      name="collage_utility"
+      for="*"
+      permission="zope.Public"
+      class=".browser.CollageUtility"
+      allowed_interface=".browser.ICollageUtility"
+      />
+
+    <browser:page
+       name="collage"
+       for="Products.Collage.interfaces.ICollage"
+       permission="zope.Public"
+       class=".browser.CollageView"
+       allowed_interface=".browser.ICollageView"
+       />
+    
+    <browser:page
+       name="existing-items-form"
+       for="Products.Collage.interfaces.ICollageRow"
+       permission="cmf.ModifyPortalContent"
+       class=".browser.ExistingItemsView"
+       template="templates/existing_items_form.pt"
+       />
+
+    <browser:page
+       name="insert-alias"
+       for="Products.Collage.interfaces.ICollageRow"
+       permission="cmf.ModifyPortalContent"
+       class=".browser.CollageInsertAliasView"
+       />
+
+    <subscriber handler=".content.updateCollageAliasLayout" />
+    
+</configure>

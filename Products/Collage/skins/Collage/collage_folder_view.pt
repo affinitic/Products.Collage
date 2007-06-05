@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<div metal:fill-slot="main">
+    <metal:main-macro define-macro="main">
+
+        <div tal:define="edit_mode edit_mode|python: False;
+                         folder_contents here/getFolderContents"
+             id="collage">
+            <div metal:use-macro="here/document_actions/macros/document_actions">
+                Document actions (print, sendto etc)
+            </div>
+
+            <h1 tal:content="object_title" class="documentFirstHeading">
+                Title or id
+            </h1>
+
+            <a href=""
+               class="link-parent"
+               tal:define="parent_url python:here.navigationParent(here, template_id)"
+               tal:condition="parent_url"
+               tal:attributes="href parent_url"
+               i18n:translate="go_to_parent_url">
+            Up one level
+            </a>
+
+            <p class="documentDescription"
+               tal:content="here/Description"
+               tal:condition="here/Description">
+                Description
+            </p>
+
+            <p class="discreet" tal:condition="python: edit_mode and not folder_contents">
+                This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here.
+            </p>
+
+
+            <div metal:use-macro="here/collage_macros/macros/content">
+                Page builder content(s)
+            </div>
+
+
+
+            <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+                show related items if they exist
+            </div>
+
+        </div>
+    </metal:main-macro>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      i18n:domain="plone">
+
+<body>
+
+<div metal:define-macro="columns"
+     tal:omit-tag="">
+
+  <div class="collage-column" tal:repeat="object contents">
+
+    <div tal:attributes="class string:column-block block_${repeat/object/number}">
+      <div tal:condition="object"
+	   tal:define="last repeat/object/end;
+                       base_url here/absolute_url">
+
+	<tal:content tal:define="here python: object.getObject();
+				 ctype python: here.portal_type.lower();
+				 context python: here;
+				 isAlias python: here.portal_type == 'CollageAlias'">
+				 
+	  <div class="collage-header" tal:condition="edit_mode|nothing">
+	    <tal:actions metal:use-macro="here/collage_contentviews/macros/actions">
+	      <tal:navigation metal:fill-slot="navigation">
+		<span metal:use-macro="here/collage_contentviews/macros/horizontal_navigation" />
+	      </tal:navigation>
+	    </tal:actions>
+
+	    <div 
+	       tal:condition="python: isAlias and here.get_target().getSelectableViews() or here.getSelectableViews()"
+		 class="expandable-section">
+	      <a href="#" class="expandable-label">
+		<div class="expandable-icon"><!-- nothing here --></div>
+		<span class="row-create">select layout</span>
+	      </a>
+	    
+	      <div class="expandable-content">
+		<p class="discreet">Choose a layout for this object.</p>
+		
+		<tal:actions metal:use-macro="here/collage_contentviews/macros/layouts" />
+		<div class="visualClear"><!-- nothing here --></div>
+	      </div>
+	    </div>
+	    
+	    <div class="visualClear"><!-- nothing here --></div>
+
+	  </div>
+	  
+          <div tal:define="instance python: here;
+			   isAlias python: object.portal_type == 'CollageAlias'"
+	       tal:attributes="class python: 'collage-object'+test(
+			       last, ' collage-last-object', '')">
+	    
+	    <tal:render-object
+	       condition="not: isAlias"
+	       define="layout python: here.getTargetObjectLayout(instance);
+		       template python: getattr(instance, layout, None);
+		       macros template/macros | nothing;
+		       main_macro python: macros['main'];
+		       batch_base_url string:${here/absolute_url}/${template_id};
+		       here_url string:${here/absolute_url};
+		       object_title here/Title">
+              <tal:render metal:use-macro="main_macro" />
+	    </tal:render-object>
+
+	    <tal:render-alias
+	       condition="isAlias"
+	       define="alias here/get_target|python: instance;
+		       layout python: here.getTargetObjectLayout(instance);
+		       template python: getattr(alias, layout, None);
+		       macros template/macros | nothing;
+		       main_macro python: macros['main'];
+		       here python: alias;
+		       batch_base_url string:${here/absolute_url}/${template_id};
+		       ctype python: here.portal_type.lower();
+		       context python: here;
+		       here_url string:${here/absolute_url};
+		       object_title here/Title">
+              <tal:render metal:use-macro="main_macro" />
+	    </tal:render-alias>
+	    
+          </div>
+        </tal:content>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

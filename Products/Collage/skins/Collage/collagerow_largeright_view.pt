@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+    <div metal:fill-slot="main">
+    <metal:main-macro define-macro="main">
+
+            <tal:comment replace="nothing">
+            Speciel case: Pagerow is supposed to be placed inside a collage that already
+            have a h1 header. To fulfil the nested header requirement of accesibility we need to use a h2 here.
+            </tal:comment>
+            <h2 class="documentFirstHeading"
+                tal:condition="here/Title"
+                tal:content="object_title">
+                Title or id
+            </h2>
+
+            <p class="documentDescription"
+               tal:content="here/Description"
+               tal:condition="here/Description">
+                Description
+            </p>
+
+	    <tal:batches tal:repeat="contents python: here.getColumnBatches(3)">
+              <div tal:define="layout python: ('one-column', 'two-columns-largeright', 'three-columns-largeright')[len(contents)-1]"
+		   tal:attributes="class string:$layout">
+
+		<metal:columns metal:use-macro="here/collagerow_macros/macros/columns" />
+		
+		<div class="visualClear"><!-- nothing here --></div>
+		
+              </div>
+	    </tal:batches>
+    </metal:main-macro>
+    </div>
+
+</body>
+</html>

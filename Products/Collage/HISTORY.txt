@@ -1,0 +1,321 @@
+Collage development history
+-------------------------------
+    (name of developer listed in brackets)
+
+Collage SVN/Unreleased -- experimental
+
+Added support for Smart Folders and Folders in page columns
+     These items are now queried and the results added to
+     the list of selected items.
+
+     [malthe]
+  
+Added functionality to allow easy inserting of existing items
+     Using an interface displaying most recently edited objects,
+     users can insert existing objects into a PageRow. This is
+     facilitated by the PageAlias content-type.
+
+     [malthe]
+
+Added PageAlias type
+     In order to allow users to show existing content in columns,
+     a PageAlias content-type has been added as a wrapper.
+
+     Content-views have been patched to take this into account,
+     such that:
+
+     * The row/column-navigation buttons refer to the alias
+     * The delete-action refer to the alias
+     * All other actions refer to the target object
+     * The layout-configuration refer to the target object
+
+     [malthe]
+     
+Ajaxified navigation
+     Converted existing Ajax-code to the jquery-syntax.
+
+     [malthe]
+
+Started new branch based on jquery
+     This branch will be focused on improving the UI and presenting
+     functionality to create pages quickly.
+
+     MochiKit has been replaced by jquery.
+
+     [malthe]
+     
+Added custom add-menu
+     The Plone default for folderish default-page items is to
+     have the add-menu populated with links based on the containing
+     folder.
+
+     We now explicitly create an add-menu with links targeting
+     the Collage-object and move it dynamically into the document
+     content menu using javascript.
+
+     [malthe]
+
+Setup an explicit revision checkout for MochiKit
+	Just to sure of not updating to eventaully
+	unwanted changes.
+    [pelle]
+
+
+Added failing test for pagebuilder as default page of portal
+    Pagebuilder as default page of a plone portal migth have
+    som other side effects than the use case with Pagebuilder
+    as front page of a folderish object/ plone folder etc.
+    [pelle]
+
+
+Always set canSetDefaultPage() on Collage and PageRow to false
+    It would make the interface a bit easier, more ligth.
+    And will reduce failures if Collage is used as a default
+    page.
+    [pelle]
+
+
+Pagebuilder as front-page tests added
+    In the "global_contentmenu.pt" of plone various methods
+    are use to find up what and where to add content.
+
+    In getCurrentFolder() parent is always returned if content
+    is default page. This is a problem for Collage it makes
+    it impossible to add rows in the Collage.
+
+    It seems that the plone way is either
+    * to add the interface, INonStructuralFolder to a folder
+    (like in rich document)
+    * dont make folderish content possible as default page ("you are on your own",
+    limi, http://www.rickhurst.co.uk/2006/11/07/how-to-confuse-the-hell-out-of-the-plone-navtree-and-yourself-in-six-easy-steps/)
+
+    INonStructuralFolder has some unwanted sideeffects like no "add content to folder"
+    option and would require som seperate widgets for adding content which is
+    out of the scope of this experimental branch.
+    [pelle]
+
+
+Use em for css sizes
+    Px sizes is keept in tool bars since they requires px...
+    [pelle]
+
+
+Link field of pagebuilder is removed
+    It was prviously made hidden when implementing
+    related items field, use related items instead.
+    [pelle]
+
+
+Partly fixed invalid xhtml id issue
+    An id is unipue and is only alow once at a web page.
+
+    * Document actions is removed from page column view
+    * id #block_<row number var> changed into class .block_<row number var>
+
+    There is a outstading problem with ralted items bot it make more sence
+    to fix in plone itself. https://dev.plone.org/plone/ticket/6229
+
+
+Go direct to manage page builder when editing a row
+    View tab is also hidden, to simplify the interface further more.
+    [pelle]
+
+
+Nested headings fix
+    When using Pagebuilder with rows and columns it dosen't break
+    accesibility (nested headings), which means as follow:
+
+    h1 (may only appear once at a web page)
+    h2 (row header)
+    h3 (column header)
+    h4 (column links content)
+    h2 (row header)
+    h3 (column header)
+    h2 (row header)
+    ....
+
+    If other content types are used - speciel templates with out h1
+    have to be selected (and created) if AA-accesibility has to be achieved.
+    [pelle]
+
+
+
+
+
+Renamed schemas and implemented common schema for pagebuilder and pagerow
+    Also implemented finalizeATCTSchema fir the pagerow.
+    Then the marshal for Pagebuilder|Pagerow|PageColumn is
+    ControlledMarshaller not only RFC822Marshaller. Then it should be
+    possible to add the pagebuilder through generic setup.
+
+    PageColumn has no finalizeATCTSchema since it is subclassed from ATDocument.
+
+    [pelle]
+
+
+Made page builder view more atct document like shwoing the text field
+    Added an alternative view if a more folderish view is
+    need "pagebuilder_folder_view".
+    [pelle]
+
+
+Use finalizeATCTSchema for the Pagebuilder folder
+    Then we get the exclude from navigation placed like the rest of atct
+    types and we get the schema properly marshalled as well.
+    [pelle]
+
+
+Added support for exclude from navigation
+    So fare only done on the pagebuilder it self since it make
+    no sense to have it on page rows that we dont want in navigation at all.
+    [pelle]
+
+
+Pagebuilder field link hidded and relatedItems field added instead
+    The link field was not used and since this is an experimental
+    branch it makes sense to take a more ATCT like approach
+    easier for the enduser and then its possible to selet more than
+    one related item.
+
+    [pelle]
+
+
+Added Ajax-reordering of rows and columns
+    Bundled the JS-library MochiKit and added required modules to
+    the JS registry (only for the edit-view of the Collage).
+
+    [malthe]
+
+Added toolbar for PageRow-children
+    Filtered the content view actions to save space; currently,
+    'metadata' and 'local_roles' are not included (as well as the
+    special 'revisitCollage' action that is assigned to all
+    children of Collage-elements).
+
+    Added reorder-functionality to PageRow-objects.
+
+    Added icon for standard column view. We might want to add icons
+    for common content types (e.g. Page, Smart Folder).
+
+    [malthe]
+
+Made the page builder view simpler
+    Moved the content(s) rendering to a seperate macro (pagebuilder_macros)
+    also handy if other general things comes up.
+    [pelle]
+
+
+Added metadata files
+    For icons with http-cache setting
+    For page templates just so they look nicer in the
+    page template selection pull down.
+    [pelle]
+
+
+Removed testCollageUtility i did have time now for setting it up
+    I had problems to call the page builder util up.
+    But perhaps it make more senes to make a doc test for it anyway.
+    [pelle]
+
+
+
+Shouldn't CollageUtility implement the ICollageUtility explicitly?
+    If not just remove this revision
+    [pelle]
+
+
+Removed the default folder templates from the pagebuilder folder
+    They are quit confusing
+    [pelle]
+
+
+No need of runalltests.py
+    Since this experimental branch aims zop2 2.9.X
+    and beyound there is not need for this file since tests
+    according to Stefan Holek should be run with zopectl test <what ever>
+    like stated out earlier.
+
+
+    "On Fri, 02 Feb 2007 02:36:00 -0800, Stefan H. Holek
+    <stefan@...> wrote:
+    Forget about runalltests.py. Since Zope 2.9 your *must* use Zope's
+    testrunner, i.e. ./bin/zopectl test -s Products.CMFPlone"
+
+    http://www.nabble.com/running-unit-tests-on-Plone-2.5.2-t3156958.html
+
+    [pelle]
+
+
+Dont check for roles - check for permissions
+    According to the famous "lurker-laws"
+    Eventually just use the plone global var is_editable
+    but i'm not sure what the future of this is in plone 3.0
+    [pelle]
+
+
+Added type PageColumn
+    This content-type is an ATDocument with two extra fields:
+
+      * items
+      * visible_fields
+
+    For every item in items, a dictionary is built with field id
+    as entry and field value as value (uses proper accessor-method).
+
+    This makes it easy to get the field values in the template.
+
+    Created a simple default view template.
+
+    [malthe]
+
+Collage now only addable for types 'Folder' and 'Plone Site'
+    [malthe]
+
+
+Start up test for CollageUtility
+    Dosent work yet.
+    [pelle]
+
+
+Dont show Pagebuilder subtypes in the navigation -r 37084
+    Just adds 'PageRow', 'PageColumn' to the metaTypesNotToList
+    in navtree_properties property Sheet.
+    [pelle]
+
+
+Setup profile run wiith quick install
+    When installing the product the profile is now run and setup.
+
+    Its tested with CMFQuickInstallerTool version
+
+    * 1.6.0 (SVN/Unreleased)
+    * 2.0.2 (svn/unreleased)
+
+    And the quick install log is also set up to be printed out.
+
+    [pelle]
+
+
+Set up test frame work
+    This is just taken for DIYPloneStyle and RichDocument
+    copy the skeleton and test what ever you like.
+
+    Run tests like this:
+
+    Run all tests
+    <path to zope instance>/bin/zopectl test -m Products.Collage
+
+    Run single test
+    <path to zope instance>/bin/zopectl test -m Products.Collage -t TestSomething
+
+    TestSomething is your test class
+
+    TODO: Setup a common Collage testcase (based on plone test case)
+    like done in RichDocument - this is handy for stuff that are done in
+    all tests.
+
+
+History file added the plone way
+    We need a history file so its easier to list changes
+    and its also a helpfull way to supply svn trac browsing.
+    [pelle]

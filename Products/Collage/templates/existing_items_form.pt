@@ -1,0 +1,41 @@
+<form class="collage-existing-items"
+      tal:define="filter_portal_type request/portal_type|nothing"
+      tal:attributes="action string:${here/absolute_url}/existing-items-form">
+  <div class="field">
+    <label for="portal_type">Content type</label><br />
+    <select name="portal_type"
+	    tal:define="allowedTypes here/getAllowedTypes">
+      <option value="">All types</option>
+      <option tal:repeat="ctype allowedTypes"
+	      tal:attributes="value ctype/getId;
+			      selected python: filter_portal_type == ctype.getId() and 'selected'"
+	      tal:content="ctype/Title">Type-name</option>
+    </select>
+  </div>
+
+  <table class="collage-existing-items">
+    <thead>
+      <tr>
+	<td>Title</td>
+	<td>Modified</td>
+	<td>Published</td>
+	<td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr tal:repeat="item view/getItems">
+	<td tal:attributes="class string:visualIcon contenttype-${item/portal_type}">
+	  <span class="visualIconPadding"
+		tal:content="item/title">
+	    Type
+	    </span>
+	</td>
+	<td tal:content="item/modified" />
+	<td tal:content="item/published" />
+	<td>
+	  <a href="#" tal:attributes="href string:${here/absolute_url}/insert-alias?uid=${item/UID}">Insert</a>
+	</td>
+      </tr>
+    </tbody>
+  </table>
+</form>

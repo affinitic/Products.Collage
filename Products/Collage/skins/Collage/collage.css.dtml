@@ -1,0 +1,364 @@
+/* <dtml-with base_properties> (do not remove this :)
+   <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
+/* customizable: presentation */
+
+.collage-image {
+  width: 100%;
+}
+
+.collage-featured-image {
+  float: right;
+}
+
+.collagecolumn-featured {
+  background: #f3f3f3;
+  padding: 10px;
+}
+
+.collage-listitem {
+  margin-bottom: 1em;
+}
+
+.collage-object .documentActions {
+  display: none;
+}
+
+.collage-header {
+  font-size: 0.9em;
+  background: url(&dtml-portal_url;/collage_row_header.jpg) no-repeat top left;
+  padding: 5px;
+  position: relative;
+}
+
+.collage-header p.discreet {
+  font-size: 1em;
+}
+
+.collage-header span.row-type,
+.collage-header span.row-create,
+.collage-header span.row-layout {
+  color: &dtml-discreetColor;;
+  text-transform: lowercase;
+}
+
+.collage-header a.action,
+.collage-header a.layout,
+.collage-header a.create {
+  text-transform: lowercase;
+  margin-right: 0.2em;
+  text-decoration: none;
+}
+
+.collage-header a.action span.inactive,
+.collage-header a.layout span.inactive {
+  text-decoration: underline;
+}
+
+.collage-header a.layout span.active {
+  color: &dtml-fontColor;;
+}
+
+/* expandable sections */
+
+.expandable-section {
+}
+
+.expandable-section .expandable-label .expandable-icon {
+  background: url(&dtml-portal_url;/icon-plusminus.gif) no-repeat top left;
+  float: left;
+  width: 14px;
+  height: 14px;
+  padding-right: 3px;
+}
+
+.expandable-section .expandable-label.enabled .expandable-icon {
+  background-position: -20px 0%;
+}
+
+.expandable-section .expandable-label {
+  float: left;
+  line-height: 14px;
+  position: relative;
+}
+
+.expandable-content {
+  clear: both;
+  display: none;
+  background: url(&dtml-portal_url;/collage_row_header.jpg) no-repeat top left;
+  padding: 10px;
+  position: relative;
+}
+
+ul.collage-content-menu {
+  white-space: nowrap;
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+}
+
+ul.collage-content-menu li {
+  width: 150px;
+  float: left;
+}
+
+/* existing items */
+
+table.collage-existing-items thead td {
+  font-weight: bold;
+}
+
+table.collage-existing-items tbody td {
+  background-position: top left;
+}
+
+table.collage-existing-items td {
+  padding: 3px;
+}
+
+/* customizable: toolbars */
+
+.display-collagerow_default_view {
+    background-image: url(icon-collagerow_default_view.gif) !important;
+}
+
+.display-collagerow_largeleft_view {
+    background-image: url(icon-collagerow_largeleft_view.gif) !important;
+}
+
+.display-collagerow_largeright_view {
+    background-image: url(icon-collagerow_largeright_view.gif) !important;
+}
+
+.display-collagecolumn_default_view {
+    background-image: url(icon-collagecolumn_default_view.gif) !important;
+}
+
+/* note: you should not need to customize classes below */
+
+span.collage-navigation a {
+  text-decoration: none;
+}
+
+dl#collage-addmenu {
+  display: none;
+}
+
+.collage-edit-tag {
+  font-size: 0.9em;
+  color: &dtml-discreetColor; !important;
+  font-weight: normal !important;
+  text-decoration: none;
+}
+
+.pagebuider-row {
+  margin-bottom: 1em;
+}
+
+/* toolbar icons */
+
+.display-collagerow_default_view {
+    background-image: url(icon-collagerow_default_view.gif) !important;
+}
+
+.display-collagerow_largeleft_view {
+    background-image: url(icon-collagerow_largeleft_view.gif) !important;
+}
+
+.display-collagerow_largeright_view {
+    background-image: url(icon-collagerow_largeright_view.gif) !important;
+}
+
+.display-collagecolumn_default_view {
+    background-image: url(icon-collagecolumn_default_view.gif) !important;
+}
+
+/* toolbar layout */
+
+#collage .collage-toolbar #navlist .toolbarIcon a.selected {
+    border: 1px solid &dtml-notifyBorderColor;;
+    background: transparent;
+}
+
+.collage-ordering {
+    float: right;
+    margin-left: -6px;
+    margin-top: 4px;
+}
+
+* html  #collage .collage-toolbar #navlist li {
+height: 1%;
+}
+
+#collage .collage-toolbar #navlist li.separator {
+    margin: 0 1em 0 1em;
+}
+
+#collage .collage-toolbar span {
+    padding-right: 10px;
+}
+
+#collage .collage-toolbar #navlist
+{
+border: 1px solid &dtml-contentViewBorderColor;;
+border-top: none;
+padding: 0 0 0 5px;
+margin: 0;
+background-color: &dtml-contentViewBackgroundColor;;
+
+    font-size: 0.8em;
+    color: &dtml-discreetColor;;
+}
+
+#collage .collage-toolbar #navlist li
+{
+display: inline;
+list-style: none;
+padding: 3px;
+background-position: center center;
+line-height: 18px;
+}
+
+#collage .collage-toolbar #navlist .utility
+{
+
+}
+
+#collage .collage-toolbar #navlist .utility a
+{
+padding-right: 4px;
+}
+
+#collage .collage-toolbar #navlist li a
+{
+text-decoration: none;
+padding-right: 10px;
+background-color: transparent;
+color: #000;
+border: none;
+}
+
+* html #collage .collage-toolbar #navlist li a { padding: 0 8px; }
+
+#collage .collage-toolbar #navlist li a:hover {
+
+}
+
+/* collagerow layout */
+
+.collage-quickedit {
+    float: right;
+}
+
+#collage .collage-row {
+  min-height:100%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+  position:relative;
+  width: 100%;
+}
+
+* html #collage .collage-row {
+  width:100%px;
+  height:100%;
+}
+
+#collage .block_1,
+#collage .block_2 {
+    float:left;
+}
+
+#collage .block_3 {
+    float: left;
+}
+
+
+.collage-object {
+    margin-bottom: 0.5em;
+}
+
+#collage .collage-row .block_1 div.collage-object {
+    margin-right: 0.5em;
+}
+
+#collage .collage-row .block_2 div.collage-object {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#collage .collage-row .block_3 div.collage-object {
+    margin-left: 0.5em;
+}
+
+#collage div.collage-last-object {
+  margin-right: 0 !important;
+}
+
+/* column configurations */
+
+#collage .one-column .block_1 {
+    width: 100%;
+}
+
+#collage .two-columns-equal .block_1,
+#collage .two-columns-equal .block_2 {
+    width:50%;
+}
+
+#collage .two-columns-equal .block_2 { width:49.9%; }
+
+#collage .three-columns-equal .block_1,
+#collage .three-columns-equal .block_2 {
+    width:33%;
+}
+
+#collage .three-columns-equal .block_3 {
+    width: 33.9%;
+}
+
+#collage .three-columns-equal .block_2 { width:32.9%; }
+
+/* styles for hiding unwanted document metadata and actions */
+
+#collage .collage-object .documentByLine,
+#collage .collage-object .link-parent{
+    display: none;
+}
+
+#collage .two-columns-largeleft .block_1 {
+    width: 60%;
+}
+#collage .two-columns-largeleft .block_2 {
+    width: 40%;
+}
+
+#collage .three-columns-largeleft .block_1,
+#collage .three-columns-largeleft .block_2 {
+    width:60%;
+}
+
+#collage .three-columns-largeleft .block_3 {
+    width: 20%;
+}
+
+#collage .three-columns-largeleft .block_2 { width:19.9%; }
+
+#collage .two-columns-largeright .block_2 {
+    width: 60%;
+}
+#collage .two-columns-largeright .block_1 {
+    width: 40%;
+}
+
+#collage .three-columns-largeright .block_3 {
+    width:60%;
+}
+
+#collage .three-columns-largeright .block_1 {
+    width: 20%;
+}
+
+#collage .three-columns-largeright .block_2 { width:19.9%; }
+
+/* </dtml-with> */

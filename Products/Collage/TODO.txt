@@ -1,0 +1,22 @@
+  * Add example styles (views) for columns
+
+  * Take measures to ensure that header-tags (h1, h2, h3...) are used
+    consistently, even though we're using content templates that are
+    designed for a single-page display.
+
+    This will involve a full HTML-parsing.
+
+    Alternatively, change to a viewlet-based rendering.
+    
+  * i18n!
+
+  * Add generic setup uninstall when its possible (the stonor way)
+
+  * Create browser folder (preparing for more utils and browser views) - change
+    existing "browser.py" to a seperate (util / browser view) and move the interface
+    stuff into the interface.
+  
+  * Clean up page templates move python code to some grouped browser views
+
+    This is not easy; Plone leaves most of these things to templates since the
+    functionality is based on a large number of acquisition-based scripts.

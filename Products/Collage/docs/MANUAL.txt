@@ -1,0 +1,45 @@
+Collage manual
+------------------
+
+:: how to use
+
+A Collage-object is a folderish object that lets users
+create a layout built from individual content components.
+
+After creating a new Collage-instance, you can navigate to
+the 'manage page'-tab. This is the main interface for creating
+pages.
+
+At this step, you may either add a 'Row' or another type
+of your choice using the standard add-item dropdown. You may
+add as many items as you wish. They will be displayed one
+after the other in rows.
+
+The Row-object lets you create objects that are aligned
+vertically. To add flexibility, we've introduced two types
+that are unique to page rows: Alias and Column.
+
+:: working with page aliases
+
+A page alias is a content-type that wraps around an existing
+content object (outside your Collage-instance). You can
+use it for instance to display an existing smart folder,
+even with a different layout (view) than the original item.
+
+:: working with page columns
+
+A page column extends the standard Document-type, provides
+a view template suitable for display as a column and adds
+an option to select multiple items to display in a listing.
+
+For each column you can specify which fields will be shown.
+
+Note that Smart Folders and normal Folders are given special
+treatment. Instead of being displayed in the list, their
+contents are added. This makes it easy to display various
+catalog queries as a list in an easily customizable format.
+
+:: compatibility
+
+We're currently supporting Safari 2.0+, Internet Explorer 6+ and
+Gecko-based browsers (i.e. Firefox 1.5+).

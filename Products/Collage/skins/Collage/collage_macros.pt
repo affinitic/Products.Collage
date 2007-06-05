@@ -1,0 +1,155 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="plone">
+
+<body>
+
+
+<div class="collage-content" metal:define-macro="content"
+     tal:define="view here/@@collage">
+
+  <div class="collage-row" tal:repeat="brain folder_contents">
+    <div tal:define="base_template template/id;
+                     base_url here/absolute_url;
+		     batch_base_url string:${here/absolute_url}/${template_id}">
+      
+      <tal:content tal:define="here python: brain.getObject();
+                               context python: here;
+                               ctype python: here.portal_type.lower();
+                               here_url string:${here/absolute_url};
+                               object_title here/Title">
+
+	<div tal:condition="edit_mode"
+	     tal:define="isStructuralFolder python: view.isStructuralFolder(here)"
+	     class="collage-header">
+	  
+	  <tal:actions metal:use-macro="here/collage_contentviews/macros/actions">
+	    <tal:navigation metal:fill-slot="navigation">
+	      <span metal:use-macro="here/collage_contentviews/macros/vertical_navigation" />
+	    </tal:navigation>
+	  </tal:actions>
+	  
+	  <br />
+
+	  <div tal:condition="isStructuralFolder" class="expandable-section">
+	    <a href="#" class="expandable-label">
+	      <div class="expandable-icon"><!-- nothing here --></div>
+	      <span class="row-create">insert new item</span>
+	    </a>
+	    
+	    <div class="expandable-content">
+	      <p class="discreet">Choose a content-type to add to this row.</p>
+	      
+	      <tal:add-item metal:use-macro="here/collage_contentviews/macros/add-item" />
+	      <div class="visualClear"><!-- nothing here --></div>
+	    </div>
+	  </div>
+
+	  <div tal:condition="isStructuralFolder" class="expandable-section">
+	    <a href="#"
+	       tal:attributes="href string:${here/absolute_url}/existing-items-form"
+	       class="expandable-label">
+	      <div class="expandable-icon"><!-- nothing here --></div>
+	      <span class="row-create">insert existing item</span>
+	    </a>
+	    
+	    <div class="expandable-content">
+	      <p class="discreet">Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type.</p>
+
+	      <div class="expandable-ajax-content">
+		<!-- ajax content here -->
+		Loading...
+	      </div>
+	      
+	      <div class="visualClear"><!-- nothing here --></div>
+	    </div>
+	  </div>
+
+	  <div tal:condition="here/getSelectableViews"
+	       class="expandable-section">
+	    <a href="#" class="expandable-label">
+	      <div class="expandable-icon"><!-- nothing here --></div>
+	      <span class="row-create">select layout</span>
+	    </a>
+	    
+	    <div class="expandable-content">
+	      <p class="discreet">Choose a layout for this object.</p>
+	      
+	      <tal:actions metal:use-macro="here/collage_contentviews/macros/layouts" />
+	      <div class="visualClear"><!-- nothing here --></div>
+	    </div>
+	  </div>
+
+	  <div class="visualClear"><!-- nothing here --></div>
+
+	</div>
+
+	<div tal:define="template python: view.getTemplate(brain);
+			 macros template/macros|nothing;
+			 main_macro python: macros['main']"
+	     class="collage-object">
+          <tal:render metal:use-macro="main_macro" />
+        </div>	
+      </tal:content>
+    </div>
+  </div>
+</div>
+
+<metal:addmenu-macro define-macro="add_menu">
+  <tal:add define="addContext   nocall:here;
+                   allowedTypes addContext/getAllowedTypes;
+                   menuTypes    python:here.getAddableTypesInMenu(allowedTypes);
+                   numAllowed   python:len(allowedTypes);
+                   numMenu      python:len(menuTypes);
+                   showSettings addContext/canConstrainTypes;
+                   showMore     python:numAllowed > numMenu"
+           condition="python:numAllowed >= 1 or showSettings">
+    
+    <dt class="actionMenuHeader">
+      <a href="folder_factories"
+         title="Add new items inside this item"
+         i18n:attributes="title title_add_new_items_inside_item;"
+         i18n:translate="label_add_new_item"
+         tal:attributes="href string:${addContext/absolute_url}/folder_factories;">Add item</a>
+      
+    </dt>
+    <dd class="actionMenuContent">
+      <ul>
+        <tal:types repeat="ctype menuTypes">
+          <li tal:define="Title ctype/Title; Id ctype/getId; Description ctype/Description;
+                          item_type_class python: 'visualIcon contenttype-' + normalizeString(Id);"
+              tal:attributes="class string:${item_type_class}">
+            <a href="#"
+               i18n:attributes="title"
+               tal:attributes="href string:${addContext/absolute_url}/createObject?type_name=${Id};
+                               title Description">
+              <tal:title i18n:translate=""
+                         tal:content="Title">Title</tal:title>
+            </a>
+          </li>
+        </tal:types>
+        <li tal:condition="showMore">
+          <a href="#" class="folderAddMore" title="Show all available content types"
+             i18n:attributes="title title_show_all_content_types;"
+             tal:attributes="href string:${addContext/absolute_url}/folder_factories;">
+            <tal:title i18n:translate="folder_add_more">
+              More&hellip;
+            </tal:title>
+          </a>
+        </li>
+        <li class="actionSeparator" tal:condition="showSettings">
+          <a href="#" class="folderAddSettings" title="Configure which content types can be added here"
+             i18n:attributes="title title_configure_addable_content_types;"
+             tal:attributes="href string:${addContext/absolute_url}/folder_constraintypes_form;">
+            <tal:title i18n:translate="folder_add_settings">
+              Restrict&hellip;
+            </tal:title>
+          </a>
+        </li>
+      </ul>
+    </dd>
+  </tal:add>
+</metal:addmenu-macro>
+
+</body>
+</html>

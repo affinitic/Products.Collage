@@ -1,0 +1,86 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+           tal:define="text python: here.CookedBody(stx_level=2);
+		       static_items here/getStaticItems;
+		       dynamic_items here/getDynamicItems">
+
+        <tal:comment replace="nothing">
+            We already have one document_actions in the page builder view it self.
+            Dont use document_actions here since it not valid xhtml - there is used a lot of ids.
+        </tal:comment>
+
+        <tal:comment replace="nothing">
+        Speciel case: Pagecolumn is supposed to be placed inside a collagerow that already
+        have a h2 header. To fulfil the nested header requirement of accesibility we need to use a h3 here.
+        </tal:comment>
+        <h3 tal:condition="here/Title" tal:content="object_title" class="documentFirstHeading">
+          Title or id
+        </h3>
+
+        <div metal:use-macro="here/document_byline/macros/byline">
+          Get the byline - contains details about author and modification date.
+        </div>
+
+        <p class="documentDescription"
+           tal:content="here/Description"
+           tal:condition="here/Description">
+            Description
+        </p>
+        <p tal:condition="python: not text and is_editable and edit_mode and not (static_items or dynamic_items)"
+           i18n:translate="no_body_text"
+           class="discreet">
+            This item does not have any body text, click the edit tab to change it.
+        </p>
+
+        <div class="stx"
+             tal:condition="python: len(text) > 20"
+             tal:attributes="class python:test(here.Format() in ('text/structured',
+                                                   'text/x-rst', ), 'stx', 'plain')">
+            <div tal:replace="structure text" />
+        </div>
+
+        <div class="collage-list">
+            <div class="collage-listitem"
+		 tal:repeat="item python: dynamic_items+static_items">
+	      <tal:images tal:condition="item/images|nothing">
+		<img class="collage-image"
+		     tal:define="images item/images"
+		   tal:attributes="alt item/title;
+				   src python: images[0].absolute_url()"
+		     />
+	      </tal:images>
+	      
+	      <tal:images tal:condition="item/image|nothing">
+		<img class="collage-image"
+		     tal:define="image item/image"
+		     tal:attributes="alt item/title;
+				     src python: image.absolute_url()"
+		     />
+	      </tal:images>
+
+              <tal:comment replace="nothing">Take care have to be a h4, nested headings...</tal:comment>
+                <h4>
+                  <span tal:replace="item/title|nothing" />
+                  <a class="collage-edit-tag"
+                     tal:condition="edit_mode|nothing"
+                     tal:attributes="href string:${item/url}/edit">&para;</a>
+                </h4>
+                <div tal:replace="structure item/description|nothing" />
+            </div>
+        </div>
+
+        <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+            show related items if they exist
+        </div>
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

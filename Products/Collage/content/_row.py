@@ -2,7 +2,7 @@ from AccessControl import ClassSecurityInfo
 
 from Products.Archetypes import atapi
 from Products.Collage.content.common import LayoutContainer,CommonCollageSchema
-from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
+from Products.CMFCore.permissions import View, ModifyPortalContent
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 
 from Products.Collage.interfaces import ICollageRow

@@ -7,7 +7,7 @@ from Products.Archetypes import atapi
 from Products.Archetypes.public import BooleanField
 from Products.Archetypes.public import BooleanWidget
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import *
-from Products.CMFCore.CMFCorePermissions import ModifyPortalContent
+from Products.CMFCore.permissions import View, ModifyPortalContent
 
 try:
     from Products.CMFDynamicViewFTI.interfaces import ISelectableBrowserDefault

@@ -12,13 +12,13 @@
                          folder_contents here/getFolderContents"
              id="collage">
 
-	  <dl class="actionMenu" id="collage-addmenu">
-	    <metal:addmenu use-macro="here/collage_macros/macros/add_menu" />
-	  </dl>
-
             <div metal:use-macro="here/document_actions/macros/document_actions">
                 Document actions (print, sendto etc)
             </div>
+	  
+	    <div class="collage-header" id="collage-addmenu" tal:condition="edit_mode|nothing">
+	      <metal:addmenu use-macro="here/collage_macros/macros/actions" />
+	    </div>
 
             <h1 tal:condition="here/getShowTitle|nothing"
 		tal:content="object_title" class="documentFirstHeading">

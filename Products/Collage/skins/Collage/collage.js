@@ -5,12 +5,6 @@ $(document).ready(function($) {
 });
 
 function setupContentMenu($) {
-    // insert content add-menu into document menu
-    var objectMenu = $('#objectMenu').get(0);
-    objectMenu.innerHTML = $('#collage-addmenu').get(0).innerHTML;
-    
-    // we must reinitialize all action-menus
-    initializeMenus();
 }
 
 function setupHandlers($) {

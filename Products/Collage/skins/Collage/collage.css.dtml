@@ -141,7 +141,6 @@ span.collage-navigation a {
 }
 
 dl#collage-addmenu {
-  display: none;
 }
 
 .collage-edit-tag {

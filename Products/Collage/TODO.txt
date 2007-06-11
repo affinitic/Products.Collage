@@ -1,3 +1,5 @@
+  * Exclude content from navigation (excludeFromNav)
+
   * Add example styles (views) for columns
 
   * Take measures to ensure that header-tags (h1, h2, h3...) are used

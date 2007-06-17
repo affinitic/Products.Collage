@@ -1,0 +1,71 @@
+<metal:block use-macro="here/global_defines/macros/defines" />
+
+<div class="expandable-section">
+  <a href="#" class="expandable-label">
+    <div class="expandable-icon"><!-- nothing here --></div>
+    <span class="row-create">Insert new item</span>
+  </a>
+  
+  <div class="expandable-content">
+    <p class="discreet">Select a content-type to insert.</p>
+
+    <tal:add-item define="plone_view here/@@plone;
+			  manage_portal python:checkPermission('Manage portal', here);
+			  parent_folder plone_view/getCurrentFolder;
+			  create_id here/@@collage_utility/generateCreationID;
+			  useSelf python:isStructuralFolder and not isContextDefaultPage;">
+      
+      <tal:structuralFolder condition="plone_view/isStructuralFolder">
+	<tal:add define="here nocall: parent_folder">
+	  <tal:defines define="addContext   nocall: here;
+			       allowedTypes addContext/getAllowedTypes;
+			       menuTypes    python:here.getAddableTypesInMenu(allowedTypes);
+			       numAllowed   python:len(allowedTypes);
+			       numMenu      python:len(menuTypes);
+			       showSettings python: 1;
+			       showMore     python:numAllowed > numMenu;
+			       showMenu     python:showMore or showSettings or numMenu > 1;"
+		       condition="python:numAllowed >= 1 or showSettings">
+	    
+	    <ul class="collage-content-menu" tal:condition="showMenu">
+              <tal:types repeat="ctype menuTypes">
+		<li tal:define="Title ctype/Title; Id ctype/getId; Description ctype/Description;
+				item_type_class python: 'visualIcon contenttype-' + normalizeString(Id);"
+		    tal:attributes="class string:${item_type_class}">
+		  <a href="#"
+		     class="visualIconPadding"
+		     i18n:attributes="title"
+		     tal:attributes="href string:${addContext/absolute_url}/createObject?type_name=${Id};
+				     title string:$Title: $Description"
+		     tal:content="Title">
+		    Portal type               
+		  </a>
+		</li>
+              </tal:types>
+              <li tal:condition="showMore">
+		<a href="#" class="folderAddMore" title="Show all available content types"
+		   i18n:attributes="title title_show_all_content_types;"
+		   tal:attributes="href string:${addContext/absolute_url}/folder_factories;">
+		  <tal:title i18n:translate="folder_add_more">
+		    More&hellip;
+		  </tal:title>
+		</a>
+              </li>
+              <li class="actionSeparator" tal:condition="showSettings">
+		<a href="#" class="folderAddSettings" title="Configure which content types can be added here"
+		   i18n:attributes="title title_configure_addable_content_types;"
+		   tal:attributes="href string:${addContext/absolute_url}/folder_constraintypes_form;">
+		  <tal:title i18n:translate="folder_add_settings">
+		    Restrict&hellip;
+		  </tal:title>
+		</a>
+              </li> 
+	    </ul>
+	  </tal:defines>
+	</tal:add>
+      </tal:structuralFolder>  
+    </tal:add-item>
+    
+    <div class="visualClear"><!-- nothing here --></div>
+  </div>
+</div>

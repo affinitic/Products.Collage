@@ -1,0 +1,10 @@
+<span class="collage-navigation">
+  <a class="collage-js-down"
+     tal:attributes="href string:${here/absolute_url}/reorderObject?position=down&id=${here/getId}">
+    <img tal:attributes="src string:${view/portal_url}/arrowDown.gif">
+  </a>
+  <a class="collage-js-up"
+     tal:attributes="href string:${here/absolute_url}/reorderObject?position=up&id=${here/getId}">
+    <img tal:attributes="src string:${view/portal_url}/arrowUp.gif">
+  </a>
+</span>

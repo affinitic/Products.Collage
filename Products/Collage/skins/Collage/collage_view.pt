@@ -8,18 +8,13 @@
 <div metal:fill-slot="main">
     <metal:main-macro define-macro="main">
 
-        <div tal:define="edit_mode edit_mode|python: False;
-                         folder_contents here/getFolderContents"
+        <div tal:define="edit_mode edit_mode|python: False"
              id="collage">
 
             <div metal:use-macro="here/document_actions/macros/document_actions">
                 Document actions (print, sendto etc)
             </div>
 	  
-	    <div class="collage-header" id="collage-addmenu" tal:condition="edit_mode|nothing">
-	      <metal:addmenu use-macro="here/collage_macros/macros/actions" />
-	    </div>
-
             <h1 tal:condition="here/getShowTitle|nothing"
 		tal:content="object_title" class="documentFirstHeading">
               Title or id
@@ -41,24 +36,24 @@
                 show related items if they exist
             </div>
 
-            <tal:comment replace="nothing">collage rows rendering</tal:comment>
-            <div metal:use-macro="here/collage_macros/macros/content">
-                Page builder content(s)
+	    <div tal:replace="structure here/@@renderer">
+	      Collage content
             </div>
-
-            <p class="discreet" tal:condition="python: edit_mode and not folder_contents">
-                This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here.
-            </p>
-
-	    <form action="createObject" tal:condition="python: edit_mode">
-	      <br />
-	      <input type="hidden" name="type_name" value="CollageRow" />
-	      <input type="submit"
-		     i18n:attributes="value button_add_collagerow"
-		     value="Add page row" />
-            </form>
 	    
-        </div><tal:comment replace="nothing">End of #collage</tal:comment>
+	    <p tal:condition="edit_mode">
+	      <span class="discreet"
+		 tal:condition="not: here/getFolderContents">	
+                This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here.
+              </span>
+	      
+	      <form action="createObject" tal:condition="python: edit_mode">
+		<input type="hidden" name="type_name" value="CollageRow" />
+		<input type="submit"
+		       i18n:attributes="value button_add_collagerow"
+		       value="Add row" />
+              </form>
+	    </p>	    
+        </div>
     </metal:main-macro>
 </div>
 

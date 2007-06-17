@@ -1,0 +1,30 @@
+<tal:layouts define="layouts view/getLayouts"
+	     condition="python: len(layouts) > 1">
+  <div class="expandable-section">
+    <a href="#" class="expandable-label">
+      <div class="expandable-icon"><!-- nothing here --></div>
+      <span class="row-create">select layout</span>
+    </a>
+    
+    <div class="expandable-content">
+      <p class="discreet">Choose a layout for this object.</p>
+      
+      <tal:layouts repeat="layout layouts">
+	<a class="layout"
+	   tal:define="value layout/id;
+                       display layout/name"
+           tal:attributes="href string:${here/absolute_url}/setCollageContentLayout?layout=$value;
+                           title display"
+           i18n:attributes="title"
+           i18n:translate="">
+	  <span tal:attributes="class python: layout['active'] and 'active' or 'inactive'"
+		tal:content="display">
+	    Layout name
+	  </span>
+	</a>
+      </tal:layouts>
+      
+      <div class="visualClear"><!-- nothing here --></div>
+    </div>
+  </div>
+</tal:layouts>

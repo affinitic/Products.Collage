@@ -1,0 +1,49 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:page
+     name="standard"
+     for="Products.ATContentTypes.content.document.ATDocument"
+     permission="zope.Public"
+     template="templates/document_standard.pt"
+     class=".views.StandardDocumentView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="featured"
+     for="Products.ATContentTypes.content.document.ATDocument"
+     permission="zope.Public"
+     template="templates/document_featured.pt"
+     class=".views.FeaturedDocumentView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+  
+  <browser:page
+     name="standard"
+     for="Products.Collage.interfaces.ICollageRow"
+     permission="zope.Public"
+     template="templates/row_standard.pt"
+     class=".views.StandardRowView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="Products.Collage.interfaces.ICollageColumn"
+     permission="zope.Public"
+     template="templates/column_standard.pt"
+     class=".views.SimpleView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="fallback"
+     for="*"
+     permission="zope.Public"
+     template="templates/fallback.pt"
+     class=".views.SimpleView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+</configure>

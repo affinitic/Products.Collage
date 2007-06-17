@@ -69,51 +69,15 @@ class Collage(LayoutContainer, BrowserDefaultMixin, atapi.OrderedBaseFolder):
     __implements__ = (getattr(atapi.OrderedBaseFolder,'__implements__',()), \
                       getattr(BrowserDefaultMixin,'__implements__',()))
 
-
-    meta_type = 'Collage'
-
     schema = CollageSchema
+
     _at_rename_after_creation = True
 
     security = ClassSecurityInfo()
 
     implements(ICollage, INonStructuralFolder)
 
-    security.declareProtected(ModifyPortalContent, 'reorderObject')
-    def reorderObject(self, id, position, REQUEST=None):
-        "Move a collagerow up or down the page"
-
-        if position.lower()=='up':
-            self.moveObjectsUp(id)
-
-        if position.lower()=='down':
-            self.moveObjectsDown(id)
-
-        if position.lower()=='top':
-            self.moveObjectsToTop(id)
-
-        if position.lower()=='bottom':
-            self.moveObjectsToBottom(id)
-
-        # order folder by field
-        # id in this case is the field
-        if position.lower()=='ordered':
-            self.orderObjects(id)
-
-        self.plone_utils.reindexOnReorder(self)
-
-        if not REQUEST is None:
-            REQUEST.RESPONSE.redirect(self.absolute_url() + '/manage_page')
-
     def SearchableText(self):
         return self.aggregateSearchableText()
-
-    ##Based on RichDocument/content/richdocument.py
-    # This method, from ISelectableBrowserDefault, is used to check whether
-    # the "Choose content item to use as deafult view" option will be
-    # presented. This makes sense for folders, but not for RichDocument, so
-    # always disallow
-    def canSetDefaultPage(self):
-        return False
 
 atapi.registerType(Collage, 'Collage')

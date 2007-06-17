@@ -1,0 +1,25 @@
+<tal:manager replace="structure provider:collage.ContentManager" />
+
+<h2 tal:content="here/title_or_id">
+  Title or id
+</h2>
+
+<p class="documentDescription"
+   tal:content="here/Description"
+   tal:condition="here/Description">
+  Description
+</p>
+
+<tal:renderer define="renderer nocall: here/@@renderer">
+  <tal:batches tal:repeat="columns view/getColumnBatches">
+    <div tal:define="layout python: ('one-column', 'two-columns-equal', 'three-columns-equal')
+		     [len(columns)-1]"
+	 tal:attributes="class string:$layout">
+      
+      <tal:columns replace="structure python: renderer(columns)" />
+
+      <div class="visualClear"><!-- nothing here --></div>
+
+    </div>  
+  </tal:batches>
+</tal:renderer>

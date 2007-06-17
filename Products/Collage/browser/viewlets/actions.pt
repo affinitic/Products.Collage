@@ -1,0 +1,36 @@
+<metal:block use-macro="here/global_defines/macros/defines" />
+
+<div tal:omit-tag=""
+     tal:define="test view/test;
+		 default_tab default_tab | request/default_tab | string:view;
+		 alias python: here.portal_type == 'CollageAlias' and here.get_target();
+		 action_object python: alias or here;
+		 actions python: here.portal_actions.listFilteredActionsFor(action_object);
+		 view_actions python:here.plonifyActions(template_id=template_id, actions=actions, default_tab=default_tab)">
+  
+  <span class="row-type"
+	tal:condition="not: alias"
+	tal:content="string: ${here/portal_type}:" />
+  
+  <span class="row-type"
+	tal:condition="alias"
+	tal:content="string: ${alias/portal_type} (aliased):" />
+  
+  <a class="action"
+     tal:attributes="href string:${here/absolute_url}/delete_confirmation">
+    <span>Delete</span>
+  </a>
+  
+  <tal:actions repeat="action view_actions">
+    <a tal:condition="python: action['id'] not in ['folderContents', 'metadata', 'local_roles', 'revisitCollage', 'portlets']"
+       tal:define="selected action/selected|nothing;"
+       tal:attributes="id string:contentview-${action/id};
+                       class python:'action '+test(selected, 'selected', 'plain');
+		       href action/url"
+       i18n:translate="">
+      <span tal:content="action/title">
+	View name
+      </span>
+    </a>
+  </tal:actions>
+</div>    

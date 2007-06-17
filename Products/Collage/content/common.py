@@ -23,22 +23,14 @@ class LayoutContainer(object):
 
     security = ClassSecurityInfo()
 
-    security.declareProtected(View, 'getTargetObjectLayout')
-    def getTargetObjectLayout(self, target):
+    def canSetDefaultPage(self):
+        """Based on RichDocument/content/richdocument.py
+        This method, from ISelectableBrowserDefault, is used to check whether
+        the 'Choose content item to use as deafult view' option will be
+        presented. This makes sense for folders, but not for RichDocument, so
+        always disallow.
         """
-        Returns target object 'view' action page template
-        """
-
-        if HAS_ISBD and ISelectableBrowserDefault.isImplementedBy(target):
-            return target.getLayout()
-        else:
-            view = target.getTypeInfo().getActionById('view') or 'base_view'
-
-            # If view action is view, try to guess correct template
-            if view == 'view':
-                view = target.portal_type.lower() + '_view'
-
-            return view
+        return False
 
     def aggregateSearchableText(self):
         """Append references' searchable fields."""
@@ -52,8 +44,37 @@ class LayoutContainer(object):
 
         return data
 
+    security.declareProtected(ModifyPortalContent, 'reorderObject')
+    def reorderObject(self, id, position, REQUEST=None):
+        if position.lower()=='up':
+            self.moveObjectsUp(id)
+
+        if position.lower()=='down':
+            self.moveObjectsDown(id)
+
+        if position.lower()=='top':
+            self.moveObjectsToTop(id)
+
+        if position.lower()=='bottom':
+            self.moveObjectsToBottom(id)
+
+        # order folder by field
+        # id in this case is the field
+        if position.lower()=='ordered':
+            self.orderObjects(id)
+
+        self.plone_utils.reindexOnReorder(self)
+
+        if REQUEST.get('simple'): # ajax-support
+            return 1
+
+        # TODO: Redirect to closest Collage-object, not parent
+        if REQUEST is not None:
+            REQUEST.RESPONSE.redirect(self.aq_parent.absolute_url() + '/manage_page')
+
+
 CommonCollageSchema = atapi.Schema((
-    #TODO: move to common, also do it for the collage it self
+    # TODO: move to common, also do it for the collage it self (???)
     atapi.BooleanField('excludeFromNav',
         required = False,
         languageIndependent = True,
@@ -68,6 +89,7 @@ CommonCollageSchema = atapi.Schema((
                      'edit' : 'visible'},
             ),
         ),
+    
     atapi.ReferenceField('relatedItems',
         relationship = 'relatesTo',
         multiValued = True,

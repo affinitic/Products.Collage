@@ -1,0 +1,15 @@
+<tal:manager replace="structure provider:collage.ContentManager" />
+
+<h3 tal:content="here/title_or_id">
+  Title or id
+</h3>
+
+<p class="documentDescription"
+   tal:content="here/Description"
+   tal:condition="here/Description">
+  Description
+</p>
+
+<div tal:replace="structure here/@@renderer">
+  Column content
+</div>

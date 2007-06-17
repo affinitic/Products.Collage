@@ -11,7 +11,7 @@
   float: right;
 }
 
-.collagecolumn-featured {
+.featured-document {
   background: #f3f3f3;
   padding: 10px;
 }

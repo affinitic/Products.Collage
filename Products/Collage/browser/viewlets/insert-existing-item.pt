@@ -1,0 +1,22 @@
+<div class="expandable-section">
+  <a href="#"
+     tal:attributes="href string:${here/absolute_url}/existing-items-form"
+     class="expandable-label">
+    <div class="expandable-icon"><!-- nothing here --></div>
+    <span class="row-create">insert existing item</span>
+  </a>
+  
+  <div class="expandable-content">
+    <p class="discreet">
+      Choose an existing item to insert. The item will be inserted
+      as an alias (by reference). Use dropdown to filter on type.
+    </p>
+    
+    <div class="expandable-ajax-content">
+      <!-- ajax content here -->
+      Loading...
+    </div>
+    
+    <div class="visualClear"><!-- nothing here --></div>
+  </div>
+</div>

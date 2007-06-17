@@ -1,15 +1,17 @@
 from zope.interface import Interface
 from zope.interface import implements
 from zope.component import adapts
-from zope import event                                                                                                  
-from zope.app.event import objectevent                                                                                  
- 
+from zope.component import getUtility
+from zope.interface import alsoProvides
+
+from zope import event
+from zope.app.event import objectevent
+
 from Products.Five.browser import BrowserView
 
 from Acquisition import aq_base, aq_inner, aq_parent
 
 from Products.CMFPlone import utils as cmfutils
-from Products.CMFPlone.interfaces import IBrowserDefault 
 from Products.CMFPlone.browser.plone import cache_decorator
 from Products.CMFPlone.interfaces import INonStructuralFolder
 from Products.CMFPlone.utils import getSiteEncoding
@@ -17,11 +19,24 @@ from Products.CMFPlone.interfaces.NonStructuralFolder import \
      INonStructuralFolder as z2INonStructuralFolder
 
 from Products.Collage.utilities import findFirstAvailableInteger, isNumber
+
 from Products.Collage.interfaces import ICollage
+from Products.Collage.interfaces import IDynamicViewManager
+from Products.Collage.interfaces import ICollageEditLayer
 
-import re
+from Products.CMFPlone import PloneMessageFactory as _
 
-class CollageInsertAliasView(BrowserView):
+class SelectDynamicViewView(BrowserView):
+    def setDynamicView(self):
+        layout = self.request['layout']
+
+        manager = getUtility(IDynamicViewManager)
+        manager.setLayout(self.context, layout)
+
+        self.context.plone_utils.addPortalMessage(_(u'View changed.'))
+        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
+
+class InsertAliasView(BrowserView):
     def __call__(self):
         uid_catalog = cmfutils.getToolByName(self.context,
                                              'uid_catalog')
@@ -130,22 +145,21 @@ class CollageUtility(object):
     implements(ICollageUtility)
     adapts(Interface)
 
-    def loadCollageJS(self):
-        if not ICollage.providedBy(self.context):
-            return
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
 
-        request = self.context.REQUEST
         url = request.get('ACTUAL_URL', request.get('URL', None))
-
         if url.endswith('manage_page'):
-            return True
+            # add marker interfaces to request
+            alsoProvides(self.request, ICollageEditLayer)
 
-        return False
-    loadCollageJS = cache_decorator(loadCollageJS)
-    
+    def loadCollageJS(self):
+        if ICollageEditLayer.providedBy(self.request):
+            return True
+        
     def isCollageContent(self, parent=None):
         return self.getCollageObjectURL() is not None
-    isCollageContent = cache_decorator(isCollageContent)
 
     def getCollageObjectURL(self, parent=None):
         if not parent:
@@ -161,8 +175,10 @@ class CollageUtility(object):
                     return parent.absolute_url()
 
         return None
+
     getCollageObjectURL = cache_decorator(getCollageObjectURL)
-    
+
+    # TODO: MOVE!
     def generateCreationID(self):
         """
         Find first available integer in a list.
@@ -173,4 +189,3 @@ class CollageUtility(object):
         numericalIDs = filter(isNumber.match, contentIDs)
 
         return findFirstAvailableInteger(numericalIDs)
-        

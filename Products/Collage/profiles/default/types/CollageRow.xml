@@ -9,20 +9,14 @@
  <property name="content_meta_type">CollageRow</property>
  <property name="product">Collage</property>
  <property name="factory">addCollageRow</property>
- <property name="immediate_view">collagerow_default_view</property>
+ <property name="immediate_view">base_view</property>
  <property name="global_allow">False</property>
  <property name="filter_content_types">False</property>
  <property name="allowed_content_types">
   <element value="CollageColumn"/>
-  <element value="CollageAlias"/>
-</property>
-  <property name="allow_discussion">False</property>
- <property name="default_view">collagerow_default_view</property>
- <property name="view_methods" purge="False">
-  <element value="collagerow_default_view"/>
-  <element value="collagerow_largeleft_view"/>
-  <element value="collagerow_largeright_view"/>
  </property>
+ <property name="allow_discussion">False</property>
+ <property name="default_view">base_view</property>
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="atct_edit"/>
  <alias from="index.html" to="(dynamic view)"/>

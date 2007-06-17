@@ -125,12 +125,17 @@ function triggerMove(event, direction) {
     
     var row = link.parents('.collage-row').eq(0);
     var column = link.parents('.collage-column').eq(0);
+    var item = link.parents('.collage-item').eq(0);
 
+    console.log("Found row: "+row.length+", column: "+column.length+", item: "+item.length);
     var destination = null;
     var origin = null;
     var items = null;
-    
-    if (column.length) {
+
+    if (item.length) {
+	items = $('.collage-item', column);
+	origin = $(item);
+    } else if (column.length) {
 	items = $('.collage-column', row);
 	origin = $(column);
     } else {

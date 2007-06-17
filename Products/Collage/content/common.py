@@ -21,8 +21,6 @@ class LayoutContainer(object):
     functionality.
     """
 
-    security = ClassSecurityInfo()
-
     def canSetDefaultPage(self):
         """Based on RichDocument/content/richdocument.py
         This method, from ISelectableBrowserDefault, is used to check whether
@@ -43,35 +41,6 @@ class LayoutContainer(object):
         data = ' '.join(data)
 
         return data
-
-    security.declareProtected(ModifyPortalContent, 'reorderObject')
-    def reorderObject(self, id, position, REQUEST=None):
-        if position.lower()=='up':
-            self.moveObjectsUp(id)
-
-        if position.lower()=='down':
-            self.moveObjectsDown(id)
-
-        if position.lower()=='top':
-            self.moveObjectsToTop(id)
-
-        if position.lower()=='bottom':
-            self.moveObjectsToBottom(id)
-
-        # order folder by field
-        # id in this case is the field
-        if position.lower()=='ordered':
-            self.orderObjects(id)
-
-        self.plone_utils.reindexOnReorder(self)
-
-        if REQUEST.get('simple'): # ajax-support
-            return 1
-
-        # TODO: Redirect to closest Collage-object, not parent
-        if REQUEST is not None:
-            REQUEST.RESPONSE.redirect(self.aq_parent.absolute_url() + '/manage_page')
-
 
 CommonCollageSchema = atapi.Schema((
     # TODO: move to common, also do it for the collage it self (???)

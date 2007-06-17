@@ -1,6 +1,3 @@
   * i18n!
 
   * Add generic setup uninstall when its possible (the stonor way)
-
-  * Fix reordering-code that has been rendered disfunct after
-    restructuring

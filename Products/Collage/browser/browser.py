@@ -36,6 +36,32 @@ class SelectDynamicViewView(BrowserView):
         self.context.plone_utils.addPortalMessage(_(u'View changed.'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
+class ReorderObjectView(BrowserView):
+    def __call__(self):
+        object_id = self.request['id']
+        position = self.request['position']
+
+        if position.lower()=='up':
+            self.context.moveObjectsUp(object_id)
+
+        if position.lower()=='down':
+            self.context.moveObjectsDown(object_id)
+
+        if position.lower()=='top':
+            self.context.moveObjectsToTop(object_id)
+
+        if position.lower()=='bottom':
+            self.context.moveObjectsToBottom(object_id)
+
+        # order folder by field
+        # id in this case is the field
+        if position.lower()=='ordered':
+            self.context.orderObjects(object_id)
+
+        cmfutils.getToolByName(self.context, 'plone_utils').reindexOnReorder(self.context)
+
+        return 1
+
 class InsertRowView(BrowserView):
     def __call__(self):
         # create row

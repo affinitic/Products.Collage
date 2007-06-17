@@ -87,10 +87,10 @@ function doSimpleQuery(url, data) {
     
     // display a save message
     var heading = $('h1.documentFirstHeading').get(0);
-    postMessage(heading, 'Saving...');
+    if (heading) postMessage(heading, 'Saving...');
 
     $.post(url, data, function(data) {
-	restoreElement(heading);
+	if (heading) restoreElement(heading);
     });
 }
 

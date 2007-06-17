@@ -12,8 +12,6 @@ from zope.interface import implements
 # CMFDynamicViewFTI imports
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
-from Products.Collage.utilities import findFirstAvailableInteger, isNumber
-
 CollageRowSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     atapi.StringField(
         name='title',
@@ -50,13 +48,6 @@ class CollageRow(BrowserDefaultMixin, LayoutContainer, atapi.OrderedBaseFolder):
     implements(ICollageRow)
 
     security = ClassSecurityInfo()
-
-    security.declarePrivate('generateNewId')
-    def generateNewId(self):
-        parent_contents = self.aq_parent.objectValues()
-        contentIDs = map(lambda x: x.getId(), parent_contents)
-        numericalIDs = filter(isNumber.match, contentIDs)
-        return str(findFirstAvailableInteger(numericalIDs))
 
     def SearchableText(self):
         return self.aggregateSearchableText()

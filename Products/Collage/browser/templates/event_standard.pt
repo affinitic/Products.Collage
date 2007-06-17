@@ -33,13 +33,13 @@
               <tal:differentday tal:condition="python:not here.start().Date() == here.end().Date()">
 		<abbr class="dtstart"
                       tal:attributes="title python:here.start()"
-                      tal:content="python:here.toLocalizedTime(here.start(), long_format=1)">
+                      tal:content="python:plone_view.toLocalizedTime(here.start(), long_format=1)">
                   Start Date Time
 		</abbr>
 		<span i18n:translate="event_to">to</span> <br />
 		<abbr class="dtend"
                       tal:attributes="title python:here.end()"
-                      tal:content="python:here.toLocalizedTime(here.end(), long_format=1)">
+                      tal:content="python:plone_view.toLocalizedTime(here.end(), long_format=1)">
                   End Date Time
 		</abbr>
               </tal:differentday>
@@ -49,13 +49,13 @@
 		<abbr class="dtstart"
                       style="display: none;"
                       tal:attributes="title python:here.start()"
-                      tal:content="python:here.toLocalizedTime(here.start(), long_format=1)">
+                      tal:content="python:plone_view.toLocalizedTime(here.start(), long_format=1)">
                   Start Date Time
 		</abbr>
 		<abbr class="dtend"
                       style="display: none;"
                       tal:attributes="title python:here.end()"
-                      tal:content="python:here.toLocalizedTime(here.end(), long_format=1)">
+                      tal:content="python:plone_view.toLocalizedTime(here.end(), long_format=1)">
                   End Date Time
 		</abbr>
 		<span tal:replace="python:toLocalizedTime(here.start())">Start Date Time</span> <br />

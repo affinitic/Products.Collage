@@ -18,7 +18,16 @@
      class=".views.FeaturedDocumentView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
-  
+
+  <browser:page
+     name="standard"
+     for="Products.ATContentTypes.content.event.ATEvent"
+     permission="zope.Public"
+     template="templates/event_standard.pt"
+     class=".views.SimpleView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
   <browser:page
      name="standard"
      for="Products.Collage.interfaces.ICollageRow"

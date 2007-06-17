@@ -36,6 +36,30 @@ class SelectDynamicViewView(BrowserView):
         self.context.plone_utils.addPortalMessage(_(u'View changed.'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
+class InsertRowView(BrowserView):
+    def __call__(self):
+        # create row
+        desired_id=self.generateNewId(self.context)
+        row_id = self.context.invokeFactory(id=desired_id, type_name='CollageRow')
+        row = getattr(self.context, row_id, None)
+        row.setTitle('')
+        
+        # create column
+        desired_id=self.generateNewId(row)
+        col_id = row.invokeFactory(id=desired_id, type_name='CollageColumn')
+        col = getattr(row, col_id, None)
+        col.setTitle('')
+        
+        self.context.plone_utils.addPortalMessage(_(u'Row added.'))
+        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])    
+
+    def generateNewId(self, container):
+        parent_contents = container.objectValues()
+        contentIDs = map(lambda x: x.getId(), parent_contents)
+        numericalIDs = filter(isNumber.match, contentIDs)
+        return str(findFirstAvailableInteger(numericalIDs))
+
+
 class InsertAliasView(BrowserView):
     def __call__(self):
         uid_catalog = cmfutils.getToolByName(self.context,

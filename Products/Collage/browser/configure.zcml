@@ -132,6 +132,13 @@
        class=".browser.InsertAliasView"
        />  
 
+    <browser:page
+       name="insert-row"
+       for="Products.Collage.interfaces.ICollage"
+       permission="cmf.ModifyPortalContent"
+       class=".browser.InsertRowView"
+       />  
+
     <include file="views.zcml" />
     
 </configure>

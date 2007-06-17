@@ -14,8 +14,8 @@
             <div metal:use-macro="here/document_actions/macros/document_actions">
                 Document actions (print, sendto etc)
             </div>
-	  
-            <h1 tal:condition="here/getShowTitle|nothing"
+
+	    <h1 tal:condition="here/getShowTitle|nothing"
 		tal:content="object_title" class="documentFirstHeading">
               Title or id
             </h1>
@@ -45,9 +45,8 @@
 		 tal:condition="not: here/getFolderContents">	
                 This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here.
               </span>
-	      
-	      <form action="createObject" tal:condition="python: edit_mode">
-		<input type="hidden" name="type_name" value="CollageRow" />
+
+	      <form action="insert-row" tal:condition="python: edit_mode">
 		<input type="submit"
 		       i18n:attributes="value button_add_collagerow"
 		       value="Add row" />

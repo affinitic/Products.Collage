@@ -8,162 +8,161 @@
      template="manager.pt"
      permission="zope.Public"
      />
-
-  <browser:viewlet
-       name="01-actions"
-       for="*"
-       manager="Products.Collage.interfaces.IContentMenu"
-       class=".viewlet.SimpleContentMenuViewlet"
-       template="viewlets/actions.pt"
-       permission="cmf.ModifyPortalContent"
-       layer="Products.Collage.interfaces.ICollageEditLayer"
-       />
-
   
-    <browser:viewlet
-       name="layout"
-       for="*"
-       manager="Products.Collage.interfaces.IContentMenu"
-       class=".viewlet.LayoutViewlet"
-       template="viewlets/layout.pt"
-       permission="cmf.ModifyPortalContent"
-       layer="Products.Collage.interfaces.ICollageEditLayer"
-       />
-
-    <browser:viewlet
-       name="insert-new-item"
-       for="Products.Collage.interfaces.ICollageColumn"
-       manager="Products.Collage.interfaces.IContentMenu"
-       class=".viewlet.InsertNewItemViewlet"
-       template="viewlets/insert-new-item.pt"
-       permission="cmf.ModifyPortalContent"
-       layer="Products.Collage.interfaces.ICollageEditLayer"
-       />
-
-    <browser:viewlet
-       name="split-column"
-       for="Products.Collage.interfaces.ICollageColumn"
-       manager="Products.Collage.interfaces.IContentMenu"
-       class=".viewlet.SplitColumnViewlet"
-       template="viewlets/split-column.pt"
-       permission="cmf.ModifyPortalContent"
-       layer="Products.Collage.interfaces.ICollageEditLayer"
-       />
-
-    <browser:viewlet
-       name="insert-existing-item"
-       for="Products.Collage.interfaces.ICollageColumn"
-       manager="Products.Collage.interfaces.IContentMenu"
-       class=".viewlet.SimpleContentMenuViewlet"
-       template="viewlets/insert-existing-item.pt"
-       permission="cmf.ModifyPortalContent"
-       layer="Products.Collage.interfaces.ICollageEditLayer"
-       />
-
-    <browser:viewlet
-       name="00-modify-order"
-       for="Products.Collage.interfaces.ICollageColumn"
-       manager="Products.Collage.interfaces.IContentMenu"
-       class=".viewlet.SimpleContentMenuViewlet"
-       template="viewlets/modify_order_horizontal.pt"
-       permission="cmf.ModifyPortalContent"
-       layer="Products.Collage.interfaces.ICollageEditLayer"
-       />
-
-    <browser:viewlet
-       name="00-modify-order"
-       for="*"
-       manager="Products.Collage.interfaces.IContentMenu"
-       class=".viewlet.SimpleContentMenuViewlet"
-       template="viewlets/modify_order_vertical.pt"
-       permission="cmf.ModifyPortalContent"
-       layer="Products.Collage.interfaces.ICollageEditLayer"
-       />
-
-    <browser:page
-       name="renderer"
-       for="Products.Collage.interfaces.ICollage"
-       permission="zope.Public"
-       class=".renderer.SimpleContainerRenderer"
-       template="collage_renderer.pt"
-       />
-
-    <browser:page
-       name="renderer"
-       for="Products.Collage.interfaces.ICollageRow"
-       permission="zope.Public"
-       class=".renderer.SimpleContainerRenderer"
-       template="row_renderer.pt"
-       />
-
-    <browser:page
-       name="renderer"
-       for="Products.Collage.interfaces.ICollageColumn"
-       permission="zope.Public"
-       class=".renderer.SimpleContainerRenderer"
-       template="column_renderer.pt"
-       />
-
-    <browser:page
-       name="setCollageContentLayout"
-       attribute="setDynamicView"
-       for="*"
-       permission="cmf.ModifyPortalContent"
-       class=".browser.SelectDynamicViewView"
-       />
-    
-    <browser:page
-       name="collage_utility"
-       for="*"
-       permission="zope.Public"
-       class=".browser.CollageUtility"
-       allowed_interface=".browser.ICollageUtility"
-       />
-    
-    <browser:page
-       name="collage"
-       for="Products.Collage.interfaces.ICollage"
-       permission="zope.Public"
-       class=".browser.CollageView"
-       allowed_interface=".browser.ICollageView"
-       />
-    
-    <browser:page
-       name="existing-items-form"
-       for="Products.Collage.interfaces.ICollageColumn"
-       permission="cmf.ModifyPortalContent"
-       class=".browser.ExistingItemsView"
-       template="existing_items_form.pt"
-       />
-
-    <browser:page
-       name="insert-alias"
-       for="Products.Collage.interfaces.ICollageRow"
-       permission="cmf.ModifyPortalContent"
-       class=".browser.InsertAliasView"
-       />  
-
-    <browser:page
-       name="insert-row"
-       for="Products.Collage.interfaces.ICollage"
-       permission="cmf.ModifyPortalContent"
-       class=".browser.InsertRowView"
-       />  
-
-    <browser:page
-       name="reorder-object"
-       for="zope.app.container.interfaces.IContainer"
-       permission="cmf.ModifyPortalContent"
-       class=".browser.ReorderObjectView"
-       />
-
-    <browser:page
-       name="split-column"
-       for="Products.Collage.interfaces.ICollageColumn"
-       permission="cmf.ModifyPortalContent"
-       class=".browser.SplitColumnView"
-       />
-    
-    <include file="views.zcml" />
+  <browser:viewlet
+     name="01-actions"
+     for="*"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.SimpleContentMenuViewlet"
+     template="viewlets/actions.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+  
+  <browser:viewlet
+     name="layout"
+     for="*"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.LayoutViewlet"
+     template="viewlets/layout.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+  
+  <browser:viewlet
+     name="insert-new-item"
+     for="Products.Collage.interfaces.ICollageColumn"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.InsertNewItemViewlet"
+     template="viewlets/insert-new-item.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+  
+  <browser:viewlet
+     name="split-column"
+     for="Products.Collage.interfaces.ICollageColumn"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.SplitColumnViewlet"
+     template="viewlets/split-column.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+  
+  <browser:viewlet
+     name="insert-existing-item"
+     for="Products.Collage.interfaces.ICollageColumn"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.SimpleContentMenuViewlet"
+     template="viewlets/insert-existing-item.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+  
+  <browser:viewlet
+     name="00-modify-order"
+     for="Products.Collage.interfaces.ICollageColumn"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.SimpleContentMenuViewlet"
+     template="viewlets/modify_order_horizontal.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+  
+  <browser:viewlet
+     name="00-modify-order"
+     for="*"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.SimpleContentMenuViewlet"
+     template="viewlets/modify_order_vertical.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+  
+  <browser:page
+     name="renderer"
+     for="Products.Collage.interfaces.ICollage"
+     permission="zope.Public"
+     class=".renderer.SimpleContainerRenderer"
+     template="collage_renderer.pt"
+     />
+  
+  <browser:page
+     name="renderer"
+     for="Products.Collage.interfaces.ICollageRow"
+     permission="zope.Public"
+     class=".renderer.SimpleContainerRenderer"
+     template="row_renderer.pt"
+     />
+  
+  <browser:page
+     name="renderer"
+     for="Products.Collage.interfaces.ICollageColumn"
+     permission="zope.Public"
+     class=".renderer.SimpleContainerRenderer"
+     template="column_renderer.pt"
+     />
+  
+  <browser:page
+     name="setCollageContentLayout"
+     attribute="setDynamicView"
+     for="*"
+     permission="cmf.ModifyPortalContent"
+     class=".browser.SelectDynamicViewView"
+     />
+  
+  <browser:page
+     name="collage_utility"
+     for="*"
+     permission="zope.Public"
+     class=".browser.CollageUtility"
+     allowed_interface=".browser.ICollageUtility"
+     />
+  
+  <browser:page
+     name="collage"
+     for="Products.Collage.interfaces.ICollage"
+     permission="zope.Public"
+     class=".browser.CollageView"
+     allowed_interface=".browser.ICollageView"
+     />
+  
+  <browser:page
+     name="existing-items-form"
+     for="Products.Collage.interfaces.ICollageColumn"
+     permission="cmf.ModifyPortalContent"
+     class=".browser.ExistingItemsView"
+     template="existing_items_form.pt"
+     />
+  
+  <browser:page
+     name="insert-alias"
+     for="Products.Collage.interfaces.ICollageRow"
+     permission="cmf.ModifyPortalContent"
+     class=".browser.InsertAliasView"
+     />  
+  
+  <browser:page
+     name="insert-row"
+     for="Products.Collage.interfaces.ICollage"
+     permission="cmf.ModifyPortalContent"
+     class=".browser.InsertRowView"
+     />  
+  
+  <browser:page
+     name="reorder-object"
+     for="zope.app.container.interfaces.IContainer"
+     permission="cmf.ModifyPortalContent"
+     class=".browser.ReorderObjectView"
+     />
+  
+  <browser:page
+     name="split-column"
+     for="Products.Collage.interfaces.ICollageColumn"
+     permission="cmf.ModifyPortalContent"
+     class=".browser.SplitColumnView"
+     />
+  
+  <include file="views.zcml" />
     
 </configure>

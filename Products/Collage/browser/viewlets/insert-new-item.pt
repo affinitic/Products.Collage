@@ -12,7 +12,6 @@
     <tal:add-item define="plone_view here/@@plone;
 			  manage_portal python:checkPermission('Manage portal', here);
 			  parent_folder plone_view/getCurrentFolder;
-			  create_id here/@@collage_utility/generateCreationID;
 			  useSelf python:isStructuralFolder and not isContextDefaultPage;">
       
       <tal:structuralFolder condition="plone_view/isStructuralFolder">

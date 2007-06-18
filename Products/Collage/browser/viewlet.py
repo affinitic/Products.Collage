@@ -53,3 +53,6 @@ class LayoutViewlet(object):
     
 class InsertNewItemViewlet(object):
     pass
+
+class SplitColumnViewlet(object):
+    pass

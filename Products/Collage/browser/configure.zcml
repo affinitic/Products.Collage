@@ -19,6 +19,7 @@
        layer="Products.Collage.interfaces.ICollageEditLayer"
        />
 
+  
     <browser:viewlet
        name="layout"
        for="*"
@@ -38,7 +39,17 @@
        permission="cmf.ModifyPortalContent"
        layer="Products.Collage.interfaces.ICollageEditLayer"
        />
-    
+
+    <browser:viewlet
+       name="split-column"
+       for="Products.Collage.interfaces.ICollageColumn"
+       manager="Products.Collage.interfaces.IContentMenu"
+       class=".viewlet.SplitColumnViewlet"
+       template="viewlets/split-column.pt"
+       permission="cmf.ModifyPortalContent"
+       layer="Products.Collage.interfaces.ICollageEditLayer"
+       />
+
     <browser:viewlet
        name="insert-existing-item"
        for="Products.Collage.interfaces.ICollageColumn"
@@ -144,6 +155,13 @@
        for="zope.app.container.interfaces.IContainer"
        permission="cmf.ModifyPortalContent"
        class=".browser.ReorderObjectView"
+       />
+
+    <browser:page
+       name="split-column"
+       for="Products.Collage.interfaces.ICollageColumn"
+       permission="cmf.ModifyPortalContent"
+       class=".browser.SplitColumnView"
        />
     
     <include file="views.zcml" />

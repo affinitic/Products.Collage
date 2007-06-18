@@ -37,7 +37,8 @@
 
 .collage-header span.row-type,
 .collage-header span.row-create,
-.collage-header span.row-layout {
+.collage-header span.row-layout,
+.collage-header span.column-split {
   color: &dtml-discreetColor;;
   text-transform: lowercase;
 }
@@ -57,6 +58,14 @@
 
 .collage-header a.layout span.active {
   color: &dtml-fontColor;;
+}
+
+.split-column-icon {
+  background: url(&dtml-portal_url;/icon-split.gif) no-repeat top left;
+  float: left;
+  width: 14px;
+  height: 14px;
+  padding-right: 3px;
 }
 
 /* expandable sections */

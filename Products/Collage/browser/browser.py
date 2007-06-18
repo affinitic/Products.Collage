@@ -18,13 +18,15 @@ from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone.interfaces.NonStructuralFolder import \
      INonStructuralFolder as z2INonStructuralFolder
 
-from Products.Collage.utilities import findFirstAvailableInteger, isNumber
+from Products.Collage.utilities import generateNewId
 
 from Products.Collage.interfaces import ICollage
 from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageEditLayer
 
 from Products.CMFPlone import PloneMessageFactory as _
+
+from Acquisition import aq_inner, aq_parent
 
 class SelectDynamicViewView(BrowserView):
     def setDynamicView(self):
@@ -65,13 +67,13 @@ class ReorderObjectView(BrowserView):
 class InsertRowView(BrowserView):
     def __call__(self):
         # create row
-        desired_id=self.generateNewId(self.context)
+        desired_id = generateNewId(self.context)
         row_id = self.context.invokeFactory(id=desired_id, type_name='CollageRow')
         row = getattr(self.context, row_id, None)
         row.setTitle('')
         
         # create column
-        desired_id=self.generateNewId(row)
+        desired_id = generateNewId(row)
         col_id = row.invokeFactory(id=desired_id, type_name='CollageColumn')
         col = getattr(row, col_id, None)
         col.setTitle('')
@@ -79,12 +81,15 @@ class InsertRowView(BrowserView):
         self.context.plone_utils.addPortalMessage(_(u'Row added.'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])    
 
-    def generateNewId(self, container):
-        parent_contents = container.objectValues()
-        contentIDs = map(lambda x: x.getId(), parent_contents)
-        numericalIDs = filter(isNumber.match, contentIDs)
-        return str(findFirstAvailableInteger(numericalIDs))
+class SplitColumnView(BrowserView):
+    def __call__(self):
+        container = aq_parent(aq_inner(self.context))
+        desired_id = generateNewId(container)
 
+        container.invokeFactory(id=desired_id, type_name='CollageColumn')
+        
+        self.context.plone_utils.addPortalMessage(_(u'Column inserted.'))
+        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])    
 
 class InsertAliasView(BrowserView):
     def __call__(self):
@@ -187,10 +192,6 @@ class ICollageUtility(Interface):
         """Search object tree for a Collage-object and return URL."""
         pass
 
-    def generateCreationID():
-        """Find first available non-used integer within object IDs."""
-        pass
-
 class CollageUtility(object):
     implements(ICollageUtility)
     adapts(Interface)
@@ -227,15 +228,3 @@ class CollageUtility(object):
         return None
 
     getCollageObjectURL = cache_decorator(getCollageObjectURL)
-
-    # TODO: MOVE!
-    def generateCreationID(self):
-        """
-        Find first available integer in a list.
-        """
-
-        contents = self.context.getFolderContents()
-        contentIDs = map(lambda x: x.id, contents)
-        numericalIDs = filter(isNumber.match, contentIDs)
-
-        return findFirstAvailableInteger(numericalIDs)

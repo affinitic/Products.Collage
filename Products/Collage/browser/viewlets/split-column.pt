@@ -1,0 +1,4 @@
+<a tal:attributes="href string:${here/absolute_url}/split-column">
+  <div class="split-column-icon"><!-- nothing here --></div>
+  <span class="column-split">split</span>
+</a>

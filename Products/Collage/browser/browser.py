@@ -12,7 +12,6 @@ from Products.Five.browser import BrowserView
 from Acquisition import aq_base, aq_inner, aq_parent
 
 from Products.CMFPlone import utils as cmfutils
-from Products.CMFPlone.browser.plone import cache_decorator
 from Products.CMFPlone.interfaces import INonStructuralFolder
 from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone.interfaces.NonStructuralFolder import \
@@ -226,5 +225,3 @@ class CollageUtility(object):
                     return parent.absolute_url()
 
         return None
-
-    getCollageObjectURL = cache_decorator(getCollageObjectURL)

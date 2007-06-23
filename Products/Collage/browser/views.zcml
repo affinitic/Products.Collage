@@ -21,10 +21,28 @@
 
   <browser:page
      name="standard"
+     for="Products.ATContentTypes.content.topic.ATTopic"
+     permission="zope.Public"
+     template="templates/topic_standard.pt"
+     class=".views.StandardTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+    <browser:page
+     name="album"
+     for="Products.ATContentTypes.content.topic.ATTopic"
+     permission="zope.Public"
+     template="templates/topic_album.pt"
+     class=".views.AlbumTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
      for="Products.ATContentTypes.content.event.ATEvent"
      permission="zope.Public"
      template="templates/event_standard.pt"
-     class=".views.SimpleView"
+     class=".views.BaseView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
@@ -42,7 +60,7 @@
      for="Products.Collage.interfaces.ICollageColumn"
      permission="zope.Public"
      template="templates/column_standard.pt"
-     class=".views.SimpleView"
+     class=".views.BaseView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
@@ -51,7 +69,7 @@
      for="*"
      permission="zope.Public"
      template="templates/fallback.pt"
-     class=".views.SimpleView"
+     class=".views.BaseView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 

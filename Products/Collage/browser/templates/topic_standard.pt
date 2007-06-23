@@ -1,0 +1,23 @@
+<tal:manager replace="structure provider:collage.ContentManager" />
+
+
+<tal:topic define="plone_view here/@@plone;
+		   toLocalizedTime nocall: plone_view/toLocalizedTime;
+		   isAnon view/isAnon;
+		   mtool view/mtool;
+		   portal_url view/portal_url;
+		   normalizeString view/normalizeString">
+  
+  <h4 tal:content="here/title_or_id">
+    Title or id
+  </h4>
+  
+  <p class="documentDescription"
+     tal:content="here/Description"
+     tal:condition="here/Description">
+    Description
+  </p>
+
+  <metal:listing-macro use-macro="here/atct_topic_view/macros/listing" />
+  
+</tal:topic>

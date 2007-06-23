@@ -8,6 +8,7 @@ from zope.component import getSiteManager
 from zope.component.interfaces import ComponentLookupError
 
 from interfaces import IDynamicViewManager
+from interfaces import ICollageAlias
 
 from persistent.dict import PersistentDict
 
@@ -76,6 +77,11 @@ class DynamicViewManager(object):
         return None
     
     def getViews(self, context, request):
+        if ICollageAlias.providedBy(context):
+            # use target as context
+            target = context.get_target()
+            if target: context = target
+            
         # assume desired layers are already in the request
         views = getAdapters((context, request), Interface)
 

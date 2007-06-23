@@ -5,7 +5,9 @@ from zope.interface import directlyProvidedBy, directlyProvides, alsoProvides
 
 from Products.CMFCore.utils import getToolByName
 
-from Products.Collage.interfaces import ICollageBrowserLayer, IDynamicViewManager
+from Products.Collage.interfaces import ICollageBrowserLayer
+from Products.Collage.interfaces import IDynamicViewManager
+from Products.Collage.interfaces import ICollageAlias
 
 class SimpleContentMenuViewlet(object):
     def portal_url(self):
@@ -17,6 +19,7 @@ class SimpleContentMenuViewlet(object):
 class LayoutViewlet(object):
     def getLayouts(self):
         manager = getUtility(IDynamicViewManager)
+        context = self.context
 
         # add marker interfaces to request
         alsoProvides(self.request, ICollageBrowserLayer)
@@ -26,16 +29,20 @@ class LayoutViewlet(object):
 
         # remove default layer from request
         provides.remove(IDefaultBrowserLayer)
-        directlyProvides(self.request, provides)        
+        directlyProvides(self.request, provides)
 
+        # handle aliased objects
+        alias = getattr(self.__parent__, '__alias__', None)
+        if alias: context = alias
+            
         # lookup active layout
-        active = manager.getLayout(self.context)
+        active = manager.getLayout(context)
 
         if not active:
-            active = manager.getDefaultLayout(self.context, self.request)
+            active = manager.getDefaultLayout(context, self.request)
         
         # compile list of layouts
-        views = manager.getViews(self.context, self.request)
+        views = manager.getViews(context, self.request)
 
         # filter out fallback
         views = [v for v in views if v[0] != u'fallback']
@@ -50,7 +57,14 @@ class LayoutViewlet(object):
         directlyProvides(self.request, *provides)
 
         return layouts
-    
+
+    def getTargetURL(self):
+        alias = getattr(self.__parent__, '__alias__', None)
+        if alias:
+            return alias.absolute_url()
+
+        return self.context.absolute_url()
+        
 class InsertNewItemViewlet(object):
     pass
 

@@ -19,9 +19,9 @@ CollageRowSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         required=False,
         widget=atapi.StringWidget(
             label='Title',
-            label_msgid='Collage_label_title',
+            label_msgid='label_optional_row_title',
             description='You may optionally supply a title for this row.',
-            i18n_domain='Collage',
+            i18n_domain='collage',
         )
     ),
 ))

@@ -26,8 +26,8 @@ CollageAliasSchema = ATCTContent.schema.copy() + atapi.Schema((
         allowed_types = (),
         widget=ReferenceBrowserWidget(
             label='Selected target object',
-            label_msgid='Collage_label_alias_target',
-            i18n_domain='Collage',
+            label_msgid='label_alias_target',
+            i18n_domain='collage',
             startup_directory='/',
         ),
     ),

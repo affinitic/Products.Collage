@@ -1,0 +1,45 @@
+# Malthe Borch <mborch@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: Collage\n"
+"POT-Creation-Date: 2007-06-28 13:40+0000\n"
+"Last-Translator: Malthe Borch <mborch@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+# content-types
+
+msgid "Collage"
+msgstr ""
+
+msgid "Row"
+msgstr ""
+
+msgid "Column"
+msgstr ""
+
+msgid "Alias"
+msgstr ""
+
+# schemas
+
+msgid "label_alias_target"
+msgstr ""
+
+msgid "label_optional_row_title"
+msgstr ""
+
+msgid "label_optional_column_title"
+msgstr ""
+
+msgid "label_show_title"
+msgstr ""
+
+msgid "label_show_description"
+msgstr ""

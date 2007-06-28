@@ -21,8 +21,8 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         searchable=True,
         widget=atapi.StringWidget(
             label='Title',
-            label_msgid='Collage_label_title',
-            i18n_domain='Collage',
+            label_msgid='label_title',
+            i18n_domain='plone',
         )
     ),
 
@@ -31,15 +31,15 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         searchable=True,
         widget=atapi.TextAreaWidget(
             label='Description',
-            label_msgid='Collage_label_description',
-            i18n_domain='Collage',
+            label_msgid='label_description',
+            i18n_domain='plone',
         )
     ),
     atapi.BooleanField('show_title',
         accessor='getShowTitle',
         widget=atapi.BooleanWidget(label='Show title',
                                    label_msgid='label_show_title',
-                                   i18n_domain='Collage'
+                                   i18n_domain='collage'
                                    ),
                        default=1
                        ),
@@ -48,7 +48,7 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         accessor='getShowDescription',
         widget=atapi.BooleanWidget(label='Show description',
                                    label_msgid='label_show_description',
-                                   i18n_domain='Collage'
+                                   i18n_domain='collage'
                                    ),
                        default=1
                        ),

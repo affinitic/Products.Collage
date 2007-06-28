@@ -15,7 +15,7 @@ class SimpleContentMenuViewlet(object):
 
     def test(self):
         return lambda a, b, c: a and b or c
-        
+
 class LayoutViewlet(object):
     def getLayouts(self):
         manager = getUtility(IDynamicViewManager)
@@ -70,3 +70,10 @@ class InsertNewItemViewlet(object):
 
 class SplitColumnViewlet(object):
     pass
+
+class IconViewlet(SimpleContentMenuViewlet):
+    def getIcon(self):
+        tt = getToolByName(self.context, 'portal_types')
+        obj_typeinfo = tt.getTypeInfo(self.context.portal_type)
+
+        return obj_typeinfo.getIcon()

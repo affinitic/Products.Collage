@@ -9,7 +9,7 @@
 		 view_actions python:here.plonifyActions(template_id=template_id, actions=actions, default_tab=default_tab)">
   
   <span class="row-type"
-	tal:condition="not: alias"
+	tal:condition="python: 'Collage' not in here.portal_type"
 	tal:content="string: ${here/portal_type}:" />
   
   <span class="row-type"

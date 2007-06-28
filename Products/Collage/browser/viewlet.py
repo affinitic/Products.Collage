@@ -77,3 +77,7 @@ class IconViewlet(SimpleContentMenuViewlet):
         obj_typeinfo = tt.getTypeInfo(self.context.portal_type)
 
         return obj_typeinfo.getIcon()
+
+class ActionsViewlet(SimpleContentMenuViewlet):
+    def isAlias(self):
+        return getattr(self.__parent__, '__alias__', None) and True

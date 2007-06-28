@@ -13,7 +13,7 @@
      name="30-actions"
      for="*"
      manager="Products.Collage.interfaces.IContentMenu"
-     class=".viewlet.SimpleContentMenuViewlet"
+     class=".viewlet.ActionsViewlet"
      template="viewlets/actions.pt"
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"

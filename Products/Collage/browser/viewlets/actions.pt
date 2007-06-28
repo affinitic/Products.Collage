@@ -11,18 +11,12 @@
   <div tal:omit-tag=""
        tal:define="test view/test;
 		   default_tab default_tab | request/default_tab | string:view;
-		   alias python: here.portal_type == 'CollageAlias' and here.get_target();
-		   action_object python: alias or here;
-		   actions python: here.portal_actions.listFilteredActionsFor(action_object);
+		   actions python: here.portal_actions.listFilteredActionsFor(here);
 		   view_actions python:here.plonifyActions(template_id=template_id, actions=actions, default_tab=default_tab)">
     
     <span class="row-type"
-	  tal:condition="python: 'Collage' not in here.portal_type"
-	  tal:content="string: ${here/portal_type}:" />
-    
-    <span class="row-type"
-	  tal:condition="alias"
-	  tal:content="string: ${alias/portal_type} (aliased):" />
+	  tal:condition="view/isAlias"
+	  i18n:translate="label_aliased">(alias)</span>
     
     <a class="action"
        tal:attributes="href string:${here/absolute_url}/delete_confirmation">

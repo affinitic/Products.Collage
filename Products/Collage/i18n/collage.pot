@@ -85,3 +85,8 @@ msgstr ""
 msgid "label_split_column"
 msgstr ""
 
+
+#. Default "(alias)"
+#: ./browser/viewlets/actions.pt:19
+msgid "label_aliased"
+msgstr ""

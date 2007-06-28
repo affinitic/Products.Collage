@@ -130,14 +130,6 @@
      />
   
   <browser:page
-     name="collage"
-     for="Products.Collage.interfaces.ICollage"
-     permission="zope.Public"
-     class=".browser.CollageView"
-     allowed_interface=".browser.ICollageView"
-     />
-  
-  <browser:page
      name="existing-items-form"
      for="Products.Collage.interfaces.ICollageColumn"
      permission="cmf.ModifyPortalContent"
@@ -171,6 +163,14 @@
      for="Products.Collage.interfaces.ICollageColumn"
      permission="cmf.ModifyPortalContent"
      class=".browser.SplitColumnView"
+     />
+
+  <browser:page
+     name="collage"
+     for="Products.Collage.interfaces.ICollage"
+     permission="zope.Public"
+     class=".collage.CollageView"
+     allowed_interface=".collage.ICollageView"
      />
   
   <include file="views.zcml" />

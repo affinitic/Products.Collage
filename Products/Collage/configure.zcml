@@ -9,5 +9,5 @@
   <subscriber handler=".content.updateCollageAliasLayout" />
   
   <utility factory=".viewmanager.DynamicViewManager" />  
-    
+
 </configure>

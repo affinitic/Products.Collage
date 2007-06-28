@@ -18,6 +18,10 @@ class BaseView(BrowserView):
     def portal_url(self):
         return getToolByName(self.context, 'portal_url')()
 
+    def site_properties(self):
+        props = getToolByName(self.context, 'portal_properties')
+        return props.site_properties
+    
 class RowView(BaseView):
     def getColumnBatches(self, bsize=3):
         columns = self.context.getFolderContents()

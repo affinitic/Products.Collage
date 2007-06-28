@@ -6,7 +6,8 @@
 		   isAnon view/isAnon;
 		   mtool view/mtool;
 		   portal_url view/portal_url;
-		   normalizeString view/normalizeString">
+		   normalizeString view/normalizeString;
+		   site_properties view/site_properties">
   
   <h4 tal:content="here/title_or_id">
     Title or id

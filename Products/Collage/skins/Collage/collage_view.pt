@@ -8,7 +8,8 @@
 <div metal:fill-slot="main">
     <metal:main-macro define-macro="main">
 
-        <div tal:define="edit_mode edit_mode|python: False"
+        <div tal:define="view here/@@collage;
+			 edit_mode view/edit_mode"
              id="collage">
 
             <div metal:use-macro="here/document_actions/macros/document_actions">

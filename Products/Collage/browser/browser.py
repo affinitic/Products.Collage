@@ -152,33 +152,6 @@ class ExistingItemsView(BrowserView):
                  'published': result.EffectiveDate or ''} for (result, obj) in
                 map(lambda result: (result, result.getObject()), items)]
 
-class ICollageView(Interface):
-    def getTemplate():
-        """Fetch template macro for a given brain taking the current
-        object layout into account."""
-
-    def isStructuralFolder():
-        """Copied from CMFPlone/browser/plone.py."""
-        
-class CollageView(BrowserView):
-    def getTemplate(self, brain):
-        layout = self.context.getTargetObjectLayout(brain.getObject());
-        return getattr(brain, layout, 'base_view')
-
-    def isStructuralFolder(self, instance):
-        context = instance
-        folderish = bool(getattr(aq_base(context), 'isPrincipiaFolderish',
-                                 False))
-        if not folderish:
-            return False
-        elif INonStructuralFolder.providedBy(context):
-            return False
-        elif z2INonStructuralFolder.isImplementedBy(context):
-            # BBB: for z2 interface compat
-            return False
-        else:
-            return folderish
-        
 class ICollageUtility(Interface):
     def loadCollageJS(self):
         """Determine if we need to load JS."""
@@ -198,11 +171,6 @@ class CollageUtility(object):
     def __init__(self, context, request):
         self.context = context
         self.request = request
-
-        url = request.get('ACTUAL_URL', request.get('URL', None))
-        if url.endswith('manage_page'):
-            # add marker interfaces to request
-            alsoProvides(self.request, ICollageEditLayer)
 
     def loadCollageJS(self):
         if ICollageEditLayer.providedBy(self.request):

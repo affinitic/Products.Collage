@@ -22,7 +22,7 @@
  </property>
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="atct_edit"/>
- <alias from="manage_page" to="collage_edit"/>
+ <alias from="manage_page" to="(selected layout)"/>
  <alias from="index.html" to="(dynamic view)"/>
  <alias from="properties" to="base_metadata"/>
  <alias from="sharing" to="folder_localrole_form"/>

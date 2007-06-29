@@ -1,0 +1,8 @@
+Changelog for Collage
+
+    (name of developer listed in brackets)
+
+
+Added HISTORY file
+    Lets use this file again to log changes...
+    [pelle]

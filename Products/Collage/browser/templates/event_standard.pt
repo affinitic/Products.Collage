@@ -6,9 +6,9 @@
 
   <div class="vevent">
     
-    <h4 tal:content="here/title_or_id">
+    <h2 tal:content="here/title_or_id">
       Title or id
-    </h4>
+    </h2>
     
     <p class="documentDescription"
        tal:content="here/Description"

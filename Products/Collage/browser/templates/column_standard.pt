@@ -1,9 +1,9 @@
 <tal:manager replace="structure provider:collage.ContentManager" />
 
-<h3 tal:condition="here/Title"
+<h2 tal:condition="here/Title"
     tal:content="here/Title">
   Title
-</h3>
+</h2>
 
 <p class="documentDescription"
    tal:content="here/Description"

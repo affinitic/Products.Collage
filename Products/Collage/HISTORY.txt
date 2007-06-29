@@ -2,6 +2,13 @@ Changelog for Collage
 
     (name of developer listed in brackets)
 
+Nested headings properly
+    Lets have a 'safe' structure:    
+    <h1> title of the collage
+    <h2> could be a row heading and / or object item
+    http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-logical-headings
+    [pelle]
+    
 
 Added HISTORY file
     Lets use this file again to log changes...

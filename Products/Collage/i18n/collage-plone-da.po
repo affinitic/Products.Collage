@@ -17,7 +17,7 @@ msgstr ""
 # content-types
 
 msgid "Collage"
-msgstr "Collage"
+msgstr "Kollage"
 
 msgid "Row"
 msgstr "Række"
@@ -28,19 +28,5 @@ msgstr "Kolonne"
 msgid "Alias"
 msgstr "Alias"
 
-# schemas
-
-msgid "label_alias_target"
-msgstr ""
-
-msgid "label_optional_row_title"
-msgstr ""
-
-msgid "label_optional_column_title"
-msgstr ""
-
-msgid "label_show_title"
-msgstr ""
-
-msgid "label_show_description"
-msgstr ""
+msgid "Back to Collage"
+msgstr "Tilbage til kollagen"

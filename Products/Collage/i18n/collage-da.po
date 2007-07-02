@@ -90,3 +90,24 @@ msgstr "Opdel"
 #: ./browser/viewlets/actions.pt:19
 msgid "label_aliased"
 msgstr "(alias)"
+
+msgid "label_alias_target"
+msgstr "Vælg alias"
+
+msgid "label_optional_row_title"
+msgstr "Overskrift"
+
+msgid "help_optional_row_title"
+msgstr "Hvis du ønsker en overskrift til denne række, kan du skrive den her."
+
+msgid "label_optional_column_title"
+msgstr "Overskrift"
+
+msgid "help_optional_column_title"
+msgstr "Hvis du ønsker en overskrift til denne kolonne, kan du skrive den her."
+
+msgid "label_show_title"
+msgstr "Vis overskrift"
+
+msgid "label_show_description"
+msgstr "Vis beskrivelse"

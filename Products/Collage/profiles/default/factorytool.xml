@@ -3,5 +3,7 @@
  <factorytypes>
   <type portal_type="Collage"/>
   <type portal_type="CollageRow"/>
+  <type portal_type="CollageColumn"/>
+  <type portal_type="CollageAlias"/>
  </factorytypes>
 </object>

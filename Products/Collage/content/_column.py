@@ -21,6 +21,7 @@ CollageColumnSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
             label='Title',
             label_msgid='label_optional_column_title',
             description='You may optionally supply a title for this column.',
+            description_msgid='help_optional_column_title',
             i18n_domain='collage',
         )
     ),

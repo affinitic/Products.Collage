@@ -91,6 +91,16 @@ msgstr "Opdel"
 msgid "label_aliased"
 msgstr "(alias)"
 
+#. Default "Insert new item"
+#: ./browser/viewlets/insert-new-item.pt:13
+msgid "label_insert_new_item"
+msgstr "Indsæt nyt objekt"
+
+#. Default "Select a content-type to insert."
+#: ./browser/viewlets/insert-new-item.pt:18
+msgid "help_insert_new_item"
+msgstr "Vælg en indholdstype, der skal oprettes."
+
 msgid "label_alias_target"
 msgstr "Vælg alias"
 

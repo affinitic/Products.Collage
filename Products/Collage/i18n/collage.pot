@@ -90,6 +90,16 @@ msgstr ""
 msgid "label_aliased"
 msgstr ""
 
+#. Default "Insert new item"
+#: ./browser/viewlets/insert-new-item.pt:13
+msgid "label_insert_new_item"
+msgstr ""
+
+#. Default "Select a content-type to insert."
+#: ./browser/viewlets/insert-new-item.pt:18
+msgid "help_insert_new_item"
+msgstr ""
+
 msgid "label_alias_target"
 msgstr ""
 

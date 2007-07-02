@@ -173,7 +173,8 @@ class CollageUtility(object):
         self.request = request
 
     def loadCollageJS(self):
-        if ICollageEditLayer.providedBy(self.request):
+        url = self.request.get('ACTUAL_URL', self.request.get('URL', None))
+        if url.endswith('manage_page'):
             return True
         
     def isCollageContent(self, parent=None):

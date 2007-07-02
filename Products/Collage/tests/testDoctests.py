@@ -17,5 +17,5 @@ def test_suite():
         [ZopeDocTestSuite(module,
                           test_class=PloneTestCase.PloneTestCase,
                           optionflags=optionflags)
-         for module in ('Products.Collage.content._collagecolumn',)]
+         for module in []]
         )

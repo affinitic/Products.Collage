@@ -121,3 +121,9 @@ msgstr "Vis overskrift"
 
 msgid "label_show_description"
 msgstr "Vis beskrivelse"
+
+msgid "label_content_type"
+msgstr "Indholdstype"
+
+msgid "label_all_content_types"
+msgstr "Alle"

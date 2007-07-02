@@ -113,16 +113,8 @@ ul.collage-content-menu li {
 
 /* existing items */
 
-table.collage-existing-items thead td {
-  font-weight: bold;
-}
-
-table.collage-existing-items tbody td {
-  background-position: top left;
-}
-
-table.collage-existing-items td {
-  padding: 3px;
+div.insert-existing-items h4 {
+  line-height: 16px;
 }
 
 /* customizable: toolbars */

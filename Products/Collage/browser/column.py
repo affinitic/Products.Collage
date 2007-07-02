@@ -3,6 +3,8 @@ from Products.Five.browser import BrowserView
 from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone import utils as cmfutils
 
+COLLAGE_TYPES = ('Collage', 'CollageRow', 'CollageColumn', 'CollageAlias')
+
 class ExistingItemsView(BrowserView):
     def __init__(self, context, request):
         self.context = context
@@ -27,15 +29,34 @@ class ExistingItemsView(BrowserView):
         return cmfutils.getToolByName(self.context,
                                       'portal_catalog')
 
+    def portal_url(self):
+        return cmfutils.getToolByName(self.context, 'portal_url')()
+
     def normalizeString(self, str):
         return self.context.plone_utils.normalizeString(str)
         
     def getItems(self):
         items = self.catalog(self.request,
-                             sort_on='modified')[:self.request.get('count', 20)]
+                             sort_order='reverse',
+                             sort_on='modified')
 
+        # filter out collage content types
+        items = [i for i in items if i.portal_type not in COLLAGE_TYPES]
+
+        # limit count
+        items = items[:self.request.get('count', 20)]
+
+        # setup description cropping
+        cropText = self.context.cropText
+        props = cmfutils.getToolByName(self.context, 'portal_properties')
+        site_properties = props.site_properties
+        
+        desc_length = getattr(site_properties, 'search_results_description_length', 25)
+        desc_ellipsis = getattr(site_properties, 'ellipsis', '...')
+        
         return [{'UID': obj.UID(),
                  'title': result.Title,
+                 'description': cropText(result.Description, desc_length, desc_ellipsis),
                  'type': result.Type,
                  'portal_type':  self.normalizeString(result.portal_type),
                  'modified': result.ModificationDate,

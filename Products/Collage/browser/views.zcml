@@ -5,7 +5,7 @@
      name="standard"
      for="Products.ATContentTypes.content.document.ATDocument"
      permission="zope.Public"
-     template="templates/document_standard.pt"
+     template="views/document_standard.pt"
      class=".views.StandardDocumentView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
@@ -14,7 +14,7 @@
      name="featured"
      for="Products.ATContentTypes.content.document.ATDocument"
      permission="zope.Public"
-     template="templates/document_featured.pt"
+     template="views/document_featured.pt"
      class=".views.FeaturedDocumentView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
@@ -23,7 +23,7 @@
      name="standard"
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
-     template="templates/topic_standard.pt"
+     template="views/topic_standard.pt"
      class=".views.StandardTopicView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
@@ -32,7 +32,7 @@
      name="album"
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
-     template="templates/topic_album.pt"
+     template="views/topic_album.pt"
      class=".views.AlbumTopicView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
@@ -41,7 +41,7 @@
      name="standard"
      for="Products.ATContentTypes.content.event.ATEvent"
      permission="zope.Public"
-     template="templates/event_standard.pt"
+     template="views/event_standard.pt"
      class=".views.BaseView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
@@ -50,7 +50,7 @@
      name="standard"
      for="Products.Collage.interfaces.ICollageRow"
      permission="zope.Public"
-     template="templates/row_standard.pt"
+     template="views/row_standard.pt"
      class=".views.StandardRowView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
@@ -59,7 +59,7 @@
      name="standard"
      for="Products.Collage.interfaces.ICollageColumn"
      permission="zope.Public"
-     template="templates/column_standard.pt"
+     template="views/column_standard.pt"
      class=".views.BaseView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
@@ -68,7 +68,7 @@
      name="fallback"
      for="*"
      permission="zope.Public"
-     template="templates/fallback.pt"
+     template="views/fallback.pt"
      class=".views.BaseView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />

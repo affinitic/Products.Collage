@@ -12,7 +12,7 @@ from Products.Collage.interfaces import IDynamicViewManager
 
 from Acquisition import aq_inner, aq_parent
 
-class CollageActionsView(BrowserView):
+class ActionsView(BrowserView):
     def setDynamicView(self):
         layout = self.request['layout']
 

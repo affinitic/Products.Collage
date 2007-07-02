@@ -6,7 +6,7 @@
      attribute="setDynamicView"
      for="*"
      permission="cmf.ModifyPortalContent"
-     class=".browser.CollageActionsView"
+     class=".actions.ActionsView"
      />
   
   <browser:page
@@ -14,7 +14,7 @@
      attribute="insertRow"
      for="Products.Collage.interfaces.ICollage"
      permission="cmf.ModifyPortalContent"
-     class=".browser.CollageActionsView"
+     class=".actions.ActionsView"
      />  
   
   <browser:page
@@ -22,7 +22,7 @@
      attribute="reorderObjects"
      for="zope.app.container.interfaces.IContainer"
      permission="cmf.ModifyPortalContent"
-     class=".browser.CollageActionsView"
+     class=".actions.ActionsView"
      />
   
   <browser:page
@@ -30,7 +30,7 @@
      attribute="insertAlias"
      for="Products.Collage.interfaces.ICollageColumn"
      permission="cmf.ModifyPortalContent"
-     class=".browser.CollageActionsView"
+     class=".actions.ActionsView"
      />
   
   <browser:page
@@ -38,7 +38,7 @@
      attribute="splitColumn"
      for="Products.Collage.interfaces.ICollageColumn"
      permission="cmf.ModifyPortalContent"
-     class=".browser.CollageActionsView"
+     class=".actions.ActionsView"
      />
   
 </configure>

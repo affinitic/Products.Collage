@@ -27,19 +27,5 @@ msgstr ""
 msgid "Alias"
 msgstr ""
 
-# schemas
-
-msgid "label_alias_target"
-msgstr ""
-
-msgid "label_optional_row_title"
-msgstr ""
-
-msgid "label_optional_column_title"
-msgstr ""
-
-msgid "label_show_title"
-msgstr ""
-
-msgid "label_show_description"
+msgid "Back to Collage"
 msgstr ""

@@ -85,8 +85,28 @@ msgstr ""
 msgid "label_split_column"
 msgstr ""
 
-
 #. Default "(alias)"
 #: ./browser/viewlets/actions.pt:19
 msgid "label_aliased"
+msgstr ""
+
+msgid "label_alias_target"
+msgstr ""
+
+msgid "label_optional_row_title"
+msgstr ""
+
+msgid "help_optional_row_title"
+msgstr ""
+
+msgid "label_optional_column_title"
+msgstr ""
+
+msgid "help_optional_column_title"
+msgstr ""
+
+msgid "label_show_title"
+msgstr ""
+
+msgid "label_show_description"
 msgstr ""

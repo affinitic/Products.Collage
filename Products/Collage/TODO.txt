@@ -1,3 +1,1 @@
-  * i18n!
-
   * Add generic setup uninstall when its possible (the stonor way)

@@ -4,7 +4,8 @@ Collage
 :: compatibility
 
    Plone 2.5
-
+   Five 1.4.2
+   
 :: about
 
 Collage is a product for aggregating and displaying multiple content items on
@@ -24,10 +25,14 @@ fits inside a collage.
 The Alias-type is provided to allow displaying existing objects from the site
 inside the collage.
 
-:: Javascript-functionality
+:: javascript-functionality
 
 We use the jquery-library to facilitate easy scripting. Ajax is used to move
 content items, columns and rows around without reloading the page.
+
+:: status
+
+Used in production.
 
 :: credits
 

@@ -21,7 +21,7 @@
 	  <a class="layout"
 	     tal:define="value layout/id;
 			 display layout/name"
-             tal:attributes="href string:${view/getTargetURL}/setCollageContentLayout?layout=$value;
+             tal:attributes="href string:${view/getTargetURL}/set-content-layout?layout=$value;
                              title display"
              i18n:attributes="title">
 	    <span i18n:translate=""

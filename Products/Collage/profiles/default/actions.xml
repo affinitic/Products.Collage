@@ -2,8 +2,8 @@
 <object name="portal_actions" meta_type="Plone Actions Tool">
  <action-provider name="portal_actions">
   <action title="Back to Collage" action_id="revisitCollage" category="object"
-     condition_expr="object/@@collage_utility/isCollageContent"
-     url_expr="string:${object/@@collage_utility/getCollageObjectURL}/manage_page"
+     condition_expr="object/@@collage_helper/isCollageContent"
+     url_expr="string:${object/@@collage_helper/getCollageObjectURL}/manage_page"
      visible="True">
    <permission>List folder contents</permission>
   </action>

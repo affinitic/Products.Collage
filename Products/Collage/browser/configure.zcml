@@ -34,57 +34,13 @@
      />
   
   <browser:page
-     name="setCollageContentLayout"
-     attribute="setDynamicView"
-     for="*"
-     permission="cmf.ModifyPortalContent"
-     class=".browser.SelectDynamicViewView"
-     />
-  
-  <browser:page
-     name="collage_utility"
-     for="*"
-     permission="zope.Public"
-     class=".browser.CollageUtility"
-     allowed_interface=".browser.ICollageUtility"
-     />
-  
-  <browser:page
      name="existing-items-form"
      for="Products.Collage.interfaces.ICollageColumn"
      permission="cmf.ModifyPortalContent"
-     class=".browser.ExistingItemsView"
+     class=".column.ExistingItemsView"
      template="existing_items_form.pt"
      />
   
-  <browser:page
-     name="insert-alias"
-     for="Products.Collage.interfaces.ICollageColumn"
-     permission="cmf.ModifyPortalContent"
-     class=".browser.InsertAliasView"
-     />  
-  
-  <browser:page
-     name="insert-row"
-     for="Products.Collage.interfaces.ICollage"
-     permission="cmf.ModifyPortalContent"
-     class=".browser.InsertRowView"
-     />  
-  
-  <browser:page
-     name="reorder-object"
-     for="zope.app.container.interfaces.IContainer"
-     permission="cmf.ModifyPortalContent"
-     class=".browser.ReorderObjectView"
-     />
-  
-  <browser:page
-     name="split-column"
-     for="Products.Collage.interfaces.ICollageColumn"
-     permission="cmf.ModifyPortalContent"
-     class=".browser.SplitColumnView"
-     />
-
   <browser:page
      name="collage"
      for="Products.Collage.interfaces.ICollage"
@@ -93,8 +49,18 @@
      allowed_interface=".collage.ICollageView"
      />
   
+  <browser:page
+     name="collage_helper"
+     for="*"
+     permission="zope.Public"
+     class=".helper.CollageHelper"
+     allowed_interface=".helper.ICollageHelper"
+     />
+  
   <include file="views.zcml" />
 
   <include file="viewlets.zcml" />
+
+  <include file="actions.zcml" />
   
 </configure>

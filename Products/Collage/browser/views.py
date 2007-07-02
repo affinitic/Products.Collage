@@ -54,6 +54,12 @@ class RowView(BaseView):
 class StandardRowView(RowView):
     title = u'Automatic'
 
+class LargeLeftRowView(StandardRowView):
+    title = u'Large left'
+
+class LargeRightRowView(StandardRowView):
+    title = u'Large right'
+
 class StandardDocumentView(BaseView):
     title = u'Standard'
 

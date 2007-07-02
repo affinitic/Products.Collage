@@ -56,6 +56,24 @@
      />
 
   <browser:page
+     name="large-left"
+     for="Products.Collage.interfaces.ICollageRow"
+     permission="zope.Public"
+     template="views/row_largeleft.pt"
+     class=".views.LargeLeftRowView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="large-right"
+     for="Products.Collage.interfaces.ICollageRow"
+     permission="zope.Public"
+     template="views/row_largeright.pt"
+     class=".views.LargeRightRowView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="standard"
      for="Products.Collage.interfaces.ICollageColumn"
      permission="zope.Public"

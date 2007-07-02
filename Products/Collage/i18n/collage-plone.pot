@@ -29,3 +29,6 @@ msgstr ""
 
 msgid "Back to Collage"
 msgstr ""
+
+msgid "Manage page"
+msgstr ""

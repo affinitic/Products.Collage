@@ -30,3 +30,6 @@ msgstr "Alias"
 
 msgid "Back to Collage"
 msgstr "Tilbage til kollagen"
+
+msgid "Manage page"
+msgstr "Opbygning"

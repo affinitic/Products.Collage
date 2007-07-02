@@ -20,7 +20,7 @@ msgid "Collage"
 msgstr "Collage"
 
 msgid "Row"
-msgstr "Række"
+msgstr "RÃ¦kke"
 
 msgid "Column"
 msgstr "Kolonne"

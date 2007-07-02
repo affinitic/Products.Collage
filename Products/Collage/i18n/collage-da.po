@@ -20,31 +20,31 @@ msgstr "Kolonne indsat"
 
 #: ./browser/browser.py:80
 msgid "Row added."
-msgstr "Række tilføjet"
+msgstr "RÃ¦kke tilfÃ¸jet"
 
 #: ./browser/browser.py:37
 msgid "View changed."
-msgstr "Visning ændret"
+msgstr "Visning Ã¦ndret"
 
 #. Default: "Add row"
 #: ./skins/Collage/collage_view.pt:51
 msgid "button_add_collagerow"
-msgstr "Tilføj række"
+msgstr "TilfÃ¸j rÃ¦kke"
 
 #. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
-msgstr "Vælg et eksisterende indholdsobjekt, du vil indsætte. Objekt vil blive indsat som et alias. Vælg rullemenu for at filtrere efter type."
+msgstr "VÃ¦lg et eksisterende indholdsobjekt, du vil indsÃ¦tte. Objektet vil blive indsat som et alias. VÃ¦lg rullemenu for at filtrere efter type."
 
 #. Default: "Choose a layout for this object."
 #: ./browser/viewlets/layout.pt:17
 msgid "help_select_layout"
-msgstr "Vælg et layout for dette objekt"
+msgstr "VÃ¦lg et layout for dette objekt"
 
 #. Default: "insert existing item"
 #: ./browser/viewlets/insert-existing-item.pt:11
 msgid "label_insert_existing_item"
-msgstr Indsæt eksisterende objekt""
+msgstr "IndsÃ¦t eksisterende objekt"
 
 #. Default: "Loading..."
 #: ./browser/viewlets/insert-existing-item.pt:25
@@ -64,7 +64,7 @@ msgstr "Flyt til venstre"
 #. Default: "Move right"
 #: ./browser/viewlets/modify_order_horizontal.pt:16
 msgid "label_move_right"
-msgstr "Flyt til højre"
+msgstr "Flyt til hÃ¸jre"
 
 #. Default: "Move up"
 #: ./browser/viewlets/modify_order_vertical.pt:16
@@ -74,12 +74,12 @@ msgstr "Flyt op"
 #. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
 #: ./skins/Collage/collage_view.pt:44
 msgid "label_no_items_added"
-msgstr "Dette Collage-objekt har ikke noget indhold endnu. Tilføj indholdsobjekter ved at bruge rullemenuen, så de optræder her."
+msgstr "Denne kollage er tom."
 
 #. Default: "select layout"
 #: ./browser/viewlets/layout.pt:12
 msgid "label_select_layout"
-msgstr "Vælg layout"
+msgstr "VÃ¦lg layout"
 
 #. Default: "split"
 #: ./browser/viewlets/split-column.pt:9

@@ -19,7 +19,7 @@
 	  i18n:translate="label_aliased">(alias)</span>
     
     <a class="action"
-       tal:attributes="href string:${here/absolute_url}/delete_confirmation">
+       tal:attributes="href string:${view/getTargetURL}/delete_confirmation">
       <span i18n:translate="" i18n:domain="plone">Delete</span>
     </a>
     

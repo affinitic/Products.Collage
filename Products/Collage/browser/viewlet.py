@@ -16,7 +16,14 @@ class SimpleContentMenuViewlet(object):
     def test(self):
         return lambda a, b, c: a and b or c
 
-class LayoutViewlet(object):
+    def getTargetURL(self):
+        alias = getattr(self.__parent__, '__alias__', None)
+        if alias:
+            return alias.absolute_url()
+
+        return self.context.absolute_url()        
+
+class LayoutViewlet(SimpleContentMenuViewlet):
     def getLayouts(self):
         manager = getUtility(IDynamicViewManager)
         context = self.context
@@ -58,13 +65,6 @@ class LayoutViewlet(object):
 
         return layouts
 
-    def getTargetURL(self):
-        alias = getattr(self.__parent__, '__alias__', None)
-        if alias:
-            return alias.absolute_url()
-
-        return self.context.absolute_url()
-        
 class InsertNewItemViewlet(object):
     pass
 

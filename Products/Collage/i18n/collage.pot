@@ -126,3 +126,18 @@ msgstr ""
 
 msgid "label_all_content_types"
 msgstr ""
+
+msgid "Automatic"
+msgstr ""
+
+msgid "Large left"
+msgstr ""
+
+msgid "Large right"
+msgstr ""
+
+msgid "Standard"
+msgstr ""
+
+msgid "Featured"
+msgstr ""

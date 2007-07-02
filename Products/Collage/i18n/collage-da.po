@@ -127,3 +127,18 @@ msgstr "Indholdstype"
 
 msgid "label_all_content_types"
 msgstr "Alle"
+
+msgid "Automatic"
+msgstr "Automatisk"
+
+msgid "Large left"
+msgstr "Stor venstre"
+
+msgid "Large right"
+msgstr "Stor højre"
+
+msgid "Standard"
+msgstr "Almindelig"
+
+msgid "Featured"
+msgstr "Fremhævet"

@@ -5,7 +5,7 @@
      name="collage.ContentManager"
      provides="Products.Collage.interfaces.IContentMenu"
      class=".manager.ContentViewletManager"
-     template="manager.pt"
+     template="templates/manager.pt"
      permission="zope.Public"
      />  
   
@@ -14,7 +14,7 @@
      for="Products.Collage.interfaces.ICollage"
      permission="zope.Public"
      class=".renderer.SimpleContainerRenderer"
-     template="collage_renderer.pt"
+     template="templates/collage_renderer.pt"
      />
   
   <browser:page
@@ -22,7 +22,7 @@
      for="Products.Collage.interfaces.ICollageRow"
      permission="zope.Public"
      class=".renderer.SimpleContainerRenderer"
-     template="row_renderer.pt"
+     template="templates/row_renderer.pt"
      />
   
   <browser:page
@@ -30,7 +30,7 @@
      for="Products.Collage.interfaces.ICollageColumn"
      permission="zope.Public"
      class=".renderer.SimpleContainerRenderer"
-     template="column_renderer.pt"
+     template="templates/column_renderer.pt"
      />
   
   <browser:page
@@ -38,7 +38,7 @@
      for="Products.Collage.interfaces.ICollageColumn"
      permission="cmf.ModifyPortalContent"
      class=".column.ExistingItemsView"
-     template="existing_items_form.pt"
+     template="templates/existing_items_form.pt"
      />
   
   <browser:page

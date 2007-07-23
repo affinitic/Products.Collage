@@ -19,8 +19,10 @@ class SimpleContainerRenderer(BrowserView):
         # save list of interfaces
         provides = list(directlyProvidedBy(self.request))
 
-        # remove default layer from request
-        provides.remove(IDefaultBrowserLayer)
+        # remove default layer from request if present
+        if IDefaultBrowserLayer in provides:
+            provides.remove(IDefaultBrowserLayer)
+
         directlyProvides(self.request, provides)        
         
         views = []

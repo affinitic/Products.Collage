@@ -1,0 +1,9 @@
+<tal:manager replace="structure provider:collage.ContentManager" />
+
+<img class="collage-image"
+     tal:attributes="alt here/title_or_id;
+		     src string:${here/absolute_url}/image_preview" />
+
+<p class="discreet"
+   tal:condition="here/Description"
+   tal:content="here/Description" />

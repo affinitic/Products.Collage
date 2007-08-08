@@ -48,6 +48,15 @@
 
   <browser:page
      name="standard"
+     for="Products.ATContentTypes.content.image.ATImage"
+     permission="zope.Public"
+     template="views/image_standard.pt"
+     class=".views.StandardImageView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+  
+  <browser:page
+     name="standard"
      for="Products.Collage.interfaces.ICollageRow"
      permission="zope.Public"
      template="views/row_standard.pt"

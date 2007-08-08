@@ -71,3 +71,9 @@ class StandardTopicView(BaseView):
 
 class AlbumTopicView(BaseView):
     title = u'Album'
+
+class ImageView(BaseView):
+    pass
+
+class StandardImageView(ImageView):
+    title = u'Normal'

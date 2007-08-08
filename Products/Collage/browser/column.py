@@ -5,6 +5,8 @@ from Products.CMFPlone import utils as cmfutils
 
 COLLAGE_TYPES = ('Collage', 'CollageRow', 'CollageColumn', 'CollageAlias')
 
+from utils import escape_to_entities
+
 class ExistingItemsView(BrowserView):
     def __init__(self, context, request):
         self.context = context
@@ -21,8 +23,13 @@ class ExistingItemsView(BrowserView):
         self.request.RESPONSE.setHeader("Content-Type",
                                         "text/html; charset=ISO-8859-1")
 
-        encoding = getSiteEncoding(self.context.context)        
-        return self.index().decode(encoding).encode('latin-1')
+        encoding = getSiteEncoding(self.context.context)
+
+        content = self.index().decode(encoding)
+
+        # convert special characters to HTML entities since we're recoding
+        # to latin-1
+        return escape_to_entities(content).encode('latin-1')
     
     @property
     def catalog(self):

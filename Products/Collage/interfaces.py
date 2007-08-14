@@ -1,5 +1,4 @@
 from zope import interface
-from zope.publisher.interfaces.browser import IBrowserRequest
 
 from zope.viewlet.interfaces import IViewletManager
 
@@ -18,11 +17,11 @@ class ICollageAlias(interface.Interface):
 class IDynamicViewManager(interface.Interface):
     pass
 
-class ICollageBrowserLayer(IBrowserRequest):
+class ICollageBrowserLayer(interface.Interface):
     """Collage browser layer. Views registered with this layer
     are available to objects inside a collage."""
 
-class ICollageEditLayer(IBrowserRequest):
+class ICollageEditLayer(interface.Interface):
     """Collage edit layer."""
 
 class IContentMenu(IViewletManager):

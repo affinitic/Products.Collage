@@ -1,7 +1,8 @@
 from zope.viewlet import viewlet
 from zope.component import getUtility, getMultiAdapter
-from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from zope.interface import directlyProvidedBy, directlyProvides, alsoProvides
+from zope.interface import directlyProvidedBy, directlyProvides
+
+from zope.publisher.interfaces import ILayer
 
 from Products.CMFCore.utils import getToolByName
 
@@ -28,16 +29,6 @@ class LayoutViewlet(SimpleContentMenuViewlet):
         manager = getUtility(IDynamicViewManager)
         context = self.context
 
-        # add marker interfaces to request
-        alsoProvides(self.request, ICollageBrowserLayer)
-        
-        # save list of interfaces
-        provides = list(directlyProvidedBy(self.request))
-
-        # remove default layer from request
-        provides.remove(IDefaultBrowserLayer)
-        directlyProvides(self.request, provides)
-
         # handle aliased objects
         alias = getattr(self.__parent__, '__alias__', None)
         if alias: context = alias
@@ -46,24 +37,17 @@ class LayoutViewlet(SimpleContentMenuViewlet):
         active = manager.getLayout(context)
 
         if not active:
-            active = manager.getDefaultLayout(context, self.request)
+            active, title = manager.getDefaultLayout(context)
         
-        # compile list of layouts
-        views = manager.getViews(context, self.request)
+        # compile list of registered layouts
+        layouts = manager.getLayouts(context)
 
-        # filter out fallback
-        views = [v for v in views if v[0] != u'fallback']
-        
-        layouts = [{'id': view[0],
-                    'name': getattr(view[1], 'title', view[1].__name__),
-                    'active': view[0] == active} for view in views]
+        # filter out fallback view
+        layouts = filter(lambda (name, title): name != u'fallback', layouts)
 
-        # restore interfaces
-        provides.remove(ICollageBrowserLayer)
-        provides.append(IDefaultBrowserLayer)
-        directlyProvides(self.request, *provides)
-
-        return layouts
+        return [{'id': name,
+                 'name': title,
+                 'active': name == active} for (name, title) in layouts]
 
 class InsertNewItemViewlet(object):
     pass

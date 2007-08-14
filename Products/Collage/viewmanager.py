@@ -2,42 +2,34 @@ from zope.annotation.interfaces import IAnnotations
 from zope.annotation.interfaces import IAttributeAnnotatable
 
 from zope.interface import Interface
-from zope.interface import implements, alsoProvides, providedBy
+from zope.interface import \
+     implements, alsoProvides, providedBy
 
 from zope.component import getSiteManager
 from zope.component.interfaces import ComponentLookupError
 
 from interfaces import IDynamicViewManager
 from interfaces import ICollageAlias
+from interfaces import ICollageBrowserLayer
 
 from persistent.dict import PersistentDict
 
 ANNOTATIONS_KEY = u'Collage'
 
-def getAdapters(objects, provided, context=None):
-    """Apparently it may be the case that views are registered
-    with a non-callable factory which will cause the getAdapters
-    method from zope.component to fail.
-    """
+def getViewFactoryInfo(context, layer):
+    """Return view factory info for this context and browser layer."""
     
-    try:
-        sitemanager = getSiteManager(context)
-    except ComponentLookupError:
-        # Oh blast, no site manager. This should *never* happen!
-        return []
+    sm = getSiteManager(context)
 
-    result = []
-    for name, factory in sitemanager.adapters.lookupAll(map(providedBy, objects),
-                                                        provided):
-        if callable(factory):
-            adapter = factory(*objects)
-            
-            if adapter is not None:
-                result.append((name, adapter))
-        else:
-            continue
-        
-    return result
+    context_ifaces = providedBy(context)
+
+    lookupAll = sm.adapters.lookupAll
+    
+    collage_aware = lookupAll((context_ifaces, layer), Interface)
+    collage_agnostic = lookupAll((context_ifaces, Interface), Interface)
+
+    return [(name, getattr(factory, 'title', name)) \
+            for (name, factory) in collage_aware if (name, factory) not in collage_agnostic]
 
 class DynamicViewManager(object):
     implements(IDynamicViewManager)
@@ -59,33 +51,24 @@ class DynamicViewManager(object):
         storage = self.getStorage(context)
         storage['layout'] = layout
 
-    def getDefaultLayout(self, context, request):
-        views = self.getViews(context, request)
+    def getDefaultLayout(self, context):
+        layouts = self.getLayouts(context)
 
-        if views:
+        if layouts:
             # look for a standard view (by naming convention)
-            for v in views:
-                name, view = v
+            for name, title in layouts:
                 if name == u'standard':
-                    return name
+                    return (name, title)
             
-            # otherwise return first view
-            name, view = views[0]
+            # otherwise return first view factory
+            return layouts[0]
 
-            return name
-
-        return None
+        raise ValueError
     
-    def getViews(self, context, request):
+    def getLayouts(self, context):
         if ICollageAlias.providedBy(context):
             # use target as context
             target = context.get_target()
             if target: context = target
             
-        # assume desired layers are already in the request
-        views = getAdapters((context, request), Interface)
-
-        # only allow metaclasses
-        views = [v for v in views if 'metaclass' in str(v)]
-
-        return views
+        return getViewFactoryInfo(context, ICollageBrowserLayer)

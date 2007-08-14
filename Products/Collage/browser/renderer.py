@@ -1,7 +1,8 @@
 from zope.interface import Interface
-from zope.interface import directlyProvidedBy, directlyProvides, alsoProvides
+from zope.interface import directlyProvidedBy, directlyProvides
 from zope.component import getUtility, getMultiAdapter
-from zope.publisher.interfaces.browser import IDefaultBrowserLayer
+
+from zope.publisher.interfaces import ILayer
 
 from Products.Five.browser import BrowserView
 
@@ -12,19 +13,11 @@ class SimpleContainerRenderer(BrowserView):
     def getItems(self, contents=None):
         # needed to circumvent bug :-(
         self.request.debug = False
-        
-        # add marker interfaces to request
-        alsoProvides(self.request, ICollageBrowserLayer)
-        
-        # save list of interfaces
-        provides = list(directlyProvidedBy(self.request))
 
-        # remove default layer from request if present
-        if IDefaultBrowserLayer in provides:
-            provides.remove(IDefaultBrowserLayer)
+        # transmute request interfaces
+        ifaces = directlyProvidedBy(self.request)
+        directlyProvides(self.request, ICollageBrowserLayer)
 
-        directlyProvides(self.request, provides)        
-        
         views = []
 
         if not contents:
@@ -36,7 +29,7 @@ class SimpleContainerRenderer(BrowserView):
             layout = manager.getLayout(context)
 
             if not layout:
-                layout = manager.getDefaultLayout(context, self.request)
+                layout, title = manager.getDefaultLayout(context)
 
             if ICollageAlias.providedBy(context):
                 target = context.get_target()
@@ -54,9 +47,7 @@ class SimpleContainerRenderer(BrowserView):
             views.append(view)
 
         # restore interfaces
-        provides.remove(ICollageBrowserLayer)
-        provides.append(IDefaultBrowserLayer)
-        directlyProvides(self.request, *provides)
+        directlyProvides(self.request, ifaces)
 
         return views
 

@@ -24,9 +24,9 @@ def getViewFactoryInfo(context, layer):
     context_ifaces = providedBy(context)
 
     lookupAll = sm.adapters.lookupAll
-    
+
     collage_aware = lookupAll((context_ifaces, layer), Interface)
-    collage_agnostic = lookupAll((context_ifaces, Interface), Interface)
+    collage_agnostic = list(lookupAll((context_ifaces, Interface), Interface))
 
     return [(name, getattr(factory, 'title', name)) \
             for (name, factory) in collage_aware if (name, factory) not in collage_agnostic]

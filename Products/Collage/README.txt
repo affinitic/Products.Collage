@@ -3,7 +3,7 @@ Collage
 
 :: compatibility
 
-   Plone 2.5
+   Plone 2.5 and 3.0
    Five 1.4.2
    
 :: about
@@ -33,6 +33,17 @@ content items, columns and rows around without reloading the page.
 :: status
 
 Used in production.
+
+:: support for add-on packages
+
+These should be added to the collective.collage package:
+
+* https://svn.plone.org/svn/collective/collective.collage
+
+under ./browser/addons/<package name>
+
+Make sure collective.collage is in your python path if you want these views
+registered for use in Collage.
 
 :: credits
 

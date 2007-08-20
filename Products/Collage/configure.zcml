@@ -12,4 +12,8 @@
 	   provides=".interfaces.IDynamicViewManager"
 	   factory=".viewmanager.DynamicViewManager" />  
 
+  <configure zcml:condition="installed collective.collage">
+    <include package="collective.collage" />
+  </configure>
+  
 </configure>

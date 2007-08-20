@@ -6,7 +6,6 @@ from zope.interface import \
      implements, alsoProvides, providedBy
 
 from zope.component import getSiteManager
-from zope.component.interfaces import ComponentLookupError
 
 from interfaces import IDynamicViewManager
 from interfaces import ICollageAlias
@@ -16,43 +15,31 @@ from persistent.dict import PersistentDict
 
 ANNOTATIONS_KEY = u'Collage'
 
-def getViewFactoryInfo(context, layer):
-    """Return view factory info for this context and browser layer."""
-    
-    sm = getSiteManager(context)
-
-    context_ifaces = providedBy(context)
-
-    lookupAll = sm.adapters.lookupAll
-
-    collage_aware = lookupAll((context_ifaces, layer), Interface)
-    collage_agnostic = list(lookupAll((context_ifaces, Interface), Interface))
-
-    return [(name, getattr(factory, 'title', name)) \
-            for (name, factory) in collage_aware if (name, factory) not in collage_agnostic]
-
 class DynamicViewManager(object):
     implements(IDynamicViewManager)
 
-    def getStorage(self, context):
+    def __init__(self, context):
+        self.context = context
+        
+    def getStorage(self):
         try:
-            annotations = IAnnotations(context)
+            annotations = IAnnotations(self.context)
         except:
-            alsoProvides(context, IAttributeAnnotatable)
-            annotations = IAnnotations(context)
+            alsoProvides(self.context, IAttributeAnnotatable)
+            annotations = IAnnotations(self.context)
 
         return annotations.setdefault(ANNOTATIONS_KEY, PersistentDict())
 
-    def getLayout(self, context):
-        storage = self.getStorage(context)
+    def getLayout(self):
+        storage = self.getStorage()
         return storage.get('layout', None)
 
-    def setLayout(self, context, layout):
-        storage = self.getStorage(context)
+    def setLayout(self, layout):
+        storage = self.getStorage()
         storage['layout'] = layout
 
-    def getDefaultLayout(self, context):
-        layouts = self.getLayouts(context)
+    def getDefaultLayout(self):
+        layouts = self.getLayouts()
 
         if layouts:
             # look for a standard view (by naming convention)
@@ -65,10 +52,32 @@ class DynamicViewManager(object):
 
         raise ValueError
     
-    def getLayouts(self, context):
-        if ICollageAlias.providedBy(context):
-            # use target as context
-            target = context.get_target()
+    def getLayouts(self):
+        context = self.context
+        
+        if ICollageAlias.providedBy(self.context):
+            # use target as self.context
+            
+            target = self.context.get_target()
             if target: context = target
             
-        return getViewFactoryInfo(context, ICollageBrowserLayer)
+        return self._getViewFactoryInfo(ICollageBrowserLayer, context=context)
+
+    def _getViewFactoryInfo(self, layer, context=None):
+        """Return view factory info for this context and browser layer."""
+
+        if not context:
+            context = self.context
+        
+        sm = getSiteManager(context)
+        
+        context_ifaces = providedBy(context)
+        
+        lookupAll = sm.adapters.lookupAll
+        
+        collage_aware = lookupAll((context_ifaces, layer), Interface)
+        collage_agnostic = list(lookupAll((context_ifaces, Interface), Interface))
+        
+        return [(name, getattr(factory, 'title', name)) \
+                for (name, factory) in collage_aware if (name, factory) not in collage_agnostic]
+

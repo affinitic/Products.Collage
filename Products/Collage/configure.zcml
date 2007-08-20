@@ -7,7 +7,9 @@
   <include package=".browser" />
   
   <subscriber handler=".content.updateCollageAliasLayout" />
-  
-  <utility factory=".viewmanager.DynamicViewManager" />  
+
+  <adapter for="*"
+	   provides=".interfaces.IDynamicViewManager"
+	   factory=".viewmanager.DynamicViewManager" />  
 
 </configure>

@@ -1,6 +1,5 @@
 from zope import event
 from zope.app.event import objectevent
-from zope.component import getUtility
 
 from Products.Five.browser import BrowserView
 
@@ -16,8 +15,8 @@ class ActionsView(BrowserView):
     def setDynamicView(self):
         layout = self.request['layout']
 
-        manager = getUtility(IDynamicViewManager)
-        manager.setLayout(self.context, layout)
+        manager = IDynamicViewManager(self.context)
+        manager.setLayout(layout)
 
         self.context.plone_utils.addPortalMessage(_(u'View changed.'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])

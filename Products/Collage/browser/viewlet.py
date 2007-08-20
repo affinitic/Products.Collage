@@ -1,5 +1,5 @@
 from zope.viewlet import viewlet
-from zope.component import getUtility, getMultiAdapter
+from zope.component import getMultiAdapter
 from zope.interface import directlyProvidedBy, directlyProvides
 
 from zope.publisher.interfaces import ILayer
@@ -26,21 +26,22 @@ class SimpleContentMenuViewlet(object):
 
 class LayoutViewlet(SimpleContentMenuViewlet):
     def getLayouts(self):
-        manager = getUtility(IDynamicViewManager)
         context = self.context
 
         # handle aliased objects
         alias = getattr(self.__parent__, '__alias__', None)
         if alias: context = alias
-            
+
+        manager = IDynamicViewManager(context)
+
         # lookup active layout
-        active = manager.getLayout(context)
+        active = manager.getLayout()
 
         if not active:
-            active, title = manager.getDefaultLayout(context)
+            active, title = manager.getDefaultLayout()
         
         # compile list of registered layouts
-        layouts = manager.getLayouts(context)
+        layouts = manager.getLayouts()
 
         # filter out fallback view
         layouts = filter(lambda (name, title): name != u'fallback', layouts)

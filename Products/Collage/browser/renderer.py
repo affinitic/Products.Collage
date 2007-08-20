@@ -1,6 +1,6 @@
 from zope.interface import Interface
 from zope.interface import directlyProvidedBy, directlyProvides
-from zope.component import getUtility, getMultiAdapter
+from zope.component import getMultiAdapter
 
 from zope.publisher.interfaces import ILayer
 
@@ -25,11 +25,11 @@ class SimpleContainerRenderer(BrowserView):
 
         for item in contents:
             target = context = item.getObject()
-            manager = getUtility(IDynamicViewManager)
-            layout = manager.getLayout(context)
+            manager = IDynamicViewManager(context)
+            layout = manager.getLayout()
 
             if not layout:
-                layout, title = manager.getDefaultLayout(context)
+                layout, title = manager.getDefaultLayout()
 
             if ICollageAlias.providedBy(context):
                 target = context.get_target()

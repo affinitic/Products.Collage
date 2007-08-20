@@ -6,8 +6,14 @@ from Products.Collage.config import PROJECTNAME
 
 def setup_gs_profile(self, portal, out):
     setup_tool = cmfutils.getToolByName(portal, 'portal_setup', None)
-    setup_tool.runAllImportStepsFromProfile('profile-Collage:default')
-    
+
+    try:
+        setup_tool.runAllImportStepsFromProfile('profile-Collage:default')
+    except AttributeError:
+        # BBB for GenericSetup 1.2
+        context = setup_tool._getImportContext('profile-Collage:default')
+        setup_tool._runImportStepsFromContext(context)
+
 def install(self):
     out = StringIO()
     portal = getToolByName(self,'portal_url').getPortalObject()

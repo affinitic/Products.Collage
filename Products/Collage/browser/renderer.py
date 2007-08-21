@@ -2,8 +2,6 @@ from zope.interface import Interface
 from zope.interface import directlyProvidedBy, directlyProvides
 from zope.component import getMultiAdapter
 
-from zope.publisher.interfaces import ILayer
-
 from Products.Five.browser import BrowserView
 
 from Products.Collage.interfaces import ICollageBrowserLayer, IDynamicViewManager

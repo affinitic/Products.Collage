@@ -2,8 +2,6 @@ from zope.viewlet import viewlet
 from zope.component import getMultiAdapter
 from zope.interface import directlyProvidedBy, directlyProvides
 
-from zope.publisher.interfaces import ILayer
-
 from Products.CMFCore.utils import getToolByName
 
 from Products.Collage.interfaces import ICollageBrowserLayer

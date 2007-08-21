@@ -1,3 +1,5 @@
+from types import UnicodeType
+
 from Products.Five.browser import BrowserView
 
 from Products.CMFPlone.utils import getSiteEncoding
@@ -25,7 +27,9 @@ class ExistingItemsView(BrowserView):
 
         encoding = getSiteEncoding(self.context.context)
 
-        content = self.index().decode(encoding)
+        content = self.index()
+        if not isinstance(content, UnicodeType):
+            content = content.decode(encoding)
 
         # convert special characters to HTML entities since we're recoding
         # to latin-1

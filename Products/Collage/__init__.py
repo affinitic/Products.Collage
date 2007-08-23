@@ -14,24 +14,30 @@ from Products.GenericSetup import profile_registry
 from Products.CMFCore.DirectoryView import registerDirectory
 import Products.CMFPlone.interfaces
 
+from Products.Archetypes.atapi import listTypes, process_types
+
+GLOBALS = globals()
+
+from config import DEFAULT_ADD_CONTENT_PERMISSION, PROJECTNAME
+
 # Make the skins available as DirectoryViews                                                        
-registerDirectory( 'skins', globals() )
+registerDirectory('skins', GLOBALS)
 
 def initialize(context):
     from Products.Collage import content
     from Products.CMFCore import utils as cmfutils
     from Products.Archetypes import atapi
 
-    all_content_types, \
-    all_constructors, \
-    all_ftis = atapi.process_types(atapi.listTypes('Collage'),
-                                   'Collage')
+    # initialize the content, including types and add permissions
+    content_types, constructors, ftis = process_types(
+        listTypes(PROJECTNAME),
+        PROJECTNAME)
     
-    cmfutils.ContentInit('Collage Content',
-                         content_types = all_content_types,
-                         permission = 'Add Collage content',
-                         extra_constructors = all_constructors,
-                         fti = all_ftis,
+    cmfutils.ContentInit('%s Content' % PROJECTNAME,
+                         content_types = content_types,
+                         permission = DEFAULT_ADD_CONTENT_PERMISSION,
+                         extra_constructors = constructors,
+                         fti = ftis,
                          ).initialize(context)
     
     profile_registry.registerProfile(
@@ -39,7 +45,7 @@ def initialize(context):
         title='Collage profile',
         description='Profile for Collage',
         path='profiles/default',
-        product='Collage',
+        product=PROJECTNAME,
         profile_type=EXTENSION,
         for_=Products.CMFPlone.interfaces.IPloneSiteRoot)
     

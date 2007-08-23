@@ -10,8 +10,6 @@
   
   <div tal:omit-tag=""
        tal:define="test view/test;
-		   default_tab default_tab | request/default_tab | string:view;
-		   actions python: here.portal_actions.listFilteredActionsFor(here);
 		   view_actions view/getViewActions">
     
     <span class="row-type"

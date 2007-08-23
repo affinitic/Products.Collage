@@ -9,22 +9,37 @@
     <metal:main-macro define-macro="main">
 
         <div tal:define="view here/@@collage;
-			 edit_mode view/edit_mode"
+			 edit_mode view/edit_mode;
+			 d nocall: context/document_actions/macros/document_actions|python:None;
+			 plone2 python: d is not None;
+			 plone3 python: d is None"
              id="collage">
 
-            <div metal:use-macro="here/document_actions/macros/document_actions">
-                Document actions (print, sendto etc)
-            </div>
+	     <tal:block condition="plone2">
+	       <div metal:use-macro="here/document_actions/macros/document_actions">
+                 Document actions (print, sendto etc)
+               </div>
+	     </tal:block>
+
+	     <tal:block condition="plone3">
+	       <div tal:replace="structure provider:plone.abovecontenttitle" />
+             </tal:block>
 
 	    <h1 tal:condition="here/getShowTitle|nothing"
 		tal:content="object_title" class="documentFirstHeading">
               Title or id
             </h1>
 
-            <div metal:use-macro="here/document_byline/macros/byline">
-              Get the byline - contains details about author and modification date.
-            </div>
+	    <tal:block condition="plone3">
+              <div tal:replace="structure provider:plone.belowcontenttitle" />
+            </tal:block>
 
+            <tal:block condition="plone2">
+              <div metal:use-macro="here/document_byline/macros/byline">
+		Get the byline - contains details about author and modification date.
+              </div>
+	    </tal:block>
+	    
 	    <tal:description condition="here/getShowDescription|nothing">
 	      <p class="documentDescription"
 		 tal:content="here/Description"

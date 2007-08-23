@@ -58,7 +58,12 @@ class ExistingItemsView(BrowserView):
         items = items[:self.request.get('count', 20)]
 
         # setup description cropping
-        cropText = self.context.cropText
+        try:
+            cropText = self.context.restrictedTraverse('@@plone').cropText
+        except AttributeError:
+            # BBB: Plone 2.5
+            cropText = self.context.cropText
+
         props = cmfutils.getToolByName(self.context, 'portal_properties')
         site_properties = props.site_properties
         

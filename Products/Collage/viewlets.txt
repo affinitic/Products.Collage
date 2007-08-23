@@ -1,0 +1,84 @@
+Viewlets
+========
+
+Some imports:
+
+  >>> from zope.component import getMultiAdapter
+  >>> from zope.interface import alsoProvides
+  >>> from pprint import pprint as pp
+
+Set up a test request
+
+  >>> from Products.Collage.tests import TestRequest 
+  >>> request = TestRequest("en")
+
+Let's add some content:
+
+  >>> _ = folder.invokeFactory(id='collage', type_name='Collage')
+  >>> collage = folder[_]
+  >>> _ = collage.invokeFactory(id='row', type_name='CollageRow')
+  >>> row = collage[_]
+  >>> _ = row.invokeFactory(id='column', type_name='CollageColumn')
+  >>> column = row[_]
+  
+To use the Collage views we need to add a layer to the request:
+
+  >>> from Products.Collage.interfaces import ICollageBrowserLayer
+  >>> alsoProvides(request, ICollageBrowserLayer)
+
+Let's examine the actions viewlet
+
+  >>> view = getMultiAdapter((row, request), name=u"fallback")
+
+  >>> from zope.viewlet.manager import ViewletManager
+  >>> from Products.Collage.interfaces import IContentMenu
+  >>> try:
+  ...   ContentMenu = ViewletManager(u'contentmenu', IContentMenu, template=None, bases=())
+  ... except TypeError:
+  ...   # BBB: support for for Zope 2.9
+  ...   ContentMenu = ViewletManager(IContentMenu)
+  >>> manager = ContentMenu(row, request, view)
+  
+Viewlets are registered on a custom layer and available only to users with
+permission to modify the context.
+
+  >>> from Products.Collage.interfaces import ICollageEditLayer
+  >>> alsoProvides(request, ICollageEditLayer)
+  >>> self.setRoles(['Manager'])
+
+  
+Actions
+-------
+  
+  >>> viewlet = getMultiAdapter((row, request, view, manager), name=u"30-actions")
+
+Let's look at the actions for our folder:
+
+  >>> for action in viewlet.getViewActions():
+  ...   for key in ['url', 'selected', 'id', 'title']:
+  ...     if key not in action.keys(): raise ValueError
+
+  
+Insert new items
+----------------
+
+  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"insert-new-item")
+
+Let's look at the returned content types:
+
+  >>> for info in viewlet.getAddableTypes():
+  ...   if set(info.keys()) != set(['id', 'description', 'icon', 'title']): raise ValueError
+
+
+Insert existing items
+---------------------
+
+  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"insert-existing-item")
+
+TODO!
+
+Next we examine the ajax-view:
+
+  >>> view = column.restrictedTraverse('@@existing-items-form')
+  >>> for item in view.getItems():
+  ...   if set(item.keys()) != set(['title', 'description', 'portal_type', 'modified', 'published', 'type', 'UID']): raise ValueError

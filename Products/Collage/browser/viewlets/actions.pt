@@ -12,7 +12,7 @@
        tal:define="test view/test;
 		   default_tab default_tab | request/default_tab | string:view;
 		   actions python: here.portal_actions.listFilteredActionsFor(here);
-		   view_actions python:here.plonifyActions(template_id=template_id, actions=actions, default_tab=default_tab)">
+		   view_actions view/getViewActions">
     
     <span class="row-type"
 	  tal:condition="view/isAlias"

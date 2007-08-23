@@ -49,8 +49,22 @@ class LayoutViewlet(SimpleContentMenuViewlet):
                  'active': name == active} for (name, title) in layouts]
 
 class InsertNewItemViewlet(object):
-    pass
+    def normalizeString(self):
+        return getToolByName(self.context, 'plone_utils').normalizeString
 
+    def getAddableTypes(self):
+        plone_view = self.context.restrictedTraverse('@@plone')
+        container = plone_view.getCurrentFolder()
+
+        allowed_types = container.allowedContentTypes()
+
+        portal_url = getToolByName(self.context, 'portal_url')()
+        
+        return [{'title': t.Title(),
+                 'description': t.Description(),
+                 'icon': '%s/%s' % (portal_url, t.getIcon()),
+                 'id': t.getId()} for t in allowed_types]
+    
 class SplitColumnViewlet(object):
     pass
 
@@ -64,3 +78,14 @@ class IconViewlet(SimpleContentMenuViewlet):
 class ActionsViewlet(SimpleContentMenuViewlet):
     def isAlias(self):
         return getattr(self.__parent__, '__alias__', None) and True
+
+    def getViewActions(self):
+        atool = getToolByName(self.context, 'portal_actions')
+        actions = atool.listFilteredActionsFor(self.context)
+
+        try:
+            plone_view = self.context.restrictedTraverse('@@plone')
+            return plone_view.prepareObjectTabs()
+        except AttributeError:
+            # BBB: support for Plone 2.5
+            return self.context.plonifyActions(template_id=None, actions=actions, default_tab='view')

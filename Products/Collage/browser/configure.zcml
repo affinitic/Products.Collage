@@ -1,6 +1,14 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser">
 
+  <browser:page
+     name="manage_collage"
+     for="Products.Collage.content.Collage"
+     class=".collage.CollageView"
+     attribute="render_manage_view"
+     permission="cmf.ModifyPortalContent"
+     />
+  
   <browser:viewletManager
      name="collage.ContentManager"
      provides="Products.Collage.interfaces.IContentMenu"
@@ -56,7 +64,8 @@
      class=".helper.CollageHelper"
      allowed_interface=".helper.ICollageHelper"
      />
-  
+
+     
   <include file="views.zcml" />
 
   <include file="viewlets.zcml" />

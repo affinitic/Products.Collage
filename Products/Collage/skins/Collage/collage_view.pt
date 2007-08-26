@@ -8,20 +8,16 @@
 <div metal:fill-slot="main">
     <metal:main-macro define-macro="main">
 
-        <div tal:define="view here/@@collage;
-			 edit_mode view/edit_mode;
-			 d nocall: context/document_actions/macros/document_actions|python:None;
-			 plone2 python: d is not None;
-			 plone3 python: d is None"
+        <div tal:define="view here/@@collage"
              id="collage">
 
-	     <tal:block condition="plone2">
+	     <tal:block condition="view/isPlone2">
 	       <div metal:use-macro="here/document_actions/macros/document_actions">
                  Document actions (print, sendto etc)
                </div>
 	     </tal:block>
 
-	     <tal:block condition="plone3">
+	     <tal:block condition="view/isPlone3">
 	       <div tal:replace="structure provider:plone.abovecontenttitle" />
              </tal:block>
 
@@ -30,11 +26,11 @@
               Title or id
             </h1>
 
-	    <tal:block condition="plone3">
+	    <tal:block condition="view/isPlone3">
               <div tal:replace="structure provider:plone.belowcontenttitle" />
             </tal:block>
 
-            <tal:block condition="plone2">
+            <tal:block condition="view/isPlone2">
               <div metal:use-macro="here/document_byline/macros/byline">
 		Get the byline - contains details about author and modification date.
               </div>
@@ -52,23 +48,32 @@
                 show related items if they exist
             </div>
 
+            <tal:block condition="view/isPlone3">
+              <div tal:replace="structure provider:plone.abovecontentbody" />
+	    </tal:block>
+	    
 	    <div tal:replace="structure here/@@renderer">
 	      Collage content
             </div>
 	    
-	    <p tal:condition="edit_mode">
+	    <p tal:condition="view/edit_mode">
 	      <span class="discreet"
 		    i18n:translate="label_no_items_added"
 		    tal:condition="not: here/getFolderContents">
                 This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here.
               </span>
 
-	      <form action="insert-row" tal:condition="python: edit_mode">
+	      <form action="insert-row" tal:condition="view/edit_mode">
 		<input type="submit"
 		       i18n:attributes="value button_add_collagerow"
 		       value="Add row" />
               </form>
-	    </p>	    
+	    </p>
+
+	    <tal:block condition="view/isPlone3">
+              <div tal:replace="structure provider:plone.belowcontentbody" />
+	    </tal:block>
+
         </div>
     </metal:main-macro>
 </div>

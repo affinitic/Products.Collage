@@ -12,7 +12,8 @@ from Products.CMFPlone.tests import PloneTestCase
 
 import Products.Five.testbrowser
     
-REQUIRE_TESTBROWSER = ['viewlets.txt']
+REQUIRE_TESTBROWSER = ['viewlets.txt',
+                       'kss.txt']
 
 OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
                doctest.ELLIPSIS |

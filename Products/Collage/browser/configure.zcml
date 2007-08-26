@@ -65,6 +65,28 @@
      allowed_interface=".helper.ICollageHelper"
      />
 
+  <browser:page
+     name="collage_kss_helper"
+     for="*"
+     permission="zope.Public"
+     class=".kss.KSSHelper"
+     allowed_interface=".kss.IKSSHelper"
+     />
+  
+  <browser:page
+     name="kss_collage_macro_proxy"
+     for="*"
+     permission="zope.Public"
+     class=".kss.CollageMacrosView"
+     />
+ 
+  <browser:page
+     name="kss_field_decorator_dummy_view" 
+     for="*"
+     permission="zope.Public"
+     class=".kss.DummyFieldsView"
+     allowed_attributes="getKssUIDClass getKssClassesInlineEditable getKssClasses"
+     />
      
   <include file="views.zcml" />
 

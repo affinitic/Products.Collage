@@ -1,14 +1,21 @@
 <tal:manager replace="structure provider:collage.ContentManager" />
 
-<h2 tal:condition="here/Title"
-    tal:content="here/Title">
-  Title
+<h2 metal:define-macro="title"
+    tal:define="view context/@@collage_kss_helper"
+    tal:attributes="id string:${view/getUniqueIdentifier}-title;
+		    class python: view.getKssClasses('title')"
+    tal:condition="here/Title">
+  <span metal:define-slot="inside" 
+        tal:replace="here/Title">title</span>
 </h2>
-
-<p class="documentDescription"
-   tal:content="here/Description"
+  
+<p metal:define-macro="description"
+   tal:define="view context/@@collage_kss_helper"
+   tal:attributes="id string:${view/getUniqueIdentifier}-description;
+		   class python: view.getKssClasses('description')"
    tal:condition="here/Description">
-  Description
+  <span metal:define-slot="inside" 
+        tal:replace="here/Description">description</span>
 </p>
 
 <tal:renderer define="renderer nocall: here/@@renderer">
@@ -18,9 +25,9 @@
 	 tal:attributes="class string:$layout">
       
       <tal:columns replace="structure python: renderer(columns)" />
-
+      
       <div class="visualClear"><!-- nothing here --></div>
-
+      
     </div>  
   </tal:batches>
 </tal:renderer>

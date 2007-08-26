@@ -9,14 +9,22 @@
 		   normalizeString view/normalizeString;
 		   site_properties view/site_properties">
   
-  <h2 tal:content="here/title_or_id">
-    Title or id
+  <h2 metal:define-macro="title"
+      tal:define="view context/@@collage_kss_helper"
+      tal:attributes="id string:${view/getUniqueIdentifier}-title;
+		      class python: view.getKssClasses('title')"
+      tal:condition="here/Title">
+    <span metal:define-slot="inside" 
+          tal:replace="here/Title">title</span>
   </h2>
   
-  <p class="documentDescription"
-     tal:content="here/Description"
+  <p metal:define-macro="description"
+     tal:define="view context/@@collage_kss_helper"
+     tal:attributes="id string:${view/getUniqueIdentifier}-description;
+		     class python: view.getKssClasses('description')"
      tal:condition="here/Description">
-    Description
+    <span metal:define-slot="inside" 
+          tal:replace="here/Description">description</span>
   </p>
 
   <metal:listing-macro use-macro="here/atct_topic_view/macros/listing" />

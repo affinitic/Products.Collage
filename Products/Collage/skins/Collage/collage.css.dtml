@@ -141,20 +141,6 @@ span.collage-navigation a {
   text-decoration: none;
 }
 
-dl#collage-addmenu {
-}
-
-.collage-edit-tag {
-  font-size: 0.9em;
-  color: &dtml-discreetColor; !important;
-  font-weight: normal !important;
-  text-decoration: none;
-}
-
-.pagebuider-row {
-  margin-bottom: 1em;
-}
-
 /* toolbar icons */
 
 .display-collagerow_default_view {
@@ -171,77 +157,6 @@ dl#collage-addmenu {
 
 .display-collagecolumn_default_view {
     background-image: url(icon-collagecolumn_default_view.gif) !important;
-}
-
-/* toolbar layout */
-
-#collage .collage-toolbar #navlist .toolbarIcon a.selected {
-    border: 1px solid &dtml-notifyBorderColor;;
-    background: transparent;
-}
-
-.collage-ordering {
-    float: right;
-    margin-left: -6px;
-    margin-top: 4px;
-}
-
-* html  #collage .collage-toolbar #navlist li {
-height: 1%;
-}
-
-#collage .collage-toolbar #navlist li.separator {
-    margin: 0 1em 0 1em;
-}
-
-#collage .collage-toolbar span {
-    padding-right: 10px;
-}
-
-#collage .collage-toolbar #navlist
-{
-border: 1px solid &dtml-contentViewBorderColor;;
-border-top: none;
-padding: 0 0 0 5px;
-margin: 0;
-background-color: &dtml-contentViewBackgroundColor;;
-
-    font-size: 0.8em;
-    color: &dtml-discreetColor;;
-}
-
-#collage .collage-toolbar #navlist li
-{
-display: inline;
-list-style: none;
-padding: 3px;
-background-position: center center;
-line-height: 18px;
-}
-
-#collage .collage-toolbar #navlist .utility
-{
-
-}
-
-#collage .collage-toolbar #navlist .utility a
-{
-padding-right: 4px;
-}
-
-#collage .collage-toolbar #navlist li a
-{
-text-decoration: none;
-padding-right: 10px;
-background-color: transparent;
-color: #000;
-border: none;
-}
-
-* html #collage .collage-toolbar #navlist li a { padding: 0 8px; }
-
-#collage .collage-toolbar #navlist li a:hover {
-
 }
 
 /* collagerow layout */

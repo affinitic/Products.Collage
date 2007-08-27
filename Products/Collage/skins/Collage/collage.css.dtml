@@ -117,24 +117,6 @@ div.insert-existing-items h4 {
   line-height: 16px;
 }
 
-/* customizable: toolbars */
-
-.display-collagerow_default_view {
-    background-image: url(icon-collagerow_default_view.gif) !important;
-}
-
-.display-collagerow_largeleft_view {
-    background-image: url(icon-collagerow_largeleft_view.gif) !important;
-}
-
-.display-collagerow_largeright_view {
-    background-image: url(icon-collagerow_largeright_view.gif) !important;
-}
-
-.display-collagecolumn_default_view {
-    background-image: url(icon-collagecolumn_default_view.gif) !important;
-}
-
 /* note: you should not need to customize classes below */
 
 span.collage-navigation a {

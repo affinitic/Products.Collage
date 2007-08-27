@@ -154,6 +154,7 @@ span.collage-navigation a {
   text-align:left;
   position:relative;
   width: 100%;
+  clear: both;
 }
 
 * html #collage .collage-row {

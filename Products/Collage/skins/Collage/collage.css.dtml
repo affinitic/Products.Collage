@@ -20,7 +20,7 @@
   margin-bottom: 1em;
 }
 
-.collage-object .documentActions {
+.collage-item .documentActions {
   display: none;
 }
 
@@ -172,20 +172,20 @@ span.collage-navigation a {
 }
 
 
-.collage-object {
+.collage-item {
     margin-bottom: 0.5em;
 }
 
-#collage .collage-row .block_1 div.collage-object {
+#collage .collage-row .block_1 div.collage-item {
     margin-right: 0.5em;
 }
 
-#collage .collage-row .block_2 div.collage-object {
+#collage .collage-row .block_2 div.collage-item {
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
 
-#collage .collage-row .block_3 div.collage-object {
+#collage .collage-row .block_3 div.collage-item {
     margin-left: 0.5em;
 }
 
@@ -219,8 +219,8 @@ span.collage-navigation a {
 
 /* styles for hiding unwanted document metadata and actions */
 
-#collage .collage-object .documentByLine,
-#collage .collage-object .link-parent{
+#collage .collage-item .documentByLine,
+#collage .collage-item .link-parent{
     display: none;
 }
 

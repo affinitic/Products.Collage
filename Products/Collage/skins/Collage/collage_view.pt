@@ -21,14 +21,16 @@
 	       <div tal:replace="structure provider:plone.abovecontenttitle" />
              </tal:block>
 
-	    <h1 tal:condition="here/getShowTitle|nothing"
-		tal:content="object_title" class="documentFirstHeading">
-              Title or id
-            </h1>
-
-	    <tal:block condition="view/isPlone3">
-              <div tal:replace="structure provider:plone.belowcontenttitle" />
-            </tal:block>
+             <h1 tal:condition="here/getShowTitle|nothing"
+		 class="documentFirstHeading"> 
+               <metal:field use-macro="python:here.widget('title', mode='view')">
+		 Title
+               </metal:field>
+             </h1>
+	     
+	     <tal:block condition="view/isPlone3">
+               <div tal:replace="structure provider:plone.belowcontenttitle" />
+             </tal:block>
 
             <tal:block condition="view/isPlone2">
               <div metal:use-macro="here/document_byline/macros/byline">

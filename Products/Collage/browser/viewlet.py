@@ -116,7 +116,7 @@ class PasteViewlet(SimpleContentMenuViewlet):
         try:
             ob = m.bind(app)
         except ConflictError:
-            raise
+            return None
 
         return ob
     
@@ -127,14 +127,14 @@ class PasteViewlet(SimpleContentMenuViewlet):
         if self.clipboard_data_valid:
             # verify that we are allowed to paste this item here
             item = self._get_clipboard_item()
-            portal_type = item.portal_type
-            allowed_types = self.context.allowedContentTypes()
-            if portal_type in (t.getId() for t in allowed_types):
-                return super(PasteViewlet, self).__call__()
-            else:
-                return u''
-        else:
-            return u''
+
+            if item:
+                portal_type = item.portal_type
+                allowed_types = self.context.allowedContentTypes()
+                if portal_type in (t.getId() for t in allowed_types):
+                    return super(PasteViewlet, self).__call__()
+
+        return u''
 
     def clipboard_item_title(self):
         return u'Paste "%s"' % self._get_clipboard_item().title_or_id()

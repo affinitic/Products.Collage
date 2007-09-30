@@ -35,12 +35,11 @@
   font-size: 1em;
 }
 
-.collage-header span.row-type,
-.collage-header span.row-create,
-.collage-header span.row-layout,
-.collage-header span.column-split {
-  color: &dtml-discreetColor;;
-  text-transform: lowercase;
+.collage-header span {
+    color: &dtml-discreetColor;;
+    text-transform: lowercase;
+    float: left;
+    margin-right: 3px;
 }
 
 .collage-header a.action,
@@ -60,18 +59,17 @@
   color: &dtml-fontColor;;
 }
 
+.copy-object-icon,
+.paste-object-icon,
 .split-column-icon {
-  background: url(&dtml-portal_url;/icon-split.gif) no-repeat top left;
-  float: left;
-  width: 14px;
-  height: 14px;
-  padding-right: 3px;
+    float: left;
+    width: 14px;
+    height: 14px;
+    padding-right: 3px;
+    background: url(&dtml-portal_url;/icon-split.gif) no-repeat top left;
 }
 
 /* expandable sections */
-
-.expandable-section {
-}
 
 .expandable-section .expandable-label .expandable-icon {
   background: url(&dtml-portal_url;/icon-plusminus.gif) no-repeat top left;

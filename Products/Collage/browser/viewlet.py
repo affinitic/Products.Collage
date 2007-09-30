@@ -8,6 +8,9 @@ from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 
+from OFS.CopySupport import _cb_decode
+from OFS import Moniker
+
 class SimpleContentMenuViewlet(object):
     def portal_url(self):
         return getToolByName(self.context, 'portal_url')()
@@ -89,3 +92,49 @@ class ActionsViewlet(SimpleContentMenuViewlet):
         except AttributeError:
             # BBB: support for Plone 2.5
             return self.context.plonifyActions(template_id=None, actions=actions, default_tab='view')
+
+class CopyViewlet(SimpleContentMenuViewlet):
+    pass
+
+class PasteViewlet(SimpleContentMenuViewlet):
+    @property
+    def clipboard_data_valid(self):
+        cb_dataValid = getattr(self.context, 'cb_dataValid', None)
+        
+        if callable(cb_dataValid):
+            return cb_dataValid()
+
+    def _get_clipboard_item(self):
+        cp = self.request.get('__cp')
+        op, mdatas = _cb_decode(cp) # see OFS/CopySupport.py
+
+        # just get the first item on the clipboard
+        mdata = mdatas[0]
+        m = Moniker.loadMoniker(mdata)
+
+        app = self.context.getPhysicalRoot()
+        try:
+            ob = m.bind(app)
+        except ConflictError:
+            raise
+
+        return ob
+    
+    def __call__(self):
+        """Only render if the clipboard contains an object that can
+        be added to this container."""
+
+        if self.clipboard_data_valid:
+            # verify that we are allowed to paste this item here
+            item = self._get_clipboard_item()
+            portal_type = item.portal_type
+            allowed_types = self.context.allowedContentTypes()
+            if portal_type in (t.getId() for t in allowed_types):
+                return super(PasteViewlet, self).__call__()
+            else:
+                return u''
+        else:
+            return u''
+
+    def clipboard_item_title(self):
+        return u'Paste "%s"' % self._get_clipboard_item().title_or_id()

@@ -12,7 +12,7 @@
      />
   
   <browser:viewlet
-     name="layout"
+     name="50-layout"
      for="*"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.LayoutViewlet"
@@ -22,7 +22,7 @@
      />
   
   <browser:viewlet
-     name="insert-new-item"
+     name="50-insert-new-item"
      for="Products.Collage.interfaces.ICollageColumn"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.InsertNewItemViewlet"
@@ -30,7 +30,37 @@
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />
-  
+
+  <browser:viewlet
+     name="60-copy"
+     for="*"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.CopyViewlet"
+     template="viewlets/copy.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+
+  <browser:viewlet
+     name="60-paste"
+     for="Products.Collage.interfaces.ICollageColumn"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.PasteViewlet"
+     template="viewlets/paste.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+
+  <browser:viewlet
+     name="60-paste"
+     for="Products.Collage.interfaces.ICollageRow"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.PasteViewlet"
+     template="viewlets/paste.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+
   <browser:viewlet
      name="split-column"
      for="Products.Collage.interfaces.ICollageColumn"
@@ -42,7 +72,7 @@
      />
   
   <browser:viewlet
-     name="insert-existing-item"
+     name="50-insert-existing-item"
      for="Products.Collage.interfaces.ICollageColumn"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.SimpleContentMenuViewlet"

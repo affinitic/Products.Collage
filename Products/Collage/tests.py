@@ -33,7 +33,7 @@ class TestRequest(ZopeTestRequest):
     implements(IHTTPRequest, IAttributeAnnotatable, IBrowserRequest)
 	
     def set(self, attribute, value):
-        setattr(self, attribute, value)
+        self._environ[attribute] = value
 
 def list_doctests():
     home = package_home(GLOBALS)

@@ -62,7 +62,7 @@ Let's look at the actions for our folder:
 Insert new items
 ----------------
 
-  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"insert-new-item")
+  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"50-insert-new-item")
 
 Let's look at the returned content types:
 
@@ -73,7 +73,7 @@ Let's look at the returned content types:
 Insert existing items
 ---------------------
 
-  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"insert-existing-item")
+  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"50-insert-existing-item")
 
 TODO!
 
@@ -82,3 +82,28 @@ Next we examine the ajax-view:
   >>> view = column.restrictedTraverse('@@existing-items-form')
   >>> for item in view.getItems():
   ...   if set(item.keys()) != set(['title', 'description', 'portal_type', 'modified', 'published', 'type', 'UID']): raise ValueError
+
+Copy/paste
+----------
+
+  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"60-paste")
+
+Let's setup the clipboard as if we'd copied the front-page element:
+
+  >>> from OFS.CopySupport import _cb_encode
+  >>> from OFS import Moniker
+  >>> __cp = _cb_encode((0, [Moniker.Moniker(portal['front-page']).dump()]))
+
+For some reason there's two different request objects; let's set the clipboard on both:
+
+  >>> viewlet.request.set('__cp', __cp)
+  >>> viewlet.context.REQUEST.set('__cp', __cp)
+
+Let's examine the paste viewlet:
+
+  >>> viewlet.clipboard_data_valid
+  1
+  >>> viewlet._get_clipboard_item()
+  <ATDocument at /plone/front-page>
+
+ 

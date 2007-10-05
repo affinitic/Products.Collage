@@ -18,12 +18,14 @@ class SimpleContentMenuViewlet(object):
     def test(self):
         return lambda a, b, c: a and b or c
 
-    def getTargetURL(self):
+    def getImmediateObject(self):
+        """Returns the immediate object added to the Collage
+        instead of a possible alias target object."""
         alias = getattr(self.__parent__, '__alias__', None)
         if alias:
-            return alias.absolute_url()
-
-        return self.context.absolute_url()        
+            return alias.aq_inner
+        
+        return self.context.aq_inner
 
 class LayoutViewlet(SimpleContentMenuViewlet):
     def getLayouts(self):

@@ -20,8 +20,9 @@
 	<tal:layouts repeat="layout layouts">
 	  <a class="layout"
 	     tal:define="value layout/id;
-			 display layout/name"
-             tal:attributes="href string:${view/getTargetURL}/set-content-layout?layout=$value;
+			 display layout/name;
+			 obj view/getImmediateObject"
+             tal:attributes="href string:${obj/absolute_url}/set-content-layout?layout=$value;
                              title display"
              i18n:attributes="title">
 	    <span i18n:translate=""

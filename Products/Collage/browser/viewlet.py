@@ -8,6 +8,8 @@ from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 
+from ZODB.POSException import ConflictError
+ 
 from OFS.CopySupport import _cb_decode
 from OFS import Moniker
 
@@ -117,9 +119,9 @@ class PasteViewlet(SimpleContentMenuViewlet):
         app = self.context.getPhysicalRoot()
         try:
             ob = m.bind(app)
-        except ConflictError:
+        except (ConflictError, AttributeError):
             return None
-
+        
         return ob
     
     def __call__(self):

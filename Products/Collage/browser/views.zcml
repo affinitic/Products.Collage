@@ -28,6 +28,15 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
+  <browser:page
+     name="standard"
+     for="Products.ATContentTypes.content.folder.ATFolder"
+     permission="zope.Public"
+     template="views/folder_standard.pt"
+     class=".views.StandardFolderView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+  
     <browser:page
      name="album"
      for="Products.ATContentTypes.content.topic.ATTopic"

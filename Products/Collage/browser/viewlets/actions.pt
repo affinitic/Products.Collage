@@ -12,11 +12,21 @@
 	  tal:condition="view/isAlias"
 	  i18n:translate="label_aliased">(alias)</span>
     
-    <a class="action"
-       tal:define="obj view/getImmediateObject"
-       tal:attributes="href string:${obj/absolute_url}/delete_confirmation">
-      <span i18n:translate="" i18n:domain="plone">Delete</span>
-    </a>
+
+
+    <tal:delete-or-remove define="obj view/getImmediateObject">
+      <a class="action"
+	 tal:condition="view/isAlias"
+	 tal:attributes="href string:${obj/absolute_url}/delete_confirmation">
+	<span i18n:translate="" i18n:domain="plone">Remove</span>
+      </a>
+      
+      <a class="action"
+	 tal:condition="not: view/isAlias"
+	 tal:attributes="href string:${obj/absolute_url}/delete_confirmation">
+	<span i18n:translate="" i18n:domain="plone">Delete</span>
+      </a>
+    </tal:delete-or-remove>
     
     <tal:actions repeat="action view_actions">
       <a tal:condition="python: action['id'] not in ['folderContents', 'metadata', 'local_roles', 'revisitCollage', 'portlets']"

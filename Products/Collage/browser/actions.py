@@ -6,7 +6,7 @@ from Products.Five.browser import BrowserView
 from Products.CMFPlone import utils as cmfutils
 from Products.CMFPlone import PloneMessageFactory as _
 
-from Products.Collage.utilities import generateNewId
+from Products.Collage.utilities import generateNewId, findFirstAvailableInteger
 from Products.Collage.interfaces import IDynamicViewManager
 
 from Acquisition import aq_inner, aq_parent
@@ -76,13 +76,21 @@ class ActionsView(BrowserView):
                                              'uid_catalog')
 
         uid = self.request.get('uid')
-
+        container = self.context
+        
         # check that target object exists
         brains = uid_catalog(UID=uid)
         if brains:
-            target_id = brains[0].id
-            self.context.invokeFactory('CollageAlias', id=target_id)
-            alias = self.context[target_id]
+            # find first available id for the alias object
+            prefix = 'alias-'
+            ids = [i[6:] for i in container.objectIds() if i.startswith('alias-')]
+            alias_id = 'alias-%s' % findFirstAvailableInteger(ids)
+
+            # create new alias
+            container.invokeFactory('CollageAlias', id=alias_id)
+            alias = container[alias_id]
+
+            # set target
             alias.set_target(uid)
             event.notify(objectevent.ObjectModifiedEvent(alias))
             

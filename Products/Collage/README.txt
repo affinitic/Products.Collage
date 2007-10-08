@@ -3,11 +3,11 @@ Collage
 
 :: compatibility
 
-   Plone 2.5 and 3.0
-   Five 1.4.2
+   Plone 2.5.3 and 3.0+
+   Five 1.4.4
 
 Note: To get inline-editing in Plone 3.0 you need to use svn-branch or wait for
-3.0.1 to be released.
+3.0.2 to be released.
    
 :: about
 

@@ -14,6 +14,9 @@ class IKSSHelper(Interface):
     def getUniqueIdentifier():
         pass
 
+    def getKssView():
+        pass
+    
     def getKssClasses(field_name, inline_editable):
         pass
 
@@ -24,13 +27,18 @@ class KSSHelper(BrowserView):
     def getUniqueIdentifier(self):
         return self.context.UID()
 
-    def getKssClasses(self, field_name):
+    def getKssView(self):
         try:
             kss = self.context.restrictedTraverse('@@kss_field_decorator_view')
         except:
             # BBB: Fallback if KSS is not installed
             kss = self.context.restrictedTraverse('@@kss_field_decorator_dummy_view')
 
+        return kss
+    
+    def getKssClasses(self, field_name):
+        kss = self.getKssView()
+        
         # choose appropriate kss class generator depending on rendering mode
         if self.request.get('URL').endswith('/replaceField'):
             f = kss.getKssClasses

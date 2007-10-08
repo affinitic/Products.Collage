@@ -27,6 +27,10 @@
           tal:replace="here/Description">description</span>
   </p>
 
-  <metal:listing-macro use-macro="here/atct_topic_view/macros/listing" />
+  <tal:listing define="view context/@@collage_kss_helper/getKssView;
+		       getKssClasses python: view.getKssClasses;
+		       templateId string:atct_topic_view">
+    <metal:listing-macro use-macro="here/atct_topic_view/macros/listing" />
+  </tal:listing>
   
 </tal:topic>

@@ -37,7 +37,10 @@
 	
 	<p tal:content="item/description" />
 	
-	<p class="discreet" tal:content="item/modified" />
+	<p class="discreet">
+	  <tal:modified replace="item/modified" />
+	  (<tal:type replace="item/portal_type" />)
+	</p>
 	
       </div>  
     </div>

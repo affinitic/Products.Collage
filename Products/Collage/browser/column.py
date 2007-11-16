@@ -71,6 +71,7 @@ class ExistingItemsView(BrowserView):
         desc_ellipsis = getattr(site_properties, 'ellipsis', '...')
         
         return [{'UID': obj.UID(),
+                 'icon' : result.getIcon,
                  'title': result.Title,
                  'description': cropText(result.Description, desc_length, desc_ellipsis),
                  'type': result.Type,

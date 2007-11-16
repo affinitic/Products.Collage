@@ -23,25 +23,16 @@
       </select>
     </div>
     
-    <div class="insert-existing-items">
+    <div i18n:domain="plone" class="insert-existing-items">
       <div tal:repeat="item view/getItems">
-	<h4 tal:attributes="class string:visualIcon contenttype-${item/portal_type}">
-	  <span class="title visualIconPadding">
+         <img tal:attributes="src string:${view/portal_url}/${item/icon};
+				title item/type; alt item/type" i18n:attributes="title; alt" />
 	    <a href="#"
 	       tal:attributes="href string:${here/absolute_url}/insert-alias?uid=${item/UID}">
 	      <tal:title content="item/title">Title</tal:title>
 	      <img tal:attributes="src string:${view/portal_url}/icon-insert.gif" alt="Insert" />
-	    </a>
-	  </span>
-	</h4>
-	
+	    </a>	
 	<p tal:content="item/description" />
-	
-	<p class="discreet">
-	  <tal:modified replace="item/modified" />
-	  (<tal:type replace="item/portal_type" />)
-	</p>
-	
       </div>  
     </div>
   </form>

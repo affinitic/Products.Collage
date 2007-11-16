@@ -21,6 +21,24 @@
 
   <browser:page
      name="standard"
+     for="Products.ATContentTypes.content.file.ATFile"
+     permission="zope.Public"
+     template="views/file_standard.pt"
+     class=".views.StandardDocumentView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="Products.ATContentTypes.content.link.ATLink"
+     permission="zope.Public"
+     template="views/link_standard.pt"
+     class=".views.StandardDocumentView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
      template="views/topic_standard.pt"

@@ -2,6 +2,9 @@ Changelog for Collage
 
     (name of developer listed in brackets)
 
+Added content views for ATLink and ATFile
+    [zegor]
+
 Refactored codebase
     Moved code out of ./browser/browser.py into separate files.
 

@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 <object name="Collage"
    meta_type="Factory-based Type Information with dynamic views"
-   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+   i18n:domain="plone">
+
  <property name="title">Collage</property>
  <property
-    name="description">A structural container which can display its element in various layouts.</property>
+    name="description">desc_type_collage</property>
  <property name="content_icon">collage_icon.gif</property>
  <property name="content_meta_type">Collage</property>
  <property name="product">Collage</property>
@@ -55,10 +57,10 @@
     url_expr="string:${folder_url}/view" visible="False">
   <permission value="View"/>
  </action>
- <action title="Sharing" action_id="local_roles" category="object"
+ <!-- action title="Sharing" action_id="local_roles" category="object"
     condition_expr="" url_expr="string:${object_url}/sharing" visible="True">
   <permission value="Manage properties"/>
- </action>
+ </action -->
  <action title="State" action_id="content_status_history"
     category="object_tabs"
     condition_expr="python:object and portal.portal_workflow.getTransitionsFor(object, object.getParentNode())"

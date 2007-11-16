@@ -25,13 +25,9 @@
 	    <a href="#"
 	       i18n:attributes="title"
 	       tal:attributes="href string:${here/absolute_url}/createObject?type_name=${Id};
-			       title string:$Title: $Description">
-	      <img tal:attributes="src ctype/icon"
-		   alt="Content type icon"
-		   i18n:attributes="tal" />
-	      <span tal:content="Title">
-		Portal type
-	      </span>
+			       title Description">
+	      <img tal:attributes="src ctype/icon" />
+	      <span tal:replace="Title">Portal type</span>
 	    </a>
 	  </li>
 	</tal:types>

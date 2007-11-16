@@ -18,14 +18,26 @@ msgstr ""
 msgid "Collage"
 msgstr ""
 
+msgid "desc_type_collage"
+msgstr "A structural container which can display its element in various layouts."
+
 msgid "Row"
 msgstr ""
+
+msgid "desc_type_collagerow"
+msgstr "A row which can contain page columns."
 
 msgid "Column"
 msgstr ""
 
+msgid "desc_type_collagecolumn"
+msgstr "A column which can contain content objects."
+
 msgid "Alias"
 msgstr ""
+
+msgid "desc_type_collagealias"
+msgstr "An object representing an alias for another object."
 
 msgid "Back to Collage"
 msgstr ""

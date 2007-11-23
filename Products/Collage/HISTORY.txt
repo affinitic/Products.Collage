@@ -16,6 +16,9 @@ Changelog for Collage
 * Added .metadata to cache icons
   [zegor]
 
+* Added delete-object view method to avoid redirection to confirmation_form
+  [zegor]
+
 * Refactored codebase
     Moved code out of ./browser/browser.py into separate files.
 

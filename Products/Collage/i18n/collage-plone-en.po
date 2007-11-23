@@ -46,3 +46,14 @@ msgstr "A column which can contain content items and aliases."
 msgid "desc_type_collagerow"
 msgstr "A row which can contain page columns."
 
+msgid "msg_alias_inserted"
+msgstr "Alias has been inserted."
+
+msgid "msg_target_object_not_found"
+msgstr "Target item has not been found."
+
+msgid "msg_row_added"
+msgstr "Row has been added."
+
+msgid "msg_column_inserted"
+msgstr "Columns has been inserted."

@@ -17,13 +17,13 @@
     <tal:delete-or-remove define="obj view/getImmediateObject">
       <a class="action"
 	 tal:condition="view/isAlias"
-	 tal:attributes="href string:${obj/absolute_url}/delete_confirmation">
+	 tal:attributes="href string:${obj/absolute_url}/delete-object">
 	<span i18n:translate="label_remove" i18n:domain="plone">Remove</span>
       </a>
       
       <a class="action"
 	 tal:condition="not: view/isAlias"
-	 tal:attributes="href string:${obj/absolute_url}/delete_confirmation">
+	 tal:attributes="href string:${obj/absolute_url}/delete-object">
 	<span i18n:translate="label_delete" i18n:domain="plone">Delete</span>
       </a>
     </tal:delete-or-remove>

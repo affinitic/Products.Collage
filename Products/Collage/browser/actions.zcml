@@ -40,5 +40,13 @@
      permission="cmf.ModifyPortalContent"
      class=".actions.ActionsView"
      />
+
+  <browser:page
+     name="delete-object"
+     attribute="deleteObject"
+     for="*"
+     permission="cmf.ModifyPortalContent"
+     class=".actions.ActionsView"
+     />
   
 </configure>

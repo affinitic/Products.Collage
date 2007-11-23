@@ -59,7 +59,7 @@ class ActionsView(BrowserView):
         col = getattr(row, col_id, None)
         col.setTitle('')
         
-        self.context.plone_utils.addPortalMessage(_(u'Row added.'))
+        self.context.plone_utils.addPortalMessage(_(u'msg_row_added'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])    
 
     def splitColumn(self):
@@ -68,7 +68,7 @@ class ActionsView(BrowserView):
 
         container.invokeFactory(id=desired_id, type_name='CollageColumn')
         
-        self.context.plone_utils.addPortalMessage(_(u'Column inserted.'))
+        self.context.plone_utils.addPortalMessage(_(u'msg_column_inserted'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])    
 
     def insertAlias(self):
@@ -94,11 +94,22 @@ class ActionsView(BrowserView):
             alias.set_target(uid)
             event.notify(objectevent.ObjectModifiedEvent(alias))
             
-            msg = 'Alias inserted.'
+            msg = 'msg_alias_inserted'
         else:
-            msg = 'Target object not found.'
+            msg = 'msg_target_object_not_found'
             
         referer = self.request.get('HTTP_REFERER', self.context.absolute_url())
-        return self.request.RESPONSE.redirect('%s?portal_status_message=%s' % (referer, msg))
+        self.context.plone_utils.addPortalMessage(_(msg))
+        return self.request.RESPONSE.redirect(referer)
 
 
+    def deleteObject(self):
+
+        parent = self.context.aq_inner.aq_parent
+
+        parent.manage_delObjects(self.context.getId())
+        
+        message = _(u'${title} has been deleted.', mapping={u'title' : self.context.portal_type})
+        
+        self.context.plone_utils.addPortalMessage(message)
+        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])

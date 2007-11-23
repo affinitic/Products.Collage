@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"PO-Revision-Date: 2007-11-16 16:47+0100\n"
+"PO-Revision-Date: 2007-11-23 11:59+0100\n"
 "Last-Translator: Jean-Charles Rogez <jean-charles.rogez@edf.fr>\n"
 "Language-Team: EDF\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Chargement..."
 #. Default: "Move down"
 #: ./browser/viewlets/modify_order_vertical.pt:10
 msgid "label_move_down"
-msgstr "Monter"
+msgstr "Descendre"
 
 #. Default: "Move left"
 #: ./browser/viewlets/modify_order_horizontal.pt:10

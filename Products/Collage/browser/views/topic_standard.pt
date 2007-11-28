@@ -9,7 +9,7 @@
 		       normalizeString view/normalizeString;
 		       site_properties view/site_properties">
 
-  <tal:topic define="topicContents python:here.queryCatalog(batch=False)"
+  <tal:topic define="topicContents python:here.queryCatalog(batch=True)"
 	     condition="topicContents">
                            
     <h2 metal:define-macro="title"
@@ -37,7 +37,12 @@
       <metal:listing-macro use-macro="here/folder_listing/macros/listing" />
     </tal:listing>
 
+    <a tal:attributes="href here/absolute_url" 
+       tal:condition="python:len(topicContents) ==  here.itemCount"
+       i18n:translate="">More...</a>
+
   </tal:topic>
+  
     
 </tal:variables>
 

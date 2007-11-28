@@ -1,6 +1,8 @@
 Changelog for Collage
 
     (name of developer listed in brackets)
+ 
+* Made the Collection item size matter, and added a More... button [regebro]
 
 * Added content views for ATLink and ATFile
   [zegor]

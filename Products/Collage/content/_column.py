@@ -53,4 +53,13 @@ class CollageColumn(BrowserDefaultMixin, LayoutContainer, atapi.OrderedBaseFolde
     def SearchableText(self):
         return self.aggregateSearchableText()
 
+    def indexObject(self):
+        pass
+
+    def reindexObject(self,idxs=[] ):
+        pass
+
+    def unindexObject(self):
+        pass
+
 atapi.registerType(CollageColumn, 'Collage')

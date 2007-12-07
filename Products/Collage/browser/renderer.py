@@ -19,10 +19,10 @@ class SimpleContainerRenderer(BrowserView):
         views = []
 
         if not contents:
-            contents = self.context.getFolderContents()
+            contents = self.context.objectValues()
 
-        for item in contents:
-            target = context = item.getObject()
+        for context in contents:
+            target = context
             manager = IDynamicViewManager(context)
             layout = manager.getLayout()
 
@@ -35,7 +35,7 @@ class SimpleContainerRenderer(BrowserView):
                 # if not set, revert to context
                 if not target: target = context
 
-            # assume that a layout is always available
+            # assume that a layout is always available                
             view = getMultiAdapter((target, self.request), name=layout)
 
             # store reference to alias if applicable

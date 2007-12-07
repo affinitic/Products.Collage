@@ -61,12 +61,12 @@
 	    <p tal:condition="view/edit_mode">
 	      <span class="discreet"
 		    i18n:translate="label_no_items_added"
-		    tal:condition="not: here/getFolderContents">
+		    tal:condition="not: here/objectValues">
                 This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here.
               </span>
 
 	      <form action="insert-row" tal:condition="view/edit_mode">
-		<input type="submit"
+		<input type="submit" class="context"
 		       i18n:attributes="value button_add_collagerow"
 		       value="Add row" />
               </form>

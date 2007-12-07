@@ -54,4 +54,13 @@ class CollageAlias(BrowserDefaultMixin, LayoutContainer, ATCTContent):
 
     security = ClassSecurityInfo()
 
+    def indexObject(self):
+        pass
+
+    def reindexObject(self,idxs=[] ):
+        pass
+
+    def unindexObject(self):
+        pass
+
 atapi.registerType(CollageAlias, 'Collage')

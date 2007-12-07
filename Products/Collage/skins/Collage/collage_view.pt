@@ -61,7 +61,7 @@
 	    <p tal:condition="view/edit_mode">
 	      <span class="discreet"
 		    i18n:translate="label_no_items_added"
-		    tal:condition="not: here/objectValues">
+		    tal:condition="not: here/folderlistingFolderContents">
                 This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here.
               </span>
 

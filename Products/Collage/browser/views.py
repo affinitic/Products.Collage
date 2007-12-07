@@ -24,7 +24,7 @@ class BaseView(BrowserView):
     
 class RowView(BaseView):
     def getColumnBatches(self, bsize=3):
-        columns = self.context.objectValues()
+        columns = self.context.folderlistingFolderContents()
         if not columns:
             return []
 

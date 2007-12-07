@@ -1,3 +1,5 @@
+from AccessControl import getSecurityManager, Unauthorized
+
 from zope.interface import Interface
 from zope.interface import directlyProvidedBy, directlyProvides
 from zope.component import getMultiAdapter
@@ -19,7 +21,7 @@ class SimpleContainerRenderer(BrowserView):
         views = []
 
         if not contents:
-            contents = self.context.objectValues()
+            contents = self.context.folderlistingFolderContents()
 
         for context in contents:
             target = context
@@ -31,11 +33,16 @@ class SimpleContainerRenderer(BrowserView):
 
             if ICollageAlias.providedBy(context):
                 target = context.get_target()
+                # Check if alias is accessible
+                try:
+                    getSecurityManager().validate(self, self, target.getId(), target)
+                except Unauthorized:
+                    continue
 
                 # if not set, revert to context
                 if not target: target = context
 
-            # assume that a layout is always available                
+            # assume that a layout is always available
             view = getMultiAdapter((target, self.request), name=layout)
 
             # store reference to alias if applicable

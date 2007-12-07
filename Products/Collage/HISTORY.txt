@@ -1,6 +1,12 @@
 Changelog for Collage
 
     (name of developer listed in brackets)
+
+* Rows, Colums and Aliases not indexed in portal_catalog
+  [zegor]
+
+* Do not display Aliases with insufficient privileges
+  [zegor]
  
 * Made the Collection item size matter, and added a More... button [regebro]
 

@@ -2,6 +2,9 @@ Changelog for Collage
 
     (name of developer listed in brackets)
 
+* Added borders on manage_page to distinct rows, columns and items
+  [zegor]
+
 * Added "portlets" views
   [zegor]
 

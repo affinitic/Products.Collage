@@ -26,7 +26,8 @@
 
 .collage-header {
   font-size: 0.9em;
-  background: url(&dtml-portal_url;/collage_row_header.jpg) no-repeat top left;
+/*  background: url(&dtml-portal_url;/collage_row_header.jpg) no-repeat top left;*/
+  border-bottom: 1px solid &dtml-globalBorderColor;;
   padding: 5px;
   position: relative;
 }
@@ -40,6 +41,10 @@
     text-transform: lowercase;
     float: left;
     margin-right: 3px;
+}
+
+.collage-header a {
+  cursor: pointer;
 }
 
 .collage-header a.action,
@@ -92,7 +97,7 @@
 .expandable-content {
   clear: both;
   display: none;
-  background: url(&dtml-portal_url;/collage_row_header.jpg) no-repeat top left;
+  /*background: transparent url(&dtml-portal_url;/collage_row_header.jpg) no-repeat top left;*/
   padding: 10px;
   position: relative;
 }
@@ -155,6 +160,22 @@ span.collage-navigation a {
   clear: both;
 }
 
+#collage.edit .collage-row {
+  border: 1px outset red;
+  margin-bottom: 5px;
+}
+
+#collage.edit .column-block {
+  border: 1px outset blue;
+  margin: 5px;
+}
+
+#collage.edit .collage-item {
+  border: 1px outset;
+  margin: 5px;
+}
+
+
 * html #collage .collage-row {
   width:100%px;
   height:100%;
@@ -197,9 +218,19 @@ span.collage-navigation a {
     width: 100%;
 }
 
+#collage.edit .one-column .block_1 {
+    width: 98%;
+}
+
+
 #collage .two-columns-equal .block_1,
 #collage .two-columns-equal .block_2 {
     width:50%;
+}
+
+#collage.edit .two-columns-equal .block_1,
+#collage.edit .two-columns-equal .block_2 {
+    width:47%;
 }
 
 #collage .two-columns-equal .block_2 { width:49.9%; }
@@ -208,6 +239,13 @@ span.collage-navigation a {
 #collage .three-columns-equal .block_2 {
     width:33%;
 }
+
+#collage.edit .three-columns-equal .block_1,
+#collage.edit .three-columns-equal .block_2,
+#collage.edit .three-columns-equal .block_3 {
+    width:31%;
+}
+
 
 #collage .three-columns-equal .block_3 {
     width: 33.9%;
@@ -229,22 +267,44 @@ span.collage-navigation a {
     width: 40%;
 }
 
-#collage .three-columns-largeleft .block_1,
-#collage .three-columns-largeleft .block_2 {
+#collage.edit .two-columns-largeleft .block_1 {
+    width: 57%;
+}
+#collage.edit .two-columns-largeleft .block_2 {
+    width: 37%;
+}
+
+#collage .three-columns-largeleft .block_1 {
     width:60%;
 }
+
+#collage .three-columns-largeleft .block_2 { width:19.9%; }
 
 #collage .three-columns-largeleft .block_3 {
     width: 20%;
 }
 
-#collage .three-columns-largeleft .block_2 { width:19.9%; }
+#collage.edit .three-columns-largeleft .block_1 {
+    width:58%;
+}
+
+#collage.edit .three-columns-largeleft .block_2,
+#collage.edit .three-columns-largeleft .block_3 {
+    width: 18%;
+}
 
 #collage .two-columns-largeright .block_2 {
     width: 60%;
 }
 #collage .two-columns-largeright .block_1 {
     width: 40%;
+}
+
+#collage.edit .two-columns-largeright .block_2 {
+    width: 57%;
+}
+#collage.edit .two-columns-largeright .block_1 {
+    width: 37%;
 }
 
 #collage .three-columns-largeright .block_3 {
@@ -256,5 +316,16 @@ span.collage-navigation a {
 }
 
 #collage .three-columns-largeright .block_2 { width:19.9%; }
+
+
+#collage.edit .three-columns-largeright .block_3 {
+    width:57%;
+}
+
+#collage.edit .three-columns-largeright .block_1,
+#collage .three-columns-largeright .block_2 {
+    width: 18%;
+}
+
 
 /* </dtml-with> */

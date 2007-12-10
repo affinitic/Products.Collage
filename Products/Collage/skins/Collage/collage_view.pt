@@ -9,7 +9,7 @@
     <metal:main-macro define-macro="main">
 
         <div tal:define="view here/@@collage"
-             id="collage">
+             id="collage" tal:attributes="class python:test(view.edit_mode(), 'edit', '')" >
 
 	     <tal:block condition="view/isPlone2">
 	       <div metal:use-macro="here/document_actions/macros/document_actions">

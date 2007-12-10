@@ -66,6 +66,9 @@ class StandardDocumentView(BaseView):
 class FeaturedDocumentView(StandardDocumentView):
     title = u'Featured'
 
+class PortletView(BaseView):
+    title = u'Portlet'
+
 class StandardTopicView(BaseView):
     title = u'Standard'
 

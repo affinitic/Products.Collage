@@ -141,3 +141,6 @@ msgstr ""
 
 msgid "Featured"
 msgstr ""
+
+msgid "Portlet"
+msgstr ""

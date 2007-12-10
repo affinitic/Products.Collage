@@ -20,11 +20,29 @@
      />
 
   <browser:page
+     name="portlet"
+     for="Products.ATContentTypes.content.document.ATDocument"
+     permission="zope.Public"
+     template="views/document_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="standard"
      for="Products.ATContentTypes.content.file.ATFile"
      permission="zope.Public"
      template="views/file_standard.pt"
      class=".views.StandardDocumentView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="Products.ATContentTypes.content.file.ATFile"
+     permission="zope.Public"
+     template="views/file_portlet.pt"
+     class=".views.PortletView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
@@ -38,11 +56,38 @@
      />
 
   <browser:page
+     name="portlet"
+     for="Products.ATContentTypes.content.link.ATLink"
+     permission="zope.Public"
+     template="views/link_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="standard"
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
      template="views/topic_standard.pt"
      class=".views.StandardTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+    <browser:page
+     name="album"
+     for="Products.ATContentTypes.content.topic.ATTopic"
+     permission="zope.Public"
+     template="views/topic_album.pt"
+     class=".views.AlbumTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="Products.ATContentTypes.content.topic.ATTopic"
+     permission="zope.Public"
+     template="views/topic_portlet.pt"
+     class=".views.PortletView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
@@ -54,15 +99,15 @@
      class=".views.StandardFolderView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
-  
-    <browser:page
-     name="album"
-     for="Products.ATContentTypes.content.topic.ATTopic"
+
+  <browser:page
+     name="portlet"
+     for="Products.ATContentTypes.content.folder.ATFolder"
      permission="zope.Public"
-     template="views/topic_album.pt"
-     class=".views.AlbumTopicView"
+     template="views/folder_portlet.pt"
+     class=".views.PortletView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
-     />
+     />  
 
   <browser:page
      name="standard"
@@ -74,11 +119,29 @@
      />
 
   <browser:page
+     name="portlet"
+     for="Products.ATContentTypes.content.event.ATEvent"
+     permission="zope.Public"
+     template="views/event_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="standard"
      for="Products.ATContentTypes.content.image.ATImage"
      permission="zope.Public"
      template="views/image_standard.pt"
      class=".views.StandardImageView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="Products.ATContentTypes.content.image.ATImage"
+     permission="zope.Public"
+     template="views/image_portlet.pt"
+     class=".views.PortletView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
   

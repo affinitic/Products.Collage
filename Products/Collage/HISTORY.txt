@@ -27,7 +27,7 @@ Changelog for Collage
   Resynchronized po files with pot
   [zegor]
 
-* Removed share action in types (two share tab with Plone 3.0)
+* Do not display share and properties tabs with Plone 3.0
   [zegor]
 
 * Added .metadata to cache icons

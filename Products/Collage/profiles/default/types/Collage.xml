@@ -42,7 +42,7 @@
   <permission value="Modify portal content"/>
  </action>
  <action title="Properties" action_id="metadata" category="object"
-    condition_expr="" url_expr="string:${object_url}/properties"
+    condition_expr="object/@@collage/isPlone2" url_expr="string:${object_url}/properties"
     visible="True">
   <permission value="Modify portal content"/>
  </action>
@@ -57,10 +57,10 @@
     url_expr="string:${folder_url}/view" visible="False">
   <permission value="View"/>
  </action>
- <!-- action title="Sharing" action_id="local_roles" category="object"
-    condition_expr="" url_expr="string:${object_url}/sharing" visible="True">
+ <action title="Sharing" action_id="local_roles" category="object"
+    condition_expr="object/@@collage/isPlone2" url_expr="string:${object_url}/sharing" visible="True">
   <permission value="Manage properties"/>
- </action -->
+ </action>
  <action title="State" action_id="content_status_history"
     category="object_tabs"
     condition_expr="python:object and portal.portal_workflow.getTransitionsFor(object, object.getParentNode())"

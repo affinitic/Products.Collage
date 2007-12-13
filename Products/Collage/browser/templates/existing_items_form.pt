@@ -23,18 +23,18 @@
       </select>
     </div>
     
-    <div i18n:domain="plone" class="insert-existing-items">
-      <div tal:repeat="item view/getItems">
+    <ul i18n:domain="plone" class="collage-content-menu">
+      <li tal:repeat="item view/getItems" class="visualIcon">
          <img tal:attributes="src string:${view/portal_url}/${item/icon};
 				title item/type; alt item/type" i18n:attributes="title; alt" />
 	    <a href="#"
-	       tal:attributes="href string:${here/absolute_url}/insert-alias?uid=${item/UID}">
+	       tal:attributes="href string:${here/absolute_url}/insert-alias?uid=${item/UID};
+		               title item/description">
 	      <tal:title content="item/title">Title</tal:title>
 	      <img tal:attributes="src string:${view/portal_url}/icon-insert.gif" alt="Insert" />
-	    </a>	
-	<p tal:content="item/description" />
-      </div>  
-    </div>
+	    </a>
+      </li>  
+    </ul>
   </form>
 
 </div>

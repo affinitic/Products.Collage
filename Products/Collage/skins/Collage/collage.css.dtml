@@ -103,7 +103,7 @@
 }
 
 ul.collage-content-menu {
-  white-space: nowrap;
+  /*white-space: nowrap;*/
   list-style-image: none;
   list-style-type: none;
   margin: 0;

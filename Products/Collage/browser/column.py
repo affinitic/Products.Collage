@@ -55,7 +55,7 @@ class ExistingItemsView(BrowserView):
         items = [i for i in items if i.portal_type not in COLLAGE_TYPES]
 
         # limit count
-        items = items[:self.request.get('count', 20)]
+        items = items[:self.request.get('count', 50)]
 
         # setup description cropping
         try:

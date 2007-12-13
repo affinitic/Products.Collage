@@ -2,6 +2,9 @@ Changelog for Collage
 
     (name of developer listed in brackets)
 
+* Renamed manage_page to compose_page to avoid ZMI filtering access problem
+  [zegor]
+
 * Added borders on manage_page to distinct rows, columns and items
   [zegor]
 
@@ -16,7 +19,7 @@ Changelog for Collage
  
 * Made the Collection item size matter, and added a More... button [regebro]
 
-* Added content views for ATLink and ATFile
+* Added content views for ATLink, ATFile and ATNewsItem
   [zegor]
 
 * Fixed some i18n problems

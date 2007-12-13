@@ -3,7 +3,7 @@
  <action-provider name="portal_actions">
   <action title="Back to Collage" action_id="revisitCollage" category="object"
      condition_expr="object/@@collage_helper/isCollageContent"
-     url_expr="string:${object/@@collage_helper/getCollageObjectURL}/manage_page"
+     url_expr="string:${object/@@collage_helper/getCollageObjectURL}/compose_page"
      visible="True">
    <permission>List folder contents</permission>
   </action>

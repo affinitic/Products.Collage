@@ -42,7 +42,7 @@ def initialize(context):
     
     profile_registry.registerProfile(
         name='default',
-        title='Collage profile',
+        title='Collage',
         description='Profile for Collage',
         path='profiles/default',
         product=PROJECTNAME,

@@ -17,12 +17,14 @@
         </dt>
 
         <dd class="portletItem odd">
-	  <p metal:define-macro="description"
-   	     tal:attributes="id string:${kssview/getUniqueIdentifier}-description;
-		   class python: kssview.getKssClasses('description')"
-   	     tal:condition="here/Description">
-  	     <span metal:define-slot="inside" tal:replace="here/Description">description</span>
-	  </p>
+        <p class="documentDescription">
+          <span metal:define-macro="description"
+                tal:attributes="id string:${kssview/getUniqueIdentifier}-description;
+		                class python: kssview.getKssClasses('description')"
+                tal:condition="here/Description">
+            <span metal:define-slot="inside" tal:replace="here/Description">description</span>
+          </span>
+        </p>
 
 	  <div class="vevent">    
   

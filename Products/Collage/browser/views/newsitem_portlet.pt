@@ -16,7 +16,6 @@
         </dt>
 
         <dd class="portletItem odd">
-
         <p class="documentDescription">
           <span metal:define-macro="description"
                 tal:attributes="id string:${kssview/getUniqueIdentifier}-description;
@@ -26,14 +25,31 @@
           </span>
         </p>
 
-        <div metal:define-macro="text"
-             tal:define="text python: here.CookedBody(stx_level=2)"
-             tal:attributes="id string:${kssview/getUniqueIdentifier}-text;
-		             class python: here.Format() in ['text/structured', 'text/x-rst'] and 'stx' or 'plain' + kssview.getKssClasses('text')"
-     	     tal:condition="text"
-             class="stx">
-           <span metal:define-slot="inside" tal:replace="structure text">text</span>
-        </div> 
+        <div class="newsImageContainer"
+             tal:condition="here/image_mini|nothing">
+            <a href="#"
+               tal:attributes="href string:${here/absolute_url}/image/image_view_fullscreen"
+               id="parent-fieldname-image">
+               <img tal:replace="structure python: here.tag(scale='mini', css_class='newsImage')" src="" alt="" />
+            </a>
+            <p class="discreet">
+              <metal:field use-macro="python:here.widget('imageCaption', mode='view')">
+              Image Caption
+              </metal:field>
+            </p>
+        </div>
+
+<div metal:define-macro="text"
+     tal:define="text python: here.CookedBody(stx_level=2)"
+     tal:attributes="id string:${kssview/getUniqueIdentifier}-text;
+		     class python: here.Format() in
+		                   ['text/structured', 'text/x-rst'] and 'stx' or 'plain' +
+		     kssview.getKssClasses('text')"
+     tal:condition="text"
+     class="stx">
+  <span metal:define-slot="inside" 
+        tal:replace="structure text">text</span>
+</div> 
         </dd>
         <dd class="portletFooter">
            <span class="portletBottomLeft"></span>

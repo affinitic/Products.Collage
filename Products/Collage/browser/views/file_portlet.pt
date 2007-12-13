@@ -21,6 +21,7 @@
    	     tal:condition="here/Description">
   	     <span metal:define-slot="inside" tal:replace="here/Description">description</span>
 	  </p>
+
           <metal:field use-macro="python:here.widget('file', mode='view')">File</metal:field>
         </dd>
         <dd class="portletFooter">

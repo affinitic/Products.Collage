@@ -42,20 +42,30 @@ function setupHandlers($) {
     });
 }
 
-function setupExistingItemsForm($) {
-    $("form.collage-existing-items//select").change(function(event) {
-	this.blur();
-
+function submitExistingItemsForm($,formel) {
 	// serialize form
-	var form = $(this).parents('form').eq(0);
+	var form = $(formel).parents('form').eq(0);
 	var url = form.attr('action');
 	var inputs = $(':input', form);
 
 	// refresh form
-	var section = $(this).parents('.expandable-ajax-content').eq(0);
+	var section = $(formel).parents('.expandable-ajax-content').eq(0);
 	section.load(url, extractParams(inputs.serialize()),
 		     function() { setupExistingItemsForm($); });
+}
+
+function setupExistingItemsForm($) {
+    $("form.collage-existing-items//select").change(function(event) {
+	this.blur();
+        submitExistingItemsForm($,this);
     });
+    $("form.collage-existing-items//SearchableText");
+    $("form.collage-existing-items//[@name=SearchableText]").keydown(function(e)  {
+						if (e.keyCode == 13) { // ESC
+							e.preventDefault;
+							submitExistingItemsForm($,this);
+						}
+					});
 }
 
 function setupNavigation($) {

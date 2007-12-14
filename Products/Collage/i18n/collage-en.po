@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"PO-Revision-Date: 2007-11-16 18:02+0100\n"
+"PO-Revision-Date: 2007-12-14 16:01+0100\n"
 "Last-Translator: Jean-Charles Rogez <jean-charles.rogez@edf.fr>\n"
 "Language-Team: EDF\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Add row"
 #. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
-msgstr "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
+msgstr "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type and/or text field to restrict search. Hit the [Enter] touch to submit your search."
 
 #. Default: "Choose a layout for this object."
 #: ./browser/viewlets/layout.pt:17

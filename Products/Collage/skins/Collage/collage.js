@@ -1,48 +1,62 @@
-$(document).ready(function($) {
-    setupContentMenu($);
-    setupHandlers($);
-    setupNavigation($);
+$(document).ready(function() {
+    setupContentMenu();
+    setupHandlers();
+    setupNavigation();
 });
 
-function setupContentMenu($) {
+setupContentMenu = function() {
 }
 
-function setupHandlers($) {
-    // setup collapsing blocks 
-    $.each($("div.expandable-section/a.expandable-label"), function(i, o) {
-	$(o).bind('click', function() {
-	    var section = $(o).parent();
-	    var content = $("div.expandable-content", section);
-	    var container = section.parents('.collage-row').eq(0)
-	    var url = $(o).attr('href');
+setupHandlers = function() {
+    // setup collapsing blocks
+    $.each($("div.expandable-section, a.expandable-label"), function(i, o) {
+		$(o).bind('click', function() {
+		    var section = $(o).parent();
+		    var content = $("div.expandable-content", section);
+		    var container = section.parents('.collage-row').eq(0);
+		    var url = $(o).attr('href');
 		    
-	    if ($(o).attr('class').indexOf('enabled') != -1) {
-		// disable
-		content.css('display', 'none');
-		container.next('.collage-row').eq(0).css('margin-top', 0+'px');
-	    } else {
-		// enable
-		content.css('display', 'block');
-
-		// handle height (for IE6)
-		container.next('.collage-row').eq(0).css('margin-top', 1+'px');
+		    // case content type dropdown, click event is bound here too
+		    if(!url) {
+		    	return;
+		    }
+			    
+		    if ($(o).attr('class').indexOf('enabled') != -1) {
+				// disable
+				content.css('display', 'none');
+				container.next('.collage-row').eq(0).css('margin-top',
+				                                         0 + 'px');
+		    } else {
+			    // enable
+				content.css('display', 'block');
 		
-		// handle ajax sections
-		$.each($(".expandable-ajax-content", section), function(j, p) {
-		    $(p).load(url, function() {
-			container.next('.collage-row').eq(0).css('margin-top', 1+'%');
-			setupExistingItemsForm($);
-		    });
+				// handle height (for IE6)
+				container.next('.collage-row').eq(0).css('margin-top',
+				                                         1 + 'px');
+				
+				// handle ajax sections
+				$.each($(".expandable-ajax-content", section), function(j, p) {
+				    $(p).load(url, function() {
+						container.next('.collage-row').eq(0).css('margin-top',
+						                                         1 + '%');
+						setupExistingItemsForm();
+				    });
+				});
+		    }
+		    
+		    $(o).toggleClass('enabled').blur();
+		    return false;
 		});
-	    }
-	    
-	    $(o).toggleClass('enabled').blur();
-	    return false;
-	});
     });
 }
 
-function submitExistingItemsForm($,formel) {
+setupNavigation = function() {
+    // transform navigation links into ajax-methods
+    $("a.collage-js-down").bind('click', {jquery: $}, triggerMoveDown);
+    $("a.collage-js-up").bind('click', {jquery: $}, triggerMoveUp);
+}
+
+submitExistingItemsForm = function(formel) {
 	// serialize form
 	var form = $(formel).parents('form').eq(0);
 	var url = form.attr('action');
@@ -50,40 +64,35 @@ function submitExistingItemsForm($,formel) {
 
 	// refresh form
 	var section = $(formel).parents('.expandable-ajax-content').eq(0);
-	section.load(url, extractParams(inputs.serialize()),
-		     function() { setupExistingItemsForm($); });
+	section.load(url, extractParams(inputs.serialize()), function() {
+		setupExistingItemsForm();
+	});
 }
 
-function setupExistingItemsForm($) {
-    $("form.collage-existing-items//select").change(function(event) {
-	this.blur();
-        submitExistingItemsForm($,this);
+setupExistingItemsForm = function() {
+    $("form.collage-existing-items select").change(function(event) {
+		this.blur();
+        submitExistingItemsForm(this);
     });
-    $("form.collage-existing-items//SearchableText");
-    $("form.collage-existing-items//[@name=SearchableText]").keydown(function(e)  {
-						if (e.keyCode == 13) { // ESC
-							e.preventDefault;
-							submitExistingItemsForm($,this);
-						}
-					});
+    // $("form.collage-existing-items SearchableText");
+    $("form.collage-existing-items [@name=SearchableText]").keydown(function(e) {
+	    if (e.keyCode == 13) { // ESC
+		    e.preventDefault;
+			submitExistingItemsForm(this);
+		}
+	});
 }
 
-function setupNavigation($) {
-    // transform navigation links into ajax-methods
-    $("a.collage-js-down").bind('click', {jquery: $}, triggerMoveDown);
-    $("a.collage-js-up").bind('click', {jquery: $}, triggerMoveUp);
-}
-
-function postMessage(element, msg) {
+postMessage = function(element, msg) {
     element._contents = element.innerHTML;
-    element.innerHTML += ' ('+msg+')';
+    element.innerHTML += ' (' + msg + ')';
 }
 
-function restoreElement(element) {
+restoreElement = function(element) {
     element.innerHTML = element._contents;
 }
 
-function doSimpleQuery(url, data) {
+doSimpleQuery = function(url, data) {
     // perform simple ajax-call
     var href = url.split('?');
     var url = href[0];
@@ -100,31 +109,31 @@ function doSimpleQuery(url, data) {
     if (heading) postMessage(heading, 'Saving...');
 
     $.post(url, data, function(data) {
-	if (heading) restoreElement(heading);
+	    if (heading) restoreElement(heading);
     });
 }
 
-function extractParams(query) {
+extractParams = function(query) {
     // convert a query-string into a dictionary
     var data = {};
     var params = query.split('&');
     for (var i=0; i<params.length; i++) {
-	var pair = params[i].split('=');
-	data[pair[0]] = pair[1];
+		var pair = params[i].split('=');
+		data[pair[0]] = pair[1];
     }
 
     return data;
 }
 
-function triggerMoveDown(event) {
+triggerMoveDown = function(event) {
     return triggerMove.call(this, event, +1);
 }
 
-function triggerMoveUp(event) {
+triggerMoveUp = function(event) {
     return triggerMove.call(this, event, -1);
 }
 
-function triggerMove(event, direction) {
+triggerMove = function(event, direction) {
     $ = event.data.jquery;
     event.preventDefault();
 
@@ -142,14 +151,14 @@ function triggerMove(event, direction) {
     var items = null;
 
     if (item.length) {
-	items = $('.collage-item', column);
-	origin = $(item);
+		items = $('.collage-item', column);
+		origin = $(item);
     } else if (column.length) {
-	items = $('.collage-column', row);
-	origin = $(column);
+		items = $('.collage-column', row);
+		origin = $(column);
     } else {
-	items = $('.collage-row');
-	origin = $(row);
+		items = $('.collage-row');
+		origin = $(row);
     }
 
     var index = items.index(origin.get(0));
@@ -161,7 +170,7 @@ function triggerMove(event, direction) {
     doSimpleQuery(link.attr('href'));    
 }
 
-function swap(origin, destination) {
+swap = function(origin, destination) {
     var temp = origin.after('<span></span>').next();
     destination.after(origin);
     destination.insertBefore(temp);

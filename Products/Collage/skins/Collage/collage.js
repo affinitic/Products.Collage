@@ -1,6 +1,4 @@
-var $ = jQuery;
-
-$(document).ready(function() {
+jq(document).ready(function() {
     setupContentMenu();
     setupHandlers();
     setupNavigation();
@@ -10,6 +8,8 @@ setupContentMenu = function() {
 }
 
 setupHandlers = function() {
+    var $ = jq;
+  
     // setup collapsing blocks
     $.each($("div.expandable-section, a.expandable-label"), function(i, o) {
 		$(o).bind('click', function() {
@@ -53,12 +53,15 @@ setupHandlers = function() {
 }
 
 setupNavigation = function() {
+    var $ = jq;
+  
     // transform navigation links into ajax-methods
     $("a.collage-js-down").bind('click', {jquery: $}, triggerMoveDown);
     $("a.collage-js-up").bind('click', {jquery: $}, triggerMoveUp);
 }
 
 submitExistingItemsForm = function(formel) {
+    var $ = jq;  
 	// serialize form
 	var form = $(formel).parents('form').eq(0);
 	var url = form.attr('action');
@@ -72,6 +75,8 @@ submitExistingItemsForm = function(formel) {
 }
 
 setupExistingItemsForm = function() {
+    var $ = jq;
+    
     $("form.collage-existing-items select").change(function(event) {
 		this.blur();
         submitExistingItemsForm(this);
@@ -95,6 +100,8 @@ restoreElement = function(element) {
 }
 
 doSimpleQuery = function(url, data) {
+    var $ = jq;
+    
     // perform simple ajax-call
     var href = url.split('?');
     var url = href[0];
@@ -136,6 +143,8 @@ triggerMoveUp = function(event) {
 }
 
 triggerMove = function(event, direction) {
+    var $ = jq;
+    
     $ = event.data.jquery;
     event.preventDefault();
 

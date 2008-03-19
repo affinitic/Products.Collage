@@ -2,6 +2,9 @@ Changelog for Collage
 
     (name of developer listed in brackets)
 
+* Fixed a jQuery integration issue
+  [malthe]
+    
 * Added a search text field in existing_items to find items in large sites.
   Thanks to Silvio Tomatis for the patch.
   This closes ticket http://plone.org/products/collage/issues/12.

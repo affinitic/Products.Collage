@@ -3,12 +3,9 @@ Collage
 
 :: compatibility
 
-   Plone 2.5.3 and 3.0+
-   Five 1.4.4
+   Plone 3.1
+   Five 1.5
 
-Note: To get inline-editing in Plone 3.0 you need to use svn-branch or wait for
-3.0.2 to be released.
-   
 :: about
 
 Collage is a product for aggregating and displaying multiple content items on

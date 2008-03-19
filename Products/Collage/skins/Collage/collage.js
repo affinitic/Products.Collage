@@ -1,3 +1,5 @@
+var $ = jQuery;
+
 $(document).ready(function() {
     setupContentMenu();
     setupHandlers();

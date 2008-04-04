@@ -2,6 +2,10 @@ Changelog for Collage
 
     (name of developer listed in brackets)
 
+* No longer ship with jQuery.
+    
+* Show locking viewlet in content menu
+    
 * Fixed a jQuery integration issue
   [malthe]
     

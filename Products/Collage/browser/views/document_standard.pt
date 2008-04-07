@@ -9,13 +9,15 @@
         tal:replace="here/Title">title</span>
 </h2>
 
-<p metal:define-macro="description"
-   tal:define="view context/@@collage_kss_helper"
-   tal:attributes="id string:${view/getUniqueIdentifier}-description;
-		   class python: view.getKssClasses('description')"
-   tal:condition="here/Description">
-  <span metal:define-slot="inside" 
-        tal:replace="here/Description">description</span>
+<p>
+  <span metal:define-macro="description"
+        tal:define="view context/@@collage_kss_helper"
+        tal:attributes="id string:${view/getUniqueIdentifier}-description;
+		        class python: view.getKssClasses('description')"
+        tal:condition="here/Description">
+    <span metal:define-slot="inside" 
+          tal:replace="here/Description">description</span>
+  </span>
 </p>
 
 <div metal:define-macro="text"

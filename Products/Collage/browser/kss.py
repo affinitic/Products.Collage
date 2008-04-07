@@ -17,7 +17,7 @@ class IKSSHelper(Interface):
     def getKssView():
         pass
     
-    def getKssClasses(field_name, inline_editable):
+    def getKssClasses(field_name):
         pass
 
 class KSSHelper(BrowserView):

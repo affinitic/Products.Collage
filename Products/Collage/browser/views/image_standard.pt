@@ -2,7 +2,7 @@
 
 <img class="collage-image"
      tal:attributes="alt here/title_or_id;
-		     src string:${here/absolute_url}/image_preview" />
+		     src string:${here/absolute_url}/image" />
 
 <p metal:define-macro="description"
    tal:define="view context/@@collage_kss_helper"

@@ -2,6 +2,9 @@ Changelog for Collage
 
     (name of developer listed in brackets)
 
+* Image standard display now shows the actual image rather than its preview.  This caused issues with large images in a Collage being upscaled when displayed.
+  [rockdj]
+
 * Various bug fixes
   [malthe]
     

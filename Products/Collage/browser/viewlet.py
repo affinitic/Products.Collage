@@ -124,7 +124,7 @@ class PasteViewlet(SimpleContentMenuViewlet):
         
         return ob
     
-    def __call__(self):
+    def render(self):
         """Only render if the clipboard contains an object that can
         be added to this container."""
 
@@ -136,7 +136,7 @@ class PasteViewlet(SimpleContentMenuViewlet):
                 portal_type = item.portal_type
                 allowed_types = self.context.allowedContentTypes()
                 if portal_type in (t.getId() for t in allowed_types):
-                    return super(PasteViewlet, self).__call__()
+                    return self.index()
 
         return u''
 

@@ -36,6 +36,13 @@
   font-size: 1em;
 }
 
+.collage-item div.clickable a {
+    text-decoration: none;
+    border: none;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
 .collage-header span {
     color: &dtml-discreetColor;;
     text-transform: lowercase;

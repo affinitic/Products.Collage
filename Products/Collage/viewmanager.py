@@ -22,12 +22,7 @@ class DynamicViewManager(object):
         self.context = context
         
     def getStorage(self):
-        try:
-            annotations = IAnnotations(self.context)
-        except:
-            alsoProvides(self.context, IAttributeAnnotatable)
-            annotations = IAnnotations(self.context)
-
+        annotations = IAnnotations(self.context)
         return annotations.setdefault(ANNOTATIONS_KEY, PersistentDict())
 
     def getLayout(self):

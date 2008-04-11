@@ -2,16 +2,30 @@ Changelog for Collage
 
     (name of developer listed in brackets)
 
-* Image standard display now shows the actual image rather than its preview.  This caused issues with large images in a Collage being upscaled when displayed.
-  [rockdj]
+* Made split- and expand-icons transparent
+  [malthe]
+
+* Added clickable link view.
+  
+* Simplified view class names.
+  [malthe]
+
+* Removed annotations hack (we now expect content to be IAnnotatable).
+  [malthe]
+  
+* Image standard display now shows the actual image rather than its
+  preview.  This caused issues with large images in a Collage being
+  upscaled when displayed.  [rockdj]
 
 * Various bug fixes
   [malthe]
     
 * No longer ship with jQuery.
-    
+  [malthe]
+  
 * Show locking viewlet in content menu
-    
+  [malthe]
+  
 * Fixed a jQuery integration issue
   [malthe]
     

@@ -12,12 +12,6 @@ class ICollageView(Interface):
     def edit_mode():
         pass
 
-    def isPlone2():
-        pass
-
-    def isPlone3():
-        pass
-    
 class CollageView(BrowserView):
     def edit_mode(self):
         return ICollageEditLayer.providedBy(self.request)
@@ -36,16 +30,6 @@ class CollageView(BrowserView):
         else:
             return folderish
 
-    def isPlone2(self):
-        # XXX: this is a lame way of checking the version
-        try:
-            return self.context.restrictedTraverse('global_bodytag') and True
-        except:
-            return False            
-
-    def isPlone3(self):
-        return not self.isPlone2()
-        
     def render_manage_view(self):
         """Set the edit layer on the request and return the
         standard view as returned by CMFDynamicViewFTI."""

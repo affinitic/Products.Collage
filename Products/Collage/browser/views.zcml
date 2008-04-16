@@ -29,6 +29,15 @@
      />
 
   <browser:page
+     name="text"
+     for="Products.ATContentTypes.content.document.ATDocument"
+     permission="zope.Public"
+     template="views/document_text.pt"
+     class=".views.TextView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="standard"
      for="Products.ATContentTypes.content.file.ATFile"
      permission="zope.Public"

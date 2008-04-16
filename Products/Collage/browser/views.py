@@ -63,6 +63,9 @@ class LargeRightRowView(RowView):
 class StandardView(BaseView):
     title = u'Standard'
 
+class TextView(BaseView):
+    title = u'Text'
+
 class FeaturedView(BaseView):
     title = u'Featured'
 

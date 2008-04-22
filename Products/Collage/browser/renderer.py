@@ -9,6 +9,13 @@ from Products.Five.browser import BrowserView
 from Products.Collage.interfaces import ICollageBrowserLayer, IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 
+try:
+    from Products.LinguaPlone.interfaces import ITranslatable
+except ImportError:
+    HAS_LINGUAPLONE = False
+else:
+    HAS_LINGUAPLONE = True
+
 class SimpleContainerRenderer(BrowserView):
     def getItems(self, contents=None):
         # needed to circumvent bug :-(
@@ -41,6 +48,18 @@ class SimpleContainerRenderer(BrowserView):
 
                 # if not set, revert to context
                 if not target: target = context
+
+            # Filter out translation duplicates:
+            # If a non-alias object is translatable, check if its language 
+            # is set to the currently selected language or to neutral,
+            # or if it is the canonical version
+            elif HAS_LINGUAPLONE and ITranslatable.providedBy(target):
+                language = self.request.get('LANGUAGE','')
+                if target.Language() not in (language, ''):
+                    # Discard the object, if it is not the canonical version
+                    # or a translation is available in the requested language.
+                    if not target.isCanonical() or target.getTranslation(language) in contents:
+                        continue
 
             # assume that a layout is always available
             view = getMultiAdapter((target, self.request), name=layout)

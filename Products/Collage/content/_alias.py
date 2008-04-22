@@ -2,6 +2,7 @@ from AccessControl import ClassSecurityInfo
 
 from Products.Archetypes import atapi
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
+from Products.CMFCore.utils import getToolByName
 
 from Products.Collage.interfaces import ICollageAlias
 
@@ -12,6 +13,13 @@ from Products.Collage.content.common import LayoutContainer
 from Products.ATContentTypes.content.base import ATCTContent
 
 from Products.Archetypes.utils import DisplayList
+
+try:
+    from Products.LinguaPlone.interfaces import ITranslatable
+except ImportError:
+    HAS_LINGUAPLONE = False
+else:
+    HAS_LINGUAPLONE = True
 
 # CMFDynamicViewFTI imports
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
@@ -62,5 +70,17 @@ class CollageAlias(BrowserDefaultMixin, LayoutContainer, ATCTContent):
 
     def unindexObject(self):
         pass
+
+    def get_target(self):
+        res = self.getRefs(self.getField('target').relationship)
+        if res:
+            res = res[0]
+        else:
+            res = None
+        if HAS_LINGUAPLONE:
+            if ITranslatable.providedBy(res):
+                lang = getToolByName(self, 'portal_languages').getPreferredLanguage()
+                res = res.getTranslation(lang) or res
+        return res
 
 atapi.registerType(CollageAlias, 'Collage')

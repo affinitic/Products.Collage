@@ -17,10 +17,6 @@ class ICollageAlias(interface.Interface):
 class IDynamicViewManager(interface.Interface):
     pass
 
-class ICollageBrowserLayer(interface.Interface):
-    """Collage browser layer. Views registered with this layer
-    are available to objects inside a collage."""
-
 class ICollageEditLayer(interface.Interface):
     """Collage edit layer."""
 

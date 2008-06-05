@@ -18,17 +18,20 @@ A view for a standard document can be registered as follows:
      for="Products.ATContentTypes.content.document.ATDocument"
      permission="zope.Public"
      template="my-view-template.pt"
-     class=".document.MyDocumentView"
-     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     class="Products.Collage.browser.views.BaseView"
+     menu="collage-views"
+     title="My View"
      />
 
-To display a human-readable title, we associate the view with the
-following class, placed in a file document.py:
+Menu="collage-views" designates this browser page as a Collage view.
+The title attribute determines the name of the view in Collage's list
+of possible layouts.
 
-  from Products.Five.browser import BrowserView
+You may, of course, use your own browser view class or no class at all.
 
-  class MyDocumentView(BrowserView):
-      title = u'My view'
+Consider registering custom views for a browser layer so that they only
+appear on Plone sites with your product installed, rather than all Plone
+sites in the Zope instance.
 
 
 Content controls

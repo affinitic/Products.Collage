@@ -6,7 +6,7 @@ from zope.component import getMultiAdapter
 
 from Products.Five.browser import BrowserView
 
-from Products.Collage.interfaces import ICollageBrowserLayer, IDynamicViewManager
+from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 
 try:
@@ -20,10 +20,6 @@ class SimpleContainerRenderer(BrowserView):
     def getItems(self, contents=None):
         # needed to circumvent bug :-(
         self.request.debug = False
-
-        # transmute request interfaces
-        ifaces = directlyProvidedBy(self.request)
-        directlyProvides(self.request, ICollageBrowserLayer)
 
         views = []
 
@@ -69,9 +65,6 @@ class SimpleContainerRenderer(BrowserView):
                 view.__alias__ = context
             
             views.append(view)
-
-        # restore interfaces
-        directlyProvides(self.request, ifaces)
 
         return views
 

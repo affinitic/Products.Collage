@@ -4,7 +4,6 @@ from zope.interface import directlyProvidedBy, directlyProvides
 
 from Products.CMFCore.utils import getToolByName
 
-from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 

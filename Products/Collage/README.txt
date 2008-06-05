@@ -27,12 +27,17 @@ inside the collage.
 
 :: javascript-functionality
 
-We use the jquery-library to facilitate easy scripting. Ajax is used to move
+We use the jquery library to facilitate easy scripting. Ajax is used to move
 content items, columns and rows around without reloading the page.
 
 :: status
 
 Used in production.
+
+:: upgrading
+
+Note: The method for registering custom Collage views has changed slightly as
+of Collage 1.2.  See DEVELOPERS.txt.
 
 :: support for add-on packages
 

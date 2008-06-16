@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Collage\n"
+"PO-Revision-Date: 2007-12-14 16:01+0100\n"
+"Last-Translator: Yuri Carrer <yurj@alfa.it>\n"
+"Language-Team: None\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: it\n"
+"Language-Name: Italiano\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collage\n"
+"X-Is-Fallback-For: it_ch"
+
+
+#: ./browser/browser.py:90
+msgid "Column inserted."
+msgstr "Colonna inserita."
+
+#: ./browser/browser.py:80
+msgid "Row added."
+msgstr "Riga aggiunta"
+
+#: ./browser/browser.py:37
+msgid "View changed."
+msgstr "Vista modificata"
+
+#. Default: "Add row"
+#: ./skins/Collage/collage_view.pt:51
+msgid "button_add_collagerow"
+msgstr "Aggiungi una riga"
+
+#. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
+#: ./browser/viewlets/insert-existing-item.pt:16
+msgid "help_insert_existing_items"
+msgstr "Inserisci un elemento già esistente. L'elemento verrà inserito come un riferimento all'originale. Utilizza il menù per filtrare per tipo di elemento, premi infine [Invio] per concludere"
+
+#. Default: "Choose a layout for this object."
+#: ./browser/viewlets/layout.pt:17
+msgid "help_select_layout"
+msgstr "Scegli un modello per questo elemento"
+
+#. Default: "insert existing item"
+#: ./browser/viewlets/insert-existing-item.pt:11
+msgid "label_insert_existing_item"
+msgstr "Inserisci un elemento già esistente"
+
+#. Default: "Loading..."
+#: ./browser/viewlets/insert-existing-item.pt:25
+msgid "label_loading"
+msgstr "Sto caricando..."
+
+#. Default: "Move down"
+#: ./browser/viewlets/modify_order_vertical.pt:10
+msgid "label_move_down"
+msgstr "Sposta in giù"
+
+#. Default: "Move left"
+#: ./browser/viewlets/modify_order_horizontal.pt:10
+msgid "label_move_left"
+msgstr "Sposta a sinistra"
+
+#. Default: "Move right"
+#: ./browser/viewlets/modify_order_horizontal.pt:16
+msgid "label_move_right"
+msgstr "Sposta a destra"
+
+#. Default: "Move up"
+#: ./browser/viewlets/modify_order_vertical.pt:16
+msgid "label_move_up"
+msgstr "Sposta in su"
+
+#. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
+#: ./skins/Collage/collage_view.pt:44
+msgid "label_no_items_added"
+msgstr "Questo elemento della composizione non ha ancora elementi associati. Aggiungi degli elementi usando il menù a tendina per inserirli qui."
+
+#. Default: "select layout"
+#: ./browser/viewlets/layout.pt:12
+msgid "label_select_layout"
+msgstr "Seleziona un modello"
+
+#. Default: "split"
+#: ./browser/viewlets/split-column.pt:9
+msgid "label_split_column"
+msgstr "Crea una colonna"
+
+#. Default "(alias)"
+#: ./browser/viewlets/actions.pt:19
+msgid "label_aliased"
+msgstr "(alias)"
+
+#. Default "Insert new item"
+#: ./browser/viewlets/insert-new-item.pt:13
+msgid "label_insert_new_item"
+msgstr "Inserisci un nuovo elemento"
+
+#. Default "Select a content-type to insert."
+#: ./browser/viewlets/insert-new-item.pt:18
+msgid "help_insert_new_item"
+msgstr "Seleziona un tipo di contenuto da inserire"
+
+msgid "label_alias_target"
+msgstr "Elemento riferito"
+
+msgid "label_optional_row_title"
+msgstr "Titolo della riga"
+
+msgid "help_optional_row_title"
+msgstr "Un titolo opzionale per la riga"
+
+msgid "label_optional_column_title"
+msgstr "Titolo della colonna"
+
+msgid "help_optional_column_title"
+msgstr "Un titolo opzionale per la colonna"
+
+msgid "label_show_title"
+msgstr "Mostra il titolo"
+
+msgid "label_show_description"
+msgstr "Mostra la descrizione"
+
+msgid "label_content_type"
+msgstr "Tipo di contenuto"
+
+msgid "label_all_content_types"
+msgstr "Tutti i tipi di contenuto"
+
+msgid "Automatic"
+msgstr "Automatico"
+
+msgid "Large left"
+msgstr "Colonna sinistra larga"
+
+msgid "Large right"
+msgstr "Colonna destra larga"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Featured"
+msgstr "Caratteristico"
+
+msgid "Portlet"
+msgstr "Portlet"
+

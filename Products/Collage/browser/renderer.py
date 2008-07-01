@@ -36,14 +36,16 @@ class SimpleContainerRenderer(BrowserView):
 
             if ICollageAlias.providedBy(context):
                 target = context.get_target()
-                # Check if alias is accessible
+                
+                # if not set, revert to context
+                if target is None:
+                    target = context
+
+                # verify that target is accessible
                 try:
                     getSecurityManager().validate(self, self, target.getId(), target)
                 except Unauthorized:
                     continue
-
-                # if not set, revert to context
-                if not target: target = context
 
             # Filter out translation duplicates:
             # If a non-alias object is translatable, check if its language 

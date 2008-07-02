@@ -1,12 +1,15 @@
 from AccessControl import ClassSecurityInfo
 
-from Products.Archetypes import atapi
+try:
+    from Products.LinguaPlone import public as atapi
+except ImportError:
+    from Products.Archetypes import atapi
+
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.ATContentTypes.content.base import ATCTMixin
 from Products.CMFCore.permissions import View, ModifyPortalContent
 from Products.Collage.content.common import LayoutContainer, CommonCollageSchema
 
-# from Products.CMFPlone.interfaces import INonStructuralFolder
 from Products.CMFPlone.interfaces import INonStructuralFolder
 
 from Products.Collage.interfaces import ICollage

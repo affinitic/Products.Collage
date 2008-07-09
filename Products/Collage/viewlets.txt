@@ -21,6 +21,11 @@ Let's add some content:
   >>> _ = row.invokeFactory(id='column', type_name='CollageColumn')
   >>> column = row[_]
   
+To use the Collage views we need to add a layer to the request:
+
+  >>> from Products.Collage.interfaces import ICollageBrowserLayer
+  >>> alsoProvides(request, ICollageBrowserLayer)
+
 Let's examine the actions viewlet
 
   >>> view = getMultiAdapter((row, request), name=u"fallback")

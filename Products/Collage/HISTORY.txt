@@ -1,16 +1,6 @@
 Changelog for Collage
 
     (name of developer listed in brackets)
-    
-* Views are now marked as Collage views by assigning them to the
-  'collage-views' browser menu, rather than by assigning them to
-  the ICollageBrowserLayer browser layer.  This frees up the browser
-  layer mechanism for its intended purpose, making it possible to
-  customize Collage views in a way that is localized to a single
-  Plone site.  An added benefit is that subclasses of
-  browser.views.BaseView are no longer needed just to set the title
-  of a Collage layout.
-  [davisagli]
 
 * Made split- and expand-icons transparent
   [malthe]

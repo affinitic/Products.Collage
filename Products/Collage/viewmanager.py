@@ -5,11 +5,11 @@ from zope.interface import Interface
 from zope.interface import \
      implements, alsoProvides, providedBy
 
-from zope.component import getUtility, getAdapters
-from zope.app.publisher.interfaces.browser import IBrowserMenu
+from zope.component import getSiteManager
 
 from interfaces import IDynamicViewManager
 from interfaces import ICollageAlias
+from interfaces import ICollageBrowserLayer
 
 from persistent.dict import PersistentDict
 
@@ -56,9 +56,23 @@ class DynamicViewManager(object):
             target = self.context.get_target()
             if target: context = target
             
+        return self._getViewFactoryInfo(ICollageBrowserLayer, context=context)
+
+    def _getViewFactoryInfo(self, layer, context=None):
+        """Return view factory info for this context and browser layer."""
+
         if not context:
             context = self.context
         
-        menu = getUtility(IBrowserMenu, u'collage-views')
-        layouts = list(getAdapters((context, context.REQUEST), menu.getMenuItemType()))
-        return [(item.action.lstrip(u'@'), name) for (name, item) in layouts]
+        sm = getSiteManager(context)
+        
+        context_ifaces = providedBy(context)
+        
+        lookupAll = sm.adapters.lookupAll
+        
+        collage_aware = lookupAll((context_ifaces, layer), Interface)
+        collage_agnostic = list(lookupAll((context_ifaces, Interface), Interface))
+        
+        return [(name, getattr(factory, 'title', name)) \
+                for (name, factory) in collage_aware if (name, factory) not in collage_agnostic]
+

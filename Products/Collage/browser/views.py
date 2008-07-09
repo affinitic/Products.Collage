@@ -50,3 +50,33 @@ class RowView(BaseView):
             batches += [batch]
         
         return batches
+
+class AutomaticRowView(RowView):
+    title = u'Automatic'
+
+class LargeLeftRowView(RowView):
+    title = u'Large left'
+
+class LargeRightRowView(RowView):
+    title = u'Large right'
+
+class StandardView(BaseView):
+    title = u'Standard'
+
+class TextView(BaseView):
+    title = u'Text'
+
+class FeaturedView(BaseView):
+    title = u'Featured'
+
+class PortletView(BaseView):
+    title = u'Portlet'
+
+class AlbumTopicView(BaseView):
+    title = u'Album'
+
+class ClickableView(BaseView):
+    title = u'Clickable'
+
+class StandardDocumentView(StandardView):
+    """Includes for BBB."""

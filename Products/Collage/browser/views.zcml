@@ -1,17 +1,13 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser">
 
-  <browser:menu
-     id="collage-views"/>
-
   <browser:page
      name="standard"
      for="Products.ATContentTypes.content.document.ATDocument"
      permission="zope.Public"
      template="views/document_standard.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -19,9 +15,8 @@
      for="Products.ATContentTypes.content.document.ATDocument"
      permission="zope.Public"
      template="views/document_featured.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Featured"
+     class=".views.FeaturedView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -29,9 +24,8 @@
      for="Products.ATContentTypes.content.document.ATDocument"
      permission="zope.Public"
      template="views/document_portlet.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Portlet"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -39,9 +33,8 @@
      for="Products.ATContentTypes.content.document.ATDocument"
      permission="zope.Public"
      template="views/document_text.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Text"
+     class=".views.TextView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -49,9 +42,8 @@
      for="Products.ATContentTypes.content.file.ATFile"
      permission="zope.Public"
      template="views/file_standard.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -59,9 +51,8 @@
      for="Products.ATContentTypes.content.file.ATFile"
      permission="zope.Public"
      template="views/file_portlet.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Portlet"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -69,9 +60,8 @@
      for="Products.ATContentTypes.content.newsitem.ATNewsItem"
      permission="zope.Public"
      template="views/newsitem_standard.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -79,9 +69,8 @@
      for="Products.ATContentTypes.content.newsitem.ATNewsItem"
      permission="zope.Public"
      template="views/newsitem_portlet.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Portlet"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -89,9 +78,8 @@
      for="Products.ATContentTypes.content.link.ATLink"
      permission="zope.Public"
      template="views/link_standard.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
   
   <browser:page
@@ -99,9 +87,8 @@
      for="Products.ATContentTypes.content.link.ATLink"
      permission="zope.Public"
      template="views/link_clickable.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Clickable"
+     class=".views.ClickableView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -109,9 +96,8 @@
      for="Products.ATContentTypes.content.link.ATLink"
      permission="zope.Public"
      template="views/link_portlet.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Portlet"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -119,9 +105,8 @@
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
      template="views/topic_standard.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
     <browser:page
@@ -129,9 +114,8 @@
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
      template="views/topic_album.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Album"
+     class=".views.AlbumTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -139,9 +123,8 @@
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
      template="views/topic_portlet.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Portlet"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -149,9 +132,8 @@
      for="Products.ATContentTypes.content.folder.ATFolder"
      permission="zope.Public"
      template="views/folder_standard.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -159,9 +141,8 @@
      for="Products.ATContentTypes.content.folder.ATFolder"
      permission="zope.Public"
      template="views/folder_portlet.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Portlet"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />  
 
   <browser:page
@@ -170,8 +151,7 @@
      permission="zope.Public"
      template="views/event_standard.pt"
      class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -179,9 +159,8 @@
      for="Products.ATContentTypes.content.event.ATEvent"
      permission="zope.Public"
      template="views/event_portlet.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Portlet"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -189,9 +168,8 @@
      for="Products.ATContentTypes.content.image.ATImage"
      permission="zope.Public"
      template="views/image_standard.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -199,9 +177,8 @@
      for="Products.ATContentTypes.content.image.ATImage"
      permission="zope.Public"
      template="views/image_portlet.pt"
-     class=".views.BaseView"
-     menu="collage-views"
-     title="Portlet"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
   
   <browser:page
@@ -209,9 +186,8 @@
      for="Products.Collage.interfaces.ICollageRow"
      permission="zope.Public"
      template="views/row_standard.pt"
-     class=".views.RowView"
-     menu="collage-views"
-     title="Standard"
+     class=".views.AutomaticRowView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -219,9 +195,8 @@
      for="Products.Collage.interfaces.ICollageRow"
      permission="zope.Public"
      template="views/row_largeleft.pt"
-     class=".views.RowView"
-     menu="collage-views"
-     title="Large left"
+     class=".views.LargeLeftRowView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -229,9 +204,8 @@
      for="Products.Collage.interfaces.ICollageRow"
      permission="zope.Public"
      template="views/row_largeright.pt"
-     class=".views.RowView"
-     menu="collage-views"
-     title="Large right"
+     class=".views.LargeRightRowView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -240,8 +214,7 @@
      permission="zope.Public"
      template="views/column_standard.pt"
      class=".views.BaseView"
-     menu="collage-views"
-     title="Standard"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
   <browser:page
@@ -250,8 +223,7 @@
      permission="zope.Public"
      template="views/fallback.pt"
      class=".views.BaseView"
-     menu="collage-views"
-     title="Fallback"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
 </configure>

@@ -1,34 +1,54 @@
 Changelog for Collage
+#####################
+
+Collage trunk
+=============
+
+https://svn.plone.org/collective/Collage/trunk
 
     (name of developer listed in brackets)
+
+* Making templates ready for i18ndude that found malformed stuffs when
+  ZPT is more tolerant.
+  [lenfant]
 
 * Made split- and expand-icons transparent
   [malthe]
 
 * Added clickable link view.
-  
+
 * Simplified view class names.
   [malthe]
 
 * Removed annotations hack (we now expect content to be IAnnotatable).
   [malthe]
-  
+
 * Image standard display now shows the actual image rather than its
   preview.  This caused issues with large images in a Collage being
   upscaled when displayed.  [rockdj]
 
+Collage 1.1
+===========
+
+https://svn.plone.org/collective/Collage/tags/1.1
+
 * Various bug fixes
   [malthe]
-    
+
 * No longer ship with jQuery.
   [malthe]
-  
+
 * Show locking viewlet in content menu
   [malthe]
-  
+
 * Fixed a jQuery integration issue
   [malthe]
-    
+
+Collage 1.0
+===========
+
+https://svn.plone.org/collective/Collage/tags/1.0-final
+
 * Added a search text field in existing_items to find items in large sites.
   Thanks to Silvio Tomatis for the patch.
   This closes ticket http://plone.org/products/collage/issues/12.
@@ -48,7 +68,7 @@ Changelog for Collage
 
 * Do not display Aliases with insufficient privileges
   [zegor]
- 
+
 * Made the Collection item size matter, and added a More... button [regebro]
 
 * Added content views for ATLink, ATFile and ATNewsItem
@@ -83,17 +103,17 @@ Changelog for Collage
     views.zcml             content views
     actions.zcml           ui actions (insert, split etc.)
     viewlets.zcml          ui configuration
-    
+
     [malthe]
-    
+
 * Nested headings properly
-    Lets have a 'safe' structure:    
+    Lets have a 'safe' structure:
     <h1> title of the collage
     <h2> could be a row heading and / or object item
     http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-logical-headings
 
     [pelle]
-    
+
 
 * Added HISTORY file
     Lets use this file again to log changes...

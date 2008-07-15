@@ -5,19 +5,21 @@
      tal:omit-tag="">
 
   <span class="collage-navigation"
-	tal:define="obj view/getImmediateObject">
+        tal:define="obj view/getImmediateObject">
     <a class="collage-js-up"
-       tal:attributes="href string:${obj/aq_parent/absolute_url}/reorder-object?position=up&id=${obj/getId}">
+       tal:attributes="href string:${obj/aq_parent/absolute_url}/reorder-object?position=up&amp;id=${obj/getId}">
       <img alt="Move left"
-	   i18n:attributes="alt label_move_left"
-	   tal:attributes="src string:${view/portal_url}/arrowLeft.gif">
+           i18n:attributes="alt label_move_left"
+           tal:attributes="src
+                           string:${view/portal_url}/arrowLeft.gif" />
     </a>
     <a class="collage-js-down"
-       tal:attributes="href string:${obj/aq_parent/absolute_url}/reorder-object?position=down&id=${obj/getId}">
+       tal:attributes="href string:${obj/aq_parent/absolute_url}/reorder-object?position=down&amp;id=${obj/getId}">
       <img alt="Move right"
-	   i18n:attributes="alt label_move_right"
-	   tal:attributes="src string:${view/portal_url}/arrowRight.gif">
+           i18n:attributes="alt label_move_right"
+           tal:attributes="src
+                           string:${view/portal_url}/arrowRight.gif" />
     </a>
   </span>
-  
+
 </div>

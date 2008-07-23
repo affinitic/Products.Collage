@@ -16,6 +16,8 @@ from Products.Collage.interfaces import ICollage
 
 from zope.interface import implements
 
+from Products.Collage.utilities import faketranslate as _
+
 CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     atapi.StringField(
         name='title',
@@ -39,7 +41,7 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     atapi.BooleanField('show_title',
         accessor='getShowTitle',
         widget=atapi.BooleanWidget(label='Show title',
-                                   label_msgid='label_show_title',
+                                   label_msgid=_('label_show_title'),
                                    i18n_domain='collage'
                                    ),
                        default=1
@@ -48,13 +50,13 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     atapi.BooleanField('show_description',
         accessor='getShowDescription',
         widget=atapi.BooleanWidget(label='Show description',
-                                   label_msgid='label_show_description',
+                                   label_msgid=_('label_show_description'),
                                    i18n_domain='collage'
                                    ),
                        default=1
                        ),
 
-    
+
 ))
 
 CollageSchema = CollageSchema + CommonCollageSchema.copy()

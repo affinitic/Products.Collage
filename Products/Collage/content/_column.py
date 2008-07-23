@@ -12,6 +12,8 @@ from zope.interface import implements
 # CMFDynamicViewFTI imports
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
+from Products.Collage.utilities import faketranslate as _
+
 CollageColumnSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     atapi.StringField(
         name='title',
@@ -19,9 +21,9 @@ CollageColumnSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         required=False,
         widget=atapi.StringWidget(
             label='Title',
-            label_msgid='label_optional_column_title',
+            label_msgid=_('label_optional_column_title'),
             description='You may optionally supply a title for this column.',
-            description_msgid='help_optional_column_title',
+            description_msgid=_('help_optional_column_title'),
             i18n_domain='collage',
         )
     ),
@@ -43,7 +45,7 @@ class CollageColumn(BrowserDefaultMixin, LayoutContainer, atapi.OrderedBaseFolde
                       getattr(BrowserDefaultMixin,'__implements__',()))
 
     schema = CollageColumnSchema
-    
+
     _at_rename_after_creation = True
 
     implements(ICollageColumn)

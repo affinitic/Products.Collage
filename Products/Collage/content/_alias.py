@@ -24,6 +24,8 @@ else:
 # CMFDynamicViewFTI imports
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
+from Products.Collage.utilities import faketranslate as _
+
 CollageAliasSchema = ATCTContent.schema.copy() + atapi.Schema((
     atapi.ReferenceField(
         name='target',
@@ -34,7 +36,7 @@ CollageAliasSchema = ATCTContent.schema.copy() + atapi.Schema((
         allowed_types = (),
         widget=ReferenceBrowserWidget(
             label='Selected target object',
-            label_msgid='label_alias_target',
+            label_msgid=_('label_alias_target'),
             i18n_domain='collage',
             startup_directory='/',
         ),

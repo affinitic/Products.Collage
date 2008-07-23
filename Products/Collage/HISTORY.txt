@@ -8,9 +8,19 @@ https://svn.plone.org/collective/Collage/trunk
 
     (name of developer listed in brackets)
 
+* Some easy code refactorings: the trunk does not support Plone 2.x
+  and older versions any more.
+  [glenfant]
+
+* Added some markups for i18ndude in Python.
+  [glenfant]
+
+* Moved (and added) tests to "tests" directory.
+  [glenfant]
+
 * Making templates ready for i18ndude that found malformed stuffs when
   ZPT is more tolerant.
-  [lenfant]
+  [glenfant]
 
 * Made split- and expand-icons transparent
   [malthe]

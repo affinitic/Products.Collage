@@ -8,6 +8,12 @@ from Products.Collage.tests import utils as ctc_utils
 class UtilsTestCase(CollageTestCase):
     """We test utilities for testcases"""
 
+    def testTestRequest(self):
+        request = ctc_utils.TestRequest()
+        request.set('dummy', 'stuff')
+        self.failUnlessEqual(request.get('dummy'), 'stuff')
+        return
+
     def testAddcollage(self):
         self.loginAsPortalOwner()
         foo_collage = ctc_utils.addCollage(self.portal, 'foo', 'Foo')

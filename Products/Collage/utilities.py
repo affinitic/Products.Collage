@@ -14,3 +14,12 @@ def generateNewId(container):
     contentIDs = map(lambda x: x.getId(), parent_contents)
     numericalIDs = filter(isNumber.match, contentIDs)
     return str(findFirstAvailableInteger(numericalIDs))
+
+
+def faketranslate(text, default=""):
+    """A fake translator to be used in AT schemas as i18ndude marker like this
+    from Products.Collage.utils import faketranslate as _
+    ...
+    widget = FooWidget('foo', label_msgid=_('label_foo', default="Foo"), ...)
+    """
+    return text

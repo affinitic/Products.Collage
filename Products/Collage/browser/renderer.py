@@ -40,7 +40,7 @@ class SimpleContainerRenderer(BrowserView):
 
             if ICollageAlias.providedBy(context):
                 target = context.get_target()
-                
+
                 # if not set, revert to context
                 if target is None:
                     target = context
@@ -52,7 +52,7 @@ class SimpleContainerRenderer(BrowserView):
                     continue
 
             # Filter out translation duplicates:
-            # If a non-alias object is translatable, check if its language 
+            # If a non-alias object is translatable, check if its language
             # is set to the currently selected language or to neutral,
             # or if it is the canonical version
             elif HAS_LINGUAPLONE and ITranslatable.providedBy(target):
@@ -69,7 +69,7 @@ class SimpleContainerRenderer(BrowserView):
             # store reference to alias if applicable
             if ICollageAlias.providedBy(context):
                 view.__alias__ = context
-            
+
             views.append(view)
 
         # restore interfaces

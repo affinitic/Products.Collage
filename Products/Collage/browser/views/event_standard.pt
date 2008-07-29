@@ -5,29 +5,29 @@
 <tal:event define="test view/test" i18n:domain="plone">
 
   <div class="vevent">
-    
+
     <h2 metal:define-macro="title"
 	tal:define="view context/@@collage_kss_helper"
 	tal:attributes="id string:${view/getUniqueIdentifier}-title;
 			class python: view.getKssClasses('title')"
 	tal:condition="here/Title">
-      <span metal:define-slot="inside" 
+      <span metal:define-slot="inside"
             tal:replace="here/Title">title</span>
     </h2>
-    
+
     <p metal:define-macro="description"
        tal:define="view context/@@collage_kss_helper"
        tal:attributes="id string:${view/getUniqueIdentifier}-description;
 		       class python: view.getKssClasses('description')"
        tal:condition="here/Description">
-      <span metal:define-slot="inside" 
+      <span metal:define-slot="inside"
             tal:replace="here/Description">description</span>
     </p>
-  
+
     <div class="eventDetails vcard">
       <table class="vertical listing"
              summary="Event details" i18n:attributes="summary summary_event_details;">
-	
+
 	<tbody>
           <tr>
             <th i18n:translate="event_what">What</th>
@@ -51,7 +51,7 @@
                   End Date Time
 		</abbr>
               </tal:differentday>
-	      
+
               <tal:sameday tal:condition="python:here.start().Date() == here.end().Date()"
                            tal:define="ampm python:site_properties.getProperty('localLongTimeFormat').find('%p') >= 0">
 		<abbr class="dtstart"
@@ -72,7 +72,7 @@
 		<span i18n:translate="event_to">to</span>
 		<span tal:replace="python:test(ampm, here.end().AMPMMinutes(), here.end().TimeMinutes())">End Time</span>
               </tal:sameday>
-	      
+
             </td>
           </tr>
           <tr tal:condition="here/location">
@@ -120,11 +120,11 @@
 	</tbody>
       </table>
     </div>
-    
+
     <div tal:condition="here/getText|nothing">
       <div tal:replace="structure here/getText" />
     </div>
-    
+
     <p tal:condition="here/event_url|nothing">
       <a class="url"
 	 href="event_url"
@@ -132,9 +132,9 @@
 	 i18n:translate="event_more_information">
 	More information about this event&hellip;</a>
     </p>
-    
+
   </div>
 
   <div class="visualClear" id="clear-space-after-relatedItems"><!-- --></div>
-  
+
 </tal:event>

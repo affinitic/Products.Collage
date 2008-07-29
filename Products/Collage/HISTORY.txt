@@ -1,3 +1,4 @@
+#####################
 Changelog for Collage
 #####################
 
@@ -7,6 +8,33 @@ Collage trunk
 https://svn.plone.org/collective/Collage/trunk
 
     (name of developer listed in brackets)
+
+* Removed meta_type attr in GS profile when not creating
+  objects. (potentially harmful according to MArtin Aspeli)
+  [glenfant]
+
+* Defining "view" variables in templates is harmful. Renamed to
+  kssview (generally)
+  [glenfant]
+
+* For  reason I can't understand, templates macros for KSS editing
+  only work when in a <span metal:define-macro ...> or a <div
+  metal:define-macro ...>
+  [glenfant]
+
+* We must set each fied in its own macro in the xx_portlet.pt views
+  otherwise KSS screams.
+  [glenfant]
+
+* Made portlets skinnable (reintroduced some of the zegor branch)
+  [glenfant]
+
+* Fixed unicode error in clipboard's title (reintroduced fix from
+  zegor branch).
+  [glenfant]
+
+* I hate tabs for indenting (removed in every file I needed to change)
+  [glenfant]
 
 * Some easy code refactorings: the trunk does not support Plone 2.x
   and older versions any more.

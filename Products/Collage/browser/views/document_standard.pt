@@ -5,7 +5,7 @@
     tal:attributes="id string:${view/getUniqueIdentifier}-title;
 		    class python: view.getKssClasses('title')"
     tal:condition="here/Title">
-  <span metal:define-slot="inside" 
+  <span metal:define-slot="inside"
         tal:replace="here/Title">title</span>
 </h2>
 
@@ -15,7 +15,7 @@
         tal:attributes="id string:${view/getUniqueIdentifier}-description;
 		        class python: view.getKssClasses('description')"
         tal:condition="here/Description">
-    <span metal:define-slot="inside" 
+    <span metal:define-slot="inside"
           tal:replace="here/Description">description</span>
   </span>
 </p>
@@ -29,6 +29,6 @@
 		     view.getKssClasses('text')"
      tal:condition="text"
      class="stx">
-  <span metal:define-slot="inside" 
+  <span metal:define-slot="inside"
         tal:replace="structure text">text</span>
-</div> 
+</div>

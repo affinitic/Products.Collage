@@ -20,9 +20,17 @@ class IDynamicViewManager(interface.Interface):
 class ICollageBrowserLayer(interface.Interface):
     """Collage browser layer. Views registered with this layer
     are available to objects inside a collage."""
+    pass
 
 class ICollageEditLayer(interface.Interface):
     """Collage edit layer."""
+    pass
 
 class IContentMenu(IViewletManager):
     """Interface for the content-menu viewlet manager."""
+    pass
+
+class IPortletSkin(interface.Interface):
+    """Interface for skinable portlets views."""
+    pass
+

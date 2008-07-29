@@ -9,6 +9,6 @@
 		     view.getKssClasses('text')"
      tal:condition="text"
      class="stx">
-  <span metal:define-slot="inside" 
+  <span metal:define-slot="inside"
         tal:replace="structure text">text</span>
-</div> 
+</div>

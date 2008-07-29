@@ -2,6 +2,8 @@ from Products.Five.browser import BrowserView
 
 from Products.CMFCore.utils import getToolByName
 
+from Products.Collage.interfaces import IDynamicViewManager, IPortletSkin
+
 class BaseView(BrowserView):
     def test(self):
         return lambda a, b, c: a and b or c
@@ -21,7 +23,22 @@ class BaseView(BrowserView):
     def site_properties(self):
         props = getToolByName(self.context, 'portal_properties')
         return props.site_properties
-    
+
+    def friendlyTypes(self):
+        return getToolByName(self.context, 'plone_utils').getUserFriendlyTypes()
+
+    def getSkin(self):
+        alias = getattr(self, '__alias__', None)
+
+        if alias:
+            context = alias
+        else:
+            context = self.__parent__
+
+        manager = IDynamicViewManager(context)
+        return manager.getSkin()
+
+
 class RowView(BaseView):
     def getColumnBatches(self, bsize=3):
         columns = self.context.folderlistingFolderContents()
@@ -30,7 +47,7 @@ class RowView(BaseView):
 
         # calculate number of batches
         count = (len(columns)-1)/3+1
-        
+
         batches = []
         for c in range(count):
             batch = []
@@ -46,9 +63,9 @@ class RowView(BaseView):
                 # do not pad first row
                 if column or c > 0:
                     batch += [column]
-                
+
             batches += [batch]
-        
+
         return batches
 
 class AutomaticRowView(RowView):
@@ -71,6 +88,7 @@ class FeaturedView(BaseView):
 
 class PortletView(BaseView):
     title = u'Portlet'
+    skinInterfaces = (IPortletSkin,)
 
 class AlbumTopicView(BaseView):
     title = u'Album'

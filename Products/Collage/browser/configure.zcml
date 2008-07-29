@@ -93,5 +93,7 @@
   <include file="viewlets.zcml" />
 
   <include file="actions.zcml" />
+
+  <include file="skins.zcml" />
   
 </configure>

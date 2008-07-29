@@ -9,6 +9,6 @@
    tal:attributes="id string:${view/getUniqueIdentifier}-description;
 		   class python: 'discreet' + view.getKssClasses('description')"
    tal:condition="here/Description">
-  <span metal:define-slot="inside" 
+  <span metal:define-slot="inside"
         tal:replace="here/Description">description</span>
 </p>

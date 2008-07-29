@@ -21,6 +21,17 @@ class ActionsView(BrowserView):
         self.context.plone_utils.addPortalMessage(_(u'View changed.'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
+
+    def setDynamicSkin(self):
+        skin = self.request['skin']
+
+        manager = IDynamicViewManager(self.context)
+        manager.setSkin(skin)
+
+        self.context.plone_utils.addPortalMessage(_(u'Skin changed.'))
+        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
+
+
     def reorderObjects(self):
         object_id = self.request['id']
         position = self.request['position']
@@ -52,24 +63,24 @@ class ActionsView(BrowserView):
         row_id = self.context.invokeFactory(id=desired_id, type_name='CollageRow')
         row = getattr(self.context, row_id, None)
         row.setTitle('')
-        
+
         # create column
         desired_id = generateNewId(row)
         col_id = row.invokeFactory(id=desired_id, type_name='CollageColumn')
         col = getattr(row, col_id, None)
         col.setTitle('')
-        
+
         self.context.plone_utils.addPortalMessage(_(u'msg_row_added'))
-        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])    
+        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
     def splitColumn(self):
         container = aq_parent(aq_inner(self.context))
         desired_id = generateNewId(container)
 
         container.invokeFactory(id=desired_id, type_name='CollageColumn')
-        
+
         self.context.plone_utils.addPortalMessage(_(u'msg_column_inserted'))
-        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])    
+        self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
     def insertAlias(self):
         uid_catalog = cmfutils.getToolByName(self.context,
@@ -77,7 +88,7 @@ class ActionsView(BrowserView):
 
         uid = self.request.get('uid')
         container = self.context
-        
+
         # check that target object exists
         brains = uid_catalog(UID=uid)
         if brains:
@@ -93,11 +104,11 @@ class ActionsView(BrowserView):
             # set target
             alias.set_target(uid)
             event.notify(objectevent.ObjectModifiedEvent(alias))
-            
+
             msg = 'msg_alias_inserted'
         else:
             msg = 'msg_target_object_not_found'
-            
+
         referer = self.request.get('HTTP_REFERER', self.context.absolute_url())
         self.context.plone_utils.addPortalMessage(_(msg))
         return self.request.RESPONSE.redirect(referer)
@@ -108,8 +119,8 @@ class ActionsView(BrowserView):
         parent = self.context.aq_inner.aq_parent
 
         parent.manage_delObjects(self.context.getId())
-        
+
         message = _(u'${title} has been deleted.', mapping={u'title' : self.context.portal_type})
-        
+
         self.context.plone_utils.addPortalMessage(message)
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])

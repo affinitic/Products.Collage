@@ -1,1 +1,23 @@
-  * Add generic setup uninstall when its possible (the stonor way)
+#######################################
+Issues, future features and refactoring
+#######################################
+
+* Add generic setup uninstall when its possible (the stonor way)
+
+* Remove the CMF skin layer in favour of a Zope3/Five
+  resourceDirectory. But DTML markup is not supported in resources.
+
+* Simplify templates (refactor repeated KSS stuffs).
+
+* Add a blacklist of content types (not compatible by nature with
+  Collage). Edit this blacklist in a config panel.
+
+* Limit number of columns in a config panel.
+
+* Conflict with ARFilePreview on ATFile objects when editing through
+  compose page.
+
+* Views of subcontent should be optimized (more in Python view classes
+  an less in templates).
+
+* Fix doctest in viewlets.txt (lines 82/85)

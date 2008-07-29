@@ -3,13 +3,14 @@ from zope.component import getMultiAdapter
 from zope.interface import directlyProvidedBy, directlyProvides
 
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 
 from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 
 from ZODB.POSException import ConflictError
- 
+
 from OFS.CopySupport import _cb_decode
 from OFS import Moniker
 
@@ -26,7 +27,7 @@ class SimpleContentMenuViewlet(object):
         alias = getattr(self.__parent__, '__alias__', None)
         if alias:
             return alias.aq_inner
-        
+
         return self.context.aq_inner
 
 class LayoutViewlet(SimpleContentMenuViewlet):
@@ -44,7 +45,7 @@ class LayoutViewlet(SimpleContentMenuViewlet):
 
         if not active:
             active, title = manager.getDefaultLayout()
-        
+
         # compile list of registered layouts
         layouts = manager.getLayouts()
 
@@ -54,6 +55,31 @@ class LayoutViewlet(SimpleContentMenuViewlet):
         return [{'id': name,
                  'name': title,
                  'active': name == active} for (name, title) in layouts]
+
+
+class SkinViewlet(SimpleContentMenuViewlet):
+    def getSkins(self):
+        context = self.context
+
+        # handle aliased objects
+        alias = getattr(self.__parent__, '__alias__', None)
+        if alias: context = alias
+
+        manager = IDynamicViewManager(context)
+
+        # lookup active skin
+        active = manager.getSkin()
+
+        if not active:
+            active = 'default'
+
+        # compile list of registered skins for the layout
+        skins = manager.getSkins(self.request)
+
+        return [{'id': name,
+                 'name': title,
+                 'active': name == active} for (name, title) in skins]
+
 
 class InsertNewItemViewlet(object):
     def normalizeString(self):
@@ -66,12 +92,12 @@ class InsertNewItemViewlet(object):
         allowed_types = container.allowedContentTypes()
 
         portal_url = getToolByName(self.context, 'portal_url')()
-        
+
         return [{'title': t.Title(),
                  'description': t.Description(),
                  'icon': '%s/%s' % (portal_url, t.getIcon()),
                  'id': t.getId()} for t in allowed_types]
-    
+
 class SplitColumnViewlet(object):
     pass
 
@@ -104,7 +130,7 @@ class PasteViewlet(SimpleContentMenuViewlet):
     @property
     def clipboard_data_valid(self):
         cb_dataValid = getattr(self.context, 'cb_dataValid', None)
-        
+
         if callable(cb_dataValid):
             return cb_dataValid()
 
@@ -121,9 +147,9 @@ class PasteViewlet(SimpleContentMenuViewlet):
             ob = m.bind(app)
         except (ConflictError, AttributeError, KeyError):
             return None
-        
+
         return ob
-    
+
     def render(self):
         """Only render if the clipboard contains an object that can
         be added to this container."""
@@ -141,4 +167,4 @@ class PasteViewlet(SimpleContentMenuViewlet):
         return u''
 
     def clipboard_item_title(self):
-        return u'Paste "%s"' % self._get_clipboard_item().title_or_id()
+        return u'Paste "%s"' % safe_unicode(self._get_clipboard_item().title_or_id())

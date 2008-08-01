@@ -15,7 +15,7 @@
       
       <div class="expandable-content">
 	<p i18n:translate="help_select_skin"
-	   class="discreet">Choose a skin to apply to the selected layout.<</p>
+	   class="discreet">Choose a skin to apply to the selected layout.</p>
 	
 	<tal:skins repeat="skin skins">
 	  <a class="layout"

@@ -1,0 +1,9 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <utility
+     name="collage-my-view-alert"
+     provides="Products.Collage.interfaces.IAlertSkin"
+     factory=".skins.AlarmPortletSkin"
+  />
+
+</configure>

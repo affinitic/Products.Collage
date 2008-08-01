@@ -29,7 +29,17 @@
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />
-  
+
+    <browser:viewlet
+     name="45-skin"
+     for="*"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.SkinViewlet"
+     template="viewlets/skin.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+
   <browser:viewlet
      name="50-insert-new-item"
      for="Products.Collage.interfaces.ICollageColumn"

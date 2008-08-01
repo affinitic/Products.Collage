@@ -8,7 +8,15 @@
      permission="cmf.ModifyPortalContent"
      class=".actions.ActionsView"
      />
-  
+
+  <browser:page
+     name="set-content-skin"
+     attribute="setDynamicSkin"
+     for="*"
+     permission="cmf.ModifyPortalContent"
+     class=".actions.ActionsView"
+     />
+
   <browser:page
      name="insert-row"
      attribute="insertRow"

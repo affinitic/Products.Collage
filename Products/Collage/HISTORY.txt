@@ -9,6 +9,9 @@ https://svn.plone.org/collective/Collage/trunk
 
     (name of developer listed in brackets)
 
+* Added a skin demo for portlets
+  [glenfant]
+
 * Code cleanup with pyflakes
   [glenfant]
 

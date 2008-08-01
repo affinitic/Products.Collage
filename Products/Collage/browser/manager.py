@@ -1,4 +1,4 @@
-from zope.viewlet import manager
+# $Id$
 
 class ContentViewletManager(object):
     def sort(self, viewlets):

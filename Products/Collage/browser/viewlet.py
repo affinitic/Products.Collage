@@ -1,13 +1,9 @@
-from zope.viewlet import viewlet
-from zope.component import getMultiAdapter
-from zope.interface import directlyProvidedBy, directlyProvides
+# $Id$
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 
-from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.interfaces import IDynamicViewManager
-from Products.Collage.interfaces import ICollageAlias
 
 from ZODB.POSException import ConflictError
 

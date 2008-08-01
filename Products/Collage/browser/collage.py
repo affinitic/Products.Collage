@@ -1,7 +1,11 @@
-from Products.Five.browser import BrowserView
+# $Id$
 
-from zope.interface import alsoProvides
-from zope.interface import Interface
+from zope.interface import Interface, alsoProvides
+
+from Acquisition import aq_base
+
+from Products.Five.browser import BrowserView
+from Products.CMFPlone.interfaces import INonStructuralFolder
 
 from Products.Collage.interfaces import ICollageEditLayer
 
@@ -24,16 +28,13 @@ class CollageView(BrowserView):
             return False
         elif INonStructuralFolder.providedBy(context):
             return False
-        elif z2INonStructuralFolder.isImplementedBy(context):
-            # BBB: for z2 interface compat
-            return False
         else:
             return folderish
 
     def render_manage_view(self):
         """Set the edit layer on the request and return the
         standard view as returned by CMFDynamicViewFTI."""
-        
+
         alsoProvides(self.request, ICollageEditLayer)
 
         fti = self.context.getTypeInfo()

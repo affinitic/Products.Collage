@@ -1,6 +1,7 @@
+# $Id$
+
 from AccessControl import getSecurityManager, Unauthorized
 
-from zope.interface import Interface
 from zope.interface import directlyProvidedBy, directlyProvides
 from zope.component import getMultiAdapter
 

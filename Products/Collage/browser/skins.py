@@ -1,3 +1,5 @@
+# $Id$
+
 from Products.CMFPlone import PloneMessageFactory as _
 
 class PortletDefaultSkin(object):
@@ -5,6 +7,6 @@ class PortletDefaultSkin(object):
 
 class PortletSkin01(object):
     title = _(u"skin-01", default=u"Skin 01")
-    
+
 class PortletSkin02(object):
     title = _(u"skin-02", default=u"Skin 02")

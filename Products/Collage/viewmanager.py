@@ -1,11 +1,10 @@
 from zope.annotation.interfaces import IAnnotations
-from zope.annotation.interfaces import IAttributeAnnotatable
 
-from zope.interface import Interface
-from zope.interface import \
-     implements, alsoProvides, providedBy
+from zope.interface import (
+    Interface, implements, providedBy, directlyProvidedBy,
+    directlyProvides)
 
-from zope.component import getSiteManager
+from zope.component import getSiteManager, getMultiAdapter, getUtilitiesFor
 
 from interfaces import IDynamicViewManager
 from interfaces import ICollageAlias

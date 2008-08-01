@@ -1,13 +1,15 @@
+# $Id$
+
 from zope.interface import Interface
 
-from Acquisition import aq_base, aq_inner, aq_parent
+from Acquisition import aq_inner, aq_parent
 
 from Products.Collage.interfaces import ICollage
 
 class ICollageHelper(Interface):
     def loadCollageJS(self):
         """Determine if we need to load JS."""
-        
+
     def isCollageContent():
         """Search object tree for a Collage-object."""
         pass

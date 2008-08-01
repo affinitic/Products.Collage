@@ -2,12 +2,24 @@
 Changelog for Collage
 #####################
 
-Collage trunk
-=============
+Collage 1.2.0 SBN trunk
+=======================
 
 https://svn.plone.org/collective/Collage/trunk
 
     (name of developer listed in brackets)
+
+* Code cleanup with pyflakes
+  [glenfant]
+
+* Registering skin with ZCML
+  [glenfant]
+
+* Version is now 3 digits (major.minor.bugfix) as most components.
+  [glenfant]
+
+* Extensions/* (Install script) is now useless. Removed
+  [glenfant]
 
 * Removed meta_type attr in GS profile when not creating
   objects. (potentially harmful according to MArtin Aspeli)

@@ -20,7 +20,7 @@
   </configure>
   
   <!-- Uncomment below element to enable the box skinning demo -->
-<!--
+
   <include package=".skindemo" />
--->
+
 </configure>

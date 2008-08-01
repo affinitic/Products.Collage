@@ -68,9 +68,10 @@ implemented by the skin::
       title = u'My view'
       skinInterfaces = (IAlertSkin,)
 
+
 Finally, add your CSS rules in a stylesheet::
 
-  #collage .skin-03 {
+  #collage .collage-my-view-alert {
    ...
 
   }

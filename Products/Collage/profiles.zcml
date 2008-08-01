@@ -4,7 +4,7 @@
     i18n_domain="collage">
 
   <genericsetup:registerProfile
-      name="Collage"
+      name="default"
       title="Collage"
       directory="profiles/default"
       description="Extension profile for Collage."

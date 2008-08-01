@@ -3,6 +3,8 @@
 	   xmlns:cmf="http://namespaces.zope.org/cmf"
            xmlns:five="http://namespaces.zope.org/five">
 
+  <include file="profiles.zcml" />
+
   <cmf:registerDirectory name="Collage"/>
 
   <include package="zope.annotation" />

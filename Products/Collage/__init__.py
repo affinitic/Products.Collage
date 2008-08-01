@@ -1,7 +1,4 @@
-from Products.GenericSetup import EXTENSION
-from Products.GenericSetup import profile_registry
-
-import Products.CMFPlone.interfaces
+# $Id$
 
 from Products.Archetypes.atapi import listTypes, process_types
 
@@ -28,13 +25,3 @@ def initialize(context):
                          extra_constructors = constructors,
                          fti = ftis,
                          ).initialize(context)
-
-    profile_registry.registerProfile(
-        name='default',
-        title='Collage',
-        description='Profile for Collage',
-        path='profiles/default',
-        product=PROJECTNAME,
-        profile_type=EXTENSION,
-        for_=Products.CMFPlone.interfaces.IPloneSiteRoot)
-

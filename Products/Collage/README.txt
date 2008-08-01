@@ -50,6 +50,7 @@ registered for use in Collage.
 Malthe Borch (main developer) <mborch@gmail.com>
 Pelle Kroegholt <pelle@headnet.dk>
 Sune Toft <sune@headnet.dk>
+Gilles Lenfant <gilles.lenfant@ingeniweb.com>
 
 :: sponsors
 

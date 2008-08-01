@@ -2,12 +2,18 @@
 Changelog for Collage
 #####################
 
-Collage 1.2.0 SBN trunk
+Collage 1.2.0 SVN trunk
 =======================
 
 https://svn.plone.org/collective/Collage/trunk
 
     (name of developer listed in brackets)
+
+
+Collage 1.2.0 beta 1
+====================
+
+https://svn.plone.org/collective/Collage/tags/1.2.0beta1
 
 * Added a skin demo for portlets
   [glenfant]

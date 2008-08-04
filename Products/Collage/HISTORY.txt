@@ -15,6 +15,9 @@ Collage 1.2.0 beta 1
 
 https://svn.plone.org/collective/Collage/tags/1.2.0beta1
 
+* Removed useles Folder and Plone Site types setups.
+  [glenfant]
+
 * Added a skin demo for portlets
   [glenfant]
 

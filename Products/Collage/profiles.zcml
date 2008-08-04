@@ -3,6 +3,8 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="collage">
 
+  <!-- $Id$ -->
+
   <genericsetup:registerProfile
       name="default"
       title="Collage"
@@ -11,4 +13,16 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:upgradeSteps
+     source="0.0"
+     destination="1.2.0"
+     profile="Products.Collage:default">
+
+    <genericsetup:upgradeStep
+       title="Upgrading the types"
+       description="We don't support Plone 2 style types"
+       handler=".upgrades.runTypesStepOnly"
+       />
+
+  </genericsetup:upgradeSteps>
 </configure>

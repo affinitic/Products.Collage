@@ -25,6 +25,12 @@ fits inside a collage.
 The Alias-type is provided to allow displaying existing objects from the site
 inside the collage.
 
+:: upgrading
+
+Open in ZMI .../your-site/portal_setup and click the "Upgrades" tab.
+Select the "Products.Collage:default" profile and see if upgrades are
+available. Run them :D
+
 :: javascript-functionality
 
 We use the jquery-library to facilitate easy scripting. Ajax is used to move

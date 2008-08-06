@@ -2,6 +2,14 @@
 Changelog for Collage
 #####################
 
+Collage 1.2.0 beta 2 SVN trunk
+==============================
+
+https://svn.plone.org/collective/Collage/trunk
+
+	    (name of developer listed in brackets)
+
+
 Collage 1.2.0 beta 2
 ====================
 

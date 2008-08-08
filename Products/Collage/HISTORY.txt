@@ -7,7 +7,24 @@ Collage 1.2.0 beta 2 SVN trunk
 
 https://svn.plone.org/collective/Collage/trunk
 
-	    (name of developer listed in brackets)
+* Renamed builtin portlet skins and gave minimum CSS to them.
+  [glenfant]
+
+* Re-using ATContentTypes.content.schemata.ATContentTypesSchema and
+  removing copied/pasted portions of code in our schema definitions.
+  [glenfant]
+
+* Removed CMF skins layer "Collage" and spreaded its stuffs in Zope 3
+  style browser resources and pages (CSS). Added an upgrade step for
+  this.
+  [glenfant]
+
+* Using the MessageFactory for labels and descriptions in
+  schemas. Code is more compact and i18ndude friendly.
+  [glenfant]
+
+* Added unit tests for utilities.
+  [glenfant]
 
 
 Collage 1.2.0 beta 2
@@ -18,7 +35,7 @@ https://svn.plone.org/collective/Collage/tags/1.2.0beta2
 * Added a GenericSetup upgrade step to 1.2.0.
   [glenfant]
 
-* Removed useles Folder and Plone Site types setups.
+* Removed useless Folder and Plone Site types setups.
   [glenfant]
 
 Collage 1.2.0 beta 1

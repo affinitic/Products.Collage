@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="context/@@standard_macros/page"
+      i18n:domain="collage">
+
+  <div metal:fill-slot="body">
+    <metal:main-macro define-macro="main">
+
+      <div tal:define="collage_view here/@@collage"
+           id="collage"
+           tal:attributes="class python:collage_view.edit_mode() and 'edit' or ''">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 tal:condition="here/getShowTitle|nothing"
+            class="documentFirstHeading">
+          <metal:field use-macro="python:here.widget('title', mode='view')">
+            Title
+          </metal:field>
+        </h1>
+        
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <tal:description condition="here/getShowDescription|nothing">
+          <p class="documentDescription"
+             tal:condition="here/Description">
+            <metal:field use-macro="python:here.widget('description', mode='view')">
+              Description
+            </metal:field>
+          </p>
+        </tal:description>
+        
+        <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+          show related items if they exist
+        </div>
+        
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <div tal:replace="structure here/@@renderer">
+          Collage content
+        </div>
+        
+        <p tal:condition="collage_view/edit_mode">
+          <span class="discreet"
+                i18n:translate="label_no_items_added"
+                tal:condition="not: here/folderlistingFolderContents">
+            This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here.
+          </span>
+          
+          <form action="insert-row" tal:condition="collage_view/edit_mode">
+            <input type="submit" class="context"
+                   i18n:attributes="value button_add_collagerow"
+                   value="Add row" />
+          </form>
+        </p>
+        
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+        
+      </div>
+    </metal:main-macro>
+  </div>
+
+</html>

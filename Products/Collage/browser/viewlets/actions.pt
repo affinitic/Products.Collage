@@ -13,7 +13,6 @@
 	  i18n:translate="label_aliased">(alias)</span>
     
 
-
     <tal:delete-or-remove define="obj view/getImmediateObject">
       <a class="action"
 	 tal:condition="view/isAlias"

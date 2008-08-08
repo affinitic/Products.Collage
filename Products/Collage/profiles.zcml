@@ -24,5 +24,17 @@
        handler=".upgrades.runTypesStepOnly"
        />
 
+    <genericsetup:upgradeStep
+       title="Updating JS registry"
+       description="Javascript moved from skins to resources"
+       handler=".upgrades.updateJSRegistry"
+       />
+
+    <genericsetup:upgradeStep
+       title="Removing skins layer"
+       description="Collage doesn't require a skins layer anymore"
+       handler=".upgrades.removeSkinsLayer"
+       />
+    
   </genericsetup:upgradeSteps>
 </configure>

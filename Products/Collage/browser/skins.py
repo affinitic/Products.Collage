@@ -1,12 +1,12 @@
 # $Id$
 
-from Products.CMFPlone import PloneMessageFactory as _
+from Products.Collage.utilities import CollageMessageFactory as _
 
 class PortletDefaultSkin(object):
     title = _(u"default", default=u"Default")
 
-class PortletSkin01(object):
-    title = _(u"skin-01", default=u"Skin 01")
+class PortletNotificationSkin(object):
+    title = _(u"notification_skin", default=u"Notification")
 
-class PortletSkin02(object):
-    title = _(u"skin-02", default=u"Skin 02")
+class PortletHelpSkin(object):
+    title = _(u"help_skin", default=u"Help")

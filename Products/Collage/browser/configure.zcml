@@ -1,6 +1,19 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser">
 
+  <browser:resourceDirectory
+     name="collage-resources"
+     directory="resources"
+     permission="zope2.Public"
+     />
+
+  <browser:page
+     name="collage_view"
+     for="Products.Collage.content.Collage"
+     template="templates/collage_view.pt"
+     permission="zope2.View"
+     />
+
   <browser:page
      name="manage_collage"
      for="Products.Collage.content.Collage"
@@ -86,6 +99,13 @@
      permission="zope.Public"
      class=".kss.DummyFieldsView"
      allowed_attributes="getKssUIDClass getKssClassesInlineEditable getKssClasses"
+     />
+
+  <browser:page
+     name="collage.css"
+     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+     class=".renderer.CollageStylesheet"
+     permission="zope2.Public"
      />
      
   <include file="views.zcml" />

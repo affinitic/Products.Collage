@@ -10,6 +10,7 @@ I'm too lazy to make a GS profile only for this ;o):
 
   Id: ++resource++collage-skindemo-stylesheets/alert.css
   CSS Media: all
+  Condition: object/@@collage|nothing
 
 Leave the default values to the other fields.
 

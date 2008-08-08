@@ -1,6 +1,7 @@
 # $Id$
 
 from AccessControl import getSecurityManager, Unauthorized
+from Globals import DTMLFile
 
 from zope.interface import directlyProvidedBy, directlyProvides
 from zope.component import getMultiAdapter
@@ -10,12 +11,7 @@ from Products.Five.browser import BrowserView
 from Products.Collage.interfaces import ICollageBrowserLayer, IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 
-try:
-    from Products.LinguaPlone.interfaces import ITranslatable
-except ImportError:
-    HAS_LINGUAPLONE = False
-else:
-    HAS_LINGUAPLONE = True
+from Products.Collage.utilities import isTranslatable
 
 class SimpleContainerRenderer(BrowserView):
     def getItems(self, contents=None):
@@ -56,7 +52,7 @@ class SimpleContainerRenderer(BrowserView):
             # If a non-alias object is translatable, check if its language
             # is set to the currently selected language or to neutral,
             # or if it is the canonical version
-            elif HAS_LINGUAPLONE and ITranslatable.providedBy(target):
+            elif isTranslatable(target):
                 language = self.request.get('LANGUAGE','')
                 if target.Language() not in (language, ''):
                     # Discard the object, if it is not the canonical version
@@ -78,3 +74,15 @@ class SimpleContainerRenderer(BrowserView):
 
         return views
 
+class CollageStylesheet(BrowserView):
+    """Renders the collage standard stylesheet"""
+
+    template = DTMLFile('templates/collage.css', globals())
+
+    def __call__(self, *args, **kwargs):
+        """Renders the standard collage stylesheet.
+        Note that we do not change HTTP headers since we are supposed to be
+        published through the CSS registry"""
+
+        template = self.template.__of__(self.context)
+        return template(context=self.context)

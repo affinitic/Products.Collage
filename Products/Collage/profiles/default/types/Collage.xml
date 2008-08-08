@@ -7,12 +7,12 @@
  <property name="title">Collage</property>
  <property
     name="description">desc_type_collage</property>
- <property name="content_icon">collage_icon.gif</property>
+ <property name="content_icon">++resource++collage-resources/collage_icon.gif</property>
  <property name="content_meta_type">Collage</property>
  <property name="product">Collage</property>
  <property name="factory">addCollage</property>
  <property name="immediate_view">collage_view</property>
- <property name="global_allow">False</property>
+ <property name="global_allow">True</property>
  <property name="filter_content_types">False</property>
  <property name="allowed_content_types">
    <element value="CollageRow"/>

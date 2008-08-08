@@ -1,5 +1,6 @@
-/* <dtml-with base_properties> (do not remove this :)
-   <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+/* <dtml-with "context.base_properties"> (do not remove this :)
+   <dtml-let portal_url="context.absolute_url()"> (do not remove this :)
+*/
 
 /* customizable: presentation */
 
@@ -26,7 +27,7 @@
 
 .collage-header {
   font-size: 0.9em;
-/*  background: url(&dtml-portal_url;/collage_row_header.jpg) no-repeat top left;*/
+/*  background: url(&dtml-portal_url;/++resource++collage-resources/collage_row_header.jpg) no-repeat top left;*/
   border-bottom: 1px solid &dtml-globalBorderColor;;
   padding: 5px;
   position: relative;
@@ -78,13 +79,13 @@
     width: 14px;
     height: 14px;
     padding-right: 3px;
-    background: url(&dtml-portal_url;/icon-split.gif) no-repeat top left;
+    background: url(&dtml-portal_url;/++resource++collage-resources/icon-split.gif) no-repeat top left;
 }
 
 /* expandable sections */
 
 .expandable-section .expandable-label .expandable-icon {
-  background: url(&dtml-portal_url;/icon-plusminus.gif) no-repeat top left;
+  background: url(&dtml-portal_url;/++resource++collage-resources/icon-plusminus.gif) no-repeat top left;
   float: left;
   width: 14px;
   height: 14px;
@@ -104,7 +105,7 @@
 .expandable-content {
   clear: both;
   display: none;
-  /*background: transparent url(&dtml-portal_url;/collage_row_header.jpg) no-repeat top left;*/
+  /*background: transparent url(&dtml-portal_url;/++resource++collage-resources/collage_row_header.jpg) no-repeat top left;*/
   padding: 10px;
   position: relative;
 }
@@ -334,5 +335,18 @@ span.collage-navigation a {
     width: 18%;
 }
 
+/* Portlets skinning */
+#collage .collage-portlet-default {
+    /* nothing, thus like a column portlet, but we could  :) */
+}
 
+#collage .collage-portlet-notification dt.portletHeader {
+    background-color: &dtml-notifyBackgroundColor;;
+}
+
+#collage .collage-portlet-help dt.portletHeader {
+    background-color: &dtml-helpBackgroundColor;;
+}
+
+/* </dtml-let> */
 /* </dtml-with> */

@@ -1,3 +1,4 @@
+# $Id$
 """
 Testing... the test framework
 """

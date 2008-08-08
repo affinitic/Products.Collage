@@ -1,24 +1,22 @@
 <configure
     xmlns="http://namespaces.zope.org/zope">
 
-
     <utility
-        name="collage-portlet-00"
-	provides="Products.Collage.interfaces.IPortletSkin"
+        name="collage-portlet-default"
+        provides="Products.Collage.interfaces.IPortletSkin"
         factory=".skins.PortletDefaultSkin"
         />
     
     <utility
-        name="collage-portlet-01"
-	provides="Products.Collage.interfaces.IPortletSkin"
-        factory=".skins.PortletSkin01"
+        name="collage-portlet-notification"
+        provides="Products.Collage.interfaces.IPortletSkin"
+        factory=".skins.PortletNotificationSkin"
         />
         
     <utility
-        name="collage-portlet-02"
-	provides="Products.Collage.interfaces.IPortletSkin"
-        factory=".skins.PortletSkin02"
+        name="collage-portlet-help"
+        provides="Products.Collage.interfaces.IPortletSkin"
+        factory=".skins.PortletHelpSkin"
         />
-        
-        
+                
 </configure>

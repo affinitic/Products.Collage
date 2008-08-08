@@ -68,6 +68,8 @@ implemented by the skin::
       title = u'My view'
       skinInterfaces = (IAlertSkin,)
 
+Note that you don't need this above stuff for portlets views
+that are already skinnable.
 
 Finally, add your CSS rules in a stylesheet::
 
@@ -75,6 +77,12 @@ Finally, add your CSS rules in a stylesheet::
    ...
 
   }
+
+Note that if you are using "Merge CSS composition" of CSS registry,
+your stylesheet must be after "collage.css" and use the same condition
+as the former::
+
+  object/@@collage|nothing
 
 
 Content controls

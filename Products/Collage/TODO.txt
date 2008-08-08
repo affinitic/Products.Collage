@@ -2,22 +2,40 @@
 Issues, future features and refactoring
 #######################################
 
-* Add generic setup uninstall when its possible (the stonor way)
+Issues
+======
 
-* Remove the CMF skin layer in favour of a Zope3/Five
-  resourceDirectory. But DTML markup is not supported in resources.
+* Fix doctest in viewlets.txt (lines 82/85)
 
-* Simplify templates (refactor repeated KSS stuffs).
+* Conflict with ARFilePreview on ATFile objects when editing through
+  compose page.
+
+* Styles appear on sites where the CSS resources are not installed. We
+  should use the GS profile name as filter somewhere because its
+  somehow difficult to check wether a CSS class is
+  available. Otherwise could we do this in javascript?
+
+Features
+========
 
 * Add a blacklist of content types (not compatible by nature with
   Collage). Edit this blacklist in a config panel.
 
 * Limit number of columns in a config panel.
 
-* Conflict with ARFilePreview on ATFile objects when editing through
-  compose page.
+Refactoring
+===========
+
+* Add generic setup uninstall when its possible (the stonor way)
+
+* Simplify templates (refactor repeated KSS stuffs).
 
 * Views of subcontent should be optimized (more in Python view classes
   an less in templates).
 
-* Fix doctest in viewlets.txt (lines 82/85)
+* "browser/resources/edit_icon.gif" seems useless.
+
+* Do we really need rich AT types for rows and columns ? Considering
+  using plone.app.content based types (risks, ...)
+
+* Search for all "FIXME:" in the code.

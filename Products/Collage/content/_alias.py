@@ -1,3 +1,5 @@
+# $Id$
+
 from AccessControl import ClassSecurityInfo
 
 from Products.Archetypes import atapi
@@ -12,19 +14,12 @@ from Products.Collage.content.common import LayoutContainer
 
 from Products.ATContentTypes.content.base import ATCTContent
 
-from Products.Archetypes.utils import DisplayList
-
-try:
-    from Products.LinguaPlone.interfaces import ITranslatable
-except ImportError:
-    HAS_LINGUAPLONE = False
-else:
-    HAS_LINGUAPLONE = True
+from Products.Collage.utilities import isTranslatable
 
 # CMFDynamicViewFTI imports
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
-from Products.Collage.utilities import faketranslate as _
+from Products.Collage.utilities import CollageMessageFactory as _
 
 CollageAliasSchema = ATCTContent.schema.copy() + atapi.Schema((
     atapi.ReferenceField(
@@ -35,9 +30,7 @@ CollageAliasSchema = ATCTContent.schema.copy() + atapi.Schema((
         multiValued = 0,
         allowed_types = (),
         widget=ReferenceBrowserWidget(
-            label='Selected target object',
-            label_msgid=_('label_alias_target'),
-            i18n_domain='collage',
+            label=_(u'label_alias_target', default="Selected target object"),
             startup_directory='/',
         ),
     ),
@@ -79,10 +72,9 @@ class CollageAlias(BrowserDefaultMixin, LayoutContainer, ATCTContent):
             res = res[0]
         else:
             res = None
-        if HAS_LINGUAPLONE:
-            if ITranslatable.providedBy(res):
-                lang = getToolByName(self, 'portal_languages').getPreferredLanguage()
-                res = res.getTranslation(lang) or res
+        if isTranslatable(res):
+            lang = getToolByName(self, 'portal_languages').getPreferredLanguage()
+            res = res.getTranslation(lang) or res
         return res
 
 atapi.registerType(CollageAlias, 'Collage')

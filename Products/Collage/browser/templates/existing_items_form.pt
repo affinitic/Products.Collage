@@ -36,9 +36,9 @@
 	       tal:attributes="href string:${here/absolute_url}/insert-alias?uid=${item/UID};
 		               title item/description">
 	      <tal:title content="item/title">Title</tal:title>
-	      <img tal:attributes="src string:${view/portal_url}/icon-insert.gif" alt="Insert" />
+	      <img tal:attributes="src string:${view/portal_url}/++resource++collage-resources/icon-insert.gif" alt="Insert" />
 	    </a>
-      </li>  
+      </li>
     </ul>
   </form>
 

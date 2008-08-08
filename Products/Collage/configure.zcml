@@ -5,8 +5,6 @@
 
   <include file="profiles.zcml" />
 
-  <cmf:registerDirectory name="Collage"/>
-
   <include package="zope.annotation" />
 
   <include package=".browser" />
@@ -23,6 +21,7 @@
   
   <!-- Uncomment below element to enable the box skinning demo -->
 
+  <!--
   <include package=".skindemo" />
-
+  -->
 </configure>

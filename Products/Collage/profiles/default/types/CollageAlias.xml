@@ -7,7 +7,7 @@
  <property name="title">Alias</property>
  <property
     name="description">desc_type_collagealias</property>
- <property name="content_icon">collagealias_icon.gif</property>
+ <property name="content_icon">++resource++collage-resources/collagealias_icon.gif</property>
  <property name="content_meta_type">CollageAlias</property>
  <property name="product">Collage</property>
  <property name="factory">addCollageAlias</property>

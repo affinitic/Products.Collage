@@ -26,6 +26,7 @@ class SimpleContentMenuViewlet(object):
 
         return self.context.aq_inner
 
+
 class LayoutViewlet(SimpleContentMenuViewlet):
     def getLayouts(self):
         context = self.context
@@ -106,18 +107,15 @@ class IconViewlet(SimpleContentMenuViewlet):
 
 class ActionsViewlet(SimpleContentMenuViewlet):
     def isAlias(self):
+
         return getattr(self.__parent__, '__alias__', None) and True
 
     def getViewActions(self):
+
         atool = getToolByName(self.context, 'portal_actions')
         actions = atool.listFilteredActionsFor(self.context)
-
-        try:
-            plone_view = self.context.restrictedTraverse('@@plone')
-            return plone_view.prepareObjectTabs()
-        except AttributeError:
-            # BBB: support for Plone 2.5
-            return self.context.plonifyActions(template_id=None, actions=actions, default_tab='view')
+        plone_view = self.context.restrictedTraverse('@@plone')
+        return plone_view.prepareObjectTabs()
 
 class CopyViewlet(SimpleContentMenuViewlet):
     pass

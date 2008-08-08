@@ -1,13 +1,11 @@
+# $Id$
+
 from AccessControl import ClassSecurityInfo
 
-try:
-    from Products.LinguaPlone import public as atapi
-except ImportError:
-    from Products.Archetypes import atapi
+from Products.Archetypes import atapi
 
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.ATContentTypes.content.base import ATCTMixin
-from Products.CMFCore.permissions import View, ModifyPortalContent
 from Products.Collage.content.common import LayoutContainer, CommonCollageSchema
 
 from Products.CMFPlone.interfaces import INonStructuralFolder
@@ -16,7 +14,7 @@ from Products.Collage.interfaces import ICollage
 
 from zope.interface import implements
 
-from Products.Collage.utilities import faketranslate as _
+from Products.Collage.utilities import CollageMessageFactory as _
 
 CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     atapi.StringField(
@@ -40,21 +38,16 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     ),
     atapi.BooleanField('show_title',
         accessor='getShowTitle',
-        widget=atapi.BooleanWidget(label='Show title',
-                                   label_msgid=_('label_show_title'),
-                                   i18n_domain='collage'
-                                   ),
-                       default=1
-                       ),
+        widget=atapi.BooleanWidget(
+            label=_(u'label_show_title', default=u"Show title")),
+
+        default=1),
 
     atapi.BooleanField('show_description',
         accessor='getShowDescription',
-        widget=atapi.BooleanWidget(label='Show description',
-                                   label_msgid=_('label_show_description'),
-                                   i18n_domain='collage'
-                                   ),
-                       default=1
-                       ),
+        widget=atapi.BooleanWidget(
+            label=_(u'label_show_description', default='Show description')),
+        default=1),
 
 
 ))
@@ -69,7 +62,9 @@ CollageSchema['description'].schemata = 'default'
 finalizeATCTSchema(CollageSchema, folderish=False, moveDiscussion=False)
 
 class Collage(LayoutContainer, ATCTMixin, atapi.OrderedBaseFolder):
-    __implements__ = (getattr(atapi.OrderedBaseFolder,'__implements__',()), \
+
+    # FIXME: Do we always need Zope 2 style interfaces ?
+    __implements__ = (getattr(atapi.OrderedBaseFolder,'__implements__',()),
                       getattr(ATCTMixin, '__implements__',()))
 
     schema = CollageSchema

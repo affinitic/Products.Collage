@@ -6,7 +6,7 @@ from Products.Collage.content._alias import CollageAlias
 from Products.Collage.interfaces import ICollageAlias
 
 from zope.component import adapter
-from zope.app.event.interfaces import IObjectModifiedEvent
+from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
 @adapter(ICollageAlias, IObjectModifiedEvent)
 def updateCollageAliasLayout(context, event):

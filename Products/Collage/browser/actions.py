@@ -1,7 +1,7 @@
 # $Id$
 
 from zope import event
-from zope.app.event import objectevent
+from zope.lifecycleevent import ObjectModifiedEvent
 
 from Products.Five.browser import BrowserView
 
@@ -105,7 +105,7 @@ class ActionsView(BrowserView):
 
             # set target
             alias.set_target(uid)
-            event.notify(objectevent.ObjectModifiedEvent(alias))
+            event.notify(ObjectModifiedEvent(alias))
 
             msg = 'msg_alias_inserted'
         else:

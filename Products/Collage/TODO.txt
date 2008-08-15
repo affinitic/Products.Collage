@@ -5,8 +5,6 @@ Issues, future features and refactoring
 Issues
 ======
 
-* Fix doctest in viewlets.txt (lines 82/85)
-
 * Conflict with ARFilePreview on ATFile objects when editing through
   compose page.
 

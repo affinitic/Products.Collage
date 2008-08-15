@@ -1,12 +1,13 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.2b1'
+version = '1.2b3'
 
 setup(name='Products.Collage',
       version=version,
-      description="A product to create page compositions. Content can be created directly inside the object or existing items can be pulled in for display..",
+      description="A product to create page compositions in Plone. Content can be created directly inside the object or existing items can be pulled in for display.",
       long_description=open(os.path.join('Products', 'Collage', "README.txt")).read() + "\n" +
+                       open(os.path.join('Products', 'Collage', "DEVELOPERS.txt")).read() + "\n" +
                        open(os.path.join('Products', 'Collage', "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[

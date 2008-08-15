@@ -1,12 +1,14 @@
 Collage
 =======
 
-:: compatibility
+Compatibility
+-------------
 
    Plone 3.1
    Five 1.5
 
-:: about
+About
+-----
 
 Collage is a product for aggregating and displaying multiple content items on
 a single page.
@@ -25,22 +27,26 @@ fits inside a collage.
 The Alias-type is provided to allow displaying existing objects from the site
 inside the collage.
 
-:: upgrading
+Upgrading
+---------
 
 Open in ZMI .../your-site/portal_setup and click the "Upgrades" tab.
 Select the "Products.Collage:default" profile and see if upgrades are
 available. Run them :D
 
-:: javascript-functionality
+Javascript functionality
+------------------------
 
 We use the jquery-library to facilitate easy scripting. Ajax is used to move
 content items, columns and rows around without reloading the page.
 
-:: status
+Status
+------
 
 Used in production.
 
-:: support for add-on packages
+Support for add-on packages
+---------------------------
 
 These should be added to the collective.collage package:
 
@@ -51,13 +57,21 @@ under ./browser/addons/<package name>
 Make sure collective.collage is in your python path if you want these views
 registered for use in Collage.
 
-:: credits
+Issue tracker
+-------------
 
-Malthe Borch (main developer) <mborch@gmail.com>
-Pelle Kroegholt <pelle@headnet.dk>
-Sune Toft <sune@headnet.dk>
-Gilles Lenfant <gilles.lenfant@ingeniweb.com>
+http://www.plone.org/products/collage/issues
 
-:: sponsors
+Credits
+-------
+
+* Malthe Borch (main developer) <mborch@gmail.com>
+* Pelle Kroegholt <pelle@headnet.dk>
+* Sune Toft <sune@headnet.dk>
+* Gilles Lenfant <gilles.lenfant@ingeniweb.com>
+* David Glick <davidglick@onenw.org>
+
+Sponsors
+--------
 
 Work on this product has been sponsored by Headnet (http://www.headnet.dk).

@@ -1,11 +1,14 @@
-#####################
-Changelog for Collage
-#####################
+Changelog
+=========
 
-Collage 1.2.0 beta 2 SVN trunk
-==============================
 
-https://svn.plone.org/collective/Collage/trunk
+Collage 1.2 beta 3 (2008-08-15)
+---------------------------------
+
+https://svn.plone.org/collective/Products.Collage/tags/1.2b3
+
+* Packaged as a python egg and released on pypi.
+  [davisagli]
 
 * Renamed builtin portlet skins and gave minimum CSS to them.
   [glenfant]
@@ -28,7 +31,7 @@ https://svn.plone.org/collective/Collage/trunk
 
 
 Collage 1.2.0 beta 2
-====================
+--------------------
 
 https://svn.plone.org/collective/Collage/tags/1.2.0beta2
 
@@ -39,7 +42,7 @@ https://svn.plone.org/collective/Collage/tags/1.2.0beta2
   [glenfant]
 
 Collage 1.2.0 beta 1
-====================
+--------------------
 
 https://svn.plone.org/collective/Collage/tags/1.2.0beta1
 
@@ -114,8 +117,9 @@ https://svn.plone.org/collective/Collage/tags/1.2.0beta1
   preview.  This caused issues with large images in a Collage being
   upscaled when displayed.  [rockdj]
 
+
 Collage 1.1
-===========
+-----------
 
 https://svn.plone.org/collective/Collage/tags/1.1
 
@@ -131,8 +135,9 @@ https://svn.plone.org/collective/Collage/tags/1.1
 * Fixed a jQuery integration issue
   [malthe]
 
+
 Collage 1.0
-===========
+-----------
 
 https://svn.plone.org/collective/Collage/tags/1.0-final
 

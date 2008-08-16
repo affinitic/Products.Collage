@@ -13,7 +13,7 @@ setup(name='Products.Collage',
       classifiers=[
         "Programming Language :: Python",
         "Framework :: Plone",
-        "License :: OSI Approved :: GNU General Public License (GPL)"
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         "Development Status :: 5 - Production/Stable",
         ],
       keywords='plone layout composition themeing',

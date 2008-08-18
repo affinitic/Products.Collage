@@ -1,12 +1,21 @@
 Changelog
 =========
 
-Collage 1.2 final (unreleased)
-------------------------------
+Collage 1.2.0 trunk (unreleased)
+--------------------------------
 
+https://svn.plone.org/collective/Products.Collage/tags/
 
+* Added utilities.getFSVersionTuple that may help Collage extension
+  components (add skins, content type support, ...)
+  [glenfant]
 
-Collage 1.2 beta 3 (2008-08-15)
+* version.txt is major.minor.bugfix-[beta] to get synch with
+  metadata.xml/version (when upgrade step required) and complying
+  getFSVersionTuple above
+  [glenfant]
+
+Collage 1.2.0 beta 3 (2008-08-15)
 ---------------------------------
 
 https://svn.plone.org/collective/Products.Collage/tags/1.2b3

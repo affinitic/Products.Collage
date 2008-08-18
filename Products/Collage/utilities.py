@@ -77,4 +77,16 @@ from Products.Collage.config import I18N_DOMAIN
 
 CollageMessageFactory = MessageFactory(I18N_DOMAIN)
 
+###
+## Version of Collage
+## Other components that rely on Collage (skinning, templating, ...) may need this
+###
 
+from Products.Collage.config import PACKAGE_HOME
+from Products.CMFPlone.utils import versionTupleFromString
+
+def getFSVersionTuple():
+    """Reads version.txt and returns version tuple"""
+    vfile = "%s/version.txt" % PACKAGE_HOME
+    v_str = open(vfile, 'r').read().lower().strip()
+    return versionTupleFromString(v_str)

@@ -102,6 +102,12 @@ msgstr "Insérer un nouvel élément"
 msgid "help_insert_new_item"
 msgstr "Sélectionnez un type de contenu à insérer."
 
+#. Default "More information about this event…"
+#: ./browser/views/event_portlet.pt:144
+#: ./browser/views/event_standard.pt:132
+msgid "event_more_information"
+msgstr "En savoir plus…"
+
 msgid "label_alias_target"
 msgstr "Elément référencé"
 

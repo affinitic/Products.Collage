@@ -15,6 +15,9 @@ https://svn.plone.org/collective/Products.Collage/tags/
   getFSVersionTuple above
   [glenfant]
 
+* Add missing event-related translation.
+  [kdeldycke]
+
 Collage 1.2.0 beta 3 (2008-08-15)
 ---------------------------------
 

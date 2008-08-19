@@ -100,6 +100,12 @@ msgstr ""
 msgid "help_insert_new_item"
 msgstr ""
 
+#. Default "More information about this event…"
+#: ./browser/views/event_portlet.pt:144
+#: ./browser/views/event_standard.pt:132
+msgid "event_more_information"
+msgstr ""
+
 msgid "label_alias_target"
 msgstr ""
 

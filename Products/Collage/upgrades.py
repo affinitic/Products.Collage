@@ -45,3 +45,10 @@ def removeSkinsLayer(setuptool):
     if LAYERNAME in skinstool.objectIds():
         skinstool._delObject(LAYERNAME)
     return
+
+def installCollageBrowserLayer(setuptool):
+    """We register the layer for Collage"""
+
+    setuptool.runImportStepFromProfile('profile-Products.Collage:default', 'browserlayer',
+                                       run_dependencies=True)
+    return

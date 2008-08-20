@@ -35,6 +35,12 @@
        description="Collage doesn't require a skins layer anymore"
        handler=".upgrades.removeSkinsLayer"
        />
-    
+
+    <genericsetup:upgradeStep
+       title="Adding Collage browser layer"
+       description="Add our layer interface to enable views/pages/viewlets"
+       handler=".upgrades.installCollageBrowserLayer"
+       />
+
   </genericsetup:upgradeSteps>
 </configure>

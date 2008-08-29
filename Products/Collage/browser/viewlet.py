@@ -113,7 +113,7 @@ class ActionsViewlet(SimpleContentMenuViewlet):
     def getViewActions(self):
 
         atool = getToolByName(self.context, 'portal_actions')
-        actions = atool.listFilteredActionsFor(self.context)
+        actions = atool.listFilteredActionsFor(self.context.aq_inner)
         plone_view = self.context.restrictedTraverse('@@plone')
         return plone_view.prepareObjectTabs()
 

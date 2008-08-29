@@ -32,10 +32,10 @@ msgstr "Vista modificata"
 msgid "button_add_collagerow"
 msgstr "Aggiungi una riga"
 
-#. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
-msgstr "Inserisci un elemento già esistente. L'elemento verrà inserito come un riferimento all'originale. Utilizza il menù per filtrare per tipo di elemento, premi infine [Invio] per concludere"
+msgstr "Inserisci un elemento già esistente. Utilizza il menù per filtrare per tipo di elemento, premi infine [Invio] per concludere"
 
 #. Default: "Choose a layout for this object."
 #: ./browser/viewlets/layout.pt:17

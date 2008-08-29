@@ -15,8 +15,7 @@
   <div class="expandable-content">
     <p i18n:translate="help_insert_existing_items"
        class="discreet">
-      Choose an existing item to insert. The item will be inserted
-      as an alias (by reference). Use dropdown to filter on type.
+      Choose an existing item to insert. Use dropdown to filter on type.
     </p>
     
     <div class="expandable-ajax-content">

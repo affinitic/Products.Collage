@@ -30,7 +30,7 @@ msgstr ""
 msgid "button_add_collagerow"
 msgstr ""
 
-#. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
 msgstr ""

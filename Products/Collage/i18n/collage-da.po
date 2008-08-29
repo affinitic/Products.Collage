@@ -31,10 +31,10 @@ msgstr "Visning ændret"
 msgid "button_add_collagerow"
 msgstr "Tilføj række"
 
-#. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
-msgstr "Vælg et eksisterende indholdsobjekt, du vil indsætte. Objektet vil blive indsat som et alias. Vælg rullemenu for at filtrere efter type."
+msgstr "Vælg et eksisterende indholdsobjekt, du vil indsætte. Vælg rullemenu for at filtrere efter type."
 
 #. Default: "Choose a layout for this object."
 #: ./browser/viewlets/layout.pt:17

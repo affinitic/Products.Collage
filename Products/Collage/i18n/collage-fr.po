@@ -32,10 +32,10 @@ msgstr "Vue modifiée."
 msgid "button_add_collagerow"
 msgstr "Ajouter une ligne"
 
-#. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
-msgstr "Choisissez un élément existant à insérer. Il sera inséré en temps qu'alias (par référence). Utilisez le menu déroulant pour filtrer sur les types de contenu et/ou le champ texte pour affiner la recherche. Tapez la touche [Entrée] pour lancer la recherche."
+msgstr "Choisissez un élément existant à insérer. Utilisez le menu déroulant pour filtrer sur les types de contenu et/ou le champ texte pour affiner la recherche. Tapez la touche [Entrée] pour lancer la recherche."
 
 #. Default: "Choose a layout for this object."
 #: ./browser/viewlets/layout.pt:17

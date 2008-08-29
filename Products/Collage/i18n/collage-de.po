@@ -30,10 +30,10 @@ msgstr "Ansicht wurde verändert"
 msgid "button_add_collagerow"
 msgstr "Zeile hinzufügen"
 
-#. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
-msgstr "Wählen Sie einen vorhandenen Artikel um ihn hinzuzufügen. Der Artikel wird als Alias eingefügt (Über Referenzierung) . Wählen Sie die Auswahlbox um Artikeltypen zu filtern."
+msgstr "Wählen Sie einen vorhandenen Artikel um ihn hinzuzufügen. Wählen Sie die Auswahlbox um Artikeltypen zu filtern."
 
 #. Default: "Choose a layout for this object."
 #: ./browser/viewlets/layout.pt:17

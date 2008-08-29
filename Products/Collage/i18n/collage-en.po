@@ -32,10 +32,10 @@ msgstr "View changed."
 msgid "button_add_collagerow"
 msgstr "Add row"
 
-#. Default: "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type."
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
-msgstr "Choose an existing item to insert. The item will be inserted as an alias (by reference). Use dropdown to filter on type and/or text field to restrict search. Hit the [Enter] touch to submit your search."
+msgstr "Choose an existing item to insert. Use dropdown to filter on type and/or text field to restrict search. Hit the [Enter] key to submit your search."
 
 #. Default: "Choose a layout for this object."
 #: ./browser/viewlets/layout.pt:17

@@ -20,6 +20,7 @@ CollageColumnSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         name='title',
         accessor='Title',
         required=False,
+        searchable=True,
         widget=atapi.StringWidget(
             label=_(u'label_optional_column_title', default=u"Title"),
             description=_(u'help_optional_column_title',

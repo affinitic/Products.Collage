@@ -90,3 +90,17 @@ def getFSVersionTuple():
     vfile = "%s/version.txt" % PACKAGE_HOME
     v_str = open(vfile, 'r').read().lower().strip()
     return versionTupleFromString(v_str)
+
+###
+## Reindexing on subcontent modification
+###
+
+def reindexOnModify(content, event):
+    helper = content.restrictedTraverse('@@collage_helper')
+    collage = helper.getCollageObject()
+    if collage:
+        # Change done in a Collage subobject
+        collage.reindexObject()
+    return
+
+

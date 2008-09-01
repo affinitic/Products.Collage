@@ -18,6 +18,7 @@ CollageRowSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         name='title',
         accessor='Title',
         required=False,
+        searchable=True,
         widget=atapi.StringWidget(
             label=_(u'label_optional_row_title', default='Title'),
             description=_(u'help_optional_row_title', default=u"You may optionally supply a title for this row."),

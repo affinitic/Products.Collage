@@ -100,7 +100,7 @@ msgstr ""
 msgid "help_insert_new_item"
 msgstr ""
 
-#. Default "More information about this event…"
+#. Default "More information about this event"
 #: ./browser/views/event_portlet.pt:144
 #: ./browser/views/event_standard.pt:132
 msgid "event_more_information"
@@ -125,6 +125,16 @@ msgid "label_show_title"
 msgstr ""
 
 msgid "label_show_description"
+msgstr ""
+
+#. Default "Add collage contents in searchable text?"
+#: ./content/_collage.py:55
+msgid "label_index_subobjects"
+msgstr ""
+
+#. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#: ./content/_collage.py:56
+msgid "help_index_subobjects"
 msgstr ""
 
 msgid "label_content_type"

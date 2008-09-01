@@ -6,6 +6,14 @@ Collage 1.2.0 trunk (unreleased)
 
 https://svn.plone.org/collective/Products.Collage/tags/
 
+* Added translation entries for new boolean in Collage.
+  [glenfant]
+
+* Collage subcontents indexing is now an option, since a Collage
+  object may be irrelevant in search results (i.e: a Collage with
+  only File contents).
+  [glenfant]
+
 * Added utilities.getFSVersionTuple that may help Collage extension
   components (add skins, content type support, ...)
   [glenfant]

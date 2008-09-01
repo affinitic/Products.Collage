@@ -18,6 +18,12 @@
   <configure zcml:condition="installed collective.collage">
     <include package="collective.collage" />
   </configure>
+
+  <subscriber
+     for="Products.CMFCore.interfaces.IContentish
+          zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+     handler=".utilities.reindexOnModify"
+     />
   
   <!-- Uncomment below element to enable the box skinning demo -->
 

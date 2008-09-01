@@ -40,7 +40,6 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         accessor='getShowTitle',
         widget=atapi.BooleanWidget(
             label=_(u'label_show_title', default=u"Show title")),
-
         default=1),
 
     atapi.BooleanField('show_description',
@@ -48,6 +47,17 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         widget=atapi.BooleanWidget(
             label=_(u'label_show_description', default='Show description')),
         default=1),
+
+    atapi.BooleanField('index_subobjects',
+        accessor='mustIndexSubobjects',
+        default=False,
+        widget=atapi.BooleanWidget(
+            label=_(u'label_index_subobjects', default=u"Add collage contents in searchable text?"),
+            description=_(u'help_index_subobjects',
+                 default=u"Will show this collage in results when searching terms of an inner item."
+                 u" Checking this option may slow down collage changes as well as subcontent changes"
+                 u" and show irrelevant search results."))
+        )
 
 
 ))

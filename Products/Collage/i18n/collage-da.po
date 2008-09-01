@@ -4,7 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2007-06-28 13:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Jacob Vestergaard <jacobv@headnet.dk>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,13 +16,31 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collage\n"
 
+msgid "Automatic"
+msgstr "Automatisk"
+
 #: ./browser/browser.py:90
 msgid "Column inserted."
 msgstr "Kolonne indsat"
 
+msgid "Featured"
+msgstr "Fremhævet"
+
+msgid "Large left"
+msgstr "Stor venstre"
+
+msgid "Large right"
+msgstr "Stor højre"
+
+msgid "Portlet"
+msgstr ""
+
 #: ./browser/browser.py:80
 msgid "Row added."
 msgstr "Række tilføjet"
+
+msgid "Standard"
+msgstr "Almindelig"
 
 #: ./browser/browser.py:37
 msgid "View changed."
@@ -31,20 +51,66 @@ msgstr "Visning ændret"
 msgid "button_add_collagerow"
 msgstr "Tilføj række"
 
+#. Default "More information about this event"
+#: ./browser/views/event_portlet.pt:144
+#: ./browser/views/event_standard.pt:132
+msgid "event_more_information"
+msgstr ""
+
+#. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#: ./content/_collage.py:56
+msgid "help_index_subobjects"
+msgstr ""
+
 #. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: ./browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
 msgstr "Vælg et eksisterende indholdsobjekt, du vil indsætte. Vælg rullemenu for at filtrere efter type."
+
+#. Default "Select a content-type to insert."
+#: ./browser/viewlets/insert-new-item.pt:18
+msgid "help_insert_new_item"
+msgstr "Vælg en indholdstype, der skal oprettes."
+
+msgid "help_optional_column_title"
+msgstr "Hvis du ønsker en overskrift til denne kolonne, kan du skrive den her."
+
+msgid "help_optional_row_title"
+msgstr "Hvis du ønsker en overskrift til denne række, kan du skrive den her."
 
 #. Default: "Choose a layout for this object."
 #: ./browser/viewlets/layout.pt:17
 msgid "help_select_layout"
 msgstr "Vælg et layout for dette objekt"
 
+msgid "label_alias_target"
+msgstr "Vælg alias"
+
+#. Default "(alias)"
+#: ./browser/viewlets/actions.pt:19
+msgid "label_aliased"
+msgstr "(alias)"
+
+msgid "label_all_content_types"
+msgstr "Alle"
+
+msgid "label_content_type"
+msgstr "Indholdstype"
+
+#. Default "Add collage contents in searchable text?"
+#: ./content/_collage.py:55
+msgid "label_index_subobjects"
+msgstr ""
+
 #. Default: "insert existing item"
 #: ./browser/viewlets/insert-existing-item.pt:11
 msgid "label_insert_existing_item"
 msgstr "Indsæt eksisterende objekt"
+
+#. Default "Insert new item"
+#: ./browser/viewlets/insert-new-item.pt:13
+msgid "label_insert_new_item"
+msgstr "Indsæt nyt objekt"
 
 #. Default: "Loading..."
 #: ./browser/viewlets/insert-existing-item.pt:25
@@ -76,69 +142,25 @@ msgstr "Flyt op"
 msgid "label_no_items_added"
 msgstr "Denne kollage er tom."
 
+msgid "label_optional_column_title"
+msgstr "Overskrift"
+
+msgid "label_optional_row_title"
+msgstr "Overskrift"
+
 #. Default: "select layout"
 #: ./browser/viewlets/layout.pt:12
 msgid "label_select_layout"
 msgstr "Vælg layout"
+
+msgid "label_show_description"
+msgstr "Vis beskrivelse"
+
+msgid "label_show_title"
+msgstr "Vis overskrift"
 
 #. Default: "split"
 #: ./browser/viewlets/split-column.pt:9
 msgid "label_split_column"
 msgstr "Opdel"
 
-#. Default "(alias)"
-#: ./browser/viewlets/actions.pt:19
-msgid "label_aliased"
-msgstr "(alias)"
-
-#. Default "Insert new item"
-#: ./browser/viewlets/insert-new-item.pt:13
-msgid "label_insert_new_item"
-msgstr "Indsæt nyt objekt"
-
-#. Default "Select a content-type to insert."
-#: ./browser/viewlets/insert-new-item.pt:18
-msgid "help_insert_new_item"
-msgstr "Vælg en indholdstype, der skal oprettes."
-
-msgid "label_alias_target"
-msgstr "Vælg alias"
-
-msgid "label_optional_row_title"
-msgstr "Overskrift"
-
-msgid "help_optional_row_title"
-msgstr "Hvis du ønsker en overskrift til denne række, kan du skrive den her."
-
-msgid "label_optional_column_title"
-msgstr "Overskrift"
-
-msgid "help_optional_column_title"
-msgstr "Hvis du ønsker en overskrift til denne kolonne, kan du skrive den her."
-
-msgid "label_show_title"
-msgstr "Vis overskrift"
-
-msgid "label_show_description"
-msgstr "Vis beskrivelse"
-
-msgid "label_content_type"
-msgstr "Indholdstype"
-
-msgid "label_all_content_types"
-msgstr "Alle"
-
-msgid "Automatic"
-msgstr "Automatisk"
-
-msgid "Large left"
-msgstr "Stor venstre"
-
-msgid "Large right"
-msgstr "Stor højre"
-
-msgid "Standard"
-msgstr "Almindelig"
-
-msgid "Featured"
-msgstr "Fremhævet"

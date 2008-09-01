@@ -3,6 +3,7 @@
 from Products.Archetypes import atapi
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 from Products.CMFCore.permissions import ModifyPortalContent
+from Products.Collage.interfaces import ICollageColumn
 
 class LayoutContainer(object):
     """
@@ -22,13 +23,20 @@ class LayoutContainer(object):
     def aggregateSearchableText(self):
         """Append references' searchable fields."""
 
-        data = [super(LayoutContainer, self).SearchableText(),]
+        data = super(LayoutContainer, self).SearchableText()
 
+        # Must we add subcontents texts?
+        if ICollageColumn.isImplementedBy(self):
+            helper = self.restrictedTraverse('@@collage_helper')
+            collage = helper.getCollageObject()
+            if not collage.mustIndexSubobjects():
+                return data
+
+        data = [data]
         for child in self.contentValues():
             data.append(child.SearchableText())
 
         data = ' '.join(data)
-
         return data
 
 from Products.ATContentTypes.content.schemata import ATContentTypeSchema

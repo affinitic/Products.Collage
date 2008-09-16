@@ -1,0 +1,167 @@
+# Malthe Borch <mborch@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: Collage\n"
+"POT-Creation-Date: 2007-06-28 13:40+0000\n"
+"Last-Translator: Vladimir Iliev <vladimir.iliev@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: bg\n"
+"Language-Name: Bulgarian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collage\n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+
+#: ./browser/browser.py:90
+msgid "Column inserted."
+msgstr "Колоната беше добавена."
+
+#: ./browser/browser.py:80
+msgid "Row added."
+msgstr "Редът беше добавен."
+
+#: ./browser/browser.py:37
+msgid "View changed."
+msgstr "Изгледа беше променен."
+
+#. Default: "Add row"
+#: ./skins/Collage/collage_view.pt:51
+msgid "button_add_collagerow"
+msgstr "Добавне на ред"
+
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
+#: ./browser/viewlets/insert-existing-item.pt:16
+msgid "help_insert_existing_items"
+msgstr "Изберете съществуваща позиция за добавяне. Използвайте менюто за да филтрирате типовете."
+
+#. Default: "Choose a layout for this object."
+#: ./browser/viewlets/layout.pt:17
+msgid "help_select_layout"
+msgstr "Изберете оформление за този обект."
+
+#. Default: "insert existing item"
+#: ./browser/viewlets/insert-existing-item.pt:11
+msgid "label_insert_existing_item"
+msgstr "добавяне на съществуваща позиция"
+
+#. Default: "Loading..."
+#: ./browser/viewlets/insert-existing-item.pt:25
+msgid "label_loading"
+msgstr "Зареждане..."
+
+#. Default: "Move down"
+#: ./browser/viewlets/modify_order_vertical.pt:10
+msgid "label_move_down"
+msgstr "Преместване надолу"
+
+#. Default: "Move left"
+#: ./browser/viewlets/modify_order_horizontal.pt:10
+msgid "label_move_left"
+msgstr "Преместване в ляво"
+
+#. Default: "Move right"
+#: ./browser/viewlets/modify_order_horizontal.pt:16
+msgid "label_move_right"
+msgstr "Преместване в дясно"
+
+#. Default: "Move up"
+#: ./browser/viewlets/modify_order_vertical.pt:16
+msgid "label_move_up"
+msgstr "Преместване нагоре"
+
+#. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
+#: ./skins/Collage/collage_view.pt:44
+msgid "label_no_items_added"
+msgstr "В този колаж  все още няма никакви позиции. Добавете позиции чрез менюто."
+
+#. Default: "select layout"
+#: ./browser/viewlets/layout.pt:12
+msgid "label_select_layout"
+msgstr "озбиране на оформление"
+
+#. Default: "split"
+#: ./browser/viewlets/split-column.pt:9
+msgid "label_split_column"
+msgstr "разделяне"
+
+#. Default "(alias)"
+#: ./browser/viewlets/actions.pt:19
+msgid "label_aliased"
+msgstr "(взаимстван)"
+
+#. Default "Insert new item"
+#: ./browser/viewlets/insert-new-item.pt:13
+msgid "label_insert_new_item"
+msgstr "Добавяне на нова позиция"
+
+#. Default "Select a content-type to insert."
+#: ./browser/viewlets/insert-new-item.pt:18
+msgid "help_insert_new_item"
+msgstr "Изберете тип който да бъде добавен"
+
+#. Default "More information about this event"
+#: ./browser/views/event_portlet.pt:144
+#: ./browser/views/event_standard.pt:132
+msgid "event_more_information"
+msgstr "Повече информация за това събитие"
+
+msgid "label_alias_target"
+msgstr "Изберете цел за взаимстване"
+
+msgid "label_optional_row_title"
+msgstr "Заглавие"
+
+msgid "help_optional_row_title"
+msgstr "Може да зададете незадължително заглавие на този ред."
+
+msgid "label_optional_column_title"
+msgstr "Заглавие"
+
+msgid "help_optional_column_title"
+msgstr "Може да зададете незадължително заглавие на тази колона."
+
+msgid "label_show_title"
+msgstr "Показване на заглавие"
+
+msgid "label_show_description"
+msgstr "Показване на описание"
+
+#. Default "Add collage contents in searchable text?"
+#: ./content/_collage.py:55
+msgid "label_index_subobjects"
+msgstr "Добавяне съдържанието на колажа към текста за търсене?"
+
+#. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#: ./content/_collage.py:56
+msgid "help_index_subobjects"
+msgstr "Ще покаже този колаж в резултатите при търсене, ако някоя от вложените позиции отговаря. Може да забави редактирането на колажа и на вложените обекти а и може да покаже невярни резултати при търсене."
+
+msgid "label_content_type"
+msgstr "Тип"
+
+msgid "label_all_content_types"
+msgstr "Всички"
+
+msgid "Automatic"
+msgstr "Автоматичен"
+
+msgid "Large left"
+msgstr "Голям в ляво"
+
+msgid "Large right"
+msgstr "Голям в дясно"
+
+msgid "Standard"
+msgstr "Стандартен"
+
+msgid "Featured"
+msgstr "Изтъкнат"
+
+msgid "Portlet"
+msgstr "Портлет"
+

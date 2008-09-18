@@ -104,3 +104,49 @@ def reindexOnModify(content, event):
     return
 
 
+###
+## Upgrade steps decorator
+###
+
+# Background: GenericSetup shows upgrade steps for components that are
+# *not* installed in the site, and let the Manager execute these
+# upgrade steps. This is somehow harmful. While this bug is not fixed,
+# this safety belt will prevent managers executing the exposed upgrade
+# steps.
+# See https://dev.plone.org/plone/ticket/8507
+# Usage:
+#
+#  @IfInstalled('Collage')
+#  def someUpgradeScript(setuptool):
+#      # Usual upgrade script
+
+class NotInstalledComponent(LookupError):
+    def __init__(self, cpt_name):
+        self.cpt_name = cpt_name
+        return
+
+    def __str__(self):
+        msg = ("Component '%s' is not installed in this site."
+               " You can't run its upgrade steps."
+               % self.cpt_name)
+        return msg
+
+class IfInstalled(object):
+    def __init__(self, prod_name=PROJECTNAME):
+        """@param prod_name: as shown in quick installer"""
+        self.prod_name = prod_name
+
+    def __call__(self, func):
+        """@param func: the decorated function"""
+        def wrapper(setuptool):
+            qi = getPortal().portal_quickinstaller
+            installed_ids = [p['id'] for p in qi.listInstalledProducts()]
+            if self.prod_name not in installed_ids:
+                raise NotInstalledComponent(self.prod_name)
+            return func(setuptool)
+        wrapper.__name__ = func.__name__
+        wrapper.__dict__.update(func.__dict__)
+        wrapper.__doc__ = func.__doc__
+        wrapper.__module__ = func.__module__
+        return wrapper
+

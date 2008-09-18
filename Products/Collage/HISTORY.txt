@@ -4,7 +4,10 @@ Changelog
 Collage 1.2.0 trunk (unreleased)
 --------------------------------
 
-https://svn.plone.org/collective/Products.Collage/tags/
+https://svn.plone.org/collective/Products.Collage/trunk/
+
+* Added safety belt to GenericSetup upgrade scripts.
+  [glenfant]
 
 * Added translation entries for new boolean in Collage.
   [glenfant]

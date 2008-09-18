@@ -6,8 +6,9 @@
 # may have already done. The handler must behave accoringly.
 
 
-from Products.Collage.utilities import getPortal
+from Products.Collage.utilities import getPortal, IfInstalled
 
+@IfInstalled()
 def runTypesStepOnly(setuptool):
     """We upgrade our types only"""
 
@@ -16,6 +17,7 @@ def runTypesStepOnly(setuptool):
     return
 
 
+@IfInstalled()
 def updateJSRegistry(setuptool):
     """Javascript moved from skins to resources"""
 
@@ -28,6 +30,7 @@ def updateJSRegistry(setuptool):
     return
 
 
+@IfInstalled()
 def removeSkinsLayer(setuptool):
     """Collage doesn't require a CMF skins layer anymore"""
 

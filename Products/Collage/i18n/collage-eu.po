@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Collage\n"
+"POT-Creation-Date: 2007-06-28 13:40+0000\n"
+"PO-Revision-Date: 2008-09-24 15:16+0100\n"
+"Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
+"Language-Team: EDF\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: eu\n"
+"Language-Name: Basque\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collage\n"
+
+msgid "Automatic"
+msgstr "Automatikoa"
+
+#: ./browser/browser.py:90
+msgid "Column inserted."
+msgstr "Zutabea gehituta."
+
+msgid "Featured"
+msgstr "Destakatua"
+
+msgid "Large left"
+msgstr "Ezker zutabe handia"
+
+msgid "Large right"
+msgstr "Eskuin zutabe handia"
+
+msgid "Portlet"
+msgstr "Portleta"
+
+#: ./browser/browser.py:80
+msgid "Row added."
+msgstr "Lerroa gehituta."
+
+msgid "Standard"
+msgstr "Arrunta"
+
+#: ./browser/browser.py:37
+msgid "View changed."
+msgstr "Bista aldatuta."
+
+#. Default: "Add row"
+#: ./skins/Collage/collage_view.pt:51
+msgid "button_add_collagerow"
+msgstr "Lerroa gehitu"
+
+#. Default "More information about this event"
+#: ./browser/views/event_portlet.pt:144
+#: ./browser/views/event_standard.pt:132
+msgid "event_more_information"
+msgstr "Hitzordu honen inguruko informazio gehiago"
+
+#. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#: ./content/_collage.py:56
+msgid "help_index_subobjects"
+msgstr ""
+
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
+#: ./browser/viewlets/insert-existing-item.pt:16
+msgid "help_insert_existing_items"
+msgstr "Existitzen den elementu bat aukeratu orrialdean sartzeko. Motaren araberako bilaketa egin dezakezu eta baita testu bidezko bilaketa ere."
+
+#. Default "Select a content-type to insert."
+#: ./browser/viewlets/insert-new-item.pt:18
+msgid "help_insert_new_item"
+msgstr "Aukeratu gehitu beharreko elementu-mota"
+
+msgid "help_optional_column_title"
+msgstr "Zutabearen izenburua (hautazkoa)"
+
+msgid "help_optional_row_title"
+msgstr "Lerroaren izenburua (hautazkoa)"
+
+#. Default: "Choose a layout for this object."
+#: ./browser/viewlets/layout.pt:17
+msgid "help_select_layout"
+msgstr "Elementu honen itxura aldatu"
+
+msgid "label_alias_target"
+msgstr "Erreferentziatutako elementua"
+
+#. Default "(alias)"
+#: ./browser/viewlets/actions.pt:19
+msgid "label_aliased"
+msgstr "(aliasa)"
+
+msgid "label_all_content_types"
+msgstr "Elementu mota guztiak"
+
+msgid "label_content_type"
+msgstr "Elementu mota"
+
+#. Default "Add collage contents in searchable text?"
+#: ./content/_collage.py:55
+msgid "label_index_subobjects"
+msgstr ""
+
+#. Default: "insert existing item"
+#: ./browser/viewlets/insert-existing-item.pt:11
+msgid "label_insert_existing_item"
+msgstr "Existitzen den elementua gehitu"
+
+#. Default "Insert new item"
+#: ./browser/viewlets/insert-new-item.pt:13
+msgid "label_insert_new_item"
+msgstr "Elementu berria gehitu"
+
+#. Default: "Loading..."
+#: ./browser/viewlets/insert-existing-item.pt:25
+msgid "label_loading"
+msgstr "Kargatzen..."
+
+#. Default: "Move down"
+#: ./browser/viewlets/modify_order_vertical.pt:10
+msgid "label_move_down"
+msgstr "Behera mugitu"
+
+#. Default: "Move left"
+#: ./browser/viewlets/modify_order_horizontal.pt:10
+msgid "label_move_left"
+msgstr "Ezkerrera mugitu"
+
+#. Default: "Move right"
+#: ./browser/viewlets/modify_order_horizontal.pt:16
+msgid "label_move_right"
+msgstr "Eskumara mugitu"
+
+#. Default: "Move up"
+#: ./browser/viewlets/modify_order_vertical.pt:16
+msgid "label_move_up"
+msgstr "Gora mugitu"
+
+#. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
+#: ./skins/Collage/collage_view.pt:44
+msgid "label_no_items_added"
+msgstr "Collage honek ez du elementurik. Hasi lerro bat gehituz."
+
+msgid "label_optional_column_title"
+msgstr "Zutabearen izenburua"
+
+msgid "label_optional_row_title"
+msgstr "Lerroaren izenburua"
+
+#. Default: "select layout"
+#: ./browser/viewlets/layout.pt:12
+msgid "label_select_layout"
+msgstr "Itxura aukeratu"
+
+msgid "label_show_description"
+msgstr "Deskribapena erakutsi"
+
+msgid "label_show_title"
+msgstr "Izenburua erakutsi"
+
+#. Default: "split"
+#: ./browser/viewlets/split-column.pt:9
+msgid "label_split_column"
+msgstr "Zutabea gehitu"
+

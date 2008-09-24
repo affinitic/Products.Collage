@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Collage\n"
+"POT-Creation-Date: 2007-06-28 13:40+0000\n"
+"PO-Revision-Date: 2008-09-24 15:18+0100\n"
+"Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
+"Language-Team: EDF\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: eu\n"
+"Language-Name: Basque\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+msgid "Alias"
+msgstr "Aliasa"
+
+msgid "Back to Collage"
+msgstr "Collagera itzuli"
+
+# content-types
+msgid "Collage"
+msgstr "Collage"
+
+msgid "Column"
+msgstr "Zutabea"
+
+msgid "Manage page"
+msgstr "Konposatu"
+
+msgid "Row"
+msgstr "Lerroa"
+
+msgid "desc_type_collage"
+msgstr "Elementua hainbat modutan erakuts dezakeen edukiontzia."
+
+msgid "desc_type_collagealias"
+msgstr "Beste elementu bati erreferentzia egiten dion elementua."
+
+msgid "desc_type_collagecolumn"
+msgstr "Elementu eta aliasak eduki ditzakeen zutabea."
+
+msgid "desc_type_collagerow"
+msgstr "Zutabeak eduki ditzakeen lerroa."
+
+msgid "msg_alias_inserted"
+msgstr "Aliasa sartuta."
+
+msgid "msg_target_object_not_found"
+msgstr "Ez da elementua aurkitu."
+
+msgid "msg_row_added"
+msgstr "Lerroa gehituta."
+
+msgid "msg_column_inserted"
+msgstr "Zutabea sartu da."
+

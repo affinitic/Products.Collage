@@ -1,0 +1,60 @@
+# Malthe Borch <mborch@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: Collage\n"
+"POT-Creation-Date: 2007-06-28 13:40+0000\n"
+"Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+"PO-Revision-Date: 2008-09-24 15:27+0100\n"
+"Language-Team: \n"
+
+# content-types
+msgid "Collage"
+msgstr "Collage"
+
+msgid "desc_type_collage"
+msgstr "Un contenedor que puede mostrar su elemento de diferentes formas."
+
+msgid "Row"
+msgstr "Fila"
+
+msgid "desc_type_collagerow"
+msgstr "Una fila que puede contener columnas."
+
+msgid "Column"
+msgstr "Columna"
+
+msgid "desc_type_collagecolumn"
+msgstr "Una columna que puede contener objetos."
+
+msgid "Alias"
+msgstr "Alias"
+
+msgid "desc_type_collagealias"
+msgstr "Un objeto que hace referencia a otro existente."
+
+msgid "Back to Collage"
+msgstr "Volver a Collage"
+
+msgid "Manage page"
+msgstr "Gestionar página"
+
+msgid "msg_alias_inserted"
+msgstr "Alias añadido."
+
+msgid "msg_target_object_not_found"
+msgstr "No se encuentra el elemento."
+
+msgid "msg_row_added"
+msgstr "Fila añadida."
+
+msgid "msg_column_inserted"
+msgstr "Columna añadida."
+

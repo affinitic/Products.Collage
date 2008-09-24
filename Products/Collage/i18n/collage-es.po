@@ -1,0 +1,165 @@
+# Malthe Borch <mborch@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: Collage\n"
+"POT-Creation-Date: 2007-06-28 13:40+0000\n"
+"Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collage\n"
+"PO-Revision-Date: 2008-09-24 15:26+0100\n"
+"Language-Team: \n"
+
+#: ./browser/browser.py:90
+msgid "Column inserted."
+msgstr "Columna añadida."
+
+#: ./browser/browser.py:80
+msgid "Row added."
+msgstr "Fila añadida."
+
+#: ./browser/browser.py:37
+msgid "View changed."
+msgstr "Vista cambiada."
+
+#. Default: "Add row"
+#: ./skins/Collage/collage_view.pt:51
+msgid "button_add_collagerow"
+msgstr "Añadir fila."
+
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
+#: ./browser/viewlets/insert-existing-item.pt:16
+msgid "help_insert_existing_items"
+msgstr "Elija el elemento a insertar. Puede utilizar el menú para elegir un tipo de elemento o el buscador para encontrarlo."
+
+#. Default: "Choose a layout for this object."
+#: ./browser/viewlets/layout.pt:17
+msgid "help_select_layout"
+msgstr "Seleccione una vista para este objeto."
+
+#. Default: "insert existing item"
+#: ./browser/viewlets/insert-existing-item.pt:11
+msgid "label_insert_existing_item"
+msgstr "insertar elemento existente"
+
+#. Default: "Loading..."
+#: ./browser/viewlets/insert-existing-item.pt:25
+msgid "label_loading"
+msgstr "Cargando..."
+
+#. Default: "Move down"
+#: ./browser/viewlets/modify_order_vertical.pt:10
+msgid "label_move_down"
+msgstr "Mover abajo"
+
+#. Default: "Move left"
+#: ./browser/viewlets/modify_order_horizontal.pt:10
+msgid "label_move_left"
+msgstr "Mover a la izquierda"
+
+#. Default: "Move right"
+#: ./browser/viewlets/modify_order_horizontal.pt:16
+msgid "label_move_right"
+msgstr "Mover a la derecha"
+
+#. Default: "Move up"
+#: ./browser/viewlets/modify_order_vertical.pt:16
+msgid "label_move_up"
+msgstr "Mover arriba"
+
+#. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
+#: ./skins/Collage/collage_view.pt:44
+msgid "label_no_items_added"
+msgstr "Este Collage no tiene elementos."
+
+#. Default: "select layout"
+#: ./browser/viewlets/layout.pt:12
+msgid "label_select_layout"
+msgstr "seleccionar vista"
+
+#. Default: "split"
+#: ./browser/viewlets/split-column.pt:9
+msgid "label_split_column"
+msgstr "dividir"
+
+#. Default "(alias)"
+#: ./browser/viewlets/actions.pt:19
+msgid "label_aliased"
+msgstr "(alias)"
+
+#. Default "Insert new item"
+#: ./browser/viewlets/insert-new-item.pt:13
+msgid "label_insert_new_item"
+msgstr "Insertar nuevo elemento"
+
+#. Default "Select a content-type to insert."
+#: ./browser/viewlets/insert-new-item.pt:18
+msgid "help_insert_new_item"
+msgstr "Seleccione el tipo de elemento a añadir."
+
+#. Default "More information about this event"
+#: ./browser/views/event_portlet.pt:144
+#: ./browser/views/event_standard.pt:132
+msgid "event_more_information"
+msgstr "Más información sobre el evento"
+
+msgid "label_alias_target"
+msgstr "(alias)"
+
+msgid "label_optional_row_title"
+msgstr "Título de fila (opcional)"
+
+msgid "help_optional_row_title"
+msgstr ""
+
+msgid "label_optional_column_title"
+msgstr "Título de columna (opcional)"
+
+msgid "help_optional_column_title"
+msgstr ""
+
+msgid "label_show_title"
+msgstr "Mostrar título"
+
+msgid "label_show_description"
+msgstr "Mostrar descripción"
+
+#. Default "Add collage contents in searchable text?"
+#: ./content/_collage.py:55
+msgid "label_index_subobjects"
+msgstr "Añadir los elementos de Collage en el buscador?"
+
+#. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#: ./content/_collage.py:56
+msgid "help_index_subobjects"
+msgstr "Si activa esta opción permitirá que los contenidos de este Collage sean accesibles a través de la búsqueda del portal."
+
+msgid "label_content_type"
+msgstr "Tipo de elemento"
+
+msgid "label_all_content_types"
+msgstr "Todos los tipos"
+
+msgid "Automatic"
+msgstr "Automático"
+
+msgid "Large left"
+msgstr "Grande a la izquierda"
+
+msgid "Large right"
+msgstr "Grande a la derecha"
+
+msgid "Standard"
+msgstr "Estándar"
+
+msgid "Featured"
+msgstr "Destacado"
+
+msgid "Portlet"
+msgstr "Portlet"
+

@@ -6,6 +6,9 @@ Collage 1.2.0 trunk (unreleased)
 
 https://svn.plone.org/collective/Products.Collage/trunk/
 
+* Added Basque (eu) and Spanish (es) translations.
+  [erral]
+
 * Added safety belt to GenericSetup upgrade scripts.
   [glenfant]
 

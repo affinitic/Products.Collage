@@ -6,6 +6,12 @@ Collage 1.2.0 trunk (unreleased)
 
 https://svn.plone.org/collective/Products.Collage/trunk/
 
+* Renderer: if a layout is defined on a canonical object, but not
+  on a translation, now the canonical version's layout setting
+  is used for the translation rather than the default. (Language
+  versions should look the same unless explicitly defined otherwise.)
+  [thomasw]
+
 * Added Basque (eu) and Spanish (es) translations.
   [erral]
 

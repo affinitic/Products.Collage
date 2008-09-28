@@ -59,6 +59,12 @@ class SimpleContainerRenderer(BrowserView):
                     # or a translation is available in the requested language.
                     if not target.isCanonical() or target.getTranslation(language) in contents:
                         continue
+                # If the target is a translation, get the layout defined on the canonical
+                # object, unless a layout has already been defined on the translation.
+                # Fallback to default layout.
+                if not target.isCanonical():
+                    canmanager = IDynamicViewManager(target.getCanonical())
+                    layout = manager.getLayout() or canmanager.getLayout() or layout
 
             # assume that a layout is always available
             view = getMultiAdapter((target, self.request), name=layout)

@@ -26,7 +26,7 @@ class LayoutContainer(object):
         data = super(LayoutContainer, self).SearchableText()
 
         # Must we add subcontents texts?
-        if ICollageColumn.isImplementedBy(self):
+        if ICollageColumn.providedBy(self):
             helper = self.restrictedTraverse('@@collage_helper')
             collage = helper.getCollageObject()
             if not collage.mustIndexSubobjects():

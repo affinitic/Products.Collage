@@ -2,7 +2,10 @@
 
 from AccessControl import ClassSecurityInfo
 
-from Products.Archetypes import atapi
+try:
+    from Products.LinguaPlone import public as atapi
+except ImportError:
+    from Products.Archetypes import atapi
 
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.ATContentTypes.content.base import ATCTMixin

@@ -18,12 +18,9 @@ msgstr ""
 msgid "Alias"
 msgstr "Alias"
 
-msgid "Back to Collage"
-msgstr "Retour à la page"
-
 # content-types
 msgid "Collage"
-msgstr "Page"
+msgstr "Collage"
 
 msgid "Column"
 msgstr "Colonne"
@@ -46,14 +43,3 @@ msgstr "Une colonne contenant plusieurs éléments."
 msgid "desc_type_collagerow"
 msgstr "Une ligne contenant plusieurs colonnes."
 
-msgid "msg_alias_inserted"
-msgstr "L'alias a été créé."
-
-msgid "msg_target_object_not_found"
-msgstr "L'élement cible n'a pas été trouvé."
-
-msgid "msg_row_added"
-msgstr "La ligne a été ajoutée."
-
-msgid "msg_column_inserted"
-msgstr "La colonne a été ajoutée."

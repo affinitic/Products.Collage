@@ -17,9 +17,6 @@ msgstr ""
 msgid "Alias"
 msgstr "Aliasa"
 
-msgid "Back to Collage"
-msgstr "Collagera itzuli"
-
 # content-types
 msgid "Collage"
 msgstr "Collage"
@@ -44,16 +41,4 @@ msgstr "Elementu eta aliasak eduki ditzakeen zutabea."
 
 msgid "desc_type_collagerow"
 msgstr "Zutabeak eduki ditzakeen lerroa."
-
-msgid "msg_alias_inserted"
-msgstr "Aliasa sartuta."
-
-msgid "msg_target_object_not_found"
-msgstr "Ez da elementua aurkitu."
-
-msgid "msg_row_added"
-msgstr "Lerroa gehituta."
-
-msgid "msg_column_inserted"
-msgstr "Zutabea sartu da."
 

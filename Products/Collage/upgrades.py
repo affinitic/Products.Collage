@@ -1,12 +1,13 @@
+# -*- coding: utf-8 -*-
 # $Id$
 """Misc GenericSetup upgrade steps"""
 
 # Warning, the various upgrade handlers here must be coded in
 # a defensive way. This means that the changes each handler does
-# may have already done. The handler must behave accoringly.
-
+# may have already done. The handler must behave accordingly.
 
 from Products.Collage.utilities import getPortal, IfInstalled
+
 
 @IfInstalled()
 def runTypesStepOnly(setuptool):
@@ -47,4 +48,13 @@ def removeSkinsLayer(setuptool):
         skinstool.selections[name] = layers
     if LAYERNAME in skinstool.objectIds():
         skinstool._delObject(LAYERNAME)
+    return
+
+
+@IfInstalled()
+def addControlPanel(setuptool):
+    """Add Collage control panel resources"""
+
+    for step in ('propertiestool', 'controlpanel', 'action-icons'):
+        setuptool.runImportStepFromProfile('profile-Products.Collage:default', step, run_dependencies=False)
     return

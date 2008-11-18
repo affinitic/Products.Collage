@@ -21,8 +21,8 @@ It provides the following content-types:
   * Alias
 
 The first three are structural containers that provide basic layouting
-functionality. The premise is that a column fits inside a row which again
-fits inside a collage.
+functionality. The premise is that a column fits inside a row which again fits
+inside a collage.
 
 The Alias-type is provided to allow displaying existing objects from the site
 inside the collage.
@@ -57,6 +57,8 @@ under ./browser/addons/<package name>
 Make sure collective.collage is in your python path if you want these views
 registered for use in Collage.
 
+See DEVELOPER.txt to add support for custom content types and themings.
+
 Issue tracker
 -------------
 
@@ -65,13 +67,27 @@ http://www.plone.org/products/collage/issues
 Credits
 -------
 
-* Malthe Borch (main developer) <mborch@gmail.com>
-* Pelle Kroegholt <pelle@headnet.dk>
-* Sune Toft <sune@headnet.dk>
-* Gilles Lenfant <gilles.lenfant@ingeniweb.com>
-* David Glick <davidglick@onenw.org>
+Development:
+
+* `Malthe Borch (main developer) <mborch@gmail.com>`_
+* `David Glick <davidglick@onenw.org>`_
+* `Pelle Kroegholt <pelle@headnet.dk>`_
+* `Gilles Lenfant <gilles.lenfant@gmail.com>`_
+* `Sune Toft <sune@headnet.dk>`_
+
+Translations:
+
+* Bulgarian (bg): `Vladimir Iliev <vladimir.iliev@gmail.com>`_
+* Danish (da): `Jacob Vestergaard <jacobv@headnet.dk>`_
+* German (de): `Roland Fasching <rof@sterngasse.at>`_
+* English (en): `Jean-Charles Rogez <jeancharles.rogez@free.fr>`_
+* Spanish (es): `Mikel Larreategi <mlarreategi@codesyntax.com>`_
+* Basque (eu): `Mikel Larreategi <mlarreategi@codesyntax.com>`_
+* French (fr): `Gilles Lenfant <gilles.lenfant@gmail.com>`_
+* Italian (it): `Yuri Carrer <yurj@alfa.it>`_
 
 Sponsors
 --------
 
-Work on this product has been sponsored by Headnet (http://www.headnet.dk).
+Work on this product has been sponsored by Headnet (http://www.headnet.dk) and
+EDF (http://www.edf.fr)

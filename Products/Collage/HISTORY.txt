@@ -6,6 +6,23 @@ Collage 1.2.0 trunk (unreleased)
 
 https://svn.plone.org/collective/Products.Collage/trunk/
 
+* Removed code for old Plone (< 3.1) support since we can't be used in
+  Plone 3.0 or older anymore
+  [glenfant]
+
+* Memoizing where possible to speed up views (not sure to be exhaustive)
+  [glenfant]
+
+* New translations due to the control panel, and added translations synch
+  script.
+  [glenfant]
+
+* Fixed bug on @@collage_helper
+  [glenfant]
+
+* Added control panel for Collage inner content types whitelist.
+  [glenfant]
+
 * Collage is now LinguaPlone compatible and therefore Collage elements
   are now translatable.
   [erral]
@@ -155,7 +172,8 @@ https://svn.plone.org/collective/Collage/tags/1.2.0beta1
 
 * Image standard display now shows the actual image rather than its
   preview.  This caused issues with large images in a Collage being
-  upscaled when displayed.  [rockdj]
+  upscaled when displayed.
+  [rockdj]
 
 
 Collage 1.1

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # $Id$
 """Misc utilities"""
 
@@ -32,6 +33,15 @@ def faketranslate(text, default=""):
     widget = FooWidget('foo', label_msgid=_('label_foo', default="Foo"), ...)
     """
     return text
+
+###
+## Our i18n message factory
+###
+
+from zope.i18nmessageid import MessageFactory
+from Products.Collage.config import I18N_DOMAIN
+
+CollageMessageFactory = MessageFactory(I18N_DOMAIN)
 
 ###
 ## Detects translatable objects when LP installed
@@ -69,13 +79,21 @@ def getPortal():
     return getUtility(ISiteRoot)
 
 ###
-## Our i18n message factory
+## Get Collage site options
 ###
 
-from zope.i18nmessageid import MessageFactory
-from Products.Collage.config import I18N_DOMAIN
+from zope.component import getAdapter
+ICollageSiteOptions = None
 
-CollageMessageFactory = MessageFactory(I18N_DOMAIN)
+def getCollageSiteOptions():
+    """Collage site options from contol panel"""
+
+    global ICollageSiteOptions
+
+    # Weird stuff for working around circular import
+    if ICollageSiteOptions is None:
+        from Products.Collage.interfaces import ICollageSiteOptions
+    return getAdapter(getPortal(), ICollageSiteOptions)
 
 ###
 ## Version of Collage

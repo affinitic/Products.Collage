@@ -13,11 +13,13 @@ Issues
   somehow difficult to check wether a CSS class is
   available. Otherwise could we do this in javascript?
 
+* Search widget when adding an alias is buggy when non ASCII chars are
+  searched.
+
 Features
 ========
 
-* Add a blacklist of content types (not compatible by nature with
-  Collage). Edit this blacklist in a config panel.
+* Add some kind of ATReferenceBrowserWidget to create a new alias.
 
 * Limit number of columns in a config panel.
 

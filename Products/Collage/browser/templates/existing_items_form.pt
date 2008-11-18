@@ -12,15 +12,13 @@
       <label i18n:translate="label_content_type"
 	     for="portal_type">Content type</label>
       <select name="portal_type" style="font-size:80%"
-	      tal:define="allowedTypes here/getAllowedTypes">
+	      tal:define="allowedTypes view/listEnabledTypes">
 	<option i18n:translate="label_all_content_types"
 		value="">All</option>
 	<option tal:repeat="ctype allowedTypes"
-		i18n:domain="plone"
-		i18n:translate=""
-		tal:attributes="value ctype/getId;
-				selected python: filter_portal_type == ctype.getId() and 'selected'"
-		tal:content="ctype/Title">Type-name</option>
+		tal:attributes="value ctype/id;
+				selected ctype/selected"
+		tal:content="ctype/title">Type-name</option>
       </select>
     </div>
     <div class="field">

@@ -1,17 +1,17 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="collage">
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+   i18n_domain="collage">
 
   <!-- $Id$ -->
 
   <genericsetup:registerProfile
-      name="default"
-      title="Collage"
-      directory="profiles/default"
-      description="Extension profile for Collage."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
+     name="default"
+     title="Collage"
+     directory="profiles/default"
+     description="Extension profile for Collage."
+     provides="Products.GenericSetup.interfaces.EXTENSION"
+     />
 
   <genericsetup:upgradeSteps
      source="0.0"
@@ -34,6 +34,19 @@
        title="Removing skins layer"
        description="Collage doesn't require a skins layer anymore"
        handler=".upgrades.removeSkinsLayer"
+       />
+
+  </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+     source="1.2.0"
+     destination="1.2.1"
+     profile="Products.Collage:default">
+    
+    <genericsetup:upgradeStep
+       title="Adding control panel"
+       description="Adding the Collage control panel resources"
+       handler=".upgrades.addControlPanel"
        />
 
   </genericsetup:upgradeSteps>

@@ -34,15 +34,11 @@ class CollageHelper(object):
         if not parent:
             parent = aq_parent(aq_inner(self.context))
 
-        if parent:
+        while parent:
             if ICollage.providedBy(parent):
                 return parent
 
             parent = aq_parent(parent)
-            if parent:
-                if ICollage.providedBy(parent):
-                    return parent
-
         return None
 
     def getCollageObjectURL(self, parent=None):

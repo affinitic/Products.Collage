@@ -94,7 +94,7 @@
      />
  
   <browser:page
-     name="kss_field_decorator_dummy_view" 
+     name="kss_field_decorator_dummy_view"
      for="*"
      permission="zope.Public"
      class=".kss.DummyFieldsView"
@@ -107,7 +107,23 @@
      class=".renderer.CollageStylesheet"
      permission="zope2.Public"
      />
-     
+
+  <!-- Control panel -->
+
+  <adapter factory=".controlpanel.CollageSiteOptions" />
+  
+  <browser:page
+     name="collage-controlpanel"
+     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+     class=".controlpanel.CollageControlPanel"
+     permission="cmf.ManagePortal"
+     />
+
+  <utility 
+     component=".controlpanel.CollageUserFriendlyTypesVocabularyFactory"
+     name="collage.vocabularies.CollageUserFriendlyTypes"
+     />
+
   <include file="views.zcml" />
 
   <include file="viewlets.zcml" />

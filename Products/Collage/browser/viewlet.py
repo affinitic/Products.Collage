@@ -1,14 +1,17 @@
+# -*- coding: utf-8 -*-
 # $Id$
-
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
-
-from Products.Collage.interfaces import IDynamicViewManager
 
 from ZODB.POSException import ConflictError
 
 from OFS.CopySupport import _cb_decode
 from OFS import Moniker
+
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
+
+from Products.Collage.interfaces import IDynamicViewManager
+from Products.Collage.utilities import getCollageSiteOptions
+
 
 class SimpleContentMenuViewlet(object):
     def portal_url(self):
@@ -83,10 +86,12 @@ class InsertNewItemViewlet(object):
         return getToolByName(self.context, 'plone_utils').normalizeString
 
     def getAddableTypes(self):
+        collage_options = getCollageSiteOptions()
         plone_view = self.context.restrictedTraverse('@@plone')
         container = plone_view.getCurrentFolder()
 
-        allowed_types = container.allowedContentTypes()
+        allowed_types = [t for t in container.getAllowedTypes()
+                         if collage_options.enabledType(t.getId())]
 
         portal_url = getToolByName(self.context, 'portal_url')()
 

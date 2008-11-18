@@ -1,30 +1,54 @@
+# -*- coding: utf-8 -*-
+# $Id$
+
+from zope.component import getMultiAdapter
+from plone.memoize.view import memoize_contextless
 from Products.Five.browser import BrowserView
-
 from Products.CMFCore.utils import getToolByName
-
 from Products.Collage.interfaces import IDynamicViewManager, IPortletSkin
 
+def doTest(condition, value_true, value_false):
+    if condition:
+        return value_true
+    else:
+        return value_false
+
 class BaseView(BrowserView):
+
     def test(self):
-        return lambda a, b, c: a and b or c
+        # return lambda a, b, c: a and b or c
+        return doTest
 
+    @memoize_contextless
     def isAnon(self):
-        return getToolByName(self.context, 'portal_membership').isAnonymousUser()
+        return self.mtool().isAnonymousUser()
 
+    @memoize_contextless
     def normalizeString(self):
+
         return getToolByName(self.context, 'plone_utils').normalizeString
 
+    @memoize_contextless
     def mtool(self):
-        return getToolByName(self.context, 'portal_membership')
 
+        plone_tools = getMultiAdapter((self.context, self.request), name=u'plone_tools')
+        return plone_tools.membership()
+
+    @memoize_contextless
     def portal_url(self):
-        return getToolByName(self.context, 'portal_url')()
 
+        portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
+        return portal_state.portal_url()
+
+    @memoize_contextless
     def site_properties(self):
-        props = getToolByName(self.context, 'portal_properties')
-        return props.site_properties
 
+        plone_tools = getMultiAdapter((self.context, self.request), name=u'plone_tools')
+        return plone_tools.properties().site_properties
+
+    @memoize_contextless
     def friendlyTypes(self):
+
         return getToolByName(self.context, 'plone_utils').getUserFriendlyTypes()
 
     def getSkin(self):

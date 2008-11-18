@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2007-06-28 13:40+0000\n"
+"POT-Creation-Date: 2008-11-15 17:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Jacob Vestergaard <jacobv@headnet.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,151 +16,239 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collage\n"
 
-msgid "Automatic"
-msgstr "Automatisk"
-
-#: ./browser/browser.py:90
-msgid "Column inserted."
-msgstr "Kolonne indsat"
-
-msgid "Featured"
-msgstr "Fremhævet"
-
-msgid "Large left"
-msgstr "Stor venstre"
-
-msgid "Large right"
-msgstr "Stor højre"
-
-msgid "Portlet"
+#: Collage/browser/actions.py:122
+msgid "${title} has been deleted."
 msgstr ""
 
-#: ./browser/browser.py:80
-msgid "Row added."
-msgstr "Række tilføjet"
+# Object action
+msgid "Back to Collage"
+msgstr ""
 
-msgid "Standard"
-msgstr "Almindelig"
+#: Collage/browser/actions.py:34
+msgid "Skin changed."
+msgstr ""
 
-#: ./browser/browser.py:37
+#: Collage/browser/actions.py:24
 msgid "View changed."
 msgstr "Visning ændret"
 
 #. Default: "Add row"
-#: ./skins/Collage/collage_view.pt:51
+#: Collage/browser/templates/collage_view.pt:51
 msgid "button_add_collagerow"
 msgstr "Tilføj række"
 
-#. Default "More information about this event"
-#: ./browser/views/event_portlet.pt:144
-#: ./browser/views/event_standard.pt:132
-msgid "event_more_information"
+#. Default: "Default"
+#: Collage/browser/skins.py:6
+msgid "default"
+msgstr ""
+
+#. Default: "Site wide options for Collage"
+#: Collage/browser/controlpanel.py:76
+msgid "help_collage_controlpanel"
 msgstr ""
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
-#: ./content/_collage.py:56
+#. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#: Collage/content/_collage.py:56
 msgid "help_index_subobjects"
 msgstr ""
 
 #. Default: "Choose an existing item to insert. Use dropdown to filter on type."
-#: ./browser/viewlets/insert-existing-item.pt:16
+#: Collage/browser/viewlets/insert-existing-item.pt:16
 msgid "help_insert_existing_items"
 msgstr "Vælg et eksisterende indholdsobjekt, du vil indsætte. Vælg rullemenu for at filtrere efter type."
 
 #. Default "Select a content-type to insert."
-#: ./browser/viewlets/insert-new-item.pt:18
+#. Default: "Select a content-type to insert."
+#: Collage/browser/viewlets/insert-new-item.pt:15
 msgid "help_insert_new_item"
 msgstr "Vælg en indholdstype, der skal oprettes."
 
+#. Default: "You may optionally supply a title for this column."
+#: Collage/content/_column.py:26
 msgid "help_optional_column_title"
 msgstr "Hvis du ønsker en overskrift til denne kolonne, kan du skrive den her."
 
+#. Default: "You may optionally supply a title for this row."
+#: Collage/content/_row.py:24
 msgid "help_optional_row_title"
 msgstr "Hvis du ønsker en overskrift til denne række, kan du skrive den her."
 
 #. Default: "Choose a layout for this object."
-#: ./browser/viewlets/layout.pt:17
+#: Collage/browser/viewlets/layout.pt:17
 msgid "help_select_layout"
 msgstr "Vælg et layout for dette objekt"
 
+#. Default: "Choose a skin to apply to the selected layout."
+#: Collage/browser/viewlets/skin.pt:17
+msgid "help_select_skin"
+msgstr ""
+
+#. Default: "Help"
+#: Collage/browser/skins.py:12
+msgid "help_skin"
+msgstr ""
+
+#. Default: "Select item types that can be added or aliased in a Collage object."
+#: Collage/browser/controlpanel.py:38
+msgid "help_types_whitelist"
+msgstr ""
+
+#. Default: "Only types in below whitelist can be added in a Collage."
+#: Collage/browser/controlpanel.py:31
+msgid "help_use_whitelist"
+msgstr ""
+
+#. Default: "Selected target object"
+#: Collage/content/_alias.py:33
 msgid "label_alias_target"
 msgstr "Vælg alias"
 
 #. Default "(alias)"
-#: ./browser/viewlets/actions.pt:19
+#. Default: "(alias)"
+#: Collage/browser/viewlets/actions.pt:11
 msgid "label_aliased"
 msgstr "(alias)"
 
+#. Default: "All"
+#: Collage/browser/templates/existing_items_form.pt:16
 msgid "label_all_content_types"
 msgstr "Alle"
 
+#. Default: "Content type"
+#: Collage/browser/templates/existing_items_form.pt:12
 msgid "label_content_type"
 msgstr "Indholdstype"
 
+#. Default: "copy"
+#: Collage/browser/viewlets/copy.pt:9
+msgid "label_copy_object"
+msgstr ""
+
 #. Default "Add collage contents in searchable text?"
-#: ./content/_collage.py:55
+#. Default: "Add collage contents in searchable text?"
+#: Collage/content/_collage.py:55
 msgid "label_index_subobjects"
 msgstr ""
 
 #. Default: "insert existing item"
-#: ./browser/viewlets/insert-existing-item.pt:11
+#: Collage/browser/viewlets/insert-existing-item.pt:11
 msgid "label_insert_existing_item"
 msgstr "Indsæt eksisterende objekt"
 
 #. Default "Insert new item"
-#: ./browser/viewlets/insert-new-item.pt:13
+#. Default: "Insert new item"
+#: Collage/browser/viewlets/insert-new-item.pt:10
 msgid "label_insert_new_item"
 msgstr "Indsæt nyt objekt"
 
 #. Default: "Loading..."
-#: ./browser/viewlets/insert-existing-item.pt:25
+#: Collage/browser/viewlets/insert-existing-item.pt:24
 msgid "label_loading"
 msgstr "Henter..."
 
 #. Default: "Move down"
-#: ./browser/viewlets/modify_order_vertical.pt:10
+#: Collage/browser/viewlets/modify_order_vertical.pt:11
 msgid "label_move_down"
 msgstr "Flyt ned"
 
 #. Default: "Move left"
-#: ./browser/viewlets/modify_order_horizontal.pt:10
+#: Collage/browser/viewlets/modify_order_horizontal.pt:11
 msgid "label_move_left"
 msgstr "Flyt til venstre"
 
 #. Default: "Move right"
-#: ./browser/viewlets/modify_order_horizontal.pt:16
+#: Collage/browser/viewlets/modify_order_horizontal.pt:18
 msgid "label_move_right"
 msgstr "Flyt til højre"
 
 #. Default: "Move up"
-#: ./browser/viewlets/modify_order_vertical.pt:16
+#: Collage/browser/viewlets/modify_order_vertical.pt:18
 msgid "label_move_up"
 msgstr "Flyt op"
 
 #. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
-#: ./skins/Collage/collage_view.pt:44
+#: Collage/browser/templates/collage_view.pt:44
 msgid "label_no_items_added"
 msgstr "Denne kollage er tom."
 
+#. Default: "Title"
+#: Collage/content/_column.py:25
 msgid "label_optional_column_title"
 msgstr "Overskrift"
 
+#. Default: "Title"
+#: Collage/content/_row.py:23
 msgid "label_optional_row_title"
 msgstr "Overskrift"
 
+#. Default: "paste"
+#: Collage/browser/viewlets/paste.pt:10
+msgid "label_paste_object"
+msgstr ""
+
 #. Default: "select layout"
-#: ./browser/viewlets/layout.pt:12
+#: Collage/browser/viewlets/layout.pt:12
 msgid "label_select_layout"
 msgstr "Vælg layout"
 
+#. Default: "Skins"
+#: Collage/browser/viewlets/skin.pt:12
+msgid "label_select_skin"
+msgstr ""
+
+#. Default: "Show description"
+#: Collage/content/_collage.py:48
 msgid "label_show_description"
 msgstr "Vis beskrivelse"
 
+#. Default: "Show title"
+#: Collage/content/_collage.py:42
 msgid "label_show_title"
 msgstr "Vis overskrift"
 
 #. Default: "split"
-#: ./browser/viewlets/split-column.pt:9
+#: Collage/browser/viewlets/split-column.pt:9
 msgid "label_split_column"
 msgstr "Opdel"
+
+#. Default: "Types whitelist"
+#: Collage/browser/controlpanel.py:37
+msgid "label_types_whitelist"
+msgstr ""
+
+#. Default: "Use types whitelist"
+#: Collage/browser/controlpanel.py:30
+msgid "label_use_whitelist"
+msgstr ""
+
+#. Default: "Alias has been inserted"
+#: Collage/browser/actions.py:109
+msgid "msg_alias_inserted"
+msgstr ""
+
+#. Default: "Column has been inserted"
+#: Collage/browser/actions.py:84
+msgid "msg_column_inserted"
+msgstr ""
+
+#. Default: "Row has been added"
+#: Collage/browser/actions.py:75
+msgid "msg_row_added"
+msgstr ""
+
+#. Default: "Target object not found"
+#: Collage/browser/actions.py:111
+msgid "msg_target_object_not_found"
+msgstr ""
+
+#. Default: "Notification"
+#: Collage/browser/skins.py:9
+msgid "notification_skin"
+msgstr ""
+
+#. Default: "Collage control panel"
+#: Collage/browser/controlpanel.py:75
+msgid "title_collage_controlpanel"
+msgstr ""
 

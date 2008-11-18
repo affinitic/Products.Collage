@@ -1,6 +1,10 @@
-from zope import interface
+# -*- coding: utf-8 -*-
+# $Id$
 
+from zope import interface
 from zope.viewlet.interfaces import IViewletManager
+
+from Products.Collage.browser.controlpanel import ICollageSiteOptions
 
 class ICollage(interface.Interface):
     pass

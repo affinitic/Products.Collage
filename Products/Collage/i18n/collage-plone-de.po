@@ -18,9 +18,6 @@ msgstr ""
 msgid "Alias"
 msgstr "Alias"
 
-msgid "Back to Collage"
-msgstr "Zurück zur Collage"
-
 # content-types
 msgid "Collage"
 msgstr "Collage"
@@ -44,17 +41,5 @@ msgid "desc_type_collagecolumn"
 msgstr ""
 
 msgid "desc_type_collagerow"
-msgstr ""
-
-msgid "msg_alias_inserted"
-msgstr ""
-
-msgid "msg_column_inserted"
-msgstr ""
-
-msgid "msg_row_added"
-msgstr ""
-
-msgid "msg_target_object_not_found"
 msgstr ""
 

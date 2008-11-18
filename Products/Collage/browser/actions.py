@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # $Id$
 
 from zope import event
@@ -6,7 +7,7 @@ from zope.lifecycleevent import ObjectModifiedEvent
 from Products.Five.browser import BrowserView
 
 from Products.CMFPlone import utils as cmfutils
-from Products.CMFPlone import PloneMessageFactory as _
+from Products.Collage.utilities import CollageMessageFactory as _
 
 from Products.Collage.utilities import generateNewId, findFirstAvailableInteger
 from Products.Collage.interfaces import IDynamicViewManager
@@ -56,7 +57,6 @@ class ActionsView(BrowserView):
             self.context.orderObjects(object_id)
 
         cmfutils.getToolByName(self.context, 'plone_utils').reindexOnReorder(self.context)
-
         return 1
 
     def insertRow(self):
@@ -72,7 +72,7 @@ class ActionsView(BrowserView):
         col = getattr(row, col_id, None)
         col.setTitle('')
 
-        self.context.plone_utils.addPortalMessage(_(u'msg_row_added'))
+        self.context.plone_utils.addPortalMessage(_(u'msg_row_added', default=u"Row has been added"))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
     def splitColumn(self):
@@ -81,7 +81,7 @@ class ActionsView(BrowserView):
 
         container.invokeFactory(id=desired_id, type_name='CollageColumn')
 
-        self.context.plone_utils.addPortalMessage(_(u'msg_column_inserted'))
+        self.context.plone_utils.addPortalMessage(_(u'msg_column_inserted', default="Column has been inserted"))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
     def insertAlias(self):
@@ -106,23 +106,19 @@ class ActionsView(BrowserView):
             # set target
             alias.set_target(uid)
             event.notify(ObjectModifiedEvent(alias))
-
-            msg = 'msg_alias_inserted'
+            msg = _(u'msg_alias_inserted', default=u"Alias has been inserted")
         else:
-            msg = 'msg_target_object_not_found'
+            msg = _(u'msg_target_object_not_found', default=u"Target object not found")
 
         referer = self.request.get('HTTP_REFERER', self.context.absolute_url())
-        self.context.plone_utils.addPortalMessage(_(msg))
+        self.context.plone_utils.addPortalMessage(msg)
         return self.request.RESPONSE.redirect(referer)
 
 
     def deleteObject(self):
 
         parent = self.context.aq_inner.aq_parent
-
         parent.manage_delObjects(self.context.getId())
-
         message = _(u'${title} has been deleted.', mapping={u'title' : self.context.portal_type})
-
         self.context.plone_utils.addPortalMessage(message)
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])

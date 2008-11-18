@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.2'
+version = open(os.path.join('Products', 'Collage', 'version.txt')).read().strip()
 
 setup(name='Products.Collage',
       version=version,

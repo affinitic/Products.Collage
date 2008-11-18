@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2008-11-15 17:46+0000\n"
-"PO-Revision-Date: 2008-09-24 15:16+0100\n"
+"PO-Revision-Date: 2008-11-18 11:31+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: EDF\n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,15 @@ msgstr ""
 
 #: Collage/browser/actions.py:122
 msgid "${title} has been deleted."
-msgstr ""
+msgstr "${title} ezabatu da"
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Collagera itzuli"
 
 #: Collage/browser/actions.py:34
 msgid "Skin changed."
-msgstr ""
+msgstr "Itxura aldatuta"
 
 #: Collage/browser/actions.py:24
 msgid "View changed."
@@ -38,18 +38,18 @@ msgstr "Lerroa gehitu"
 #. Default: "Default"
 #: Collage/browser/skins.py:6
 msgid "default"
-msgstr ""
+msgstr "Defektuzkoa"
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:76
 msgid "help_collage_controlpanel"
-msgstr ""
+msgstr "Collagen aukerak"
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #: Collage/content/_collage.py:56
 msgid "help_index_subobjects"
-msgstr ""
+msgstr "Elementu hau bilaketaren emaitzetan agertuko da, bere barnean dagoen elementuren baten testua bilatuz gero. Aukera hau aktibatzeak, Collagen egindako aldaketak gordetzean webgunea astiroago joatea ekar dezake egin beharreko indexazio lana dela-eta."
 
 #. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: Collage/browser/viewlets/insert-existing-item.pt:16
@@ -80,22 +80,22 @@ msgstr "Elementu honen itxura aldatu"
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:17
 msgid "help_select_skin"
-msgstr ""
+msgstr "Oraingo maketari aplikatu beharreko itxura aukeratu"
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
 msgid "help_skin"
-msgstr ""
+msgstr "Laguntza"
 
 #. Default: "Select item types that can be added or aliased in a Collage object."
 #: Collage/browser/controlpanel.py:38
 msgid "help_types_whitelist"
-msgstr ""
+msgstr "Aukeratu Collage elementu baten gehitu daitezkeen edo aliasa egin dakiekeen elementu motak"
 
 #. Default: "Only types in below whitelist can be added in a Collage."
 #: Collage/browser/controlpanel.py:31
 msgid "help_use_whitelist"
-msgstr ""
+msgstr "Beheko zerrenda-zurian dauden elementuak bakarrik gehi daitezke Collage baten"
 
 #. Default: "Selected target object"
 #: Collage/content/_alias.py:33
@@ -121,13 +121,13 @@ msgstr "Elementu mota"
 #. Default: "copy"
 #: Collage/browser/viewlets/copy.pt:9
 msgid "label_copy_object"
-msgstr ""
+msgstr "kopiatu"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
 #: Collage/content/_collage.py:55
 msgid "label_index_subobjects"
-msgstr ""
+msgstr "Collageren edukiak testu libreko bilaketara gehitu?"
 
 #. Default: "insert existing item"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
@@ -183,7 +183,7 @@ msgstr "Lerroaren izenburua"
 #. Default: "paste"
 #: Collage/browser/viewlets/paste.pt:10
 msgid "label_paste_object"
-msgstr ""
+msgstr "itsatsi"
 
 #. Default: "select layout"
 #: Collage/browser/viewlets/layout.pt:12
@@ -193,7 +193,7 @@ msgstr "Itxura aukeratu"
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
-msgstr ""
+msgstr "Itxura"
 
 #. Default: "Show description"
 #: Collage/content/_collage.py:48
@@ -213,40 +213,40 @@ msgstr "Zutabea gehitu"
 #. Default: "Types whitelist"
 #: Collage/browser/controlpanel.py:37
 msgid "label_types_whitelist"
-msgstr ""
+msgstr "Elementuen zerrenda-zuria"
 
 #. Default: "Use types whitelist"
 #: Collage/browser/controlpanel.py:30
 msgid "label_use_whitelist"
-msgstr ""
+msgstr "Elementuen zerrenda-zuria erabili"
 
 #. Default: "Alias has been inserted"
 #: Collage/browser/actions.py:109
 msgid "msg_alias_inserted"
-msgstr ""
+msgstr "Aliasa gehituta"
 
 #. Default: "Column has been inserted"
 #: Collage/browser/actions.py:84
 msgid "msg_column_inserted"
-msgstr ""
+msgstr "Zutabea gehituta"
 
 #. Default: "Row has been added"
 #: Collage/browser/actions.py:75
 msgid "msg_row_added"
-msgstr ""
+msgstr "Lerroa gehituta"
 
 #. Default: "Target object not found"
 #: Collage/browser/actions.py:111
 msgid "msg_target_object_not_found"
-msgstr ""
+msgstr "Helburu elementua ez da aurkitu"
 
 #. Default: "Notification"
 #: Collage/browser/skins.py:9
 msgid "notification_skin"
-msgstr ""
+msgstr "Jakinarazpena"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:75
 msgid "title_collage_controlpanel"
-msgstr ""
+msgstr "Collageren kontrol panela"
 

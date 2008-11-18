@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2008-11-15 17:46+0000\n"
-"PO-Revision-Date: 2008-09-24 15:26+0100\n"
+"PO-Revision-Date: 2008-11-18 11:36+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,15 +17,15 @@ msgstr ""
 
 #: Collage/browser/actions.py:122
 msgid "${title} has been deleted."
-msgstr ""
+msgstr "Se ha eliminado ${title}"
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Volver a Collage"
 
 #: Collage/browser/actions.py:34
 msgid "Skin changed."
-msgstr ""
+msgstr "Skin modificado."
 
 #: Collage/browser/actions.py:24
 msgid "View changed."
@@ -39,12 +39,12 @@ msgstr "Añadir fila."
 #. Default: "Default"
 #: Collage/browser/skins.py:6
 msgid "default"
-msgstr ""
+msgstr "Por defecto"
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:76
 msgid "help_collage_controlpanel"
-msgstr ""
+msgstr "Opciones de Collage"
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
@@ -66,12 +66,12 @@ msgstr "Seleccione el tipo de elemento a añadir."
 #. Default: "You may optionally supply a title for this column."
 #: Collage/content/_column.py:26
 msgid "help_optional_column_title"
-msgstr ""
+msgstr "Puede dar un título opcional para esta columna"
 
 #. Default: "You may optionally supply a title for this row."
 #: Collage/content/_row.py:24
 msgid "help_optional_row_title"
-msgstr ""
+msgstr "Puede dar un título opcional para esta fila"
 
 #. Default: "Choose a layout for this object."
 #: Collage/browser/viewlets/layout.pt:17
@@ -81,22 +81,22 @@ msgstr "Seleccione una vista para este objeto."
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:17
 msgid "help_select_skin"
-msgstr ""
+msgstr "Elija el skin a aplicar"
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
 msgid "help_skin"
-msgstr ""
+msgstr "Ayuda"
 
 #. Default: "Select item types that can be added or aliased in a Collage object."
 #: Collage/browser/controlpanel.py:38
 msgid "help_types_whitelist"
-msgstr ""
+msgstr "Seleccione los tipos de objeto que se pueden añadir o referenciar en Collage"
 
 #. Default: "Only types in below whitelist can be added in a Collage."
 #: Collage/browser/controlpanel.py:31
 msgid "help_use_whitelist"
-msgstr ""
+msgstr "Sólo los tipos de objeto seleccionados en la lista blanca se podrán añadir a Collage"
 
 #. Default: "Selected target object"
 #: Collage/content/_alias.py:33
@@ -122,7 +122,7 @@ msgstr "Tipo de elemento"
 #. Default: "copy"
 #: Collage/browser/viewlets/copy.pt:9
 msgid "label_copy_object"
-msgstr ""
+msgstr "copiar"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
@@ -184,7 +184,7 @@ msgstr "Título de fila (opcional)"
 #. Default: "paste"
 #: Collage/browser/viewlets/paste.pt:10
 msgid "label_paste_object"
-msgstr ""
+msgstr "pegar"
 
 #. Default: "select layout"
 #: Collage/browser/viewlets/layout.pt:12
@@ -194,7 +194,7 @@ msgstr "seleccionar vista"
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
-msgstr ""
+msgstr "Skins"
 
 #. Default: "Show description"
 #: Collage/content/_collage.py:48
@@ -214,40 +214,40 @@ msgstr "dividir"
 #. Default: "Types whitelist"
 #: Collage/browser/controlpanel.py:37
 msgid "label_types_whitelist"
-msgstr ""
+msgstr "Lista blanca de tipos"
 
 #. Default: "Use types whitelist"
 #: Collage/browser/controlpanel.py:30
 msgid "label_use_whitelist"
-msgstr ""
+msgstr "Utilizar lista blanca de tipos"
 
 #. Default: "Alias has been inserted"
 #: Collage/browser/actions.py:109
 msgid "msg_alias_inserted"
-msgstr ""
+msgstr "Alias añadido"
 
 #. Default: "Column has been inserted"
 #: Collage/browser/actions.py:84
 msgid "msg_column_inserted"
-msgstr ""
+msgstr "Columna añadida"
 
 #. Default: "Row has been added"
 #: Collage/browser/actions.py:75
 msgid "msg_row_added"
-msgstr ""
+msgstr "Fila añadida"
 
 #. Default: "Target object not found"
 #: Collage/browser/actions.py:111
 msgid "msg_target_object_not_found"
-msgstr ""
+msgstr "Elemento referenciado no encontrado"
 
 #. Default: "Notification"
 #: Collage/browser/skins.py:9
 msgid "notification_skin"
-msgstr ""
+msgstr "Notificación"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:75
 msgid "title_collage_controlpanel"
-msgstr ""
+msgstr "Panel de control de Collage"
 

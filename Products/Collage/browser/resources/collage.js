@@ -61,7 +61,7 @@ setupNavigation = function() {
 }
 
 submitExistingItemsForm = function(formel) {
-    var $ = jq;  
+    var $ = jq;
 	// serialize form
 	var form = $(formel).parents('form').eq(0);
 	var url = form.attr('action');
@@ -78,7 +78,7 @@ setupExistingItemsForm = function() {
     var $ = jq;
     
     $("form.collage-existing-items select").change(function(event) {
-		this.blur();
+        this.blur();
         submitExistingItemsForm(this);
     });
     // $("form.collage-existing-items SearchableText");

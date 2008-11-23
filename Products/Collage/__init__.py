@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # $Id$
 
 from Products.Archetypes.atapi import listTypes, process_types
@@ -5,9 +6,6 @@ from Products.Archetypes.atapi import listTypes, process_types
 GLOBALS = globals()
 
 from config import DEFAULT_ADD_CONTENT_PERMISSION, PROJECTNAME
-
-# Make the skins available as DirectoryViews
-#registerDirectory('skins', GLOBALS)
 
 def initialize(context):
     from Products.Collage import content

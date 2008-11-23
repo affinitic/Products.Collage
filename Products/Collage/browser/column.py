@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # $Id$
 
+import sys
 from types import UnicodeType
 from zope.component import getMultiAdapter
 from Products.Five.browser import BrowserView
 from plone.memoize.view import memoize_contextless
 from Products.CMFPlone.utils import getSiteEncoding
-from Products.CMFPlone import utils as cmfutils
 from Products.CMFPlone import PloneMessageFactory as p_
 from Products.Collage.utilities import getCollageSiteOptions
 from utils import escape_to_entities
@@ -14,9 +14,8 @@ from utils import escape_to_entities
 
 class ExistingItemsView(BrowserView):
 
-    def __init__(self, context, request):
-        self.context = context
-        self.request = request
+    def __init__(self, *args, **kw):
+        super(ExistingItemsView, self).__init__(*args, **kw)
 
         # beware of url-encoded spaces
         if 'portal_type' in self.request:
@@ -27,7 +26,7 @@ class ExistingItemsView(BrowserView):
         We'll encode it in latin-1."""
 
         self.request.RESPONSE.setHeader("Content-Type",
-                                        "text/html; charset=ISO-8859-1")
+                                    "text/html; charset=ISO-8859-1")
 
         encoding = getSiteEncoding(self.context.context)
 
@@ -41,14 +40,14 @@ class ExistingItemsView(BrowserView):
 
     @property
     def catalog(self):
-        return cmfutils.getToolByName(self.context,
-                                      'portal_catalog')
+        return getMultiAdapter((self.context, self.request),
+                               name=u'plone_tools').catalog()
+
 
     def portal_url(self):
-        return cmfutils.getToolByName(self.context, 'portal_url')()
+        return getMultiAdapter((self.context, self.request),
+                               name=u'plone_portal_state').portal_url()
 
-    def normalizeString(self, str):
-        return self.context.plone_utils.normalizeString(str)
 
     @memoize_contextless
     def listEnabledTypes(self):
@@ -62,13 +61,17 @@ class ExistingItemsView(BrowserView):
                 for pt in self.context.getAllowedTypes()
                 if collage_options.enabledType(pt.getId())]
 
+
     def getItems(self):
         """Found items"""
 
         portal_types = self.request.get('portal_type', None)
         if not portal_types:
             portal_types = [pt['id'] for pt in self.listEnabledTypes()]
-        limit = self.request.get('count', 50)
+
+        limit = getCollageSiteOptions().alias_search_limit
+        if limit <= 0:
+            limit = sys.maxint
         items = self.catalog(SearchableText=self.request.get('SearchableText', ''),
                              portal_type=portal_types,
                              sort_order='reverse',
@@ -77,19 +80,21 @@ class ExistingItemsView(BrowserView):
 
         # setup description cropping
         cropText = self.context.restrictedTraverse('@@plone').cropText
-        props = cmfutils.getToolByName(self.context, 'portal_properties')
+        croptext = getMultiAdapter((self.context, self.request),
+                                   name=u'plone').cropText
+        props = getMultiAdapter((self.context, self.request),
+                                name=u'plone_tools').properties()
         site_properties = props.site_properties
         desc_length = getattr(site_properties, 'search_results_description_length', 25)
         desc_ellipsis = getattr(site_properties, 'ellipsis', '...')
         portal_url = self.portal_url()
 
-        return [{'UID': obj.UID(),
+        return [{'UID': result.UID,
                  'icon' : result.getIcon,
                  'title': result.Title,
                  'description': cropText(result.Description, desc_length, desc_ellipsis),
                  'type': result.Type,
-                 'portal_type':  self.normalizeString(result.portal_type),
-                 'modified': result.ModificationDate,
-                 'published': result.EffectiveDate or ''} for (result, obj) in
-                map(lambda result: (result, result.getObject()), items)]
+                 'target_url': result.getURL()
+                 }
+                for result in items]
 

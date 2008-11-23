@@ -6,8 +6,9 @@
 
   <form class="collage-existing-items"
         onsubmit="return false"
-	tal:define="filter_portal_type request/portal_type|nothing"
-	tal:attributes="action string:${here/absolute_url}/existing-items-form">
+        method="get"
+	tal:define="here_url here/absolute_url"
+	tal:attributes="action string:${here_url}/existing-items-form">
     <div class="field">
       <label i18n:translate="label_content_type"
 	     for="portal_type">Content type</label>
@@ -26,18 +27,29 @@
 	     for="portal_type">Search Text</label>
       <input type="text" name="SearchableText" tal:attributes="value request/SearchableText|nothing" />
     </div>
-    <ul i18n:domain="plone" class="collage-content-menu">
+    <ul i18n:domain="plone" class="collage-content-menu"
+        tal:define="focushint string:View this item in a new window;
+                    portal_url view/portal_url">
       <li tal:repeat="item view/getItems" class="visualIcon">
-         <img tal:attributes="src string:${view/portal_url}/${item/icon};
-				title item/type; alt item/type" i18n:attributes="title; alt" />
+         <img tal:attributes="src string:${portal_url}/${item/icon};
+			      title item/type; alt item/type" i18n:attributes="title; alt" />
 	    <a href="#"
-	       tal:attributes="href string:${here/absolute_url}/insert-alias?uid=${item/UID};
+	       tal:attributes="href string:${here_url}/insert-alias?uid=${item/UID};
 		               title item/description">
 	      <tal:title content="item/title">Title</tal:title>
-	      <img tal:attributes="src string:${view/portal_url}/++resource++collage-resources/icon-insert.gif" alt="Insert" />
+	      <img tal:attributes="src string:${portal_url}/++resource++collage-resources/icon-insert.gif" alt="Insert" />
 	    </a>
+            &nbsp;
+            <a href=""
+               target="_blank"
+               tal:attributes="href item/target_url;
+                               title focushint;
+                               alt focushint"
+               i18n:attributes="title; alt">
+              <img src=""
+                   tal:attributes="src string:${portal_url}/search_icon.gif" />
+            </a>
       </li>
     </ul>
   </form>
-
 </div>

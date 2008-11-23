@@ -8,6 +8,7 @@ from zope.interface import implements
 from zope.schema import Bool
 from zope.schema import Choice
 from zope.schema import Tuple
+from zope.schema import Int
 from zope.app.schema.vocabulary import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import SimpleTerm
@@ -37,15 +38,23 @@ class ICollageSiteOptions(Interface):
         title=_(u'label_types_whitelist', default=u"Types whitelist"),
         description=_(u'help_types_whitelist',
                       default=u"Select item types that can be added or aliased in a Collage object."),
-        required=True,
+        required=False,
         missing_value=tuple(),
         value_type=Choice(vocabulary='collage.vocabularies.CollageUserFriendlyTypes'))
+
+    alias_search_limit = Int(
+        title=_(u'label_alias_search_limit', default=u"Alias search limit"),
+        description=_(u'help_alias_search_limit',
+                      default=u"Alias target search maximum results. '0' or negative means unlimited."),
+        required=False,
+        default=50)
 
 
 class CollageSiteOptions(SchemaAdapterBase):
 
     implements(ICollageSiteOptions)
     adapts(IPloneSiteRoot)
+
 
     def __init__(self, context):
 
@@ -55,6 +64,8 @@ class CollageSiteOptions(SchemaAdapterBase):
 
     use_whitelist = ProxyFieldProperty(ICollageSiteOptions['use_whitelist'])
     types_whitelist = ProxyFieldProperty(ICollageSiteOptions['types_whitelist'])
+    alias_search_limit = ProxyFieldProperty(ICollageSiteOptions['alias_search_limit'])
+
 
     def enabledType(self, portal_type):
         """True if portal type is enabled in a Collage"""

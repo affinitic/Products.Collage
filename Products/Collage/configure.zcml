@@ -8,26 +8,45 @@
   <include package="zope.annotation" />
 
   <include package=".browser" />
+
+  <!-- Getting rid of deprecation warnings we can't avoid -->
+
+  <five:deprecatedManageAddDelete
+     class=".content.Collage" />
+
+  <five:deprecatedManageAddDelete
+     class=".content.CollageRow" />
+
+  <five:deprecatedManageAddDelete
+     class=".content.CollageColumn" />
+
+  <five:deprecatedManageAddDelete
+     class=".content.CollageAlias" />
+
+  <!-- Events -->
   
   <subscriber handler=".content.updateCollageAliasLayout" />
-
-  <adapter for="*"
-	   provides=".interfaces.IDynamicViewManager"
-	   factory=".viewmanager.DynamicViewManager" />  
-
-  <configure zcml:condition="installed collective.collage">
-    <include package="collective.collage" />
-  </configure>
 
   <subscriber
      for="Products.CMFCore.interfaces.IContentish
           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
      handler=".utilities.reindexOnModify"
      />
+
+  <adapter
+     for="*"
+     provides=".interfaces.IDynamicViewManager"
+     factory=".viewmanager.DynamicViewManager" />  
+
+  <configure zcml:condition="installed collective.collage">
+    <include package="collective.collage" />
+  </configure>
+
   
   <!-- Uncomment below element to enable the box skinning demo -->
 
   <!--
   <include package=".skindemo" />
   -->
+
 </configure>

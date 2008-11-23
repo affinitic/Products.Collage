@@ -81,7 +81,8 @@ Next we examine the ajax-view:
 
   >>> view = column.restrictedTraverse('@@existing-items-form')
   >>> for item in view.getItems():
-  ...   if set(item.keys()) != set(['title', 'description', 'portal_type', 'modified', 'published', 'icon', 'type', 'UID']): raise ValueError, item.keys()
+  ...     if set(item.keys()) != set(['target_url', 'title', 'description', 'icon', 'type', 'UID']):
+  ...         raise ValueError, item.keys()
 
 Copy/paste
 ----------

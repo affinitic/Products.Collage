@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # $Id$
 
 from zope.interface import Interface
@@ -8,10 +9,11 @@ from Products.Collage.interfaces import ICollage
 
 class ICollageHelper(Interface):
     def loadCollageJS(self):
+        #FIXME: Used somewhere?
         """Determine if we need to load JS."""
 
     def isCollageContent():
-        """Search object tree for a Collage-object."""
+        """True if the content item is in a Collage"""
         pass
 
     def getCollageObject():

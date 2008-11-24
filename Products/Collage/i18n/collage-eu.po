@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-15 17:46+0000\n"
+"POT-Creation-Date: 2008-11-24 10:12+0000\n"
 "PO-Revision-Date: 2008-11-18 11:31+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: EDF\n"
@@ -40,14 +40,19 @@ msgstr "Lerroa gehitu"
 msgid "default"
 msgstr "Defektuzkoa"
 
+#. Default: "Alias target search maximum results. '0' or negative means unlimited."
+#: Collage/browser/controlpanel.py:47
+msgid "help_alias_search_limit"
+msgstr ""
+
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:76
+#: Collage/browser/controlpanel.py:87
 msgid "help_collage_controlpanel"
 msgstr "Collagen aukerak"
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
-#: Collage/content/_collage.py:56
+#: Collage/content/_collage.py:59
 msgid "help_index_subobjects"
 msgstr "Elementu hau bilaketaren emaitzetan agertuko da, bere barnean dagoen elementuren baten testua bilatuz gero. Aukera hau aktibatzeak, Collagen egindako aldaketak gordetzean webgunea astiroago joatea ekar dezake egin beharreko indexazio lana dela-eta."
 
@@ -88,14 +93,19 @@ msgid "help_skin"
 msgstr "Laguntza"
 
 #. Default: "Select item types that can be added or aliased in a Collage object."
-#: Collage/browser/controlpanel.py:38
+#: Collage/browser/controlpanel.py:39
 msgid "help_types_whitelist"
 msgstr "Aukeratu Collage elementu baten gehitu daitezkeen edo aliasa egin dakiekeen elementu motak"
 
 #. Default: "Only types in below whitelist can be added in a Collage."
-#: Collage/browser/controlpanel.py:31
+#: Collage/browser/controlpanel.py:32
 msgid "help_use_whitelist"
 msgstr "Beheko zerrenda-zurian dauden elementuak bakarrik gehi daitezke Collage baten"
+
+#. Default: "Alias search limit"
+#: Collage/browser/controlpanel.py:46
+msgid "label_alias_search_limit"
+msgstr ""
 
 #. Default: "Selected target object"
 #: Collage/content/_alias.py:33
@@ -109,12 +119,12 @@ msgid "label_aliased"
 msgstr "(aliasa)"
 
 #. Default: "All"
-#: Collage/browser/templates/existing_items_form.pt:16
+#: Collage/browser/templates/existing_items_form.pt:17
 msgid "label_all_content_types"
 msgstr "Elementu mota guztiak"
 
 #. Default: "Content type"
-#: Collage/browser/templates/existing_items_form.pt:12
+#: Collage/browser/templates/existing_items_form.pt:13
 msgid "label_content_type"
 msgstr "Elementu mota"
 
@@ -125,7 +135,7 @@ msgstr "kopiatu"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
-#: Collage/content/_collage.py:55
+#: Collage/content/_collage.py:58
 msgid "label_index_subobjects"
 msgstr "Collageren edukiak testu libreko bilaketara gehitu?"
 
@@ -196,12 +206,12 @@ msgid "label_select_skin"
 msgstr "Itxura"
 
 #. Default: "Show description"
-#: Collage/content/_collage.py:48
+#: Collage/content/_collage.py:51
 msgid "label_show_description"
 msgstr "Deskribapena erakutsi"
 
 #. Default: "Show title"
-#: Collage/content/_collage.py:42
+#: Collage/content/_collage.py:45
 msgid "label_show_title"
 msgstr "Izenburua erakutsi"
 
@@ -211,12 +221,12 @@ msgid "label_split_column"
 msgstr "Zutabea gehitu"
 
 #. Default: "Types whitelist"
-#: Collage/browser/controlpanel.py:37
+#: Collage/browser/controlpanel.py:38
 msgid "label_types_whitelist"
 msgstr "Elementuen zerrenda-zuria"
 
 #. Default: "Use types whitelist"
-#: Collage/browser/controlpanel.py:30
+#: Collage/browser/controlpanel.py:31
 msgid "label_use_whitelist"
 msgstr "Elementuen zerrenda-zuria erabili"
 
@@ -246,7 +256,7 @@ msgid "notification_skin"
 msgstr "Jakinarazpena"
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:75
+#: Collage/browser/controlpanel.py:86
 msgid "title_collage_controlpanel"
 msgstr "Collageren kontrol panela"
 

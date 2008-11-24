@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-15 17:46+0000\n"
+"POT-Creation-Date: 2008-11-24 10:12+0000\n"
 "PO-Revision-Date: 2007-12-14 16:01+0100\n"
 "Last-Translator: Yuri Carrer <yurj@alfa.it>\n"
 "Language-Team: None\n"
@@ -41,14 +41,19 @@ msgstr "Aggiungi una riga"
 msgid "default"
 msgstr ""
 
+#. Default: "Alias target search maximum results. '0' or negative means unlimited."
+#: Collage/browser/controlpanel.py:47
+msgid "help_alias_search_limit"
+msgstr ""
+
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:76
+#: Collage/browser/controlpanel.py:87
 msgid "help_collage_controlpanel"
 msgstr ""
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
-#: Collage/content/_collage.py:56
+#: Collage/content/_collage.py:59
 msgid "help_index_subobjects"
 msgstr ""
 
@@ -89,13 +94,18 @@ msgid "help_skin"
 msgstr ""
 
 #. Default: "Select item types that can be added or aliased in a Collage object."
-#: Collage/browser/controlpanel.py:38
+#: Collage/browser/controlpanel.py:39
 msgid "help_types_whitelist"
 msgstr ""
 
 #. Default: "Only types in below whitelist can be added in a Collage."
-#: Collage/browser/controlpanel.py:31
+#: Collage/browser/controlpanel.py:32
 msgid "help_use_whitelist"
+msgstr ""
+
+#. Default: "Alias search limit"
+#: Collage/browser/controlpanel.py:46
+msgid "label_alias_search_limit"
 msgstr ""
 
 #. Default: "Selected target object"
@@ -110,12 +120,12 @@ msgid "label_aliased"
 msgstr "(alias)"
 
 #. Default: "All"
-#: Collage/browser/templates/existing_items_form.pt:16
+#: Collage/browser/templates/existing_items_form.pt:17
 msgid "label_all_content_types"
 msgstr "Tutti i tipi di contenuto"
 
 #. Default: "Content type"
-#: Collage/browser/templates/existing_items_form.pt:12
+#: Collage/browser/templates/existing_items_form.pt:13
 msgid "label_content_type"
 msgstr "Tipo di contenuto"
 
@@ -126,7 +136,7 @@ msgstr ""
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
-#: Collage/content/_collage.py:55
+#: Collage/content/_collage.py:58
 msgid "label_index_subobjects"
 msgstr ""
 
@@ -197,12 +207,12 @@ msgid "label_select_skin"
 msgstr ""
 
 #. Default: "Show description"
-#: Collage/content/_collage.py:48
+#: Collage/content/_collage.py:51
 msgid "label_show_description"
 msgstr "Mostra la descrizione"
 
 #. Default: "Show title"
-#: Collage/content/_collage.py:42
+#: Collage/content/_collage.py:45
 msgid "label_show_title"
 msgstr "Mostra il titolo"
 
@@ -212,12 +222,12 @@ msgid "label_split_column"
 msgstr "Crea una colonna"
 
 #. Default: "Types whitelist"
-#: Collage/browser/controlpanel.py:37
+#: Collage/browser/controlpanel.py:38
 msgid "label_types_whitelist"
 msgstr ""
 
 #. Default: "Use types whitelist"
-#: Collage/browser/controlpanel.py:30
+#: Collage/browser/controlpanel.py:31
 msgid "label_use_whitelist"
 msgstr ""
 
@@ -247,7 +257,7 @@ msgid "notification_skin"
 msgstr ""
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:75
+#: Collage/browser/controlpanel.py:86
 msgid "title_collage_controlpanel"
 msgstr ""
 

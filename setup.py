@@ -7,10 +7,7 @@ def _textOfModuleFile(filename):
     fpath = os.path.join('Products', 'Collage', filename)
     return open(fpath, 'r').read().strip()
 
-
 version = _textOfModuleFile('version.txt')
-
-print version
 
 setup(name='Products.Collage',
       version=version,

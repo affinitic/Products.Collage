@@ -1,14 +1,24 @@
-from setuptools import setup, find_packages
+# -*- coding: utf-8 -*-
+# $Id$
 import os
+from setuptools import setup, find_packages
 
-version = open(os.path.join('Products', 'Collage', 'version.txt')).read().strip()
+def _textOfModuleFile(filename):
+    fpath = os.path.join('Products', 'Collage', filename)
+    return open(fpath, 'r').read().strip()
+
+
+version = _textOfModuleFile('version.txt')
+
+print version
 
 setup(name='Products.Collage',
       version=version,
-      description="A product to create page compositions in Plone. Content can be created directly inside the object or existing items can be pulled in for display.",
-      long_description=open(os.path.join('Products', 'Collage', "README.txt")).read() + "\n" +
-                       open(os.path.join('Products', 'Collage', "DEVELOPERS.txt")).read() + "\n" +
-                       open(os.path.join('Products', 'Collage', "HISTORY.txt")).read(),
+      description=("A product to create page compositions in Plone."
+                   " Content can be created directly inside the object"
+                   " or existing items can be pulled in for display."),
+      long_description='\n\n'.join([_textOfModuleFile(name)
+                                    for name in ('README.txt', 'DEVELOPERS.txt', 'HISTORY.txt')]),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",

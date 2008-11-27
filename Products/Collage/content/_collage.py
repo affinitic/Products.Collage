@@ -57,10 +57,11 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         widget=atapi.BooleanWidget(
             label=_(u'label_index_subobjects', default=u"Add collage contents in searchable text?"),
             description=_(u'help_index_subobjects',
-                 default=u"Will show this collage in results when searching terms of an inner item."
-                 u" Checking this option may slow down collage changes as well as subcontent changes"
-                 u" and show irrelevant search results."))
-        )
+                 default=u"Show this collage in results when searching for terms "
+                          u"appearing in a contained item. "
+                          u"Note: Checking this option may slow down the system "
+                          u"while editing the collage."))
+            )
 
 
 ))

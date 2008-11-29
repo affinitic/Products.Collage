@@ -13,6 +13,8 @@
      provides="Products.GenericSetup.interfaces.EXTENSION"
      />
 
+  <!-- Upgrades -->
+
   <genericsetup:upgradeSteps
      source="0.0"
      destination="1.2.0"

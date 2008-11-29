@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-24 10:12+0000\n"
+"POT-Creation-Date: 2008-11-29 11:06+0000\n"
 "PO-Revision-Date: 2008-11-18 11:36+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: \n"

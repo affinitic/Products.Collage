@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-24 10:12+0000\n"
+"POT-Creation-Date: 2008-11-29 11:06+0000\n"
 "PO-Revision-Date: 2007-12-14 16:01+0100\n"
 "Last-Translator: Jean-Charles Rogez <jean-charles.rogez@edf.fr>\n"
 "Language-Team: EDF\n"

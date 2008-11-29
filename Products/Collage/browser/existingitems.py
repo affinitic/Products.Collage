@@ -2,6 +2,7 @@
 # $Id$
 
 import sys
+from urllib import unquote_plus
 from types import UnicodeType
 from zope.component import getMultiAdapter
 from Products.Five.browser import BrowserView
@@ -15,28 +16,33 @@ from utils import escape_to_entities
 class ExistingItemsView(BrowserView):
 
     def __init__(self, *args, **kw):
-        super(ExistingItemsView, self).__init__(*args, **kw)
+        """We must recode the Unicode quoted request from javascript"""
 
-        # beware of url-encoded spaces
-        if 'portal_type' in self.request:
-            self.request['portal_type'] = self.request['portal_type'].replace('%20', ' ')
+        super(ExistingItemsView, self).__init__(*args, **kw)
+        for param, value in self.request.form.items():
+            value = unquote_plus(value)
+            self.request.form[param] = value
+        return
+
 
     def __call__(self):
         """There are browser-issues in sending out content in UTF-8.
         We'll encode it in latin-1."""
 
-        self.request.RESPONSE.setHeader("Content-Type",
-                                    "text/html; charset=ISO-8859-1")
+        # IE6 encoding bug workaround (IE6 sucks but...)
+        if self.request.get('USER_AGENT', '').find('MSIE 6.0') > 0:
+            self.request.RESPONSE.setHeader("Content-Type", "text/html; charset=ISO-8859-1")
+            encoding = getSiteEncoding(self.context.context)
+            content = self.index()
+            if not isinstance(content, UnicodeType):
+                content = content.decode(encoding)
 
-        encoding = getSiteEncoding(self.context.context)
+            # Convert special characters to HTML entities since we're recoding
+            # to latin-1
+            return escape_to_entities(content).encode('latin-1')
+        else:
+            return self.index()
 
-        content = self.index()
-        if not isinstance(content, UnicodeType):
-            content = content.decode(encoding)
-
-        # convert special characters to HTML entities since we're recoding
-        # to latin-1
-        return escape_to_entities(content).encode('latin-1')
 
     @property
     def catalog(self):
@@ -94,7 +100,8 @@ class ExistingItemsView(BrowserView):
                  'title': result.Title,
                  'description': cropText(result.Description, desc_length, desc_ellipsis),
                  'type': result.Type,
-                 'target_url': result.getURL()
+                 'target_url': result.getURL(),
+                 'link_css_class': 'state-%s' % result.review_state
                  }
                 for result in items]
 

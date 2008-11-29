@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-24 10:12+0000\n"
+"POT-Creation-Date: 2008-11-29 11:06+0000\n"
 "PO-Revision-Date: 2007-12-14 16:01+0100\n"
 "Last-Translator: Jean-Charles Rogez <jean-charles.rogez@edf.fr>\n"
 "Language-Team: EDF\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: Collage/browser/actions.py:122
 msgid "${title} has been deleted."
-msgstr ""
+msgstr "${title} has been deleted."
 
 # Object action
 msgid "Back to Collage"
@@ -44,18 +44,18 @@ msgstr ""
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
 #: Collage/browser/controlpanel.py:47
 msgid "help_alias_search_limit"
-msgstr ""
+msgstr "Alias target search maximum results. '0' or negative means unlimited."
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:87
 msgid "help_collage_controlpanel"
-msgstr ""
+msgstr "Site wide options for Collage"
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #: Collage/content/_collage.py:59
 msgid "help_index_subobjects"
-msgstr ""
+msgstr "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 
 #. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: Collage/browser/viewlets/insert-existing-item.pt:16
@@ -71,12 +71,12 @@ msgstr "Select a content-type to insert."
 #. Default: "You may optionally supply a title for this column."
 #: Collage/content/_column.py:26
 msgid "help_optional_column_title"
-msgstr "Optionnal column title"
+msgstr "You may optionally supply a title for this column."
 
 #. Default: "You may optionally supply a title for this row."
 #: Collage/content/_row.py:24
 msgid "help_optional_row_title"
-msgstr "Optionnal row title"
+msgstr "You may optionally supply a title for this row."
 
 #. Default: "Choose a layout for this object."
 #: Collage/browser/viewlets/layout.pt:17
@@ -86,32 +86,32 @@ msgstr "Choose a layout for this item."
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:17
 msgid "help_select_skin"
-msgstr ""
+msgstr "Choose a skin to apply to the selected layout."
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
 msgid "help_skin"
-msgstr ""
+msgstr "Help"
 
 #. Default: "Select item types that can be added or aliased in a Collage object."
 #: Collage/browser/controlpanel.py:39
 msgid "help_types_whitelist"
-msgstr ""
+msgstr "Select item types that can be added or aliased in a Collage object."
 
 #. Default: "Only types in below whitelist can be added in a Collage."
 #: Collage/browser/controlpanel.py:32
 msgid "help_use_whitelist"
-msgstr ""
+msgstr "Only types in below whitelist can be added in a Collage."
 
 #. Default: "Alias search limit"
 #: Collage/browser/controlpanel.py:46
 msgid "label_alias_search_limit"
-msgstr ""
+msgstr "Alias search limit"
 
 #. Default: "Selected target object"
 #: Collage/content/_alias.py:33
 msgid "label_alias_target"
-msgstr "Referenced item"
+msgstr "Selected target object"
 
 #. Default "(alias)"
 #. Default: "(alias)"
@@ -132,13 +132,13 @@ msgstr "Content type"
 #. Default: "copy"
 #: Collage/browser/viewlets/copy.pt:9
 msgid "label_copy_object"
-msgstr ""
+msgstr "copy"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
 #: Collage/content/_collage.py:58
 msgid "label_index_subobjects"
-msgstr ""
+msgstr "Add collage contents in searchable text?"
 
 #. Default: "insert existing item"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
@@ -194,7 +194,7 @@ msgstr "Row title"
 #. Default: "paste"
 #: Collage/browser/viewlets/paste.pt:10
 msgid "label_paste_object"
-msgstr ""
+msgstr "paste"
 
 #. Default: "select layout"
 #: Collage/browser/viewlets/layout.pt:12
@@ -204,7 +204,7 @@ msgstr "Select layout"
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
-msgstr ""
+msgstr "Skins"
 
 #. Default: "Show description"
 #: Collage/content/_collage.py:51
@@ -224,40 +224,40 @@ msgstr "Add column"
 #. Default: "Types whitelist"
 #: Collage/browser/controlpanel.py:38
 msgid "label_types_whitelist"
-msgstr ""
+msgstr "Types whitelist"
 
 #. Default: "Use types whitelist"
 #: Collage/browser/controlpanel.py:31
 msgid "label_use_whitelist"
-msgstr ""
+msgstr "Use types whitelist"
 
 #. Default: "Alias has been inserted"
 #: Collage/browser/actions.py:109
 msgid "msg_alias_inserted"
-msgstr ""
+msgstr "Alias has been inserted"
 
 #. Default: "Column has been inserted"
 #: Collage/browser/actions.py:84
 msgid "msg_column_inserted"
-msgstr ""
+msgstr "Column has been inserted"
 
 #. Default: "Row has been added"
 #: Collage/browser/actions.py:75
 msgid "msg_row_added"
-msgstr ""
+msgstr "Row has been added"
 
 #. Default: "Target object not found"
 #: Collage/browser/actions.py:111
 msgid "msg_target_object_not_found"
-msgstr ""
+msgstr "Target object not found"
 
 #. Default: "Notification"
 #: Collage/browser/skins.py:9
 msgid "notification_skin"
-msgstr ""
+msgstr "Notification"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:86
 msgid "title_collage_controlpanel"
-msgstr ""
+msgstr "Collage control panel"
 

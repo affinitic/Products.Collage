@@ -10,8 +10,8 @@ Compatibility
 About
 -----
 
-Collage is a product for aggregating and displaying multiple content items on
-a single page.
+Collage is a product for aggregating and displaying multiple content items on a
+single page.
 
 It provides the following content-types:
 
@@ -30,7 +30,9 @@ inside the collage.
 Upgrading
 ---------
 
-Open in ZMI .../your-site/portal_setup and click the "Upgrades" tab.
+If you upgraded Products.Collage in the file system, open in ZMI
+/your/plone/site/portal_setup and click the "Upgrades" tab.
+
 Select the "Products.Collage:default" profile and see if upgrades are
 available. Run them :D
 

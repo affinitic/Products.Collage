@@ -33,9 +33,10 @@
       <li tal:repeat="item view/getItems" class="visualIcon">
          <img tal:attributes="src string:${portal_url}/${item/icon};
 			      title item/type; alt item/type" i18n:attributes="title; alt" />
-	    <a href="#"
+	    <a href="#" class="#"
 	       tal:attributes="href string:${here_url}/insert-alias?uid=${item/UID};
-		               title item/description">
+		               title item/description;
+                               class item/link_css_class">
 	      <tal:title content="item/title">Title</tal:title>
 	      <img tal:attributes="src string:${portal_url}/++resource++collage-resources/icon-insert.gif" alt="Insert" />
 	    </a>

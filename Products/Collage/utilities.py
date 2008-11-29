@@ -19,20 +19,6 @@ def generateNewId(container):
     numericalIDs = filter(isNumber.match, contentIDs)
     return str(findFirstAvailableInteger(numericalIDs))
 
-###
-## i18ndude helper
-###
-
-# FIXME: It seems we could use directly a real MessageFactory object.
-# as in ATCT schemas.
-
-def faketranslate(text, default=""):
-    """A fake translator to be used in AT schemas as i18ndude marker like this
-    from Products.Collage.utils import faketranslate as _
-    ...
-    widget = FooWidget('foo', label_msgid=_('label_foo', default="Foo"), ...)
-    """
-    return text
 
 ###
 ## Our i18n message factory
@@ -108,19 +94,6 @@ def getFSVersionTuple():
     vfile = "%s/version.txt" % PACKAGE_HOME
     v_str = open(vfile, 'r').read().lower().strip()
     return versionTupleFromString(v_str)
-
-###
-## Reindexing on subcontent modification
-###
-
-def reindexOnModify(content, event):
-    helper = content.restrictedTraverse('@@collage_helper')
-    collage = helper.getCollageObject()
-    if collage:
-        # Change done in a Collage subobject
-        collage.reindexObject()
-    return
-
 
 ###
 ## Upgrade steps decorator

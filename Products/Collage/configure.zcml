@@ -25,13 +25,9 @@
 
   <!-- Events -->
   
-  <subscriber handler=".content.updateCollageAliasLayout" />
+  <subscriber handler=".events.updateCollageAliasLayout" />
 
-  <subscriber
-     for="Products.CMFCore.interfaces.IContentish
-          zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-     handler=".utilities.reindexOnModify"
-     />
+  <subscriber handler=".events.reindexOnModify" />
 
   <adapter
      for="*"

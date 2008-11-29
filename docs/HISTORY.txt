@@ -6,6 +6,14 @@ Collage 1.2.0 trunk (unreleased)
 
 https://svn.plone.org/collective/Products.Collage/trunk/
 
+* Moved event handlers in events.py module
+  [glenfant]
+
+* Fixed bug on searching (spaces in type name or non ascii searchable
+  text). Found items titles are colored according their workflow state as in
+  folder_contents (...)
+  [glenfant]
+
 * Use `folder_summary_view` instead of `folder_listing` in topic
   views. This fixes issue #43.
   [malthe]

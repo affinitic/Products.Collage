@@ -75,13 +75,11 @@ Insert existing items
 
   >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"50-insert-existing-item")
 
-TODO!
-
 Next we examine the ajax-view:
 
   >>> view = column.restrictedTraverse('@@existing-items-form')
   >>> for item in view.getItems():
-  ...     if set(item.keys()) != set(['target_url', 'title', 'description', 'icon', 'type', 'UID']):
+  ...     if set(item.keys()) != set(['link_css_class', 'target_url', 'title', 'description', 'icon', 'type', 'UID']):
   ...         raise ValueError, item.keys()
 
 Copy/paste
@@ -106,5 +104,3 @@ Let's examine the paste viewlet:
   1
   >>> viewlet._get_clipboard_item()
   <ATDocument at /plone/front-page>
-
-

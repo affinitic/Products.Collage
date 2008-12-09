@@ -1,10 +1,10 @@
 Changelog
 =========
 
-Collage 1.2.0 trunk (unreleased)
---------------------------------
+Collage 1.2.1
+-------------
 
-https://svn.plone.org/collective/Products.Collage/trunk/
+https://svn.plone.org/collective/Products.Collage/tags/1.2.1/
 
 * Moved event handlers in events.py module
   [glenfant]

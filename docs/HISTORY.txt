@@ -1,8 +1,16 @@
 Changelog
 =========
 
-Collage 1.2.1
--------------
+Collage 1.2.2 (unreleased)
+--------------------------
+
+* Added support for theme-specific overrides of Collage views.  See
+  DEVELOPERS.txt for details.
+  [davisagli]
+
+
+Collage 1.2.1 (2008-12-10)
+--------------------------
 
 https://svn.plone.org/collective/Products.Collage/tags/1.2.1/
 

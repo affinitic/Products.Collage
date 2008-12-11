@@ -1,10 +1,10 @@
 from Products.Five.browser import BrowserView
 
 from Products.Collage.interfaces import IDynamicViewManager
-from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.interfaces import ICollageAlias
+from Products.Collage.viewmanager import mark_request
 
-from zope.interface import Interface, directlyProvidedBy, directlyProvides
+from zope.interface import Interface, directlyProvides
 
 from zope.component import getMultiAdapter
 
@@ -68,8 +68,7 @@ class CollageMacrosView(BrowserView):
             if not context: context = self.context
 
         # transmute request interfaces
-        ifaces = directlyProvidedBy(self.request)
-        directlyProvides(self.request, ICollageBrowserLayer)
+        ifaces = mark_request(self.request)
 
         view = getMultiAdapter((context, self.request), name=layout)
 

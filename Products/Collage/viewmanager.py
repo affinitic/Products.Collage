@@ -4,13 +4,17 @@ from zope.interface import (
     Interface, implements, providedBy, directlyProvidedBy,
     directlyProvides)
 
-from zope.component import getSiteManager, getMultiAdapter, getUtilitiesFor
+from zope.component import getSiteManager, getMultiAdapter, getUtilitiesFor, queryUtility
+from zope.app.component.hooks import getSite
 
 from interfaces import IDynamicViewManager
 from interfaces import ICollageAlias
-from interfaces import ICollageBrowserLayer
+from interfaces import ICollageBrowserLayer, ICollageBrowserLayerType
 
 from persistent.dict import PersistentDict
+
+from Products.Five import BrowserView
+from Products.CMFCore.utils import getToolByName
 
 ANNOTATIONS_KEY = u'Collage'
 
@@ -55,26 +59,18 @@ class DynamicViewManager(object):
             target = self.context.get_target()
             if target: context = target
 
-        return self._getViewFactoryInfo(ICollageBrowserLayer, context=context)
+        ifaces = mark_request(self.context.REQUEST)
 
-    def _getViewFactoryInfo(self, layer, context=None):
-        """Return view factory info for this context and browser layer."""
-
-        if not context:
-            context = self.context
-
-        sm = getSiteManager(context)
-
-        context_ifaces = providedBy(context)
-
-        lookupAll = sm.adapters.lookupAll
-
-        collage_aware = lookupAll((context_ifaces, layer), Interface)
-        collage_agnostic = list(lookupAll((context_ifaces, Interface), Interface))
-
-        return [(name, getattr(factory, 'title', name)) \
-                for (name, factory) in collage_aware if (name, factory) not in collage_agnostic]
-
+        sm = getSiteManager()
+        layouts = sm.adapters.lookupAll(
+            required=(providedBy(self.context), providedBy(self.context.REQUEST)),
+            provided=Interface
+            )
+        
+        directlyProvides(self.context.REQUEST, *ifaces)
+        
+        return [(name, getattr(layout, 'title', name)) for (name, layout) in layouts
+            if type(layout) is type(BrowserView) and issubclass(layout, BrowserView)]
 
     def getSkin(self):
         storage = self.getStorage()
@@ -94,8 +90,7 @@ class DynamicViewManager(object):
         if layout and request:
             request.debug = False
 
-            ifaces = directlyProvidedBy(request)
-            directlyProvides(request, ICollageBrowserLayer)
+            ifaces = mark_request(request)
 
             target = self.context
             if ICollageAlias.providedBy(target):
@@ -118,4 +113,24 @@ class DynamicViewManager(object):
         return skins
 
 
-
+def mark_request(request):
+    """ Marks the request with general and theme-specific Collage browser layers.
+    
+        Returns the initial set of request marker interfaces so that you can restore
+        them using directlyProvides(request, ifaces).
+    """
+    initial_ifaces = directlyProvidedBy(request)
+    
+    # general Collage layer
+    directlyProvides(request, ICollageBrowserLayer)
+    
+    # theme-specific Collage layer
+    site = getSite()
+    portal_skins = getToolByName(site, 'portal_skins', None)
+    if portal_skins is not None:
+        skin_name = site.getCurrentSkinName()
+        layer_iface = queryUtility(ICollageBrowserLayerType, name=skin_name)
+        if layer_iface is not None:
+            directlyProvides(request, layer_iface, ICollageBrowserLayer)
+    
+    return initial_ifaces

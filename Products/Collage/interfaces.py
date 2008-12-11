@@ -25,6 +25,11 @@ class ICollageBrowserLayer(interface.Interface):
     """Collage browser layer. Views registered with this layer
     are available to objects inside a collage."""
     pass
+    
+class ICollageBrowserLayerType(interface.interfaces.IInterface):
+    """Marker interface for Collage theme-specific layers
+    """
+    pass
 
 class ICollageEditLayer(interface.Interface):
     """Collage edit layer."""

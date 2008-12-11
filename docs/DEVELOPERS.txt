@@ -30,6 +30,29 @@ class, placed in a file document.py:::
   class MyDocumentView(BrowserView):
       title = u'My view'
 
+Theme-specific content views
+----------------------------
+
+If you want to add a new view or override an existing view only for sites
+using one particular theme product, you must register a theme-specific
+Collage layer.  (We can't reuse the normal theme-specific layer, because
+then there's no way to tell that the view is a Collage view).
+
+To add a theme-specific Collage layer, use the following ZCML::
+
+    <interface
+        interface=".path.to.IMyCollageThemeLayer"
+        type="Products.Collage.interfaces.ICollageBrowserLayerType"
+        name="Plone Default"
+        />
+
+where the interface attribute is a custom marker interface that you have
+defined, and the name attribute is the name of the CMF theme with which
+you want to associate this layer.
+
+Then you can use layer=".path.to.interfaces.IMyCollageThemeLayer" in your view
+ZCML registration, instead of Products.Collage.interfaces.ICollageBrowserLayer.
+
 
 Skins views
 -----------

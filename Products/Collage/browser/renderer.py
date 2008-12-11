@@ -3,15 +3,16 @@
 from AccessControl import getSecurityManager, Unauthorized
 from Globals import DTMLFile
 
-from zope.interface import directlyProvidedBy, directlyProvides
+from zope.interface import directlyProvides
 from zope.component import getMultiAdapter
 
 from Products.Five.browser import BrowserView
 
-from Products.Collage.interfaces import ICollageBrowserLayer, IDynamicViewManager
+from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 
 from Products.Collage.utilities import isTranslatable
+from Products.Collage.viewmanager import mark_request
 
 class SimpleContainerRenderer(BrowserView):
     def getItems(self, contents=None):
@@ -19,8 +20,7 @@ class SimpleContainerRenderer(BrowserView):
         self.request.debug = False
 
         # transmute request interfaces
-        ifaces = directlyProvidedBy(self.request)
-        directlyProvides(self.request, ICollageBrowserLayer)
+        ifaces = mark_request(self.request)
 
         views = []
 

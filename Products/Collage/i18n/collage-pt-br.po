@@ -1,0 +1,277 @@
+# Malthe Borch <mborch@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: Collage\n"
+"POT-Creation-Date: 2008-11-29 11:06+0000\n"
+"PO-Revision-Date: 2008-12-11 11:36+0100\n"
+"Last-Translator: Danilo G. Botelho <danilogbotelho@yahoo.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: pt-br\n"
+"Language-Name: Português do Brasil\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collage\n"
+
+#: Collage/browser/actions.py:122
+msgid "${title} has been deleted."
+msgstr "${title} foi excluído."
+
+# Object action
+msgid "Back to Collage"
+msgstr "Voltar para Collage"
+
+#: Collage/browser/actions.py:34
+msgid "Skin changed."
+msgstr "Skin modificado."
+
+#: Collage/browser/actions.py:24
+msgid "View changed."
+msgstr "View modificada."
+
+#. Default: "Add row"
+#: Collage/browser/templates/collage_view.pt:51
+msgid "button_add_collagerow"
+msgstr "Adicionar linha."
+
+#. Default: "Default"
+#: Collage/browser/skins.py:6
+msgid "default"
+msgstr "Padrão"
+
+#. Default: "Alias target search maximum results. '0' or negative means unlimited."
+#: Collage/browser/controlpanel.py:47
+msgid "help_alias_search_limit"
+msgstr "Número máximo de resultados de pesquisa para o Alias. '0' ou negativo significa ilimitado."
+
+#. Default: "Site wide options for Collage"
+#: Collage/browser/controlpanel.py:87
+msgid "help_collage_controlpanel"
+msgstr "Opções globais para Collage"
+
+#. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#: Collage/content/_collage.py:59
+msgid "help_index_subobjects"
+msgstr "Exibirá este collage nos resultados quando procurar por termos de um item interno. Marcar esta opção pode tornar as mudanças no collage mais lentas, bem como as mudanças em subconteúdo além de mostrar resultados de busca irrelevantes."
+
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
+#: Collage/browser/viewlets/insert-existing-item.pt:16
+msgid "help_insert_existing_items"
+msgstr "Selecione um item existente para inserir. Use o menu dropdown para filtrar por tipo."
+
+#. Default "Select a content-type to insert."
+#. Default: "Select a content-type to insert."
+#: Collage/browser/viewlets/insert-new-item.pt:15
+msgid "help_insert_new_item"
+msgstr "Selecione um tipo de conteúdo para inserir."
+
+#. Default: "You may optionally supply a title for this column."
+#: Collage/content/_column.py:26
+msgid "help_optional_column_title"
+msgstr "Você pode opcionalmente fornecer um título para esta coluna."
+
+#. Default: "You may optionally supply a title for this row."
+#: Collage/content/_row.py:24
+msgid "help_optional_row_title"
+msgstr "Você pode opcionalmente fornecer um título para esta linha."
+
+#. Default: "Choose a layout for this object."
+#: Collage/browser/viewlets/layout.pt:17
+msgid "help_select_layout"
+msgstr "Selecione um layout para este objeto."
+
+#. Default: "Choose a skin to apply to the selected layout."
+#: Collage/browser/viewlets/skin.pt:17
+msgid "help_select_skin"
+msgstr "Escolha um tema (skin) para aplicar ao layout selecionado."
+
+#. Default: "Help"
+#: Collage/browser/skins.py:12
+msgid "help_skin"
+msgstr "Ajuda"
+
+#. Default: "Select item types that can be added or aliased in a Collage object."
+#: Collage/browser/controlpanel.py:39
+msgid "help_types_whitelist"
+msgstr "Selecione os tipos de itens que podem ser adicionados ou usados como 'alias' em um objeto Collage."
+
+#. Default: "Only types in below whitelist can be added in a Collage."
+#: Collage/browser/controlpanel.py:32
+msgid "help_use_whitelist"
+msgstr "Apenas os tipos na lista abaixo podem ser adicionados a um Collage."
+
+#. Default: "Alias search limit"
+#: Collage/browser/controlpanel.py:46
+msgid "label_alias_search_limit"
+msgstr "Limite de busca para Alias"
+
+#. Default: "Selected target object"
+#: Collage/content/_alias.py:33
+msgid "label_alias_target"
+msgstr "Objeto alvo selecionado"
+
+#. Default "(alias)"
+#. Default: "(alias)"
+#: Collage/browser/viewlets/actions.pt:11
+msgid "label_aliased"
+msgstr "(alias)"
+
+#. Default: "All"
+#: Collage/browser/templates/existing_items_form.pt:17
+msgid "label_all_content_types"
+msgstr "Todos"
+
+#. Default: "Content type"
+#: Collage/browser/templates/existing_items_form.pt:13
+msgid "label_content_type"
+msgstr "Tipo de conteúdo"
+
+#. Default: "copy"
+#: Collage/browser/viewlets/copy.pt:9
+msgid "label_copy_object"
+msgstr "copiar"
+
+#. Default "Add collage contents in searchable text?"
+#. Default: "Add collage contents in searchable text?"
+#: Collage/content/_collage.py:58
+msgid "label_index_subobjects"
+msgstr "Adicionar o conteúdo do collage ao catálogo de busca?"
+
+#. Default: "insert existing item"
+#: Collage/browser/viewlets/insert-existing-item.pt:11
+msgid "label_insert_existing_item"
+msgstr "inserir item existente"
+
+#. Default "Insert new item"
+#. Default: "Insert new item"
+#: Collage/browser/viewlets/insert-new-item.pt:10
+msgid "label_insert_new_item"
+msgstr "Inserir novo item"
+
+#. Default: "Loading..."
+#: Collage/browser/viewlets/insert-existing-item.pt:24
+msgid "label_loading"
+msgstr "Carregando..."
+
+#. Default: "Move down"
+#: Collage/browser/viewlets/modify_order_vertical.pt:11
+msgid "label_move_down"
+msgstr "Mover para baixo"
+
+#. Default: "Move left"
+#: Collage/browser/viewlets/modify_order_horizontal.pt:11
+msgid "label_move_left"
+msgstr "Mover para a esquerda"
+
+#. Default: "Move right"
+#: Collage/browser/viewlets/modify_order_horizontal.pt:18
+msgid "label_move_right"
+msgstr "Mover para a direita"
+
+#. Default: "Move up"
+#: Collage/browser/viewlets/modify_order_vertical.pt:18
+msgid "label_move_up"
+msgstr "Mover para cima"
+
+#. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
+#: Collage/browser/templates/collage_view.pt:44
+msgid "label_no_items_added"
+msgstr "Este objeto Collage não tem itens ainda. Adicione itens usando o menu dropdown para que eles apareçam aqui."
+
+#. Default: "Title"
+#: Collage/content/_column.py:25
+msgid "label_optional_column_title"
+msgstr "Título"
+
+#. Default: "Title"
+#: Collage/content/_row.py:23
+msgid "label_optional_row_title"
+msgstr "Título"
+
+#. Default: "paste"
+#: Collage/browser/viewlets/paste.pt:10
+msgid "label_paste_object"
+msgstr "colar"
+
+#. Default: "select layout"
+#: Collage/browser/viewlets/layout.pt:12
+msgid "label_select_layout"
+msgstr "selecionar layout"
+
+#. Default: "Skins"
+#: Collage/browser/viewlets/skin.pt:12
+msgid "label_select_skin"
+msgstr "Skins"
+
+#. Default: "Show description"
+#: Collage/content/_collage.py:51
+msgid "label_show_description"
+msgstr "Exibir descrição"
+
+#. Default: "Show title"
+#: Collage/content/_collage.py:45
+msgid "label_show_title"
+msgstr "Exibir o título"
+
+#. Default: "split"
+#: Collage/browser/viewlets/split-column.pt:9
+msgid "label_split_column"
+msgstr "dividir"
+
+#. Default: "Types whitelist"
+#: Collage/browser/controlpanel.py:38
+msgid "label_types_whitelist"
+msgstr "Lista de tipos"
+
+#. Default: "Use types whitelist"
+#: Collage/browser/controlpanel.py:31
+msgid "label_use_whitelist"
+msgstr "Lista de utilização de tipos"
+
+#. Default: "Alias has been inserted"
+#: Collage/browser/actions.py:109
+msgid "msg_alias_inserted"
+msgstr "Alias inserido com sucesso"
+
+#. Default: "Column has been inserted"
+#: Collage/browser/actions.py:84
+msgid "msg_column_inserted"
+msgstr "Coluna inserida com sucesso"
+
+#. Default: "Row has been added"
+#: Collage/browser/actions.py:75
+msgid "msg_row_added"
+msgstr "Linha inserida com sucesso"
+
+#. Default: "Target object not found"
+#: Collage/browser/actions.py:111
+msgid "msg_target_object_not_found"
+msgstr "Objeto alvo não encontrado"
+
+#. Default: "Notification"
+#: Collage/browser/skins.py:9
+msgid "notification_skin"
+msgstr "Notificação"
+
+#. Default: "Collage control panel"
+#: Collage/browser/controlpanel.py:86
+msgid "title_collage_controlpanel"
+msgstr "Painel de controle do Collage"
+
+#. Default: "Large left"
+#: Collage/browser/viewlets/layout.pt:28
+msgid "Large left"
+msgstr "Grande à esquerda"
+
+#. Default: "Large right"
+#: Collage/browser/viewlets/layout.pt:28
+msgid "Large right"
+msgstr "Grande à direita"
+
+#. Default: "Automatic"
+#: Collage/browser/viewlets/layout.pt:28
+msgid "Automatic"
+msgstr "Automático"

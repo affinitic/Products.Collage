@@ -87,6 +87,7 @@ Translations:
 * Basque (eu): `Mikel Larreategi <mlarreategi@codesyntax.com>`_
 * French (fr): `Gilles Lenfant <gilles.lenfant@gmail.com>`_
 * Italian (it): `Yuri Carrer <yurj@alfa.it>`_
+* Brazilian Portuguese (pt-br): `Danilo G. Botelho <danilogbotelho@yahoo.com>`_
 
 Sponsors
 --------

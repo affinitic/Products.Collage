@@ -88,6 +88,7 @@ Translations:
 * French (fr): `Gilles Lenfant <gilles.lenfant@gmail.com>`_
 * Italian (it): `Yuri Carrer <yurj@alfa.it>`_
 * Brazilian Portuguese (pt-br): `Danilo G. Botelho <danilogbotelho@yahoo.com>`_
+* Catalan (ca): `Pilar Marinas <pilar.marinas@upcnet.es>`_
 
 Sponsors
 --------

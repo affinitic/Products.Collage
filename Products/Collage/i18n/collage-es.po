@@ -1,4 +1,5 @@
 # Malthe Borch <mborch@gmail.com>, 2007.
+# Mikel Larreategi <mlarreategi@codesyntax.com>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"

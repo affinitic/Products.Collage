@@ -82,10 +82,10 @@ Translations:
 * Bulgarian (bg): `Vladimir Iliev <vladimir.iliev@gmail.com>`_
 * Danish (da): `Jacob Vestergaard <jacobv@headnet.dk>`_
 * German (de): `Roland Fasching <rof@sterngasse.at>`_
-* English (en): `Jean-Charles Rogez <jeancharles.rogez@free.fr>`_
+* English (en): `Kevin Deldycke <kevin@deldycke.com>`_
 * Spanish (es): `Mikel Larreategi <mlarreategi@codesyntax.com>`_
 * Basque (eu): `Mikel Larreategi <mlarreategi@codesyntax.com>`_
-* French (fr): `Gilles Lenfant <gilles.lenfant@gmail.com>`_
+* French (fr): `Kevin Deldycke <kevin@deldycke.com>`_
 * Italian (it): `Yuri Carrer <yurj@alfa.it>`_
 * Brazilian Portuguese (pt-br): `Danilo G. Botelho <danilogbotelho@yahoo.com>`_
 * Catalan (ca): `Pilar Marinas <pilar.marinas@upcnet.es>`_

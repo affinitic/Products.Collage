@@ -8,6 +8,9 @@ Collage 1.2.2 (unreleased)
   DEVELOPERS.txt for details.
   [davisagli]
 
+* Update and sync french and english translation.
+  [kdeldycke]
+
 
 Collage 1.2.1 (2008-12-10)
 --------------------------

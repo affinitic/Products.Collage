@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-29 11:06+0000\n"
+"POT-Creation-Date: 2008-12-22 09:28+0000\n"
 "PO-Revision-Date: 2008-12-15 12:58+0100\n"
 "Last-Translator: Pilar Marinas Luis <pilar.marinas@upcnet.es>\n"
 "Language-Team: \n"
@@ -51,8 +51,9 @@ msgstr "Resultat màxim per a la cerca d'alies. '0' o negatiu significa il.limit
 msgid "help_collage_controlpanel"
 msgstr "Opcions de Collage"
 
-#. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:59
+#, fuzzy
 msgid "help_index_subobjects"
 msgstr "Si activa aquesta opció permetrà que els continguts d'aquest collage siguin accesibles a través de la cerca del portal."
 

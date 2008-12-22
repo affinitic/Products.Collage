@@ -15,31 +15,31 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
 
+msgid "Alias"
+msgstr "Alies"
+
 # content-types
 msgid "Collage"
 msgstr "Collage"
 
-msgid "desc_type_collage"
-msgstr "Una estructura pot mostrar els seus elements en diversos llocs."
+msgid "Column"
+msgstr "Columna"
+
+msgid "Manage page"
+msgstr "Pàgina principal"
 
 msgid "Row"
 msgstr "Fila"
 
-msgid "desc_type_collagerow"
-msgstr "Una fila pot contenir columnes de pàgina."
-
-msgid "Column"
-msgstr "Columna"
-
-msgid "desc_type_collagecolumn"
-msgstr "Una columna pot contenir objectes."
-
-msgid "Alias"
-msgstr "Alies"
+msgid "desc_type_collage"
+msgstr "Una estructura pot mostrar els seus elements en diversos llocs."
 
 msgid "desc_type_collagealias"
 msgstr "Un objecte que representa un alies per un altre objecte."
 
-msgid "Manage page"
-msgstr "Pàgina principal"
+msgid "desc_type_collagecolumn"
+msgstr "Una columna pot contenir objectes."
+
+msgid "desc_type_collagerow"
+msgstr "Una fila pot contenir columnes de pàgina."
 

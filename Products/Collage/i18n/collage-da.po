@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-29 11:06+0000\n"
+"POT-Creation-Date: 2008-12-22 09:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Jacob Vestergaard <jacobv@headnet.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgid "help_collage_controlpanel"
 msgstr ""
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
-#. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:59
 msgid "help_index_subobjects"
 msgstr ""

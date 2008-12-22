@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-29 11:06+0000\n"
+"POT-Creation-Date: 2008-12-22 09:00+0000\n"
 "PO-Revision-Date: 2007-12-14 16:01+0100\n"
-"Last-Translator: Jean-Charles Rogez <jean-charles.rogez@edf.fr>\n"
+"Last-Translator: Kevin Deldycke <kevin@deldycke.com>\n"
 "Language-Team: EDF\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -52,8 +52,9 @@ msgid "help_collage_controlpanel"
 msgstr "Options des contenus Collage."
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
-#. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:59
+#, fuzzy
 msgid "help_index_subobjects"
 msgstr "Cette page sera affichée dans les résultats de recherche sur un terme contenu dans l'un de ses éléments. En cochant cette option, vous ralentirez également les opérations de modification de cette page et de ses éléments. Les résultats de recherche pourront également présenter cette page alors qu'elle ne fournit pas directement le terme recherché."
 

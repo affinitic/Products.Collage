@@ -1,19 +1,22 @@
+# translation of collage-fr.po to French
+# Encolpe Degoute <encolpe@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: Collage\n"
+"Project-Id-Version: collage-fr\n"
 "POT-Creation-Date: 2008-12-22 09:00+0000\n"
-"PO-Revision-Date: 2007-12-14 16:01+0100\n"
-"Last-Translator: Kevin Deldycke <kevin@deldycke.com>\n"
-"Language-Team: EDF\n"
+"PO-Revision-Date: 2009-01-05 10:28+0100\n"
+"Last-Translator: Encolpe Degoute <encolpe@gmail.com>\n"
+"Language-Team: French <membres@traduc.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms:  nplurals=2; plural=(n > 1);\n"
 "Language-Code: fr\n"
 "Language-Name: Français\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collage\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: Collage/browser/actions.py:122
 msgid "${title} has been deleted."
@@ -54,7 +57,6 @@ msgstr "Options des contenus Collage."
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:59
-#, fuzzy
 msgid "help_index_subobjects"
 msgstr "Cette page sera affichée dans les résultats de recherche sur un terme contenu dans l'un de ses éléments. En cochant cette option, vous ralentirez également les opérations de modification de cette page et de ses éléments. Les résultats de recherche pourront également présenter cette page alors qu'elle ne fournit pas directement le terme recherché."
 
@@ -234,19 +236,16 @@ msgstr "Restreindre aux types autorisés"
 
 #. Default: "Alias has been inserted"
 #: Collage/browser/actions.py:109
-#, fuzzy
 msgid "msg_alias_inserted"
 msgstr "Alias inséré"
 
 #. Default: "Column has been inserted"
 #: Collage/browser/actions.py:84
-#, fuzzy
 msgid "msg_column_inserted"
-msgstr "Colone insérée"
+msgstr "Colonne insérée"
 
 #. Default: "Row has been added"
 #: Collage/browser/actions.py:75
-#, fuzzy
 msgid "msg_row_added"
 msgstr "Rangée ajoutée"
 

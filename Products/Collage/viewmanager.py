@@ -52,22 +52,22 @@ class DynamicViewManager(object):
 
     def getLayouts(self):
         context = self.context
-
+        request = context.REQUEST
+        
         if ICollageAlias.providedBy(self.context):
-            # use target as self.context
-
             target = self.context.get_target()
-            if target: context = target
+            if target is not None:
+                context = target
 
-        ifaces = mark_request(self.context.REQUEST)
+        ifaces = mark_request(request)
 
         sm = getSiteManager()
         layouts = sm.adapters.lookupAll(
-            required=(providedBy(self.context), providedBy(self.context.REQUEST)),
+            required=(providedBy(context), providedBy(request)),
             provided=Interface
             )
         
-        directlyProvides(self.context.REQUEST, *ifaces)
+        directlyProvides(request, *ifaces)
         
         return [(name, getattr(layout, 'title', name)) for (name, layout) in layouts
             if type(layout) is type(BrowserView) and issubclass(layout, BrowserView)]

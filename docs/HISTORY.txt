@@ -4,6 +4,10 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Fixed issue where layouts would not be looked up correctly for
+  aliases.
+  [malthe]
+
 * Added support for theme-specific overrides of Collage views.  See
   DEVELOPERS.txt for details.
   [davisagli]

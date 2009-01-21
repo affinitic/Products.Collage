@@ -51,15 +51,17 @@ class BaseView(BrowserView):
 
         return getToolByName(self.context, 'plone_utils').getUserFriendlyTypes()
 
-    def getSkin(self):
+    @property
+    def collage_context(self):
         alias = getattr(self, '__alias__', None)
 
         if alias:
-            context = alias
-        else:
-            context = self.__parent__
+            return alias
 
-        manager = IDynamicViewManager(context)
+        return self.__parent__
+
+    def getSkin(self):
+        manager = IDynamicViewManager(self.collage_context)
         return manager.getSkin()
 
 

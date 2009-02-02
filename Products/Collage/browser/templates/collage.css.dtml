@@ -185,7 +185,7 @@ span.collage-navigation a {
 
 
 * html #collage .collage-row {
-  width:100%px;
+  width:100%;
   height:100%;
 }
 

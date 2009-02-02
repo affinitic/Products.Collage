@@ -1,3 +1,7 @@
-<div class="collage-item" tal:repeat="item view/getItems">
-  <tal:item replace="structure item" />
-</div>
+<tal:block tal:repeat="item view/getItems">
+    <div class="collage-item"
+        tal:define="ptype python:context.plone_utils.normalizeString(getattr(item.context, 'portal_type', ''))"
+        tal:attributes="class string:column-block collage_item_${repeat/item/number} collage_type_${ptype} collage_view_${item/__name__}">
+      <tal:item replace="structure item" />
+    </div>
+</tal:block>

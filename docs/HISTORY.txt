@@ -4,6 +4,9 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Typo in collage.css.dtml
+  [glenfant]
+
 * Fixed issue where layouts would not be looked up correctly for
   aliases.
   [malthe]

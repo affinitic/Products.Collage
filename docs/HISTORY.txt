@@ -4,6 +4,9 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Added portuguese (pt) translation.
+  [igbun]
+
 * Added additional CSS classes to Collage blocks to make it easier to
   apply styles only for particular positions, content types, or Collage
   view names.

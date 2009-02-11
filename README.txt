@@ -89,6 +89,7 @@ Translations:
 * Italian (it): `Yuri Carrer <yurj@alfa.it>`_
 * Brazilian Portuguese (pt-br): `Danilo G. Botelho <danilogbotelho@yahoo.com>`_
 * Catalan (ca): `Pilar Marinas <pilar.marinas@upcnet.es>`_
+* Portuguese (pt): `Ricardo Alves <rsa@eurotux.com>`_
 
 Sponsors
 --------

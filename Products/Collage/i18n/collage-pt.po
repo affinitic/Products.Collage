@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2008-11-29 11:06+0000\n"
-"PO-Revision-Date: 2009-01-10 00:06 +0000\n"
+"PO-Revision-Date: 2009-02-11 10:29+0100\n"
 "Last-Translator: Ricardo Alves <rsa@eurotux.com>\n"
 "Language-Team: Eurotux Team <udp@eurotux>\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgstr "Seleccione um tipo de conteúdo a inserir."
 #. Default: "You may optionally supply a title for this column."
 #: Collage/content/_column.py:26
 msgid "help_optional_column_title"
-msgstr ""
+msgstr "Pode introduzir um título para esta coluna."
 
 #. Default: "You may optionally supply a title for this row."
 #: Collage/content/_row.py:24

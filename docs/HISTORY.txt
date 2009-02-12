@@ -4,6 +4,9 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Added Dutch translation (nl).
+  [reinout]
+
 * Added portuguese (pt) translation.
   [igbun]
 

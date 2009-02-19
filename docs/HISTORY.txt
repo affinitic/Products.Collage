@@ -4,6 +4,9 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Almost completed German translation.
+  [jensens]
+
 * Added Dutch translation (nl).
   [reinout]
 

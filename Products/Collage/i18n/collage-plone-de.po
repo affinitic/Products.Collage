@@ -16,20 +16,20 @@ msgstr ""
 "Domain: plone\n"
 
 msgid "Alias"
-msgstr ""
+msgstr "Alias"
 
 # content-types
 msgid "Collage"
-msgstr ""
+msgstr "Collage"
 
 msgid "Column"
-msgstr ""
+msgstr "Spalte"
 
 msgid "Manage page"
-msgstr ""
+msgstr "Management-Seite"
 
 msgid "Row"
-msgstr ""
+msgstr "Zeile"
 
 msgid "desc_type_collage"
 msgstr "A structural container which can display its element in various layouts."

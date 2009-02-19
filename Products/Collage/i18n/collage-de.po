@@ -17,15 +17,15 @@ msgstr ""
 
 #: Collage/browser/actions.py:122
 msgid "${title} has been deleted."
-msgstr ""
+msgstr "${title} wurde gelöscht."
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Zurück zur Collage"
 
 #: Collage/browser/actions.py:34
 msgid "Skin changed."
-msgstr ""
+msgstr "Skin wurde verändert"
 
 #: Collage/browser/actions.py:24
 msgid "View changed."
@@ -39,7 +39,7 @@ msgstr "Zeile hinzufügen"
 #. Default: "Default"
 #: Collage/browser/skins.py:6
 msgid "default"
-msgstr ""
+msgstr "Standard"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
 #: Collage/browser/controlpanel.py:47
@@ -49,7 +49,7 @@ msgstr ""
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:87
 msgid "help_collage_controlpanel"
-msgstr ""
+msgstr "Allgemeine Konfiguration von Collage"
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
@@ -91,7 +91,7 @@ msgstr ""
 #. Default: "Help"
 #: Collage/browser/skins.py:12
 msgid "help_skin"
-msgstr ""
+msgstr "Hilfe"
 
 #. Default: "Select item types that can be added or aliased in a Collage object."
 #: Collage/browser/controlpanel.py:39
@@ -132,13 +132,13 @@ msgstr "Artikeltypen"
 #. Default: "copy"
 #: Collage/browser/viewlets/copy.pt:9
 msgid "label_copy_object"
-msgstr ""
+msgstr "Kopieren"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
 #: Collage/content/_collage.py:58
 msgid "label_index_subobjects"
-msgstr ""
+msgstr "Inhalte der Collage in die Volltextsuche mit einbeziehen?"
 
 #. Default: "insert existing item"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
@@ -159,7 +159,7 @@ msgstr "Laden..."
 #. Default: "Move down"
 #: Collage/browser/viewlets/modify_order_vertical.pt:11
 msgid "label_move_down"
-msgstr "Runter schieben"
+msgstr "Herunter schieben"
 
 #. Default: "Move left"
 #: Collage/browser/viewlets/modify_order_horizontal.pt:11
@@ -179,7 +179,7 @@ msgstr "Hinauf schieben"
 #. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
 #: Collage/browser/templates/collage_view.pt:44
 msgid "label_no_items_added"
-msgstr "Diese Collage hat keine Artikel."
+msgstr "Diese Collage hat noch keine Artikel. Benutzen Sie das Ausklapp-Menü um Einträge hier anzuzeigen."
 
 #. Default: "Title"
 #: Collage/content/_column.py:25
@@ -194,7 +194,7 @@ msgstr "Titel"
 #. Default: "paste"
 #: Collage/browser/viewlets/paste.pt:10
 msgid "label_paste_object"
-msgstr ""
+msgstr "Einfügen"
 
 #. Default: "select layout"
 #: Collage/browser/viewlets/layout.pt:12
@@ -204,7 +204,7 @@ msgstr "Ansicht"
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
-msgstr ""
+msgstr "Skins"
 
 #. Default: "Show description"
 #: Collage/content/_collage.py:51
@@ -234,30 +234,30 @@ msgstr ""
 #. Default: "Alias has been inserted"
 #: Collage/browser/actions.py:109
 msgid "msg_alias_inserted"
-msgstr ""
+msgstr "Ein Alias wurde eingefügt"
 
 #. Default: "Column has been inserted"
 #: Collage/browser/actions.py:84
 msgid "msg_column_inserted"
-msgstr ""
+msgstr "Eine Spalte wurde eingefügt"
 
 #. Default: "Row has been added"
 #: Collage/browser/actions.py:75
 msgid "msg_row_added"
-msgstr ""
+msgstr "Eine Zeile wurde eingefügt"
 
 #. Default: "Target object not found"
 #: Collage/browser/actions.py:111
 msgid "msg_target_object_not_found"
-msgstr ""
+msgstr "Der Ziel Artikel wurde nicht gefunden"
 
 #. Default: "Notification"
 #: Collage/browser/skins.py:9
 msgid "notification_skin"
-msgstr ""
+msgstr "Benachrichtigung"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:86
 msgid "title_collage_controlpanel"
-msgstr ""
+msgstr "Collage Website-Konfiguration"
 

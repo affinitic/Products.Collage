@@ -1,4 +1,4 @@
-<div class="collage-column" tal:repeat="item view/getItems">
+<div class="collage-column" tal:repeat="item python:view.getItems(contents=options['args'][1])">
   <div tal:attributes="class string:column-block block_${repeat/item/number}">
     <tal:item replace="structure item" />
   </div>

@@ -15,7 +15,14 @@ from Products.Collage.utilities import isTranslatable
 from Products.Collage.viewmanager import mark_request
 
 class SimpleContainerRenderer(BrowserView):
+    
     def getItems(self, contents=None):
+        """Items are a views to render.
+        
+        @param contents: If given fetch the folderListingFolderContents of 
+                         context.
+        @return: a list of views ready to render.
+        """
         # needed to circumvent bug :-(
         self.request.debug = False
 
@@ -23,11 +30,11 @@ class SimpleContainerRenderer(BrowserView):
         ifaces = mark_request(self.request)
 
         views = []
-
-        if not contents:
+        if contents is None:
             contents = self.context.folderlistingFolderContents()
-
         for context in contents:
+            if context is None:
+                continue
             target = context
             manager = IDynamicViewManager(context)
             layout = manager.getLayout()
@@ -77,7 +84,6 @@ class SimpleContainerRenderer(BrowserView):
 
         # restore interfaces
         directlyProvides(self.request, ifaces)
-
         return views
 
 class CollageStylesheet(BrowserView):

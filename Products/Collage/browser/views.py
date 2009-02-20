@@ -66,32 +66,32 @@ class BaseView(BrowserView):
 
 
 class RowView(BaseView):
+
     def getColumnBatches(self, bsize=3):
+        """Rows with more than *bsize* columns are split.
+        
+        @param bsize: number of max. allowed columns per row. 0 for no batching.
+                
+        @return: list of columns, each containing a list of rows.
+        """   
         columns = self.context.folderlistingFolderContents()
         if not columns:
             return []
-
-        # calculate number of batches
-        count = (len(columns)-1)/3+1
-
+        if bsize == 0:
+            return [columns,]
+        numbatches = (len(columns) - 1) / bsize + 1
         batches = []
-        for c in range(count):
+        for numbatch in range(numbatches):
             batch = []
-            for i in range(bsize):
-                index = c*bsize+i
-
-                # pad with null-columns
+            for bidx in range(bsize):
+                index = numbatch * bsize + bidx
                 column = None
-
                 if index < len(columns):
                     column = columns[index]
-
-                # do not pad first row
-                if column or c > 0:
-                    batch += [column]
-
-            batches += [batch]
-
+                # pad with null-columns, but do not pad first row
+                if column or numbatch > 0:
+                    batch.append(column)
+            batches.append(batch)
         return batches
 
 class AutomaticRowView(RowView):
@@ -102,6 +102,9 @@ class LargeLeftRowView(RowView):
 
 class LargeRightRowView(RowView):
     title = u'Large right'
+
+class UnbatchedRowView(RowView):
+    title = u'Unbatched'
 
 class StandardView(BaseView):
     title = u'Standard'

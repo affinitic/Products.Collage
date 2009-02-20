@@ -191,6 +191,15 @@
      />
 
   <browser:page
+     name="unbatched"
+     for="Products.Collage.interfaces.ICollageRow"
+     permission="zope.Public"
+     template="views/row_unbatched.pt"
+     class=".views.UnbatchedRowView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="large-left"
      for="Products.Collage.interfaces.ICollageRow"
      permission="zope.Public"

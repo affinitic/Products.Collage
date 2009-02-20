@@ -3,6 +3,9 @@ Changelog
 
 Collage 1.2.2 (unreleased)
 --------------------------
+* Feature "automatic split of columns with more than 3 entries" was broken. 
+  Its fixed now. I also added an unbatched view for the row. 
+  [jensens]
 
 * Almost completed German translation.
   [jensens]

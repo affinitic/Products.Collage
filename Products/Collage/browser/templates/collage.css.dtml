@@ -190,11 +190,10 @@ span.collage-navigation a {
 }
 
 #collage .block_1,
-#collage .block_2 {
-    float:left;
-}
-
-#collage .block_3 {
+#collage .block_2,
+#collage .block_3,
+#collage .block_4,
+#collage .block_5 {
     float: left;
 }
 
@@ -334,6 +333,46 @@ span.collage-navigation a {
 #collage .three-columns-largeright .block_2 {
     width: 18%;
 }
+
+
+/* styles for unbatched-4-column-layout */
+
+#collage .collage-row .unbatched-with-4 .block_1 div.collage-item {
+    margin-right: 0.5em;
+}
+
+#collage .collage-row .unbatched-with-4 .block_2 div.collage-item {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#collage .collage-row .unbatched-with-4 .block_3 div.collage-item {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#collage .collage-row .unbatched-with-4 .block_4 div.collage-item {
+    margin-left: 0.5em;
+}
+
+
+#collage .unbatched-with-4 .block_1,
+#collage .unbatched-with-4 .block_2,
+#collage .unbatched-with-4 .block_3,
+#collage .unbatched-with-4 .block_4 {
+	width: 25%;
+}
+
+
+
+#collage.edit .unbatched-with-4 .block_1,
+#collage.edit .unbatched-with-4 .block_2,
+#collage.edit .unbatched-with-4 .block_3,
+#collage.edit .unbatched-with-4 .block_4 {
+    width:23.5%;
+}
+
+
 
 /* Portlets skinning */
 #collage .collage-portlet-default {

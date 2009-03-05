@@ -12,6 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Language-Code: de\n"
 "Language-Name: German\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collage\n"
 

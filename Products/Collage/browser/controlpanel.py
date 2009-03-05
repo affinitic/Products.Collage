@@ -37,7 +37,15 @@ class ICollageSiteOptions(Interface):
     types_whitelist = Tuple(
         title=_(u'label_types_whitelist', default=u"Types whitelist"),
         description=_(u'help_types_whitelist',
-                      default=u"Select item types that can be added or aliased in a Collage object."),
+                      default=u"Select item types that can be added in a Collage object."),
+        required=False,
+        missing_value=tuple(),
+        value_type=Choice(vocabulary='collage.vocabularies.CollageUserFriendlyTypes'))
+
+    alias_whitelist = Tuple(
+        title=_(u'label_alias_whitelist', default=u"Alias whitelist"),
+        description=_(u'help_alias_whitelist',
+                      default=u"Select item types that can be aliased in a Collage object."),
         required=False,
         missing_value=tuple(),
         value_type=Choice(vocabulary='collage.vocabularies.CollageUserFriendlyTypes'))
@@ -48,6 +56,12 @@ class ICollageSiteOptions(Interface):
                       default=u"Alias target search maximum results. '0' or negative means unlimited."),
         required=False,
         default=50)
+    
+    def enabledType(portal_type):
+        """True if portal type is enabled for adding in a Collage."""
+
+    def enabledAlias(portal_type):
+        """True if portal type is enabled for alias in a Collage"""
 
 
 class CollageSiteOptions(SchemaAdapterBase):
@@ -55,33 +69,36 @@ class CollageSiteOptions(SchemaAdapterBase):
     implements(ICollageSiteOptions)
     adapts(IPloneSiteRoot)
 
-
-    def __init__(self, context):
-
-        super(CollageSiteOptions, self).__init__(context)
-        self.context = getPortal().portal_properties.restrictedTraverse(PROPERTYSHEETNAME)
-        return
-
     use_whitelist = ProxyFieldProperty(ICollageSiteOptions['use_whitelist'])
     types_whitelist = ProxyFieldProperty(ICollageSiteOptions['types_whitelist'])
+    alias_whitelist = ProxyFieldProperty(ICollageSiteOptions['alias_whitelist'])
     alias_search_limit = ProxyFieldProperty(ICollageSiteOptions['alias_search_limit'])
 
+    def __init__(self, context):
+        super(CollageSiteOptions, self).__init__(context)
+        properties = getPortal().portal_properties
+        self.context = properties.restrictedTraverse(PROPERTYSHEETNAME)
 
     def enabledType(self, portal_type):
-        """True if portal type is enabled in a Collage"""
-
         if portal_type in COLLAGE_TYPES:
             return False
         if self.use_whitelist:
             return portal_type in self.types_whitelist
-        else:
-            return True
+        return True
+
+    def enabledAlias(self, portal_type):
+        if portal_type in COLLAGE_TYPES:
+            return False
+        if self.use_whitelist:
+            return portal_type in self.alias_whitelist
+        return True
 
 
 class CollageControlPanel(ControlPanelForm):
 
     form_fields = FormFields(ICollageSiteOptions)
     form_fields['types_whitelist'].custom_widget = MultiCheckBoxThreeColumnWidget
+    form_fields['alias_whitelist'].custom_widget = MultiCheckBoxThreeColumnWidget
 
     label = form_name = _(u'title_collage_controlpanel', default=u"Collage control panel")
     description = _(u'help_collage_controlpanel', default=u"Site wide options for Collage")

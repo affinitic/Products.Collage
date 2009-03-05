@@ -7,6 +7,7 @@ from types import UnicodeType
 from zope.component import getMultiAdapter
 from Products.Five.browser import BrowserView
 from plone.memoize.view import memoize_contextless
+from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone import PloneMessageFactory as p_
 from Products.Collage.utilities import getCollageSiteOptions
@@ -61,11 +62,14 @@ class ExistingItemsView(BrowserView):
 
         actual_portal_type = self.request.get('portal_type', None)
         collage_options = getCollageSiteOptions()
+        ttool = getToolByName(self.context, 'portal_types', None)
+        if ttool is None:
+            return None
         return [{'id': pt.getId(),
                  'title': p_(pt.Title()),
                  'selected': pt.getId() == actual_portal_type and 'selected' or None}
-                for pt in self.context.getAllowedTypes()
-                if collage_options.enabledType(pt.getId())]
+                for pt in ttool.listTypeInfo()
+                if collage_options.enabledAlias(pt.getId())]
 
 
     def getItems(self):

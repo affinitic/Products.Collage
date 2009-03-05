@@ -3,6 +3,11 @@ Changelog
 
 Collage 1.2.2 (unreleased)
 --------------------------
+
+* Make a difference between types to be added to Collage and types 
+  enabled for alias. This introduces a new whitelist in controlpanel.  
+  [jensens]
+
 * Feature "automatic split of rows with more than 3 entries" was broken. 
   Its fixed now. I also added an unbatched view for the row. 
   [jensens]

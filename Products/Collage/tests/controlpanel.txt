@@ -17,6 +17,8 @@ Checking default options
     False
     >>> len(controlpanel.types_whitelist)
     8
+    >>> len(controlpanel.alias_whitelist)
+    8
 
 Any content type is enabled in a Collage.
 
@@ -25,6 +27,10 @@ Any content type is enabled in a Collage.
     >>> controlpanel.enabledType('Document')
     True
     >>> controlpanel.enabledType('AnyOtherType')
+    True
+    >>> controlpanel.enabledAlias('Document')
+    True
+    >>> controlpanel.enabledAlias('AnyOtherType')
     True
 
 Check enabled whitelist
@@ -39,7 +45,27 @@ The ATDocument (as 7 other ATCT content types) is enabled.
     >>> controlpanel.enabledType('Document')
     True
 
+    >>> controlpanel.enabledAlias('Document')
+    True
+
 When other content types are disabled.
 
     >>> controlpanel.enabledType('AnyOtherType')
     False
+
+    >>> controlpanel.enabledAlias('AnyOtherType')
+    False
+
+Both lists behave different.
+
+    >>> controlpanel.alias_whitelist = ('Event',)
+
+    >>> controlpanel.enabledType('Document')
+    True
+
+    >>> controlpanel.enabledAlias('Document')
+    False
+
+    >>> controlpanel.enabledAlias('Event')
+    True
+    

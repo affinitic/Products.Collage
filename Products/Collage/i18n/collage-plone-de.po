@@ -27,20 +27,20 @@ msgid "Column"
 msgstr "Spalte"
 
 msgid "Manage page"
-msgstr "Management-Seite"
+msgstr "Seite verwalten"
 
 msgid "Row"
 msgstr "Zeile"
 
 msgid "desc_type_collage"
-msgstr "A structural container which can display its element in various layouts."
+msgstr "Ein Container für Strukturen zur Anzeige in verschiedenen Ansichten." 
 
 msgid "desc_type_collagealias"
-msgstr "An object representing an alias for another object."
+msgstr "Ein Stellvertreter für anderer Inhalte"
 
 msgid "desc_type_collagecolumn"
-msgstr "A column which can contain content objects."
+msgstr "Eine Spalte, die wieder andere Inhalte enthalten kann."
 
 msgid "desc_type_collagerow"
-msgstr "A row which can contain page columns."
+msgstr "Eine Zeile, welche Spalten enthalten kann."
 

@@ -40,12 +40,12 @@ msgstr "Zeile hinzufügen"
 #. Default: "Default"
 #: Collage/browser/skins.py:6
 msgid "default"
-msgstr "Standard"
+msgstr "Vorgabe"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
 #: Collage/browser/controlpanel.py:47
 msgid "help_alias_search_limit"
-msgstr ""
+msgstr "Maximale Anzahl der Suchergebnisse für Alias Ziele. '0' oder negativ bedeutet unbegrenzt."
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:87
@@ -107,7 +107,7 @@ msgstr ""
 #. Default: "Alias search limit"
 #: Collage/browser/controlpanel.py:46
 msgid "label_alias_search_limit"
-msgstr ""
+msgstr "Einschränkung der Alias Suchergebnisse"
 
 #. Default: "Selected target object"
 #: Collage/content/_alias.py:33
@@ -118,7 +118,7 @@ msgstr "Ziel"
 #. Default: "(alias)"
 #: Collage/browser/viewlets/actions.pt:11
 msgid "label_aliased"
-msgstr "(alias)"
+msgstr "(Alias)"
 
 #. Default: "All"
 #: Collage/browser/templates/existing_items_form.pt:17
@@ -180,7 +180,7 @@ msgstr "Hinauf schieben"
 #. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
 #: Collage/browser/templates/collage_view.pt:44
 msgid "label_no_items_added"
-msgstr "Diese Collage hat noch keine Artikel. Benutzen Sie das Ausklapp-Menü um Einträge hier anzuzeigen."
+msgstr "Diese Collage hat noch keine Artikel. Fügen Sie neue Einträge hinzu!."
 
 #. Default: "Title"
 #: Collage/content/_column.py:25
@@ -225,12 +225,12 @@ msgstr "Spalten"
 #. Default: "Types whitelist"
 #: Collage/browser/controlpanel.py:38
 msgid "label_types_whitelist"
-msgstr ""
+msgstr "Weiße Liste der Typen"
 
 #. Default: "Use types whitelist"
 #: Collage/browser/controlpanel.py:31
 msgid "label_use_whitelist"
-msgstr ""
+msgstr "Verwende die Weißen Listen"
 
 #. Default: "Alias has been inserted"
 #: Collage/browser/actions.py:109

@@ -27,7 +27,7 @@ msgid "Column"
 msgstr "Spalte"
 
 msgid "Manage page"
-msgstr "Seite verwalten"
+msgstr "Zusammensetzen"
 
 msgid "Row"
 msgstr "Zeile"

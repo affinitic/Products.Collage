@@ -103,7 +103,6 @@ msgstr "Aide"
 
 #. Default: "Select item types that can be added in a Collage object."
 #: Collage/browser/controlpanel.py:39
-#, fuzzy
 msgid "help_types_whitelist"
 msgstr "Sélectionnez les types d'éléments qui peuvent être intégrés dans un Collage."
 

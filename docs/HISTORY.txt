@@ -4,6 +4,10 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Added upgrade step to 1.2.2 that adds the alias whitelist property, without
+  which the control panel crashes.
+  [glenfant]
+
 * Synched all .po files following jensens's changes and added french
   missing labels.
   [glenfant]

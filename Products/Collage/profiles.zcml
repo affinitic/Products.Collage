@@ -52,4 +52,18 @@
        />
 
   </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+     source="1.2.1"
+     destination="1.2.2"
+     profile="Products.Collage:default">
+    
+    <genericsetup:upgradeStep
+       title="Add alias whitelist property"
+       description="Add Alias whitelist control panel property"
+       handler=".upgrades.addAliasWhitelistProperty"
+       />
+
+  </genericsetup:upgradeSteps>
+
 </configure>

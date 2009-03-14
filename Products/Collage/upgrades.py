@@ -58,3 +58,14 @@ def addControlPanel(setuptool):
     for step in ('propertiestool', 'controlpanel', 'action-icons'):
         setuptool.runImportStepFromProfile('profile-Products.Collage:default', step, run_dependencies=False)
     return
+
+
+@IfInstalled()
+def addAliasWhitelistProperty(setuptool):
+    """Add Alias whitelist control panel property"""
+
+    propsheet = getPortal().portal_properties.collage_properties
+    # Default: same value as types whitelist
+    default_value = propsheet.getProperty('types_whitelist')
+    propsheet.manage_addProperty('alias_whitelist', default_value, 'lines')
+    return

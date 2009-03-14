@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-11-29 11:06+0000\n"
+"POT-Creation-Date: 2009-03-14 12:10+0000\n"
 "PO-Revision-Date: 2009-02-11 10:29+0100\n"
 "Last-Translator: Ricardo Alves <rsa@eurotux.com>\n"
 "Language-Team: Eurotux Team <udp@eurotux>\n"
@@ -44,17 +44,23 @@ msgid "default"
 msgstr "Por omissão"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
-#: Collage/browser/controlpanel.py:47
+#: Collage/browser/controlpanel.py:55
 msgid "help_alias_search_limit"
 msgstr "Número máximo de resultados de pesquisa. '0' ou negativo significa ilimitado."
 
+#. Default: "Select item types that can be aliased in a Collage object."
+#: Collage/browser/controlpanel.py:47
+msgid "help_alias_whitelist"
+msgstr ""
+
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:87
+#: Collage/browser/controlpanel.py:104
 msgid "help_collage_controlpanel"
 msgstr "Opções globais do Collage"
 
-#. Default: "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:59
+#, fuzzy
 msgid "help_index_subobjects"
 msgstr "Apresentar este Collage em resultados de pesquisa de itens incluídos. Ao activar esta opção pode tornar a edição do collage, bem como dos itens incluídos. Poderá também tornar os resultados de pesquisa irrelevantes."
 
@@ -93,8 +99,9 @@ msgstr "Escolha um aspecto a aplicar ao modo de visualização escolhido."
 msgid "help_skin"
 msgstr "Ajuda"
 
-#. Default: "Select item types that can be added or aliased in a Collage object."
+#. Default: "Select item types that can be added in a Collage object."
 #: Collage/browser/controlpanel.py:39
+#, fuzzy
 msgid "help_types_whitelist"
 msgstr "Seleccione os tipos de item que podem ser adicionados ao referenciados por um objecto Collage."
 
@@ -104,7 +111,7 @@ msgid "help_use_whitelist"
 msgstr "Apenas tipos na lista a seguir podem ser adicionados num Collage."
 
 #. Default: "Alias search limit"
-#: Collage/browser/controlpanel.py:46
+#: Collage/browser/controlpanel.py:54
 msgid "label_alias_search_limit"
 msgstr "Limite de pesquisa de referências"
 
@@ -112,6 +119,11 @@ msgstr "Limite de pesquisa de referências"
 #: Collage/content/_alias.py:33
 msgid "label_alias_target"
 msgstr "Objectio de destino seleccionado"
+
+#. Default: "Alias whitelist"
+#: Collage/browser/controlpanel.py:46
+msgid "label_alias_whitelist"
+msgstr ""
 
 #. Default: "(alias)"
 #: Collage/browser/viewlets/actions.pt:11
@@ -254,7 +266,7 @@ msgid "notification_skin"
 msgstr "Notificação"
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:86
+#: Collage/browser/controlpanel.py:103
 msgid "title_collage_controlpanel"
 msgstr "Painel de controlo do Collage"
 

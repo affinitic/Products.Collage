@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2009-02-12 08:55+0000\n"
+"POT-Creation-Date: 2009-03-14 12:10+0000\n"
 "PO-Revision-Date: 2009-02-12 10:23+0100\n"
 "Last-Translator: Reinout van Rees <reinout@vanrees.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,12 +41,17 @@ msgid "default"
 msgstr "Standaard"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
-#: Collage/browser/controlpanel.py:47
+#: Collage/browser/controlpanel.py:55
 msgid "help_alias_search_limit"
 msgstr "Maximum aantal zoekresultaten voor aliases. '0' of een negatief getal betekent geen limiet."
 
+#. Default: "Select item types that can be aliased in a Collage object."
+#: Collage/browser/controlpanel.py:47
+msgid "help_alias_whitelist"
+msgstr ""
+
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:87
+#: Collage/browser/controlpanel.py:104
 msgid "help_collage_controlpanel"
 msgstr "Collage instellingen voor de gehele site"
 
@@ -90,8 +95,9 @@ msgstr "Kies een skin voor deze layout."
 msgid "help_skin"
 msgstr "Help"
 
-#. Default: "Select item types that can be added or aliased in a Collage object."
+#. Default: "Select item types that can be added in a Collage object."
 #: Collage/browser/controlpanel.py:39
+#, fuzzy
 msgid "help_types_whitelist"
 msgstr "Selecteer types die aan een collage toegevoegd of gelinkt kunnen worden."
 
@@ -101,7 +107,7 @@ msgid "help_use_whitelist"
 msgstr "Alleen types in onderstaande lijst kunnen in collage toegevoegd worden."
 
 #. Default: "Alias search limit"
-#: Collage/browser/controlpanel.py:46
+#: Collage/browser/controlpanel.py:54
 msgid "label_alias_search_limit"
 msgstr "Zoeklimiet voor aliassen"
 
@@ -109,6 +115,11 @@ msgstr "Zoeklimiet voor aliassen"
 #: Collage/content/_alias.py:33
 msgid "label_alias_target"
 msgstr "Gelinkt alias object"
+
+#. Default: "Alias whitelist"
+#: Collage/browser/controlpanel.py:46
+msgid "label_alias_whitelist"
+msgstr ""
 
 #. Default: "(alias)"
 #: Collage/browser/viewlets/actions.pt:11
@@ -251,7 +262,7 @@ msgid "notification_skin"
 msgstr "Mededelingen"
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:86
+#: Collage/browser/controlpanel.py:103
 msgid "title_collage_controlpanel"
 msgstr "Collage instellingen"
 

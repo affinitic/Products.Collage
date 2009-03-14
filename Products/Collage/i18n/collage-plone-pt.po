@@ -17,31 +17,31 @@ msgstr ""
 "Domain: plone\n"
 "X-Is-Fallback-For: pt-mz pt-ao pt-cv pt-gw pt-br pt-mz pt-st\n"
 
-# content-types
+msgid "Alias"
+msgstr "Referência"
 
+# content-types
 msgid "Collage"
 msgstr "Collage"
-
-msgid "desc_type_collage"
-msgstr "Um agregador estruturado que pode apresentar os seus elementos em vários modos de apresentação."
-
-msgid "Row"
-msgstr "Linha"
-
-msgid "desc_type_collagerow"
-msgstr "Uma linha que pode conter colunas."
 
 msgid "Column"
 msgstr "Coluna"
 
-msgid "desc_type_collagecolumn"
-msgstr "Uma coluna que pode conter contéudos."
+msgid "Manage page"
+msgstr "Configurar página"
 
-msgid "Alias"
-msgstr "Referência"
+msgid "Row"
+msgstr "Linha"
+
+msgid "desc_type_collage"
+msgstr "Um agregador estruturado que pode apresentar os seus elementos em vários modos de apresentação."
 
 msgid "desc_type_collagealias"
 msgstr "Um objecto que representa uma referência para outro objecto."
 
-msgid "Manage page"
-msgstr "Configurar página"
+msgid "desc_type_collagecolumn"
+msgstr "Uma coluna que pode conter contéudos."
+
+msgid "desc_type_collagerow"
+msgstr "Uma linha que pode conter colunas."
+

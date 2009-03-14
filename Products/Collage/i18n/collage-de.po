@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-12-22 09:28+0000\n"
+"POT-Creation-Date: 2009-03-14 12:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Roland Fasching <rof@sterngasse.at>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,9 +12,9 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Language-Code: de\n"
 "Language-Name: German\n"
-"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collage\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
 #: Collage/browser/actions.py:122
 msgid "${title} has been deleted."
@@ -43,12 +43,17 @@ msgid "default"
 msgstr "Vorgabe"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
-#: Collage/browser/controlpanel.py:47
+#: Collage/browser/controlpanel.py:55
 msgid "help_alias_search_limit"
 msgstr "Maximale Anzahl der Suchergebnisse für Alias Ziele. '0' oder negativ bedeutet unbegrenzt."
 
+#. Default: "Select item types that can be aliased in a Collage object."
+#: Collage/browser/controlpanel.py:47
+msgid "help_alias_whitelist"
+msgstr ""
+
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:87
+#: Collage/browser/controlpanel.py:104
 msgid "help_collage_controlpanel"
 msgstr "Allgemeine Konfiguration von Collage"
 
@@ -94,7 +99,7 @@ msgstr ""
 msgid "help_skin"
 msgstr "Hilfe"
 
-#. Default: "Select item types that can be added or aliased in a Collage object."
+#. Default: "Select item types that can be added in a Collage object."
 #: Collage/browser/controlpanel.py:39
 msgid "help_types_whitelist"
 msgstr ""
@@ -105,7 +110,7 @@ msgid "help_use_whitelist"
 msgstr ""
 
 #. Default: "Alias search limit"
-#: Collage/browser/controlpanel.py:46
+#: Collage/browser/controlpanel.py:54
 msgid "label_alias_search_limit"
 msgstr "Einschränkung der Alias Suchergebnisse"
 
@@ -113,6 +118,11 @@ msgstr "Einschränkung der Alias Suchergebnisse"
 #: Collage/content/_alias.py:33
 msgid "label_alias_target"
 msgstr "Ziel"
+
+#. Default: "Alias whitelist"
+#: Collage/browser/controlpanel.py:46
+msgid "label_alias_whitelist"
+msgstr ""
 
 #. Default "(alias)"
 #. Default: "(alias)"
@@ -258,7 +268,7 @@ msgid "notification_skin"
 msgstr "Benachrichtigung"
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:86
+#: Collage/browser/controlpanel.py:103
 msgid "title_collage_controlpanel"
 msgstr "Collage Website-Konfiguration"
 

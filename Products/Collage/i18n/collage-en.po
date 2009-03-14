@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2008-12-22 09:28+0000\n"
+"POT-Creation-Date: 2009-03-14 12:10+0000\n"
 "PO-Revision-Date: 2007-12-14 16:01+0100\n"
 "Last-Translator: Kevin Deldycke <kevin@deldycke.com>\n"
 "Language-Team: EDF\n"
@@ -42,12 +42,17 @@ msgid "default"
 msgstr ""
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
-#: Collage/browser/controlpanel.py:47
+#: Collage/browser/controlpanel.py:55
 msgid "help_alias_search_limit"
 msgstr "Alias target search maximum results. '0' or negative means unlimited."
 
+#. Default: "Select item types that can be aliased in a Collage object."
+#: Collage/browser/controlpanel.py:47
+msgid "help_alias_whitelist"
+msgstr ""
+
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:87
+#: Collage/browser/controlpanel.py:104
 msgid "help_collage_controlpanel"
 msgstr "Site wide options for Collage"
 
@@ -94,8 +99,9 @@ msgstr "Choose a skin to apply to the selected layout."
 msgid "help_skin"
 msgstr "Help"
 
-#. Default: "Select item types that can be added or aliased in a Collage object."
+#. Default: "Select item types that can be added in a Collage object."
 #: Collage/browser/controlpanel.py:39
+#, fuzzy
 msgid "help_types_whitelist"
 msgstr "Select item types that can be added or aliased in a Collage object."
 
@@ -105,7 +111,7 @@ msgid "help_use_whitelist"
 msgstr "Only types in below whitelist can be added in a Collage."
 
 #. Default: "Alias search limit"
-#: Collage/browser/controlpanel.py:46
+#: Collage/browser/controlpanel.py:54
 msgid "label_alias_search_limit"
 msgstr "Alias search limit"
 
@@ -113,6 +119,11 @@ msgstr "Alias search limit"
 #: Collage/content/_alias.py:33
 msgid "label_alias_target"
 msgstr "Selected target object"
+
+#. Default: "Alias whitelist"
+#: Collage/browser/controlpanel.py:46
+msgid "label_alias_whitelist"
+msgstr ""
 
 #. Default "(alias)"
 #. Default: "(alias)"
@@ -258,7 +269,7 @@ msgid "notification_skin"
 msgstr "Notification"
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:86
+#: Collage/browser/controlpanel.py:103
 msgid "title_collage_controlpanel"
 msgstr "Collage control panel"
 

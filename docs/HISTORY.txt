@@ -4,6 +4,10 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Synched all .po files following jensens's changes and added french
+  missing labels.
+  [glenfant]
+
 * Make a difference between types to be added to Collage and types 
   enabled for alias. This introduces a new whitelist in controlpanel.  
   [jensens]

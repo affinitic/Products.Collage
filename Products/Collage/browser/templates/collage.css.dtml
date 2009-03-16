@@ -373,7 +373,7 @@ span.collage-navigation a {
 #collage .unbatched-with-3 .block_1,
 #collage .unbatched-with-3 .block_2,
 #collage .unbatched-with-3 .block_3 {
-    width: 33%;
+    width: 33.3%;
 }
 
 #collage.edit .unbatched-with-3 .block_1,
@@ -390,6 +390,14 @@ span.collage-navigation a {
 #collage.edit .unbatched-with-2 .block_1,
 #collage.edit .unbatched-with-2 .block_2 {
     width: 48.5%;
+}
+
+#collage .unbatched-with-1 .block_1 {
+    width: 100%;
+}
+
+#collage.edit .unbatched-with-2 .block_1 {
+    width: 98.5%;
 }
 
 /* Portlets skinning */

@@ -363,8 +363,6 @@ span.collage-navigation a {
 	width: 25%;
 }
 
-
-
 #collage.edit .unbatched-with-4 .block_1,
 #collage.edit .unbatched-with-4 .block_2,
 #collage.edit .unbatched-with-4 .block_3,
@@ -372,7 +370,27 @@ span.collage-navigation a {
     width:23.5%;
 }
 
+#collage .unbatched-with-3 .block_1,
+#collage .unbatched-with-3 .block_2,
+#collage .unbatched-with-3 .block_3 {
+    width: 33%;
+}
 
+#collage.edit .unbatched-with-3 .block_1,
+#collage.edit .unbatched-with-3 .block_2,
+#collage.edit .unbatched-with-3 .block_3 {
+    width: 31.5%;
+}
+
+#collage .unbatched-with-2 .block_1,
+#collage .unbatched-with-2 .block_2 {
+    width: 50%;
+}
+
+#collage.edit .unbatched-with-2 .block_1,
+#collage.edit .unbatched-with-2 .block_2 {
+    width: 48.5%;
+}
 
 /* Portlets skinning */
 #collage .collage-portlet-default {

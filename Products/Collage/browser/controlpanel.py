@@ -80,17 +80,17 @@ class CollageSiteOptions(SchemaAdapterBase):
         self.context = properties.restrictedTraverse(PROPERTYSHEETNAME)
 
     def enabledType(self, portal_type):
-        if self.use_whitelist:
-            return portal_type in self.types_whitelist
         if portal_type in COLLAGE_TYPES:
             return False
+        if self.use_whitelist:
+            return portal_type in self.types_whitelist
         return True
 
     def enabledAlias(self, portal_type):
-        if self.use_whitelist:
-            return portal_type in self.alias_whitelist
         if portal_type in COLLAGE_TYPES:
             return False
+        if self.use_whitelist:
+            return portal_type in self.alias_whitelist
         return True
 
 

@@ -72,8 +72,20 @@
   color: &dtml-fontColor;;
 }
 
-.copy-object-icon,
-.paste-object-icon,
+.copy-object-icon {
+    float: left;
+    width: 14px;
+    height: 14px;
+    padding-right: 3px;
+    background: url(&dtml-portal_url;/++resource++collage-resources/icon-copy.gif) no-repeat top left;
+}
+.paste-object-icon {
+    float: left;
+    width: 14px;
+    height: 14px;
+    padding-right: 3px;
+    background: url(&dtml-portal_url;/++resource++collage-resources/icon-paste.gif) no-repeat top left;
+}
 .split-column-icon {
     float: left;
     width: 14px;

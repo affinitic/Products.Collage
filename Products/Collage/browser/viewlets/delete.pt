@@ -2,11 +2,10 @@
      xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:metal="http://xml.zope.org/namespaces/metal"
      i18n:domain="collage"
-     tal:omit-tag=""
-     define="obj view/getImmediateObject">
+     tal:omit-tag="">
 
   <a class="action"     
-     tal:attributes="href string:${obj/absolute_url}/delete-object">
+     tal:attributes="href python:'%s/delete-object' % view.getImmediateObject().absolute_url()">
     <span tal:condition="view/isAlias"
           i18n:translate="label_remove" 
           i18n:domain="plone">Remove</span>

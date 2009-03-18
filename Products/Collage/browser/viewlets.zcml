@@ -101,7 +101,17 @@
      />
 
   <browser:viewlet
-     name="100-copy"
+     name="100-delete"
+     for="*"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.AliasViewlet"
+     template="viewlets/delete.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+
+  <browser:viewlet
+     name="110-copy"
      for="*"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.CopyViewlet"
@@ -111,7 +121,7 @@
      />
 
   <browser:viewlet
-     name="110-paste"
+     name="120-paste"
      for="Products.Collage.interfaces.ICollageColumn"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.PasteViewlet"
@@ -121,21 +131,11 @@
      />
 
   <browser:viewlet
-     name="110-paste"
+     name="120-paste"
      for="Products.Collage.interfaces.ICollageRow"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.PasteViewlet"
      template="viewlets/paste.pt"
-     permission="cmf.ModifyPortalContent"
-     layer="Products.Collage.interfaces.ICollageEditLayer"
-     />
-
-  <browser:viewlet
-     name="120-delete"
-     for="Products.Collage.interfaces.ICollageRow"
-     manager="Products.Collage.interfaces.IContentMenu"
-     class=".viewlet.PasteViewlet"
-     template="viewlets/delete.pt"
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />

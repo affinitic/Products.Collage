@@ -2,66 +2,24 @@
 # $Id$
 """Collage site wide options"""
 
-from zope.interface import Interface
 from zope.component import adapts
 from zope.interface import implements
-from zope.schema import Bool
-from zope.schema import Choice
-from zope.schema import Tuple
-from zope.schema import Int
 from zope.app.schema.vocabulary import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import SimpleTerm
-from plone.app.vocabularies.types import BAD_TYPES
 from zope.formlib.form import FormFields
+from plone.app.vocabularies.types import BAD_TYPES
 from plone.app.controlpanel.form import ControlPanelForm
 from plone.app.controlpanel.widgets import MultiCheckBoxThreeColumnWidget
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFPlone.interfaces import IPloneSiteRoot
+from Products.Collage.interfaces import ICollageSiteOptions
 from Products.Collage.config import PROPERTYSHEETNAME
 from Products.Collage.config import COLLAGE_TYPES
 from Products.Collage.utilities import getPortal
 from Products.Collage.utilities import CollageMessageFactory as _
-
-class ICollageSiteOptions(Interface):
-
-    use_whitelist = Bool(
-        title=_(u'label_use_whitelist', default=u"Use types whitelist"),
-        description=_(u'help_use_whitelist',
-                      default=u"Only types in below whitelist can be added in a Collage."),
-        default=False,
-        required=True)
-
-    types_whitelist = Tuple(
-        title=_(u'label_types_whitelist', default=u"Types whitelist"),
-        description=_(u'help_types_whitelist',
-                      default=u"Select item types that can be added in a Collage object."),
-        required=False,
-        missing_value=tuple(),
-        value_type=Choice(vocabulary='collage.vocabularies.CollageUserFriendlyTypes'))
-
-    alias_whitelist = Tuple(
-        title=_(u'label_alias_whitelist', default=u"Alias whitelist"),
-        description=_(u'help_alias_whitelist',
-                      default=u"Select item types that can be aliased in a Collage object."),
-        required=False,
-        missing_value=tuple(),
-        value_type=Choice(vocabulary='collage.vocabularies.CollageUserFriendlyTypes'))
-
-    alias_search_limit = Int(
-        title=_(u'label_alias_search_limit', default=u"Alias search limit"),
-        description=_(u'help_alias_search_limit',
-                      default=u"Alias target search maximum results. '0' or negative means unlimited."),
-        required=False,
-        default=50)
-    
-    def enabledType(portal_type):
-        """True if portal type is enabled for adding in a Collage."""
-
-    def enabledAlias(portal_type):
-        """True if portal type is enabled for alias in a Collage"""
 
 
 class CollageSiteOptions(SchemaAdapterBase):

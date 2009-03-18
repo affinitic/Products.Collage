@@ -69,16 +69,11 @@ def getPortal():
 ###
 
 from zope.component import getAdapter
-ICollageSiteOptions = None
+from Products.Collage.interfaces import ICollageSiteOptions
 
 def getCollageSiteOptions():
     """Collage site options from contol panel"""
 
-    global ICollageSiteOptions
-
-    # Weird stuff for working around circular import
-    if ICollageSiteOptions is None:
-        from Products.Collage.interfaces import ICollageSiteOptions
     return getAdapter(getPortal(), ICollageSiteOptions)
 
 ###

@@ -5,7 +5,7 @@ We will check the options of the Collage control panel. First some settings.
 
     >>> from zope.component import getAdapter
     >>> from Products.Collage.utilities import getPortal
-    >>> from Products.Collage.browser.controlpanel import ICollageSiteOptions
+    >>> from Products.Collage.interfaces import ICollageSiteOptions
     >>> controlpanel = getAdapter(getPortal(), ICollageSiteOptions)
     >>> controlpanel
     <Products.Collage.browser.controlpanel.CollageSiteOptions object ...>

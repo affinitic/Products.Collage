@@ -166,4 +166,5 @@ class PasteViewlet(SimpleContentMenuViewlet):
         return u''
 
     def clipboard_item_title(self):
-        return u'Paste "%s"' % safe_unicode(self._get_clipboard_item().title_or_id())
+        title = self._get_clipboard_item().title_or_id()
+        return u'Paste "%s"' % safe_unicode(title)

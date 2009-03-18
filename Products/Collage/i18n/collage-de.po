@@ -50,7 +50,7 @@ msgstr "Maximale Anzahl der Suchergebnisse für Alias Ziele. '0' oder negativ be
 #. Default: "Select item types that can be aliased in a Collage object."
 #: Collage/browser/controlpanel.py:47
 msgid "help_alias_whitelist"
-msgstr ""
+msgstr "Wähle Artikeltypen aus, die als Alias in einer Collage verwendet werden können."
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:104
@@ -61,7 +61,7 @@ msgstr "Allgemeine Konfiguration von Collage"
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:59
 msgid "help_index_subobjects"
-msgstr ""
+msgstr "Zeige diese Collage als Ergebnis bei der Suche an, und berücksichtige Wörter eines enthaltenen Artikels. Anmerkung: Dies kann den Editiervorgang (speichern) in der Collage verlangsamen."
 
 #. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: Collage/browser/viewlets/insert-existing-item.pt:16
@@ -92,7 +92,7 @@ msgstr "Wählen Sie eine Ansicht für diesen Artikel"
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:17
 msgid "help_select_skin"
-msgstr ""
+msgstr "Wählen Sie eine Skin, die auf die gewählte Ansicht angewandt werden soll."
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
@@ -102,12 +102,12 @@ msgstr "Hilfe"
 #. Default: "Select item types that can be added in a Collage object."
 #: Collage/browser/controlpanel.py:39
 msgid "help_types_whitelist"
-msgstr ""
+msgstr "Wähle Artikeltypen aus, die zu einer Collage hinzugefügt werden können."
 
 #. Default: "Only types in below whitelist can be added in a Collage."
 #: Collage/browser/controlpanel.py:32
 msgid "help_use_whitelist"
-msgstr ""
+msgstr "Nur Hinzufügen von Einträgen aus der Weißen Liste in die Collage erlauben?"
 
 #. Default: "Alias search limit"
 #: Collage/browser/controlpanel.py:54
@@ -122,7 +122,7 @@ msgstr "Ziel"
 #. Default: "Alias whitelist"
 #: Collage/browser/controlpanel.py:46
 msgid "label_alias_whitelist"
-msgstr ""
+msgstr "Weiße Liste der Aliase"
 
 #. Default "(alias)"
 #. Default: "(alias)"

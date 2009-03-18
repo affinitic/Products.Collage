@@ -230,7 +230,7 @@ msgstr "Titel anzeigen"
 #. Default: "split"
 #: Collage/browser/viewlets/split-column.pt:9
 msgid "label_split_column"
-msgstr "Spalten"
+msgstr "Spalte neu"
 
 #. Default: "Types whitelist"
 #: Collage/browser/controlpanel.py:38

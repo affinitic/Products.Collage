@@ -41,7 +41,17 @@
      />
 
   <browser:viewlet
-     name="50-insert-new-item"
+     name="50-insert-existing-item"
+     for="Products.Collage.interfaces.ICollageColumn"
+     manager="Products.Collage.interfaces.IContentMenu"
+     class=".viewlet.SimpleContentMenuViewlet"
+     template="viewlets/insert-existing-item.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+  
+  <browser:viewlet
+     name="51-insert-new-item"
      for="Products.Collage.interfaces.ICollageColumn"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.InsertNewItemViewlet"
@@ -81,21 +91,11 @@
      />
 
   <browser:viewlet
-     name="split-column"
+     name="70-split-column"
      for="Products.Collage.interfaces.ICollageColumn"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.SplitColumnViewlet"
      template="viewlets/split-column.pt"
-     permission="cmf.ModifyPortalContent"
-     layer="Products.Collage.interfaces.ICollageEditLayer"
-     />
-  
-  <browser:viewlet
-     name="50-insert-existing-item"
-     for="Products.Collage.interfaces.ICollageColumn"
-     manager="Products.Collage.interfaces.IContentMenu"
-     class=".viewlet.SimpleContentMenuViewlet"
-     template="viewlets/insert-existing-item.pt"
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />
@@ -126,6 +126,16 @@
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.SimpleContentMenuViewlet"
      template="viewlets/modify_order_vertical.pt"
+     permission="cmf.ModifyPortalContent"
+     layer="Products.Collage.interfaces.ICollageEditLayer"
+     />
+
+  <browser:viewlet
+     name="10-insert-row"
+     for="Products.Collage.interfaces.ICollage"
+     manager="Products.Collage.interfaces.IBelowItemsMenu"
+     class=".viewlet.SimpleContentMenuViewlet"
+     template="viewlets/insert-row.pt"
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />

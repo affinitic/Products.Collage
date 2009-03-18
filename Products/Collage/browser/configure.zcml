@@ -29,6 +29,14 @@
      template="templates/manager.pt"
      permission="zope.Public"
      />  
+
+  <browser:viewletManager
+     name="collage.BelowItemsManager"
+     provides="Products.Collage.interfaces.IBelowItemsMenu"
+     class=".manager.ContentViewletManager"
+     template="templates/manager.pt"
+     permission="zope.Public"
+     />  
   
   <browser:page
      name="renderer"

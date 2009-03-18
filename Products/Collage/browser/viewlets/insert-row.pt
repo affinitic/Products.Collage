@@ -1,0 +1,13 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     i18n:domain="collage"
+     tal:omit-tag="">
+	<form action="" 
+	      tal:attributes="action string:${here/absolute_url}/insert-row"> 
+	  <input type="submit" 
+	  class="context"
+	         i18n:attributes="value button_add_collagerow"
+	         value="Add row" />
+	</form>
+</div>

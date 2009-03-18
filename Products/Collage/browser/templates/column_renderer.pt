@@ -5,3 +5,4 @@
       <tal:item replace="structure item" />
     </div>
 </tal:block>
+<tal:manager replace="structure provider:collage.BelowItemsManager" />

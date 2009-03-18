@@ -42,6 +42,10 @@ class IContentMenu(IViewletManager):
     """Interface for the content-menu viewlet manager."""
     pass
 
+class IBelowItemsMenu(IViewletManager):
+    """Interface for the menu below items viewlet manager."""
+    pass
+
 class IPortletSkin(interface.Interface):
     """Interface for skinable portlets views."""
     pass

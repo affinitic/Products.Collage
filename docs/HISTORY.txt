@@ -4,6 +4,9 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Turn add row into menu. Fix circular import problem instead ugly workaround.
+  [jensens]
+
 * Added upgrade step to 1.2.2 that adds the alias whitelist property, without
   which the control panel crashes.
   [glenfant]

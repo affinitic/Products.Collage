@@ -154,13 +154,13 @@ msgstr "Inhalte der Collage in die Volltextsuche mit einbeziehen?"
 #. Default: "insert existing item"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
 msgid "label_insert_existing_item"
-msgstr "Vorhandenen Artikel hinzufügen"
+msgstr "Artikel wählen"
 
 #. Default "Insert new item"
 #. Default: "Insert new item"
 #: Collage/browser/viewlets/insert-new-item.pt:10
 msgid "label_insert_new_item"
-msgstr "Neuen Artikel Hinzufügen"
+msgstr "Artikel neu"
 
 #. Default: "Loading..."
 #: Collage/browser/viewlets/insert-existing-item.pt:24

@@ -6,6 +6,7 @@
 
   <a class="action"     
      tal:attributes="href python:'%s/delete-object' % view.getImmediateObject().absolute_url()">
+    <div class="delete-object-icon"></div> 
     <span tal:condition="view/isAlias"
           i18n:translate="label_remove" 
           i18n:domain="plone">Remove</span>

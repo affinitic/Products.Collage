@@ -4,6 +4,7 @@
      i18n:domain="collage"
      tal:omit-tag="">
 	<form action="" 
+	      class="insert-row"
 	      tal:attributes="action string:${here/absolute_url}/insert-row"> 
 	  <input type="submit" 
 	  class="context"

@@ -4,6 +4,11 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Make viewlets following all the same paradigm.  
+  Reorder them according to usability thought. Turn expandable content into
+  overlayed box.
+  [jensens]
+
 * Turn add row into menu. Fix circular import problem instead ugly workaround.
   [jensens]
 

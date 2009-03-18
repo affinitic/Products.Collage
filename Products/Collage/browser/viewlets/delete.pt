@@ -1,0 +1,17 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     i18n:domain="collage"
+     tal:omit-tag=""
+     define="obj view/getImmediateObject">
+
+  <a class="action"     
+     tal:attributes="href string:${obj/absolute_url}/delete-object">
+    <span tal:condition="view/isAlias"
+          i18n:translate="label_remove" 
+          i18n:domain="plone">Remove</span>
+    <span tal:condition="not: view/isAlias"
+          i18n:translate="label_delete" 
+          i18n:domain="plone">Delete</span>
+  </a>      
+</div>

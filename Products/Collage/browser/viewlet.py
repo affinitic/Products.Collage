@@ -110,10 +110,12 @@ class IconViewlet(SimpleContentMenuViewlet):
 
         return obj_typeinfo.getIcon()
 
-class ActionsViewlet(SimpleContentMenuViewlet):
-    def isAlias(self):
+class AliasViewlet(SimpleContentMenuViewlet):
 
-        return getattr(self.__parent__, '__alias__', None) and True
+    def isAlias(self):
+        return getattr(self.__parent__, '__alias__', None) is not None
+
+class ActionsViewlet(SimpleContentMenuViewlet):
 
     def getViewActions(self):
 
@@ -125,7 +127,7 @@ class ActionsViewlet(SimpleContentMenuViewlet):
 class CopyViewlet(SimpleContentMenuViewlet):
     pass
 
-class PasteViewlet(SimpleContentMenuViewlet):
+class PasteViewlet(AliasViewlet):
     @property
     def clipboard_data_valid(self):
         cb_dataValid = getattr(self.context, 'cb_dataValid', None)

@@ -105,9 +105,12 @@
 .expandable-content {
   clear: both;
   display: none;
-  /*background: transparent url(&dtml-portal_url;/++resource++collage-resources/collage_row_header.jpg) no-repeat top left;*/
+  background-color: white;  
   padding: 10px;
-  position: relative;
+  position: absolute;
+  z-index: 200;
+  margin-top: 2em;
+  border: 1px solid;
 }
 
 ul.collage-content-menu {

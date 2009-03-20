@@ -1,6 +1,10 @@
 <div class="collage-column" 
      tal:repeat="item python:view.getItems(contents=options['args'][1])">
-  <div tal:attributes="class string:column-block block_${repeat/item/number}">
+  <div tal:define="last_item python:repeat['item'].end and 'collage-last-object' or ''"
+       tal:attributes="class python:'column-block' ' block_%s' ' %s' ' %s' \
+	                         % (repeat['item'].number(), \
+ 							    repeat['item'].end and 'collage-last-object' or '', \
+								repeat['item'].start and 'collage-first-object' or '')">
     <tal:item replace="structure item" />
   </div>  
 </div>

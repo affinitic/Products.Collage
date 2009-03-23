@@ -41,3 +41,9 @@ msgstr "An object representing an alias for another object."
 
 msgid "Manage page"
 msgstr ""
+
+# Object action
+msgid "Back to Collage"
+msgstr ""
+
+

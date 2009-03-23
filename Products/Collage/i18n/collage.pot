@@ -21,10 +21,6 @@ msgstr ""
 msgid "${title} has been deleted."
 msgstr ""
 
-# Object action
-msgid "Back to Collage"
-msgstr ""
-
 #: Collage/browser/actions.py:34
 msgid "Skin changed."
 msgstr ""

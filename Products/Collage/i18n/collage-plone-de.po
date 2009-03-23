@@ -44,3 +44,8 @@ msgstr "Eine Spalte, die wieder andere Inhalte enthalten kann."
 msgid "desc_type_collagerow"
 msgstr "Eine Zeile, welche Spalten enthalten kann."
 
+# Object action
+msgid "Back to Collage"
+msgstr "Zurück zur Collage"
+
+

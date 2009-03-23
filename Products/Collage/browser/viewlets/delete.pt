@@ -18,10 +18,11 @@
     </a>   
   
     <div class="expandable-content">
-     <p i18n:translate="help_confirm_delete"
+      <p i18n:translate="help_confirm_delete"
          class="discreet">
          Please confirm! This action can't be undone.
       </p>
+      
       <a class="delete-confirm"     
          tal:attributes="href python:'%s/delete-object' % view.getImmediateObject().absolute_url()">
         <span tal:condition="view/isAlias"

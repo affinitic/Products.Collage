@@ -4,6 +4,9 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Added confirmation-popup for delete/remove action. 
+  [jensens]
+
 * Make viewlets following all the same paradigm.  
   Reorder them according to usability thought. Turn expandable content into
   overlayed box.

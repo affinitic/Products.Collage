@@ -19,6 +19,8 @@ Issues
 Features
 ========
 
+* Make the action-popup-boxes feel more like windows (UI-concept, not OS).
+
 * Add some kind of ATReferenceBrowserWidget to create a new alias.
 
 * Limit number of columns in a config panel.

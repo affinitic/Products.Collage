@@ -62,6 +62,9 @@
   margin-right: 0.2em;
   text-decoration: none;
 }
+.collage-header a.delete-confirm {
+    color: red;
+}
 
 .collage-header a.action span.inactive,
 .collage-header a.layout span.inactive {

@@ -76,12 +76,13 @@ Development:
 * `Pelle Kroegholt <pelle@headnet.dk>`_
 * `Gilles Lenfant <gilles.lenfant@gmail.com>`_
 * `Sune Toft <sune@headnet.dk>`_
+* `Jens Klein <jens@bluedynamics.com>`_
 
 Translations:
 
 * Bulgarian (bg): `Vladimir Iliev <vladimir.iliev@gmail.com>`_
 * Danish (da): `Jacob Vestergaard <jacobv@headnet.dk>`_
-* German (de): `Roland Fasching <rof@sterngasse.at>`_
+* German (de): `Roland Fasching <rof@sterngasse.at>`_, `Jens Klein <jens@bluedynamics.com>`_
 * English (en): `Kevin Deldycke <kevin@deldycke.com>`_
 * Spanish (es): `Mikel Larreategi <mlarreategi@codesyntax.com>`_
 * Basque (eu): `Mikel Larreategi <mlarreategi@codesyntax.com>`_

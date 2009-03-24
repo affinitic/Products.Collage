@@ -4,6 +4,11 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Don't assume that a view is always available: added error view as fallback.
+  It helps a lot in development and doesn't expose ugly tracebacks to users  
+  if site has a configuration problem. Also minor cleanup and fixed tests.
+  [jensens]
+
 * Added confirmation-popup for delete/remove action. 
   [jensens]
 

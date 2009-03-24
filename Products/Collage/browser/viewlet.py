@@ -52,9 +52,10 @@ class LayoutViewlet(SimpleContentMenuViewlet):
         # filter out fallback view
         layouts = filter(lambda (name, title): name != u'fallback', layouts)
 
-        return [{'id': name,
-                 'name': title,
-                 'active': name == active} for (name, title) in layouts]
+        retval = [{'id': name, 'name': title,'active': name == active} 
+                  for (name, title) in layouts]
+        return retval
+        
 
 
 class SkinViewlet(SimpleContentMenuViewlet):

@@ -2,6 +2,15 @@
            xmlns:browser="http://namespaces.zope.org/browser">
 
   <browser:page
+     name="error_collage-view-not-found"
+     for="*"
+     permission="zope.Public"
+     template="views/error_view_not_found.pt"
+     class=".views.ErrorViewNotFoundView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="standard"
      for="Products.ATContentTypes.content.document.ATDocument"
      permission="zope.Public"

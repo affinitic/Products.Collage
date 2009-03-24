@@ -397,5 +397,10 @@ span.collage-navigation a {
     background-color: &dtml-helpBackgroundColor;;
 }
 
+#collage .collage-layout-error {
+    background-color: yellow;
+    font-weight: bold;
+}
+
 /* </dtml-let> */
 /* </dtml-with> */

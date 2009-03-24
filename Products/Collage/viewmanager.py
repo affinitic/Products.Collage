@@ -1,20 +1,21 @@
-from zope.annotation.interfaces import IAnnotations
-
 from zope.interface import (
     Interface, implements, providedBy, directlyProvidedBy,
     directlyProvides)
 
-from zope.component import getSiteManager, getMultiAdapter, getUtilitiesFor, queryUtility
+from zope.component import (
+    getSiteManager, getMultiAdapter, getUtilitiesFor, queryUtility)
+
+from zope.annotation.interfaces import IAnnotations
 from zope.app.component.hooks import getSite
-
-from interfaces import IDynamicViewManager
-from interfaces import ICollageAlias
-from interfaces import ICollageBrowserLayer, ICollageBrowserLayerType
-
 from persistent.dict import PersistentDict
 
 from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName
+
+from interfaces import IDynamicViewManager
+from interfaces import ICollageAlias
+from interfaces import ICollageBrowserLayer 
+from interfaces import ICollageBrowserLayerType
 
 ANNOTATIONS_KEY = u'Collage'
 
@@ -68,9 +69,11 @@ class DynamicViewManager(object):
             )
         
         directlyProvides(request, *ifaces)
-        
-        return [(name, getattr(layout, 'title', name)) for (name, layout) in layouts
-            if type(layout) is type(BrowserView) and issubclass(layout, BrowserView)]
+        return [(name, getattr(layout, 'title', name)) 
+                for (name, layout) in layouts
+                if type(layout) is type(BrowserView) 
+                   and issubclass(layout, BrowserView)
+                   and not getattr(layout, 'hide', False)]
 
     def getSkin(self):
         storage = self.getStorage()

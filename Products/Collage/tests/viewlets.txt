@@ -50,7 +50,7 @@ permission to modify the context.
 Actions
 -------
 
-  >>> viewlet = getMultiAdapter((row, request, view, manager), name=u"30-actions")
+  >>> viewlet = getMultiAdapter((row, request, view, manager), name=u"130-actions")
 
 Let's look at the actions for our folder:
 
@@ -62,7 +62,7 @@ Let's look at the actions for our folder:
 Insert new items
 ----------------
 
-  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"50-insert-new-item")
+  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"080-insert-new-item")
 
 Let's look at the returned content types:
 
@@ -73,7 +73,7 @@ Let's look at the returned content types:
 Insert existing items
 ---------------------
 
-  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"50-insert-existing-item")
+  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"070-insert-existing-item")
 
 Next we examine the ajax-view:
 
@@ -85,7 +85,7 @@ Next we examine the ajax-view:
 Copy/paste
 ----------
 
-  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"60-paste")
+  >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"120-paste")
 
 Let's setup the clipboard as if we'd copied the front-page element:
 

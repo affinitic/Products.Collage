@@ -1,0 +1,8 @@
+<div class="collage-layout-error">
+   <p class="message" i18n:translate="error_layout_not_found">Error: Layout not found!</p>
+   <dl>
+     <dt>layout</dt>
+     <dd tal:content="view/notfoundlayoutname" />
+   </dl>
+   
+</div>

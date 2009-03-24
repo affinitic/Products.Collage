@@ -14,6 +14,8 @@ def doTest(condition, value_true, value_false):
         return value_false
 
 class BaseView(BrowserView):
+    
+    hide = False
 
     def test(self):
         # return lambda a, b, c: a and b or c
@@ -64,6 +66,9 @@ class BaseView(BrowserView):
         manager = IDynamicViewManager(self.collage_context)
         return manager.getSkin()
 
+class ErrorViewNotFoundView(BaseView):
+    title = u'View not Found'
+    hide = True    
 
 class RowView(BaseView):
 
@@ -127,3 +132,4 @@ class ClickableView(BaseView):
 
 class StandardDocumentView(StandardView):
     """Includes for BBB."""
+    

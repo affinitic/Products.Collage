@@ -14,26 +14,26 @@
       </a>
       
       <div class="expandable-content">
-	<p i18n:translate="help_select_layout"
-	   class="discreet">Choose a layout for this object.</p>
-	
-	<tal:layouts repeat="layout layouts">
-	  <a class="layout"
-	     tal:define="value layout/id;
-			 display layout/name;
-			 obj view/getImmediateObject"
-             tal:attributes="href string:${obj/absolute_url}/set-content-layout?layout=$value;
-                             title display"
-             i18n:attributes="title">
-	    <span i18n:translate=""
-	          tal:attributes="class python: layout['active'] and 'active' or 'inactive'"
-		  tal:content="display">
-	      Layout name
-	    </span>
-	  </a>
-	</tal:layouts>
-	
-	<div class="visualClear"><!-- nothing here --></div>
+		<p i18n:translate="help_select_layout"
+		   class="discreet">Choose a layout for this object.</p>
+		
+		<tal:layouts repeat="layout layouts">
+		  <a class="layout"
+		     tal:define="value layout/id;
+				 display layout/name;
+				 obj view/getImmediateObject"
+	             tal:attributes="href string:${obj/absolute_url}/set-content-layout?layout=$value;
+	                             title display"
+	             i18n:attributes="title">
+		    <span i18n:translate=""
+		          tal:attributes="class python: layout['active'] and 'active' or 'inactive'"
+			  tal:content="display">
+		      Layout name
+		    </span>
+		  </a>
+		</tal:layouts>
+		
+		<div class="visualClear"><!-- nothing here --></div>
       </div>
     </div>
   </tal:layouts>

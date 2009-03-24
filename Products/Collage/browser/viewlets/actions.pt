@@ -12,7 +12,7 @@
 	     tal:attributes="id string:contentview-${action/id};
 			             class python:'action '+test(selected, 'selected', 'plain');
 			             href action/url">
-        <div tal:attributes="class string:object-action-${action/id}-icon"></div>     
+        <div tal:attributes="class string:object-action-${action/id}-icon object-action-generic-icon"></div>     
   	    <span i18n:domain="plone"
 	          i18n:translate=""
 	          tal:content="action/title">

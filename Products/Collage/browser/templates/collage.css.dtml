@@ -79,29 +79,36 @@
     float: left;
     width: 14px;
     height: 14px;
-    padding-right: 3px;
+    padding-right: 2px;
     background: url(&dtml-portal_url;/++resource++collage-resources/icon-delete.gif) no-repeat top left;
 }
 .copy-object-icon {
     float: left;
     width: 14px;
     height: 14px;
-    padding-right: 3px;
+    padding-right: 2px;
     background: url(&dtml-portal_url;/++resource++collage-resources/icon-copy.gif) no-repeat top left;
 }
 .paste-object-icon {
     float: left;
     width: 14px;
     height: 14px;
-    padding-right: 3px;
+    padding-right: 2px;
     background: url(&dtml-portal_url;/++resource++collage-resources/icon-paste.gif) no-repeat top left;
 }
 .split-column-icon {
     float: left;
     width: 14px;
     height: 14px;
-    padding-right: 3px;
+    padding-right: 2px;
     background: url(&dtml-portal_url;/++resource++collage-resources/icon-split.gif) no-repeat top left;
+}
+.object-action-generic-icon {
+    float: left;
+    width: 14px;
+    height: 14px;
+    padding-right: 2px;
+    background: url(&dtml-portal_url;/++resource++collage-resources/icon-object-action.gif) no-repeat top left;
 }
 
 /* expandable sections */
@@ -111,7 +118,7 @@
   float: left;
   width: 14px;
   height: 14px;
-  padding-right: 3px;
+  padding-right: 2px;
 }
 
 .expandable-section .expandable-label.enabled .expandable-icon {

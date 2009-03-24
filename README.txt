@@ -4,7 +4,7 @@ Collage
 Compatibility
 -------------
 
-* Plone 3.1
+* Plone 3.1-3.3
 * Five 1.5
 
 About

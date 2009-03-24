@@ -89,6 +89,11 @@ msgstr ""
 msgid "help_select_skin"
 msgstr ""
 
+#. Default: "Please confirm! This action can't be undone."
+#: Collage/browser/viewlets/delete.pt:21
+msgid "help_confirm_delete"
+msgstr ""
+
 #. Default: "Help"
 #: Collage/browser/skins.py:12
 msgid "help_skin"

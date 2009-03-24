@@ -228,6 +228,11 @@ msgstr "Titel anzeigen"
 msgid "label_split_column"
 msgstr "Spalte neu"
 
+#. Default: "Please confirm! This action can't be undone."
+#: Collage/browser/viewlets/delete.pt:21
+msgid "help_confirm_delete"
+msgstr "Bitte bestätigen! Diese Aktion kann nicht rückgängig gemacht werden!"
+
 #. Default: "Types whitelist"
 #: Collage/browser/controlpanel.py:38
 msgid "label_types_whitelist"

@@ -4,6 +4,9 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* In Plone 3 the contributor is the one adding content. So default roles for
+  "Add Collage content" is now Contributor, additional to Owner & Manager.
+
 * Don't assume that a view is always available: added error view as fallback.
   It helps a lot in development and doesn't expose ugly tracebacks to users  
   if site has a configuration problem. Also minor cleanup and fixed tests.

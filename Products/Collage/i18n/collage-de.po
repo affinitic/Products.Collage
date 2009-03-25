@@ -22,7 +22,7 @@ msgstr "${title} wurde gelöscht."
 
 #: Collage/browser/actions.py:34
 msgid "Skin changed."
-msgstr "Skin wurde verändert"
+msgstr "Variante wurde verändert"
 
 #: Collage/browser/actions.py:24
 msgid "View changed."
@@ -88,7 +88,7 @@ msgstr "Wählen Sie eine Ansicht für diesen Artikel"
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:17
 msgid "help_select_skin"
-msgstr "Wählen Sie eine Skin, die auf die gewählte Ansicht angewandt werden soll."
+msgstr "Wählen Sie eine Variante, die auf die gewählte Ansicht angewandt werden soll."
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
@@ -211,7 +211,7 @@ msgstr "Ansicht"
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
-msgstr "Skins"
+msgstr "Varianten"
 
 #. Default: "Show description"
 #: Collage/content/_collage.py:51

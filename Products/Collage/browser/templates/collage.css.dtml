@@ -138,7 +138,7 @@
   padding: 10px;
   position: absolute;
   z-index: 200;
-  margin-top: 2em;
+  margin-top: 3em;
   border: 1px solid;
 }
 

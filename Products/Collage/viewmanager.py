@@ -69,11 +69,13 @@ class DynamicViewManager(object):
             )
         
         directlyProvides(request, *ifaces)
-        return [(name, getattr(layout, 'title', name)) 
-                for (name, layout) in layouts
-                if type(layout) is type(BrowserView) 
-                   and issubclass(layout, BrowserView)
-                   and not getattr(layout, 'hide', False)]
+        layouts = [(name, getattr(layout, 'title', name)) 
+                   for (name, layout) in layouts
+                   if type(layout) is type(BrowserView) 
+                      and issubclass(layout, BrowserView)
+                      and not getattr(layout, 'hide', False)]
+        layouts.sort(lambda a, b: cmp(a[1], b[1]))
+        return layouts
 
     def getSkin(self):
         storage = self.getStorage()

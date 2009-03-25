@@ -51,21 +51,21 @@
      />
     
   <browser:viewlet
-     name="050-skin"
+     name="050-layout"
      for="*"
      manager="Products.Collage.interfaces.IContentMenu"
-     class=".viewlet.SkinViewlet"
-     template="viewlets/skin.pt"
+     class=".viewlet.LayoutViewlet"
+     template="viewlets/layout.pt"
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />
 
   <browser:viewlet
-     name="060-layout"
+     name="060-skin"
      for="*"
      manager="Products.Collage.interfaces.IContentMenu"
-     class=".viewlet.LayoutViewlet"
-     template="viewlets/layout.pt"
+     class=".viewlet.SkinViewlet"
+     template="viewlets/skin.pt"
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />

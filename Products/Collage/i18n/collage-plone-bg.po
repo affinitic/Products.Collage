@@ -18,23 +18,23 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 
 msgid "Alias"
-msgstr ""
+msgstr "Взаимстван"
 
 # content-types
 msgid "Collage"
-msgstr ""
+msgstr "Колаж"
 
 msgid "Column"
-msgstr ""
+msgstr "Колона"
 
 msgid "Manage page"
-msgstr ""
+msgstr "Форматиране на страницата"
 
 msgid "Row"
-msgstr ""
+msgstr "Ред"
 
 msgid "desc_type_collage"
-msgstr "A structural container which can display its element in various layouts."
+msgstr "Структуриран контейнер, който може да изобразява съдържанието си по различни начини."
 
 msgid "desc_type_collagealias"
 msgstr "An object representing an alias for another object."

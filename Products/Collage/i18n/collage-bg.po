@@ -19,15 +19,15 @@ msgstr ""
 
 #: Collage/browser/actions.py:122
 msgid "${title} has been deleted."
-msgstr ""
+msgstr "${title} беше изтрит."
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Назад към колажа"
 
 #: Collage/browser/actions.py:34
 msgid "Skin changed."
-msgstr ""
+msgstr "Темата беше променена"
 
 #: Collage/browser/actions.py:24
 msgid "View changed."
@@ -41,7 +41,7 @@ msgstr "Добавне на ред"
 #. Default: "Default"
 #: Collage/browser/skins.py:6
 msgid "default"
-msgstr ""
+msgstr "Общ"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
 #: Collage/browser/controlpanel.py:55
@@ -51,19 +51,18 @@ msgstr ""
 #. Default: "Select item types that can be aliased in a Collage object."
 #: Collage/browser/controlpanel.py:47
 msgid "help_alias_whitelist"
-msgstr ""
+msgstr "Изберете типове, които ще могат да бъдат взаимствани в колажите."
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:104
 msgid "help_collage_controlpanel"
-msgstr ""
+msgstr "Общи настройки на колажите"
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:59
-#, fuzzy
 msgid "help_index_subobjects"
-msgstr "Ще покаже този колаж в резултатите при търсене, ако някоя от вложените позиции отговаря. Може да забави редактирането на колажа и на вложените обекти а и може да покаже невярни резултати при търсене."
+msgstr "Ще покаже този колаж при търсене, ако някоя от вложените позиции отговаря на критериите. Може да забави редактирането на колажа и на вложените обекти, както и да покаже невярни резултати при търсене."
 
 #. Default: "Choose an existing item to insert. Use dropdown to filter on type."
 #: Collage/browser/viewlets/insert-existing-item.pt:16
@@ -94,17 +93,17 @@ msgstr "Изберете оформление за този обект."
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:17
 msgid "help_select_skin"
-msgstr ""
+msgstr "Изберете тема, която да бъде приложена към текущото разположение."
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
 msgid "help_skin"
-msgstr ""
+msgstr "Помощ"
 
 #. Default: "Select item types that can be added in a Collage object."
 #: Collage/browser/controlpanel.py:39
 msgid "help_types_whitelist"
-msgstr ""
+msgstr "Изберете типове, които ще могат да бъдат добавяни към колажите."
 
 #. Default: "Only types in below whitelist can be added in a Collage."
 #: Collage/browser/controlpanel.py:32
@@ -145,7 +144,7 @@ msgstr "Тип"
 #. Default: "copy"
 #: Collage/browser/viewlets/copy.pt:9
 msgid "label_copy_object"
-msgstr ""
+msgstr "копиране"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
@@ -207,17 +206,17 @@ msgstr "Заглавие"
 #. Default: "paste"
 #: Collage/browser/viewlets/paste.pt:10
 msgid "label_paste_object"
-msgstr ""
+msgstr "залепяне"
 
 #. Default: "select layout"
 #: Collage/browser/viewlets/layout.pt:12
 msgid "label_select_layout"
-msgstr "озбиране на оформление"
+msgstr "избиране на оформление"
 
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
-msgstr ""
+msgstr "Теми"
 
 #. Default: "Show description"
 #: Collage/content/_collage.py:51
@@ -247,27 +246,27 @@ msgstr ""
 #. Default: "Alias has been inserted"
 #: Collage/browser/actions.py:109
 msgid "msg_alias_inserted"
-msgstr ""
+msgstr "Обекта беше взаимстван"
 
 #. Default: "Column has been inserted"
 #: Collage/browser/actions.py:84
 msgid "msg_column_inserted"
-msgstr ""
+msgstr "Колоната беше вмъкната"
 
 #. Default: "Row has been added"
 #: Collage/browser/actions.py:75
 msgid "msg_row_added"
-msgstr ""
+msgstr "Реда беше добавен"
 
 #. Default: "Target object not found"
 #: Collage/browser/actions.py:111
 msgid "msg_target_object_not_found"
-msgstr ""
+msgstr "Обекта не е намерен"
 
 #. Default: "Notification"
 #: Collage/browser/skins.py:9
 msgid "notification_skin"
-msgstr ""
+msgstr "Съобщение"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:103

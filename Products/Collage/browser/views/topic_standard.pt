@@ -1,6 +1,5 @@
 <tal:manager replace="structure provider:collage.ContentManager" />
 
-
 <tal:variables define="plone_view here/@@plone;
                        toLocalizedTime nocall: plone_view/toLocalizedTime;
                        isAnon view/isAnon;
@@ -9,17 +8,18 @@
                        normalizeString view/normalizeString;
                        site_properties view/site_properties">
 
-  <tal:topic define="topicContents python:here.queryCatalog(batch=True)"
-             condition="topicContents">
+  <div class="standard-topic"
+       tal:define="topicContents python:here.queryCatalog(batch=True)"
+       tal:condition="topicContents">
 
-    <h2 metal:define-macro="title"
+    <h1 metal:define-macro="title"
         tal:define="kssview context/@@collage_kss_helper"
         tal:attributes="id string:${kssview/getUniqueIdentifier}-title;
-                        class python: kssview.getKssClasses('title')"
+                        class python: 'documentFirstHeading %s' % kssview.getKssClasses('title')"
         tal:condition="here/Title">
       <span metal:define-slot="inside"
             tal:replace="here/Title">title</span>
-    </h2>
+    </h1>
 
     <p>
       <span metal:define-macro="description"
@@ -32,7 +32,8 @@
       </span>
     </p>
 
-    <tal:listing define="view context/@@collage_kss_helper/getKssView;
+    <tal:listing i18n:domain="plone"
+                 define="view context/@@collage_kss_helper/getKssView;
                          getKssClasses python: view.getKssClasses;
                          templateId string:folder_summary_view;
                          folderContents topicContents">
@@ -43,8 +44,6 @@
        tal:condition="python:len(topicContents) ==  here.itemCount"
        i18n:translate="">More...</a>
 
-  </tal:topic>
-
+  </div>
 
 </tal:variables>
-

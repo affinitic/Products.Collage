@@ -1,5 +1,11 @@
 <div class="collage-row" tal:repeat="item view/getItems">
-  <div tal:attributes="class string:row_${repeat/item/number}">
+  <div tal:attributes="class python:'row_%s' ' %s' ' %s' \
+	                         % (repeat['item'].number(), \
+ 							    repeat['item'].end and 'collage-last-row' or '', \
+								repeat['item'].start and 'collage-first-row' or '')">
 	<tal:item replace="structure item" />
   </div>
 </div>
+
+
+

@@ -51,7 +51,7 @@ msgstr "Número máximo de resultados de pesquisa. '0' ou negativo significa ili
 #. Default: "Select item types that can be aliased in a Collage object."
 #: Collage/browser/controlpanel.py:47
 msgid "help_alias_whitelist"
-msgstr ""
+msgstr "Seleccione os tipos de item que podem ser referenciados num Collage."
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:104
@@ -123,7 +123,7 @@ msgstr "Objectio de destino seleccionado"
 #. Default: "Alias whitelist"
 #: Collage/browser/controlpanel.py:46
 msgid "label_alias_whitelist"
-msgstr ""
+msgstr "Tipos referenciáveis"
 
 #. Default: "(alias)"
 #: Collage/browser/viewlets/actions.pt:11

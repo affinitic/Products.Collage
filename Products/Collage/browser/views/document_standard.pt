@@ -10,7 +10,8 @@
 	        tal:replace="here/Title">title</span>
 	</h2>
 	
-	<p class="description">
+	<p class="description"
+	   tal:condition="here/Description">
 	  <span metal:define-macro="description"
 	        tal:define="view context/@@collage_kss_helper"
 	        tal:attributes="id string:${view/getUniqueIdentifier}-description;

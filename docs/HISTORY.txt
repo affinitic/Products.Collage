@@ -4,6 +4,9 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* Don't render empty descriptions in standard document.
+  [jensens]
+
 * In Plone 3 the contributor is the one adding content. So default roles for
   "Add Collage content" is now Contributor, additional to Owner & Manager.
 

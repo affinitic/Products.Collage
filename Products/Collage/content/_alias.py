@@ -33,6 +33,7 @@ CollageAliasSchema = ATCTContent.schema.copy() + atapi.Schema((
             label=_(u'label_alias_target', default="Selected target object"),
             startup_directory='/',
         ),
+        keepReferencesOnCopy=True,
     ),
 ))
 

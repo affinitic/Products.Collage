@@ -1,8 +1,8 @@
 Changelog
 =========
 
-Collage 1.2.2 (unreleased)
---------------------------
+1.2.2 (2009-06-07)
+------------------
 
 * A UID can start with numbers. The value of the id attribute cannot start
   with a number by naming convention. The views now use:

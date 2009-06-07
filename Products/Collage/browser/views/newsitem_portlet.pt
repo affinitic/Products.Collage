@@ -9,7 +9,7 @@
       <span class="portletTopLeft"></span>
       <span metal:define-macro="title"
             tal:define="kssview context/@@collage_kss_helper"
-            tal:attributes="id string:${kssview/getUniqueIdentifier}-title;
+            tal:attributes="id string:string:title-${kssview/getUniqueIdentifier};
                             class python: kssview.getKssClasses('title')"
             tal:condition="here/Title">
         <span metal:define-slot="inside" tal:replace="here/Title">title</span>
@@ -21,7 +21,7 @@
       <p class="documentDescription">
         <span metal:define-macro="description"
               tal:define="kssview context/@@collage_kss_helper"
-              tal:attributes="id string:${kssview/getUniqueIdentifier}-description;
+              tal:attributes="id string:description-${kssview/getUniqueIdentifier};
                               class python: kssview.getKssClasses('description')"
               tal:condition="here/Description">
           <span metal:define-slot="inside" tal:replace="here/Description">description</span>
@@ -45,7 +45,7 @@
       <div metal:define-macro="text"
            tal:define="kssview context/@@collage_kss_helper;
                        text python: here.CookedBody(stx_level=2)"
-           tal:attributes="id string:${kssview/getUniqueIdentifier}-text;
+           tal:attributes="id string:text-${kssview/getUniqueIdentifier};
                            class python: here.Format() in
                            ['text/structured', 'text/x-rst'] and 'stx' or 'plain' +
                            kssview.getKssClasses('text')"

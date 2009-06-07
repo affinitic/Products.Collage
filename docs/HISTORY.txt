@@ -4,6 +4,11 @@ Changelog
 Collage 1.2.2 (unreleased)
 --------------------------
 
+* A UID can start with numbers. The value of the id attribute cannot start
+  with a number by naming convention. The views now use:
+  string:title-${view/getUniqueIdentifier}, which always starts with a t
+  [jladage]
+
 * Don't render empty descriptions in standard document.
   [jensens]
 

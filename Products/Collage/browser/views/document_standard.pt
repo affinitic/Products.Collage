@@ -3,7 +3,7 @@
 
 	<h2 metal:define-macro="title"
 	    tal:define="view context/@@collage_kss_helper"
-	    tal:attributes="id string:${view/getUniqueIdentifier}-title;
+	    tal:attributes="id string:title-${view/getUniqueIdentifier};
 			    class python: view.getKssClasses('title')"
 	    tal:condition="here/Title">
 	  <span metal:define-slot="inside"
@@ -25,7 +25,7 @@
 	<div metal:define-macro="text"
 	     tal:define="view context/@@collage_kss_helper;
 			 text python: here.CookedBody(stx_level=2)"
-	     tal:attributes="id string:${view/getUniqueIdentifier}-text;
+	     tal:attributes="id string:text-${view/getUniqueIdentifier};
 			     class python: here.Format() in
 			                   ['text/structured', 'text/x-rst'] and 'stx' or 'plain' +
 			     view.getKssClasses('text')"

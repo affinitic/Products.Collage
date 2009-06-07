@@ -3,7 +3,7 @@
 	<div metal:define-macro="text"
 	     tal:define="view context/@@collage_kss_helper;
 			 text python: here.CookedBody(stx_level=2)"
-	     tal:attributes="id string:${view/getUniqueIdentifier}-text;
+	     tal:attributes="id string:text-${view/getUniqueIdentifier};
 			     class python: here.Format() in
 			                   ['text/structured', 'text/x-rst'] and 'stx' or 'plain' +
 			     view.getKssClasses('text')"

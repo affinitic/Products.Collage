@@ -4,8 +4,9 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+* Fixed deprecated URL for add on packages (third party content types)
+  in the doc.
+  [glenfant]
 
 1.2.2 (2009-06-07)
 ------------------

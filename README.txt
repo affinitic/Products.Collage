@@ -50,14 +50,8 @@ Used in production.
 Support for add-on packages
 ---------------------------
 
-These should be added to the collective.collage package:
-
-* https://svn.plone.org/svn/collective/collective.collage
-
-under ./browser/addons/<package name>
-
-Make sure collective.collage is in your python path if you want these views
-registered for use in Collage.
+Support for third party content types are available with your subversion
+client from https://svn.plone.org/svn/collective/Products.Collage/addons/
 
 See DEVELOPER.txt to add support for custom content types and themings.
 

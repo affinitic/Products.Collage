@@ -4,6 +4,10 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* Made Collage fields: show_title, show_description and index_subobjects 
+  languageIndependent.
+  [jensens]
+
 * Fixed deprecated URL for add on packages (third party content types)
   in the doc.
   [glenfant]

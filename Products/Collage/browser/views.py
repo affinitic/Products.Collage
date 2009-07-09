@@ -133,3 +133,11 @@ class ClickableView(BaseView):
 class StandardDocumentView(StandardView):
     """Includes for BBB."""
     
+class FileMinimalView(StandardView):
+    """File for download in one line."""
+
+    title = u'minimal'
+    
+    def getBUFile(self):
+        acc = self.context.Schema()['file'].getAccessor(self.context)()
+        return acc

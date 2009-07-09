@@ -65,6 +65,15 @@
      />
 
   <browser:page
+     name="minimal"
+     for="Products.ATContentTypes.content.file.ATFile"
+     permission="zope.Public"
+     template="views/file_minimal.pt"
+     class=".views.FileMinimalView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="standard"
      for="Products.ATContentTypes.content.newsitem.ATNewsItem"
      permission="zope.Public"

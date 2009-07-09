@@ -4,6 +4,9 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* Added a useful very reduced 'minimal' view for files.
+  [jensens]
+
 * Removed type 'Folder' from Collage properties -> types whitelist. It does not
   make much sense (and will confuse users) to add a folder direct inside a 
   Collage. if someone really needs it, it can be enabled with minor effort.

@@ -4,6 +4,11 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* Removed type 'Folder' from Collage properties -> types whitelist. It does not
+  make much sense (and will confuse users) to add a folder direct inside a 
+  Collage. if someone really needs it, it can be enabled with minor effort.
+  [jensens]
+
 * Made Collage fields: show_title, show_description and index_subobjects 
   languageIndependent.
   [jensens]

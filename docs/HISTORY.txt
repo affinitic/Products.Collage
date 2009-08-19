@@ -4,6 +4,11 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* Avoid BadRequest error while adding alias_whitelist property in
+  upgrade step if this property already exists.  You should usually be
+  able to run an upgrade step a second time without fail.
+  [maurits]
+
 * Added a useful very reduced 'minimal' view for files.
   [jensens]
 

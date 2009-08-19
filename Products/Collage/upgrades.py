@@ -67,5 +67,10 @@ def addAliasWhitelistProperty(setuptool):
     propsheet = getPortal().portal_properties.collage_properties
     # Default: same value as types whitelist
     default_value = propsheet.getProperty('types_whitelist')
+    if propsheet.getProperty('alias_whitelist'):
+        # property already exists; upgrade step has already been run
+        # apparently; upgrade steps should not fail when run a second
+        # time, so we return here.
+        return
     propsheet.manage_addProperty('alias_whitelist', default_value, 'lines')
     return

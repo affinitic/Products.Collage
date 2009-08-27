@@ -28,7 +28,7 @@ msgstr "Retour au Collage"
 
 #: Collage/browser/actions.py:34
 msgid "Skin changed."
-msgstr "Skin modifiée"
+msgstr "Habillage modifié."
 
 #: Collage/browser/actions.py:24
 msgid "View changed."
@@ -94,7 +94,7 @@ msgstr "Choisissez un modèle d'affichage pour cet élément."
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:17
 msgid "help_select_skin"
-msgstr "Choisissez la skin à appliquer à ce modèle."
+msgstr "Choisissez l'habillage à appliquer à ce modèle."
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
@@ -217,7 +217,7 @@ msgstr "Sélectionnez un modèle"
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
-msgstr "Skin"
+msgstr "Habillage"
 
 #. Default: "Show description"
 #: Collage/content/_collage.py:51

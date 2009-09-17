@@ -4,6 +4,10 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* Update JavaScript to no longer use reserved function postMessage. This fixes
+  #54.
+  [dunlapm]
+
 * Update french translation (tiny semantic improvement).
   [kdeldycke]
 

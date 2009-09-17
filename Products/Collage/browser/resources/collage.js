@@ -90,7 +90,7 @@ setupExistingItemsForm = function() {
 	});
 }
 
-postMessage = function(element, msg) {
+addIHTMLmsg = function(element, msg) {
     element._contents = element.innerHTML;
     element.innerHTML += ' (' + msg + ')';
 }
@@ -115,7 +115,7 @@ doSimpleQuery = function(url, data) {
     
     // display a save message
     var heading = $('h1.documentFirstHeading').get(0);
-    if (heading) postMessage(heading, 'Saving...');
+    if (heading) addIHTMLmsg(heading, 'Saving...');
 
     $.post(url, data, function(data) {
 	    if (heading) restoreElement(heading);

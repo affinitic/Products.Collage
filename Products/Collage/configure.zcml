@@ -29,10 +29,12 @@
 
   <subscriber handler=".events.reindexOnModify" />
 
+  <subscriber handler=".events.resetAliasLayout" />
+
   <adapter
      for="*"
      provides=".interfaces.IDynamicViewManager"
-     factory=".viewmanager.DynamicViewManager" />  
+     factory=".viewmanager.DynamicViewManager" />
 
   <!-- Uncomment below element to enable the box skinning demo -->
 

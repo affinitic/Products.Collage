@@ -4,6 +4,11 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* On alias target removal, the alias layout is reset to "standard". This gives a
+  chance to content authors to delete the alias, rather tha saying "Error:
+  Layout not found". This fixes #63
+  [glenfant]
+
 * Update JavaScript to no longer use reserved function postMessage. This fixes
   #54.
   [dunlapm]

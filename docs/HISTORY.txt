@@ -4,6 +4,9 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* Following jensens change on types whitelist, change the test accordingly.
+  [glenfant]
+
 * On alias target removal, the alias layout is reset to "standard". This gives a
   chance to content authors to delete the alias, rather tha saying "Error:
   Layout not found". This fixes #63

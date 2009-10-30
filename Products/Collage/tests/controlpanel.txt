@@ -16,7 +16,7 @@ Checking default options
     >>> controlpanel.use_whitelist
     False
     >>> len(controlpanel.types_whitelist)
-    8
+    7
     >>> len(controlpanel.alias_whitelist)
     8
 
@@ -68,4 +68,4 @@ Both lists behave different.
 
     >>> controlpanel.enabledAlias('Event')
     True
-    
+

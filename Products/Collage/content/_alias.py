@@ -1,31 +1,38 @@
 # $Id$
 
+from zope.interface import implements
 from AccessControl import ClassSecurityInfo
 
-from Products.Archetypes import atapi
-from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 from Products.CMFCore.utils import getToolByName
-
-from Products.Collage.interfaces import ICollageAlias
-
-from zope.interface import implements
-
-from Products.Collage.content.common import LayoutContainer
-
+from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
+from Products.Archetypes import atapi
+from Products.Archetypes.ReferenceEngine import Reference
+from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 from Products.ATContentTypes.content.base import ATCTContent
 
+from Products.Collage.interfaces import ICollageAlias, IDynamicViewManager
+from Products.Collage.content.common import LayoutContainer
+from Products.Collage.utilities import CollageMessageFactory as _
 from Products.Collage.utilities import isTranslatable
 
-# CMFDynamicViewFTI imports
-from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
+class CollageAliasReference(Reference):
+    """We need our own reference class to have a custom target deletion hook
+    that resets the alias layout.
+    """
+    def delHook(self, tool, sourceObject=None, targetObject=None):
+        """Override standard delHook
+        """
+        manager = IDynamicViewManager(sourceObject)
+        manager.setLayout(None)
+        return
 
-from Products.Collage.utilities import CollageMessageFactory as _
 
 CollageAliasSchema = ATCTContent.schema.copy() + atapi.Schema((
     atapi.ReferenceField(
         name='target',
         mutator='set_target',
         accessor='get_target',
+        referenceClass = CollageAliasReference,
         relationship='Collage_aliasedItem',
         multiValued = 0,
         allowed_types = (),

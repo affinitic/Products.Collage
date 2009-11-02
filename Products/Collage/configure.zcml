@@ -29,8 +29,6 @@
 
   <subscriber handler=".events.reindexOnModify" />
 
-  <subscriber handler=".events.resetAliasLayout" />
-
   <adapter
      for="*"
      provides=".interfaces.IDynamicViewManager"

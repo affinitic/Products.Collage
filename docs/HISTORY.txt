@@ -4,6 +4,13 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* Worked around IE CSS bugs mentioned in issue #60. Thanks to Kevin Deldycke.
+  [glenfant]
+
+* Synched all .po with the latest labels and updated the ``*-fr.po``
+  files. Collage translators, new .po files are wawiting for your inputs.
+  [glenfant]
+
 * Following jensens change on types whitelist, change the test accordingly.
   [glenfant]
 

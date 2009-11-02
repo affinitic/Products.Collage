@@ -15,11 +15,11 @@ from Products.Collage.utilities import isTranslatable
 from Products.Collage.viewmanager import mark_request
 
 class SimpleContainerRenderer(BrowserView):
-    
+
     def getItems(self, contents=None):
         """Items are a views to render.
-        
-        @param contents: If given fetch the folderListingFolderContents of 
+
+        @param contents: If given fetch the folderListingFolderContents of
                          context.
         @return: a list of views ready to render.
         """
@@ -74,11 +74,11 @@ class SimpleContainerRenderer(BrowserView):
                     layout = manager.getLayout() or canmanager.getLayout() or layout
 
             # don't assume that a layout is always available
-            view = queryMultiAdapter((target, self.request), name=layout)            
+            view = queryMultiAdapter((target, self.request), name=layout)
             if view is None:
-                view = getMultiAdapter((target, self.request), 
+                view = getMultiAdapter((target, self.request),
                                          name='error_collage-view-not-found')
-                view.notfoundlayoutname = layout            
+                view.notfoundlayoutname = layout
 
             # store reference to alias if applicable
             if ICollageAlias.providedBy(context):
@@ -91,14 +91,14 @@ class SimpleContainerRenderer(BrowserView):
         return views
 
 class CollageStylesheet(BrowserView):
-    """Renders the collage standard stylesheet"""
-
+    """Renders the collage standard stylesheet
+    """
     template = DTMLFile('templates/collage.css', globals())
 
     def __call__(self, *args, **kwargs):
         """Renders the standard collage stylesheet.
         Note that we do not change HTTP headers since we are supposed to be
-        published through the CSS registry"""
-
+        published through the CSS registry
+        """
         template = self.template.__of__(self.context)
-        return template(context=self.context)
+        return template(context=self.context, request=self.request)

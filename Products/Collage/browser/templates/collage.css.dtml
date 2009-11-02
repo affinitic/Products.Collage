@@ -1,5 +1,6 @@
 /* <dtml-with "context.base_properties"> (do not remove this :)
-   <dtml-let portal_url="context.absolute_url()"> (do not remove this :)
+   <dtml-let portal_url="context.absolute_url()"
+             ie_browser="'MSIE' in request.get('HTTP_USER_AGENT')"> (do not remove this :)
 */
 
 /* customizable: presentation */
@@ -134,7 +135,7 @@
 .expandable-content {
   clear: both;
   display: none;
-  background-color: white;  
+  background-color: white;
   padding: 10px;
   position: absolute;
   z-index: 200;
@@ -318,8 +319,8 @@ span.collage-navigation a {
     width:60%;
 }
 
-#collage .three-columns-largeleft .block_2 { 
-	width:19.9%; 
+#collage .three-columns-largeleft .block_2 {
+        width:19.9%;
 }
 
 #collage .three-columns-largeleft .block_3 {
@@ -357,8 +358,8 @@ span.collage-navigation a {
     width: 20%;
 }
 
-#collage .three-columns-largeright .block_2 { 
-	width:19.9%; 
+#collage .three-columns-largeright .block_2 {
+        width:19.9%;
 }
 
 #collage.edit .three-columns-largeright .block_3 {
@@ -408,6 +409,32 @@ span.collage-navigation a {
     background-color: yellow;
     font-weight: bold;
 }
+
+/* <dtml-if ie_browser> */
+/* This browser definitively SUX */
+#collage.edit .expandable-content {
+  position: relative;
+}
+
+#collage.edit .collage-header span {
+  float: none;
+  display: block;
+}
+
+#collage.edit ul.collage-content-menu li {
+  float: none;
+  width: 100%;
+}
+
+#collage.edit .expandable-section .expandable-label .expandable-icon {
+  display: block;
+}
+
+#collage.edit .expandable-section .expandable-label {
+  display: block;
+  }
+
+/* </dtml-if> */
 
 /* </dtml-let> */
 /* </dtml-with> */

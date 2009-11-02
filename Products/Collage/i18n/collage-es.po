@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2009-03-14 12:10+0000\n"
+"POT-Creation-Date: 2009-11-02 10:02+0000\n"
 "PO-Revision-Date: 2008-12-09 14:52+0100\n"
 "Last-Translator: Pilar Marinas Luis <pilar.marinas@upcnet.es>\n"
 "Language-Team: \n"
@@ -33,7 +33,7 @@ msgid "View changed."
 msgstr "Vista cambiada."
 
 #. Default: "Add row"
-#: Collage/browser/templates/collage_view.pt:51
+#: Collage/browser/viewlets/insert-row.pt:9
 msgid "button_add_collagerow"
 msgstr "Añadir fila"
 
@@ -43,22 +43,27 @@ msgid "default"
 msgstr "Por defecto"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
-#: Collage/browser/controlpanel.py:55
+#: Collage/interfaces.py:87
 msgid "help_alias_search_limit"
 msgstr "Resultado máximo para la búsqueda de alias. '0' o negativo significa ilimitado."
 
 #. Default: "Select item types that can be aliased in a Collage object."
-#: Collage/browser/controlpanel.py:47
+#: Collage/interfaces.py:76
 msgid "help_alias_whitelist"
 msgstr ""
 
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:104
+#: Collage/browser/controlpanel.py:62
 msgid "help_collage_controlpanel"
 msgstr "Opciones de Collage"
 
+#. Default: "Please confirm! This action can't be undone."
+#: Collage/browser/viewlets/delete.pt:21
+msgid "help_confirm_delete"
+msgstr ""
+
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
-#: Collage/content/_collage.py:59
+#: Collage/content/_collage.py:62
 #, fuzzy
 msgid "help_index_subobjects"
 msgstr "Si activa esta opción permitirá que los contenidos de este Collage sean accesibles a través de la búsqueda del portal."
@@ -99,33 +104,33 @@ msgid "help_skin"
 msgstr "Ayuda"
 
 #. Default: "Select item types that can be added in a Collage object."
-#: Collage/browser/controlpanel.py:39
+#: Collage/interfaces.py:65
 #, fuzzy
 msgid "help_types_whitelist"
 msgstr "Seleccione los tipos de objeto que se pueden añadir o referenciar en Collage."
 
 #. Default: "Only types in below whitelist can be added in a Collage."
-#: Collage/browser/controlpanel.py:32
+#: Collage/interfaces.py:57
 msgid "help_use_whitelist"
 msgstr "Sólo los tipos de objeto seleccionados en la lista blanca se podrán añadir a Collage."
 
 #. Default: "Alias search limit"
-#: Collage/browser/controlpanel.py:54
+#: Collage/interfaces.py:86
 msgid "label_alias_search_limit"
 msgstr "Búsqueda límite de alias."
 
 #. Default: "Selected target object"
-#: Collage/content/_alias.py:33
+#: Collage/content/_alias.py:40
 msgid "label_alias_target"
 msgstr "(alias)"
 
 #. Default: "Alias whitelist"
-#: Collage/browser/controlpanel.py:46
+#: Collage/interfaces.py:75
 msgid "label_alias_whitelist"
 msgstr ""
 
 #. Default: "(alias)"
-#: Collage/browser/viewlets/actions.pt:11
+#: Collage/browser/viewlets/alias_marker.pt:6
 msgid "label_aliased"
 msgstr "(alias)"
 
@@ -145,7 +150,7 @@ msgid "label_copy_object"
 msgstr "copiar"
 
 #. Default: "Add collage contents in searchable text?"
-#: Collage/content/_collage.py:58
+#: Collage/content/_collage.py:61
 msgid "label_index_subobjects"
 msgstr "Añadir los elementos de Collage en el buscador?"
 
@@ -184,8 +189,9 @@ msgstr "Mover a la derecha"
 msgid "label_move_up"
 msgstr "Mover arriba"
 
-#. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
+#. Default: "This Collage-object does not have any items yet. Add a row and place columns and items inside."
 #: Collage/browser/templates/collage_view.pt:44
+#, fuzzy
 msgid "label_no_items_added"
 msgstr "Este Collage no tiene elementos."
 
@@ -215,7 +221,7 @@ msgid "label_select_skin"
 msgstr "Skins"
 
 #. Default: "Show description"
-#: Collage/content/_collage.py:51
+#: Collage/content/_collage.py:52
 msgid "label_show_description"
 msgstr "Mostrar descripción"
 
@@ -230,12 +236,12 @@ msgid "label_split_column"
 msgstr "dividir"
 
 #. Default: "Types whitelist"
-#: Collage/browser/controlpanel.py:38
+#: Collage/interfaces.py:64
 msgid "label_types_whitelist"
 msgstr "Lista blanca de tipos"
 
 #. Default: "Use types whitelist"
-#: Collage/browser/controlpanel.py:31
+#: Collage/interfaces.py:56
 msgid "label_use_whitelist"
 msgstr "Utilizar lista blanca de tipos"
 
@@ -265,7 +271,7 @@ msgid "notification_skin"
 msgstr "Notificación"
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:103
+#: Collage/browser/controlpanel.py:61
 msgid "title_collage_controlpanel"
 msgstr "Panel de control de Collage"
 

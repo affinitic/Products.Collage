@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2009-03-14 12:10+0000\n"
+"POT-Creation-Date: 2009-11-02 10:02+0000\n"
 "PO-Revision-Date: 2009-02-12 10:23+0100\n"
 "Last-Translator: Reinout van Rees <reinout@vanrees.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgid "View changed."
 msgstr "De layout is veranderd."
 
 #. Default: "Add row"
-#: Collage/browser/templates/collage_view.pt:51
+#: Collage/browser/viewlets/insert-row.pt:9
 msgid "button_add_collagerow"
 msgstr "Voeg rij toe"
 
@@ -41,22 +41,27 @@ msgid "default"
 msgstr "Standaard"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
-#: Collage/browser/controlpanel.py:55
+#: Collage/interfaces.py:87
 msgid "help_alias_search_limit"
 msgstr "Maximum aantal zoekresultaten voor aliases. '0' of een negatief getal betekent geen limiet."
 
 #. Default: "Select item types that can be aliased in a Collage object."
-#: Collage/browser/controlpanel.py:47
+#: Collage/interfaces.py:76
 msgid "help_alias_whitelist"
 msgstr ""
 
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:104
+#: Collage/browser/controlpanel.py:62
 msgid "help_collage_controlpanel"
 msgstr "Collage instellingen voor de gehele site"
 
+#. Default: "Please confirm! This action can't be undone."
+#: Collage/browser/viewlets/delete.pt:21
+msgid "help_confirm_delete"
+msgstr ""
+
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
-#: Collage/content/_collage.py:59
+#: Collage/content/_collage.py:62
 msgid "help_index_subobjects"
 msgstr "Als een zoekterm voorkomt in een item dat in deze collage staat, laat dan deze collage ook in de zoekresultaten verschijnen. Opgepast: deze optie kan de hele website traag maken terwijl de collage bewerkt wordt."
 
@@ -96,33 +101,33 @@ msgid "help_skin"
 msgstr "Help"
 
 #. Default: "Select item types that can be added in a Collage object."
-#: Collage/browser/controlpanel.py:39
+#: Collage/interfaces.py:65
 #, fuzzy
 msgid "help_types_whitelist"
 msgstr "Selecteer types die aan een collage toegevoegd of gelinkt kunnen worden."
 
 #. Default: "Only types in below whitelist can be added in a Collage."
-#: Collage/browser/controlpanel.py:32
+#: Collage/interfaces.py:57
 msgid "help_use_whitelist"
 msgstr "Alleen types in onderstaande lijst kunnen in collage toegevoegd worden."
 
 #. Default: "Alias search limit"
-#: Collage/browser/controlpanel.py:54
+#: Collage/interfaces.py:86
 msgid "label_alias_search_limit"
 msgstr "Zoeklimiet voor aliassen"
 
 #. Default: "Selected target object"
-#: Collage/content/_alias.py:33
+#: Collage/content/_alias.py:40
 msgid "label_alias_target"
 msgstr "Gelinkt alias object"
 
 #. Default: "Alias whitelist"
-#: Collage/browser/controlpanel.py:46
+#: Collage/interfaces.py:75
 msgid "label_alias_whitelist"
 msgstr ""
 
 #. Default: "(alias)"
-#: Collage/browser/viewlets/actions.pt:11
+#: Collage/browser/viewlets/alias_marker.pt:6
 msgid "label_aliased"
 msgstr "(alias)"
 
@@ -142,7 +147,7 @@ msgid "label_copy_object"
 msgstr "kopieer"
 
 #. Default: "Add collage contents in searchable text?"
-#: Collage/content/_collage.py:58
+#: Collage/content/_collage.py:61
 msgid "label_index_subobjects"
 msgstr "Collage inhoud doorzoekbaar maken voor plone?"
 
@@ -181,8 +186,9 @@ msgstr "Verplaats naar rechts"
 msgid "label_move_up"
 msgstr "Verplaats naar boven"
 
-#. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
+#. Default: "This Collage-object does not have any items yet. Add a row and place columns and items inside."
 #: Collage/browser/templates/collage_view.pt:44
+#, fuzzy
 msgid "label_no_items_added"
 msgstr "Deze collage heeft nog geen items. Voeg items toe middels het dropdown menu om ze hier te tonen."
 
@@ -212,7 +218,7 @@ msgid "label_select_skin"
 msgstr "Selecteer skin"
 
 #. Default: "Show description"
-#: Collage/content/_collage.py:51
+#: Collage/content/_collage.py:52
 msgid "label_show_description"
 msgstr "Toon de beschrijving"
 
@@ -227,12 +233,12 @@ msgid "label_split_column"
 msgstr "splits"
 
 #. Default: "Types whitelist"
-#: Collage/browser/controlpanel.py:38
+#: Collage/interfaces.py:64
 msgid "label_types_whitelist"
 msgstr "Whitelist voor types"
 
 #. Default: "Use types whitelist"
-#: Collage/browser/controlpanel.py:31
+#: Collage/interfaces.py:56
 msgid "label_use_whitelist"
 msgstr "Gebruik de whitelist"
 
@@ -262,7 +268,7 @@ msgid "notification_skin"
 msgstr "Mededelingen"
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:103
+#: Collage/browser/controlpanel.py:61
 msgid "title_collage_controlpanel"
 msgstr "Collage instellingen"
 

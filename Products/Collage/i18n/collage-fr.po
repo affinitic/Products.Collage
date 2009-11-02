@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collage-fr\n"
-"POT-Creation-Date: 2009-03-14 12:10+0000\n"
+"POT-Creation-Date: 2009-11-02 10:02+0000\n"
 "PO-Revision-Date: 2009-01-05 10:28+0100\n"
 "Last-Translator: Encolpe Degoute <encolpe@gmail.com>\n"
 "Language-Team: French <membres@traduc.org>\n"
@@ -35,7 +35,7 @@ msgid "View changed."
 msgstr "Vue modifiée."
 
 #. Default: "Add row"
-#: Collage/browser/templates/collage_view.pt:51
+#: Collage/browser/viewlets/insert-row.pt:9
 msgid "button_add_collagerow"
 msgstr "Ajouter une ligne"
 
@@ -45,23 +45,28 @@ msgid "default"
 msgstr "Défaut"
 
 #. Default: "Alias target search maximum results. '0' or negative means unlimited."
-#: Collage/browser/controlpanel.py:55
+#: Collage/interfaces.py:87
 msgid "help_alias_search_limit"
 msgstr "Nombre maximum de résultats affichés dans la recherche d'éléments existants. '0' ou un nombre négatif donne un nombre illimité de résultats."
 
 #. Default: "Select item types that can be aliased in a Collage object."
-#: Collage/browser/controlpanel.py:47
+#: Collage/interfaces.py:76
 msgid "help_alias_whitelist"
 msgstr "Sélectionnez les types d'éléments qui peuvent être référencés sous forme d'alias dans un Collage."
 
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:104
+#: Collage/browser/controlpanel.py:62
 msgid "help_collage_controlpanel"
 msgstr "Options des contenus Collage."
 
+#. Default: "Please confirm! This action can't be undone."
+#: Collage/browser/viewlets/delete.pt:21
+msgid "help_confirm_delete"
+msgstr "Veuillez confirmer ! Cette action ne peut pas être annulée"
+
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
-#: Collage/content/_collage.py:59
+#: Collage/content/_collage.py:62
 msgid "help_index_subobjects"
 msgstr "Cette page sera affichée dans les résultats de recherche sur un terme contenu dans l'un de ses éléments. En cochant cette option, vous ralentirez également les opérations de modification de cette page et de ses éléments. Les résultats de recherche pourront également présenter cette page alors qu'elle ne fournit pas directement le terme recherché."
 
@@ -102,33 +107,33 @@ msgid "help_skin"
 msgstr "Aide"
 
 #. Default: "Select item types that can be added in a Collage object."
-#: Collage/browser/controlpanel.py:39
+#: Collage/interfaces.py:65
 msgid "help_types_whitelist"
 msgstr "Sélectionnez les types d'éléments qui peuvent être intégrés dans un Collage."
 
 #. Default: "Only types in below whitelist can be added in a Collage."
-#: Collage/browser/controlpanel.py:32
+#: Collage/interfaces.py:57
 msgid "help_use_whitelist"
 msgstr "En sélectionnant cette option, seuls les types d'éléments énumérés ci-dessous pourront être utilisés dans un Collage."
 
 #. Default: "Alias search limit"
-#: Collage/browser/controlpanel.py:54
+#: Collage/interfaces.py:86
 msgid "label_alias_search_limit"
 msgstr "Limite de recherche d'élément existant"
 
 #. Default: "Selected target object"
-#: Collage/content/_alias.py:33
+#: Collage/content/_alias.py:40
 msgid "label_alias_target"
 msgstr "Elément référencé"
 
 #. Default: "Alias whitelist"
-#: Collage/browser/controlpanel.py:46
+#: Collage/interfaces.py:75
 msgid "label_alias_whitelist"
 msgstr "Alias autorisés"
 
 #. Default "(alias)"
 #. Default: "(alias)"
-#: Collage/browser/viewlets/actions.pt:11
+#: Collage/browser/viewlets/alias_marker.pt:6
 msgid "label_aliased"
 msgstr "(alias)"
 
@@ -149,7 +154,7 @@ msgstr "copier"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
-#: Collage/content/_collage.py:58
+#: Collage/content/_collage.py:61
 msgid "label_index_subobjects"
 msgstr "Indexer localement les éléments de cette page"
 
@@ -189,7 +194,7 @@ msgstr "Déplacer à droite"
 msgid "label_move_up"
 msgstr "Monter"
 
-#. Default: "This Collage-object does not have any items yet. Add items using the drop-down menu to have them appear here."
+#. Default: "This Collage-object does not have any items yet. Add a row and place columns and items inside."
 #: Collage/browser/templates/collage_view.pt:44
 msgid "label_no_items_added"
 msgstr "Cette page est vide. Commencez par ajouter une ligne."
@@ -220,7 +225,7 @@ msgid "label_select_skin"
 msgstr "Habillage"
 
 #. Default: "Show description"
-#: Collage/content/_collage.py:51
+#: Collage/content/_collage.py:52
 msgid "label_show_description"
 msgstr "Afficher la description"
 
@@ -235,12 +240,12 @@ msgid "label_split_column"
 msgstr "Créer une colonne"
 
 #. Default: "Types whitelist"
-#: Collage/browser/controlpanel.py:38
+#: Collage/interfaces.py:64
 msgid "label_types_whitelist"
 msgstr "Types autorisés"
 
 #. Default: "Use types whitelist"
-#: Collage/browser/controlpanel.py:31
+#: Collage/interfaces.py:56
 msgid "label_use_whitelist"
 msgstr "Restreindre aux types autorisés"
 
@@ -270,7 +275,6 @@ msgid "notification_skin"
 msgstr "Notification"
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:103
+#: Collage/browser/controlpanel.py:61
 msgid "title_collage_controlpanel"
 msgstr "Configuration de Collage"
-

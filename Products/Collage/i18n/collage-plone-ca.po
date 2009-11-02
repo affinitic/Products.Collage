@@ -18,6 +18,10 @@ msgstr ""
 msgid "Alias"
 msgstr "Alies"
 
+# Object action
+msgid "Back to Collage"
+msgstr ""
+
 # content-types
 msgid "Collage"
 msgstr "Collage"

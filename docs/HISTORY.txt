@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.3 (unreleased)
+1.2.3 (2009-11-02)
 ------------------
 
 * Fixed search bug mentioned in #57 when adding alias.

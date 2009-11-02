@@ -4,6 +4,9 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+* Fixed search bug mentioned in #57 when adding alias.
+  [glenfant]
+
 * Worked around IE CSS bugs mentioned in issue #60. Thanks to Kevin Deldycke.
   [glenfant]
 

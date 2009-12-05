@@ -2,7 +2,7 @@
 
 <h2 metal:define-macro="title"
     tal:define="kssview context/@@collage_kss_helper"
-    tal:attributes="id string:string:title-${kssview/getUniqueIdentifier};
+    tal:attributes="id string:title-${kssview/getUniqueIdentifier};
                     class python: kssview.getKssClasses('title')"
     tal:condition="here/Title">
   <span metal:define-slot="inside"

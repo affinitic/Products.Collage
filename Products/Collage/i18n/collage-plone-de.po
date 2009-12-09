@@ -30,7 +30,7 @@ msgstr "Collage"
 msgid "Column"
 msgstr "Spalte"
 
-msgid "Manage page"
+msgid "Compose"
 msgstr "Zusammensetzen"
 
 msgid "Row"

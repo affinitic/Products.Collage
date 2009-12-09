@@ -1,6 +1,8 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser">
 
+  <!-- manage interface viewlets -->
+
   <browser:viewlet
      name="005-icon"
      for="*"
@@ -20,7 +22,7 @@
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />
-  
+
   <browser:viewlet
      name="010-modify-order"
      for="*"
@@ -49,7 +51,7 @@
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />
-    
+
   <browser:viewlet
      name="050-layout"
      for="*"
@@ -146,18 +148,6 @@
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.ActionsViewlet"
      template="viewlets/actions.pt"
-     permission="cmf.ModifyPortalContent"
-     layer="Products.Collage.interfaces.ICollageEditLayer"
-     />
-
-<!-- below items menu -->
-  
-  <browser:viewlet
-     name="010-insert-row"
-     for="Products.Collage.interfaces.ICollage"
-     manager="Products.Collage.interfaces.IBelowItemsMenu"
-     class=".viewlet.SimpleContentMenuViewlet"
-     template="viewlets/insert-row.pt"
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />

@@ -161,6 +161,10 @@ div.insert-existing-items h4 {
   line-height: 16px;
 }
 
+input#insert-collage-row {
+  margin-top: 1em;
+}
+
 /* note: you should not need to customize classes below */
 
 span.collage-navigation a {

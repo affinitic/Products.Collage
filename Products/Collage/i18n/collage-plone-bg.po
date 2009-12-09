@@ -31,7 +31,7 @@ msgstr "Колаж"
 msgid "Column"
 msgstr "Колона"
 
-msgid "Manage page"
+msgid "Compose"
 msgstr "Форматиране на страницата"
 
 msgid "Row"

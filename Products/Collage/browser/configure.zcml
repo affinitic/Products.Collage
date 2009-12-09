@@ -10,34 +10,27 @@
   <browser:page
      name="collage_view"
      for="Products.Collage.content.Collage"
+     class=".collage.CollageView"
      template="templates/collage_view.pt"
      permission="zope2.View"
      />
 
   <browser:page
-     name="manage_collage"
+     name="collage_compose"
      for="Products.Collage.content.Collage"
-     class=".collage.CollageView"
-     attribute="render_manage_view"
+     class=".collage.CollageComposeView"
+     template="templates/collage_compose.pt"
      permission="cmf.ModifyPortalContent"
      />
-  
+
   <browser:viewletManager
      name="collage.ContentManager"
      provides="Products.Collage.interfaces.IContentMenu"
      class=".manager.ContentViewletManager"
      template="templates/manager.pt"
      permission="zope.Public"
-     />  
+     />
 
-  <browser:viewletManager
-     name="collage.BelowItemsManager"
-     provides="Products.Collage.interfaces.IBelowItemsMenu"
-     class=".manager.ContentViewletManager"
-     template="templates/manager.pt"
-     permission="zope.Public"
-     />  
-  
   <browser:page
      name="renderer"
      for="Products.Collage.interfaces.ICollage"
@@ -45,7 +38,7 @@
      class=".renderer.SimpleContainerRenderer"
      template="templates/collage_renderer.pt"
      />
-  
+
   <browser:page
      name="renderer"
      for="Products.Collage.interfaces.ICollageRow"
@@ -53,7 +46,7 @@
      class=".renderer.SimpleContainerRenderer"
      template="templates/row_renderer.pt"
      />
-  
+
   <browser:page
      name="renderer"
      for="Products.Collage.interfaces.ICollageColumn"
@@ -61,7 +54,7 @@
      class=".renderer.SimpleContainerRenderer"
      template="templates/column_renderer.pt"
      />
-  
+
   <browser:page
      name="existing-items-form"
      for="Products.Collage.interfaces.ICollageColumn"
@@ -69,15 +62,7 @@
      class=".existingitems.ExistingItemsView"
      template="templates/existing_items_form.pt"
      />
-  
-  <browser:page
-     name="collage"
-     for="Products.Collage.interfaces.ICollage"
-     permission="zope.Public"
-     class=".collage.CollageView"
-     allowed_interface=".collage.ICollageView"
-     />
-  
+
   <browser:page
      name="collage_helper"
      for="*"
@@ -93,14 +78,14 @@
      class=".kss.KSSHelper"
      allowed_interface=".kss.IKSSHelper"
      />
-  
+
   <browser:page
      name="kss_collage_macro_proxy"
      for="*"
      permission="zope.Public"
      class=".kss.CollageMacrosView"
      />
- 
+
   <browser:page
      name="kss_field_decorator_dummy_view"
      for="*"
@@ -119,7 +104,7 @@
   <!-- Control panel -->
 
   <adapter factory=".controlpanel.CollageSiteOptions" />
-  
+
   <browser:page
      name="collage-controlpanel"
      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
@@ -127,7 +112,7 @@
      permission="cmf.ManagePortal"
      />
 
-  <utility 
+  <utility
      component=".controlpanel.CollageUserFriendlyTypesVocabularyFactory"
      name="collage.vocabularies.CollageUserFriendlyTypes"
      />
@@ -139,5 +124,5 @@
   <include file="actions.zcml" />
 
   <include file="skins.zcml" />
-  
+
 </configure>

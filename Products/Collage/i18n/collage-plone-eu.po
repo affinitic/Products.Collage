@@ -28,7 +28,7 @@ msgstr ""
 msgid "Column"
 msgstr ""
 
-msgid "Manage page"
+msgid "Compose"
 msgstr ""
 
 msgid "Row"

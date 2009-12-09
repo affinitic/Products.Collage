@@ -39,7 +39,7 @@ msgstr ""
 msgid "desc_type_collagealias"
 msgstr "An object representing an alias for another object."
 
-msgid "Manage page"
+msgid "Compose"
 msgstr ""
 
 # Object action

@@ -3,6 +3,13 @@ Changelog
 
 In next release...
 
+* Rewired compose view to simplify templates and avoid needless
+  indirection.
+  [malthe]
+
+* Rename 'Manage page' to 'Compose'.
+  [malthe]
+
 * Move settings fields to the settings schemata. Added field descriptions.
   [malthe]
 

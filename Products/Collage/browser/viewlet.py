@@ -12,7 +12,6 @@ from Products.CMFPlone.utils import safe_unicode
 from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.utilities import getCollageSiteOptions
 
-
 class SimpleContentMenuViewlet(object):
     def portal_url(self):
         return getToolByName(self.context, 'portal_url')()
@@ -28,7 +27,6 @@ class SimpleContentMenuViewlet(object):
             return alias.aq_inner
 
         return self.context.aq_inner
-
 
 class LayoutViewlet(SimpleContentMenuViewlet):
     def getLayouts(self):
@@ -119,7 +117,6 @@ class AliasViewlet(SimpleContentMenuViewlet):
 class ActionsViewlet(SimpleContentMenuViewlet):
 
     def getViewActions(self):
-
         atool = getToolByName(self.context, 'portal_actions')
         actions = atool.listFilteredActionsFor(self.context.aq_inner)
         plone_view = self.context.restrictedTraverse('@@plone')

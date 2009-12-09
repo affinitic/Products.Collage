@@ -2,6 +2,6 @@
 <object name="portal_javascripts">
   <javascript cacheable="True" compression="none" cookable="True"
               enabled="True" id="++resource++collage-resources/collage.js" inline="False"
-              expression="object/@@collage|nothing"
+              expression="nocall: object/@@collage_view|nothing"
               />
 </object>

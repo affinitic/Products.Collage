@@ -32,7 +32,7 @@ msgstr "Collage"
 msgid "Column"
 msgstr "Colonne"
 
-msgid "Manage page"
+msgid "Compose"
 msgstr "Composer"
 
 msgid "Row"

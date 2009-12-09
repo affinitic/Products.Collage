@@ -6,9 +6,7 @@
   <div metal:fill-slot="body">
     <metal:main-macro define-macro="main">
 
-      <div tal:define="collage_view here/@@collage"
-           id="collage"
-           tal:attributes="class python:collage_view.edit_mode() and 'edit' or ''">
+      <div id="collage">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -18,7 +16,7 @@
             Title
           </metal:field>
         </h1>
-        
+
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <tal:description condition="here/getShowDescription|nothing">
@@ -29,31 +27,19 @@
             </metal:field>
           </p>
         </tal:description>
-        
+
         <div metal:use-macro="here/document_relateditems/macros/relatedItems">
           show related items if they exist
         </div>
-        
+
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <div tal:replace="structure here/@@renderer">
           Collage content
         </div>
-        
-        <p tal:condition="collage_view/edit_mode">
-          <span class="discreet"
-                i18n:translate="label_no_items_added"
-                tal:condition="not: here/folderlistingFolderContents">
-            This Collage-object does not have any items yet. 
-            Add a row and place columns and items inside.
-          </span>
 
-          <tal:manager replace="structure provider:collage.BelowItemsManager" />
-          
-        </p>
-        
         <div tal:replace="structure provider:plone.belowcontentbody" />
-        
+
       </div>
     </metal:main-macro>
   </div>

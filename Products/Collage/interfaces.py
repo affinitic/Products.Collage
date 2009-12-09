@@ -28,7 +28,7 @@ class ICollageBrowserLayer(interface.Interface):
     """Collage browser layer. Views registered with this layer
     are available to objects inside a collage."""
     pass
-    
+
 class ICollageBrowserLayerType(interface.interfaces.IInterface):
     """Marker interface for Collage theme-specific layers
     """
@@ -40,10 +40,6 @@ class ICollageEditLayer(interface.Interface):
 
 class IContentMenu(IViewletManager):
     """Interface for the content-menu viewlet manager."""
-    pass
-
-class IBelowItemsMenu(IViewletManager):
-    """Interface for the menu below items viewlet manager."""
     pass
 
 class IPortletSkin(interface.Interface):

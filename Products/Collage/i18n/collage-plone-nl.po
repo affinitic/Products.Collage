@@ -28,7 +28,7 @@ msgstr "Collage"
 msgid "Column"
 msgstr "Kolom"
 
-msgid "Manage page"
+msgid "Compose"
 msgstr "Collage indeling"
 
 msgid "Row"

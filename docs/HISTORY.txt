@@ -1,6 +1,11 @@
 Changelog
 =========
 
+In next release...
+
+* Move settings fields to the settings schemata. Added field descriptions.
+  [malthe]
+
 1.2.3 (2009-11-02)
 ------------------
 

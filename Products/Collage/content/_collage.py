@@ -42,21 +42,26 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     atapi.BooleanField('show_title',        
         accessor='getShowTitle',
         widget=atapi.BooleanWidget(
-            label=_(u'label_show_title', default=u"Show title")),
+            label=_(u'label_show_title', default=u"Show title"),
+            description=_(u'help_show_title', default=u"Show title in page composition.")),
         default=1,
-        languageIndependent=True),
+        languageIndependent=True,
+        schemata="settings"),
 
     atapi.BooleanField('show_description',
         accessor='getShowDescription',
         widget=atapi.BooleanWidget(
-            label=_(u'label_show_description', default='Show description')),
+            label=_(u'label_show_description', default='Show description'),
+            description=_(u'help_show_description', default=u"Show description in page composition.")),
         default=1,
-        languageIndependent=True),
+        languageIndependent=True,
+        schemata="settings"),
 
     atapi.BooleanField('index_subobjects',
         accessor='mustIndexSubobjects',
         default=False,
         languageIndependent=True,
+        schemata="settings",
         widget=atapi.BooleanWidget(
             label=_(u'label_index_subobjects', default=u"Add collage contents in searchable text?"),
             description=_(u'help_index_subobjects',

@@ -180,6 +180,15 @@ input#insert-collage-row {
 
 /* note: you should not need to customize classes below */
 
+span.collage-navigation img {
+  width: 9px;
+  height: 9px;
+}
+
+span.collage-navigation {
+  margin-left: 4px;
+}
+
 span.collage-navigation a {
   text-decoration: none;
 }

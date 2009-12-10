@@ -8,20 +8,14 @@ from Acquisition import aq_inner, aq_parent
 from Products.Collage.interfaces import ICollage
 
 class ICollageHelper(Interface):
-    def loadCollageJS(self):
-        #FIXME: Used somewhere?
-        """Determine if we need to load JS."""
-
     def isCollageContent():
         """True if the content item is in a Collage"""
-        pass
 
     def getCollageObject():
         """Search object tree for a Collage object or None."""
 
     def getCollageObjectURL():
-        """Search object tree for a Collage-object and return URL or None."""
-        pass
+        """Search object tree for a Collage-object and return URL."""
 
 
 class CollageHelper(object):
@@ -33,18 +27,17 @@ class CollageHelper(object):
         return self.getCollageObject() is not None
 
     def getCollageObject(self, parent=None):
-        if not parent:
-            parent = aq_parent(aq_inner(self.context))
+        if parent is None:
+            parent = self.context
 
-        while parent:
+        while parent is not None:
+            parent = aq_parent(aq_inner(parent))
+
             if ICollage.providedBy(parent):
                 return parent
-
-            parent = aq_parent(parent)
-        return None
 
     def getCollageObjectURL(self, parent=None):
         collage = self.getCollageObject(parent)
         if collage:
             return collage.absolute_url()
-        return None
+        raise ValueError("Collage object not found.")

@@ -27,7 +27,7 @@ class SimpleContainerRenderer(BrowserView):
         self.request.debug = False
 
         # transmute request interfaces
-        ifaces = mark_request(self.request)
+        ifaces = mark_request(self.context, self.request)
 
         views = []
         if contents is None:

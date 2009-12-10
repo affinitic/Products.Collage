@@ -60,7 +60,7 @@ class DynamicViewManager(object):
             if target is not None:
                 context = target
 
-        ifaces = mark_request(request)
+        ifaces = mark_request(context, request)
 
         sm = getSiteManager()
         layouts = sm.adapters.lookupAll(
@@ -95,7 +95,7 @@ class DynamicViewManager(object):
         if layout and request:
             request.debug = False
 
-            ifaces = mark_request(request)
+            ifaces = mark_request(self.context, request)
 
             target = self.context
             if ICollageAlias.providedBy(target):
@@ -118,24 +118,23 @@ class DynamicViewManager(object):
         return skins
 
 
-def mark_request(request):
+def mark_request(context, request):
     """ Marks the request with general and theme-specific Collage browser layers.
-    
+
         Returns the initial set of request marker interfaces so that you can restore
         them using directlyProvides(request, ifaces).
     """
     initial_ifaces = directlyProvidedBy(request)
-    
+
     # general Collage layer
     directlyProvides(request, ICollageBrowserLayer)
-    
+
     # theme-specific Collage layer
-    site = getSite()
-    portal_skins = getToolByName(site, 'portal_skins', None)
+    portal_skins = getToolByName(context, 'portal_skins', None)
     if portal_skins is not None:
-        skin_name = site.getCurrentSkinName()
+        skin_name = portal_skins.getCurrentSkinName()
         layer_iface = queryUtility(ICollageBrowserLayerType, name=skin_name)
         if layer_iface is not None:
             directlyProvides(request, layer_iface, ICollageBrowserLayer)
-    
+
     return initial_ifaces

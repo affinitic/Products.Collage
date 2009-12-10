@@ -7,7 +7,6 @@ from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 from Products.CMFCore.interfaces import IContentish
 from Products.Collage.interfaces import ICollageAlias
 
-
 @adapter(ICollageAlias, IObjectModifiedEvent)
 def updateCollageAliasLayout(context, event):
     """Updating alias layout on alias changed
@@ -16,8 +15,6 @@ def updateCollageAliasLayout(context, event):
     if target:
         layout = target.getLayout()
         context.setLayout(layout)
-    return
-
 
 @adapter(IContentish, IObjectModifiedEvent)
 def reindexOnModify(content, event):
@@ -28,4 +25,3 @@ def reindexOnModify(content, event):
     if collage:
         # Change done in a Collage subobject
         collage.reindexObject()
-    return

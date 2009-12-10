@@ -7,19 +7,17 @@ from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from Products.Collage.interfaces import IDynamicViewManager, IPortletSkin
 
-def doTest(condition, value_true, value_false):
+def test(condition, value_true, value_false):
     if condition:
         return value_true
     else:
         return value_false
 
 class BaseView(BrowserView):
-    
     hide = False
 
     def test(self):
-        # return lambda a, b, c: a and b or c
-        return doTest
+        return test
 
     @memoize_contextless
     def isAnon(self):
@@ -132,12 +130,12 @@ class ClickableView(BaseView):
 
 class StandardDocumentView(StandardView):
     """Includes for BBB."""
-    
+
 class FileMinimalView(StandardView):
     """File for download in one line."""
 
     title = u'minimal'
-    
+
     def getBUFile(self):
         acc = self.context.Schema()['file'].getAccessor(self.context)()
         return acc

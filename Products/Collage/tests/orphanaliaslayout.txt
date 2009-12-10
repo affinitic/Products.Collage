@@ -14,10 +14,11 @@ Some inits
 
   >>> from zope.component import getMultiAdapter
   >>> request = self.app.REQUEST
+  >>> request.environ['REQUEST_METHOD'] = 'POST'
   >>> from Products.Collage.interfaces import IDynamicViewManager
 
-Creatting our Collage
----------------------
+Creating our Collage
+--------------------
 
   >>> _ = folder.invokeFactory(id='collage', type_name='Collage')
   >>> collage = folder[_]

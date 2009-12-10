@@ -4,17 +4,25 @@
 from zope import event
 from zope.lifecycleevent import ObjectModifiedEvent
 
-from Products.Five.browser import BrowserView
+from Acquisition import aq_inner, aq_parent
 
+from Products.Five.browser import BrowserView
 from Products.CMFPlone import utils as cmfutils
 from Products.Collage.utilities import CollageMessageFactory as _
-
 from Products.Collage.utilities import generateNewId, findFirstAvailableInteger
 from Products.Collage.interfaces import IDynamicViewManager
 
-from Acquisition import aq_inner, aq_parent
+from plone.protect.postonly import check
+
+def protect(func):
+    def wrapper(self):
+        check(self.request)
+        return func(self)
+    wrapper.__name__ = func.__name__
+    return wrapper
 
 class ActionsView(BrowserView):
+    @protect
     def setDynamicView(self):
         layout = self.request['layout']
 
@@ -24,7 +32,7 @@ class ActionsView(BrowserView):
         self.context.plone_utils.addPortalMessage(_(u'View changed.'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
-
+    @protect
     def setDynamicSkin(self):
         skin = self.request['skin']
 
@@ -34,7 +42,7 @@ class ActionsView(BrowserView):
         self.context.plone_utils.addPortalMessage(_(u'Skin changed.'))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
-
+    @protect
     def reorderObjects(self):
         object_id = self.request['id']
         position = self.request['position']
@@ -59,6 +67,7 @@ class ActionsView(BrowserView):
         cmfutils.getToolByName(self.context, 'plone_utils').reindexOnReorder(self.context)
         return 1
 
+    @protect
     def insertRow(self):
         # create row
         desired_id = generateNewId(self.context)
@@ -72,18 +81,20 @@ class ActionsView(BrowserView):
         col = getattr(row, col_id, None)
         col.setTitle('')
 
-        self.context.plone_utils.addPortalMessage(_(u'msg_row_added', default=u"Row has been added"))
+        self.context.plone_utils.addPortalMessage(_(u'msg_row_added', default=u"Row was added."))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
+    @protect
     def splitColumn(self):
         container = aq_parent(aq_inner(self.context))
         desired_id = generateNewId(container)
 
         container.invokeFactory(id=desired_id, type_name='CollageColumn')
 
-        self.context.plone_utils.addPortalMessage(_(u'msg_column_inserted', default="Column has been inserted"))
+        self.context.plone_utils.addPortalMessage(_(u'msg_column_inserted', default="Column inserted."))
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
+    @protect
     def insertAlias(self):
         uid_catalog = cmfutils.getToolByName(self.context,
                                              'uid_catalog')
@@ -95,7 +106,6 @@ class ActionsView(BrowserView):
         brains = uid_catalog(UID=uid)
         if brains:
             # find first available id for the alias object
-            prefix = 'alias-'
             ids = [i[6:] for i in container.objectIds() if i.startswith('alias-')]
             alias_id = 'alias-%s' % findFirstAvailableInteger(ids)
 
@@ -106,19 +116,20 @@ class ActionsView(BrowserView):
             # set target
             alias.set_target(uid)
             event.notify(ObjectModifiedEvent(alias))
-            msg = _(u'msg_alias_inserted', default=u"Alias has been inserted")
+            msg = _(u'msg_alias_inserted', default=u"Alias inserted.")
         else:
-            msg = _(u'msg_target_object_not_found', default=u"Target object not found")
+            msg = _(u'msg_target_object_not_found', default=u"Target object not found.")
 
         referer = self.request.get('HTTP_REFERER', self.context.absolute_url())
         self.context.plone_utils.addPortalMessage(msg)
         return self.request.RESPONSE.redirect(referer)
 
-
+    @protect
     def deleteObject(self):
-
         parent = self.context.aq_inner.aq_parent
         parent.manage_delObjects(self.context.getId())
-        message = _(u'${title} has been deleted.', mapping={u'title' : self.context.portal_type})
+        fti = self.context.portal_types[self.context.portal_type]
+        title = self.context.translate(fti.title, domain='plone')
+        message = _(u'${title} deleted.', mapping={u'title' : title})
         self.context.plone_utils.addPortalMessage(message)
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])

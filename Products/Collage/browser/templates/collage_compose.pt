@@ -13,11 +13,10 @@
         <span class="discreet"
               i18n:translate="label_no_items_added"
               tal:condition="not: here/folderlistingFolderContents">
-          This Collage-object does not have any items yet.
-          Add a row and place columns and items inside.
+          Empty composition. Add one or more rows to get started.
         </span>
 
-        <form class="insert-row"
+        <form method="post" class="insert-row"
               tal:attributes="action string:${here/absolute_url}/insert-row">
           <input id="insert-collage-row"
                  type="submit" class="context" value="Add row"

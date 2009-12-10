@@ -136,11 +136,24 @@
   clear: both;
   display: none;
   background-color: white;
-  padding: 10px;
+  padding: 0;
   position: absolute;
   z-index: 200;
   margin-top: 3em;
-  border: 1px solid;
+  border: 1px solid &dtml-contentViewBorderColor;;
+}
+
+.expandable-content h4 {
+  margin: 0;
+  background: &dtml-contentViewBackgroundColor;;
+  color: &dtml-contentViewFontColor;;
+  display: block;
+  padding: 2px 0.5em;
+  border-bottom: 1px solid &dtml-contentViewBorderColor;;  
+}
+
+.expandable-content .inner-content {
+  margin: 1em;
 }
 
 ul.collage-content-menu {

@@ -4,7 +4,7 @@
      i18n:domain="collage"
      tal:omit-tag="">
 
-  <a tal:attributes="href string:${here/absolute_url}/split-column">
+  <a class="post" tal:attributes="href string:${here/absolute_url}/split-column">
     <div class="split-column-icon"><!-- nothing here --></div>
     <span i18n:translate="label_split_column"
 	  class="column-split">split</span>

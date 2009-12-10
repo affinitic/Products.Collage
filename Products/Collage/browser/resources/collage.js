@@ -7,9 +7,41 @@ jq(document).ready(function() {
 setupContentMenu = function() {
 }
 
-setupHandlers = function() {
+function setupLinks(query) {
     var $ = jq;
-  
+
+    function post_link(href) {
+        var url_parts = href.split('?');
+        var url = url_parts[0];
+        var params = [];
+        if (url_parts.length > 1)
+            params = url_parts[1].split('&');
+
+        var form = $("<form/>").
+            attr("method", "POST").
+            attr("action", url).
+            appendTo(document.body);
+
+        $.each(params, function(i, o) {
+            var args = o.split('=');
+            var input = $('<input type="hidden" name="'+args[0]+'"/>').
+                attr("value", args[1]);
+            input.appendTo(form);
+        });
+
+        form.get(0).submit();
+    }
+
+    $(query).click(function() {
+        post_link($(this).attr('href'));
+        return false;
+    });
+};
+
+setupHandlers = function() {
+
+    var $ = jq;
+
     // setup collapsing blocks
     $.each($("div.expandable-section, a.expandable-label"), function(i, o) {
 		$(o).bind('click', function() {
@@ -17,12 +49,12 @@ setupHandlers = function() {
 		    var content = $("div.expandable-content", section);
 		    var container = section.parents('.collage-row').eq(0);
 		    var url = $(o).attr('href');
-		    
+
 		    // case content type dropdown, click event is bound here too
 		    if(!url) {
 		    	return;
 		    }
-			    
+
 		    if ($(o).attr('class').indexOf('enabled') != -1) {
 				// disable
 				content.css('display', 'none');
@@ -31,11 +63,11 @@ setupHandlers = function() {
 		    } else {
 			    // enable
 				content.css('display', 'block');
-		
+
 				// handle height (for IE6)
 				container.next('.collage-row').eq(0).css('margin-top',
 				                                         1 + 'px');
-				
+
 				// handle ajax sections
 				$.each($(".expandable-ajax-content", section), function(j, p) {
 				    $(p).load(url, function() {
@@ -45,16 +77,18 @@ setupHandlers = function() {
 				    });
 				});
 		    }
-		    
+
 		    $(o).toggleClass('enabled').blur();
 		    return false;
 		});
     });
+
+    setupLinks("a.post");
 }
 
 setupNavigation = function() {
     var $ = jq;
-  
+
     // transform navigation links into ajax-methods
     $("a.collage-js-down").bind('click', {jquery: $}, triggerMoveDown);
     $("a.collage-js-up").bind('click', {jquery: $}, triggerMoveUp);
@@ -76,18 +110,20 @@ submitExistingItemsForm = function(formel) {
 
 setupExistingItemsForm = function() {
     var $ = jq;
-    
+
     $("form.collage-existing-items select").change(function(event) {
         this.blur();
         submitExistingItemsForm(this);
     });
-    // $("form.collage-existing-items SearchableText");
+
     $("form.collage-existing-items [name=SearchableText]").keydown(function(e) {
 	    if (e.keyCode == 13) { // ESC
 		    e.preventDefault;
 			submitExistingItemsForm(this);
 		}
 	});
+
+    setupLinks("form.collage-existing-items a.post");
 }
 
 addIHTMLmsg = function(element, msg) {

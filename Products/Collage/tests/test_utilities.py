@@ -6,11 +6,11 @@ from Products.Collage.tests import utils as ctc_utils
 from Products.Collage import utilities as cu
 
 class UtilitiesTestCase(CollageTestCase):
-
     def testGenerateNewId(self):
-
         self.loginAsPortalOwner()
+        self.portal.REQUEST.environ['REQUEST_METHOD'] = 'POST'
         foo_collage = ctc_utils.addCollage(self.portal, 'foo', 'Foo')
+
         new_id = cu.generateNewId(foo_collage)
         self.failUnlessEqual(new_id, '1')
 
@@ -27,7 +27,6 @@ class UtilitiesTestCase(CollageTestCase):
         return
 
     def testIsTranslatable(self):
-
         self.loginAsPortalOwner()
         self.portal.invokeFactory('Document', 'doc', title="Doc")
         doc = getattr(self.portal, 'doc')

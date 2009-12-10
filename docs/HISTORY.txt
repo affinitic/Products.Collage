@@ -3,6 +3,12 @@ Changelog
 
 In next release...
 
+* Changes to user interface appearance.
+  [malthe]
+
+* Added form protection.
+  [malthe]
+
 * Rewired compose view to simplify templates and avoid needless
   indirection.
   [malthe]

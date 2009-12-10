@@ -34,9 +34,9 @@
          <img tal:attributes="src string:${portal_url}/${item/icon};
 			      title item/type; alt item/type" i18n:attributes="title; alt" />
 	    <a href="#" class="#"
-	       tal:attributes="href string:${here_url}/insert-alias?uid=${item/UID};
-		               title item/description;
-                               class item/link_css_class">
+           tal:attributes="href string:${here_url}/insert-alias?uid=${item/UID};
+                           title item/description;
+                           class string:${item/link_css_class} post">
 	      <tal:title content="item/title">Title</tal:title>
 	      <img tal:attributes="src string:${portal_url}/++resource++collage-resources/icon-insert.gif" alt="Insert" />
 	    </a>

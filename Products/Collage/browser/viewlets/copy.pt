@@ -4,7 +4,7 @@
      i18n:domain="collage"
      tal:omit-tag="">
 
-  <a tal:attributes="href string:${here/absolute_url}/object_copy">
+  <a class="post" tal:attributes="href string:${here/absolute_url}/object_copy">
     <div class="copy-object-icon"><!-- nothing here --></div>
       <span i18n:translate="label_copy_object"
 	    class="copy-object">copy</span>

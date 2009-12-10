@@ -38,6 +38,7 @@
                          templateId string:folder_summary_view;
                          folderContents topicContents">
       <metal:listing-macro use-macro="here/folder_summary_view/macros/listing" />
+
     </tal:listing>
 
     <a tal:attributes="href here/absolute_url"

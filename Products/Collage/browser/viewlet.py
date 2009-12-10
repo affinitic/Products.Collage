@@ -16,9 +16,6 @@ class SimpleContentMenuViewlet(object):
     def portal_url(self):
         return getToolByName(self.context, 'portal_url')()
 
-    def test(self):
-        return lambda a, b, c: a and b or c
-
     def getImmediateObject(self):
         """Returns the immediate object added to the Collage
         instead of a possible alias target object."""

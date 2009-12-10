@@ -28,7 +28,6 @@ class KSSHelper(BrowserView):
         return self.context.UID()
 
     def getKssView(self):
-
         return self.context.restrictedTraverse('@@kss_field_decorator_view')
 
     def getKssClasses(self, field_name):
@@ -43,9 +42,9 @@ class KSSHelper(BrowserView):
         editing_classes = f(field_name,
                             templateId='kss_collage_macro_proxy',
                             macro=field_name,
-                            target="%s-%s" % (self.getUniqueIdentifier(), field_name))
+                            target="%s-%s" % (field_name, self.getUniqueIdentifier()))
         uid_class = kss.getKssUIDClass()
-        return editing_classes + " " + uid_class
+        return " ".join((editing_classes, uid_class))
 
 class CollageMacrosView(BrowserView):
     """This helper view looks up the current view for the context-object
@@ -68,7 +67,7 @@ class CollageMacrosView(BrowserView):
             if not context: context = self.context
 
         # transmute request interfaces
-        ifaces = mark_request(self.request)
+        ifaces = mark_request(self.context, self.request)
 
         view = getMultiAdapter((context, self.request), name=layout)
 

@@ -3,6 +3,9 @@ Changelog
 
 In next release...
 
+* Fixed issue that prevented inline-editing from working properly.
+  [malthe]
+
 * Changes to user interface appearance.
   [malthe]
 

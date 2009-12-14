@@ -40,11 +40,11 @@
      permission="cmf.ModifyPortalContent"
      class=".actions.ActionsView"
      />
-  
+
   <browser:page
      name="split-column"
-     attribute="splitColumn"
-     for="Products.Collage.interfaces.ICollageColumn"
+     attribute="insertColumn"
+     for="Products.Collage.interfaces.ICollageRow"
      permission="cmf.ModifyPortalContent"
      class=".actions.ActionsView"
      />

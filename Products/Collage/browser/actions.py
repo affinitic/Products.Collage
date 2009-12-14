@@ -85,8 +85,8 @@ class ActionsView(BrowserView):
         self.request.response.redirect(self.context.REQUEST['HTTP_REFERER'])
 
     @protect
-    def splitColumn(self):
-        container = aq_parent(aq_inner(self.context))
+    def insertColumn(self):
+        container = self.context
         desired_id = generateNewId(container)
 
         container.invokeFactory(id=desired_id, type_name='CollageColumn')

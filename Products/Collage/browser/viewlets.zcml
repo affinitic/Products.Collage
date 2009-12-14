@@ -94,7 +94,7 @@
 
   <browser:viewlet
      name="090-split-column"
-     for="Products.Collage.interfaces.ICollageColumn"
+     for="Products.Collage.interfaces.ICollageRow"
      manager="Products.Collage.interfaces.IContentMenu"
      class=".viewlet.SplitColumnViewlet"
      template="viewlets/split-column.pt"

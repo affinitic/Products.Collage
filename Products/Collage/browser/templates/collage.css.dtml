@@ -30,7 +30,7 @@
   font-size: 0.9em;
 /*  background: url(&dtml-portal_url;/++resource++collage-resources/collage_row_header.jpg) no-repeat top left;*/
   border-bottom: 1px solid &dtml-globalBorderColor;;
-  padding: 5px;
+  padding: 5px 0;
   position: relative;
 }
 
@@ -49,7 +49,16 @@
     color: &dtml-discreetColor;;
     text-transform: lowercase;
     float: left;
-    margin-right: 3px;
+}
+
+.expandable-content span {
+  float: none;
+}
+
+.collage-existing-items .breadcrumbs {
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid &dtml-globalBorderColor;;
 }
 
 .collage-header a {
@@ -120,6 +129,7 @@
   width: 14px;
   height: 14px;
   padding-right: 2px;
+  margin-left: 3px;
 }
 
 .expandable-section .expandable-label.enabled .expandable-icon {
@@ -239,7 +249,6 @@ span.collage-navigation a {
 }
 
 
-
 #collage.edit .collage-row {
   border: 1px outset red;
   margin-bottom: 5px;
@@ -252,7 +261,6 @@ span.collage-navigation a {
 
 #collage.edit .collage-item {
   border: 1px outset;
-  margin: 5px!important;
 }
 
 
@@ -273,52 +281,72 @@ span.collage-navigation a {
     margin-bottom: 0.5em;
 }
 
-#collage .collage-row div.collage-item {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}
-
-
 /* column configurations */
 
 #collage .one-column .block_1 {
     width: 100%;
 }
 
-#collage.edit .one-column .block_1 {
-    width: 98%;
+#collage .two-columns-equal .block_1 {
+  width:49.49%;
 }
 
-
-#collage .two-columns-equal .block_1,
-#collage .two-columns-equal .block_2 {
-    width:50%;
-}
-
-#collage.edit .two-columns-equal .block_1,
-#collage.edit .two-columns-equal .block_2 {
-    width:47%;
-}
-
-#collage .two-columns-equal .block_2 { width:49.9%; }
+#collage .two-columns-equal .block_2 { width:49.49%; }
 
 #collage .three-columns-equal .block_1,
-#collage .three-columns-equal .block_2 {
-    width:33%;
-}
-
-#collage.edit .three-columns-equal .block_1,
-#collage.edit .three-columns-equal .block_2,
-#collage.edit .three-columns-equal .block_3 {
-    width:31%;
-}
-
-
+#collage .three-columns-equal .block_2,
 #collage .three-columns-equal .block_3 {
-    width: 33.9%;
+    width:32.5%;
 }
 
 #collage .three-columns-equal .block_2 { width:32.9%; }
+
+#collage .block_2,
+#collage .block_4,
+#collage .block_3,
+#collage .block_4,
+#collage .block_5,
+#collage .block_6 {
+  padding-left: 1%;
+}
+
+#collage .two-columns-largeleft .block_1 {
+    width: 59%;
+}
+#collage .two-columns-largeleft .block_2 {
+    width: 40%;
+}
+
+#collage .three-columns-largeleft .block_1 {
+    width:59%;
+}
+
+#collage .three-columns-largeleft .block_2 {
+  width:19%;
+}
+
+#collage .three-columns-largeleft .block_3 {
+  width: 20%;
+}
+
+#collage .two-columns-largeright .block_2 {
+    width: 59%;
+}
+#collage .two-columns-largeright .block_1 {
+    width: 40%;
+}
+
+#collage .three-columns-largeright .block_3 {
+    width:59%;
+}
+
+#collage .three-columns-largeright .block_1 {
+    width: 20%;
+}
+
+#collage .three-columns-largeright .block_2 {
+  width:19%;
+}
 
 /* styles for hiding unwanted document metadata and actions */
 
@@ -327,95 +355,14 @@ span.collage-navigation a {
     display: none;
 }
 
-#collage .two-columns-largeleft .block_1 {
-    width: 60%;
-}
-#collage .two-columns-largeleft .block_2 {
-    width: 40%;
-}
-
-#collage.edit .two-columns-largeleft .block_1 {
-    width: 57%;
-}
-#collage.edit .two-columns-largeleft .block_2 {
-    width: 37%;
-}
-
-#collage .three-columns-largeleft .block_1 {
-    width:60%;
-}
-
-#collage .three-columns-largeleft .block_2 {
-        width:19.9%;
-}
-
-#collage .three-columns-largeleft .block_3 {
-    width: 20%;
-}
-
-#collage.edit .three-columns-largeleft .block_1 {
-    width:58%;
-}
-
-#collage.edit .three-columns-largeleft .block_2,
-#collage.edit .three-columns-largeleft .block_3 {
-    width: 18%;
-}
-
-#collage .two-columns-largeright .block_2 {
-    width: 60%;
-}
-#collage .two-columns-largeright .block_1 {
-    width: 40%;
-}
-
-#collage.edit .two-columns-largeright .block_2 {
-    width: 57%;
-}
-#collage.edit .two-columns-largeright .block_1 {
-    width: 37%;
-}
-
-#collage .three-columns-largeright .block_3 {
-    width:60%;
-}
-
-#collage .three-columns-largeright .block_1 {
-    width: 20%;
-}
-
-#collage .three-columns-largeright .block_2 {
-        width:19.9%;
-}
-
-#collage.edit .three-columns-largeright .block_3 {
-    width:57%;
-}
-
-#collage.edit .three-columns-largeright .block_1,
-#collage .three-columns-largeright .block_2 {
-    width: 18%;
-}
-
 /* styles for unbatched-layout */
 
 #collage .unbatched-with-1 .column-block { width: 100%; }
-#collage.edit .unbatched-with-1 .column-block { width: 98.5%; }
-
-#collage .unbatched-with-2 .column-block { width: 50%; }
-#collage.edit .unbatched-with-2 .column-block { width: 48%; }
-
-#collage .unbatched-with-3 .column-block { width: 33.3%; }
-#collage.edit .unbatched-with-3 .column-block { width: 31%; }
-
-#collage .unbatched-with-4 .column-block { width: 25%; }
-#collage.edit .unbatched-with-4 .column-block { width:23%; }
-
-#collage .unbatched-with-5 .column-block { width: 20%; }
-#collage.edit .unbatched-with-5 .column-block { width:18%; }
-
-#collage .unbatched-with-6 .column-block { width: 16.6%; }
-#collage.edit .unbatched-with-6 .column-block { width:14%; }
+#collage .unbatched-with-2 .column-block { width: 49.5%; }
+#collage .unbatched-with-3 .column-block { width: 32.5%; }
+#collage .unbatched-with-4 .column-block { width: 24.25%; }
+#collage .unbatched-with-5 .column-block { width: 19%; }
+#collage .unbatched-with-6 .column-block { width: 16.5%; }
 
 
 /* Portlets skinning */

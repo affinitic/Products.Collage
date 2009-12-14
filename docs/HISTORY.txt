@@ -3,6 +3,8 @@ Changelog
 
 In next release...
 
+* Cleaned up layout stylesheet.
+
 * Fixed issue that prevented inline-editing from working properly.
   [malthe]
 

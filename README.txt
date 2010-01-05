@@ -1,5 +1,16 @@
-Collage
-=======
+Overview
+========
+
+Collage is a product which allows editors to align new or existing
+content from multiple sources in a layout. An example of such a page
+is one that shows a document along with one or more collections.
+
+Several `add-on products
+<http://pypi.python.org/pypi?%3Aaction=search&term=collective.collage&submit=search>`_
+exists which allows you to include portlets, forms or even other
+websites. See the `add-on repository
+<http://svn.plone.org/svn/collective/Products.Collage/addons/>`_ for
+more information.
 
 Compatibility
 -------------
@@ -7,58 +18,27 @@ Compatibility
 * Plone 3.1-3.3
 * Five 1.5
 
-About
------
+Status
+------
 
-Collage is a product for aggregating and displaying multiple content items on a
-single page.
+Stable; used in production.
 
-It provides the following content-types:
+Development
+-----------
 
-  * Collage
-  * Row
-  * Column
-  * Alias
+Please report issues to the `issue tracker
+<http://www.plone.org/products/collage/issues>`_. The file
+``docs/DEVELOPER.txt`` describes how to extend the product with
+support for custom content types and additional renderers.
 
-The first three are structural containers that provide basic layouting
-functionality. The premise is that a column fits inside a row which again fits
-inside a collage.
-
-The Alias-type is provided to allow displaying existing objects from the site
-inside the collage.
-
-Upgrading
----------
+Upgrades
+--------
 
 If you upgraded Products.Collage in the file system, open in ZMI
 /your/plone/site/portal_setup and click the "Upgrades" tab.
 
 Select the "Products.Collage:default" profile and see if upgrades are
 available. Run them :D
-
-Javascript functionality
-------------------------
-
-We use the jquery-library to facilitate easy scripting. Ajax is used to move
-content items, columns and rows around without reloading the page.
-
-Status
-------
-
-Used in production.
-
-Support for add-on packages
----------------------------
-
-Support for third party content types are available with your subversion
-client from https://svn.plone.org/svn/collective/Products.Collage/addons/
-
-See DEVELOPER.txt to add support for custom content types and themings.
-
-Issue tracker
--------------
-
-http://www.plone.org/products/collage/issues
 
 Credits
 -------
@@ -90,5 +70,6 @@ Translations:
 Sponsors
 --------
 
-Work on this product has been sponsored by Headnet (http://www.headnet.dk) and
-EDF (http://www.edf.fr)
+Work on this product has been sponsored by Headnet
+(http://www.headnet.dk), University of Leicester and EDF
+(http://www.edf.fr).

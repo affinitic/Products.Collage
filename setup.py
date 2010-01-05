@@ -10,9 +10,7 @@ version = _textOfModuleFile(os.path.join('Products', 'Collage', 'version.txt'))
 
 setup(name='Products.Collage',
       version=version,
-      description=("A product to create page compositions in Plone."
-                   " Content can be created directly inside the object"
-                   " or existing items can be pulled in for display."),
+      description=("A product to create page compositions in Plone."),
       long_description='\n\n'.join([
           _textOfModuleFile(name)
           for name in (
@@ -26,7 +24,7 @@ setup(name='Products.Collage',
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Development Status :: 5 - Production/Stable",
         ],
-      keywords='plone layout composition themeing',
+      keywords='plone layout composition',
       author='Malthe Borch',
       author_email='mborch@gmail.com',
       url='http://www.plone.org/products/collage',

@@ -27,7 +27,7 @@
              name="SearchableText"
              size="25"
              value=""
-             tal:attributes="value request/SearchableText|nothing;"
+             tal:attributes="value options/query_text"
              />
       <input class="searchButton"
              type="submit"

@@ -107,7 +107,7 @@ class ExistingItemsView(object):
         query_path = unquote(query_path)
         b_start = self.request.get('b_start', 0)
 
-        query_text = self.request.get('SearchableText', '')
+        query_text = unquote(self.request.get('SearchableText', ''))
         if query_text:
             depth = 10
         else:
@@ -152,5 +152,6 @@ class ExistingItemsView(object):
             'items': items,
             'batch': batch,
             'query': bool(query_text),
+            'query_text': query_text,
             'path': query_path,
             }

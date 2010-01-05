@@ -4,9 +4,9 @@ from zope.interface import (
 
 from zope.component import (
     getSiteManager, getMultiAdapter, getUtilitiesFor, queryUtility)
+from zope.component import ComponentLookupError
 
 from zope.annotation.interfaces import IAnnotations
-from zope.app.component.hooks import getSite
 from persistent.dict import PersistentDict
 
 from Products.Five import BrowserView
@@ -54,7 +54,7 @@ class DynamicViewManager(object):
     def getLayouts(self):
         context = self.context
         request = context.REQUEST
-        
+
         if ICollageAlias.providedBy(self.context):
             target = self.context.get_target()
             if target is not None:
@@ -67,11 +67,11 @@ class DynamicViewManager(object):
             required=(providedBy(context), providedBy(request)),
             provided=Interface
             )
-        
+
         directlyProvides(request, *ifaces)
-        layouts = [(name, getattr(layout, 'title', name)) 
+        layouts = [(name, getattr(layout, 'title', name))
                    for (name, layout) in layouts
-                   if type(layout) is type(BrowserView) 
+                   if type(layout) is type(BrowserView)
                       and issubclass(layout, BrowserView)
                       and not getattr(layout, 'hide', False)]
         layouts.sort(lambda a, b: cmp(a[1], b[1]))
@@ -103,9 +103,11 @@ class DynamicViewManager(object):
                 if not target:
                     target = self.context
 
-            view = getMultiAdapter((target, request), name=layout)
-
-            skinInterfaces = getattr(view, 'skinInterfaces', ())
+            try:
+                view = getMultiAdapter((target, request), name=layout)
+                skinInterfaces = getattr(view, 'skinInterfaces', ())
+            except ComponentLookupError:
+                skinInterfaces = ()
 
             for si in skinInterfaces:
                 for name, utility in getUtilitiesFor(si):

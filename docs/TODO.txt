@@ -13,15 +13,8 @@ Issues
   somehow difficult to check wether a CSS class is
   available. Otherwise could we do this in javascript?
 
-* Search widget when adding an alias is buggy when non ASCII chars are
-  searched.
-
 Features
 ========
-
-* Make the action-popup-boxes feel more like windows (UI-concept, not OS).
-
-* Add some kind of ATReferenceBrowserWidget to create a new alias.
 
 * Limit number of columns in a config panel.
 

@@ -3,9 +3,14 @@ Changelog
 
 In next release...
 
+* Fail gracefully (and informatively) when a layout cannot render.
+  [malthe]
+
 * Move the "split column" action to the row.
+  [malthe]
 
 * Cleaned up layout stylesheet.
+  [malthe]
 
 * Fixed issue that prevented inline-editing from working properly.
   [malthe]

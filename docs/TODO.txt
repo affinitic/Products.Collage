@@ -16,8 +16,6 @@ Issues
 Features
 ========
 
-* Limit number of columns in a config panel.
-
 * Optionally synch subitems workflow state with Collage workflow state if both
   have the same workflow.
 

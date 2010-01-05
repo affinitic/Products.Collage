@@ -78,14 +78,6 @@ class ICollageSiteOptions(interface.Interface):
             vocabulary='collage.vocabularies.CollageUserFriendlyTypes')
         )
 
-    alias_search_limit = schema.Int(
-        title=_(u'label_alias_search_limit', default=u"Alias search limit"),
-        description=_(u'help_alias_search_limit',
-                      default=u"Alias target search maximum results. '0' or "
-                              u"negative means unlimited."),
-        required=False,
-        default=50)
-    
     def enabledType(portal_type):
         """True if portal type is enabled for adding in a Collage."""
 

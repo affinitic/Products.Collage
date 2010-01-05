@@ -30,6 +30,5 @@
       <element value="News Item"/>
       <element value="Topic"/>
     </property>
-    <property name="alias_search_limit" type="int">50</property>
   </object>
 </object>

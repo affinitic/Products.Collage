@@ -3,6 +3,10 @@ Changelog
 
 In next release...
 
+* Aliases are now inserted using an ajax-driven reference browser
+  (custom implementation) which operates similarly to the standard
+  Plone reference browser widget.
+
 * Fail gracefully (and informatively) when a layout cannot render.
   [malthe]
 

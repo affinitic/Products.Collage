@@ -171,11 +171,11 @@ ul.collage-content-menu {
   list-style-image: none;
   list-style-type: none;
   margin: 0;
+  display: block;
 }
 
-ul.collage-content-menu li {
-  width: 150px;
-  float: left;
+ul.collage-content-menu li a {
+  border: none;
 }
 
 /* existing items */

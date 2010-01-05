@@ -6,6 +6,7 @@ from Globals import DTMLFile
 from zope.interface import directlyProvides
 from zope.component import queryMultiAdapter
 from zope.component import getMultiAdapter
+from zope.component import ComponentLookupError
 
 from Products.Five.browser import BrowserView
 
@@ -73,11 +74,14 @@ class SimpleContainerRenderer(BrowserView):
                     canmanager = IDynamicViewManager(target.getCanonical())
                     layout = manager.getLayout() or canmanager.getLayout() or layout
 
-            # don't assume that a layout is always available
-            view = queryMultiAdapter((target, self.request), name=layout)
-            if view is None:
-                view = getMultiAdapter((target, self.request),
-                                         name='error_collage-view-not-found')
+            # don't assume that a layout is always available; note
+            # that we can't use ``queryMultiAdapter`` because even
+            # this lookup might fail hard
+            try:
+                view = getMultiAdapter((target, self.request), name=layout)
+            except ComponentLookupError:
+                view = getMultiAdapter(
+                    (target, self.request), name='error_collage-view-not-found')
                 view.notfoundlayoutname = layout
 
             # store reference to alias if applicable

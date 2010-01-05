@@ -18,17 +18,14 @@
 
     <div class="inner-content">
       <p i18n:translate="help_insert_existing_items"
-         class="discreet">
-        Choose an existing item to insert. Use dropdown to filter on type.
+         class="discreet">Browse to content or search below the
+         current location. Then click to insert.
       </p>
 
-      <div class="expandable-ajax-content">
-        <!-- ajax content here -->
-
+      <div class="ajax-reference-browser">
         <tal:loading i18n:translate="label_loading">
           Loading...
         </tal:loading>
-
       </div>
       <div class="visualClear"><!-- nothing here --></div>
     </div>

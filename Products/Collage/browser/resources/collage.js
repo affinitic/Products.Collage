@@ -69,7 +69,7 @@ setupHandlers = function() {
 				                                         1 + 'px');
 
 				// handle ajax sections
-				$.each($(".expandable-ajax-content", section), function(j, p) {
+				$.each($(".ajax-reference-browser", section), function(j, p) {
 				    $(p).load(url, function() {
 						container.next('.collage-row').eq(0).css('margin-top',
 						                                         1 + '%');
@@ -92,7 +92,7 @@ setupNavigation = function() {
     // transform navigation links into ajax-methods
     $("a.collage-js-down").bind('click', {jquery: $}, triggerMoveDown);
     $("a.collage-js-up").bind('click', {jquery: $}, triggerMoveUp);
-}
+};
 
 submitExistingItemsForm = function(formel) {
     var $ = jq;
@@ -102,11 +102,24 @@ submitExistingItemsForm = function(formel) {
 	var inputs = $(':input', form);
 
 	// refresh form
-	var section = $(formel).parents('.expandable-ajax-content').eq(0);
+	var section = $(formel).parents('.ajax-reference-browser').eq(0);
 	section.load(url, extractParams(inputs.serialize()), function() {
-		setupExistingItemsForm();
+            setupExistingItemsForm();
 	});
-}
+};
+
+updateExistingItems = function(formel) {
+    var $ = jq;
+
+    var url = $(formel).attr('href');
+    var section = $(formel).parents('.ajax-reference-browser').eq(0);
+    var list = section.find("ul.collage-content-menu");
+    list.css('visibility', 'hidden');
+    section.load(url, function() {
+            setupExistingItemsForm();
+            list.css('visibility', 'display');
+	});
+};
 
 setupExistingItemsForm = function() {
     var $ = jq;
@@ -120,8 +133,19 @@ setupExistingItemsForm = function() {
 	    if (e.keyCode == 13) { // ESC
 		    e.preventDefault;
 			submitExistingItemsForm(this);
-		}
-	});
+        }
+    });
+
+    $("form.collage-existing-items input[type=submit]").click(function(e) {
+            e.preventDefault;
+            submitExistingItemsForm(this);
+        });
+
+    $(".ajax-reference-browser a.get, .ajax-reference-browser .listingBar a").click(function(e) {
+            e.preventDefault;
+            updateExistingItems(this);
+            return false;
+        });
 
     setupLinks("form.collage-existing-items a.post");
 }

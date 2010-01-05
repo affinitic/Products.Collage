@@ -1,49 +1,43 @@
 # -*- coding: utf-8 -*-
 # $Id$
 
-import sys
-from urllib import unquote_plus
-from types import UnicodeType
 from zope.component import getMultiAdapter
-from Products.Five.browser import BrowserView
 from plone.memoize.view import memoize_contextless
+from plone.app.layout.navigation.interfaces import INavigationRoot
+
+from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone import PloneMessageFactory as p_
+from Products.CMFPlone import utils
+from Products.CMFPlone.interfaces import IHideFromBreadcrumbs
+from Products.CMFPlone import Batch
+from Products.Collage.browser.utils import escape_to_entities
 from Products.Collage.utilities import getCollageSiteOptions
-from utils import escape_to_entities
+from Products.ZCTextIndex.ParseTree import ParseError
 
+from urllib import unquote
 
-class ExistingItemsView(BrowserView):
-
-    def __init__(self, *args, **kw):
-        """We must recode the Unicode quoted request from javascript"""
-
-        super(ExistingItemsView, self).__init__(*args, **kw)
-        for param, value in self.request.form.items():
-            value = unquote_plus(value)
-            self.request.form[param] = value
-        return
-
+class ExistingItemsView(object):
+    limit = 10
 
     def __call__(self):
-        """There are browser-issues in sending out content in UTF-8.
-        We'll encode it in latin-1."""
+        data = self._data()
+        content = self.index(**data)
 
         # IE6 encoding bug workaround (IE6 sucks but...)
         if self.request.get('USER_AGENT', '').find('MSIE 6.0') > 0:
+            # response must be latin-1
             self.request.RESPONSE.setHeader("Content-Type", "text/html; charset=ISO-8859-1")
             encoding = getSiteEncoding(self.context.context)
-            content = self.index()
-            if not isinstance(content, UnicodeType):
+            if not isinstance(content, unicode):
                 content = content.decode(encoding)
 
-            # Convert special characters to HTML entities since we're recoding
-            # to latin-1
-            return escape_to_entities(content).encode('latin-1')
-        else:
-            return self.index()
+            # convert special characters to HTML entities since we're
+            # recoding to latin-1
+            content = escape_to_entities(content).encode('latin-1')
 
+        return content
 
     @property
     def catalog(self):
@@ -51,10 +45,41 @@ class ExistingItemsView(BrowserView):
                                name=u'plone_tools').catalog()
 
 
+    @property
+    def portal(self):
+        return getMultiAdapter((self.context, self.request),
+                               name=u'plone_portal_state').portal()
+
     def portal_url(self):
         return getMultiAdapter((self.context, self.request),
                                name=u'plone_portal_state').portal_url()
 
+    def breadcrumbs(self):
+        path = self.request.get('path')
+        portal = self.portal
+        if path is None:
+            context = portal
+        else:
+            context = portal.restrictedTraverse(unquote(path))
+
+        crumbs = []
+        context = aq_inner(context)
+
+        while context is not None:
+            if not IHideFromBreadcrumbs.providedBy(context):
+                crumbs.append({
+                    'path': "/".join(context.getPhysicalPath()),
+                    'url': context.absolute_url(),
+                    'title': context.title_or_id()
+                    })
+
+            if INavigationRoot.providedBy(context):
+                break
+
+            context = utils.parent(context)
+
+        crumbs.reverse()
+        return crumbs
 
     @memoize_contextless
     def listEnabledTypes(self):
@@ -72,40 +97,60 @@ class ExistingItemsView(BrowserView):
                 if collage_options.enabledAlias(pt.getId())]
 
 
-    def getItems(self):
-        """Found items"""
-
+    def _data(self):
         portal_types = self.request.get('portal_type', None)
         if not portal_types:
             portal_types = [pt['id'] for pt in self.listEnabledTypes()]
 
-        limit = getCollageSiteOptions().alias_search_limit
-        if limit <= 0:
-            limit = sys.maxint
-        items = self.catalog(SearchableText=self.request.get('SearchableText', ''),
-                             portal_type=portal_types,
-                             sort_order='reverse',
-                             sort_on='modified',
-                             sort_limit=limit)
+        query_path = self.request.get('path') or \
+                     "/".join(self.portal.getPhysicalPath())
+        query_path = unquote(query_path)
+        b_start = self.request.get('b_start', 0)
+
+        query_text = self.request.get('SearchableText', '')
+        if query_text:
+            depth = 10
+        else:
+            depth = 1
+
+        try:
+            results = self.catalog(
+                SearchableText=query_text,
+                portal_type=portal_types,
+                path={"query": query_path, 'depth': depth},
+                sort_on='sortable_title',
+                sort_order='ascending')
+            # alternative: sort_order='reverse', sort_on='modified'
+        except ParseError:
+            results = []
 
         # setup description cropping
-        cropText = self.context.restrictedTraverse('@@plone').cropText
-        croptext = getMultiAdapter((self.context, self.request),
-                                   name=u'plone').cropText
+        cropText = getMultiAdapter(
+            (self.context, self.request), name=u'plone').cropText
         props = getMultiAdapter((self.context, self.request),
                                 name=u'plone_tools').properties()
         site_properties = props.site_properties
         desc_length = getattr(site_properties, 'search_results_description_length', 25)
         desc_ellipsis = getattr(site_properties, 'ellipsis', '...')
-        portal_url = self.portal_url()
 
-        return [{'UID': result.UID,
-                 'icon' : result.getIcon,
-                 'title': result.Title,
-                 'description': cropText(result.Description, desc_length, desc_ellipsis),
-                 'type': result.Type,
-                 'target_url': result.getURL(),
-                 'link_css_class': 'state-%s' % result.review_state
-                 }
-                for result in items]
+        items = []
+        batch = Batch(results, self.limit, int(b_start), orphan=1)
+        for result in batch:
+            items.append({
+                'UID': result.UID,
+                'icon' : result.getIcon,
+                'title': result.Title,
+                'description': cropText(result.Description, desc_length, desc_ellipsis),
+                'type': result.Type,
+                'folderish': result.is_folderish,
+                'target_url': result.getURL(),
+                'path': result.getPath(),
+                'link_css_class': 'state-%s' % result.review_state
+                })
 
+        return {
+            'items': items,
+            'batch': batch,
+            'query': bool(query_text),
+            'path': query_path,
+            }

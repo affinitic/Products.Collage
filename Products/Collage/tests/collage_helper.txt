@@ -45,7 +45,9 @@ So, no Collage object.
   >>> helper.getCollageObject() is None
   True
 
-And no Collage URL.
+An attempt to get at the collage object URL fails:
 
   >>> helper.getCollageObjectURL() is None
-  True
+  Traceback (most recent call last):
+   ...
+  ValueError: Collage object not found.

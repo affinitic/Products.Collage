@@ -75,12 +75,14 @@ Insert existing items
 
   >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"070-insert-existing-item")
 
-Next we examine the ajax-view:
+Next we examine the ajax-view; items are inserted by UID---we verify
+that the form output contains the front page content object's UID
+string:
 
   >>> view = column.restrictedTraverse('@@existing-items-form')
-  >>> for item in view.getItems():
-  ...     if set(item.keys()) != set(['link_css_class', 'target_url', 'title', 'description', 'icon', 'type', 'UID']):
-  ...         raise ValueError, item.keys()
+  >>> front_page_uid = self.portal['front-page'].UID()
+  >>> front_page_uid in view()
+  True
 
 Copy/paste
 ----------

@@ -21,30 +21,30 @@ msgstr ""
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Tilbage"
 
 # content-types
 msgid "Collage"
-msgstr ""
+msgstr "Komposition"
 
 msgid "Column"
-msgstr ""
+msgstr "Kolonne"
 
 msgid "Compose"
-msgstr ""
+msgstr "Komponer"
 
 msgid "Row"
-msgstr ""
+msgstr "Række"
 
 msgid "desc_type_collage"
-msgstr "A structural container which can display its element in various layouts."
+msgstr "Struktureret dokument, som kan vise flere indholdsobjekter sammen."
 
 msgid "desc_type_collagealias"
-msgstr "An object representing an alias for another object."
+msgstr "Reference til eksisterende indhold."
 
 msgid "desc_type_collagecolumn"
-msgstr "A column which can contain content objects."
+msgstr "En kolonne viser indhold i lodret rækkefølge."
 
 msgid "desc_type_collagerow"
-msgstr "A row which can contain page columns."
+msgstr "En række viser indhold i vandret rækkefølge."
 

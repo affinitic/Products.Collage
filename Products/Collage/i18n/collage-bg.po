@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2009-11-02 10:02+0000\n"
+"POT-Creation-Date: 2010-01-10 08:18+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vladimir Iliev <vladimir.iliev@gmail.com>\n"
 "Language-Team: \n"
@@ -17,24 +17,44 @@ msgstr ""
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 
-#: Collage/browser/actions.py:122
-msgid "${title} has been deleted."
-msgstr "${title} беше изтрит."
+#: Collage/browser/actions.py:133
+msgid "${title} deleted."
+msgstr ""
 
 # Object action
 msgid "Back to Collage"
 msgstr "Назад към колажа"
 
-#: Collage/browser/actions.py:34
+#: Collage/browser/viewlets/delete.pt:46
+msgid "Delete"
+msgstr ""
+
+#: Collage/browser/viewlets/delete.pt:39
+msgid "Remove"
+msgstr ""
+
+#: Collage/browser/actions.py:42
 msgid "Skin changed."
 msgstr "Темата беше променена"
 
-#: Collage/browser/actions.py:24
+#: Collage/browser/viewlets/delete.pt:43
+msgid "This will delete the item."
+msgstr ""
+
+#: Collage/browser/viewlets/delete.pt:36
+msgid "This will remove the alias."
+msgstr ""
+
+#: Collage/browser/actions.py:32
 msgid "View changed."
 msgstr "Изгледа беше променен."
 
+#: Collage/browser/viewlets/delete.pt:27
+msgid "Warning"
+msgstr ""
+
 #. Default: "Add row"
-#: Collage/browser/viewlets/insert-row.pt:9
+#: Collage/browser/templates/collage_compose.pt:21
 msgid "button_add_collagerow"
 msgstr "Добавне на ред"
 
@@ -43,40 +63,36 @@ msgstr "Добавне на ред"
 msgid "default"
 msgstr "Общ"
 
-#. Default: "Alias target search maximum results. '0' or negative means unlimited."
-#: Collage/interfaces.py:87
-msgid "help_alias_search_limit"
-msgstr ""
-
 #. Default: "Select item types that can be aliased in a Collage object."
-#: Collage/interfaces.py:76
+#: Collage/interfaces.py:72
 msgid "help_alias_whitelist"
 msgstr "Изберете типове, които ще могат да бъдат взаимствани в колажите."
 
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:62
+#: Collage/browser/controlpanel.py:61
 msgid "help_collage_controlpanel"
 msgstr "Общи настройки на колажите"
 
-#. Default: "Please confirm! This action can't be undone."
-#: Collage/browser/viewlets/delete.pt:21
+#. Default: "This action can't be undone."
+#: Collage/browser/viewlets/delete.pt:28
 msgid "help_confirm_delete"
 msgstr ""
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
-#: Collage/content/_collage.py:62
+#: Collage/content/_collage.py:67
 msgid "help_index_subobjects"
 msgstr "Ще покаже този колаж при търсене, ако някоя от вложените позиции отговаря на критериите. Може да забави редактирането на колажа и на вложените обекти, както и да покаже невярни резултати при търсене."
 
-#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
-#: Collage/browser/viewlets/insert-existing-item.pt:16
+#. Default: "Browse to content or search below the current location. Then click to insert."
+#: Collage/browser/viewlets/insert-existing-item.pt:20
+#, fuzzy
 msgid "help_insert_existing_items"
 msgstr "Изберете съществуваща позиция за добавяне. Използвайте менюто за да филтрирате типовете."
 
 #. Default "Select a content-type to insert."
 #. Default: "Select a content-type to insert."
-#: Collage/browser/viewlets/insert-new-item.pt:15
+#: Collage/browser/viewlets/insert-new-item.pt:20
 msgid "help_insert_new_item"
 msgstr "Изберете тип който да бъде добавен"
 
@@ -91,14 +107,24 @@ msgid "help_optional_row_title"
 msgstr "Може да зададете незадължително заглавие на този ред."
 
 #. Default: "Choose a layout for this object."
-#: Collage/browser/viewlets/layout.pt:17
+#: Collage/browser/viewlets/layout.pt:22
 msgid "help_select_layout"
 msgstr "Изберете оформление за този обект."
 
 #. Default: "Choose a skin to apply to the selected layout."
-#: Collage/browser/viewlets/skin.pt:17
+#: Collage/browser/viewlets/skin.pt:22
 msgid "help_select_skin"
 msgstr "Изберете тема, която да бъде приложена към текущото разположение."
+
+#. Default: "Show description in page composition."
+#: Collage/content/_collage.py:55
+msgid "help_show_description"
+msgstr ""
+
+#. Default: "Show title in page composition."
+#: Collage/content/_collage.py:46
+msgid "help_show_title"
+msgstr ""
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
@@ -106,18 +132,13 @@ msgid "help_skin"
 msgstr "Помощ"
 
 #. Default: "Select item types that can be added in a Collage object."
-#: Collage/interfaces.py:65
+#: Collage/interfaces.py:61
 msgid "help_types_whitelist"
 msgstr "Изберете типове, които ще могат да бъдат добавяни към колажите."
 
 #. Default: "Only types in below whitelist can be added in a Collage."
-#: Collage/interfaces.py:57
+#: Collage/interfaces.py:53
 msgid "help_use_whitelist"
-msgstr ""
-
-#. Default: "Alias search limit"
-#: Collage/interfaces.py:86
-msgid "label_alias_search_limit"
 msgstr ""
 
 #. Default: "Selected target object"
@@ -126,7 +147,7 @@ msgid "label_alias_target"
 msgstr "Изберете цел за взаимстване"
 
 #. Default: "Alias whitelist"
-#: Collage/interfaces.py:75
+#: Collage/interfaces.py:71
 msgid "label_alias_whitelist"
 msgstr ""
 
@@ -136,40 +157,37 @@ msgstr ""
 msgid "label_aliased"
 msgstr "(взаимстван)"
 
-#. Default: "All"
-#: Collage/browser/templates/existing_items_form.pt:17
-msgid "label_all_content_types"
-msgstr "Всички"
-
-#. Default: "Content type"
-#: Collage/browser/templates/existing_items_form.pt:13
-msgid "label_content_type"
-msgstr "Тип"
-
 #. Default: "copy"
 #: Collage/browser/viewlets/copy.pt:9
 msgid "label_copy_object"
 msgstr "копиране"
 
+#. Default: "Delete"
+#: Collage/browser/viewlets/delete.pt:21
+msgid "label_delete"
+msgstr ""
+
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
-#: Collage/content/_collage.py:61
+#: Collage/content/_collage.py:66
 msgid "label_index_subobjects"
 msgstr "Добавяне съдържанието на колажа към текста за търсене?"
 
-#. Default: "insert existing item"
+#. Default: "Browse"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
+#, fuzzy
 msgid "label_insert_existing_item"
 msgstr "добавяне на съществуваща позиция"
 
 #. Default "Insert new item"
-#. Default: "Insert new item"
+#. Default: "Create"
 #: Collage/browser/viewlets/insert-new-item.pt:10
+#, fuzzy
 msgid "label_insert_new_item"
 msgstr "Добавяне на нова позиция"
 
 #. Default: "Loading..."
-#: Collage/browser/viewlets/insert-existing-item.pt:24
+#: Collage/browser/viewlets/insert-existing-item.pt:26
 msgid "label_loading"
 msgstr "Зареждане..."
 
@@ -193,8 +211,8 @@ msgstr "Преместване в дясно"
 msgid "label_move_up"
 msgstr "Преместване нагоре"
 
-#. Default: "This Collage-object does not have any items yet. Add a row and place columns and items inside."
-#: Collage/browser/templates/collage_view.pt:44
+#. Default: "Empty composition. Add one or more rows to get started."
+#: Collage/browser/templates/collage_compose.pt:13
 #, fuzzy
 msgid "label_no_items_added"
 msgstr "В този колаж  все още няма никакви позиции. Добавете позиции чрез менюто."
@@ -214,8 +232,9 @@ msgstr "Заглавие"
 msgid "label_paste_object"
 msgstr "залепяне"
 
-#. Default: "select layout"
+#. Default: "Layout"
 #: Collage/browser/viewlets/layout.pt:12
+#, fuzzy
 msgid "label_select_layout"
 msgstr "избиране на оформление"
 
@@ -225,7 +244,7 @@ msgid "label_select_skin"
 msgstr "Теми"
 
 #. Default: "Show description"
-#: Collage/content/_collage.py:52
+#: Collage/content/_collage.py:54
 msgid "label_show_description"
 msgstr "Показване на описание"
 
@@ -240,32 +259,36 @@ msgid "label_split_column"
 msgstr "разделяне"
 
 #. Default: "Types whitelist"
-#: Collage/interfaces.py:64
+#: Collage/interfaces.py:60
 msgid "label_types_whitelist"
 msgstr ""
 
 #. Default: "Use types whitelist"
-#: Collage/interfaces.py:56
+#: Collage/interfaces.py:52
 msgid "label_use_whitelist"
 msgstr ""
 
-#. Default: "Alias has been inserted"
-#: Collage/browser/actions.py:109
+#. Default: "Alias inserted."
+#: Collage/browser/actions.py:119
+#, fuzzy
 msgid "msg_alias_inserted"
 msgstr "Обекта беше взаимстван"
 
-#. Default: "Column has been inserted"
-#: Collage/browser/actions.py:84
+#. Default: "Column inserted."
+#: Collage/browser/actions.py:94
+#, fuzzy
 msgid "msg_column_inserted"
 msgstr "Колоната беше вмъкната"
 
-#. Default: "Row has been added"
-#: Collage/browser/actions.py:75
+#. Default: "Row was added."
+#: Collage/browser/actions.py:84
+#, fuzzy
 msgid "msg_row_added"
 msgstr "Реда беше добавен"
 
-#. Default: "Target object not found"
-#: Collage/browser/actions.py:111
+#. Default: "Target object not found."
+#: Collage/browser/actions.py:121
+#, fuzzy
 msgid "msg_target_object_not_found"
 msgstr "Обекта не е намерен"
 
@@ -274,8 +297,12 @@ msgstr "Обекта не е намерен"
 msgid "notification_skin"
 msgstr "Съобщение"
 
+#: Collage/browser/templates/existing_items_form.pt:62
+msgid "searching this path and below"
+msgstr ""
+
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:61
+#: Collage/browser/controlpanel.py:60
 msgid "title_collage_controlpanel"
 msgstr ""
 

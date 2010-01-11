@@ -29,6 +29,7 @@
                            obj view/getImmediateObject"
                tal:attributes="href string:${obj/absolute_url}/set-content-layout?layout=$value;
                                title display"
+               tal:omit-tag="layout/active"
                i18n:attributes="title">
               <span i18n:translate=""
                     tal:attributes="class python: layout['active'] and 'active' or 'inactive'"

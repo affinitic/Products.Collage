@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2010-01-10 08:18+0000\n"
-"PO-Revision-Date: 2008-11-18 11:31+0100\n"
+"PO-Revision-Date: 2010-01-11 08:23+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: EDF\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: Collage/browser/actions.py:133
 msgid "${title} deleted."
-msgstr ""
+msgstr "${title} ezabatuta."
 
 # Object action
 msgid "Back to Collage"
@@ -24,11 +24,11 @@ msgstr "Collagera itzuli"
 
 #: Collage/browser/viewlets/delete.pt:46
 msgid "Delete"
-msgstr ""
+msgstr "Ezabatu"
 
 #: Collage/browser/viewlets/delete.pt:39
 msgid "Remove"
-msgstr ""
+msgstr "Ezabatu"
 
 #: Collage/browser/actions.py:42
 msgid "Skin changed."
@@ -36,11 +36,11 @@ msgstr "Itxura aldatuta"
 
 #: Collage/browser/viewlets/delete.pt:43
 msgid "This will delete the item."
-msgstr ""
+msgstr "Honek elementua ezabatuko du"
 
 #: Collage/browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
-msgstr ""
+msgstr "Honek aliasa ezabatuko du"
 
 #: Collage/browser/actions.py:32
 msgid "View changed."
@@ -48,7 +48,7 @@ msgstr "Bista aldatuta."
 
 #: Collage/browser/viewlets/delete.pt:27
 msgid "Warning"
-msgstr ""
+msgstr "Kontuz"
 
 #. Default: "Add row"
 #: Collage/browser/templates/collage_compose.pt:21
@@ -63,7 +63,7 @@ msgstr "Defektuzkoa"
 #. Default: "Select item types that can be aliased in a Collage object."
 #: Collage/interfaces.py:72
 msgid "help_alias_whitelist"
-msgstr ""
+msgstr "Collage baten gehitu daitezkeen alias motak aukeratu"
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:61
@@ -73,20 +73,18 @@ msgstr "Collagen aukerak"
 #. Default: "This action can't be undone."
 #: Collage/browser/viewlets/delete.pt:28
 msgid "help_confirm_delete"
-msgstr ""
+msgstr "Ekintza hau ezin da atzera bota"
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:67
-#, fuzzy
 msgid "help_index_subobjects"
 msgstr "Elementu hau bilaketaren emaitzetan agertuko da, bere barnean dagoen elementuren baten testua bilatuz gero. Aukera hau aktibatzeak, Collagen egindako aldaketak gordetzean webgunea astiroago joatea ekar dezake egin beharreko indexazio lana dela-eta."
 
 #. Default: "Browse to content or search below the current location. Then click to insert."
 #: Collage/browser/viewlets/insert-existing-item.pt:20
-#, fuzzy
 msgid "help_insert_existing_items"
-msgstr "Existitzen den elementu bat aukeratu orrialdean sartzeko. Motaren araberako bilaketa egin dezakezu eta baita testu bidezko bilaketa ere."
+msgstr "Existitzen den elementu bat bilatu. Aurkitutakoan klik egin sartzeko."
 
 #. Default "Select a content-type to insert."
 #. Default: "Select a content-type to insert."
@@ -117,12 +115,12 @@ msgstr "Oraingo maketari aplikatu beharreko itxura aukeratu"
 #. Default: "Show description in page composition."
 #: Collage/content/_collage.py:55
 msgid "help_show_description"
-msgstr ""
+msgstr "Orrialde konposaketan deskribapena erakutsi"
 
 #. Default: "Show title in page composition."
 #: Collage/content/_collage.py:46
 msgid "help_show_title"
-msgstr ""
+msgstr "Orrialde konposaketan izenburua erakutsi"
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
@@ -131,9 +129,8 @@ msgstr "Laguntza"
 
 #. Default: "Select item types that can be added in a Collage object."
 #: Collage/interfaces.py:61
-#, fuzzy
 msgid "help_types_whitelist"
-msgstr "Aukeratu Collage elementu baten gehitu daitezkeen edo aliasa egin dakiekeen elementu motak"
+msgstr "Aukeratu Collage elementu baten gehitu daitezkeenelementu motak"
 
 #. Default: "Only types in below whitelist can be added in a Collage."
 #: Collage/interfaces.py:53
@@ -148,7 +145,7 @@ msgstr "Erreferentziatutako elementua"
 #. Default: "Alias whitelist"
 #: Collage/interfaces.py:71
 msgid "label_alias_whitelist"
-msgstr ""
+msgstr "Aliasen zerrenda-zuria"
 
 #. Default "(alias)"
 #. Default: "(alias)"
@@ -164,7 +161,7 @@ msgstr "kopiatu"
 #. Default: "Delete"
 #: Collage/browser/viewlets/delete.pt:21
 msgid "label_delete"
-msgstr ""
+msgstr "Ezabatu"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
@@ -174,14 +171,12 @@ msgstr "Collageren edukiak testu libreko bilaketara gehitu?"
 
 #. Default: "Browse"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
-#, fuzzy
 msgid "label_insert_existing_item"
 msgstr "Existitzen den elementua gehitu"
 
 #. Default "Insert new item"
 #. Default: "Create"
 #: Collage/browser/viewlets/insert-new-item.pt:10
-#, fuzzy
 msgid "label_insert_new_item"
 msgstr "Elementu berria gehitu"
 
@@ -212,7 +207,6 @@ msgstr "Gora mugitu"
 
 #. Default: "Empty composition. Add one or more rows to get started."
 #: Collage/browser/templates/collage_compose.pt:13
-#, fuzzy
 msgid "label_no_items_added"
 msgstr "Collage honek ez du elementurik. Hasi lerro bat gehituz."
 
@@ -233,7 +227,6 @@ msgstr "itsatsi"
 
 #. Default: "Layout"
 #: Collage/browser/viewlets/layout.pt:12
-#, fuzzy
 msgid "label_select_layout"
 msgstr "Itxura aukeratu"
 
@@ -269,25 +262,21 @@ msgstr "Elementuen zerrenda-zuria erabili"
 
 #. Default: "Alias inserted."
 #: Collage/browser/actions.py:119
-#, fuzzy
 msgid "msg_alias_inserted"
 msgstr "Aliasa gehituta"
 
 #. Default: "Column inserted."
 #: Collage/browser/actions.py:94
-#, fuzzy
 msgid "msg_column_inserted"
 msgstr "Zutabea gehituta"
 
 #. Default: "Row was added."
 #: Collage/browser/actions.py:84
-#, fuzzy
 msgid "msg_row_added"
 msgstr "Lerroa gehituta"
 
 #. Default: "Target object not found."
 #: Collage/browser/actions.py:121
-#, fuzzy
 msgid "msg_target_object_not_found"
 msgstr "Helburu elementua ez da aurkitu"
 
@@ -298,7 +287,7 @@ msgstr "Jakinarazpena"
 
 #: Collage/browser/templates/existing_items_form.pt:62
 msgid "searching this path and below"
-msgstr ""
+msgstr "Toki honetan eta beherago bilatu"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:60

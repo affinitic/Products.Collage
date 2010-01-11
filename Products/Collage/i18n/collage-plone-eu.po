@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2007-06-28 13:40+0000\n"
-"PO-Revision-Date: 2008-09-24 15:18+0100\n"
+"PO-Revision-Date: 2010-01-11 08:24+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: EDF\n"
 "MIME-Version: 1.0\n"
@@ -15,24 +15,24 @@ msgstr ""
 "Domain: plone\n"
 
 msgid "Alias"
-msgstr ""
+msgstr "Aliasa"
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Collagera itzuli"
 
 # content-types
 msgid "Collage"
-msgstr ""
+msgstr "Collage"
 
 msgid "Column"
-msgstr ""
+msgstr "Zutabea"
 
 msgid "Compose"
-msgstr ""
+msgstr "Konposatu"
 
 msgid "Row"
-msgstr ""
+msgstr "Lerroa"
 
 msgid "desc_type_collage"
 msgstr "A structural container which can display its element in various layouts."

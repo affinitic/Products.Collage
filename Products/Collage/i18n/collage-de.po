@@ -3,9 +3,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2010-01-10 08:18+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: Roland Fasching <rof@sterngasse.at>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2010-01-11 11:10+0100\n"
+"Last-Translator: Hans-Peter Locher <hans-peter.locher@inquant.de>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,19 +18,19 @@ msgstr ""
 
 #: Collage/browser/actions.py:133
 msgid "${title} deleted."
-msgstr ""
+msgstr "${title} gelöscht."
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Zurück zur Collage"
 
 #: Collage/browser/viewlets/delete.pt:46
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: Collage/browser/viewlets/delete.pt:39
 msgid "Remove"
-msgstr ""
+msgstr "Entfernen"
 
 #: Collage/browser/actions.py:42
 msgid "Skin changed."
@@ -38,11 +38,11 @@ msgstr "Variante wurde verändert"
 
 #: Collage/browser/viewlets/delete.pt:43
 msgid "This will delete the item."
-msgstr ""
+msgstr "Dadurch wird der Artikel gelöscht."
 
 #: Collage/browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
-msgstr ""
+msgstr "Dadurch wird das Alias entfernt."
 
 #: Collage/browser/actions.py:32
 msgid "View changed."
@@ -50,7 +50,7 @@ msgstr "Ansicht wurde verändert"
 
 #: Collage/browser/viewlets/delete.pt:27
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #. Default: "Add row"
 #: Collage/browser/templates/collage_compose.pt:21
@@ -74,9 +74,8 @@ msgstr "Allgemeine Konfiguration von Collage"
 
 #. Default: "This action can't be undone."
 #: Collage/browser/viewlets/delete.pt:28
-#, fuzzy
 msgid "help_confirm_delete"
-msgstr "Bitte bestätigen! Diese Aktion kann nicht rückgängig gemacht werden!"
+msgstr "Diese Aktion kann nicht rückgängig gemacht werden."
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
@@ -86,9 +85,8 @@ msgstr "Zeige diese Collage als Ergebnis bei der Suche an, und berücksichtige W
 
 #. Default: "Browse to content or search below the current location. Then click to insert."
 #: Collage/browser/viewlets/insert-existing-item.pt:20
-#, fuzzy
 msgid "help_insert_existing_items"
-msgstr "Wählen Sie einen vorhandenen Artikel um ihn hinzuzufügen. Wählen Sie die Auswahlbox um Artikeltypen zu filtern."
+msgstr "Navigieren Sie zum Artikel oder suchen Sie unterhalb des aktuellen Pfads. Danach durch Klicken hinzufügen."
 
 #. Default "Select a content-type to insert."
 #. Default: "Select a content-type to insert."
@@ -119,12 +117,12 @@ msgstr "Wählen Sie eine Variante, die auf die gewählte Ansicht angewandt werde
 #. Default: "Show description in page composition."
 #: Collage/content/_collage.py:55
 msgid "help_show_description"
-msgstr ""
+msgstr "Zeige Beschreibung in zusammengesetzter Seite."
 
 #. Default: "Show title in page composition."
 #: Collage/content/_collage.py:46
 msgid "help_show_title"
-msgstr ""
+msgstr "Zeige Titel in zusammengesetzter Seite."
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
@@ -165,7 +163,7 @@ msgstr "Kopieren"
 #. Default: "Delete"
 #: Collage/browser/viewlets/delete.pt:21
 msgid "label_delete"
-msgstr ""
+msgstr "Löschen"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
@@ -175,16 +173,14 @@ msgstr "Inhalte der Collage in die Volltextsuche mit einbeziehen?"
 
 #. Default: "Browse"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
-#, fuzzy
 msgid "label_insert_existing_item"
-msgstr "Artikel wählen"
+msgstr "Durchsuchen"
 
 #. Default "Insert new item"
 #. Default: "Create"
 #: Collage/browser/viewlets/insert-new-item.pt:10
-#, fuzzy
 msgid "label_insert_new_item"
-msgstr "Artikel neu"
+msgstr "Neuen Artikel einfügen"
 
 #. Default: "Loading..."
 #: Collage/browser/viewlets/insert-existing-item.pt:26
@@ -213,9 +209,8 @@ msgstr "Hinauf schieben"
 
 #. Default: "Empty composition. Add one or more rows to get started."
 #: Collage/browser/templates/collage_compose.pt:13
-#, fuzzy
 msgid "label_no_items_added"
-msgstr "Diese Collage hat noch keine Artikel. Fügen Sie neue Einträge hinzu!."
+msgstr "Leere Zusammenstellung. Fügen Sie eine oder mehrere Zeilen hinzu um zu beginnen."
 
 #. Default: "Title"
 #: Collage/content/_column.py:25
@@ -234,9 +229,8 @@ msgstr "Einfügen"
 
 #. Default: "Layout"
 #: Collage/browser/viewlets/layout.pt:12
-#, fuzzy
 msgid "label_select_layout"
-msgstr "Ansicht"
+msgstr "Darstellung"
 
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
@@ -270,27 +264,23 @@ msgstr "Verwende die Weißen Listen"
 
 #. Default: "Alias inserted."
 #: Collage/browser/actions.py:119
-#, fuzzy
 msgid "msg_alias_inserted"
-msgstr "Ein Alias wurde eingefügt"
+msgstr "Alias eingefügt."
 
 #. Default: "Column inserted."
 #: Collage/browser/actions.py:94
-#, fuzzy
 msgid "msg_column_inserted"
-msgstr "Eine Spalte wurde eingefügt"
+msgstr "Spalte eingefügt."
 
 #. Default: "Row was added."
 #: Collage/browser/actions.py:84
-#, fuzzy
 msgid "msg_row_added"
-msgstr "Eine Zeile wurde eingefügt"
+msgstr "Zeile wurde eingefügt."
 
 #. Default: "Target object not found."
 #: Collage/browser/actions.py:121
-#, fuzzy
 msgid "msg_target_object_not_found"
-msgstr "Der Ziel Artikel wurde nicht gefunden"
+msgstr "Der Ziel Artikel wurde nicht gefunden."
 
 #. Default: "Notification"
 #: Collage/browser/skins.py:9
@@ -299,7 +289,7 @@ msgstr "Benachrichtigung"
 
 #: Collage/browser/templates/existing_items_form.pt:62
 msgid "searching this path and below"
-msgstr ""
+msgstr "sucht in diesem Pfad und darunter"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:60

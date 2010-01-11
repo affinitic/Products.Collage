@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2010-01-10 08:18+0000\n"
-"PO-Revision-Date: 2009-02-12 10:23+0100\n"
-"Last-Translator: Reinout van Rees <reinout@vanrees.org>\n"
+"PO-Revision-Date: 2010-01-11 16:56+0100\n"
+"Last-Translator: Wim Boucquaert <wim@infrae.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: Collage/browser/actions.py:133
 msgid "${title} deleted."
-msgstr ""
+msgstr "${title} verwijderd."
 
 # Object action
 msgid "Back to Collage"
@@ -24,23 +24,23 @@ msgstr "Terug naar Collage"
 
 #: Collage/browser/viewlets/delete.pt:46
 msgid "Delete"
-msgstr ""
+msgstr "Verwijderen"
 
 #: Collage/browser/viewlets/delete.pt:39
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 #: Collage/browser/actions.py:42
 msgid "Skin changed."
-msgstr "De skin is veranderd"
+msgstr "De skin is veranderd."
 
 #: Collage/browser/viewlets/delete.pt:43
 msgid "This will delete the item."
-msgstr ""
+msgstr "Dit zal het item verwijderen."
 
 #: Collage/browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
-msgstr ""
+msgstr "Dit zal de alias verwijderen."
 
 #: Collage/browser/actions.py:32
 msgid "View changed."
@@ -48,7 +48,7 @@ msgstr "De layout is veranderd."
 
 #: Collage/browser/viewlets/delete.pt:27
 msgid "Warning"
-msgstr ""
+msgstr "Waarschuwing"
 
 #. Default: "Add row"
 #: Collage/browser/templates/collage_compose.pt:21
@@ -292,7 +292,7 @@ msgstr "Mededelingen"
 
 #: Collage/browser/templates/existing_items_form.pt:62
 msgid "searching this path and below"
-msgstr ""
+msgstr "dit pad en daaronder doorzoeken"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:60

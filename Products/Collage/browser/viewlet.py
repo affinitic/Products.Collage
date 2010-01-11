@@ -8,9 +8,9 @@ from OFS import Moniker
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
-
 from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.utilities import getCollageSiteOptions
+from Products.Collage.utilities import CollageMessageFactory as _
 
 class SimpleContentMenuViewlet(object):
     def portal_url(self):
@@ -47,11 +47,16 @@ class LayoutViewlet(SimpleContentMenuViewlet):
         # filter out fallback view
         layouts = filter(lambda (name, title): name != u'fallback', layouts)
 
-        retval = [{'id': name, 'name': title,'active': name == active} 
-                  for (name, title) in layouts]
-        return retval
-        
+        # make sure the active layout (which may not be available) is
+        # included
+        if active not in [name for name, title in layouts]:
+            layouts.append(
+                (active, _(u"Missing: $name", mapping={'name': active})))
 
+        return [{
+            'id': name,
+            'name': title,
+            'active': name == active} for (name, title) in layouts]
 
 class SkinViewlet(SimpleContentMenuViewlet):
     def getSkins(self):

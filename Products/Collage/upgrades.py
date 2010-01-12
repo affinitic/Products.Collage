@@ -8,20 +8,22 @@
 
 from Products.Collage.utilities import getPortal, IfInstalled
 
+PROFILE_NAME = 'profile-Products.Collage:default'
 
-@IfInstalled()
+safety_belt = IfInstalled()
+
+@safety_belt
 def runTypesStepOnly(setuptool):
-    """We upgrade our types only"""
-
-    setuptool.runImportStepFromProfile('profile-Products.Collage:default', 'typeinfo',
-                                       run_dependencies=True)
+    """We upgrade our types only
+    """
+    setuptool.runImportStepFromProfile(PROFILE_NAME, 'typeinfo', run_dependencies=True)
     return
 
 
-@IfInstalled()
+@safety_belt
 def updateJSRegistry(setuptool):
-    """Javascript moved from skins to resources"""
-
+    """Javascript moved from skins to resources
+    """
     OLDID = 'collage.js'
     NEWID = '++resource++collage-resources/collage.js'
     jstool = getPortal().portal_javascripts
@@ -31,10 +33,10 @@ def updateJSRegistry(setuptool):
     return
 
 
-@IfInstalled()
+@safety_belt
 def removeSkinsLayer(setuptool):
-    """Collage doesn't require a CMF skins layer anymore"""
-
+    """Collage doesn't require a CMF skins layer anymore
+    """
     LAYERNAME = 'Collage'
     skinstool = getPortal().portal_skins
     # Unfortunately, there's no easy way to remove a layer from all skins
@@ -51,19 +53,19 @@ def removeSkinsLayer(setuptool):
     return
 
 
-@IfInstalled()
+@safety_belt
 def addControlPanel(setuptool):
-    """Add Collage control panel resources"""
-
+    """Add Collage control panel resources
+    """
     for step in ('propertiestool', 'controlpanel', 'action-icons'):
-        setuptool.runImportStepFromProfile('profile-Products.Collage:default', step, run_dependencies=False)
+        setuptool.runImportStepFromProfile(PROFILE_NAME, step, run_dependencies=False)
     return
 
 
-@IfInstalled()
+@safety_belt
 def addAliasWhitelistProperty(setuptool):
-    """Add Alias whitelist control panel property"""
-
+    """Add Alias whitelist control panel property
+    """
     propsheet = getPortal().portal_properties.collage_properties
     # Default: same value as types whitelist
     default_value = propsheet.getProperty('types_whitelist')
@@ -73,4 +75,25 @@ def addAliasWhitelistProperty(setuptool):
         # time, so we return here.
         return
     propsheet.manage_addProperty('alias_whitelist', default_value, 'lines')
+    return
+
+
+@safety_belt
+def upgradeTo1_3_0(setuptool):
+    """Lots of changes in setup in 1.3.0
+    """
+    # We must delete ftis since something whoes in the 'typeinfo' step
+    # FIXME: is this a GS bug or feature?
+    portal_types = getPortal().portal_types
+    for portal_type in ('Collage', 'CollageRow', 'CollageColumn', 'CollageAlias'):
+        portal_types._delObject(portal_type)
+
+    for step in ('typeinfo', 'cssregistry', 'actions', 'jsregistry'):
+        setuptool.runImportStepFromProfile(PROFILE_NAME, step, run_dependencies=False)
+
+    # Remove useless alias_search_limit option in property sheet
+    to_delete = 'alias_search_limit'
+    propsheet = getPortal().portal_properties.collage_properties
+    if propsheet.hasProperty(to_delete):
+        propsheet._delProperty(to_delete)
     return

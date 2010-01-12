@@ -18,6 +18,7 @@ Features
 
 * Optionally synch subitems workflow state with Collage workflow state if both
   have the same workflow.
+  Maybe collective.synchronizedworkflow is a good strting point for this.
 
 Refactoring
 ===========

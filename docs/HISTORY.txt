@@ -3,9 +3,17 @@ Changelog
 
 In next release...
 
+* Added topic view which inherits the view setting from the topic
+  content object (using a mapping to collage view names).
+  [malthe]
+
+* Added topic views for tabular and summary displays.
+  [malthe]
+
 * Fixed issue where you could not choose the standard layout if a
   missing layout was already selected (this might occur if an add-on
   product had been removed).
+  [malthe]
 
 * Synched ``i18n/collage-xx.po`` files (10 messages added, 5 removed)
   [glenfant]

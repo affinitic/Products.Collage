@@ -119,6 +119,14 @@
      />
 
   <browser:page
+     name="inherit"
+     for="Products.ATContentTypes.content.topic.ATTopic"
+     permission="zope.Public"
+     class=".views.InheritTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="standard"
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
@@ -127,7 +135,25 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
-    <browser:page
+  <browser:page
+     name="summary"
+     for="Products.ATContentTypes.content.topic.ATTopic"
+     permission="zope.Public"
+     template="views/topic_summary.pt"
+     class=".views.SummaryTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="tabular"
+     for="Products.ATContentTypes.content.topic.ATTopic"
+     permission="zope.Public"
+     template="views/topic_tabular.pt"
+     class=".views.TabularTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
      name="album"
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"

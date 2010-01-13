@@ -37,7 +37,7 @@
                          getKssClasses python: view.getKssClasses;
                          templateId string:folder_summary_view;
                          folderContents topicContents">
-      <metal:listing-macro use-macro="here/folder_listing/macros/listing" />
+      <metal:listing-macro use-macro="here/folder_summary_view/macros/listing" />
 
     </tal:listing>
 

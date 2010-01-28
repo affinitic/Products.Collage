@@ -1,0 +1,281 @@
+# translation of collage-fr.po to French
+# Encolpe Degoute <encolpe@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: collage-zh\n"
+"POT-Creation-Date: 2009-11-02 10:02+0000\n"
+"PO-Revision-Date: 2010-01-12 21:40+0800\n"
+"Last-Translator: adam <yuejun.tang@gmail.com>\n"
+"Language-Team: Chinese <admin@315ok.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language-Code: zh\n"
+"Language-Name: Chinese\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collage\n"
+"X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: Collage/browser/actions.py:122
+msgid "${title} has been deleted."
+msgstr "${title}已删除。"
+
+# Object action
+msgid "Back to Collage"
+msgstr "回到组合页"
+
+#: Collage/browser/actions.py:34
+msgid "Skin changed."
+msgstr "皮肤已更改"
+
+#: Collage/browser/actions.py:24
+msgid "View changed."
+msgstr "视图已更改"
+
+#. Default: "Add row"
+#: Collage/browser/viewlets/insert-row.pt:9
+msgid "button_add_collagerow"
+msgstr "增加行"
+
+#. Default: "Default"
+#: Collage/browser/skins.py:6
+msgid "default"
+msgstr "缺省"
+
+#. Default: "Alias target search maximum results. '0' or negative means unlimited."
+#: Collage/interfaces.py:87
+msgid "help_alias_search_limit"
+msgstr "别名搜索结果的最大数，设置为0则没限制。"
+
+#. Default: "Select item types that can be aliased in a Collage object."
+#: Collage/interfaces.py:76
+msgid "help_alias_whitelist"
+msgstr "选定的项目类型能被采用别名用于组合页对象"
+
+#. Default: "Site wide options for Collage"
+#: Collage/browser/controlpanel.py:62
+msgid "help_collage_controlpanel"
+msgstr "站点级别的配置"
+
+#. Default: "Please confirm! This action can't be undone."
+#: Collage/browser/viewlets/delete.pt:21
+msgid "help_confirm_delete"
+msgstr "这个操作不能撤销，请确认。"
+
+#. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
+#. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
+#: Collage/content/_collage.py:62
+msgid "help_index_subobjects"
+msgstr ""
+
+#. Default: "Choose an existing item to insert. Use dropdown to filter on type."
+#: Collage/browser/viewlets/insert-existing-item.pt:16
+msgid "help_insert_existing_items"
+msgstr "选择一个已存的项目插入，用下面过滤内容类型。"
+
+#. Default "Select a content-type to insert."
+#. Default: "Select a content-type to insert."
+#: Collage/browser/viewlets/insert-new-item.pt:15
+msgid "help_insert_new_item"
+msgstr "选择一个内容类型插入"
+
+#. Default: "You may optionally supply a title for this column."
+#: Collage/content/_column.py:26
+msgid "help_optional_column_title"
+msgstr "可以为该类设置一个标题"
+
+#. Default: "You may optionally supply a title for this row."
+#: Collage/content/_row.py:24
+msgid "help_optional_row_title"
+msgstr "你可以为该行设定一个标题。"
+
+#. Default: "Choose a layout for this object."
+#: Collage/browser/viewlets/layout.pt:17
+msgid "help_select_layout"
+msgstr "为该对象选择一个层。"
+
+#. Default: "Choose a skin to apply to the selected layout."
+#: Collage/browser/viewlets/skin.pt:17
+msgid "help_select_skin"
+msgstr "选择一个皮肤应用到选定的层。"
+
+#. Default: "Help"
+#: Collage/browser/skins.py:12
+msgid "help_skin"
+msgstr "帮助"
+
+#. Default: "Select item types that can be added in a Collage object."
+#: Collage/interfaces.py:65
+msgid "help_types_whitelist"
+msgstr "选择能加到组合页的内容类型。"
+
+#. Default: "Only types in below whitelist can be added in a Collage."
+#: Collage/interfaces.py:57
+msgid "help_use_whitelist"
+msgstr "仅仅显示在白名单内的类型能加到组合页。"
+
+#. Default: "Alias search limit"
+#: Collage/interfaces.py:86
+msgid "label_alias_search_limit"
+msgstr "别名搜索限制"
+
+#. Default: "Selected target object"
+#: Collage/content/_alias.py:40
+msgid "label_alias_target"
+msgstr "已选定的目标对象"
+
+#. Default: "Alias whitelist"
+#: Collage/interfaces.py:75
+msgid "label_alias_whitelist"
+msgstr "别名白名单"
+
+#. Default "(alias)"
+#. Default: "(alias)"
+#: Collage/browser/viewlets/alias_marker.pt:6
+msgid "label_aliased"
+msgstr "（别名）"
+
+#. Default: "All"
+#: Collage/browser/templates/existing_items_form.pt:17
+msgid "label_all_content_types"
+msgstr "所有"
+
+#. Default: "Content type"
+#: Collage/browser/templates/existing_items_form.pt:13
+msgid "label_content_type"
+msgstr "内容类型"
+
+#. Default: "copy"
+#: Collage/browser/viewlets/copy.pt:9
+msgid "label_copy_object"
+msgstr "复制"
+
+#. Default "Add collage contents in searchable text?"
+#. Default: "Add collage contents in searchable text?"
+#: Collage/content/_collage.py:61
+msgid "label_index_subobjects"
+msgstr "用可搜索的文本添加组合页内容"
+
+#. Default: "insert existing item"
+#: Collage/browser/viewlets/insert-existing-item.pt:11
+msgid "label_insert_existing_item"
+msgstr "插入已存的内容"
+
+#. Default "Insert new item"
+#. Default: "Insert new item"
+#: Collage/browser/viewlets/insert-new-item.pt:10
+msgid "label_insert_new_item"
+msgstr "插入新项目"
+
+#. Default: "Loading..."
+#: Collage/browser/viewlets/insert-existing-item.pt:24
+msgid "label_loading"
+msgstr "调入……"
+
+#. Default: "Move down"
+#: Collage/browser/viewlets/modify_order_vertical.pt:11
+msgid "label_move_down"
+msgstr "下"
+
+#. Default: "Move left"
+#: Collage/browser/viewlets/modify_order_horizontal.pt:11
+msgid "label_move_left"
+msgstr "左移"
+
+#. Default: "Move right"
+#: Collage/browser/viewlets/modify_order_horizontal.pt:18
+msgid "label_move_right"
+msgstr "右移"
+
+#. Default: "Move up"
+#: Collage/browser/viewlets/modify_order_vertical.pt:18
+msgid "label_move_up"
+msgstr "上移"
+
+#. Default: "This Collage-object does not have any items yet. Add a row and place columns and items inside."
+#: Collage/browser/templates/collage_view.pt:44
+msgid "label_no_items_added"
+msgstr "这个组合页还没有任何内容，请添加行列内容。"
+
+#. Default: "Title"
+#: Collage/content/_column.py:25
+msgid "label_optional_column_title"
+msgstr "标题"
+
+#. Default: "Title"
+#: Collage/content/_row.py:23
+msgid "label_optional_row_title"
+msgstr "标题"
+
+#. Default: "paste"
+#: Collage/browser/viewlets/paste.pt:10
+msgid "label_paste_object"
+msgstr "粘贴"
+
+#. Default: "select layout"
+#: Collage/browser/viewlets/layout.pt:12
+msgid "label_select_layout"
+msgstr "选择布局"
+
+#. Default: "Skins"
+#: Collage/browser/viewlets/skin.pt:12
+msgid "label_select_skin"
+msgstr "皮肤"
+
+#. Default: "Show description"
+#: Collage/content/_collage.py:52
+msgid "label_show_description"
+msgstr "显示描述"
+
+#. Default: "Show title"
+#: Collage/content/_collage.py:45
+msgid "label_show_title"
+msgstr "显示标题"
+
+#. Default: "split"
+#: Collage/browser/viewlets/split-column.pt:9
+msgid "label_split_column"
+msgstr "拆分列"
+
+#. Default: "Types whitelist"
+#: Collage/interfaces.py:64
+msgid "label_types_whitelist"
+msgstr "类型白名单"
+
+#. Default: "Use types whitelist"
+#: Collage/interfaces.py:56
+msgid "label_use_whitelist"
+msgstr "Restreindre aux types autorisés"
+
+#. Default: "Alias has been inserted"
+#: Collage/browser/actions.py:109
+msgid "msg_alias_inserted"
+msgstr "别名已插入"
+
+#. Default: "Column has been inserted"
+#: Collage/browser/actions.py:84
+msgid "msg_column_inserted"
+msgstr "Colonne insérée"
+
+#. Default: "Row has been added"
+#: Collage/browser/actions.py:75
+msgid "msg_row_added"
+msgstr "行已添加"
+
+#. Default: "Target object not found"
+#: Collage/browser/actions.py:111
+msgid "msg_target_object_not_found"
+msgstr "目标对象没找到"
+
+#. Default: "Notification"
+#: Collage/browser/skins.py:9
+msgid "notification_skin"
+msgstr "通知"
+
+#. Default: "Collage control panel"
+#: Collage/browser/controlpanel.py:61
+msgid "title_collage_controlpanel"
+msgstr "Collage控制面板"
+

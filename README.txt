@@ -58,6 +58,7 @@ Translations:
 * Danish (da): `Jacob Vestergaard <jacobv@headnet.dk>`_
 * German (de): `Roland Fasching <rof@sterngasse.at>`_, `Jens Klein <jens@bluedynamics.com>`_
 * English (en): `Kevin Deldycke <kevin@deldycke.com>`_
+* Chinese (zh): `Adam Tang <yuejun.tang@gmail.com>`_
 * Spanish (es): `Mikel Larreategi <mlarreategi@codesyntax.com>`_
 * Basque (eu): `Mikel Larreategi <mlarreategi@codesyntax.com>`_
 * French (fr): `Kevin Deldycke <kevin@deldycke.com>`_

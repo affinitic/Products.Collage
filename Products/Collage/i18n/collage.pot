@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-01-10 08:18+0000\n"
+"POT-Creation-Date: 2010-01-28 13:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collage\n"
 
-#: Collage/browser/actions.py:133
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/actions.py:133
 msgid "${title} deleted."
 msgstr ""
 
@@ -25,270 +25,280 @@ msgstr ""
 msgid "Back to Collage"
 msgstr ""
 
-#: Collage/browser/viewlets/delete.pt:46
+#. Default: "Delete"
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/delete.pt:46
 msgid "Delete"
 msgstr ""
 
-#: Collage/browser/viewlets/delete.pt:39
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlet.py:54
+msgid "Missing: $name"
+msgstr ""
+
+#. Default: "Remove"
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/delete.pt:39
 msgid "Remove"
 msgstr ""
 
-#: Collage/browser/actions.py:42
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/actions.py:42
 msgid "Skin changed."
 msgstr ""
 
-#: Collage/browser/viewlets/delete.pt:43
+#. Default: "This will delete the item."
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/delete.pt:43
 msgid "This will delete the item."
 msgstr ""
 
-#: Collage/browser/viewlets/delete.pt:36
+#. Default: "This will remove the alias."
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
 msgstr ""
 
-#: Collage/browser/actions.py:32
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/actions.py:32
 msgid "View changed."
 msgstr ""
 
-#: Collage/browser/viewlets/delete.pt:27
+#. Default: "Warning"
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/delete.pt:27
 msgid "Warning"
 msgstr ""
 
 #. Default: "Add row"
-#: Collage/browser/templates/collage_compose.pt:21
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/templates/collage_compose.pt:21
 msgid "button_add_collagerow"
 msgstr ""
 
 #. Default: "Default"
-#: Collage/browser/skins.py:6
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/skins.py:6
 msgid "default"
 msgstr ""
 
 #. Default: "Select item types that can be aliased in a Collage object."
-#: Collage/interfaces.py:72
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/interfaces.py:72
 msgid "help_alias_whitelist"
 msgstr ""
 
 #. Default: "Site wide options for Collage"
-#: Collage/browser/controlpanel.py:61
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/controlpanel.py:61
 msgid "help_collage_controlpanel"
 msgstr ""
 
 #. Default: "This action can't be undone."
-#: Collage/browser/viewlets/delete.pt:28
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/delete.pt:28
 msgid "help_confirm_delete"
 msgstr ""
 
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
-#: Collage/content/_collage.py:67
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_collage.py:67
 msgid "help_index_subobjects"
 msgstr ""
 
 #. Default: "Browse to content or search below the current location. Then click to insert."
-#: Collage/browser/viewlets/insert-existing-item.pt:20
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/insert-existing-item.pt:20
 msgid "help_insert_existing_items"
 msgstr ""
 
 #. Default: "Select a content-type to insert."
-#: Collage/browser/viewlets/insert-new-item.pt:20
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/insert-new-item.pt:20
 msgid "help_insert_new_item"
 msgstr ""
 
 #. Default: "You may optionally supply a title for this column."
-#: Collage/content/_column.py:26
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_column.py:26
 msgid "help_optional_column_title"
 msgstr ""
 
 #. Default: "You may optionally supply a title for this row."
-#: Collage/content/_row.py:24
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_row.py:24
 msgid "help_optional_row_title"
 msgstr ""
 
 #. Default: "Choose a layout for this object."
-#: Collage/browser/viewlets/layout.pt:22
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/layout.pt:22
 msgid "help_select_layout"
 msgstr ""
 
 #. Default: "Choose a skin to apply to the selected layout."
-#: Collage/browser/viewlets/skin.pt:22
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/skin.pt:22
 msgid "help_select_skin"
 msgstr ""
 
 #. Default: "Show description in page composition."
-#: Collage/content/_collage.py:55
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_collage.py:55
 msgid "help_show_description"
 msgstr ""
 
 #. Default: "Show title in page composition."
-#: Collage/content/_collage.py:46
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_collage.py:46
 msgid "help_show_title"
 msgstr ""
 
 #. Default: "Help"
-#: Collage/browser/skins.py:12
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/skins.py:12
 msgid "help_skin"
 msgstr ""
 
 #. Default: "Select item types that can be added in a Collage object."
-#: Collage/interfaces.py:61
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/interfaces.py:61
 msgid "help_types_whitelist"
 msgstr ""
 
 #. Default: "Only types in below whitelist can be added in a Collage."
-#: Collage/interfaces.py:53
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/interfaces.py:53
 msgid "help_use_whitelist"
 msgstr ""
 
 #. Default: "Selected target object"
-#: Collage/content/_alias.py:40
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_alias.py:40
 msgid "label_alias_target"
 msgstr ""
 
 #. Default: "Alias whitelist"
-#: Collage/interfaces.py:71
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/interfaces.py:71
 msgid "label_alias_whitelist"
 msgstr ""
 
 #. Default: "(alias)"
-#: Collage/browser/viewlets/alias_marker.pt:6
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/alias_marker.pt:6
 msgid "label_aliased"
 msgstr ""
 
 #. Default: "copy"
-#: Collage/browser/viewlets/copy.pt:9
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/copy.pt:9
 msgid "label_copy_object"
 msgstr ""
 
 #. Default: "Delete"
-#: Collage/browser/viewlets/delete.pt:21
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/delete.pt:21
 msgid "label_delete"
 msgstr ""
 
 #. Default: "Add collage contents in searchable text?"
-#: Collage/content/_collage.py:66
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_collage.py:66
 msgid "label_index_subobjects"
 msgstr ""
 
 #. Default: "Browse"
-#: Collage/browser/viewlets/insert-existing-item.pt:11
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/insert-existing-item.pt:11
 msgid "label_insert_existing_item"
 msgstr ""
 
 #. Default: "Create"
-#: Collage/browser/viewlets/insert-new-item.pt:10
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/insert-new-item.pt:10
 msgid "label_insert_new_item"
 msgstr ""
 
 #. Default: "Loading..."
-#: Collage/browser/viewlets/insert-existing-item.pt:26
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/insert-existing-item.pt:26
 msgid "label_loading"
 msgstr ""
 
 #. Default: "Move down"
-#: Collage/browser/viewlets/modify_order_vertical.pt:11
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/modify_order_vertical.pt:11
 msgid "label_move_down"
 msgstr ""
 
 #. Default: "Move left"
-#: Collage/browser/viewlets/modify_order_horizontal.pt:11
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/modify_order_horizontal.pt:11
 msgid "label_move_left"
 msgstr ""
 
 #. Default: "Move right"
-#: Collage/browser/viewlets/modify_order_horizontal.pt:18
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/modify_order_horizontal.pt:18
 msgid "label_move_right"
 msgstr ""
 
 #. Default: "Move up"
-#: Collage/browser/viewlets/modify_order_vertical.pt:18
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/modify_order_vertical.pt:18
 msgid "label_move_up"
 msgstr ""
 
 #. Default: "Empty composition. Add one or more rows to get started."
-#: Collage/browser/templates/collage_compose.pt:13
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/templates/collage_compose.pt:13
 msgid "label_no_items_added"
 msgstr ""
 
 #. Default: "Title"
-#: Collage/content/_column.py:25
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_column.py:25
 msgid "label_optional_column_title"
 msgstr ""
 
 #. Default: "Title"
-#: Collage/content/_row.py:23
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_row.py:23
 msgid "label_optional_row_title"
 msgstr ""
 
 #. Default: "paste"
-#: Collage/browser/viewlets/paste.pt:10
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/paste.pt:10
 msgid "label_paste_object"
 msgstr ""
 
 #. Default: "Layout"
-#: Collage/browser/viewlets/layout.pt:12
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/layout.pt:12
 msgid "label_select_layout"
 msgstr ""
 
 #. Default: "Skins"
-#: Collage/browser/viewlets/skin.pt:12
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
 msgstr ""
 
 #. Default: "Show description"
-#: Collage/content/_collage.py:54
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_collage.py:54
 msgid "label_show_description"
 msgstr ""
 
 #. Default: "Show title"
-#: Collage/content/_collage.py:45
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/content/_collage.py:45
 msgid "label_show_title"
 msgstr ""
 
 #. Default: "split"
-#: Collage/browser/viewlets/split-column.pt:9
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/viewlets/split-column.pt:9
 msgid "label_split_column"
 msgstr ""
 
 #. Default: "Types whitelist"
-#: Collage/interfaces.py:60
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/interfaces.py:60
 msgid "label_types_whitelist"
 msgstr ""
 
 #. Default: "Use types whitelist"
-#: Collage/interfaces.py:52
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/interfaces.py:52
 msgid "label_use_whitelist"
 msgstr ""
 
 #. Default: "Alias inserted."
-#: Collage/browser/actions.py:119
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/actions.py:119
 msgid "msg_alias_inserted"
 msgstr ""
 
 #. Default: "Column inserted."
-#: Collage/browser/actions.py:94
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/actions.py:94
 msgid "msg_column_inserted"
 msgstr ""
 
 #. Default: "Row was added."
-#: Collage/browser/actions.py:84
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/actions.py:84
 msgid "msg_row_added"
 msgstr ""
 
 #. Default: "Target object not found."
-#: Collage/browser/actions.py:121
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/actions.py:121
 msgid "msg_target_object_not_found"
 msgstr ""
 
 #. Default: "Notification"
-#: Collage/browser/skins.py:9
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/skins.py:9
 msgid "notification_skin"
 msgstr ""
 
-#: Collage/browser/templates/existing_items_form.pt:62
+#. Default: "searching this path and below"
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/templates/existing_items_form.pt:62
 msgid "searching this path and below"
 msgstr ""
 
 #. Default: "Collage control panel"
-#: Collage/browser/controlpanel.py:60
+#: /root/plonesvn/i18n/Products.Collage/Products/Collage/browser/controlpanel.py:60
 msgid "title_collage_controlpanel"
 msgstr ""
 

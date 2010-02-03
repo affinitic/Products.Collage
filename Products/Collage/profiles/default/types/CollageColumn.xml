@@ -7,7 +7,7 @@
  <property name="title">Column</property>
  <property
     name="description">desc_type_collagecolumn</property>
- <property name="content_icon">++resource++collage-resources/collagecolumn_icon.gif</property>
+ <property name="content_icon">++resource++collage-resources/collagecolumn_icon.png</property>
  <property name="content_meta_type">CollageColumn</property>
  <property name="product">Collage</property>
  <property name="factory">addCollageColumn</property>

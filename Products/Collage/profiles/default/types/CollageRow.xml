@@ -7,7 +7,7 @@
  <property name="title">Row</property>
  <property
     name="description">desc_type_row</property>
- <property name="content_icon">++resource++collage-resources/collagerow_icon.gif</property>
+ <property name="content_icon">++resource++collage-resources/collagerow_icon.png</property>
  <property name="content_meta_type">CollageRow</property>
  <property name="product">Collage</property>
  <property name="factory">addCollageRow</property>

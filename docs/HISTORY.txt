@@ -3,6 +3,9 @@ Changelog
 
 In next release.
 
+* Plone 4 compatibility.
+  [malthe]
+
 * New icons.
   [malthe]
 

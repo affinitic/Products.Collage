@@ -15,8 +15,7 @@ more information.
 Compatibility
 -------------
 
-* Plone 3.1-3.3
-* Five 1.5
+* Plone 3.1-4.0
 
 Status
 ------

@@ -248,7 +248,7 @@ span.collage-navigation a {
   margin-right: 0;
 }
 
-
+/*
 #collage.edit .collage-row {
   border: 1px outset red;
   margin-bottom: 5px;
@@ -262,7 +262,7 @@ span.collage-navigation a {
 #collage.edit .collage-item {
   border: 1px outset;
 }
-
+*/
 
 * html #collage .collage-row {
   width:100%;
@@ -381,6 +381,11 @@ span.collage-navigation a {
 #collage .collage-layout-error {
     background-color: yellow;
     font-weight: bold;
+}
+
+#collage.edit .collage-header a {
+  border: none !important;
+  font-size: 10px;
 }
 
 /* <dtml-if ie_browser> */

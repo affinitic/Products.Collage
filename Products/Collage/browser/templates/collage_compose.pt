@@ -6,7 +6,7 @@
   <div metal:fill-slot="body">
     <metal:main-macro define-macro="main">
 
-      <div id="collage">
+      <div class="edit" id="collage">
 
         <div tal:replace="structure context/@@renderer" />
 

@@ -67,6 +67,8 @@ Translations:
 * Portuguese (pt): `Ricardo Alves <rsa@eurotux.com>`_
 * Dutch (nl): `Reinout van Rees <reinout@vanrees.org>`_
 
+Collage icon from the *Silk Icon Theme* by Mark James (CCA 2.5).
+
 Sponsors
 --------
 

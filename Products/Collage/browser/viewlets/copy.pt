@@ -7,7 +7,7 @@
   <a class="post" tal:attributes="href string:${here/absolute_url}/object_copy">
     <div class="copy-object-icon"><!-- nothing here --></div>
       <span i18n:translate="label_copy_object"
-	    class="copy-object">copy</span>
+	    class="copy-object">Copy</span>
   </a>
-  
+
 </div>

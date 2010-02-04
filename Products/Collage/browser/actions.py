@@ -4,8 +4,6 @@
 from zope import event
 from zope.lifecycleevent import ObjectModifiedEvent
 
-from Acquisition import aq_inner, aq_parent
-
 from Products.Five.browser import BrowserView
 from Products.CMFPlone import utils as cmfutils
 from Products.Collage.utilities import CollageMessageFactory as _

@@ -18,31 +18,31 @@ msgstr ""
 
 #: Collage/browser/actions.py:133
 msgid "${title} deleted."
-msgstr ""
+msgstr "${title} slettet."
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Tilbage til kompositionen"
 
 #: Collage/browser/viewlets/delete.pt:46
 msgid "Delete"
-msgstr ""
+msgstr "Slet"
 
 #: Collage/browser/viewlets/delete.pt:39
 msgid "Remove"
-msgstr ""
+msgstr "Fjern"
 
 #: Collage/browser/actions.py:42
 msgid "Skin changed."
-msgstr ""
+msgstr "Tema ændret."
 
 #: Collage/browser/viewlets/delete.pt:43
 msgid "This will delete the item."
-msgstr ""
+msgstr "Dette vil slette indholdsobjektet."
 
 #: Collage/browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
-msgstr ""
+msgstr "Dette vil slette indholdsreferencen."
 
 #: Collage/browser/actions.py:32
 msgid "View changed."
@@ -50,7 +50,7 @@ msgstr "Visning ændret"
 
 #: Collage/browser/viewlets/delete.pt:27
 msgid "Warning"
-msgstr ""
+msgstr "Advarsel"
 
 #. Default: "Add row"
 #: Collage/browser/templates/collage_compose.pt:21
@@ -60,32 +60,31 @@ msgstr "Tilføj række"
 #. Default: "Default"
 #: Collage/browser/skins.py:6
 msgid "default"
-msgstr ""
+msgstr "Normal"
 
 #. Default: "Select item types that can be aliased in a Collage object."
 #: Collage/interfaces.py:72
 msgid "help_alias_whitelist"
-msgstr ""
+msgstr "Vælg de indholdstyper, der kan indsættes ved reference i en komposition."
 
 #. Default: "Site wide options for Collage"
 #: Collage/browser/controlpanel.py:61
 msgid "help_collage_controlpanel"
-msgstr ""
+msgstr "Indstillinger for sidekomposition."
 
 #. Default: "This action can't be undone."
 #: Collage/browser/viewlets/delete.pt:28
 msgid "help_confirm_delete"
-msgstr ""
+msgstr "Denne handling kan ikke fortrydes."
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
 #: Collage/content/_collage.py:67
 msgid "help_index_subobjects"
-msgstr ""
+msgstr "Indekser underobjekter."
 
 #. Default: "Browse to content or search below the current location. Then click to insert."
 #: Collage/browser/viewlets/insert-existing-item.pt:20
-#, fuzzy
 msgid "help_insert_existing_items"
 msgstr "Vælg et eksisterende indholdsobjekt, du vil indsætte. Vælg rullemenu for at filtrere efter type."
 
@@ -113,42 +112,42 @@ msgstr "Vælg et layout for dette objekt"
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:22
 msgid "help_select_skin"
-msgstr ""
+msgstr "Vælg et tema for det valgte layout."
 
 #. Default: "Show description in page composition."
 #: Collage/content/_collage.py:55
 msgid "help_show_description"
-msgstr ""
+msgstr "Vis beskrivelse ved visning af kompositionen."
 
 #. Default: "Show title in page composition."
 #: Collage/content/_collage.py:46
 msgid "help_show_title"
-msgstr ""
+msgstr "Vis titel ved visning af kompositionen."
 
 #. Default: "Help"
 #: Collage/browser/skins.py:12
 msgid "help_skin"
-msgstr ""
+msgstr "Hjælp"
 
 #. Default: "Select item types that can be added in a Collage object."
 #: Collage/interfaces.py:61
 msgid "help_types_whitelist"
-msgstr ""
+msgstr "Vælg hvilke indholdstyper, der kan tilføjes til en komposition."
 
 #. Default: "Only types in below whitelist can be added in a Collage."
 #: Collage/interfaces.py:53
 msgid "help_use_whitelist"
-msgstr ""
+msgstr "Kun typer, der optræder i denne liste kan tilføjes."
 
 #. Default: "Selected target object"
 #: Collage/content/_alias.py:40
 msgid "label_alias_target"
-msgstr "Vælg alias"
+msgstr "Vælg reference til indholdsobjekt."
 
 #. Default: "Alias whitelist"
 #: Collage/interfaces.py:71
 msgid "label_alias_whitelist"
-msgstr ""
+msgstr "Godkendte som indholdsreferencer"
 
 #. Default "(alias)"
 #. Default: "(alias)"
@@ -159,31 +158,29 @@ msgstr "(alias)"
 #. Default: "copy"
 #: Collage/browser/viewlets/copy.pt:9
 msgid "label_copy_object"
-msgstr ""
+msgstr "Kopier"
 
 #. Default: "Delete"
 #: Collage/browser/viewlets/delete.pt:21
 msgid "label_delete"
-msgstr ""
+msgstr "Slet"
 
 #. Default "Add collage contents in searchable text?"
 #. Default: "Add collage contents in searchable text?"
 #: Collage/content/_collage.py:66
 msgid "label_index_subobjects"
-msgstr ""
+msgstr "Bruge indhold i komposition til at definere søgbar tekst."
 
 #. Default: "Browse"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
-#, fuzzy
 msgid "label_insert_existing_item"
-msgstr "Indsæt eksisterende objekt"
+msgstr "Søg"
 
 #. Default "Insert new item"
 #. Default: "Create"
 #: Collage/browser/viewlets/insert-new-item.pt:10
-#, fuzzy
 msgid "label_insert_new_item"
-msgstr "Indsæt nyt objekt"
+msgstr "Tilføj"
 
 #. Default: "Loading..."
 #: Collage/browser/viewlets/insert-existing-item.pt:26
@@ -212,9 +209,8 @@ msgstr "Flyt op"
 
 #. Default: "Empty composition. Add one or more rows to get started."
 #: Collage/browser/templates/collage_compose.pt:13
-#, fuzzy
 msgid "label_no_items_added"
-msgstr "Denne kollage er tom."
+msgstr "Siden er tom; tilføj indhold ved først at indsætte en ny række."
 
 #. Default: "Title"
 #: Collage/content/_column.py:25
@@ -229,18 +225,17 @@ msgstr "Overskrift"
 #. Default: "paste"
 #: Collage/browser/viewlets/paste.pt:10
 msgid "label_paste_object"
-msgstr ""
+msgstr "Indsæt"
 
 #. Default: "Layout"
 #: Collage/browser/viewlets/layout.pt:12
-#, fuzzy
 msgid "label_select_layout"
-msgstr "Vælg layout"
+msgstr "Layout"
 
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
 msgid "label_select_skin"
-msgstr ""
+msgstr "Tema"
 
 #. Default: "Show description"
 #: Collage/content/_collage.py:54
@@ -260,44 +255,44 @@ msgstr "Opdel"
 #. Default: "Types whitelist"
 #: Collage/interfaces.py:60
 msgid "label_types_whitelist"
-msgstr ""
+msgstr "Godkendte indholdstyper"
 
 #. Default: "Use types whitelist"
 #: Collage/interfaces.py:52
 msgid "label_use_whitelist"
-msgstr ""
+msgstr "Brug kun godkendte indholdstyper"
 
 #. Default: "Alias inserted."
 #: Collage/browser/actions.py:119
 msgid "msg_alias_inserted"
-msgstr ""
+msgstr "Reference indsat."
 
 #. Default: "Column inserted."
 #: Collage/browser/actions.py:94
 msgid "msg_column_inserted"
-msgstr ""
+msgstr "Kolonne tilføjet."
 
 #. Default: "Row was added."
 #: Collage/browser/actions.py:84
 msgid "msg_row_added"
-msgstr ""
+msgstr "Række tilføjet."
 
 #. Default: "Target object not found."
 #: Collage/browser/actions.py:121
 msgid "msg_target_object_not_found"
-msgstr ""
+msgstr "Indholdsreference kunne ikke findes."
 
 #. Default: "Notification"
 #: Collage/browser/skins.py:9
 msgid "notification_skin"
-msgstr ""
+msgstr "Påmindelse"
 
 #: Collage/browser/templates/existing_items_form.pt:62
 msgid "searching this path and below"
-msgstr ""
+msgstr "søger denne sti og under"
 
 #. Default: "Collage control panel"
 #: Collage/browser/controlpanel.py:60
 msgid "title_collage_controlpanel"
-msgstr ""
+msgstr "Komposition"
 

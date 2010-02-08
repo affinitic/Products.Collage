@@ -1,6 +1,10 @@
 Changelog
 =========
 
+In next release...
+
+* Compatibility fix for Chameleon.
+
 1.3.0-b3 (2010-02-04)
 ---------------------
 

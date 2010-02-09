@@ -4,7 +4,7 @@
    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
    i18n:domain="plone">
 
- <property name="title">Alias</property>
+ <property name="title" i18n:translate="">Alias</property>
  <property
     name="description">desc_type_collagealias</property>
  <property name="content_icon">++resource++collage-resources/collagealias_icon.gif</property>

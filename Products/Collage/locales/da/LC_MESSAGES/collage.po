@@ -107,7 +107,7 @@ msgstr "Hvis du ønsker en overskrift til denne række, kan du skrive den her."
 #. Default: "Choose a layout for this object."
 #: Collage/browser/viewlets/layout.pt:22
 msgid "help_select_layout"
-msgstr "Vælg et layout for dette objekt"
+msgstr "Vælg et layout for dette objekt."
 
 #. Default: "Choose a skin to apply to the selected layout."
 #: Collage/browser/viewlets/skin.pt:22

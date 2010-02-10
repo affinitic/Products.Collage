@@ -35,7 +35,7 @@
 }
 
 .collage-header p.discreet {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .collage-item div.clickable a {
@@ -144,6 +144,7 @@
 
 .expandable-content {
   clear: both;
+  font-size: 0.9em;
   display: none;
   background-color: white;
   padding: 0;
@@ -153,17 +154,18 @@
   border: 1px solid &dtml-contentViewBorderColor;;
 }
 
-.expandable-content h4 {
+.documentContent .expandable-content h4 {
   margin: 0;
   background: &dtml-contentViewBackgroundColor;;
   color: &dtml-contentViewFontColor;;
   display: block;
   padding: 2px 0.5em;
-  border-bottom: 1px solid &dtml-contentViewBorderColor;;  
+  border-bottom: 1px solid &dtml-contentViewBorderColor;;
+  font-size: 0.9em;
 }
 
 .expandable-content .inner-content {
-  margin: 1em;
+  margin: 0.5em;
 }
 
 ul.collage-content-menu {
@@ -384,8 +386,16 @@ span.collage-navigation a {
 }
 
 #collage.edit .collage-header a {
-  border: none !important;
   font-size: 10px;
+}
+
+#collage.edit .collage-header a {
+  border: none !important;
+}
+
+#collage.edit .expandable-content a,
+#collage.edit .expandable-content span {
+  font-size: 0.9em;
 }
 
 /* <dtml-if ie_browser> */

@@ -3,6 +3,8 @@ Changelog
 
 In next release...
 
+* Fixed UI styling on Plone 4.
+
 * Compatibility fix for Chameleon.
 
 1.3.0-b3 (2010-02-04)

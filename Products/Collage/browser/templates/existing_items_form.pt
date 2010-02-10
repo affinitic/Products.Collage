@@ -18,8 +18,8 @@
 
     <div class="field">
       <label i18n:domain="plone" i18n:translate="label_search_text"
-	         for="portal_type">Search Text</label>
-      <br/>
+             for="portal_type">Search Text</label>
+
       <input tal:condition="options/path"
              type="hidden" name="path" tal:attributes="value options/path" />
       <input type="text"
@@ -43,8 +43,6 @@
     <div class="breadcrumbs"
          tal:define="isRTL here/@@plone_portal_state/is_rtl;
                      crumbs view/breadcrumbs;">
-
-      <img tal:attributes="src string:${here/portal_url}/logoIcon.gif" />
 
       <tal:crums tal:repeat="crumb crumbs">
 

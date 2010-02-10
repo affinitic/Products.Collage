@@ -28,7 +28,6 @@
 
 .collage-header {
   font-size: 0.9em;
-/*  background: url(&dtml-portal_url;/++resource++collage-resources/collage_row_header.jpg) no-repeat top left;*/
   border-bottom: 1px solid &dtml-globalBorderColor;;
   padding: 5px 0;
   position: relative;
@@ -56,9 +55,27 @@
 }
 
 .collage-existing-items .breadcrumbs {
+  background: url(&dtml-portal_url;/logoIcon.gif) no-repeat left center;
+  padding-top: 4px;
   padding-bottom: 4px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  padding-left: 20px;
   border-bottom: 1px solid &dtml-globalBorderColor;;
+}
+
+.collage-existing-items .breadcrumbs a,
+.collage-existing-items .breadcrumbs span {
+  font-size: 1.0em !important;
+}
+
+.collage-existing-items .field {
+  text-align: right;
+  display: block;
+  position: relative;
+}
+
+.collage-existing-items label {
+  display: none;
 }
 
 .collage-header a {
@@ -156,10 +173,10 @@
 
 .documentContent .expandable-content h4 {
   margin: 0;
-  background: &dtml-contentViewBackgroundColor;;
+  background: &dtml-contentViewBackgroundColor; url(&dtml-portal_url;/++resource++collage-resources/collage_icon.png) no-repeat 3px center;
   color: &dtml-contentViewFontColor;;
   display: block;
-  padding: 2px 0.5em;
+  padding: 2px 2.2em;
   border-bottom: 1px solid &dtml-contentViewBorderColor;;
   font-size: 0.9em;
 }
@@ -169,11 +186,10 @@
 }
 
 ul.collage-content-menu {
-  /*white-space: nowrap;*/
-  list-style-image: none;
-  list-style-type: none;
-  margin: 0;
   display: block;
+  list-style-image: none !important;
+  list-style-type: none !important;
+  margin-left: 0 !important;
 }
 
 ul.collage-content-menu li a {

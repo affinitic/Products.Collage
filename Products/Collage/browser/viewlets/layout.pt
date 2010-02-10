@@ -37,6 +37,9 @@
                 Layout name
               </span>
             </a>
+
+            <span tal:condition="not: repeat/layout/end">|</span>
+
           </tal:layouts>
 
           <div class="visualClear"><!-- nothing here --></div>

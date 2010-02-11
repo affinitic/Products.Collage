@@ -48,6 +48,24 @@ class IPortletSkin(interface.Interface):
 
 class ICollageSiteOptions(interface.Interface):
 
+    ref_browser_empty = schema.Bool(
+        title=_(u'label_ref_browser_empty',
+                default=u"Open reference Browser without initial item listing"),
+        description=_(u'help_ref_browser_empty',
+                      default=u"Use this if you have lots of items in your"
+                              u"containers."),
+        default=False,
+        required=True)
+    
+    ref_browser_types = schema.Bool(
+        title=_(u'label_ref_browser_types',
+                default=u"Provide type filter in reference browser"),
+        description=_(u'help_ref_browser_types',
+                      default=u"When set to True, the reference browser shows"
+                              u"up a content type filter."),
+        default=False,
+        required=True)
+
     use_whitelist = schema.Bool(
         title=_(u'label_use_whitelist', default=u"Use types whitelist"),
         description=_(u'help_use_whitelist',

@@ -21,12 +21,15 @@ from Products.Collage.config import COLLAGE_TYPES
 from Products.Collage.utilities import getPortal
 from Products.Collage.utilities import CollageMessageFactory as _
 
-
 class CollageSiteOptions(SchemaAdapterBase):
 
     implements(ICollageSiteOptions)
     adapts(IPloneSiteRoot)
 
+    ref_browser_empty = \
+        ProxyFieldProperty(ICollageSiteOptions['ref_browser_empty'])
+    ref_browser_types = \
+        ProxyFieldProperty(ICollageSiteOptions['ref_browser_types'])
     use_whitelist = ProxyFieldProperty(ICollageSiteOptions['use_whitelist'])
     types_whitelist = ProxyFieldProperty(ICollageSiteOptions['types_whitelist'])
     alias_whitelist = ProxyFieldProperty(ICollageSiteOptions['alias_whitelist'])
@@ -50,16 +53,16 @@ class CollageSiteOptions(SchemaAdapterBase):
             return portal_type in self.alias_whitelist
         return True
 
-
 class CollageControlPanel(ControlPanelForm):
 
     form_fields = FormFields(ICollageSiteOptions)
     form_fields['types_whitelist'].custom_widget = MultiCheckBoxThreeColumnWidget
     form_fields['alias_whitelist'].custom_widget = MultiCheckBoxThreeColumnWidget
 
-    label = form_name = _(u'title_collage_controlpanel', default=u"Collage control panel")
-    description = _(u'help_collage_controlpanel', default=u"Site wide options for Collage")
-
+    label = form_name = _(u'title_collage_controlpanel',
+                          default=u"Collage control panel")
+    description = _(u'help_collage_controlpanel',
+                    default=u"Site wide options for Collage")
 
 class CollageUserFriendlyTypesVocabulary(object):
     """Vocabulary"""

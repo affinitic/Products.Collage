@@ -137,7 +137,7 @@ msgstr "Wähle Artikeltypen aus, die zu einer Collage hinzugefügt werden könne
 #. Default: "Only types in below whitelist can be added in a Collage."
 #: Collage/interfaces.py:53
 msgid "help_use_whitelist"
-msgstr "Nur Hinzufügen von Einträgen aus der Weißen Liste in die Collage erlauben?"
+msgstr "Nur Hinzufügen von Einträgen aus der Positivliste in die Collage erlauben?"
 
 #. Default: "Selected target object"
 #: Collage/content/_alias.py:40
@@ -147,7 +147,7 @@ msgstr "Ziel"
 #. Default: "Alias whitelist"
 #: Collage/interfaces.py:71
 msgid "label_alias_whitelist"
-msgstr "Weiße Liste der Aliase"
+msgstr "Positivliste der Aliase"
 
 #. Default "(alias)"
 #. Default: "(alias)"
@@ -255,12 +255,12 @@ msgstr "Spalte neu"
 #. Default: "Types whitelist"
 #: Collage/interfaces.py:60
 msgid "label_types_whitelist"
-msgstr "Weiße Liste der Typen"
+msgstr "Positivliste der Typen"
 
 #. Default: "Use types whitelist"
 #: Collage/interfaces.py:52
 msgid "label_use_whitelist"
-msgstr "Verwende die Weißen Listen"
+msgstr "Verwende die Positivlisten"
 
 #. Default: "Alias inserted."
 #: Collage/browser/actions.py:119
@@ -296,3 +296,22 @@ msgstr "sucht in diesem Pfad und darunter"
 msgid "title_collage_controlpanel"
 msgstr "Collage Website-Konfiguration"
 
+#. Default: "Open reference Browser without initial item listing"
+#: Collage/interfaces.py
+msgid "label_ref_browser_empty"
+msgstr "Öffne Referenz-Browser ohne initiale Auflistung"
+
+#. Default: "Use this if you have lots of items in your containers."
+#: Collage/interfaces.py
+msgid "help_ref_browser_empty"
+msgstr "Sinnvoll, wenn viele Objekte in den einzelnen Containern liegen."
+
+#. Default: "Provide type filter in reference browser"
+#: Collage/interfaces.py
+msgid "label_ref_browser_types"
+msgstr "Zeige Content-Typen-Filter im Referenz-Browser"
+
+#. Default: "When set to True, the reference browser shows up a content type filter."
+#: Collage/interfaces.py
+msgid "help_ref_browser_types"
+msgstr "Zusätzlich zum Suchfeld wird im Referenz-Browser ein Drop-Down zum Filtern der Content-Typen angezeigt."

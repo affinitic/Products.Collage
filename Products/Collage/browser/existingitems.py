@@ -8,6 +8,7 @@ from plone.memoize.view import memoize_contextless
 from plone.app.layout.navigation.interfaces import INavigationRoot
 
 from Acquisition import aq_inner
+from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone import PloneMessageFactory as p_
@@ -20,7 +21,7 @@ from Products.ZCTextIndex.ParseTree import ParseError
 
 from urllib import unquote
 
-class ExistingItemsView(object):
+class ExistingItemsView(BrowserView):
     limit = 10
 
     def __call__(self):

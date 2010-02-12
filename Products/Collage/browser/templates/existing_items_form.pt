@@ -22,6 +22,16 @@
 
       <input tal:condition="options/path"
              type="hidden" name="path" tal:attributes="value options/path" />
+      <tal:typefilter define="typefilter view/typefilter"
+                      condition="typefilter">
+        <select name="portal_type">
+          <option tal:repeat="term typefilter"
+                  tal:attributes="value term/value;
+                                  selected term/selected|nothing"
+                  tal:content="term/title">
+          </option>
+        </select>
+      </tal:typefilter>
       <input type="text"
              id="searchGadget"
              name="SearchableText"
@@ -64,12 +74,19 @@
     <ul i18n:domain="plone" class="collage-content-menu"
         tal:define="focushint string:View this item in a new window;">
       <tal:no-items condition="not: items">
-        <p tal:condition="not: options/query" class="discreet" i18n:translate="">
-          Empty folder.
-        </p>
-        <p tal:condition="options/query" class="discreet" i18n:translate="">
-          No results found.
-        </p>
+        <tal:readitems condition="view/readitems">
+          <p tal:condition="not: options/query" class="discreet" i18n:translate="">
+            Empty folder.
+          </p>
+          <p tal:condition="options/query" class="discreet" i18n:translate="">
+            No results found.
+          </p>
+        </tal:readitems>
+        <tal:no-readitems condition="not: view/readitems">
+          <p class="discreet" i18n:translate="">
+            No search criteria defined.
+          </p>
+        </tal:no-readitems>
       </tal:no-items>
 
       <tal:items repeat="item items">

@@ -2,6 +2,8 @@
 # $Id$
 
 from zope.component import getMultiAdapter
+from zope.component import getUtility
+from zope.app.schema.vocabulary import IVocabularyFactory
 from plone.memoize.view import memoize_contextless
 from plone.app.layout.navigation.interfaces import INavigationRoot
 
@@ -44,7 +46,6 @@ class ExistingItemsView(object):
         return getMultiAdapter((self.context, self.request),
                                name=u'plone_tools').catalog()
 
-
     @property
     def portal(self):
         return getMultiAdapter((self.context, self.request),
@@ -54,6 +55,27 @@ class ExistingItemsView(object):
         return getMultiAdapter((self.context, self.request),
                                name=u'plone_portal_state').portal_url()
 
+    @property
+    def typefilter(self):
+        options = getCollageSiteOptions()
+        if not options.ref_browser_types:
+            return list()
+        ret = [{'title': '', 'value': '', 'selected': False}]
+        factory = getUtility(IVocabularyFactory,
+                         name=u'collage.vocabularies.CollageUserFriendlyTypes')
+        for term in factory(self.context):
+            if options.use_whitelist:
+                if not term.value in options.alias_whitelist:
+                    continue
+            selected = self.request.form.get('portal_type') == term.value \
+                and True or False
+            ret.append({
+                'title': term.title,
+                'value': term.value,
+                'selected': selected,
+            })
+        return ret
+    
     def breadcrumbs(self):
         path = self.request.get('path')
         portal = self.portal
@@ -61,10 +83,8 @@ class ExistingItemsView(object):
             context = portal
         else:
             context = portal.restrictedTraverse(unquote(path))
-
         crumbs = []
         context = aq_inner(context)
-
         while context is not None:
             if not IHideFromBreadcrumbs.providedBy(context):
                 crumbs.append({
@@ -72,19 +92,16 @@ class ExistingItemsView(object):
                     'url': context.absolute_url(),
                     'title': context.title_or_id()
                     })
-
             if INavigationRoot.providedBy(context):
                 break
-
             context = utils.parent(context)
-
         crumbs.reverse()
         return crumbs
 
     @memoize_contextless
     def listEnabledTypes(self):
-        """Enabled types in a Collage as list of dicts"""
-
+        """Enabled types in a Collage as list of dicts.
+        """
         actual_portal_type = self.request.get('portal_type', None)
         collage_options = getCollageSiteOptions()
         ttool = getToolByName(self.context, 'portal_types', None)
@@ -95,34 +112,43 @@ class ExistingItemsView(object):
                  'selected': pt.getId() == actual_portal_type and 'selected' or None}
                 for pt in ttool.listTypeInfo()
                 if collage_options.enabledAlias(pt.getId())]
-
+    
+    @property
+    def readitems(self):
+        options = getCollageSiteOptions()
+        if options.ref_browser_empty \
+          and self.request.form.get('portal_type', '') == '' \
+          and self.request.form.get('path', '') == '' \
+          and self.request.form.get('b_start', None) is None:
+            return False
+        return True
 
     def _data(self):
         portal_types = self.request.get('portal_type', None)
         if not portal_types:
             portal_types = [pt['id'] for pt in self.listEnabledTypes()]
-
         query_path = self.request.get('path') or \
                      "/".join(self.portal.getPhysicalPath())
         query_path = unquote(query_path)
         b_start = self.request.get('b_start', 0)
-
         query_text = unquote(self.request.get('SearchableText', ''))
         if query_text:
             depth = 10
         else:
             depth = 1
-
-        try:
-            results = self.catalog(
-                SearchableText=query_text,
-                portal_type=portal_types,
-                path={"query": query_path, 'depth': depth},
-                sort_on='sortable_title',
-                sort_order='ascending')
-            # alternative: sort_order='reverse', sort_on='modified'
-        except ParseError:
+        if not self.readitems:
             results = []
+        else:
+            try:
+                results = self.catalog(
+                    SearchableText=query_text,
+                    portal_type=portal_types,
+                    path={"query": query_path, 'depth': depth},
+                    sort_on='sortable_title',
+                    sort_order='ascending')
+                # alternative: sort_order='reverse', sort_on='modified'
+            except ParseError:
+                results = []
 
         # setup description cropping
         cropText = getMultiAdapter(

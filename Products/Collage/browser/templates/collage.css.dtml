@@ -54,6 +54,10 @@
   float: none;
 }
 
+.collage-existing-items select {
+  font-size: 80%;
+}
+
 .collage-existing-items .breadcrumbs {
   background: url(&dtml-portal_url;/logoIcon.gif) no-repeat left center;
   padding-top: 4px;

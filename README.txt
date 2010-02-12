@@ -50,6 +50,7 @@ Development:
 * `Gilles Lenfant <gilles.lenfant@gmail.com>`_
 * `Sune Toft <sune@headnet.dk>`_
 * `Jens Klein <jens@bluedynamics.com>`_
+* `Robert Niederreiter <rnix@squarewave.at>`_
 
 Translations:
 

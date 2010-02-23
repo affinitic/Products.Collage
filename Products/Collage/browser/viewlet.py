@@ -12,6 +12,8 @@ from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.utilities import getCollageSiteOptions
 from Products.Collage.utilities import CollageMessageFactory as _
 
+from zope.component import getMultiAdapter
+
 class SimpleContentMenuViewlet(object):
     def portal_url(self):
         return getToolByName(self.context, 'portal_url')()
@@ -119,8 +121,12 @@ class AliasViewlet(SimpleContentMenuViewlet):
 class ActionsViewlet(SimpleContentMenuViewlet):
 
     def getViewActions(self):
-        plone_view = self.context.restrictedTraverse('@@plone')
-        return plone_view.prepareObjectTabs()
+        plone_view = getMultiAdapter((self.context,self.request), name="plone")
+        provider = getMultiAdapter(
+            (self.context, self.request, plone_view), 
+            name="plone.contentviews")
+        viewlet = provider.__getitem__("plone.contentviews")
+        return viewlet.prepareObjectTabs()
 
 class CopyViewlet(SimpleContentMenuViewlet):
     pass

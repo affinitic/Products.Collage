@@ -1,7 +1,6 @@
 <div class="collage-column"
      tal:define="
-       arg python: 'args' in options and options['args'][1] or args[0];
-       columns options/context|arg"
+       columns options/context | python: args[-1]"
      tal:repeat="item python:view.getItems(columns)">
   <div tal:define="number repeat/item/number;
                    end python: repeat['item'].end and 'collage-last-object' or '';

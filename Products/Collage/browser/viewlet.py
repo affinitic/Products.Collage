@@ -122,11 +122,15 @@ class ActionsViewlet(SimpleContentMenuViewlet):
 
     def getViewActions(self):
         plone_view = getMultiAdapter((self.context,self.request), name="plone")
-        provider = getMultiAdapter(
-            (self.context, self.request, plone_view), 
-            name="plone.contentviews")
-        viewlet = provider.__getitem__("plone.contentviews")
-        return viewlet.prepareObjectTabs()
+        try:
+            prepareObjectTabs = plone_view.prepareObjectTabs
+        except AttributeError:
+            provider = getMultiAdapter(
+                (self.context, self.request, plone_view), 
+                name="plone.contentviews")
+            viewlet = provider.__getitem__("plone.contentviews")
+            prepareObjectTabs = viewlet.prepareObjectTabs
+        return prepareObjectTabs()
 
 class CopyViewlet(SimpleContentMenuViewlet):
     pass

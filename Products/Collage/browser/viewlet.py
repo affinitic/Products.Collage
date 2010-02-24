@@ -15,6 +15,9 @@ from Products.Collage.utilities import CollageMessageFactory as _
 from zope.component import getMultiAdapter
 
 class SimpleContentMenuViewlet(object):
+    def isAlias(self):
+        return getattr(self.__parent__, '__alias__', None) is not None
+
     def portal_url(self):
         return getToolByName(self.context, 'portal_url')()
 
@@ -113,11 +116,6 @@ class IconViewlet(SimpleContentMenuViewlet):
 
         return obj_typeinfo.getIcon()
 
-class AliasViewlet(SimpleContentMenuViewlet):
-
-    def isAlias(self):
-        return getattr(self.__parent__, '__alias__', None) is not None
-
 class ActionsViewlet(SimpleContentMenuViewlet):
 
     def getViewActions(self):
@@ -135,7 +133,7 @@ class ActionsViewlet(SimpleContentMenuViewlet):
 class CopyViewlet(SimpleContentMenuViewlet):
     pass
 
-class PasteViewlet(AliasViewlet):
+class PasteViewlet(SimpleContentMenuViewlet):
     @property
     def clipboard_data_valid(self):
         cb_dataValid = getattr(self.context, 'cb_dataValid', None)

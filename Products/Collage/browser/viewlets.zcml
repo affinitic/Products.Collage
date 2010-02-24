@@ -43,16 +43,6 @@
      />
 
   <browser:viewlet
-     name="030-alias-marker"
-     for="*"
-     manager="Products.Collage.interfaces.IContentMenu"
-     class=".viewlet.AliasViewlet"
-     template="viewlets/alias_marker.pt"
-     permission="cmf.ModifyPortalContent"
-     layer="Products.Collage.interfaces.ICollageEditLayer"
-     />
-
-  <browser:viewlet
      name="050-layout"
      for="*"
      manager="Products.Collage.interfaces.IContentMenu"
@@ -106,7 +96,7 @@
      name="100-delete"
      for="*"
      manager="Products.Collage.interfaces.IContentMenu"
-     class=".viewlet.AliasViewlet"
+     class=".viewlet.SimpleContentMenuViewlet"
      template="viewlets/delete.pt"
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"

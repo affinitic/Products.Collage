@@ -29,12 +29,22 @@
 .collage-header {
   font-size: 0.9em;
   border-bottom: 1px solid &dtml-globalBorderColor;;
-  padding: 5px 0;
+  padding: 2px 0 2px 0!important;
   position: relative;
+  margin-bottom: 2px !important;
 }
 
 .collage-header p.discreet {
   font-size: 0.9em;
+}
+
+.collage-header span.icon img {
+  padding: 2px;
+}
+
+.collage-header span.icon img.alias {
+  padding: 0px;
+  border: 2px solid &dtml-globalBorderColor;;
 }
 
 .collage-item div.clickable a {

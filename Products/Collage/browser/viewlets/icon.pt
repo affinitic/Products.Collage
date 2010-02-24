@@ -3,12 +3,13 @@
      xmlns:metal="http://xml.zope.org/namespaces/metal"
      i18n:domain="collage"
      tal:omit-tag="">
-  
-  <span>
+
+  <span class="icon">
     <img height="16"
-	 width="16"
-	 tal:attributes="src string:${view/portal_url}/${view/getIcon};
-			 alt here/portal_type" />
+         width="16"
+         tal:attributes="class python: view.isAlias() and 'alias' or None;
+                         src string:${view/portal_url}/${view/getIcon};
+                         alt here/portal_type" />
   </span>
-  
+
 </div>

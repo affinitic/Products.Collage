@@ -3,6 +3,9 @@ Changelog
 
 In next release...
 
+* The content type icon for Aliased content now appears with a border
+  instead of the "alias" label.
+
 * Fixed UI styling on Plone 4.
 
 * Compatibility fix for Chameleon.

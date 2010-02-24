@@ -175,7 +175,7 @@
   border: 1px solid &dtml-contentViewBorderColor;;
 }
 
-.documentContent .expandable-content h4 {
+#collage .expandable-content h4 {
   margin: 0;
   background: &dtml-contentViewBackgroundColor; url(&dtml-portal_url;/++resource++collage-resources/collage_icon.png) no-repeat 3px center;
   color: &dtml-contentViewFontColor;;

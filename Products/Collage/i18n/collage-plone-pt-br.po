@@ -20,7 +20,7 @@ msgstr "Referência"
 
 # Object action
 msgid "Back to Collage"
-msgstr "Voltara para o Collage"
+msgstr "Voltar para o Collage"
 
 # content-types
 msgid "Collage"
@@ -36,7 +36,7 @@ msgid "Row"
 msgstr "Linha"
 
 msgid "desc_type_collage"
-msgstr "Um conteiner estrutural que pode exibir seus elementos em varios leiautes." 
+msgstr "Um contêiner estrutural que pode exibir seus elementos em vários leiautes." 
 
 msgid "desc_type_collagealias"
 msgstr "Um objeto representando uma referência (alias) para outros objetos."

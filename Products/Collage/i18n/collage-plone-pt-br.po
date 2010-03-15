@@ -16,34 +16,34 @@ msgstr ""
 "X-Is-Fallback-For: pt\n"
 
 msgid "Alias"
-msgstr ""
+msgstr "Referência"
 
 # Object action
 msgid "Back to Collage"
-msgstr ""
+msgstr "Voltara para o Collage"
 
 # content-types
 msgid "Collage"
-msgstr ""
+msgstr "Collage"
 
 msgid "Column"
-msgstr ""
+msgstr "Coluna"
 
 msgid "Compose"
 msgstr "Montar página"
 
 msgid "Row"
-msgstr ""
+msgstr "Linha"
 
 msgid "desc_type_collage"
-msgstr "A structural container which can display its element in various layouts."
+msgstr "Um conteiner estrutural que pode exibir seus elementos em varios leiautes." 
 
 msgid "desc_type_collagealias"
-msgstr "An object representing an alias for another object."
+msgstr "Um objeto representando uma referência (alias) para outros objetos."
 
 msgid "desc_type_collagecolumn"
-msgstr "A column which can contain content objects."
+msgstr "Uma coluna que pode conter objetos de conteudo."
 
 msgid "desc_type_collagerow"
-msgstr "A row which can contain page columns."
+msgstr "Uma linha que pode conter colunas de página."
 

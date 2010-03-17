@@ -3,7 +3,7 @@
       metal:use-macro="context/@@standard_macros/page"
       i18n:domain="collage">
 
-  <div metal:fill-slot="body">
+  <div metal:fill-slot="body" id="content">
     <metal:main-macro define-macro="main">
 
       <div id="collage">

@@ -43,8 +43,9 @@
 
     <a tal:attributes="href here/absolute_url"
        tal:condition="python:len(topicContents) ==  here.itemCount"
-       i18n:translate="">More...</a>
+       i18n:domain="plone" i18n:translate="box_morelink">More...</a>
 
   </div>
 
 </tal:variables>
+

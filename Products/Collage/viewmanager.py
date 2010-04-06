@@ -71,8 +71,7 @@ class DynamicViewManager(object):
         directlyProvides(request, *ifaces)
         layouts = [(name, getattr(layout, 'title', name))
                    for (name, layout) in layouts
-                   if type(layout) is type(BrowserView)
-                      and issubclass(layout, BrowserView)
+                   if issubclass(layout, BrowserView)
                       and not getattr(layout, 'hide', False)]
         layouts.sort(lambda a, b: cmp(a[1], b[1]))
         return layouts

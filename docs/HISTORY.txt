@@ -3,6 +3,9 @@ Changelog
 
 In next release...
 
+* Fixed issue where layout viewlets would not be shown on Plone 4 due
+  to an incorrect type assertion.
+
 * The content type icon for Aliased content now appears with a border
   instead of the "alias" label.
 

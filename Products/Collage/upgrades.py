@@ -88,7 +88,7 @@ def upgradeTo1_3_0(setuptool):
     for portal_type in ('Collage', 'CollageRow', 'CollageColumn', 'CollageAlias'):
         portal_types._delObject(portal_type)
 
-    for step in ('typeinfo', 'cssregistry', 'actions', 'jsregistry'):
+    for step in ('typeinfo', 'cssregistry', 'actions', 'action-icons', 'jsregistry'):
         setuptool.runImportStepFromProfile(PROFILE_NAME, step, run_dependencies=False)
 
     # Remove useless alias_search_limit option in property sheet

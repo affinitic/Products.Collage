@@ -53,7 +53,7 @@ Actions
   >>> viewlet = getMultiAdapter((row, request, view, manager), name=u"130-actions")
 
 Let's look at the actions for our folder:
-
+  >>> request.set('ACTUAL_URL', collage.absolute_url())
   >>> for action in viewlet.getViewActions():
   ...   for key in ['url', 'selected', 'id', 'title']:
   ...     if key not in action.keys(): raise ValueError

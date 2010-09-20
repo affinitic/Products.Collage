@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.3.0-b4 (2010-04-06)
----------------------
+1.3.0 - unreleased
+------------------
 
 * Image and File layouts work with blob objects.
   [thomasdesvenain]
@@ -13,8 +13,11 @@ Changelog
 * Updated french translations.
   [thomasdesvenain]
 
-* Synched ``i18n/collage-xx.po`` files (10 messages added, 5 removed)
+* Synched ``i18n/collage-xx.po`` files.
   [thomasdesvenain]
+
+1.3.0-b4 (2010-04-06)
+---------------------
 
 * Fixed issue where layout viewlets would not be shown on Plone 4 due
   to an incorrect type assertion.

@@ -4,6 +4,15 @@ Changelog
 1.3.0-b4 (2010-04-06)
 ---------------------
 
+* Fixed few internationalizations.
+  [thomasdesvenain]
+
+* Updated french translations.
+  [thomasdesvenain]
+
+* Synched ``i18n/collage-xx.po`` files (10 messages added, 5 removed)
+  [thomasdesvenain]
+
 * Fixed issue where layout viewlets would not be shown on Plone 4 due
   to an incorrect type assertion.
 
@@ -121,11 +130,11 @@ Changelog
   [jensens]
 
 * Removed type 'Folder' from Collage properties -> types whitelist. It does not
-  make much sense (and will confuse users) to add a folder direct inside a 
+  make much sense (and will confuse users) to add a folder direct inside a
   Collage. if someone really needs it, it can be enabled with minor effort.
   [jensens]
 
-* Made Collage fields: show_title, show_description and index_subobjects 
+* Made Collage fields: show_title, show_description and index_subobjects
   languageIndependent.
   [jensens]
 
@@ -148,14 +157,14 @@ Changelog
   "Add Collage content" is now Contributor, additional to Owner & Manager.
 
 * Don't assume that a view is always available: added error view as fallback.
-  It helps a lot in development and doesn't expose ugly tracebacks to users  
+  It helps a lot in development and doesn't expose ugly tracebacks to users
   if site has a configuration problem. Also minor cleanup and fixed tests.
   [jensens]
 
-* Added confirmation-popup for delete/remove action. 
+* Added confirmation-popup for delete/remove action.
   [jensens]
 
-* Make viewlets following all the same paradigm.  
+* Make viewlets following all the same paradigm.
   Reorder them according to usability thought. Turn expandable content into
   overlayed box.
   [jensens]
@@ -171,12 +180,12 @@ Changelog
   missing labels.
   [glenfant]
 
-* Make a difference between types to be added to Collage and types 
-  enabled for alias. This introduces a new whitelist in controlpanel.  
+* Make a difference between types to be added to Collage and types
+  enabled for alias. This introduces a new whitelist in controlpanel.
   [jensens]
 
-* Feature "automatic split of rows with more than 3 entries" was broken. 
-  Its fixed now. I also added an unbatched view for the row. 
+* Feature "automatic split of rows with more than 3 entries" was broken.
+  Its fixed now. I also added an unbatched view for the row.
   [jensens]
 
 * Almost completed German translation.

@@ -52,16 +52,16 @@ class ICollageSiteOptions(interface.Interface):
         title=_(u'label_ref_browser_empty',
                 default=u"Open reference Browser without initial item listing"),
         description=_(u'help_ref_browser_empty',
-                      default=u"Use this if you have lots of items in your"
+                      default=u"Use this if you have lots of items in your "
                               u"containers."),
         default=False,
         required=True)
-    
+
     ref_browser_types = schema.Bool(
         title=_(u'label_ref_browser_types',
                 default=u"Provide type filter in reference browser"),
         description=_(u'help_ref_browser_types',
-                      default=u"When set to True, the reference browser shows"
+                      default=u"When set to True, the reference browser shows "
                               u"up a content type filter."),
         default=False,
         required=True)

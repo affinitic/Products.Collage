@@ -20,7 +20,7 @@ msgstr ""
 
 #: Collage/browser/actions.py:133
 msgid "${title} deleted."
-msgstr ""
+msgstr "${title} effacé(e)."
 
 # Object action
 msgid "Back to Collage"
@@ -28,11 +28,11 @@ msgstr "Retour au Collage"
 
 #: Collage/browser/viewlets/delete.pt:46
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: Collage/browser/viewlets/delete.pt:39
 msgid "Remove"
-msgstr ""
+msgstr "Supprimer"
 
 #: Collage/browser/actions.py:42
 msgid "Skin changed."
@@ -40,11 +40,11 @@ msgstr "Habillage modifié."
 
 #: Collage/browser/viewlets/delete.pt:43
 msgid "This will delete the item."
-msgstr ""
+msgstr "Cela va supprimer l'élément."
 
 #: Collage/browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
-msgstr ""
+msgstr "Cela va supprimer l'alias."
 
 #: Collage/browser/actions.py:32
 msgid "View changed."
@@ -52,12 +52,12 @@ msgstr "Vue modifiée."
 
 #: Collage/browser/viewlets/delete.pt:27
 msgid "Warning"
-msgstr ""
+msgstr "Attention"
 
 #. Default: "Add row"
 #: Collage/browser/templates/collage_compose.pt:21
 msgid "button_add_collagerow"
-msgstr "Ajouter une ligne"
+msgstr "Ajouter une rangée"
 
 #. Default: "Default"
 #: Collage/browser/skins.py:6
@@ -76,9 +76,8 @@ msgstr "Options des contenus Collage."
 
 #. Default: "This action can't be undone."
 #: Collage/browser/viewlets/delete.pt:28
-#, fuzzy
 msgid "help_confirm_delete"
-msgstr "Veuillez confirmer ! Cette action ne peut pas être annulée"
+msgstr "Cette action ne peut pas être annulée."
 
 #. Default "Will show this collage in results when searching terms of an inner item. Checking this option may slow down collage changes as well as subcontent changes and show irrelevant search results."
 #. Default: "Show this collage in results when searching for terms appearing in a contained item. Note: Checking this option may slow down the system while editing the collage."
@@ -106,7 +105,7 @@ msgstr "Un titre optionnel pour la colonne."
 #. Default: "You may optionally supply a title for this row."
 #: Collage/content/_row.py:24
 msgid "help_optional_row_title"
-msgstr "Un titre optionnel pour la ligne."
+msgstr "Un titre optionnel pour la rangée."
 
 #. Default: "Choose a layout for this object."
 #: Collage/browser/viewlets/layout.pt:22
@@ -177,16 +176,14 @@ msgstr "Indexer localement les éléments de cette page"
 
 #. Default: "Browse"
 #: Collage/browser/viewlets/insert-existing-item.pt:11
-#, fuzzy
 msgid "label_insert_existing_item"
 msgstr "Insérer un élément existant"
 
 #. Default "Insert new item"
 #. Default: "Create"
 #: Collage/browser/viewlets/insert-new-item.pt:10
-#, fuzzy
 msgid "label_insert_new_item"
-msgstr "Insérer un nouvel élément"
+msgstr "Créer un nouvel élément"
 
 #. Default: "Loading..."
 #: Collage/browser/viewlets/insert-existing-item.pt:26
@@ -215,9 +212,8 @@ msgstr "Monter"
 
 #. Default: "Empty composition. Add one or more rows to get started."
 #: Collage/browser/templates/collage_compose.pt:13
-#, fuzzy
 msgid "label_no_items_added"
-msgstr "Cette page est vide. Commencez par ajouter une ligne."
+msgstr "Cette composition est vide. Commencez par ajouter une rangée."
 
 #. Default: "Title"
 #: Collage/content/_column.py:25
@@ -227,7 +223,7 @@ msgstr "Titre de la colonne"
 #. Default: "Title"
 #: Collage/content/_row.py:23
 msgid "label_optional_row_title"
-msgstr "Titre de la ligne"
+msgstr "Titre de la rangée"
 
 #. Default: "paste"
 #: Collage/browser/viewlets/paste.pt:10
@@ -236,9 +232,8 @@ msgstr "coller"
 
 #. Default: "Layout"
 #: Collage/browser/viewlets/layout.pt:12
-#, fuzzy
 msgid "label_select_layout"
-msgstr "Sélectionnez un modèle"
+msgstr "Modèle"
 
 #. Default: "Skins"
 #: Collage/browser/viewlets/skin.pt:12
@@ -272,27 +267,23 @@ msgstr "Restreindre aux types autorisés"
 
 #. Default: "Alias inserted."
 #: Collage/browser/actions.py:119
-#, fuzzy
 msgid "msg_alias_inserted"
-msgstr "Alias inséré"
+msgstr "Alias inséré."
 
 #. Default: "Column inserted."
 #: Collage/browser/actions.py:94
-#, fuzzy
 msgid "msg_column_inserted"
-msgstr "Colonne insérée"
+msgstr "Colonne insérée."
 
 #. Default: "Row was added."
 #: Collage/browser/actions.py:84
-#, fuzzy
 msgid "msg_row_added"
-msgstr "Rangée ajoutée"
+msgstr "Rangée ajoutée."
 
 #. Default: "Target object not found."
 #: Collage/browser/actions.py:121
-#, fuzzy
 msgid "msg_target_object_not_found"
-msgstr "L'élément cible n'a pas été trouvé"
+msgstr "L'élément cible n'a pas été trouvé."
 
 #. Default: "Notification"
 #: Collage/browser/skins.py:9

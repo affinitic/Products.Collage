@@ -48,7 +48,7 @@
 
   <browser:page
      name="standard"
-     for="Products.ATContentTypes.interfaces.IATFile"
+     for="Products.ATContentTypes.content.file.ATFile"
      permission="zope.Public"
      template="views/file_standard.pt"
      class=".views.StandardView"
@@ -57,7 +57,7 @@
 
   <browser:page
      name="portlet"
-     for="Products.ATContentTypes.interfaces.IATFile"
+     for="Products.ATContentTypes.content.file.ATFile"
      permission="zope.Public"
      template="views/file_portlet.pt"
      class=".views.PortletView"
@@ -66,7 +66,7 @@
 
   <browser:page
      name="minimal"
-     for="Products.ATContentTypes.interfaces.IATFile"
+     for="Products.ATContentTypes.content.file.ATFile"
      permission="zope.Public"
      template="views/file_minimal.pt"
      class=".views.FileMinimalView"
@@ -99,7 +99,7 @@
      class=".views.StandardView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
-
+  
   <browser:page
      name="clickable"
      for="Products.ATContentTypes.content.link.ATLink"
@@ -187,7 +187,7 @@
      template="views/folder_portlet.pt"
      class=".views.PortletView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
-     />
+     />  
 
   <browser:page
      name="standard"
@@ -209,7 +209,7 @@
 
   <browser:page
      name="standard"
-     for="Products.ATContentTypes.interfaces.IATImage"
+     for="Products.ATContentTypes.content.image.ATImage"
      permission="zope.Public"
      template="views/image_standard.pt"
      class=".views.StandardView"
@@ -218,13 +218,13 @@
 
   <browser:page
      name="portlet"
-     for="Products.ATContentTypes.interfaces.IATImage"
+     for="Products.ATContentTypes.content.image.ATImage"
      permission="zope.Public"
      template="views/image_portlet.pt"
      class=".views.PortletView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
-
+  
   <browser:page
      name="standard"
      for="Products.Collage.interfaces.ICollageRow"

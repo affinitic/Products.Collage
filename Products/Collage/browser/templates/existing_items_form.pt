@@ -112,10 +112,11 @@
                               class string:${item/link_css_class}"
               i18n:translate="">View</a>
            |
-	       <a href="#" class="post" 
+	       <a href="#" class="post"
               tal:attributes="href string:${here_url}/insert-alias?uid=${item/UID}">
-             <span tal:omit-tag="" i18n:translate="">Insert</span>
-             <img tal:attributes="src string:${portal_url}/++resource++collage-resources/icon-insert.gif" alt="Insert" />
+             <span tal:omit-tag="" i18n:translate="" i18n:domain="collage">Insert</span>
+             <img tal:attributes="src string:${portal_url}/++resource++collage-resources/icon-insert.gif" alt="Insert"
+             	  i18n:attributes="alt" />
            </a>
          </div>
       </li>

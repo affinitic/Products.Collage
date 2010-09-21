@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-09-20 21:44+0000\n"
+"POT-Creation-Date: 2010-09-21 18:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Jacob Vestergaard <jacobv@headnet.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,16 +20,48 @@ msgstr ""
 msgid "${title} deleted."
 msgstr "${title} slettet."
 
+#: ../browser/views.py:134
+msgid "Album"
+msgstr ""
+
+#: ../browser/views.py:109
+msgid "Automatic"
+msgstr ""
+
+#: ../browser/views.py:186
+msgid "Clickable"
+msgstr ""
+
 #: ../browser/viewlets/delete.pt:46
 msgid "Delete"
 msgstr "Slet"
+
+#: ../browser/views.py:127
+msgid "Featured"
+msgstr ""
+
+#: ../browser/views.py:145
+msgid "Inherit"
+msgstr ""
 
 #: ../browser/templates/existing_items_form.pt:117
 msgid "Insert"
 msgstr ""
 
+#: ../browser/views.py:112
+msgid "Large left"
+msgstr ""
+
+#: ../browser/views.py:115
+msgid "Large right"
+msgstr ""
+
 #: ../browser/viewlet.py:59
 msgid "Missing: $name"
+msgstr ""
+
+#: ../browser/views.py:130
+msgid "Portlet"
 msgstr ""
 
 #: ../browser/viewlets/delete.pt:39
@@ -40,6 +72,22 @@ msgstr "Fjern"
 msgid "Skin changed."
 msgstr "Tema ændret."
 
+#: ../browser/views.py:121
+msgid "Standard"
+msgstr ""
+
+#: ../browser/views.py:137
+msgid "Summary"
+msgstr ""
+
+#: ../browser/views.py:140
+msgid "Tabular"
+msgstr ""
+
+#: ../browser/views.py:124
+msgid "Text"
+msgstr ""
+
 #: ../browser/viewlets/delete.pt:43
 msgid "This will delete the item."
 msgstr "Dette vil slette indholdsobjektet."
@@ -47,6 +95,10 @@ msgstr "Dette vil slette indholdsobjektet."
 #: ../browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
 msgstr "Dette vil slette indholdsreferencen."
+
+#: ../browser/views.py:118
+msgid "Unbatched"
+msgstr ""
 
 #: ../browser/actions.py:30
 msgid "View changed."
@@ -280,6 +332,10 @@ msgstr "Godkendte indholdstyper"
 #: ../interfaces.py:70
 msgid "label_use_whitelist"
 msgstr "Brug kun godkendte indholdstyper"
+
+#: ../browser/views.py:194
+msgid "minimal"
+msgstr ""
 
 #. Default: "Alias inserted."
 #: ../browser/actions.py:117

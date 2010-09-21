@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-09-20 21:44+0000\n"
+"POT-Creation-Date: 2010-09-21 18:14+0000\n"
 "PO-Revision-Date: 2010-02-09 16:59-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Spanish <plone-conosur@lists.plone.org>\n"
@@ -22,16 +22,48 @@ msgstr ""
 msgid "${title} deleted."
 msgstr "${title} eliminado."
 
+#: ../browser/views.py:134
+msgid "Album"
+msgstr ""
+
+#: ../browser/views.py:109
+msgid "Automatic"
+msgstr ""
+
+#: ../browser/views.py:186
+msgid "Clickable"
+msgstr ""
+
 #: ../browser/viewlets/delete.pt:46
 msgid "Delete"
 msgstr "Eliminar"
+
+#: ../browser/views.py:127
+msgid "Featured"
+msgstr ""
+
+#: ../browser/views.py:145
+msgid "Inherit"
+msgstr ""
 
 #: ../browser/templates/existing_items_form.pt:117
 msgid "Insert"
 msgstr ""
 
+#: ../browser/views.py:112
+msgid "Large left"
+msgstr ""
+
+#: ../browser/views.py:115
+msgid "Large right"
+msgstr ""
+
 #: ../browser/viewlet.py:59
 msgid "Missing: $name"
+msgstr ""
+
+#: ../browser/views.py:130
+msgid "Portlet"
 msgstr ""
 
 #: ../browser/viewlets/delete.pt:39
@@ -42,6 +74,22 @@ msgstr "Remover"
 msgid "Skin changed."
 msgstr "Piel modificado."
 
+#: ../browser/views.py:121
+msgid "Standard"
+msgstr ""
+
+#: ../browser/views.py:137
+msgid "Summary"
+msgstr ""
+
+#: ../browser/views.py:140
+msgid "Tabular"
+msgstr ""
+
+#: ../browser/views.py:124
+msgid "Text"
+msgstr ""
+
 #: ../browser/viewlets/delete.pt:43
 msgid "This will delete the item."
 msgstr "Esto eliminará el elemento."
@@ -49,6 +97,10 @@ msgstr "Esto eliminará el elemento."
 #: ../browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
 msgstr "Esto removerá el alias."
+
+#: ../browser/views.py:118
+msgid "Unbatched"
+msgstr ""
 
 #: ../browser/actions.py:30
 msgid "View changed."
@@ -278,6 +330,10 @@ msgstr "Lista blanca de tipos"
 #: ../interfaces.py:70
 msgid "label_use_whitelist"
 msgstr "Utilizar lista blanca de tipos"
+
+#: ../browser/views.py:194
+msgid "minimal"
+msgstr ""
 
 #. Default: "Alias inserted."
 #: ../browser/actions.py:117

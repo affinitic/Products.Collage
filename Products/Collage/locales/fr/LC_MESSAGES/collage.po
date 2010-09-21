@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collage-fr\n"
-"POT-Creation-Date: 2010-09-20 21:44+0000\n"
+"POT-Creation-Date: 2010-09-21 18:14+0000\n"
 "PO-Revision-Date: 2009-01-05 10:28+0100\n"
 "Last-Translator: Encolpe Degoute <encolpe@gmail.com>\n"
 "Language-Team: French <membres@traduc.org>\n"
@@ -22,18 +22,50 @@ msgstr ""
 msgid "${title} deleted."
 msgstr "${title} effacé(e)."
 
+#: ../browser/views.py:134
+msgid "Album"
+msgstr "Album"
+
+#: ../browser/views.py:109
+msgid "Automatic"
+msgstr "Automatique"
+
+#: ../browser/views.py:186
+msgid "Clickable"
+msgstr "Cliquable"
+
 #. Default: "Delete"
 #: ../browser/viewlets/delete.pt:46
 msgid "Delete"
 msgstr "Supprimer"
 
+#: ../browser/views.py:127
+msgid "Featured"
+msgstr ""
+
+#: ../browser/views.py:145
+msgid "Inherit"
+msgstr "Hériter"
+
 #: ../browser/templates/existing_items_form.pt:117
 msgid "Insert"
 msgstr "Insérer"
 
+#: ../browser/views.py:112
+msgid "Large left"
+msgstr "Gauche large"
+
+#: ../browser/views.py:115
+msgid "Large right"
+msgstr "Droite large"
+
 #: ../browser/viewlet.py:59
 msgid "Missing: $name"
 msgstr "Manque : $name"
+
+#: ../browser/views.py:130
+msgid "Portlet"
+msgstr "Portlet"
 
 #. Default: "Remove"
 #: ../browser/viewlets/delete.pt:39
@@ -44,6 +76,22 @@ msgstr "Supprimer"
 msgid "Skin changed."
 msgstr "Habillage modifié."
 
+#: ../browser/views.py:121
+msgid "Standard"
+msgstr "Standard"
+
+#: ../browser/views.py:137
+msgid "Summary"
+msgstr "Sommaire"
+
+#: ../browser/views.py:140
+msgid "Tabular"
+msgstr "Tabulaire"
+
+#: ../browser/views.py:124
+msgid "Text"
+msgstr "Texte"
+
 #. Default: "This will delete the item."
 #: ../browser/viewlets/delete.pt:43
 msgid "This will delete the item."
@@ -53,6 +101,10 @@ msgstr "Cela va supprimer l'élément."
 #: ../browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
 msgstr "Cela va supprimer l'alias."
+
+#: ../browser/views.py:118
+msgid "Unbatched"
+msgstr ""
 
 #: ../browser/actions.py:30
 msgid "View changed."
@@ -286,6 +338,10 @@ msgstr "Types autorisés"
 #: ../interfaces.py:70
 msgid "label_use_whitelist"
 msgstr "Restreindre aux types autorisés"
+
+#: ../browser/views.py:194
+msgid "minimal"
+msgstr "minimal"
 
 #. Default: "Alias inserted."
 #: ../browser/actions.py:117

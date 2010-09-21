@@ -7,7 +7,7 @@ Changelog
 * Image and File layouts work with blob objects.
   [thomasdesvenain]
 
-* Fixed few internationalizations.
+* Fixed many internationalizations.
   [thomasdesvenain]
 
 * Updated french translations.

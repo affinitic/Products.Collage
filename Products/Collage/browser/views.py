@@ -11,6 +11,7 @@ from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from Products.Collage.interfaces import IDynamicViewManager, IPortletSkin
 from Products.Collage.interfaces import ICollageBrowserLayer
+from Products.Collage.utilities import CollageMessageFactory as _
 
 def test(condition, value_true, value_false):
     if condition:
@@ -105,43 +106,43 @@ class RowView(BaseView):
         return batches
 
 class AutomaticRowView(RowView):
-    title = u'Automatic'
+    title = _(u'Automatic')
 
 class LargeLeftRowView(RowView):
-    title = u'Large left'
+    title = _(u'Large left')
 
 class LargeRightRowView(RowView):
-    title = u'Large right'
+    title = _(u'Large right')
 
 class UnbatchedRowView(RowView):
-    title = u'Unbatched'
+    title = _(u'Unbatched')
 
 class StandardView(BaseView):
-    title = u'Standard'
+    title = _(u'Standard')
 
 class TextView(BaseView):
-    title = u'Text'
+    title = _(u'Text')
 
 class FeaturedView(BaseView):
-    title = u'Featured'
+    title = _(u'Featured')
 
 class PortletView(BaseView):
-    title = u'Portlet'
+    title = _(u'Portlet')
     skinInterfaces = (IPortletSkin,)
 
 class AlbumTopicView(BaseView):
-    title = u'Album'
+    title = _(u'Album')
 
 class SummaryTopicView(BaseView):
-    title = u'Summary'
+    title = _(u'Summary')
 
 class TabularTopicView(BaseView):
-    title = u'Tabular'
+    title = _(u'Tabular')
 
 class InheritTopicView(BaseView):
     """Inherits view from topic's display setting."""
 
-    title = u'Inherit'
+    title = _(u'Inherit')
 
     mapping = {
         'folder_listing': 'standard',
@@ -182,7 +183,7 @@ class InheritTopicView(BaseView):
         return view()
 
 class ClickableView(BaseView):
-    title = u'Clickable'
+    title = _(u'Clickable')
 
 class StandardDocumentView(StandardView):
     """Includes for BBB."""
@@ -190,7 +191,7 @@ class StandardDocumentView(StandardView):
 class FileMinimalView(StandardView):
     """File for download in one line."""
 
-    title = u'minimal'
+    title = _(u'minimal')
 
     def getBUFile(self):
         acc = self.context.Schema()['file'].getAccessor(self.context)()

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-09-20 21:44+0000\n"
+"POT-Creation-Date: 2010-09-21 18:14+0000\n"
 "PO-Revision-Date: 2008-12-15 12:58+0100\n"
 "Last-Translator: Pilar Marinas Luis <pilar.marinas@upcnet.es>\n"
 "Language-Team: \n"
@@ -19,16 +19,48 @@ msgstr ""
 msgid "${title} deleted."
 msgstr ""
 
+#: ../browser/views.py:134
+msgid "Album"
+msgstr ""
+
+#: ../browser/views.py:109
+msgid "Automatic"
+msgstr ""
+
+#: ../browser/views.py:186
+msgid "Clickable"
+msgstr ""
+
 #: ../browser/viewlets/delete.pt:46
 msgid "Delete"
+msgstr ""
+
+#: ../browser/views.py:127
+msgid "Featured"
+msgstr ""
+
+#: ../browser/views.py:145
+msgid "Inherit"
 msgstr ""
 
 #: ../browser/templates/existing_items_form.pt:117
 msgid "Insert"
 msgstr ""
 
+#: ../browser/views.py:112
+msgid "Large left"
+msgstr ""
+
+#: ../browser/views.py:115
+msgid "Large right"
+msgstr ""
+
 #: ../browser/viewlet.py:59
 msgid "Missing: $name"
+msgstr ""
+
+#: ../browser/views.py:130
+msgid "Portlet"
 msgstr ""
 
 #: ../browser/viewlets/delete.pt:39
@@ -39,12 +71,32 @@ msgstr ""
 msgid "Skin changed."
 msgstr "Aspecte modificat."
 
+#: ../browser/views.py:121
+msgid "Standard"
+msgstr ""
+
+#: ../browser/views.py:137
+msgid "Summary"
+msgstr ""
+
+#: ../browser/views.py:140
+msgid "Tabular"
+msgstr ""
+
+#: ../browser/views.py:124
+msgid "Text"
+msgstr ""
+
 #: ../browser/viewlets/delete.pt:43
 msgid "This will delete the item."
 msgstr ""
 
 #: ../browser/viewlets/delete.pt:36
 msgid "This will remove the alias."
+msgstr ""
+
+#: ../browser/views.py:118
+msgid "Unbatched"
 msgstr ""
 
 #: ../browser/actions.py:30
@@ -282,6 +334,10 @@ msgstr "Llista blanca de tipus"
 #: ../interfaces.py:70
 msgid "label_use_whitelist"
 msgstr "Utilitzar llista blanca de tipus"
+
+#: ../browser/views.py:194
+msgid "minimal"
+msgstr ""
 
 #. Default: "Alias inserted."
 #: ../browser/actions.py:117

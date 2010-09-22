@@ -41,7 +41,7 @@ msgstr "Supprimer"
 
 #: ../browser/views.py:127
 msgid "Featured"
-msgstr ""
+msgstr "Mis en valeur"
 
 #: ../browser/views.py:145
 msgid "Inherit"

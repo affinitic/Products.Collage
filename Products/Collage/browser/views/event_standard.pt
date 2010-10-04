@@ -2,7 +2,10 @@
 
 <metal:block use-macro="here/global_defines/macros/defines" />
 
-<tal:event define="test view/test" i18n:domain="plone">
+<tal:event define="test view/test;
+                   site_properties view/site_properties;
+                   plone_view nocall:context/@@plone;
+                   here_url context/@@absolute_url" i18n:domain="plone">
 
   <div class="vevent">
 
@@ -66,7 +69,7 @@
                       tal:content="python:plone_view.toLocalizedTime(here.end(), long_format=1)">
                   End Date Time
 		</abbr>
-		<span tal:replace="python:toLocalizedTime(here.start())">Start Date Time</span> <br />
+		<span tal:replace="python:plone_view.toLocalizedTime(here.start())">Start Date Time</span> <br />
 		<span i18n:translate="event_from">from</span>
 		<span tal:replace="python:test(ampm, here.start().AMPMMinutes(), here.start().TimeMinutes())">Start Time</span>
 		<span i18n:translate="event_to">to</span>

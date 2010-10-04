@@ -4,6 +4,8 @@ Changelog
 1.3.0 - unreleased
 ------------------
 
+* Fix #85 - Add a new event break collage view [yboussard]
+
 * Image and File layouts work with blob objects.
   [thomasdesvenain]
 

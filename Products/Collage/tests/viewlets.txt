@@ -69,6 +69,16 @@ Let's look at the returned content types:
   >>> for info in viewlet.getAddableTypes():
   ...   if set(info.keys()) != set(['id', 'description', 'icon', 'title']): raise ValueError
 
+Insert an event item
+  
+  >>> _ = column.invokeFactory(id='test_event', type_name='Event')
+  >>> column[_].setTitle('test event')
+  >>> 'test event' in column.restrictedTraverse('@@renderer')()
+  True
+  
+
+
+
 
 Insert existing items
 ---------------------
@@ -83,6 +93,8 @@ string:
   >>> front_page_uid = self.portal['front-page'].UID()
   >>> front_page_uid in view()
   True
+
+  
 
 Copy/paste
 ----------
@@ -106,3 +118,4 @@ Let's examine the paste viewlet:
   1
   >>> viewlet._get_clipboard_item()
   <ATDocument at /plone/front-page>
+  

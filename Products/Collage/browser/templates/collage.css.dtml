@@ -337,6 +337,25 @@ span.collage-navigation a {
 
 #collage .three-columns-equal .block_2 { width:32.9%; }
 
+#collage .four-columns-equal .block_1,
+#collage .four-columns-equal .block_2,
+#collage .four-columns-equal .block_3,
+#collage .four-columns-equal .block_4 {
+    width: 24.2%;
+}
+
+#collage .four-columns-equal .block_2 { width: 24.4%; }
+
+#collage .five-columns-equal .block_1,
+#collage .five-columns-equal .block_2,
+#collage .five-columns-equal .block_3,
+#collage .five-columns-equal .block_4,
+#collage .five-columns-equal .block_5 {
+    width: 19.2%;
+}
+
+#collage .five-columns-equal .block_2 { width: 19.2%; }
+
 #collage .block_2,
 #collage .block_4,
 #collage .block_3,
@@ -365,6 +384,26 @@ span.collage-navigation a {
   width: 20%;
 }
 
+#collage .four-columns-largeleft .block_1 {
+    width: 40%;
+}
+
+#collage .four-columns-largeleft .block_2,
+#collage .four-columns-largeleft .block_3,
+#collage .four-columns-largeleft .block_4 {
+  width: 19%;
+}
+
+#collage .five-columns-largeleft .block_1 {
+    width: 24%;
+}
+#collage .five-columns-largeleft .block_2,
+#collage .five-columns-largeleft .block_3,
+#collage .five-columns-largeleft .block_4,
+#collage .five-columns-largeleft .block_5 {
+  width: 18%;
+}
+
 #collage .two-columns-largeright .block_2 {
     width: 59%;
 }
@@ -382,6 +421,25 @@ span.collage-navigation a {
 
 #collage .three-columns-largeright .block_2 {
   width:19%;
+}
+
+#collage .four-columns-largeright .block_1,
+#collage .four-columns-largeright .block_2,
+#collage .four-columns-largeright .block_3 {
+  width: 19%;
+}
+#collage .four-columns-largeright .block_4 {
+    width: 40%;
+}
+
+#collage .five-columns-largeright .block_1,
+#collage .five-columns-largeright .block_2,
+#collage .five-columns-largeright .block_3,
+#collage .five-columns-largeright .block_4 {
+  width: 18%;
+}
+#collage .five-columns-largeright .block_5 {
+    width: 24%;
 }
 
 /* styles for hiding unwanted document metadata and actions */

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-09-21 18:14+0000\n"
+"POT-Creation-Date: 2010-10-04 12:13+0000\n"
 "PO-Revision-Date: 2007-12-14 16:01+0100\n"
 "Last-Translator: Yuri Carrer <yurj@alfa.it>\n"
 "Language-Team: None\n"
@@ -19,15 +19,15 @@ msgstr ""
 msgid "${title} deleted."
 msgstr ""
 
-#: ../browser/views.py:134
+#: ../browser/views.py:142
 msgid "Album"
 msgstr ""
 
-#: ../browser/views.py:109
+#: ../browser/views.py:117
 msgid "Automatic"
 msgstr ""
 
-#: ../browser/views.py:186
+#: ../browser/views.py:194
 msgid "Clickable"
 msgstr ""
 
@@ -35,11 +35,11 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../browser/views.py:127
+#: ../browser/views.py:135
 msgid "Featured"
 msgstr ""
 
-#: ../browser/views.py:145
+#: ../browser/views.py:153
 msgid "Inherit"
 msgstr ""
 
@@ -47,11 +47,11 @@ msgstr ""
 msgid "Insert"
 msgstr ""
 
-#: ../browser/views.py:112
+#: ../browser/views.py:120
 msgid "Large left"
 msgstr ""
 
-#: ../browser/views.py:115
+#: ../browser/views.py:123
 msgid "Large right"
 msgstr ""
 
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Missing: $name"
 msgstr ""
 
-#: ../browser/views.py:130
+#: ../browser/views.py:138
 msgid "Portlet"
 msgstr ""
 
@@ -71,19 +71,19 @@ msgstr ""
 msgid "Skin changed."
 msgstr ""
 
-#: ../browser/views.py:121
+#: ../browser/views.py:129
 msgid "Standard"
 msgstr ""
 
-#: ../browser/views.py:137
+#: ../browser/views.py:145
 msgid "Summary"
 msgstr ""
 
-#: ../browser/views.py:140
+#: ../browser/views.py:148
 msgid "Tabular"
 msgstr ""
 
-#: ../browser/views.py:124
+#: ../browser/views.py:132
 msgid "Text"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "This will remove the alias."
 msgstr ""
 
-#: ../browser/views.py:118
+#: ../browser/views.py:126
 msgid "Unbatched"
 msgstr ""
 
@@ -122,8 +122,13 @@ msgstr ""
 msgid "help_alias_whitelist"
 msgstr ""
 
+#. Default: "If the number of Columns in a row exceeds this number, \"Collage will put these in a new \"batch\". The new batch will be displayed below the first batch, but it's technically still the same row. "
+#: ../interfaces.py:101
+msgid "help_batch_size"
+msgstr ""
+
 #. Default: "Site wide options for Collage"
-#: ../browser/controlpanel.py:64
+#: ../browser/controlpanel.py:65
 msgid "help_collage_controlpanel"
 msgstr ""
 
@@ -213,6 +218,11 @@ msgstr "Elemento riferito"
 #. Default: "Alias whitelist"
 #: ../interfaces.py:89
 msgid "label_alias_whitelist"
+msgstr ""
+
+#. Default: "Number of Columns"
+#: ../interfaces.py:100
+msgid "label_batch_size"
 msgstr ""
 
 #. Default: "Copy"
@@ -336,7 +346,7 @@ msgstr ""
 msgid "label_use_whitelist"
 msgstr ""
 
-#: ../browser/views.py:194
+#: ../browser/views.py:202
 msgid "minimal"
 msgstr ""
 
@@ -370,7 +380,7 @@ msgid "searching this path and below"
 msgstr ""
 
 #. Default: "Collage control panel"
-#: ../browser/controlpanel.py:62
+#: ../browser/controlpanel.py:63
 msgid "title_collage_controlpanel"
 msgstr ""
 

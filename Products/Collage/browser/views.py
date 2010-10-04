@@ -12,6 +12,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.Collage.interfaces import IDynamicViewManager, IPortletSkin
 from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.utilities import CollageMessageFactory as _
+from Products.Collage.utilities import getCollageSiteOptions
 
 def test(condition, value_true, value_false):
     if condition:
@@ -78,13 +79,20 @@ class ErrorViewNotFoundView(BaseView):
 
 class RowView(BaseView):
 
-    def getColumnBatches(self, bsize=3):
+    def getColumnBatches(self, bsize=None):
         """Rows with more than *bsize* columns are split.
 
         @param bsize: number of max. allowed columns per row. 0 for no batching.
 
         @return: list of columns, each containing a list of rows.
         """
+        if not bsize:
+            options = getCollageSiteOptions()
+            if not hasattr(options, 'batch_size'):
+                bsize = 3
+            else:
+                bsize = options.batch_size
+
         columns = self.context.folderlistingFolderContents()
         if not columns:
             return []

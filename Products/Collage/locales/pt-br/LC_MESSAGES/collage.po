@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-09-21 18:14+0000\n"
+"POT-Creation-Date: 2010-10-04 12:13+0000\n"
 "PO-Revision-Date: 2010-03-15 00:53+0100\n"
 "Last-Translator: Danilo G. Botelho <danilogbotelho@yahoo.com>\n"
 "Language-Team: \n"
@@ -19,15 +19,15 @@ msgstr ""
 msgid "${title} deleted."
 msgstr "${title} excluído"
 
-#: ../browser/views.py:134
+#: ../browser/views.py:142
 msgid "Album"
 msgstr ""
 
-#: ../browser/views.py:109
+#: ../browser/views.py:117
 msgid "Automatic"
 msgstr ""
 
-#: ../browser/views.py:186
+#: ../browser/views.py:194
 msgid "Clickable"
 msgstr ""
 
@@ -35,11 +35,11 @@ msgstr ""
 msgid "Delete"
 msgstr "Excluir"
 
-#: ../browser/views.py:127
+#: ../browser/views.py:135
 msgid "Featured"
 msgstr ""
 
-#: ../browser/views.py:145
+#: ../browser/views.py:153
 msgid "Inherit"
 msgstr ""
 
@@ -47,11 +47,11 @@ msgstr ""
 msgid "Insert"
 msgstr ""
 
-#: ../browser/views.py:112
+#: ../browser/views.py:120
 msgid "Large left"
 msgstr ""
 
-#: ../browser/views.py:115
+#: ../browser/views.py:123
 msgid "Large right"
 msgstr ""
 
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Missing: $name"
 msgstr ""
 
-#: ../browser/views.py:130
+#: ../browser/views.py:138
 msgid "Portlet"
 msgstr ""
 
@@ -71,19 +71,19 @@ msgstr "Remover"
 msgid "Skin changed."
 msgstr "Tema (skin) modificado."
 
-#: ../browser/views.py:121
+#: ../browser/views.py:129
 msgid "Standard"
 msgstr ""
 
-#: ../browser/views.py:137
+#: ../browser/views.py:145
 msgid "Summary"
 msgstr ""
 
-#: ../browser/views.py:140
+#: ../browser/views.py:148
 msgid "Tabular"
 msgstr ""
 
-#: ../browser/views.py:124
+#: ../browser/views.py:132
 msgid "Text"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr "Isto irá apagar o item."
 msgid "This will remove the alias."
 msgstr "Isto irá remover a referência."
 
-#: ../browser/views.py:118
+#: ../browser/views.py:126
 msgid "Unbatched"
 msgstr ""
 
@@ -122,8 +122,13 @@ msgstr "Padrão"
 msgid "help_alias_whitelist"
 msgstr "Selecione tipos de itens que podem ser referenciados em um objeto Collage."
 
+#. Default: "If the number of Columns in a row exceeds this number, \"Collage will put these in a new \"batch\". The new batch will be displayed below the first batch, but it's technically still the same row. "
+#: ../interfaces.py:101
+msgid "help_batch_size"
+msgstr ""
+
 #. Default: "Site wide options for Collage"
-#: ../browser/controlpanel.py:64
+#: ../browser/controlpanel.py:65
 msgid "help_collage_controlpanel"
 msgstr "Opções globais para Collage"
 
@@ -215,6 +220,11 @@ msgstr "Objeto alvo selecionado"
 #: ../interfaces.py:89
 msgid "label_alias_whitelist"
 msgstr "Lista de tipos permitidos para referências (alias)"
+
+#. Default: "Number of Columns"
+#: ../interfaces.py:100
+msgid "label_batch_size"
+msgstr ""
 
 #. Default: "Copy"
 #: ../browser/viewlets/copy.pt:9
@@ -334,7 +344,7 @@ msgstr "Lista de tipos permitidos"
 msgid "label_use_whitelist"
 msgstr "Usar lista de tipos permitidos"
 
-#: ../browser/views.py:194
+#: ../browser/views.py:202
 msgid "minimal"
 msgstr ""
 
@@ -368,7 +378,7 @@ msgid "searching this path and below"
 msgstr "buscando nesta pasta e abaixo"
 
 #. Default: "Collage control panel"
-#: ../browser/controlpanel.py:62
+#: ../browser/controlpanel.py:63
 msgid "title_collage_controlpanel"
 msgstr "Painel de controle do Collage"
 

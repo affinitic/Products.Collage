@@ -96,6 +96,17 @@ class ICollageSiteOptions(interface.Interface):
             vocabulary='collage.vocabularies.CollageUserFriendlyTypes')
         )
 
+    batch_size = schema.Int(
+        title=_(u'label_batch_size', default=u"Number of Columns"),
+        description=_(u'help_batch_size', 
+            default=u"If the number of Columns in a row exceeds this number, "
+                """"Collage will put these in a new "batch". """
+                "The new batch will be displayed below the first batch, "
+                "but it's technically still the same row. "),
+        required=False,
+        default=3,
+        )
+
     def enabledType(portal_type):
         """True if portal type is enabled for adding in a Collage."""
 

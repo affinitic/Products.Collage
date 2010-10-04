@@ -33,6 +33,7 @@ class CollageSiteOptions(SchemaAdapterBase):
     use_whitelist = ProxyFieldProperty(ICollageSiteOptions['use_whitelist'])
     types_whitelist = ProxyFieldProperty(ICollageSiteOptions['types_whitelist'])
     alias_whitelist = ProxyFieldProperty(ICollageSiteOptions['alias_whitelist'])
+    batch_size = ProxyFieldProperty(ICollageSiteOptions['batch_size'])
 
     def __init__(self, context):
         super(CollageSiteOptions, self).__init__(context)

@@ -20,7 +20,7 @@
 
 <tal:renderer define="renderer nocall: here/@@renderer">
   <tal:batches tal:repeat="columns view/getColumnBatches">
-    <div tal:define="layout python: ('one-column', 'two-columns-largeleft', 'three-columns-largeleft')
+    <div tal:define="layout python: ('one-column', 'two-columns-largeleft', 'three-columns-largeleft', 'four-columns-largeleft', 'five-columns-largeleft')
 		     [len(columns)-1]"
 	 tal:attributes="class string:$layout">
 

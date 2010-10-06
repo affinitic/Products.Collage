@@ -152,7 +152,7 @@ class PasteViewlet(SimpleContentMenuViewlet):
         app = self.context.getPhysicalRoot()
         try:
             ob = m.bind(app)
-        except (ConflictError, AttributeError, KeyError):
+        except (ConflictError, AttributeError, KeyError, TypeError):
             return None
 
         return ob

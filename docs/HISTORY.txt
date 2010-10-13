@@ -4,6 +4,10 @@ Changelog
 1.3.0 - unreleased
 ------------------
 
+* Included new properties following 'rnix' and 'khink' new features in default
+  setup profile and last upgrade step.
+  [glenfant]
+
 * Plone 3 support is back. No change for Plone 4
   [glenfant]
 

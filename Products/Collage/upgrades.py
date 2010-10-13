@@ -96,4 +96,17 @@ def upgradeTo1_3_0(setuptool):
     propsheet = getPortal().portal_properties.collage_properties
     if propsheet.hasProperty(to_delete):
         propsheet._delProperty(to_delete)
+
+    # Adding new properties
+    to_add = [
+        # Name, value, type
+        ('ref_browser_empty', False, 'boolean'),
+        ('ref_browser_types', False, 'boolean'),
+        ('batch_size', 3, 'int')
+        ]
+    for name, value, ptype in to_add:
+        if propsheet.hasProperty(name):
+            continue
+        propsheet.manage_addProperty(name, value, ptype)
     return
+

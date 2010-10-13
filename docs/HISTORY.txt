@@ -4,6 +4,9 @@ Changelog
 1.3.0 - unreleased
 ------------------
 
+* Plone 3 support is back. No change for Plone 4
+  [glenfant]
+
 * Fix #85 - Add a new event break collage view [yboussard]
 
 * Image and File layouts work with blob objects.

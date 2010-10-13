@@ -1,4 +1,5 @@
 <configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
            xmlns:browser="http://namespaces.zope.org/browser">
 
   <browser:page
@@ -46,7 +47,20 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
+  <!-- Plone 3 -->
   <browser:page
+     zcml:condition="not-have plone-4"
+     name="standard"
+     for="Products.ATContentTypes.content.file.ATFile"
+     permission="zope.Public"
+     template="views/file_standard.pt"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <!-- Plone 4 -->
+  <browser:page
+     zcml:condition="have plone-4"
      name="standard"
      for="Products.ATContentTypes.interfaces.IATFile"
      permission="zope.Public"
@@ -55,7 +69,20 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
+  <!-- Plone 3 -->
   <browser:page
+     zcml:condition="not-have plone-4"
+     name="portlet"
+     for="Products.ATContentTypes.content.file.ATFile"
+     permission="zope.Public"
+     template="views/file_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <!-- Plone 4 -->
+  <browser:page
+     zcml:condition="have plone-4"
      name="portlet"
      for="Products.ATContentTypes.interfaces.IATFile"
      permission="zope.Public"
@@ -64,7 +91,20 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
+  <!-- Plone 3 -->
   <browser:page
+     zcml:condition="not-have plone-4"
+     name="minimal"
+     for="Products.ATContentTypes.content.file.ATFile"
+     permission="zope.Public"
+     template="views/file_minimal.pt"
+     class=".views.FileMinimalView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <!-- Plone 4 -->
+  <browser:page
+     zcml:condition="have plone-4"
      name="minimal"
      for="Products.ATContentTypes.interfaces.IATFile"
      permission="zope.Public"
@@ -207,7 +247,20 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
+  <!-- Plone 3 -->
   <browser:page
+     zcml:condition="not-have plone-4"
+     name="standard"
+     for="Products.ATContentTypes.content.image.ATImage"
+     permission="zope.Public"
+     template="views/image_standard.pt"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <!-- Plone 4 -->
+  <browser:page
+     zcml:condition="have plone-4"
      name="standard"
      for="Products.ATContentTypes.interfaces.IATImage"
      permission="zope.Public"
@@ -216,7 +269,20 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
+  <!-- Plone 3 -->
   <browser:page
+     zcml:condition="not-have plone-4"
+     name="portlet"
+     for="Products.ATContentTypes.content.image.ATImage"
+     permission="zope.Public"
+     template="views/image_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <!-- Plone 4 -->
+  <browser:page
+     zcml:condition="have plone-4"
      name="portlet"
      for="Products.ATContentTypes.interfaces.IATImage"
      permission="zope.Public"

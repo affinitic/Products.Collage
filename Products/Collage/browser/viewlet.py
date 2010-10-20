@@ -124,7 +124,7 @@ class ActionsViewlet(SimpleContentMenuViewlet):
             prepareObjectTabs = plone_view.prepareObjectTabs
         except AttributeError:
             provider = getMultiAdapter(
-                (self.context, self.request, plone_view), 
+                (self.context, self.request, plone_view),
                 name="plone.contentviews")
             viewlet = provider.__getitem__("plone.contentviews")
             prepareObjectTabs = viewlet.prepareObjectTabs

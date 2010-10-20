@@ -7,7 +7,7 @@
        tal:define="view_actions view/getViewActions">
     <tal:actions repeat="action view_actions">
       <a tal:condition="python: action['id'] not in ['folderContents', 'metadata', 'local_roles', 'revisitCollage', 'portlets']
-	                            or action['id'] == 'folderContents' and view.context.portal_type == 'CollageColumn'"
+								or action['id'] == 'folderContents' and view.context.portal_type == 'CollageColumn'"
 	     tal:define="selected action/selected|nothing;"
 	     tal:attributes="id string:contentview-${action/id};
 			             class python: selected and 'post selected' or 'post plain';

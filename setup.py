@@ -36,6 +36,7 @@ setup(name='Products.Collage',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'Products.Archetypes',
       ],
       entry_points="""
       # -*- Entry points: -*-

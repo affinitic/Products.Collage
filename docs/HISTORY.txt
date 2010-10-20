@@ -4,6 +4,13 @@ Changelog
 1.3.0 - unreleased
 ------------------
 
+* Add missing Products.Archetypes to setup dependencies.
+  [thet]
+
+* Show folderContents action in actions viewlet for ColageColumns. This allows
+  to browse and edit individual objects created in a collage column.
+  [thet]
+
 * Included new properties following 'rnix' and 'khink' new features in default
   setup profile and last upgrade step.
   [glenfant]

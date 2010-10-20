@@ -7,7 +7,7 @@ Changelog
 * Add missing Products.Archetypes to setup dependencies.
   [thet]
 
-* Show folderContents action in actions viewlet for ColageColumns. This allows
+* Show folderContents action in actions-viewlet for ColageColumns. This allows
   to browse and edit individual objects created in a collage column.
   [thet]
 

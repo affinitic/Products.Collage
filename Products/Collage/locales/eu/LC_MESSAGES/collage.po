@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
 "POT-Creation-Date: 2010-10-04 12:13+0000\n"
-"PO-Revision-Date: 2010-01-11 08:23+0100\n"
+"PO-Revision-Date: 2010-11-26 11:53+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: EDF\n"
 "MIME-Version: 1.0\n"
@@ -20,15 +20,15 @@ msgstr "${title} ezabatuta."
 
 #: ../browser/views.py:142
 msgid "Album"
-msgstr ""
+msgstr "Albuma"
 
 #: ../browser/views.py:117
 msgid "Automatic"
-msgstr ""
+msgstr "Automatikoa"
 
 #: ../browser/views.py:194
 msgid "Clickable"
-msgstr ""
+msgstr "Klikagarria"
 
 #: ../browser/viewlets/delete.pt:46
 msgid "Delete"
@@ -36,31 +36,31 @@ msgstr "Ezabatu"
 
 #: ../browser/views.py:135
 msgid "Featured"
-msgstr ""
+msgstr "Destakatua"
 
 #: ../browser/views.py:153
 msgid "Inherit"
-msgstr ""
+msgstr "Gurasoarena"
 
 #: ../browser/templates/existing_items_form.pt:117
 msgid "Insert"
-msgstr ""
+msgstr "Txertatu"
 
 #: ../browser/views.py:120
 msgid "Large left"
-msgstr ""
+msgstr "Handia ezkerrean"
 
 #: ../browser/views.py:123
 msgid "Large right"
-msgstr ""
+msgstr "Handia eskuman"
 
 #: ../browser/viewlet.py:59
 msgid "Missing: $name"
-msgstr ""
+msgstr "$name falta da"
 
 #: ../browser/views.py:138
 msgid "Portlet"
-msgstr ""
+msgstr "Portleta"
 
 #: ../browser/viewlets/delete.pt:39
 msgid "Remove"
@@ -72,19 +72,19 @@ msgstr "Itxura aldatuta"
 
 #: ../browser/views.py:129
 msgid "Standard"
-msgstr ""
+msgstr "Defektuzkoa"
 
 #: ../browser/views.py:145
 msgid "Summary"
-msgstr ""
+msgstr "Laburpena"
 
 #: ../browser/views.py:148
 msgid "Tabular"
-msgstr ""
+msgstr "Taula"
 
 #: ../browser/views.py:132
 msgid "Text"
-msgstr ""
+msgstr "Testua"
 
 #: ../browser/viewlets/delete.pt:43
 msgid "This will delete the item."
@@ -96,7 +96,7 @@ msgstr "Honek aliasa ezabatuko du"
 
 #: ../browser/views.py:126
 msgid "Unbatched"
-msgstr ""
+msgstr "Multzokatu gabe"
 
 #: ../browser/actions.py:30
 msgid "View changed."
@@ -124,7 +124,7 @@ msgstr "Collage baten gehitu daitezkeen alias motak aukeratu"
 #. Default: "If the number of Columns in a row exceeds this number, \"Collage will put these in a new \"batch\". The new batch will be displayed below the first batch, but it's technically still the same row. "
 #: ../interfaces.py:101
 msgid "help_batch_size"
-msgstr ""
+msgstr "Multzoaren tamaina"
 
 #. Default: "Site wide options for Collage"
 #: ../browser/controlpanel.py:65
@@ -166,12 +166,12 @@ msgstr "Lerroaren izenburua (hautazkoa)"
 #. Default: "Use this if you have lots of items in your containers."
 #: ../interfaces.py:54
 msgid "help_ref_browser_empty"
-msgstr ""
+msgstr "Erabili hau zure karpetetean elementu asko baduzu"
 
 #. Default: "When set to True, the reference browser shows up a content type filter."
 #: ../interfaces.py:63
 msgid "help_ref_browser_types"
-msgstr ""
+msgstr "Egiazkoa aukeratzen denean, elementu-bilatzaileak motaren araberako filtroa erakutsiko du."
 
 #. Default: "Choose a layout for this object."
 #: ../browser/viewlets/layout.pt:22
@@ -221,11 +221,10 @@ msgstr "Aliasen zerrenda-zuria"
 #. Default: "Number of Columns"
 #: ../interfaces.py:100
 msgid "label_batch_size"
-msgstr ""
+msgstr "Zutabe kopurua"
 
 #. Default: "Copy"
 #: ../browser/viewlets/copy.pt:9
-#, fuzzy
 msgid "label_copy_object"
 msgstr "kopiatu"
 
@@ -299,12 +298,12 @@ msgstr "itsatsi"
 #. Default: "Open reference Browser without initial item listing"
 #: ../interfaces.py:52
 msgid "label_ref_browser_empty"
-msgstr ""
+msgstr "Elementu-bilatzailea hasierako zerrenda gabe kargatu"
 
 #. Default: "Provide type filter in reference browser"
 #: ../interfaces.py:61
 msgid "label_ref_browser_types"
-msgstr ""
+msgstr "Elementu-bilatzailean mota-filtroa erakutsi."
 
 #. Default: "Layout"
 #: ../browser/viewlets/layout.pt:12
@@ -343,7 +342,7 @@ msgstr "Elementuen zerrenda-zuria erabili"
 
 #: ../browser/views.py:202
 msgid "minimal"
-msgstr ""
+msgstr "gutxienekoa"
 
 #. Default: "Alias inserted."
 #: ../browser/actions.py:117

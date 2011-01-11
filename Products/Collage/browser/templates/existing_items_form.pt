@@ -95,7 +95,9 @@
             tal:attributes="class string:visualIcon $css">
 
          <img tal:attributes="src string:${portal_url}/${item/icon};
-			                  title item/type; alt item/type" i18n:attributes="title; alt" />
+			      title item/type; alt item/type"
+	      i18n:attributes="title; alt"
+	      tal:omit-tag="not: item/icon" />
 
          <a href="#"
             tal:attributes="href string:${here_url}/existing-items-form?path=${item/path};
@@ -103,7 +105,8 @@
                             class string:${item/link_css_class} get"
             i18n:attributes="title"
             tal:omit-tag="not: item/folderish">
-	       <tal:title content="item/title">Title</tal:title>
+	       <span tal:attributes="class item/cssType"
+	             tal:content="item/title">Title</span>
 
 	     </a>
          <div style="float: right">

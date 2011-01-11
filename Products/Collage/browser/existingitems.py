@@ -2,10 +2,12 @@
 # $Id$
 
 from zope.component import getMultiAdapter
-from zope.component import getUtility
+from zope.component import getUtility, queryUtility
 from zope.app.schema.vocabulary import IVocabularyFactory
+
 from plone.memoize.view import memoize_contextless
 from plone.app.layout.navigation.interfaces import INavigationRoot
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 
 from Acquisition import aq_inner
 from Products.Five import BrowserView
@@ -20,6 +22,7 @@ from Products.Collage.utilities import getCollageSiteOptions
 from Products.ZCTextIndex.ParseTree import ParseError
 
 from urllib import unquote
+
 
 class ExistingItemsView(BrowserView):
     limit = 10
@@ -162,7 +165,9 @@ class ExistingItemsView(BrowserView):
 
         items = []
         batch = Batch(results, self.limit, int(b_start), orphan=1)
+        idnormalizer = queryUtility(IIDNormalizer)
         for result in batch:
+            cssType = idnormalizer.normalize(result.portal_type)
             items.append({
                 'UID': result.UID,
                 'icon' : result.getIcon,
@@ -172,7 +177,8 @@ class ExistingItemsView(BrowserView):
                 'folderish': result.is_folderish,
                 'target_url': result.getURL(),
                 'path': result.getPath(),
-                'link_css_class': 'state-%s' % result.review_state
+                'link_css_class': 'state-%s' % result.review_state,
+                'cssType': 'contenttype-%s' % cssType,
                 })
 
         return {

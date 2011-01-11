@@ -257,6 +257,17 @@ span.collage-navigation a {
     background-image: url(icon-collagecolumn_default_view.gif) !important;
 }
 
+
+/* These should only appear in the add menu */
+.icons-on .collage-content-menu .contenttype-file {
+   background: no-repeat transparent 0px -433px url(contenttypes-sprite.png);
+   padding-left: 20px !important;
+}
+.icons-on .collage-content-menu .contenttype-image {
+   background: no-repeat transparent 0px -865px url(contenttypes-sprite.png);
+   padding-left: 20px !important;
+}
+
 /* collagerow layout */
 
 .collage-quickedit {

@@ -12,7 +12,9 @@ from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.utilities import getCollageSiteOptions
 from Products.Collage.utilities import CollageMessageFactory as _
 
-from zope.component import getMultiAdapter
+from zope.component import getMultiAdapter, queryUtility
+
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 
 class SimpleContentMenuViewlet(object):
     def isAlias(self):
@@ -95,16 +97,29 @@ class InsertNewItemViewlet(object):
         collage_options = getCollageSiteOptions()
         plone_view = self.context.restrictedTraverse('@@plone')
         container = plone_view.getCurrentFolder()
-
-        allowed_types = [t for t in container.getAllowedTypes()
-                         if collage_options.enabledType(t.getId())]
-
-        portal_url = getToolByName(self.context, 'portal_url')()
-
-        return [{'title': t.Title(),
-                 'description': t.Description(),
-                 'icon': '%s/%s' % (portal_url, t.getIcon()),
-                 'id': t.getId()} for t in allowed_types]
+        idnormalizer = queryUtility(IIDNormalizer)
+        
+        #BBB Plone 4
+        try:
+            factories_view = getMultiAdapter((self.context, self.request),
+                                             name='folder_factories')
+            allowed_types = [i for i in factories_view.addable_types() if
+                             collage_options.enabledType(i['id'])]
+            
+            return allowed_types
+        except:
+            portal_url = getToolByName(self.context, 'portal_url')()
+            results = []
+            for t in container.getAllowedTypes():
+                if collage_options.enabledType(t.getId()):
+                    cssId = idnormalizer.normalize(t.getId())
+                    cssClass = 'contenttype-%s' % cssId
+                    results.append({'title': t.Title(),
+                                    'description': t.Description(),
+                                    'icon': '%s/%s' % (portal_url, t.getIcon()),
+                                    'extra': {'id' : cssId, 'separator' : None,
+                                              'class' : cssClass},
+                                    'id': t.getId()})
 
 class SplitColumnViewlet(object):
     pass

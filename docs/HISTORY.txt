@@ -1,6 +1,14 @@
 Changelog
 =========
 
+1.3.1 (Unreleased)
+------------------
+
+* Updated Insert Current/New item menus to use Plone 4 methods for getting type
+  icons when available.
+  [dunlapm]
+
+
 1.3.0-final (2010-10-22)
 ------------------------
 

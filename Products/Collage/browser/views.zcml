@@ -51,7 +51,7 @@
   <browser:page
      zcml:condition="not-have plone-4"
      name="standard"
-     for="Products.ATContentTypes.content.file.ATFile"
+     for="Products.ATContentTypes.interface.IATFile"
      permission="zope.Public"
      template="views/file_standard.pt"
      class=".views.StandardView"
@@ -73,7 +73,7 @@
   <browser:page
      zcml:condition="not-have plone-4"
      name="portlet"
-     for="Products.ATContentTypes.content.file.ATFile"
+     for="Products.ATContentTypes.interface.IATFile"
      permission="zope.Public"
      template="views/file_portlet.pt"
      class=".views.PortletView"
@@ -95,7 +95,7 @@
   <browser:page
      zcml:condition="not-have plone-4"
      name="minimal"
-     for="Products.ATContentTypes.content.file.ATFile"
+     for="Products.ATContentTypes.interface.IATFile"
      permission="zope.Public"
      template="views/file_minimal.pt"
      class=".views.FileMinimalView"
@@ -251,7 +251,7 @@
   <browser:page
      zcml:condition="not-have plone-4"
      name="standard"
-     for="Products.ATContentTypes.content.image.ATImage"
+     for="Products.ATContentTypes.interface.IATImage"
      permission="zope.Public"
      template="views/image_standard.pt"
      class=".views.StandardView"
@@ -273,7 +273,7 @@
   <browser:page
      zcml:condition="not-have plone-4"
      name="portlet"
-     for="Products.ATContentTypes.content.image.ATImage"
+     for="Products.ATContentTypes.interface.IATImage"
      permission="zope.Public"
      template="views/image_portlet.pt"
      class=".views.PortletView"

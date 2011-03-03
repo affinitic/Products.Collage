@@ -4,6 +4,13 @@ Changelog
 1.3.1 (Unreleased)
 ------------------
 
+* Make *existing items* view compatible with LinguaPlone. Use the
+  navigation root as the default query path, and also supply the
+  parameter ``Language``, set to ``"all"``, such that we get any
+  object appearing under the current navigation root, regardless of
+  session language.
+  [malthe]
+
 * Fixed imports that were changed in Plone 4.1.
   [malthe]
 

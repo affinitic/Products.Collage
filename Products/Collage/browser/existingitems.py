@@ -3,7 +3,11 @@
 
 from zope.component import getMultiAdapter
 from zope.component import getUtility, queryUtility
-from zope.app.schema.vocabulary import IVocabularyFactory
+
+try:
+    from zope.schema.interfaces import IVocabularyFactory
+except ImportError:
+    from zope.app.schema.vocabulary import IVocabularyFactory
 
 from plone.memoize.view import memoize_contextless
 from plone.app.layout.navigation.interfaces import INavigationRoot
@@ -16,10 +20,21 @@ from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone import PloneMessageFactory as p_
 from Products.CMFPlone import utils
 from Products.CMFPlone.interfaces import IHideFromBreadcrumbs
-from Products.CMFPlone import Batch
+
+try:
+    from Products.CMFPlone import Batch
+except ImportError:
+    from Products.CMFPlone.PloneBatch import Batch
+
 from Products.Collage.browser.utils import escape_to_entities
 from Products.Collage.utilities import getCollageSiteOptions
 from Products.ZCTextIndex.ParseTree import ParseError
+
+try:
+    from plone.app.layout.navigation.interfaces import INavigationRoot
+except ImportError:
+    from Products.CMFPlone.interfaces import IPloneSiteRoot as INavigationRoot
+
 
 from urllib import unquote
 
@@ -51,9 +66,15 @@ class ExistingItemsView(BrowserView):
                                name=u'plone_tools').catalog()
 
     @property
-    def portal(self):
-        return getMultiAdapter((self.context, self.request),
-                               name=u'plone_portal_state').portal()
+    def navigation_root(self):
+        context = self.context.aq_inner
+        while context is not None:
+            if INavigationRoot.providedBy(context):
+                break
+
+            context = context.aq_parent
+
+        return context
 
     def portal_url(self):
         return getMultiAdapter((self.context, self.request),
@@ -82,7 +103,7 @@ class ExistingItemsView(BrowserView):
     
     def breadcrumbs(self):
         path = self.request.get('path')
-        portal = self.portal
+        portal = self.navigation_root
         if path is None:
             context = portal
         else:
@@ -132,7 +153,7 @@ class ExistingItemsView(BrowserView):
         if not portal_types:
             portal_types = [pt['id'] for pt in self.listEnabledTypes()]
         query_path = self.request.get('path') or \
-                     "/".join(self.portal.getPhysicalPath())
+                     "/".join(self.navigation_root.getPhysicalPath())
         query_path = unquote(query_path)
         b_start = self.request.get('b_start', 0)
         query_text = unquote(self.request.get('SearchableText', ''))
@@ -145,6 +166,7 @@ class ExistingItemsView(BrowserView):
         else:
             try:
                 results = self.catalog(
+                    Language='all',
                     SearchableText=query_text,
                     portal_type=portal_types,
                     path={"query": query_path, 'depth': depth},

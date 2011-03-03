@@ -3,6 +3,10 @@ Changelog
 
 1.3.1 (Unreleased)
 ------------------
+
+* Fixed imports that were changed in Plone 4.1.
+  [malthe]
+
 * Changed interface registration for Image and File views for Plone 3 to allow
   for p.a.blob image and file replacement types.
   [dunlapm]

@@ -37,7 +37,7 @@
                    images result/images;
                    albums result/folders;
                    otherContents result/others;
-                   Batch python:modules['Products.CMFPlone'].Batch | python:modules['Products.CMFPlone.PloneBatch'].Batch;
+                   Batch python:modules['Products.CMFPlone.PloneBatch'].Batch;
                    b_start python:request.get('b_start', 0);
                    batch python:Batch(images, 12, int(b_start), orphan=1)"
        tal:condition="python:albums or images">

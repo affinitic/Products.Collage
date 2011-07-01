@@ -1,6 +1,11 @@
 Changelog
 =========
 
+In next release...
+
+* Fixed a broken expression in the ``topic_album`` template.
+  [malthe]
+
 1.3.1 (2011-06-08)
 ------------------
 

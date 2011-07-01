@@ -12,14 +12,14 @@
        tal:define="topicContents python:here.queryCatalog(batch=True)"
        tal:condition="topicContents">
 
-    <h1 metal:define-macro="title"
+    <h2 metal:define-macro="title"
         tal:define="kssview context/@@collage_kss_helper"
         tal:attributes="id string:title-${kssview/getUniqueIdentifier};
                         class python: 'documentFirstHeading %s' % kssview.getKssClasses('title')"
         tal:condition="here/Title">
       <span metal:define-slot="inside"
             tal:replace="here/Title">title</span>
-    </h1>
+    </h2>
 
     <p class="description-topic">
       <span metal:define-macro="description"

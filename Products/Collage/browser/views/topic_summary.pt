@@ -52,7 +52,7 @@
                              tal:replace="structure python: path('nocall:item_object/tag')(scale='thumb', css_class='tileImage')" />
                     </a>
 
-                    <h2 class="tileHeadline"
+                    <h3 class="tileHeadline"
                         metal:define-macro="listitem">
 
                         <a href="#"
@@ -61,8 +61,7 @@
                            tal:content="item_title_or_id">
                             Item Title
                         </a>
-
-                    </h2>
+                    </h3>
 
                     <div class="documentByLine" tal:condition="python: site_properties.allowAnonymousViewAbout or not isAnon">
                     <tal:event condition="python: item_type == 'Event'">

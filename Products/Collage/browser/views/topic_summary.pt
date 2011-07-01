@@ -15,7 +15,7 @@
     <h2 metal:define-macro="title"
         tal:define="kssview context/@@collage_kss_helper"
         tal:attributes="id string:title-${kssview/getUniqueIdentifier};
-                        class python: 'documentFirstHeading %s' % kssview.getKssClasses('title')"
+                        class python: kssview.getKssClasses('title')"
         tal:condition="here/Title">
       <span metal:define-slot="inside"
             tal:replace="here/Title">title</span>
@@ -51,7 +51,6 @@
                         <img src="" alt=""
                              tal:replace="structure python: path('nocall:item_object/tag')(scale='thumb', css_class='tileImage')" />
                     </a>
-
                     <h3 class="tileHeadline"
                         metal:define-macro="listitem">
 

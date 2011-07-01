@@ -1,6 +1,12 @@
 Changelog
 =========
 
+In next release ...
+
+* Fixed topic templates so that H2-headings are not marked with
+  'documentFirstHeading'.
+  [malthe]
+
 1.3.3 (2011-07-01)
 ------------------
 

@@ -9,17 +9,20 @@
                        site_properties view/site_properties">
 
   <div class="standard-topic"
-       tal:define="topicContents python:here.queryCatalog(batch=True)"
+       tal:define="topicContents view/getContents"
        tal:condition="topicContents">
 
-    <h2 metal:define-macro="title"
-        tal:define="kssview context/@@collage_kss_helper"
-        tal:attributes="id string:title-${kssview/getUniqueIdentifier};
-                        class python: kssview.getKssClasses('title')"
-        tal:condition="here/Title">
-      <span metal:define-slot="inside"
-            tal:replace="here/Title">title</span>
-    </h2>
+    <a tal:omit-tag="not: view/isAlias"
+       tal:attributes="href context/absolute_url">
+      <h2 metal:define-macro="title"
+          tal:define="kssview context/@@collage_kss_helper"
+          tal:attributes="id string:title-${kssview/getUniqueIdentifier};
+                          class python: kssview.getKssClasses('title')"
+          tal:condition="here/Title">
+        <span metal:define-slot="inside"
+              tal:replace="here/Title">title</span>
+      </h2>
+    </a>
 
     <p class="description-topic">
       <span metal:define-macro="description"

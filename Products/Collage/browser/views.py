@@ -6,13 +6,16 @@ from zope.component import getSiteManager
 from zope.component import ComponentLookupError
 from zope.interface import providedBy
 from zope.interface import Interface
+from zope.location.interfaces import LocationError
+from zope.i18n import translate
 from plone.memoize.view import memoize_contextless
-from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from Products.Collage.interfaces import IDynamicViewManager, IPortletSkin
 from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.utilities import CollageMessageFactory as _
 from Products.Collage.utilities import getCollageSiteOptions
+from Products.Five.browser import BrowserView
+
 
 def test(condition, value_true, value_false):
     if condition:
@@ -67,6 +70,9 @@ class BaseView(BrowserView):
             return alias
 
         return self.__parent__
+
+    def isAlias(self):
+        return getattr(self, '__alias__', None) is not None
 
     def getSkin(self):
         manager = IDynamicViewManager(self.collage_context)
@@ -138,16 +144,32 @@ class PortletView(BaseView):
     title = _(u'Portlet')
     skinInterfaces = (IPortletSkin,)
 
-class AlbumTopicView(BaseView):
+class BaseTopicView(BaseView):
+    def getContents(self):
+        brains = self.context.queryCatalog(batch=True)
+
+        if self.isAlias():
+            # Discard batch information
+            brains = list(brains)
+
+        return brains
+
+class PortletTopicView(PortletView, BaseTopicView):
+    pass
+
+class AlbumTopicView(BaseTopicView):
     title = _(u'Album')
 
-class SummaryTopicView(BaseView):
+class StandardTopicView(BaseTopicView):
+    title = _(u'Standard')
+
+class SummaryTopicView(BaseTopicView):
     title = _(u'Summary')
 
-class TabularTopicView(BaseView):
+class TabularTopicView(BaseTopicView):
     title = _(u'Tabular')
 
-class InheritTopicView(BaseView):
+class InheritTopicView(BaseTopicView):
     """Inherits view from topic's display setting."""
 
     title = _(u'Inherit')

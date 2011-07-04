@@ -171,7 +171,7 @@
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
      template="views/topic_standard.pt"
-     class=".views.StandardView"
+     class=".views.StandardTopicView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
@@ -207,7 +207,7 @@
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
      template="views/topic_portlet.pt"
-     class=".views.PortletView"
+     class=".views.PortletTopicView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 

@@ -11,20 +11,22 @@
                   portal_url view/portal_url;
                   normalizeString view/normalizeString;
                   site_properties view/site_properties;
-                  topicContents
-                  python:here.queryCatalog(batch=True)"
+                  topicContents view/getContents"
       tal:attributes="class string:portlet ${view/getSkin}"
       tal:condition="topicContents">
 
     <dt class="portletHeader">
       <span class="portletTopLeft"></span>
-      <span metal:define-macro="title"
-            tal:define="kssview context/@@collage_kss_helper"
-            tal:attributes="id string:title-${kssview/getUniqueIdentifier};
-                            class python: kssview.getKssClasses('title')"
-            tal:condition="here/Title">
-        <span metal:define-slot="inside" tal:replace="here/Title">title</span>
-      </span>
+      <a tal:attributes="href context/absolute_url"
+         tal:omit-tag="not: view/isAlias">
+        <span metal:define-macro="title"
+              tal:define="kssview context/@@collage_kss_helper"
+              tal:attributes="id string:title-${kssview/getUniqueIdentifier};
+                              class python: kssview.getKssClasses('title')"
+              tal:condition="here/Title">
+          <span metal:define-slot="inside" tal:replace="here/Title">title</span>
+        </span>
+      </a>
       <span class="portletTopRight"></span>
     </dt>
 

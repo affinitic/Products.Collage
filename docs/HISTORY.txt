@@ -1,6 +1,19 @@
 Changelog
 =========
 
+In next release ...
+
+* Changed alised topic views such that only the initial batch is shown
+  (without pagination). In addition, the headings in these views are
+  now clickable and lead to the referenced topic.
+
+  This makes topic views less busy in the general case where an
+  already existing topic is shown.
+
+  Note that topics created inside the composition retain their
+  existing behavior.
+  [malthe]
+
 1.3.4 (2011-07-01)
 ------------------
 

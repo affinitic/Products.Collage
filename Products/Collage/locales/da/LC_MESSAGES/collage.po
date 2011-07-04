@@ -381,3 +381,5 @@ msgstr "søger denne sti og under"
 msgid "title_collage_controlpanel"
 msgstr "Komposition"
 
+msgid "Unable to render layout: ${title}."
+msgstr "Kan ikke vise layout: ${title}."

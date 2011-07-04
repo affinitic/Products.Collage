@@ -3,6 +3,14 @@ Changelog
 
 In next release ...
 
+* Catch name, type, value and location errors raised while rendering
+  content inside a composition, but display a warning (status
+  message).
+
+  This allows a user to change to an alternative layout in the case
+  that the system is broken.
+  [malthe]
+
 * Changed alised topic views such that only the initial batch is shown
   (without pagination). In addition, the headings in these views are
   now clickable and lead to the referenced topic.

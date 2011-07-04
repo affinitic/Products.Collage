@@ -15,6 +15,8 @@ from Products.Collage.interfaces import ICollageBrowserLayer
 from Products.Collage.utilities import CollageMessageFactory as _
 from Products.Collage.utilities import getCollageSiteOptions
 from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Products.statusmessages.interfaces import IStatusMessage
 
 
 def test(condition, value_true, value_false):
@@ -26,6 +28,25 @@ def test(condition, value_true, value_false):
 class BaseView(BrowserView):
     hide = False
     __alias__ = None
+
+    fallback = ViewPageTemplateFile("views/fallback.pt")
+
+    catch_exceptions = (
+        NameError,
+        ValueError,
+        TypeError,
+        LocationError,
+        )
+
+    def __call__(self):
+        try:
+            return self.index()
+        except self.catch_exceptions:
+            IStatusMessage(self.request).addStatusMessage(
+                _(u"Unable to render layout: ${title}.", mapping={
+                    'title': translate(self.title, context=self.request)
+                    }), type="warning")
+            return self.fallback()
 
     def test(self):
         return test

@@ -1,6 +1,13 @@
 Changelog
 =========
 
+In next release...
+
+* Updated set of catch exceptions; location error exception is 2.10+
+  only. We fall back to attribute error. Also, narrow list to the
+  exceptions likely to be raised because of environment errors.
+  [malthe]
+
 1.3.5 (2011-07-04)
 ------------------
 

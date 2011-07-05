@@ -6,7 +6,6 @@ from zope.component import getSiteManager
 from zope.component import ComponentLookupError
 from zope.interface import providedBy
 from zope.interface import Interface
-from zope.location.interfaces import LocationError
 from zope.i18n import translate
 from plone.memoize.view import memoize_contextless
 from Products.CMFCore.utils import getToolByName
@@ -17,6 +16,12 @@ from Products.Collage.utilities import getCollageSiteOptions
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
+
+
+try:
+    from zope.location.interfaces import LocationError
+except ImportError:
+    LocationError = AttributeError
 
 
 def test(condition, value_true, value_false):
@@ -33,8 +38,6 @@ class BaseView(BrowserView):
 
     catch_exceptions = (
         NameError,
-        ValueError,
-        TypeError,
         LocationError,
         )
 

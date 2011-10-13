@@ -2,6 +2,7 @@
 
 from AccessControl import getSecurityManager, Unauthorized
 from Globals import DTMLFile
+from DateTime import DateTime
 
 from zope.interface import directlyProvides
 from zope.component import queryMultiAdapter
@@ -10,12 +11,18 @@ from zope.component import ComponentLookupError
 
 from Products.Five.browser import BrowserView
 
+from Products.CMFCore.permissions import AccessInactivePortalContent
+from Products.CMFCore.utils import _checkPermission
+
 from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 from Products.Collage.utilities import isTranslatable
 from Products.Collage.viewmanager import mark_request
 
 class SimpleContainerRenderer(BrowserView):
+
+    def getContents(self):
+        return self.context.folderlistingFolderContents()
 
     def getItems(self, contents=None):
         """Items are a views to render.
@@ -32,7 +39,7 @@ class SimpleContainerRenderer(BrowserView):
 
         views = []
         if contents is None:
-            contents = self.context.folderlistingFolderContents()
+            contents = self.getContents()
         for context in contents:
             if context is None:
                 continue
@@ -93,6 +100,26 @@ class SimpleContainerRenderer(BrowserView):
         # restore interfaces
         directlyProvides(self.request, ifaces)
         return views
+
+
+class WithPublishDateRenderer(SimpleContainerRenderer):
+    
+    def getContents(self):
+        show_inactive = _checkPermission(AccessInactivePortalContent, self)
+        result = self.context.folderlistingFolderContents()
+        if not show_inactive:
+            def getItem(item):
+                """ Return referenced object in case of an alias and the item itself otherwise
+                """
+                if ICollageAlias.providedBy(item):
+                    return item.get_target()
+                else:
+                    return item
+                
+            now = DateTime()
+            result = [item for item in result if getItem(item).effective() < now < getItem(item).expires()]
+        return result
+
 
 class CollageStylesheet(BrowserView):
     """Renders the collage standard stylesheet

@@ -5,7 +5,8 @@
            xmlns:five="http://namespaces.zope.org/five">
 
 
-  <include package="Products.CMFCore" file="permissions.zcml"/>
+  <include package="Products.CMFCore" file="permissions.zcml"
+           zcml:condition="have plone-41" />
   
   <include file="profiles.zcml" />
 

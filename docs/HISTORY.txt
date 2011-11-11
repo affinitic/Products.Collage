@@ -9,6 +9,9 @@ Changelog
   
 * Added addional renderer, which respects effective and expiry-date.
   [tom_gross]
+  
+* Restored Topic summary-view for Plone 3
+  [tom_gross]
 
 1.3.6 (2011-07-05)
 ------------------

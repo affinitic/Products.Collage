@@ -175,11 +175,24 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
+  <!-- Plone 4 -->
   <browser:page
+     zcml:condition="have plone-4"
      name="summary"
      for="Products.ATContentTypes.content.topic.ATTopic"
      permission="zope.Public"
      template="views/topic_summary.pt"
+     class=".views.SummaryTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <!-- Plone 3 -->
+  <browser:page
+     zcml:condition="not-have plone-4"
+     name="summary"
+     for="Products.ATContentTypes.content.topic.ATTopic"
+     permission="zope.Public"
+     template="views/topic_summary_p3.pt"
      class=".views.SummaryTopicView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />

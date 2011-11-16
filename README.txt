@@ -51,7 +51,7 @@ Development:
 * `Sune Toft <sune@headnet.dk>`_
 * `Jens Klein <jens@bluedynamics.com>`_
 * `Robert Niederreiter <rnix@squarewave.at>`_
-* `Tom Gross` <itconsense@gmail.com>`_
+* `Tom Gross <itconsense@gmail.com>`_
 
 Translations:
 

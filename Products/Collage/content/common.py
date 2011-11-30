@@ -1,7 +1,10 @@
 # $Id$
 
 from Products.Archetypes import atapi
-from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
+try:
+    from archetypes.referencebrowserwidget.widget import ReferenceBrowserWidget
+except ImportError:
+    from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 from Products.CMFCore.permissions import ModifyPortalContent
 from Products.Collage.interfaces import ICollageColumn
 

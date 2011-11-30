@@ -1,7 +1,10 @@
 # $Id$
 
 from AccessControl import getSecurityManager, Unauthorized
-from Globals import DTMLFile
+try:
+    from App.special_dtml import DTMLFile
+except ImportError:
+    from Globals import DTMLFile
 from DateTime import DateTime
 
 from zope.interface import directlyProvides

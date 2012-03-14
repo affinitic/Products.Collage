@@ -20,7 +20,10 @@ def updateCollageAliasLayout(context, event):
 def reindexOnModify(content, event):
     """Collage subcontent change triggers Collage reindexing
     """
-    helper = content.restrictedTraverse('@@collage_helper')
+    try:
+        helper = content.restrictedTraverse('@@collage_helper')
+    except AttributeError:
+        return # content likely doesn't have REQUEST
     collage = helper.getCollageObject()
     if collage:
         # Change done in a Collage subobject

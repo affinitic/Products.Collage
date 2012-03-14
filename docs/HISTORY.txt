@@ -4,6 +4,11 @@ Changelog
 1.3.8 (unreleased)
 ------------------
 
+* Added try-except block around getting helper
+  when reindexing. This is not strictly our issue
+  but I still consider it a stability improvement.
+  [tmog]
+
 * Remove deprecation warning on Zope 2.13: 
   Products.ATReferenceBrowserWidget moved to archetypes.referencebrowserwidget
   DTMLFile is deprecated. import from App.special_dtml instead

@@ -9,13 +9,13 @@ Several `add-on products
 <http://pypi.python.org/pypi?%3Aaction=search&term=collective.collage&submit=search>`_
 exists which allows you to include portlets, forms or even other
 websites. See the `add-on repository
-<http://svn.plone.org/svn/collective/Products.Collage/addons/>`_ for
+<https://svn.plone.org/svn/collective/Products.Collage/addons/>`_ for
 more information.
 
 Compatibility
 -------------
 
-* Plone 3.1-4.0
+* Plone 3.1-4.2
 
 Status
 ------

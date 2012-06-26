@@ -223,6 +223,29 @@
      class=".views.PortletTopicView"
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
+     
+     
+  <!-- plone.app.collection.interfaces.ICollection  -->     
+  <browser:page
+     zcml:condition="installed plone.app.collection"
+     name="standard"
+     for="plone.app.collection.interfaces.ICollection"
+     permission="zope.Public"
+     template="views/collection_standard.pt"
+     class=".views.CollectionStandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+  />     
+     
+  <browser:page
+     zcml:condition="installed plone.app.collection"
+     name="summary"
+     for="plone.app.collection.interfaces.ICollection"
+     permission="zope.Public"
+     template="views/collection_summary.pt"
+     class=".views.CollectionSummaryView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+  />     
+     
 
   <browser:page
      name="standard"

@@ -30,6 +30,7 @@ def test(condition, value_true, value_false):
     else:
         return value_false
 
+
 class BaseView(BrowserView):
     hide = False
     __alias__ = None
@@ -66,19 +67,22 @@ class BaseView(BrowserView):
     @memoize_contextless
     def mtool(self):
 
-        plone_tools = getMultiAdapter((self.context, self.request), name=u'plone_tools')
+        plone_tools = getMultiAdapter((self.context, self.request),
+                                      name=u'plone_tools')
         return plone_tools.membership()
 
     @memoize_contextless
     def portal_url(self):
 
-        portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
+        portal_state = getMultiAdapter((self.context, self.request),
+                                       name=u'plone_portal_state')
         return portal_state.portal_url()
 
     @memoize_contextless
     def site_properties(self):
 
-        plone_tools = getMultiAdapter((self.context, self.request), name=u'plone_tools')
+        plone_tools = getMultiAdapter((self.context, self.request),
+                                      name=u'plone_tools')
         return plone_tools.properties().site_properties
 
     @memoize_contextless
@@ -102,10 +106,12 @@ class BaseView(BrowserView):
         manager = IDynamicViewManager(self.collage_context)
         return manager.getSkin()
 
+
 class ErrorViewNotFoundView(BaseView):
     title = u'View not Found'
     hide = True
     notfoundlayoutname = None
+
 
 class RowView(BaseView):
 
@@ -127,7 +133,7 @@ class RowView(BaseView):
         if not columns:
             return []
         if bsize == 0:
-            return [columns,]
+            return [columns, ]
         numbatches = (len(columns) - 1) / bsize + 1
         batches = []
         for numbatch in range(numbatches):
@@ -143,55 +149,68 @@ class RowView(BaseView):
             batches.append(batch)
         return batches
 
+
 class AutomaticRowView(RowView):
     title = _(u'Automatic')
+
 
 class LargeLeftRowView(RowView):
     title = _(u'Large left')
 
+
 class LargeRightRowView(RowView):
     title = _(u'Large right')
+
 
 class UnbatchedRowView(RowView):
     title = _(u'Unbatched')
 
+
 class StandardView(BaseView):
     title = _(u'Standard')
+
 
 class TextView(BaseView):
     title = _(u'Text')
 
+
 class FeaturedView(BaseView):
     title = _(u'Featured')
+
 
 class PortletView(BaseView):
     title = _(u'Portlet')
     skinInterfaces = (IPortletSkin,)
 
+
 class BaseTopicView(BaseView):
+
     def getContents(self):
         brains = self.context.queryCatalog(batch=True)
-
         if self.isAlias():
             # Discard batch information
             brains = list(brains)
-
         return brains
 
 class PortletTopicView(PortletView, BaseTopicView):
     pass
 
+
 class AlbumTopicView(BaseTopicView):
     title = _(u'Album')
+
 
 class StandardTopicView(BaseTopicView):
     title = _(u'Standard')
 
+
 class SummaryTopicView(BaseTopicView):
     title = _(u'Summary')
 
+
 class TabularTopicView(BaseTopicView):
     title = _(u'Tabular')
+
 
 class InheritTopicView(BaseTopicView):
     """Inherits view from topic's display setting."""
@@ -236,11 +255,22 @@ class InheritTopicView(BaseTopicView):
         view.__alias__ = self.__alias__
         return view()
 
+
+class CollectionStandardView(BaseView):
+    title = _(u'Standard')
+
+
+class CollectionSummaryView(BaseView):
+    title = _(u'Summary')
+
+
 class ClickableView(BaseView):
     title = _(u'Clickable')
 
+
 class StandardDocumentView(StandardView):
     """Includes for BBB."""
+
 
 class FileMinimalView(StandardView):
     """File for download in one line."""

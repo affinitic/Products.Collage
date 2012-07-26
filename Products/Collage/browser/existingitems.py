@@ -165,13 +165,14 @@ class ExistingItemsView(BrowserView):
             results = []
         else:
             try:
-                results = self.catalog(
-                    Language='all',
-                    SearchableText=query_text,
-                    portal_type=portal_types,
-                    path={"query": query_path, 'depth': depth},
-                    sort_on='sortable_title',
-                    sort_order='ascending')
+                query = {'Language': 'all',
+                         'portal_type': portal_types,
+                         'path': {"query": query_path, 'depth': depth},
+                         'sort_on': 'sortable_title',
+                         'sort_order': 'ascending'}
+                if query_text.strip():
+                    query['SearchableText'] = query_text
+                results = self.catalog(**query)
                 # alternative: sort_order='reverse', sort_on='modified'
             except ParseError:
                 results = []

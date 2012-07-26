@@ -17,6 +17,10 @@ Changelog
   DTMLFile is deprecated. import from App.special_dtml instead
   [toutpt]
 
+* Don't add SearchableText to catalog query, if there is none. There has
+  been issues with solr integration
+  [tom_gross]
+
 1.3.7 (2011-11-16)
 ------------------
 

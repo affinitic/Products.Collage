@@ -194,7 +194,7 @@ class ExistingItemsView(BrowserView):
             items.append({
                 'UID': result.UID,
                 'icon' : result.getIcon,
-                'title': result.Title,
+                'title': result.Title or result.getId,
                 'description': cropText(result.Description, desc_length, desc_ellipsis),
                 'type': result.Type,
                 'folderish': result.is_folderish,

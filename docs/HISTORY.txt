@@ -21,6 +21,9 @@ Changelog
   been issues with solr integration
   [tom_gross]
 
+* Fall back to Id, if object has no Title in referencebrowser
+  [tom_gross]
+
 1.3.7 (2011-11-16)
 ------------------
 

@@ -106,7 +106,7 @@ class SimpleContainerRenderer(BrowserView):
 
 
 class WithPublishDateRenderer(SimpleContainerRenderer):
-    
+
     def getContents(self):
         show_inactive = _checkPermission(AccessInactivePortalContent, self)
         result = self.context.folderlistingFolderContents()
@@ -118,7 +118,7 @@ class WithPublishDateRenderer(SimpleContainerRenderer):
                     return item.get_target()
                 else:
                     return item
-                
+
             now = DateTime()
             result = [item for item in result if getItem(item).effective() < now < getItem(item).expires()]
         return result

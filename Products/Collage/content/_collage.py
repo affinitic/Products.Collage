@@ -39,7 +39,7 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
             i18n_domain='plone',
         )
     ),
-    atapi.BooleanField('show_title',        
+    atapi.BooleanField('show_title',
         accessor='getShowTitle',
         widget=atapi.BooleanWidget(
             label=_(u'label_show_title', default=u"Show title"),

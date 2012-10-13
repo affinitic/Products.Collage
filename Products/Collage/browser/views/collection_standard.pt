@@ -13,7 +13,7 @@
 
     <a tal:omit-tag="not: view/isAlias"
        tal:attributes="href context/absolute_url">
-       
+
       <h2 metal:define-macro="title"
           tal:condition="context/Title">
         <span metal:define-slot="inside"

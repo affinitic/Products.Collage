@@ -4,18 +4,18 @@
      i18n:domain="collage"
      tal:omit-tag="">
 
-  <div class="expandable-section">   
-     
-    <a class="action expandable-label"     
+  <div class="expandable-section">
+
+    <a class="action expandable-label"
        tal:attributes="href python:'%s/delete-object' % view.getImmediateObject().absolute_url()">
-      <div class="delete-object-icon"></div> 
+      <div class="delete-object-icon"></div>
       <span tal:condition="view/isAlias"
-            i18n:translate="label_remove" 
+            i18n:translate="label_remove"
             i18n:domain="plone">Remove</span>
       <span tal:condition="not: view/isAlias"
-            i18n:translate="label_delete" 
+            i18n:translate="label_delete"
             i18n:domain="plone">Delete</span>
-    </a>   
+    </a>
 
     <div class="expandable-content">
       <h4 i18n:translate="label_delete">

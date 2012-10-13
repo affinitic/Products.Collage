@@ -100,7 +100,7 @@ class ExistingItemsView(BrowserView):
                 'selected': selected,
             })
         return ret
-    
+
     def breadcrumbs(self):
         path = self.request.get('path')
         portal = self.navigation_root
@@ -137,7 +137,7 @@ class ExistingItemsView(BrowserView):
                  'selected': pt.getId() == actual_portal_type and 'selected' or None}
                 for pt in ttool.listTypeInfo()
                 if collage_options.enabledAlias(pt.getId())]
-    
+
     @property
     def readitems(self):
         options = getCollageSiteOptions()

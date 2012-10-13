@@ -71,7 +71,7 @@
      permission="cmf.ModifyPortalContent"
      layer="Products.Collage.interfaces.ICollageEditLayer"
      />
-  
+
   <browser:viewlet
      name="080-insert-new-item"
      for="Products.Collage.interfaces.ICollageColumn"

@@ -13,7 +13,7 @@
 
     <a tal:omit-tag="not: view/isAlias"
        tal:attributes="href context/absolute_url">
-       
+
       <h2 metal:define-macro="title"
           tal:condition="context/Title">
         <span metal:define-slot="inside"
@@ -32,9 +32,9 @@
 
     <tal:listing i18n:domain="plone"
                  define="templateId string:folder_summary_view">
-  
+
       <metal:listing-macro use-macro="context/standard_view/macros/listing">
-  
+
        <metal:entry fill-slot="entry">
 
         <div class="tileItem visualIEFloatFix"
@@ -78,7 +78,7 @@
             <div class="visualClear"><!-- --></div>
         </div>
 
-       </metal:entry>      
+       </metal:entry>
       </metal:listing-macro>
     </tal:listing>
 

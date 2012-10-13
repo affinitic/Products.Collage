@@ -44,7 +44,7 @@
      source="1.2.0"
      destination="1.2.1"
      profile="Products.Collage:default">
-    
+
     <genericsetup:upgradeStep
        title="Adding control panel"
        description="Adding the Collage control panel resources"
@@ -57,7 +57,7 @@
      source="1.2.1"
      destination="1.2.2"
      profile="Products.Collage:default">
-    
+
     <genericsetup:upgradeStep
        title="Add alias whitelist property"
        description="Add Alias whitelist control panel property"

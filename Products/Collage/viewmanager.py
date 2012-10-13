@@ -14,7 +14,7 @@ from Products.CMFCore.utils import getToolByName
 
 from interfaces import IDynamicViewManager
 from interfaces import ICollageAlias
-from interfaces import ICollageBrowserLayer 
+from interfaces import ICollageBrowserLayer
 from interfaces import ICollageBrowserLayerType
 
 ANNOTATIONS_KEY = u'Collage'

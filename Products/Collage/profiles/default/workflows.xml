@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <object name="portal_workflow">
-  
+
   <bindings>
     <type type_id="CollageRow">
       <bound-workflow workflow_id=""/>
@@ -12,5 +12,5 @@
       <bound-workflow workflow_id=""/>
     </type>
   </bindings>
-  
+
 </object>

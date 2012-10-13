@@ -98,14 +98,14 @@ class InsertNewItemViewlet(object):
         plone_view = self.context.restrictedTraverse('@@plone')
         container = plone_view.getCurrentFolder()
         idnormalizer = queryUtility(IIDNormalizer)
-        
+
         #BBB Plone 4
         try:
             factories_view = getMultiAdapter((self.context, self.request),
                                              name='folder_factories')
             allowed_types = [i for i in factories_view.addable_types() if
                              collage_options.enabledType(i['id'])]
-            
+
             return allowed_types
         except:
             portal_url = getToolByName(self.context, 'portal_url')()

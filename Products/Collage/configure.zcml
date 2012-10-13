@@ -7,7 +7,7 @@
 
   <include package="Products.CMFCore" file="permissions.zcml"
            zcml:condition="have plone-41" />
-  
+
   <include file="profiles.zcml" />
 
   <include package="zope.annotation" />
@@ -31,7 +31,7 @@
      class=".content.CollageAlias" />
 
   <!-- Events -->
-  
+
   <subscriber handler=".events.updateCollageAliasLayout" />
 
   <subscriber handler=".events.reindexOnModify" />

@@ -8,7 +8,7 @@
      factory=".skins.AlarmPortletSkin"
      />
 
-  <browser:resourceDirectory 	   
+  <browser:resourceDirectory 	
      name="collage-skindemo-stylesheets"
      directory="stylesheets"
      permission="zope2.Public"

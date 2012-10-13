@@ -98,7 +98,7 @@ class ICollageSiteOptions(interface.Interface):
 
     batch_size = schema.Int(
         title=_(u'label_batch_size', default=u"Number of Columns"),
-        description=_(u'help_batch_size', 
+        description=_(u'help_batch_size',
             default=u"If the number of Columns in a row exceeds this number, "
                 """"Collage will put these in a new "batch". """
                 "The new batch will be displayed below the first batch, "

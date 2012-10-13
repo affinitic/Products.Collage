@@ -23,8 +23,8 @@
      for="Products.Collage.interfaces.ICollage"
      permission="cmf.ModifyPortalContent"
      class=".actions.ActionsView"
-     />  
-  
+     />
+
   <browser:page
      name="reorder-object"
      attribute="reorderObjects"
@@ -32,7 +32,7 @@
      permission="cmf.ModifyPortalContent"
      class=".actions.ActionsView"
      />
-  
+
   <browser:page
      name="insert-alias"
      attribute="insertAlias"
@@ -56,5 +56,5 @@
      permission="cmf.ModifyPortalContent"
      class=".actions.ActionsView"
      />
-  
+
 </configure>

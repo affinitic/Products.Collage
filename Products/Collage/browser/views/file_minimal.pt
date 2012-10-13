@@ -13,7 +13,7 @@
     <br />
     <span class="discreet">
         <span i18n:translate=""
-              i18n:domain="archetypes" 
+              i18n:domain="archetypes"
               tal:replace="python:context.lookupMime(context.getField('file').getContentType(here))">ContentType</span>,
         <tal:size content="python:'%sKb' % (size / 1024)">0Kb</tal:size>
     </span>

@@ -21,7 +21,7 @@ class CollageTestCase(PloneTestCase.PloneTestCase):
         self.app.REQUEST['SESSION'] = self.Session()
 
 class CollageFunctionalTestCase(PloneTestCase.FunctionalTestCase):
-    
+
     class Session(dict):
         def set(self, key, value):
             self[key] = value

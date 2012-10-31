@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
-# $Id$
 import os
 from setuptools import setup, find_packages
 
 def _textOfModuleFile(filename):
     return open(filename, 'r').read().strip()
 
-version = _textOfModuleFile(os.path.join('Products', 'Collage', 'version.txt'))
-
 setup(name='Products.Collage',
-      version=version,
+      version="1.3.7.dev0",
       description=("A product to create page compositions in Plone."),
       long_description='\n\n'.join([
           _textOfModuleFile(name)

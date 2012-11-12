@@ -11,4 +11,5 @@
 	     class="stx">
 	  <span metal:define-slot="inside"
 	        tal:replace="structure text">text</span>
+    </div>
 </div>

@@ -36,6 +36,15 @@
      />
 
   <browser:page
+     zcml:condition="installed zope.container.interfaces.IContainer"
+     name="reorder-object"
+     attribute="reorderObjects"
+     for="zope.container.interfaces.IContainer"
+     permission="cmf.ModifyPortalContent"
+     class=".actions.ActionsView"
+     />
+
+  <browser:page
      name="insert-alias"
      attribute="insertAlias"
      for="Products.Collage.interfaces.ICollageColumn"

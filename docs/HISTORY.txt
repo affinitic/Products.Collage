@@ -4,7 +4,18 @@ Changelog
 1.3.9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed html error
+  [Andrew Pasquale]
+
+- Removed relatedItems macro. This macro was from the 
+  plone_deprecated skin folder which is deactivated on plone 4.3 by
+  default. relatedItems are now implemented as a viewlet.
+  [Victor Fernandez de Alba]
+
+- Conditional zcml configuration update.
+  IContainer interface has been moved. The zcml declaration supports
+  both locations now.
+  [Rodrigo]
 
 
 1.3.8 (2012-10-31)

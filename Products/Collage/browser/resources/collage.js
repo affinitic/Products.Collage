@@ -1,4 +1,4 @@
-jq(document).ready(function() {
+$(document).ready(function() {
     setupContentMenu();
     setupHandlers();
     setupNavigation();
@@ -8,7 +8,6 @@ setupContentMenu = function() {
 }
 
 function setupLinks(query) {
-    var $ = jq;
 
     function post_link(href) {
         var url_parts = href.split('?');
@@ -40,7 +39,6 @@ function setupLinks(query) {
 
 setupHandlers = function() {
 
-    var $ = jq;
 
     // setup collapsing blocks
     $.each($("div.expandable-section, a.expandable-label"), function(i, o) {
@@ -87,7 +85,6 @@ setupHandlers = function() {
 }
 
 setupNavigation = function() {
-    var $ = jq;
 
     // transform navigation links into ajax-methods
     $("a.collage-js-down").bind('click', {jquery: $}, triggerMoveDown);
@@ -95,7 +92,6 @@ setupNavigation = function() {
 };
 
 submitExistingItemsForm = function(formel) {
-    var $ = jq;
 	// serialize form
 	var form = $(formel).parents('form').eq(0);
 	var url = form.attr('action');
@@ -109,7 +105,6 @@ submitExistingItemsForm = function(formel) {
 };
 
 updateExistingItems = function(formel) {
-    var $ = jq;
 
     var url = $(formel).attr('href');
     var section = $(formel).parents('.ajax-reference-browser').eq(0);
@@ -122,7 +117,6 @@ updateExistingItems = function(formel) {
 };
 
 setupExistingItemsForm = function() {
-    var $ = jq;
 
     $("form.collage-existing-items select").change(function(event) {
         this.blur();
@@ -160,7 +154,6 @@ restoreElement = function(element) {
 }
 
 doSimpleQuery = function(url, data) {
-    var $ = jq;
     
     // perform simple ajax-call
     var href = url.split('?');
@@ -203,7 +196,6 @@ triggerMoveUp = function(event) {
 }
 
 triggerMove = function(event, direction) {
-    var $ = jq;
     
     $ = event.data.jquery;
     event.preventDefault();

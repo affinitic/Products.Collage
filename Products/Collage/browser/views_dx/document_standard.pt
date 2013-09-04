@@ -1,0 +1,27 @@
+<tal:manager replace="structure provider:collage.ContentManager" />
+<div class="standard-document">
+
+	<h2 metal:define-macro="title"
+	    tal:condition="context/Title">
+	  <span metal:define-slot="inside"
+	        tal:replace="context/Title">title</span>
+	</h2>
+	
+	<p class="description"
+	   tal:condition="context/Description">
+	  <span metal:define-macro="description"
+
+	        tal:condition="context/Description">
+	    <span metal:define-slot="inside"
+	          tal:replace="context/Description">description</span>
+	  </span>
+	</p>
+	
+	<div metal:define-macro="text"
+         tal:define="text python: context.text"
+         tal:condition="text">
+        <span metal:define-slot="inside"
+            tal:replace="structure python:text.output">text
+        </span>
+    </div>
+</div>

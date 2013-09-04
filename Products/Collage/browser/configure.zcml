@@ -1,5 +1,9 @@
-<configure xmlns="http://namespaces.zope.org/zope"
-           xmlns:browser="http://namespaces.zope.org/browser">
+<configure 
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"           
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
 
   <browser:resourceDirectory
      name="collage-resources"
@@ -124,5 +128,10 @@
   <include file="actions.zcml" />
 
   <include file="skins.zcml" />
+
+  <!-- includes for plone.app.contenttypes -->
+  
+  <include zcml:condition="installed plone.app.contenttypes" 
+           file="views_dx.zcml" />
 
 </configure>

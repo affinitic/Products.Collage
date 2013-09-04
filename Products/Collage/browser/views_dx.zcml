@@ -1,0 +1,221 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
+           xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     permission="zope.Public"
+     template="views_dx/document_standard.pt"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="featured"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     permission="zope.Public"
+     template="views_dx/document_featured.pt"
+     class=".views.FeaturedView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     permission="zope.Public"
+     template="views_dx/document_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="text"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     permission="zope.Public"
+     template="views_dx/document_text.pt"
+     class=".views.TextView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.IFile"
+     permission="zope.Public"
+     template="views_dx/file_standard.pt"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+
+  <browser:page
+     name="portlet"
+     for="plone.app.contenttypes.interfaces.IFile"
+     permission="zope.Public"
+     template="views_dx/file_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="minimal"
+     for="plone.app.contenttypes.interfaces.IFile"
+     permission="zope.Public"
+     template="views_dx/file_minimal.pt"
+     class=".views.FileMinimalView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.INewsItem"
+     permission="zope.Public"
+     template="views_dx/newsitem_standard.pt"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="plone.app.contenttypes.interfaces.INewsItem"
+     permission="zope.Public"
+     template="views_dx/newsitem_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.ILink"
+     permission="zope.Public"
+     template="views_dx/link_standard.pt"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="clickable"
+     for="plone.app.contenttypes.interfaces.ILink"
+     permission="zope.Public"
+     template="views_dx/link_clickable.pt"
+     class=".views.ClickableView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="plone.app.contenttypes.interfaces.ILink"
+     permission="zope.Public"
+     template="views_dx/link_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="inherit"
+     for="plone.app.contenttypes.interfaces.ICollection"
+     permission="zope.Public"
+     class=".views.InheritTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.ICollection"
+     permission="zope.Public"
+     template="views_dx/topic_standard.pt"
+     class=".views.StandardTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="summary"
+     for="plone.app.contenttypes.interfaces.ICollection"
+     permission="zope.Public"
+     template="views_dx/topic_summary.pt"
+     class=".views.SummaryTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="tabular"
+     for="plone.app.contenttypes.interfaces.ICollection"
+     permission="zope.Public"
+     template="views_dx/topic_tabular.pt"
+     class=".views.TabularTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="album"
+     for="plone.app.contenttypes.interfaces.ICollection"
+     permission="zope.Public"
+     template="views_dx/topic_album.pt"
+     class=".views.AlbumTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="plone.app.contenttypes.interfaces.ICollection"
+     permission="zope.Public"
+     template="views_dx/topic_portlet.pt"
+     class=".views.PortletTopicView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.IFolder"
+     permission="zope.Public"
+     template="views_dx/folder_standard.pt"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="plone.app.contenttypes.interfaces.IFolder"
+     permission="zope.Public"
+     template="views_dx/folder_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.IEvent"
+     permission="zope.Public"
+     template="views_dx/event_standard.pt"
+     class=".views.BaseView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="plone.app.contenttypes.interfaces.IEvent"
+     permission="zope.Public"
+     template="views_dx/event_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.IImage"
+     permission="zope.Public"
+     template="views_dx/image_standard.pt"
+     class=".views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+  <browser:page
+     name="portlet"
+     for="plone.app.contenttypes.interfaces.IImage"
+     permission="zope.Public"
+     template="views_dx/image_portlet.pt"
+     class=".views.PortletView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+
+</configure>

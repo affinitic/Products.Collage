@@ -1,0 +1,9 @@
+<tal:manager replace="structure provider:collage.ContentManager" />
+<div class="text-document topleft">
+    <div metal:define-macro="text"
+         tal:define="text python: here.text"
+         tal:attributes="id string:text-${view/getUniqueIdentifier};"
+         tal:condition="text">
+      <span metal:define-slot="inside"
+            tal:replace="structure python:text.output">text</span>
+</div>

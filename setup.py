@@ -11,7 +11,7 @@ setup(name='Products.Collage',
       long_description='\n\n'.join([
           _textOfModuleFile(name)
           for name in (
-               'README.txt',
+               'README.rst',
                os.path.join('docs', 'DEVELOPERS.txt'),
                os.path.join('docs', 'HISTORY.txt'))]),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers

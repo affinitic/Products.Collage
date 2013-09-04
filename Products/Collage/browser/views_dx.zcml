@@ -166,4 +166,22 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
+  <!-- plone.app.collection.interfaces.ICollection  -->
+  <browser:page
+     name="standard"
+     for="plone.app.contenttypes.interfaces.ICollection"
+     permission="zope.Public"
+     template="views_dx/collection_standard.pt"
+     class=".views.CollectionStandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+  />
+
+  <browser:page
+     name="summary"
+     for="plone.app.contenttypes.interfaces.ICollection"
+     permission="zope.Public"
+     template="views_dx/collection_summary.pt"
+     class=".views.CollectionSummaryView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+  />
 </configure>

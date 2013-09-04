@@ -3,7 +3,7 @@
 <div metal:define-macro="portlet">
 
   <dl class="portlet"
-      tal:define="plone_view here/@@plone;
+      tal:define="plone_view context/@@plone;
                   kssview context/@@collage_kss_helper;
                   toLocalizedTime nocall: plone_view/toLocalizedTime;
                   isAnon view/isAnon;
@@ -17,33 +17,27 @@
     <dt class="portletHeader">
       <span class="portletTopLeft"></span>
       <span metal:define-macro="title"
-            tal:define="kssview context/@@collage_kss_helper"
-            tal:attributes="id string:title-${kssview/getUniqueIdentifier};
-                            class python: kssview.getKssClasses('title')"
-            tal:condition="here/Title">
-        <span metal:define-slot="inside" tal:replace="here/Title">title</span>
+            tal:condition="context/Title">
+        <span metal:define-slot="inside" 
+              tal:replace="context/Title">title</span>
       </span>
       <span class="portletTopRight"></span>
     </dt>
 
     <dd class="portletItem odd">
-      <p>
+      <p class="description"
+         tal:condition="context/Description">
         <span metal:define-macro="description"
-              tal:define="kssview context/@@collage_kss_helper"
-              tal:attributes="id string:description-${kssview/getUniqueIdentifier};
-                              class python: kssview.getKssClasses('description')"
-              tal:condition="here/Description">
+              tal:condition="context/Description">
           <span metal:define-slot="inside"
-                tal:replace="here/Description">description</span>
+                tal:replace="context/Description">description</span>
         </span>
       </p>
 
-      <tal:listing define="view context/@@collage_kss_helper/getKssView;
-                           getKssClasses python: view.getKssClasses;
-                           templateId string:folder_listing;
+      <tal:listing define="templateId string:folder_listing;
                            limit_display python:10;
                            contentFilter python:{'portal_type': types}">
-        <metal:listing-macro use-macro="here/folder_listing/macros/listing" />
+        <metal:listing-macro use-macro="context/folder_listing/macros/listing" />
       </tal:listing>
     </dd>
     <dd class="portletFooter">

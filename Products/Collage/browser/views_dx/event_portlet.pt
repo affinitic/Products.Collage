@@ -1,8 +1,14 @@
 <tal:manager replace="structure provider:collage.ContentManager" />
 
 <metal:block use-macro="context/global_defines/macros/defines" />
-<div metal:define-macro="portlet" i18n:domain="plone">
 
+<tal:event define="test view/test;
+                   site_properties view/site_properties;
+                   plone_view nocall:context/@@plone;
+                   context_url context/@@absolute_url" i18n:domain="plone">
+                   
+<div metal:define-macro="portlet" i18n:domain="plone">
+ 
   <dl class="portlet"
       tal:attributes="class string:portlet ${view/getSkin}">
       
@@ -143,3 +149,4 @@
     </dd>
   </dl>
 </div>
+</tal:event>

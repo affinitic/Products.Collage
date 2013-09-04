@@ -1,36 +1,32 @@
 <tal:manager replace="structure provider:collage.ContentManager" />
 
 <div metal:define-macro="portlet">
-
   <dl class="portlet"
-      tal:define="kssview context/@@collage_kss_helper"
       tal:attributes="class string:portlet ${view/getSkin}">
+      
     <dt class="portletHeader">
       <span class="portletTopLeft"></span>
       <span metal:define-macro="title"
-            tal:define="kssview context/@@collage_kss_helper"
-            tal:attributes="id string:title-${kssview/getUniqueIdentifier};
-                            class python: kssview.getKssClasses('title')"
-            tal:condition="here/Title">
-        <span metal:define-slot="inside" tal:replace="here/Title">title</span>
+            tal:condition="context/Title">
+        <span metal:define-slot="inside" 
+              tal:replace="context/Title">title</span>
       </span>
       <span class="portletTopRight"></span>
     </dt>
 
     <dd class="portletItem odd">
-      <p>
+      <p class="description"
+         tal:condition="context/Description">
         <span metal:define-macro="description"
-              tal:define="kssview context/@@collage_kss_helper"
-
-              tal:attributes="id string:description-${kssview/getUniqueIdentifier};
-                              class python: kssview.getKssClasses('description')"
-              tal:condition="here/Description">
+              tal:condition="context/Description">
           <span metal:define-slot="inside"
-                tal:replace="here/Description">description</span>
+                tal:replace="context/Description">description</span>
         </span>
       </p>
+      
+    <a tal:attributes="href python:context.absolute_url"
+       tal:content="python:context.title">File</a>
 
-      <metal:field use-macro="python:here.widget('file', mode='view')">File</metal:field>
     </dd>
     <dd class="portletFooter">
       <span class="portletBottomLeft"></span>

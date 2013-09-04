@@ -1,14 +1,14 @@
 <tal:manager replace="structure provider:collage.ContentManager" />
 
 <img class="collage-image"
-     tal:attributes="alt here/title_or_id;
-		     src string:${here/absolute_url}/image" />
+     tal:attributes="alt context/title_or_id;
+		             src python:context.absolute_url()"/>
+
+
 
 <p metal:define-macro="description"
-   tal:define="view context/@@collage_kss_helper"
-   tal:attributes="id string:description-${view/getUniqueIdentifier};
-		   class python: 'discreet' + view.getKssClasses('description')"
-   tal:condition="here/Description">
+   class='discreet'
+   tal:condition="context/Description">
   <span metal:define-slot="inside"
-        tal:replace="here/Description">description</span>
+        tal:replace="context/Description">description</span>
 </p>

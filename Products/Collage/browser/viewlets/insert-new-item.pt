@@ -28,7 +28,7 @@
                 tal:define="Title ctype/title; Id ctype/id; Description ctype/description">
               <a href="#"
                  i18n:attributes="title"
-                 tal:attributes="href string:ctype/action;
+                 tal:attributes="href ctype/action;
                                  title Description;
                                  class ctype/extra/class">
                 <img tal:attributes="src ctype/icon" tal:omit-tag="not: ctype/icon"/>

@@ -111,58 +111,6 @@
      layer="Products.Collage.interfaces.ICollageBrowserLayer"
      />
 
-  <browser:page
-     name="inherit"
-     for="plone.app.contenttypes.interfaces.ICollection"
-     permission="zope.Public"
-     class=".views.InheritTopicView"
-     layer="Products.Collage.interfaces.ICollageBrowserLayer"
-     />
-
-  <browser:page
-     name="standard"
-     for="plone.app.contenttypes.interfaces.ICollection"
-     permission="zope.Public"
-     template="views_dx/topic_standard.pt"
-     class=".views.StandardTopicView"
-     layer="Products.Collage.interfaces.ICollageBrowserLayer"
-     />
-
-  <browser:page
-     name="summary"
-     for="plone.app.contenttypes.interfaces.ICollection"
-     permission="zope.Public"
-     template="views_dx/topic_summary.pt"
-     class=".views.SummaryTopicView"
-     layer="Products.Collage.interfaces.ICollageBrowserLayer"
-     />
-
-  <browser:page
-     name="tabular"
-     for="plone.app.contenttypes.interfaces.ICollection"
-     permission="zope.Public"
-     template="views_dx/topic_tabular.pt"
-     class=".views.TabularTopicView"
-     layer="Products.Collage.interfaces.ICollageBrowserLayer"
-     />
-
-  <browser:page
-     name="album"
-     for="plone.app.contenttypes.interfaces.ICollection"
-     permission="zope.Public"
-     template="views_dx/topic_album.pt"
-     class=".views.AlbumTopicView"
-     layer="Products.Collage.interfaces.ICollageBrowserLayer"
-     />
-
-  <browser:page
-     name="portlet"
-     for="plone.app.contenttypes.interfaces.ICollection"
-     permission="zope.Public"
-     template="views_dx/topic_portlet.pt"
-     class=".views.PortletTopicView"
-     layer="Products.Collage.interfaces.ICollageBrowserLayer"
-     />
 
   <browser:page
      name="standard"

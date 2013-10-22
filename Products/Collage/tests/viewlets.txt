@@ -64,10 +64,12 @@ Insert new items
 
   >>> viewlet = getMultiAdapter((column, request, view, manager), name=u"080-insert-new-item")
 
-Let's look at the returned content types:
+Let's look at the returned content types.  They will be dictionaries
+with several keys that may differ per Plone version.  We expect at
+least some specific keys:
 
   >>> for info in viewlet.getAddableTypes():
-  ...   if set(info.keys()) != set(['id', 'description', 'icon', 'title']): raise ValueError
+  ...   if not set(info.keys()).issuperset(set(['id', 'description', 'icon', 'title'])): raise ValueError(info.keys())
 
 Insert an event item
   

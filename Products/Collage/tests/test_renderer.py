@@ -52,6 +52,14 @@ class SimpleContainerRendererTestCase(CollageTestCase):
 
 class WithPublishDateRendererTestCase(SimpleContainerRendererTestCase):
 
+    def afterSetUp(self):
+        # By default this permission is also given to Owner, but that
+        # defeats our test purpose.  Alternatively, we could make sure
+        # Anonymous can view the collage, maybe simply by doing a
+        # workflow transition, but that may depend on the workflow.
+        self.portal.manage_permission('Access inactive portal content', ['Manager'])
+        super(WithPublishDateRendererTestCase, self).afterSetUp()
+
     def _makeOne(self, context):
         request = self.app.REQUEST
         return WithPublishDateRenderer(context, request)

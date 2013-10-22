@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-10-04 12:13+0000\n"
+"POT-Creation-Date: 2013-10-22 21:24+0000\n"
 "PO-Revision-Date: 2010-01-11 11:10+0100\n"
 "Last-Translator: Jens Klein <jk@kleinundpartner.at>\n"
 "Language-Team: \n"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "${title} deleted."
 msgstr "${title} gelöscht."
 
-#: ../browser/views.py:142
+#: ../browser/views.py:200
 msgid "Album"
 msgstr "Album"
 
-#: ../browser/views.py:117
+#: ../browser/views.py:154
 msgid "Automatic"
 msgstr "Automatisch"
 
-#: ../browser/views.py:194
+#: ../browser/views.py:268
 msgid "Clickable"
 msgstr "Klickbar"
 
@@ -36,31 +36,31 @@ msgstr "Klickbar"
 msgid "Delete"
 msgstr "Löschen"
 
-#: ../browser/views.py:135
+#: ../browser/views.py:178
 msgid "Featured"
 msgstr "Hervorgehoben"
 
-#: ../browser/views.py:153
+#: ../browser/views.py:218
 msgid "Inherit"
 msgstr "Vererben"
 
-#: ../browser/templates/existing_items_form.pt:117
+#: ../browser/templates/existing_items_form.pt:120
 msgid "Insert"
 msgstr "Einfügen"
 
-#: ../browser/views.py:120
+#: ../browser/views.py:158
 msgid "Large left"
 msgstr "Groß links"
 
-#: ../browser/views.py:123
+#: ../browser/views.py:162
 msgid "Large right"
 msgstr "Groß rechts"
 
-#: ../browser/viewlet.py:59
+#: ../browser/viewlet.py:64
 msgid "Missing: $name"
 msgstr "Es fehlt: $name"
 
-#: ../browser/views.py:138
+#: ../browser/views.py:182
 msgid "Portlet"
 msgstr "Portlet"
 
@@ -72,19 +72,19 @@ msgstr "Entfernen"
 msgid "Skin changed."
 msgstr "Variante wurde verändert"
 
-#: ../browser/views.py:129
+#: ../browser/views.py:170
 msgid "Standard"
 msgstr "Standard"
 
-#: ../browser/views.py:145
+#: ../browser/views.py:208
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: ../browser/views.py:148
+#: ../browser/views.py:212
 msgid "Tabular"
 msgstr "tabellerisch"
 
-#: ../browser/views.py:132
+#: ../browser/views.py:174
 msgid "Text"
 msgstr "Text"
 
@@ -96,7 +96,11 @@ msgstr "Dies löscht den Artikel."
 msgid "This will remove the alias."
 msgstr "Dies entfernt das Alias."
 
-#: ../browser/views.py:126
+#: ../browser/views.py:50
+msgid "Unable to render layout: ${title}."
+msgstr ""
+
+#: ../browser/views.py:166
 msgid "Unbatched"
 msgstr "Ohne Umbruch"
 
@@ -129,7 +133,7 @@ msgid "help_batch_size"
 msgstr "Sollte die Spaltenzahl in einer Reihe größer sein als diese Zahl, dann wird Collage diese Reihe umbrechen. Diese neue umgebrochene Reihe wird unter der vorherigen Reihe angezeigt, ist aber technich keine eigenständige Reihe, sondern gehört mit der darüberliegenden zusammen."
 
 #. Default: "Site wide options for Collage"
-#: ../browser/controlpanel.py:65
+#: ../browser/controlpanel.py:69
 msgid "help_collage_controlpanel"
 msgstr "Allgemeine Konfiguration von Collage"
 
@@ -151,7 +155,7 @@ msgstr "Navigieren Sie zum Artikel oder suchen Sie unterhalb des aktuellen Pfads
 
 #. Default "Select a content-type to insert."
 #. Default: "Select a content-type to insert."
-#: ../browser/viewlets/insert-new-item.pt:20
+#: ../browser/viewlets/insert-new-item.pt:19
 msgid "help_insert_new_item"
 msgstr "Wählen Sie einen Artikeltyp um ihn hinzuzufügen."
 
@@ -213,7 +217,7 @@ msgid "help_use_whitelist"
 msgstr "Nur Hinzufügen von Einträgen aus der Positivliste in die Collage erlauben?"
 
 #. Default: "Selected target object"
-#: ../content/_alias.py:40
+#: ../content/_alias.py:43
 msgid "label_alias_target"
 msgstr "Ziel"
 
@@ -345,7 +349,7 @@ msgstr "Positivliste der Typen"
 msgid "label_use_whitelist"
 msgstr "Verwende die Positivlisten"
 
-#: ../browser/views.py:202
+#: ../browser/views.py:278
 msgid "minimal"
 msgstr "Minimal"
 
@@ -379,7 +383,7 @@ msgid "searching this path and below"
 msgstr "sucht in diesem Pfad und darunter"
 
 #. Default: "Collage control panel"
-#: ../browser/controlpanel.py:63
+#: ../browser/controlpanel.py:67
 msgid "title_collage_controlpanel"
 msgstr "Collage Website-Konfiguration"
 

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collage-fr\n"
-"POT-Creation-Date: 2010-10-04 12:13+0000\n"
+"POT-Creation-Date: 2013-10-22 21:24+0000\n"
 "PO-Revision-Date: 2009-01-05 10:28+0100\n"
 "Last-Translator: Encolpe Degoute <encolpe@gmail.com>\n"
 "Language-Team: French <membres@traduc.org>\n"
@@ -22,15 +22,15 @@ msgstr ""
 msgid "${title} deleted."
 msgstr "${title} effacé(e)."
 
-#: ../browser/views.py:142
+#: ../browser/views.py:200
 msgid "Album"
 msgstr "Album"
 
-#: ../browser/views.py:117
+#: ../browser/views.py:154
 msgid "Automatic"
 msgstr "Automatique"
 
-#: ../browser/views.py:194
+#: ../browser/views.py:268
 msgid "Clickable"
 msgstr "Cliquable"
 
@@ -39,31 +39,31 @@ msgstr "Cliquable"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: ../browser/views.py:135
+#: ../browser/views.py:178
 msgid "Featured"
 msgstr "Mis en valeur"
 
-#: ../browser/views.py:153
+#: ../browser/views.py:218
 msgid "Inherit"
 msgstr "Hériter"
 
-#: ../browser/templates/existing_items_form.pt:117
+#: ../browser/templates/existing_items_form.pt:120
 msgid "Insert"
 msgstr "Insérer"
 
-#: ../browser/views.py:120
+#: ../browser/views.py:158
 msgid "Large left"
 msgstr "Gauche large"
 
-#: ../browser/views.py:123
+#: ../browser/views.py:162
 msgid "Large right"
 msgstr "Droite large"
 
-#: ../browser/viewlet.py:59
+#: ../browser/viewlet.py:64
 msgid "Missing: $name"
 msgstr "Manque : $name"
 
-#: ../browser/views.py:138
+#: ../browser/views.py:182
 msgid "Portlet"
 msgstr "Portlet"
 
@@ -76,19 +76,19 @@ msgstr "Supprimer"
 msgid "Skin changed."
 msgstr "Habillage modifié."
 
-#: ../browser/views.py:129
+#: ../browser/views.py:170
 msgid "Standard"
 msgstr "Standard"
 
-#: ../browser/views.py:145
+#: ../browser/views.py:208
 msgid "Summary"
 msgstr "Sommaire"
 
-#: ../browser/views.py:148
+#: ../browser/views.py:212
 msgid "Tabular"
 msgstr "Tabulaire"
 
-#: ../browser/views.py:132
+#: ../browser/views.py:174
 msgid "Text"
 msgstr "Texte"
 
@@ -102,7 +102,11 @@ msgstr "Cela va supprimer l'élément."
 msgid "This will remove the alias."
 msgstr "Cela va supprimer l'alias."
 
-#: ../browser/views.py:126
+#: ../browser/views.py:50
+msgid "Unable to render layout: ${title}."
+msgstr ""
+
+#: ../browser/views.py:166
 msgid "Unbatched"
 msgstr ""
 
@@ -136,7 +140,7 @@ msgid "help_batch_size"
 msgstr ""
 
 #. Default: "Site wide options for Collage"
-#: ../browser/controlpanel.py:65
+#: ../browser/controlpanel.py:69
 msgid "help_collage_controlpanel"
 msgstr "Options des contenus Collage."
 
@@ -158,7 +162,7 @@ msgstr "Naviguez ou recherchez le contenu dans le dossier courant, puis cliquez 
 
 #. Default "Select a content-type to insert."
 #. Default: "Select a content-type to insert."
-#: ../browser/viewlets/insert-new-item.pt:20
+#: ../browser/viewlets/insert-new-item.pt:19
 msgid "help_insert_new_item"
 msgstr "Sélectionnez un type de contenu à insérer."
 
@@ -218,7 +222,7 @@ msgid "help_use_whitelist"
 msgstr "En sélectionnant cette option, seuls les types d'éléments énumérés ci-dessous pourront être utilisés dans un Collage."
 
 #. Default: "Selected target object"
-#: ../content/_alias.py:40
+#: ../content/_alias.py:43
 msgid "label_alias_target"
 msgstr "Elément référencé"
 
@@ -349,7 +353,7 @@ msgstr "Types autorisés"
 msgid "label_use_whitelist"
 msgstr "Restreindre aux types autorisés"
 
-#: ../browser/views.py:202
+#: ../browser/views.py:278
 msgid "minimal"
 msgstr "minimal"
 
@@ -384,7 +388,7 @@ msgid "searching this path and below"
 msgstr "dans ce dossier et en dessous"
 
 #. Default: "Collage control panel"
-#: ../browser/controlpanel.py:63
+#: ../browser/controlpanel.py:67
 msgid "title_collage_controlpanel"
 msgstr "Configuration de Collage"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-10-04 12:13+0000\n"
+"POT-Creation-Date: 2013-10-22 21:24+0000\n"
 "PO-Revision-Date: 2010-11-26 11:53+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: EDF\n"
@@ -18,15 +18,15 @@ msgstr ""
 msgid "${title} deleted."
 msgstr "${title} ezabatuta."
 
-#: ../browser/views.py:142
+#: ../browser/views.py:200
 msgid "Album"
 msgstr "Albuma"
 
-#: ../browser/views.py:117
+#: ../browser/views.py:154
 msgid "Automatic"
 msgstr "Automatikoa"
 
-#: ../browser/views.py:194
+#: ../browser/views.py:268
 msgid "Clickable"
 msgstr "Klikagarria"
 
@@ -34,31 +34,31 @@ msgstr "Klikagarria"
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: ../browser/views.py:135
+#: ../browser/views.py:178
 msgid "Featured"
 msgstr "Destakatua"
 
-#: ../browser/views.py:153
+#: ../browser/views.py:218
 msgid "Inherit"
 msgstr "Gurasoarena"
 
-#: ../browser/templates/existing_items_form.pt:117
+#: ../browser/templates/existing_items_form.pt:120
 msgid "Insert"
 msgstr "Txertatu"
 
-#: ../browser/views.py:120
+#: ../browser/views.py:158
 msgid "Large left"
 msgstr "Handia ezkerrean"
 
-#: ../browser/views.py:123
+#: ../browser/views.py:162
 msgid "Large right"
 msgstr "Handia eskuman"
 
-#: ../browser/viewlet.py:59
+#: ../browser/viewlet.py:64
 msgid "Missing: $name"
 msgstr "$name falta da"
 
-#: ../browser/views.py:138
+#: ../browser/views.py:182
 msgid "Portlet"
 msgstr "Portleta"
 
@@ -70,19 +70,19 @@ msgstr "Ezabatu"
 msgid "Skin changed."
 msgstr "Itxura aldatuta"
 
-#: ../browser/views.py:129
+#: ../browser/views.py:170
 msgid "Standard"
 msgstr "Defektuzkoa"
 
-#: ../browser/views.py:145
+#: ../browser/views.py:208
 msgid "Summary"
 msgstr "Laburpena"
 
-#: ../browser/views.py:148
+#: ../browser/views.py:212
 msgid "Tabular"
 msgstr "Taula"
 
-#: ../browser/views.py:132
+#: ../browser/views.py:174
 msgid "Text"
 msgstr "Testua"
 
@@ -94,7 +94,11 @@ msgstr "Honek elementua ezabatuko du"
 msgid "This will remove the alias."
 msgstr "Honek aliasa ezabatuko du"
 
-#: ../browser/views.py:126
+#: ../browser/views.py:50
+msgid "Unable to render layout: ${title}."
+msgstr ""
+
+#: ../browser/views.py:166
 msgid "Unbatched"
 msgstr "Multzokatu gabe"
 
@@ -127,7 +131,7 @@ msgid "help_batch_size"
 msgstr "Multzoaren tamaina"
 
 #. Default: "Site wide options for Collage"
-#: ../browser/controlpanel.py:65
+#: ../browser/controlpanel.py:69
 msgid "help_collage_controlpanel"
 msgstr "Collagen aukerak"
 
@@ -149,7 +153,7 @@ msgstr "Existitzen den elementu bat bilatu. Aurkitutakoan klik egin sartzeko."
 
 #. Default "Select a content-type to insert."
 #. Default: "Select a content-type to insert."
-#: ../browser/viewlets/insert-new-item.pt:20
+#: ../browser/viewlets/insert-new-item.pt:19
 msgid "help_insert_new_item"
 msgstr "Aukeratu gehitu beharreko elementu-mota"
 
@@ -209,7 +213,7 @@ msgid "help_use_whitelist"
 msgstr "Beheko zerrenda-zurian dauden elementuak bakarrik gehi daitezke Collage baten"
 
 #. Default: "Selected target object"
-#: ../content/_alias.py:40
+#: ../content/_alias.py:43
 msgid "label_alias_target"
 msgstr "Erreferentziatutako elementua"
 
@@ -340,7 +344,7 @@ msgstr "Elementuen zerrenda-zuria"
 msgid "label_use_whitelist"
 msgstr "Elementuen zerrenda-zuria erabili"
 
-#: ../browser/views.py:202
+#: ../browser/views.py:278
 msgid "minimal"
 msgstr "gutxienekoa"
 
@@ -374,7 +378,7 @@ msgid "searching this path and below"
 msgstr "Toki honetan eta beherago bilatu"
 
 #. Default: "Collage control panel"
-#: ../browser/controlpanel.py:63
+#: ../browser/controlpanel.py:67
 msgid "title_collage_controlpanel"
 msgstr "Collageren kontrol panela"
 

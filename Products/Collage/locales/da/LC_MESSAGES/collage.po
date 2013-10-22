@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-10-04 12:13+0000\n"
+"POT-Creation-Date: 2013-10-22 21:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Jacob Vestergaard <jacobv@headnet.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "${title} deleted."
 msgstr "${title} slettet."
 
-#: ../browser/views.py:142
+#: ../browser/views.py:200
 msgid "Album"
 msgstr ""
 
-#: ../browser/views.py:117
+#: ../browser/views.py:154
 msgid "Automatic"
 msgstr ""
 
-#: ../browser/views.py:194
+#: ../browser/views.py:268
 msgid "Clickable"
 msgstr ""
 
@@ -36,31 +36,31 @@ msgstr ""
 msgid "Delete"
 msgstr "Slet"
 
-#: ../browser/views.py:135
+#: ../browser/views.py:178
 msgid "Featured"
 msgstr ""
 
-#: ../browser/views.py:153
+#: ../browser/views.py:218
 msgid "Inherit"
 msgstr ""
 
-#: ../browser/templates/existing_items_form.pt:117
+#: ../browser/templates/existing_items_form.pt:120
 msgid "Insert"
 msgstr ""
 
-#: ../browser/views.py:120
+#: ../browser/views.py:158
 msgid "Large left"
 msgstr ""
 
-#: ../browser/views.py:123
+#: ../browser/views.py:162
 msgid "Large right"
 msgstr ""
 
-#: ../browser/viewlet.py:59
+#: ../browser/viewlet.py:64
 msgid "Missing: $name"
 msgstr ""
 
-#: ../browser/views.py:138
+#: ../browser/views.py:182
 msgid "Portlet"
 msgstr ""
 
@@ -72,19 +72,19 @@ msgstr "Fjern"
 msgid "Skin changed."
 msgstr "Tema ændret."
 
-#: ../browser/views.py:129
+#: ../browser/views.py:170
 msgid "Standard"
 msgstr ""
 
-#: ../browser/views.py:145
+#: ../browser/views.py:208
 msgid "Summary"
 msgstr ""
 
-#: ../browser/views.py:148
+#: ../browser/views.py:212
 msgid "Tabular"
 msgstr ""
 
-#: ../browser/views.py:132
+#: ../browser/views.py:174
 msgid "Text"
 msgstr ""
 
@@ -96,7 +96,11 @@ msgstr "Dette vil slette indholdsobjektet."
 msgid "This will remove the alias."
 msgstr "Dette vil slette indholdsreferencen."
 
-#: ../browser/views.py:126
+#: ../browser/views.py:50
+msgid "Unable to render layout: ${title}."
+msgstr "Kan ikke vise layout: ${title}."
+
+#: ../browser/views.py:166
 msgid "Unbatched"
 msgstr ""
 
@@ -129,7 +133,7 @@ msgid "help_batch_size"
 msgstr ""
 
 #. Default: "Site wide options for Collage"
-#: ../browser/controlpanel.py:65
+#: ../browser/controlpanel.py:69
 msgid "help_collage_controlpanel"
 msgstr "Indstillinger for sidekomposition."
 
@@ -151,7 +155,7 @@ msgstr "Vælg et eksisterende indholdsobjekt, du vil indsætte. Vælg rullemenu 
 
 #. Default "Select a content-type to insert."
 #. Default: "Select a content-type to insert."
-#: ../browser/viewlets/insert-new-item.pt:20
+#: ../browser/viewlets/insert-new-item.pt:19
 msgid "help_insert_new_item"
 msgstr "Vælg en indholdstype, der skal oprettes."
 
@@ -211,7 +215,7 @@ msgid "help_use_whitelist"
 msgstr "Kun typer, der optræder i denne liste kan tilføjes."
 
 #. Default: "Selected target object"
-#: ../content/_alias.py:40
+#: ../content/_alias.py:43
 msgid "label_alias_target"
 msgstr "Vælg reference til indholdsobjekt."
 
@@ -343,7 +347,7 @@ msgstr "Godkendte indholdstyper"
 msgid "label_use_whitelist"
 msgstr "Brug kun godkendte indholdstyper"
 
-#: ../browser/views.py:202
+#: ../browser/views.py:278
 msgid "minimal"
 msgstr ""
 
@@ -377,9 +381,7 @@ msgid "searching this path and below"
 msgstr "søger denne sti og under"
 
 #. Default: "Collage control panel"
-#: ../browser/controlpanel.py:63
+#: ../browser/controlpanel.py:67
 msgid "title_collage_controlpanel"
 msgstr "Komposition"
 
-msgid "Unable to render layout: ${title}."
-msgstr "Kan ikke vise layout: ${title}."

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Collage\n"
-"POT-Creation-Date: 2010-10-04 12:13+0000\n"
+"POT-Creation-Date: 2013-10-22 21:24+0000\n"
 "PO-Revision-Date: 2009-02-11 10:29+0100\n"
 "Last-Translator: Ricardo Alves <rsa@eurotux.com>\n"
 "Language-Team: Eurotux Team <udp@eurotux>\n"
@@ -21,15 +21,15 @@ msgstr ""
 msgid "${title} deleted."
 msgstr ""
 
-#: ../browser/views.py:142
+#: ../browser/views.py:200
 msgid "Album"
 msgstr ""
 
-#: ../browser/views.py:117
+#: ../browser/views.py:154
 msgid "Automatic"
 msgstr ""
 
-#: ../browser/views.py:194
+#: ../browser/views.py:268
 msgid "Clickable"
 msgstr ""
 
@@ -37,31 +37,31 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ../browser/views.py:135
+#: ../browser/views.py:178
 msgid "Featured"
 msgstr ""
 
-#: ../browser/views.py:153
+#: ../browser/views.py:218
 msgid "Inherit"
 msgstr ""
 
-#: ../browser/templates/existing_items_form.pt:117
+#: ../browser/templates/existing_items_form.pt:120
 msgid "Insert"
 msgstr ""
 
-#: ../browser/views.py:120
+#: ../browser/views.py:158
 msgid "Large left"
 msgstr ""
 
-#: ../browser/views.py:123
+#: ../browser/views.py:162
 msgid "Large right"
 msgstr ""
 
-#: ../browser/viewlet.py:59
+#: ../browser/viewlet.py:64
 msgid "Missing: $name"
 msgstr ""
 
-#: ../browser/views.py:138
+#: ../browser/views.py:182
 msgid "Portlet"
 msgstr ""
 
@@ -73,19 +73,19 @@ msgstr ""
 msgid "Skin changed."
 msgstr "Aspecto alterado."
 
-#: ../browser/views.py:129
+#: ../browser/views.py:170
 msgid "Standard"
 msgstr ""
 
-#: ../browser/views.py:145
+#: ../browser/views.py:208
 msgid "Summary"
 msgstr ""
 
-#: ../browser/views.py:148
+#: ../browser/views.py:212
 msgid "Tabular"
 msgstr ""
 
-#: ../browser/views.py:132
+#: ../browser/views.py:174
 msgid "Text"
 msgstr ""
 
@@ -97,7 +97,11 @@ msgstr ""
 msgid "This will remove the alias."
 msgstr ""
 
-#: ../browser/views.py:126
+#: ../browser/views.py:50
+msgid "Unable to render layout: ${title}."
+msgstr ""
+
+#: ../browser/views.py:166
 msgid "Unbatched"
 msgstr ""
 
@@ -130,7 +134,7 @@ msgid "help_batch_size"
 msgstr ""
 
 #. Default: "Site wide options for Collage"
-#: ../browser/controlpanel.py:65
+#: ../browser/controlpanel.py:69
 msgid "help_collage_controlpanel"
 msgstr "Opções globais do Collage"
 
@@ -152,7 +156,7 @@ msgid "help_insert_existing_items"
 msgstr "Escolha um item existente para inserir. Utilize a caixa de selecção para filtrar por tipo."
 
 #. Default: "Select a content-type to insert."
-#: ../browser/viewlets/insert-new-item.pt:20
+#: ../browser/viewlets/insert-new-item.pt:19
 msgid "help_insert_new_item"
 msgstr "Seleccione um tipo de conteúdo a inserir."
 
@@ -213,7 +217,7 @@ msgid "help_use_whitelist"
 msgstr "Apenas tipos na lista a seguir podem ser adicionados num Collage."
 
 #. Default: "Selected target object"
-#: ../content/_alias.py:40
+#: ../content/_alias.py:43
 msgid "label_alias_target"
 msgstr "Objectio de destino seleccionado"
 
@@ -347,7 +351,7 @@ msgstr "Tipos permitidos"
 msgid "label_use_whitelist"
 msgstr "Utilizar lista de tipos permitidos"
 
-#: ../browser/views.py:202
+#: ../browser/views.py:278
 msgid "minimal"
 msgstr ""
 
@@ -385,7 +389,7 @@ msgid "searching this path and below"
 msgstr ""
 
 #. Default: "Collage control panel"
-#: ../browser/controlpanel.py:63
+#: ../browser/controlpanel.py:67
 msgid "title_collage_controlpanel"
 msgstr "Painel de controlo do Collage"
 

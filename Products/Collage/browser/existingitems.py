@@ -10,7 +10,6 @@ except ImportError:
     from zope.app.schema.vocabulary import IVocabularyFactory
 
 from plone.memoize.view import memoize_contextless
-from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 
 from Acquisition import aq_inner
@@ -141,10 +140,10 @@ class ExistingItemsView(BrowserView):
     @property
     def readitems(self):
         options = getCollageSiteOptions()
-        if options.ref_browser_empty \
-          and self.request.form.get('portal_type', '') == '' \
-          and self.request.form.get('path', '') == '' \
-          and self.request.form.get('b_start', None) is None:
+        if (options.ref_browser_empty
+                and self.request.form.get('portal_type', '') == ''
+                and self.request.form.get('path', '') == ''
+                and self.request.form.get('b_start', None) is None):
             return False
         return True
 
@@ -153,7 +152,7 @@ class ExistingItemsView(BrowserView):
         if not portal_types:
             portal_types = [pt['id'] for pt in self.listEnabledTypes()]
         query_path = self.request.get('path') or \
-                     "/".join(self.navigation_root.getPhysicalPath())
+            "/".join(self.navigation_root.getPhysicalPath())
         query_path = unquote(query_path)
         b_start = self.request.get('b_start', 0)
         query_text = unquote(self.request.get('SearchableText', ''))
@@ -193,7 +192,7 @@ class ExistingItemsView(BrowserView):
             cssType = idnormalizer.normalize(result.portal_type)
             items.append({
                 'UID': result.UID,
-                'icon' : result.getIcon,
+                'icon': result.getIcon,
                 'title': result.Title or result.getId,
                 'description': cropText(result.Description, desc_length, desc_ellipsis),
                 'type': result.Type,

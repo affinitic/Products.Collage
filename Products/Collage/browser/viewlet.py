@@ -16,6 +16,7 @@ from zope.component import getMultiAdapter, queryUtility
 
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 
+
 class SimpleContentMenuViewlet(object):
     def isAlias(self):
         return getattr(self.__parent__, '__alias__', None) is not None
@@ -32,13 +33,15 @@ class SimpleContentMenuViewlet(object):
 
         return self.context.aq_inner
 
+
 class LayoutViewlet(SimpleContentMenuViewlet):
     def getLayouts(self):
         context = self.context
 
         # handle aliased objects
         alias = getattr(self.__parent__, '__alias__', None)
-        if alias: context = alias
+        if alias:
+            context = alias
 
         manager = IDynamicViewManager(context)
 
@@ -46,7 +49,7 @@ class LayoutViewlet(SimpleContentMenuViewlet):
         active = manager.getLayout()
 
         if not active:
-            active, title = manager.getDefaultLayout()
+            active, _title = manager.getDefaultLayout()
 
         # compile list of registered layouts
         layouts = manager.getLayouts()
@@ -65,13 +68,15 @@ class LayoutViewlet(SimpleContentMenuViewlet):
             'name': title,
             'active': name == active} for (name, title) in layouts]
 
+
 class SkinViewlet(SimpleContentMenuViewlet):
     def getSkins(self):
         context = self.context
 
         # handle aliased objects
         alias = getattr(self.__parent__, '__alias__', None)
-        if alias: context = alias
+        if alias:
+            context = alias
 
         manager = IDynamicViewManager(context)
 
@@ -106,8 +111,8 @@ class InsertNewItemViewlet(object):
                              collage_options.enabledType(i['id'])]
             return allowed_types
         except:
-            # BBB Not completly implemented as it seems 
-            # this code is probably dead, because nothing is returned?
+            # BBB Not completely implemented as it seems.
+            # This code is probably dead, because nothing is returned?
             portal_url = getToolByName(self.context, 'portal_url')()
             results = []
             for t in container.getAllowedTypes():
@@ -117,12 +122,14 @@ class InsertNewItemViewlet(object):
                     results.append({'title': t.Title(),
                                     'description': t.Description(),
                                     'icon': '%s/%s' % (portal_url, t.getIcon()),
-                                    'extra': {'id' : cssId, 'separator' : None,
-                                              'class' : cssClass},
+                                    'extra': {'id': cssId, 'separator': None,
+                                              'class': cssClass},
                                     'id': t.getId()})
+
 
 class SplitColumnViewlet(object):
     pass
+
 
 class IconViewlet(SimpleContentMenuViewlet):
     def getIcon(self):
@@ -131,10 +138,12 @@ class IconViewlet(SimpleContentMenuViewlet):
 
         return obj_typeinfo.getIcon()
 
+
 class ActionsViewlet(SimpleContentMenuViewlet):
 
     def getViewActions(self):
-        plone_view = getMultiAdapter((self.context,self.request), name="plone")
+        plone_view = getMultiAdapter(
+            (self.context, self.request), name="plone")
         try:
             prepareObjectTabs = plone_view.prepareObjectTabs
         except AttributeError:
@@ -145,8 +154,10 @@ class ActionsViewlet(SimpleContentMenuViewlet):
             prepareObjectTabs = viewlet.prepareObjectTabs
         return prepareObjectTabs()
 
+
 class CopyViewlet(SimpleContentMenuViewlet):
     pass
+
 
 class PasteViewlet(SimpleContentMenuViewlet):
     @property
@@ -158,7 +169,7 @@ class PasteViewlet(SimpleContentMenuViewlet):
 
     def _get_clipboard_item(self):
         cp = self.request.get('__cp')
-        op, mdatas = _cb_decode(cp) # see OFS/CopySupport.py
+        op, mdatas = _cb_decode(cp)  # see OFS/CopySupport.py
 
         # just get the first item on the clipboard
         mdata = mdatas[0]

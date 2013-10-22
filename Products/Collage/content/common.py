@@ -1,8 +1,6 @@
-# $Id$
-
 from Products.Archetypes import atapi
-from Products.CMFCore.permissions import ModifyPortalContent
 from Products.Collage.interfaces import ICollageColumn
+
 
 class LayoutContainer(object):
     """

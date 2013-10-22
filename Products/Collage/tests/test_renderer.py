@@ -6,10 +6,9 @@ import time
 from DateTime import DateTime
 
 from Products.Collage.tests.base import CollageTestCase
-from Products.Collage.tests import utils as ctc_utils
-
 from Products.Collage.browser.renderer import SimpleContainerRenderer
 from Products.Collage.browser.renderer import WithPublishDateRenderer
+
 
 class SimpleContainerRendererTestCase(CollageTestCase):
     """We test utilities for testcases"""
@@ -86,10 +85,9 @@ class WithPublishDateRendererTestCase(SimpleContainerRendererTestCase):
         items = view.getItems()
         self.assertEqual(len(items), 0)
 
-
     def test_itemfilter(self):
         now = DateTime()
-        nearfuture = now  + 1/86400.0 * 2    # 2 seconds ahead of now
+        nearfuture = now + 1/86400.0 * 2  # 2 seconds ahead of now
         self.doc.setEffectiveDate(nearfuture)
         view = self._makeOne(self.column)
         items = view.getItems()

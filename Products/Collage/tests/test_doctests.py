@@ -6,19 +6,21 @@ Running doctests
 files in the tests directory and runs them. (stolen from Plone)
 """
 
-import os, sys
+import os
 
 import glob
 import doctest
 import unittest
-from Globals import package_home
+
 from Testing.ZopeTestCase import FunctionalDocFileSuite as Suite
 from Products.ATContentTypes.config import HAS_LINGUA_PLONE
+
 from Products.Collage.tests.base import CollageFunctionalTestCase
 
 OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
                doctest.ELLIPSIS |
                doctest.NORMALIZE_WHITESPACE)
+
 
 def list_doctests():
     this_dir = os.path.dirname(os.path.abspath(__file__))
@@ -27,6 +29,7 @@ def list_doctests():
         filenames = [filename for filename in filenames
                      if not filename.endswith('multilingual_support.txt')]
     return filenames
+
 
 def test_suite():
     return unittest.TestSuite(

@@ -8,7 +8,6 @@ except ImportError:
 from DateTime import DateTime
 
 from zope.interface import directlyProvides
-from zope.component import queryMultiAdapter
 from zope.component import getMultiAdapter
 from zope.component import ComponentLookupError
 
@@ -21,6 +20,7 @@ from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.interfaces import ICollageAlias
 from Products.Collage.utilities import isTranslatable
 from Products.Collage.viewmanager import mark_request
+
 
 class SimpleContainerRenderer(BrowserView):
 
@@ -71,7 +71,7 @@ class SimpleContainerRenderer(BrowserView):
             # is set to the currently selected language or to neutral,
             # or if it is the canonical version
             elif isTranslatable(target):
-                language = self.request.get('LANGUAGE','')
+                language = self.request.get('LANGUAGE', '')
                 if target.Language() not in (language, ''):
                     # Discard the object, if it is not the canonical version
                     # or a translation is available in the requested language.

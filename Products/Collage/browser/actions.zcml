@@ -45,6 +45,15 @@
      />
 
   <browser:page
+     zcml:condition="installed OFS.interfaces.IOrderedContainer"
+     name="reorder-object"
+     attribute="reorderObjects"
+     for="OFS.interfaces.IOrderedContainer"
+     permission="cmf.ModifyPortalContent"
+     class=".actions.ActionsView"
+     />
+
+  <browser:page
      name="insert-alias"
      attribute="insertAlias"
      for="Products.Collage.interfaces.ICollageColumn"

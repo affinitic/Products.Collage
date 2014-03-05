@@ -26,26 +26,8 @@
      class=".actions.ActionsView"
      />
 
-  <browser:page
-     zcml:condition="installed zope.app.container.interfaces.IContainer"
-     name="reorder-object"
-     attribute="reorderObjects"
-     for="zope.app.container.interfaces.IContainer"
-     permission="cmf.ModifyPortalContent"
-     class=".actions.ActionsView"
-     />
 
   <browser:page
-     zcml:condition="installed zope.container.interfaces.IContainer"
-     name="reorder-object"
-     attribute="reorderObjects"
-     for="zope.container.interfaces.IContainer"
-     permission="cmf.ModifyPortalContent"
-     class=".actions.ActionsView"
-     />
-
-  <browser:page
-     zcml:condition="installed OFS.interfaces.IOrderedContainer"
      name="reorder-object"
      attribute="reorderObjects"
      for="OFS.interfaces.IOrderedContainer"

@@ -4,8 +4,11 @@ Changelog
 1.3.11 (unreleased)
 -------------------
 
+- Fix reordering.
+  [cippino, erral]
+
 - Arrow images are now PNG files instead of GIFs.
-  [erral] 
+  [erral]
 
 
 1.3.10 (2013-10-22)
@@ -21,7 +24,7 @@ Changelog
 - Fixed html error
   [Andrew Pasquale]
 
-- Removed relatedItems macro. This macro was from the 
+- Removed relatedItems macro. This macro was from the
   plone_deprecated skin folder which is deactivated on plone 4.3 by
   default. relatedItems are now implemented as a viewlet.
   [Victor Fernandez de Alba]
@@ -46,7 +49,7 @@ Changelog
   but I still consider it a stability improvement.
   [tmog]
 
-* Remove deprecation warning on Zope 2.13: 
+* Remove deprecation warning on Zope 2.13:
   Products.ATReferenceBrowserWidget moved to archetypes.referencebrowserwidget
   DTMLFile is deprecated. import from App.special_dtml instead
   [toutpt]
@@ -63,10 +66,10 @@ Changelog
 
 * Added conditional include of CMFCore permisssions.zcml for Plone 4.1 support.
   [thet, tom_gross]
-  
+
 * Added addional renderer, which respects effective and expiry-date.
   [tom_gross]
-  
+
 * Restored Topic summary-view for Plone 3
   [tom_gross]
 
@@ -122,8 +125,8 @@ Changelog
 1.3.1 (2011-06-08)
 ------------------
 
-* Fixed ``folder_summary_view`` in Collage for Collections in Plone 4 - the 
-  macro does not exist anymore. Now the code is copied over here: suboptimal,   
+* Fixed ``folder_summary_view`` in Collage for Collections in Plone 4 - the
+  macro does not exist anymore. Now the code is copied over here: suboptimal,
   but no better idea here (w/o touching Plone itself).
   [jensens]
 

@@ -11,14 +11,14 @@
       <img alt="Move left"
            i18n:attributes="alt label_move_left"
            tal:attributes="src
-                           string:${view/portal_url}/arrowLeft.gif" />
+                           string:${view/portal_url}/arrowLeft.png" />
     </a>
     <a class="collage-js-down"
        tal:attributes="href string:${obj/aq_parent/absolute_url}/reorder-object?position=down&amp;id=${obj/getId}">
       <img alt="Move right"
            i18n:attributes="alt label_move_right"
            tal:attributes="src
-                           string:${view/portal_url}/arrowRight.gif" />
+                           string:${view/portal_url}/arrowRight.png" />
     </a>
   </span>
 

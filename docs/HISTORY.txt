@@ -4,7 +4,8 @@ Changelog
 1.3.11 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Arrow images are now PNG files instead of GIFs.
+  [erral] 
 
 
 1.3.10 (2013-10-22)

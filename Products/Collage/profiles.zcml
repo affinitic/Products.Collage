@@ -13,6 +13,15 @@
      provides="Products.GenericSetup.interfaces.EXTENSION"
      />
 
+  <genericsetup:registerProfile
+     name="uninstall"
+     title="Collage uninstall"
+     directory="profiles/uninstall"
+     description="Uninstall profile for Collage."
+     provides="Products.GenericSetup.interfaces.EXTENSION"
+     />
+
+
   <!-- Upgrades -->
 
   <genericsetup:upgradeSteps

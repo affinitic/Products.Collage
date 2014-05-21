@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_factory">
+ <factorytypes>
+  <type portal_type="Collage" remove="True"/>
+  <type portal_type="CollageRow" remove="True"/>
+  <type portal_type="CollageColumn" remove="True"/>
+  <type portal_type="CollageAlias" remove="True"/>
+ </factorytypes>
+</object>

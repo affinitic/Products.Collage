@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<object name="portal_types">
+
+<object remove="True"
+    name="Collage"
+    meta_type="Factory-based Type Information with dynamic views"/>
+<object remove="True"
+    name="CollageRow"
+    meta_type="Factory-based Type Information with dynamic views"/>
+<object remove="True"
+    name="CollageColumn"
+    meta_type="Factory-based Type Information with dynamic views"/>
+<object remove="True"
+    name="CollageAlias"
+    meta_type="Factory-based Type Information with dynamic views"/>
+
+</object>

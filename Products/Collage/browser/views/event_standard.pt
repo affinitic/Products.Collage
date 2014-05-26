@@ -56,7 +56,7 @@
               </tal:differentday>
 
               <tal:sameday tal:condition="python:here.start().Date() == here.end().Date()"
-                           tal:define="ampm python:site_properties.getProperty('localLongTimeFormat').find('%p') >= 0">
+                           tal:define="ampm python:site_properties.getProperty('localLongTimeFormat', '').find('%p') >= 0">
 		<abbr class="dtstart"
                       style="display: none;"
                       tal:attributes="title python:here.start()"

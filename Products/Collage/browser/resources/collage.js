@@ -4,8 +4,7 @@ $(document).ready(function() {
     setupNavigation();
 });
 
-setupContentMenu = function() {
-}
+setupContentMenu = function() {}
 
 function setupLinks(query) {
 
@@ -17,14 +16,14 @@ function setupLinks(query) {
             params = url_parts[1].split('&');
 
         var form = $("<form/>").
-            attr("method", "POST").
-            attr("action", url).
-            appendTo(document.body);
+        attr("method", "POST").
+        attr("action", url).
+        appendTo(document.body);
 
         $.each(params, function(i, o) {
             var args = o.split('=');
-            var input = $('<input type="hidden" name="'+args[0]+'"/>').
-                attr("value", args[1]);
+            var input = $('<input type="hidden" name="' + args[0] + '"/>').
+            attr("value", args[1]);
             input.appendTo(form);
         });
 
@@ -42,43 +41,43 @@ setupHandlers = function() {
 
     // setup collapsing blocks
     $.each($("div.expandable-section, a.expandable-label"), function(i, o) {
-		$(o).bind('click', function() {
-		    var section = $(o).parent();
-		    var content = $("div.expandable-content", section);
-		    var container = section.parents('.collage-row').eq(0);
-		    var url = $(o).attr('href');
+        $(o).bind('click', function() {
+            var section = $(o).parent();
+            var content = $("div.expandable-content", section);
+            var container = section.parents('.collage-row').eq(0);
+            var url = $(o).attr('href');
 
-		    // case content type dropdown, click event is bound here too
-		    if(!url) {
-		    	return;
-		    }
+            // case content type dropdown, click event is bound here too
+            if (!url) {
+                return;
+            }
 
-		    if ($(o).attr('class').indexOf('enabled') != -1) {
-				// disable
-				content.css('display', 'none');
-				container.next('.collage-row').eq(0).css('margin-top',
-				                                         0 + 'px');
-		    } else {
-			    // enable
-				content.css('display', 'block');
+            if ($(o).attr('class').indexOf('enabled') != -1) {
+                // disable
+                content.css('display', 'none');
+                container.next('.collage-row').eq(0).css('margin-top',
+                    0 + 'px');
+            } else {
+                // enable
+                content.css('display', 'block');
 
-				// handle height (for IE6)
-				container.next('.collage-row').eq(0).css('margin-top',
-				                                         1 + 'px');
+                // handle height (for IE6)
+                container.next('.collage-row').eq(0).css('margin-top',
+                    1 + 'px');
 
-				// handle ajax sections
-				$.each($(".ajax-reference-browser", section), function(j, p) {
-				    $(p).load(url, function() {
-						container.next('.collage-row').eq(0).css('margin-top',
-						                                         1 + '%');
-						setupExistingItemsForm();
-				    });
-				});
-		    }
+                // handle ajax sections
+                $.each($(".ajax-reference-browser", section), function(j, p) {
+                    $(p).load(url, function() {
+                        container.next('.collage-row').eq(0).css('margin-top',
+                            1 + '%');
+                        setupExistingItemsForm();
+                    });
+                });
+            }
 
-		    $(o).toggleClass('enabled').blur();
-		    return false;
-		});
+            $(o).toggleClass('enabled').blur();
+            return false;
+        });
     });
 
     setupLinks("a.post");
@@ -87,21 +86,25 @@ setupHandlers = function() {
 setupNavigation = function() {
 
     // transform navigation links into ajax-methods
-    $("a.collage-js-down").bind('click', {jquery: $}, triggerMoveDown);
-    $("a.collage-js-up").bind('click', {jquery: $}, triggerMoveUp);
+    $("a.collage-js-down").bind('click', {
+        jquery: $
+    }, triggerMoveDown);
+    $("a.collage-js-up").bind('click', {
+        jquery: $
+    }, triggerMoveUp);
 };
 
 submitExistingItemsForm = function(formel) {
-	// serialize form
-	var form = $(formel).parents('form').eq(0);
-	var url = form.attr('action');
-	var inputs = $(':input', form);
+    // serialize form
+    var form = $(formel).parents('form').eq(0);
+    var url = form.attr('action');
+    var inputs = $(':input', form);
 
-	// refresh form
-	var section = $(formel).parents('.ajax-reference-browser').eq(0);
-	section.load(url, extractParams(inputs.serialize()), function() {
-            setupExistingItemsForm();
-	});
+    // refresh form
+    var section = $(formel).parents('.ajax-reference-browser').eq(0);
+    section.load(url, extractParams(inputs.serialize()), function() {
+        setupExistingItemsForm();
+    });
 };
 
 updateExistingItems = function(formel) {
@@ -111,9 +114,9 @@ updateExistingItems = function(formel) {
     var list = section.find("ul.collage-content-menu");
     list.css('visibility', 'hidden');
     section.load(url, function() {
-            setupExistingItemsForm();
-            list.css('visibility', 'display');
-	});
+        setupExistingItemsForm();
+        list.css('visibility', 'display');
+    });
 };
 
 setupExistingItemsForm = function() {
@@ -124,22 +127,22 @@ setupExistingItemsForm = function() {
     });
 
     $("form.collage-existing-items [name=SearchableText]").keydown(function(e) {
-	    if (e.keyCode == 13) { // ESC
-		    e.preventDefault;
-			submitExistingItemsForm(this);
+        if (e.keyCode == 13) { // ESC
+            e.preventDefault;
+            submitExistingItemsForm(this);
         }
     });
 
     $("form.collage-existing-items input[type=submit]").click(function(e) {
-            e.preventDefault;
-            submitExistingItemsForm(this);
-        });
+        e.preventDefault;
+        submitExistingItemsForm(this);
+    });
 
     $(".ajax-reference-browser a.get, .ajax-reference-browser .listingBar a").click(function(e) {
-            e.preventDefault;
-            updateExistingItems(this);
-            return false;
-        });
+        e.preventDefault;
+        updateExistingItems(this);
+        return false;
+    });
 
     setupLinks("form.collage-existing-items a.post");
 }
@@ -154,24 +157,24 @@ restoreElement = function(element) {
 }
 
 doSimpleQuery = function(url, data) {
-    
+
     // perform simple ajax-call
     var href = url.split('?');
     var url = href[0];
     data = (href.length > 1) ? extractParams(href[1]) : {};
-	
+
     // avoid aggresive IE caching
     data['url'] = (new Date()).getTime();
 
     // set simple flag
     data['simple'] = 1
-    
+
     // display a save message
     var heading = $('h1.documentFirstHeading').get(0);
     if (heading) addIHTMLmsg(heading, 'Saving...');
 
     $.post(url, data, function(data) {
-	    if (heading) restoreElement(heading);
+        if (heading) restoreElement(heading);
     });
 }
 
@@ -179,9 +182,9 @@ extractParams = function(query) {
     // convert a query-string into a dictionary
     var data = {};
     var params = query.split('&');
-    for (var i=0; i<params.length; i++) {
-		var pair = params[i].split('=');
-		data[pair[0]] = pair[1];
+    for (var i = 0; i < params.length; i++) {
+        var pair = params[i].split('=');
+        data[pair[0]] = pair[1];
     }
 
     return data;
@@ -196,15 +199,15 @@ triggerMoveUp = function(event) {
 }
 
 triggerMove = function(event, direction) {
-    
+
     $ = event.data.jquery;
     event.preventDefault();
 
     var link = $(this);
     link.blur();
-    
+
     var className = event.data.className;
-    
+
     var row = link.parents('.collage-row').eq(0);
     var column = link.parents('.collage-column').eq(0);
     var item = link.parents('.collage-item').eq(0);
@@ -214,23 +217,23 @@ triggerMove = function(event, direction) {
     var items = null;
 
     if (item.length) {
-		items = $('.collage-item', column);
-		origin = $(item);
+        items = $('.collage-item', column);
+        origin = $(item);
     } else if (column.length) {
-		items = $('.collage-column', row);
-		origin = $(column);
+        items = $('.collage-column', row);
+        origin = $(column);
     } else {
-		items = $('.collage-row');
-		origin = $(row);
+        items = $('.collage-row');
+        origin = $(row);
     }
 
     var index = items.index(origin.get(0));
-    if (!(index+direction >= 0 && index+direction < items.length)) return false;
-    
-    destination = $(items[index+direction]);
+    if (!(index + direction >= 0 && index + direction < items.length)) return false;
+
+    destination = $(items[index + direction]);
     swap(origin, destination);
 
-    doSimpleQuery(link.attr('href'));    
+    doSimpleQuery(link.attr('href'));
 }
 
 swap = function(origin, destination) {

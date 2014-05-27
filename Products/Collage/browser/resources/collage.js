@@ -1,10 +1,10 @@
-$(document).ready(function() {
+$(document).ready(function () {
     setupContentMenu();
     setupHandlers();
     setupNavigation();
 });
 
-setupContentMenu = function() {}
+setupContentMenu = function () {};
 
 function setupLinks(query) {
 
@@ -15,33 +15,28 @@ function setupLinks(query) {
         if (url_parts.length > 1)
             params = url_parts[1].split('&');
 
-        var form = $("<form/>").
-        attr("method", "POST").
-        attr("action", url).
-        appendTo(document.body);
+        var form = $("<form/>").attr("method", "POST").attr("action", url).appendTo(document.body);
 
-        $.each(params, function(i, o) {
+        $.each(params, function (i, o) {
             var args = o.split('=');
-            var input = $('<input type="hidden" name="' + args[0] + '"/>').
-            attr("value", args[1]);
+            var input = $('<input type="hidden" name="' + args[0] + '"/>').attr("value", args[1]);
             input.appendTo(form);
         });
 
         form.get(0).submit();
     }
 
-    $(query).click(function() {
+    $(query).click(function () {
         post_link($(this).attr('href'));
         return false;
     });
-};
+}
 
-setupHandlers = function() {
-
+setupHandlers = function () {
 
     // setup collapsing blocks
-    $.each($("div.expandable-section, a.expandable-label"), function(i, o) {
-        $(o).bind('click', function() {
+    $.each($("div.expandable-section, a.expandable-label"), function (i, o) {
+        $(o).bind('click', function () {
             var section = $(o).parent();
             var content = $("div.expandable-content", section);
             var container = section.parents('.collage-row').eq(0);
@@ -52,7 +47,7 @@ setupHandlers = function() {
                 return;
             }
 
-            if ($(o).attr('class').indexOf('enabled') != -1) {
+            if ($(o).attr('class').indexOf('enabled') !== -1) {
                 // disable
                 content.css('display', 'none');
                 container.next('.collage-row').eq(0).css('margin-top',
@@ -66,8 +61,8 @@ setupHandlers = function() {
                     1 + 'px');
 
                 // handle ajax sections
-                $.each($(".ajax-reference-browser", section), function(j, p) {
-                    $(p).load(url, function() {
+                $.each($(".ajax-reference-browser", section), function (j, p) {
+                    $(p).load(url, function () {
                         container.next('.collage-row').eq(0).css('margin-top',
                             1 + '%');
                         setupExistingItemsForm();
@@ -81,9 +76,9 @@ setupHandlers = function() {
     });
 
     setupLinks("a.post");
-}
+};
 
-setupNavigation = function() {
+setupNavigation = function () {
 
     // transform navigation links into ajax-methods
     $("a.collage-js-down").bind('click', {
@@ -94,7 +89,7 @@ setupNavigation = function() {
     }, triggerMoveUp);
 };
 
-submitExistingItemsForm = function(formel) {
+submitExistingItemsForm = function (formel) {
     // serialize form
     var form = $(formel).parents('form').eq(0);
     var url = form.attr('action');
@@ -102,83 +97,83 @@ submitExistingItemsForm = function(formel) {
 
     // refresh form
     var section = $(formel).parents('.ajax-reference-browser').eq(0);
-    section.load(url, extractParams(inputs.serialize()), function() {
+    section.load(url, extractParams(inputs.serialize()), function () {
         setupExistingItemsForm();
     });
 };
 
-updateExistingItems = function(formel) {
+updateExistingItems = function (formel) {
 
     var url = $(formel).attr('href');
     var section = $(formel).parents('.ajax-reference-browser').eq(0);
     var list = section.find("ul.collage-content-menu");
     list.css('visibility', 'hidden');
-    section.load(url, function() {
+    section.load(url, function () {
         setupExistingItemsForm();
         list.css('visibility', 'display');
     });
 };
 
-setupExistingItemsForm = function() {
+setupExistingItemsForm = function () {
 
-    $("form.collage-existing-items select").change(function(event) {
+    $("form.collage-existing-items select").change(function (event) {
         this.blur();
         submitExistingItemsForm(this);
     });
 
-    $("form.collage-existing-items [name=SearchableText]").keydown(function(e) {
-        if (e.keyCode == 13) { // ESC
-            e.preventDefault;
+    $("form.collage-existing-items [name=SearchableText]").keydown(function (e) {
+        if (e.keyCode === 13) { // ESC
+            e.preventDefault();
             submitExistingItemsForm(this);
         }
     });
 
-    $("form.collage-existing-items input[type=submit]").click(function(e) {
-        e.preventDefault;
+    $("form.collage-existing-items input[type=submit]").click(function (e) {
+        e.preventDefault();
         submitExistingItemsForm(this);
     });
 
-    $(".ajax-reference-browser a.get, .ajax-reference-browser .listingBar a").click(function(e) {
-        e.preventDefault;
+    $(".ajax-reference-browser a.get, .ajax-reference-browser .listingBar a").click(function (e) {
+        e.preventDefault();
         updateExistingItems(this);
         return false;
     });
 
     setupLinks("form.collage-existing-items a.post");
-}
+};
 
-addIHTMLmsg = function(element, msg) {
+addIHTMLmsg = function (element, msg) {
     element._contents = element.innerHTML;
     element.innerHTML += ' (' + msg + ')';
-}
+};
 
-restoreElement = function(element) {
+restoreElement = function (element) {
     element.innerHTML = element._contents;
-}
+};
 
-doSimpleQuery = function(url, data) {
+doSimpleQuery = function (url, data) {
 
     // perform simple ajax-call
     var href = url.split('?');
-    var url = href[0];
+    url = href[0];
     data = (href.length > 1) ? extractParams(href[1]) : {};
 
     // avoid aggresive IE caching
-    data['url'] = (new Date()).getTime();
+    data.url = (new Date()).getTime();
 
     // set simple flag
-    data['simple'] = 1
+    data.simple = 1;
 
     // display a save message
     var heading = $('h1.documentFirstHeading').get(0);
     if (heading) addIHTMLmsg(heading, 'Saving...');
 
-    $.post(url, data, function(data) {
+    $.post(url, data, function (data) {
         if (heading) restoreElement(heading);
     });
-}
+};
 
-extractParams = function(query) {
+extractParams = function (query) {
     // convert a query-string into a dictionary
     var data = {};
     var params = query.split('&');
@@ -188,19 +183,18 @@ extractParams = function(query) {
     }
 
     return data;
-}
+};
 
-triggerMoveDown = function(event) {
+triggerMoveDown = function (event) {
     return triggerMove.call(this, event, +1);
-}
+};
 
-triggerMoveUp = function(event) {
+triggerMoveUp = function (event) {
     return triggerMove.call(this, event, -1);
-}
+};
 
-triggerMove = function(event, direction) {
+triggerMove = function (event, direction) {
 
-    $ = event.data.jquery;
     event.preventDefault();
 
     var link = $(this);
@@ -234,11 +228,11 @@ triggerMove = function(event, direction) {
     swap(origin, destination);
 
     doSimpleQuery(link.attr('href'));
-}
+};
 
-swap = function(origin, destination) {
+swap = function (origin, destination) {
     var temp = origin.after('<span></span>').next();
     destination.after(origin);
     destination.insertBefore(temp);
     temp.remove();
-}
+};

@@ -6,7 +6,7 @@ def _textOfModuleFile(filename):
     return open(filename, 'r').read().strip()
 
 setup(name='Products.Collage',
-      version='1.3.11',
+      version='1.3.12.dev0',
       description=("A product to create page compositions in Plone."),
       long_description='\n\n'.join([
           _textOfModuleFile(name)

@@ -34,6 +34,14 @@ try:
 except ImportError:
     from Products.CMFPlone.interfaces import IPloneSiteRoot as INavigationRoot
 
+import pkg_resources
+
+try:
+    pkg_resources.get_distribution('plone.app.multilingual')
+except pkg_resources.DistributionNotFound:
+    HAS_PAM = False
+else:
+    HAS_PAM = True
 
 from urllib import unquote
 
@@ -164,11 +172,12 @@ class ExistingItemsView(BrowserView):
             results = []
         else:
             try:
-                query = {'Language': 'all',
-                         'portal_type': portal_types,
+                query = {'portal_type': portal_types,
                          'path': {"query": query_path, 'depth': depth},
                          'sort_on': 'sortable_title',
                          'sort_order': 'ascending'}
+                if not HAS_PAM:
+                    query['Language'] = 'all'
                 if query_text.strip():
                     query['SearchableText'] = query_text
                 results = self.catalog(**query)

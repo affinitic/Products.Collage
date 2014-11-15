@@ -4,7 +4,9 @@ Changelog
 1.3.12 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Change CSS rendering mode to link, so it can be merged with other
+  link-rendered resources.
+  [thet]
 
 
 1.3.11 (2014-10-08)

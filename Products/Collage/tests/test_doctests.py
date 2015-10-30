@@ -1,21 +1,18 @@
+# -*- coding: utf-8 -*-
 """
 Running doctests
-"""
 
-"""Ploneboard functional doctests.  This module collects all *.txt
+Ploneboard functional doctests.  This module collects all *.txt
 files in the tests directory and runs them. (stolen from Plone)
 """
-
-import os
-
-import glob
+from Products.ATContentTypes.config import HAS_LINGUA_PLONE
+from Products.Collage.tests.base import CollageFunctionalTestCase
+from Testing.ZopeTestCase import FunctionalDocFileSuite as Suite
 import doctest
+import glob
+import os
 import unittest
 
-from Testing.ZopeTestCase import FunctionalDocFileSuite as Suite
-from Products.ATContentTypes.config import HAS_LINGUA_PLONE
-
-from Products.Collage.tests.base import CollageFunctionalTestCase
 
 OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
                doctest.ELLIPSIS |
@@ -25,7 +22,7 @@ OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
 def list_doctests():
     this_dir = os.path.dirname(os.path.abspath(__file__))
     filenames = [filename for filename in glob.glob(
-        os.path.sep.join([this_dir, '*.txt']))]
+        os.path.sep.join([this_dir, '*.rst']))]
     if not HAS_LINGUA_PLONE:
         filenames = [filename for filename in filenames
                      if not filename.endswith('multilingual_support.txt')]

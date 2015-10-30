@@ -26,7 +26,7 @@ Build a basic Collage:
     >>> _ = column.invokeFactory(id='alias', type_name='CollageAlias')
     >>> alias = column[_]
 
-We need the language tool for this. Make sure start_neutral is set to 0 (it's the default, 
+We need the language tool for this. Make sure start_neutral is set to 0 (it's the default,
 but using belts and suspenders won't harm us...)
 
     >>> ltool = self.portal.portal_languages
@@ -54,7 +54,7 @@ Now we add a document (which is translatable) to the folder.
     >>> doc = folder[_]
     >>> doc.Language()
     'en'
-    
+
 The document receives a title.
 
     >>> doc.setTitle('English title')
@@ -64,6 +64,8 @@ The document receives a title.
 We add a Danish translation of that document.
 
     >>> doc.addTranslation('da')
+    <ATDocument at /plone/Members/test_user_1_/doc-da>
+
     >>> doc_da = doc.getTranslation('da')
     >>> doc_da.Language()
     'da'
@@ -89,13 +91,13 @@ Important: we have to invalidate the language binding, or else the new language 
     >>> ltool.getPreferredLanguage()
     'da'
 
-If LinguaPlone is installed we will get the Danish title, 
+If LinguaPlone is installed we will get the Danish title,
 or the default English title if it is not.
 
     >>> if HAS_LINGUAPLONE:
-    ...   if alias.get_target().Title() != 'Danish title': raise ValueError
+    ...     if alias.get_target().Title() != 'Danish title': raise ValueError
     ... else:
-    ...   if alias.get_target().Title() != 'English title': raise ValueError
+    ...     if alias.get_target().Title() != 'English title': raise ValueError
 
 Now we switch the preferred language to German
 
@@ -105,7 +107,7 @@ Now we switch the preferred language to German
     >>> ltool.getPreferredLanguage()
     'de'
 
-If we look at the alias now, we will get get the English title, 
+If we look at the alias now, we will get get the English title,
 since a German version of the target is not available.
 
     >>> alias.get_target().Title()
@@ -176,7 +178,7 @@ LinguaPlone is present.
     ...    if len(renderer.getItems()) != 2: raise ValueError
     ...    if 'Danish title' not in [x.context.Title() for x in renderer.getItems()] : raise ValueError
     ...    if 'English title' not in [x.context.Title() for x in renderer.getItems()] : raise ValueError
-    
+
 
 We switch the language to Danish again.
 

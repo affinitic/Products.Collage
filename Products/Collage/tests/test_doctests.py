@@ -24,7 +24,8 @@ OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
 
 def list_doctests():
     this_dir = os.path.dirname(os.path.abspath(__file__))
-    filenames = [filename for filename in glob.glob(os.path.sep.join([this_dir, '*.txt']))]
+    filenames = [filename for filename in glob.glob(
+        os.path.sep.join([this_dir, '*.txt']))]
     if not HAS_LINGUA_PLONE:
         filenames = [filename for filename in filenames
                      if not filename.endswith('multilingual_support.txt')]
@@ -38,4 +39,4 @@ def test_suite():
                package='Products.Collage.tests',
                test_class=CollageFunctionalTestCase)
          for filename in list_doctests()]
-        )
+    )

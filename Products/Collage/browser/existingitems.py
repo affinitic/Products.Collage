@@ -56,7 +56,8 @@ class ExistingItemsView(BrowserView):
         # IE6 encoding bug workaround (IE6 sucks but...)
         if self.request.get('USER_AGENT', '').find('MSIE 6.0') > 0:
             # response must be latin-1
-            self.request.RESPONSE.setHeader("Content-Type", "text/html; charset=ISO-8859-1")
+            self.request.RESPONSE.setHeader(
+                "Content-Type", "text/html; charset=ISO-8859-1")
             encoding = getSiteEncoding(self.context.context)
             if not isinstance(content, unicode):
                 content = content.decode(encoding)
@@ -94,7 +95,7 @@ class ExistingItemsView(BrowserView):
             return list()
         ret = [{'title': '', 'value': '', 'selected': False}]
         factory = getUtility(IVocabularyFactory,
-                         name=u'collage.vocabularies.CollageUserFriendlyTypes')
+                             name=u'collage.vocabularies.CollageUserFriendlyTypes')
         for term in factory(self.context):
             if options.use_whitelist:
                 if not term.value in options.alias_whitelist:
@@ -123,7 +124,7 @@ class ExistingItemsView(BrowserView):
                     'path': "/".join(context.getPhysicalPath()),
                     'url': context.absolute_url(),
                     'title': context.title_or_id()
-                    })
+                })
             if INavigationRoot.providedBy(context):
                 break
             context = utils.parent(context)
@@ -191,7 +192,10 @@ class ExistingItemsView(BrowserView):
         props = getMultiAdapter((self.context, self.request),
                                 name=u'plone_tools').properties()
         site_properties = props.site_properties
-        desc_length = getattr(site_properties, 'search_results_description_length', 25)
+        desc_length = getattr(
+            site_properties,
+            'search_results_description_length',
+            25)
         desc_ellipsis = getattr(site_properties, 'ellipsis', '...')
 
         items = []
@@ -210,7 +214,7 @@ class ExistingItemsView(BrowserView):
                 'path': result.getPath(),
                 'link_css_class': 'state-%s' % result.review_state,
                 'cssType': 'contenttype-%s' % cssType,
-                })
+            })
 
         return {
             'items': items,
@@ -218,4 +222,4 @@ class ExistingItemsView(BrowserView):
             'query': bool(query_text),
             'query_text': query_text,
             'path': query_path,
-            }
+        }

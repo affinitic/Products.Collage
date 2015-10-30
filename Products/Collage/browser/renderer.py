@@ -120,7 +120,8 @@ class WithPublishDateRenderer(SimpleContainerRenderer):
                     return item
 
             now = DateTime()
-            result = [item for item in result if getItem(item).effective() < now < getItem(item).expires()]
+            result = [item for item in result if getItem(
+                item).effective() < now < getItem(item).expires()]
         return result
 
 

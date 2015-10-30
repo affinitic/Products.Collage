@@ -56,7 +56,8 @@ class WithPublishDateRendererTestCase(SimpleContainerRendererTestCase):
         # defeats our test purpose.  Alternatively, we could make sure
         # Anonymous can view the collage, maybe simply by doing a
         # workflow transition, but that may depend on the workflow.
-        self.portal.manage_permission('Access inactive portal content', ['Manager'])
+        self.portal.manage_permission(
+            'Access inactive portal content', ['Manager'])
         super(WithPublishDateRendererTestCase, self).afterSetUp()
 
     def _makeOne(self, context):
@@ -87,7 +88,7 @@ class WithPublishDateRendererTestCase(SimpleContainerRendererTestCase):
 
     def test_itemfilter(self):
         now = DateTime()
-        nearfuture = now + 1/86400.0 * 2  # 2 seconds ahead of now
+        nearfuture = now + 1 / 86400.0 * 2  # 2 seconds ahead of now
         self.doc.setEffectiveDate(nearfuture)
         view = self._makeOne(self.column)
         items = view.getItems()

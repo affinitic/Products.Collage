@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.12 (unreleased)
+1.4.0 (unreleased)
 -------------------
 
 - Change CSS rendering mode to link, so it can be merged with other

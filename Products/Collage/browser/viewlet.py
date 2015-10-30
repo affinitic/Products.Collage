@@ -18,6 +18,7 @@ from plone.i18n.normalizer.interfaces import IIDNormalizer
 
 
 class SimpleContentMenuViewlet(object):
+
     def isAlias(self):
         return getattr(self.__parent__, '__alias__', None) is not None
 
@@ -35,6 +36,7 @@ class SimpleContentMenuViewlet(object):
 
 
 class LayoutViewlet(SimpleContentMenuViewlet):
+
     def getLayouts(self):
         context = self.context
 
@@ -55,7 +57,8 @@ class LayoutViewlet(SimpleContentMenuViewlet):
         layouts = manager.getLayouts()
 
         # filter out fallback view
-        layouts = filter(lambda (name, title): name != u'fallback', layouts)
+        layouts = filter(lambda name_title: name_title[
+                         0] != u'fallback', layouts)
 
         # make sure the active layout (which may not be available) is
         # included
@@ -70,6 +73,7 @@ class LayoutViewlet(SimpleContentMenuViewlet):
 
 
 class SkinViewlet(SimpleContentMenuViewlet):
+
     def getSkins(self):
         context = self.context
 
@@ -95,6 +99,7 @@ class SkinViewlet(SimpleContentMenuViewlet):
 
 
 class InsertNewItemViewlet(object):
+
     def normalizeString(self):
         return getToolByName(self.context, 'plone_utils').normalizeString
 
@@ -132,6 +137,7 @@ class SplitColumnViewlet(object):
 
 
 class IconViewlet(SimpleContentMenuViewlet):
+
     def getIcon(self):
         tt = getToolByName(self.context, 'portal_types')
         obj_typeinfo = tt.getTypeInfo(self.context.portal_type)
@@ -160,6 +166,7 @@ class CopyViewlet(SimpleContentMenuViewlet):
 
 
 class PasteViewlet(SimpleContentMenuViewlet):
+
     @property
     def clipboard_data_valid(self):
         cb_dataValid = getattr(self.context, 'cb_dataValid', None)

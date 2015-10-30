@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 from Products.Archetypes import atapi
+from Products.ATContentTypes.content.schemata import ATContentTypeSchema
 from Products.Collage.interfaces import ICollageColumn
 
 
@@ -36,7 +38,6 @@ class LayoutContainer(object):
         data = ' '.join(data)
         return data
 
-from Products.ATContentTypes.content.schemata import ATContentTypeSchema
 CommonCollageSchema = atapi.Schema((
     ATContentTypeSchema['excludeFromNav'].copy(),
     ATContentTypeSchema['relatedItems'].copy(),

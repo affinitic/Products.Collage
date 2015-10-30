@@ -19,6 +19,7 @@ from interfaces import ICollageBrowserLayerType
 
 ANNOTATIONS_KEY = u'Collage'
 
+
 class DynamicViewManager(object):
     implements(IDynamicViewManager)
 
@@ -66,14 +67,14 @@ class DynamicViewManager(object):
         layouts = sm.adapters.lookupAll(
             required=(providedBy(context), providedBy(request)),
             provided=Interface
-            )
+        )
 
         directlyProvides(request, *ifaces)
         layouts = [(name, getattr(layout, 'title', name))
                    for (name, layout) in layouts
                    if isinstance(layout, type) and
-                      issubclass(layout, BrowserView) and
-                      not getattr(layout, 'hide', False)]
+                   issubclass(layout, BrowserView) and
+                   not getattr(layout, 'hide', False)]
         layouts.sort(lambda a, b: cmp(a[1], b[1]))
         return layouts
 
@@ -81,11 +82,9 @@ class DynamicViewManager(object):
         storage = self.getStorage()
         return storage.get('skin', None)
 
-
     def setSkin(self, skin):
         storage = self.getStorage()
         storage['skin'] = skin
-
 
     def getSkins(self, request=None):
 

@@ -40,36 +40,38 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         )
     ),
     atapi.BooleanField('show_title',
-        accessor='getShowTitle',
-        widget=atapi.BooleanWidget(
-            label=_(u'label_show_title', default=u"Show title"),
-            description=_(u'help_show_title', default=u"Show title in page composition.")),
-        default=1,
-        languageIndependent=True,
-        schemata="settings"),
+                       accessor='getShowTitle',
+                       widget=atapi.BooleanWidget(
+                           label=_(u'label_show_title', default=u"Show title"),
+                           description=_(u'help_show_title', default=u"Show title in page composition.")),
+                       default=1,
+                       languageIndependent=True,
+                       schemata="settings"),
 
     atapi.BooleanField('show_description',
-        accessor='getShowDescription',
-        widget=atapi.BooleanWidget(
-            label=_(u'label_show_description', default='Show description'),
-            description=_(u'help_show_description', default=u"Show description in page composition.")),
-        default=1,
-        languageIndependent=True,
-        schemata="settings"),
+                       accessor='getShowDescription',
+                       widget=atapi.BooleanWidget(
+                           label=_(u'label_show_description',
+                                   default='Show description'),
+                           description=_(u'help_show_description', default=u"Show description in page composition.")),
+                       default=1,
+                       languageIndependent=True,
+                       schemata="settings"),
 
     atapi.BooleanField('index_subobjects',
-        accessor='mustIndexSubobjects',
-        default=False,
-        languageIndependent=True,
-        schemata="settings",
-        widget=atapi.BooleanWidget(
-            label=_(u'label_index_subobjects', default=u"Add collage contents in searchable text?"),
-            description=_(u'help_index_subobjects',
-                 default=u"Show this collage in results when searching for terms "
-                          u"appearing in a contained item. "
-                          u"Note: Checking this option may slow down the system "
-                          u"while editing the collage."))
-            )
+                       accessor='mustIndexSubobjects',
+                       default=False,
+                       languageIndependent=True,
+                       schemata="settings",
+                       widget=atapi.BooleanWidget(
+                           label=_(u'label_index_subobjects',
+                                   default=u"Add collage contents in searchable text?"),
+                           description=_(u'help_index_subobjects',
+                                         default=u"Show this collage in results when searching for terms "
+                                         u"appearing in a contained item. "
+                                         u"Note: Checking this option may slow down the system "
+                                         u"while editing the collage."))
+                       )
 
 
 ))
@@ -83,11 +85,12 @@ CollageSchema['description'].schemata = 'default'
 # speciel case set folderish to False since we want related items to be used
 finalizeATCTSchema(CollageSchema, folderish=False, moveDiscussion=False)
 
+
 class Collage(LayoutContainer, ATCTMixin, atapi.OrderedBaseFolder):
 
     # FIXME: Do we always need Zope 2 style interfaces ?
-    __implements__ = (getattr(atapi.OrderedBaseFolder,'__implements__',()),
-                      getattr(ATCTMixin, '__implements__',()))
+    __implements__ = (getattr(atapi.OrderedBaseFolder, '__implements__', ()),
+                      getattr(ATCTMixin, '__implements__', ()))
 
     schema = CollageSchema
 

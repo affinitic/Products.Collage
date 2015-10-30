@@ -13,6 +13,7 @@ PloneTestCase.setupPloneSite(products=('Collage',))
 class CollageTestCase(PloneTestCase.PloneTestCase):
 
     class Session(dict):
+
         def set(self, key, value):
             self[key] = value
 
@@ -20,9 +21,11 @@ class CollageTestCase(PloneTestCase.PloneTestCase):
         PloneTestCase.PloneTestCase._setup(self)
         self.app.REQUEST['SESSION'] = self.Session()
 
+
 class CollageFunctionalTestCase(PloneTestCase.FunctionalTestCase):
 
     class Session(dict):
+
         def set(self, key, value):
             self[key] = value
 

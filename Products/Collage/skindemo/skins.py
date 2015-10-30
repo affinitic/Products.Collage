@@ -4,4 +4,3 @@ class AlarmPortletSkin(object):
     # title = _(u'skin_title', default=u"My skin title")
 
     title = "Alert portlet skin"
-

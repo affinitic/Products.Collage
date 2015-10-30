@@ -7,7 +7,9 @@ from Acquisition import aq_inner, aq_parent
 
 from Products.Collage.interfaces import ICollage
 
+
 class ICollageHelper(Interface):
+
     def isCollageContent():
         """True if the content item is in a Collage"""
 
@@ -19,6 +21,7 @@ class ICollageHelper(Interface):
 
 
 class CollageHelper(object):
+
     def __init__(self, context, request):
         self.context = context
         self.request = request

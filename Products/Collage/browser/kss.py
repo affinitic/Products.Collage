@@ -10,7 +10,9 @@ from zope.component import getMultiAdapter
 
 from Acquisition import aq_inner
 
+
 class IKSSHelper(Interface):
+
     def getUniqueIdentifier():
         pass
 
@@ -19,6 +21,7 @@ class IKSSHelper(Interface):
 
     def getKssClasses(field_name):
         pass
+
 
 class KSSHelper(BrowserView):
     """To better support various Plone environments we implement
@@ -46,6 +49,7 @@ class KSSHelper(BrowserView):
         uid_class = kss.getKssUIDClass()
         return " ".join((editing_classes, uid_class))
 
+
 class CollageMacrosView(BrowserView):
     """This helper view looks up the current view for the context-object
     and returns it without rendering it."""
@@ -64,7 +68,8 @@ class CollageMacrosView(BrowserView):
             context = context.get_target()
 
             # if not set, revert to self.context
-            if not context: context = self.context
+            if not context:
+                context = self.context
 
         # transmute request interfaces
         ifaces = mark_request(self.context, self.request)
@@ -76,7 +81,9 @@ class CollageMacrosView(BrowserView):
 
         return view.index
 
+
 class DummyFieldsView(BrowserView):
+
     def getKssUIDClass(self):
         return ''
 

@@ -5,7 +5,9 @@ from Products.Collage.tests.base import CollageTestCase
 from Products.Collage.tests import utils as ctc_utils
 from Products.Collage import utilities as cu
 
+
 class UtilitiesTestCase(CollageTestCase):
+
     def testGenerateNewId(self):
         self.loginAsPortalOwner()
         self.portal.REQUEST.environ['REQUEST_METHOD'] = 'POST'
@@ -35,6 +37,7 @@ class UtilitiesTestCase(CollageTestCase):
         else:
             self.failIf(cu.isTranslatable(doc))
         return
+
 
 def test_suite():
     from unittest import TestSuite, makeSuite

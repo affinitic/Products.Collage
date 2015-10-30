@@ -25,6 +25,7 @@ from Products.Collage.config import COLLAGE_TYPES
 from Products.Collage.utilities import getPortal
 from Products.Collage.utilities import CollageMessageFactory as _
 
+
 class CollageSiteOptions(SchemaAdapterBase):
 
     implements(ICollageSiteOptions)
@@ -35,8 +36,10 @@ class CollageSiteOptions(SchemaAdapterBase):
     ref_browser_types = \
         ProxyFieldProperty(ICollageSiteOptions['ref_browser_types'])
     use_whitelist = ProxyFieldProperty(ICollageSiteOptions['use_whitelist'])
-    types_whitelist = ProxyFieldProperty(ICollageSiteOptions['types_whitelist'])
-    alias_whitelist = ProxyFieldProperty(ICollageSiteOptions['alias_whitelist'])
+    types_whitelist = ProxyFieldProperty(
+        ICollageSiteOptions['types_whitelist'])
+    alias_whitelist = ProxyFieldProperty(
+        ICollageSiteOptions['alias_whitelist'])
     batch_size = ProxyFieldProperty(ICollageSiteOptions['batch_size'])
 
     def __init__(self, context):
@@ -58,6 +61,7 @@ class CollageSiteOptions(SchemaAdapterBase):
             return portal_type in self.alias_whitelist
         return True
 
+
 class CollageControlPanel(ControlPanelForm):
 
     form_fields = FormFields(ICollageSiteOptions)
@@ -69,6 +73,7 @@ class CollageControlPanel(ControlPanelForm):
     description = _(u'help_collage_controlpanel',
                     default=u"Site wide options for Collage")
 
+
 class CollageUserFriendlyTypesVocabulary(object):
     """Vocabulary"""
     implements(IVocabularyFactory)
@@ -79,8 +84,8 @@ class CollageUserFriendlyTypesVocabulary(object):
         if ttool is None:
             return None
         items = [(t, t, ttool[t].Title())
-                  for t in ttool.listContentTypes()
-                  if t not in BAD_TYPES + COLLAGE_TYPES]
+                 for t in ttool.listContentTypes()
+                 if t not in BAD_TYPES + COLLAGE_TYPES]
         items = [SimpleTerm(*v) for v in items]
         return SimpleVocabulary(items)
 

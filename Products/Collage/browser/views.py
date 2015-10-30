@@ -40,7 +40,7 @@ class BaseView(BrowserView):
     catch_exceptions = (
         NameError,
         LocationError,
-        )
+    )
 
     def __call__(self):
         try:
@@ -49,7 +49,7 @@ class BaseView(BrowserView):
             IStatusMessage(self.request).addStatusMessage(
                 _(u"Unable to render layout: ${title}.", mapping={
                     'title': translate(self.title, context=self.request)
-                    }), type="warning")
+                }), type="warning")
             return self.fallback()
 
     def test(self):
@@ -88,7 +88,8 @@ class BaseView(BrowserView):
     @memoize_contextless
     def friendlyTypes(self):
 
-        return getToolByName(self.context, 'plone_utils').getUserFriendlyTypes()
+        return getToolByName(
+            self.context, 'plone_utils').getUserFriendlyTypes()
 
     @property
     def collage_context(self):
@@ -192,6 +193,7 @@ class BaseTopicView(BaseView):
             brains = list(brains)
         return brains
 
+
 class PortletTopicView(PortletView, BaseTopicView):
     pass
 
@@ -223,7 +225,7 @@ class InheritTopicView(BaseTopicView):
         'folder_tabular_view': 'tabular',
         'atct_album_view': 'album',
         'atct_topic_view': 'standard',
-        }
+    }
 
     error_view_name = "error_collage-view-not-found"
     fallback_view_name = "fallback"
@@ -246,7 +248,7 @@ class InheritTopicView(BaseTopicView):
             factory = lookup(spec, Interface, name=self.error_view_name)
             if factory is None:
                 raise ComponentLookupError(
-                    "Layout not found: %s (and unable to render error view)." % \
+                    "Layout not found: %s (and unable to render error view)." %
                     layout)
         view = factory(self.context, self.request)
         if name is None:

@@ -12,11 +12,13 @@ PROFILE_NAME = 'profile-Products.Collage:default'
 
 safety_belt = IfInstalled()
 
+
 @safety_belt
 def runTypesStepOnly(setuptool):
     """We upgrade our types only
     """
-    setuptool.runImportStepFromProfile(PROFILE_NAME, 'typeinfo', run_dependencies=True)
+    setuptool.runImportStepFromProfile(
+        PROFILE_NAME, 'typeinfo', run_dependencies=True)
     return
 
 
@@ -58,7 +60,8 @@ def addControlPanel(setuptool):
     """Add Collage control panel resources
     """
     for step in ('propertiestool', 'controlpanel', 'action-icons'):
-        setuptool.runImportStepFromProfile(PROFILE_NAME, step, run_dependencies=False)
+        setuptool.runImportStepFromProfile(
+            PROFILE_NAME, step, run_dependencies=False)
     return
 
 
@@ -85,11 +88,14 @@ def upgradeTo1_3_0(setuptool):
     # We must delete ftis since something whoes in the 'typeinfo' step
     # FIXME: is this a GS bug or feature?
     portal_types = getPortal().portal_types
-    for portal_type in ('Collage', 'CollageRow', 'CollageColumn', 'CollageAlias'):
+    for portal_type in ('Collage', 'CollageRow',
+                        'CollageColumn', 'CollageAlias'):
         portal_types._delObject(portal_type)
 
-    for step in ('typeinfo', 'cssregistry', 'actions', 'action-icons', 'jsregistry'):
-        setuptool.runImportStepFromProfile(PROFILE_NAME, step, run_dependencies=False)
+    for step in ('typeinfo', 'cssregistry', 'actions',
+                 'action-icons', 'jsregistry'):
+        setuptool.runImportStepFromProfile(
+            PROFILE_NAME, step, run_dependencies=False)
 
     # Remove useless alias_search_limit option in property sheet
     to_delete = 'alias_search_limit'
@@ -103,10 +109,9 @@ def upgradeTo1_3_0(setuptool):
         ('ref_browser_empty', False, 'boolean'),
         ('ref_browser_types', False, 'boolean'),
         ('batch_size', 3, 'int')
-        ]
+    ]
     for name, value, ptype in to_add:
         if propsheet.hasProperty(name):
             continue
         propsheet.manage_addProperty(name, value, ptype)
     return
-

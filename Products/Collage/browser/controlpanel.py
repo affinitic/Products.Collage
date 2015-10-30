@@ -2,8 +2,8 @@
 # $Id$
 """Collage site wide options"""
 
-from zope.component import adapts
-from zope.interface import implements
+from zope.component import adapter
+from zope.interface import implementer
 try:
     from zope.schema.interfaces import IVocabularyFactory
 except ImportError:
@@ -26,10 +26,9 @@ from Products.Collage.utilities import getPortal
 from Products.Collage.utilities import CollageMessageFactory as _
 
 
+@implementer(ICollageSiteOptions)
+@adapter(IPloneSiteRoot)
 class CollageSiteOptions(SchemaAdapterBase):
-
-    implements(ICollageSiteOptions)
-    adapts(IPloneSiteRoot)
 
     ref_browser_empty = \
         ProxyFieldProperty(ICollageSiteOptions['ref_browser_empty'])
@@ -74,9 +73,9 @@ class CollageControlPanel(ControlPanelForm):
                     default=u"Site wide options for Collage")
 
 
+@implementer(IVocabularyFactory)
 class CollageUserFriendlyTypesVocabulary(object):
     """Vocabulary"""
-    implements(IVocabularyFactory)
 
     def __call__(self, context):
         context = getattr(context, 'context', context)
@@ -85,7 +84,7 @@ class CollageUserFriendlyTypesVocabulary(object):
             return None
         items = [(t, t, ttool[t].Title())
                  for t in ttool.listContentTypes()
-                 if t not in BAD_TYPES + COLLAGE_TYPES]
+                 if t not in BAD_TYPES + list(COLLAGE_TYPES)]
         items = [SimpleTerm(*v) for v in items]
         return SimpleVocabulary(items)
 

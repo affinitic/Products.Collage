@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from AccessControl import ClassSecurityInfo
-from Products.Archetypes import atapi
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from Products.Collage.content.common import CommonCollageSchema
@@ -10,10 +9,9 @@ from Products.Collage.utilities import CollageMessageFactory as _
 from zope.interface import implementer
 
 try:
-    from Products.LinguaPlone.public import OrderedBaseFolder
+    from Products.LinguaPlone import public as atapi
 except ImportError:
-    from Products.Archetypes.atapi import OrderedBaseFolder
-
+    from Products.Archetypes import atapi
 
 CollageColumnSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
     atapi.StringField(
@@ -47,7 +45,7 @@ finalizeATCTSchema(CollageColumnSchema, folderish=True, moveDiscussion=False)
 class CollageColumn(
     BrowserDefaultMixin,
     LayoutContainer,
-    OrderedBaseFolder
+    atapi.OrderedBaseFolder
 ):
 
     schema = CollageColumnSchema

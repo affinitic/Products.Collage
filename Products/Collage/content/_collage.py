@@ -52,9 +52,9 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
         'show_description',
         accessor='getShowDescription',
         widget=atapi.BooleanWidget(
-           label=_(u'label_show_description',
-                   default='Show description'),
-           description=_(
+            label=_(u'label_show_description',
+                    default='Show description'),
+            description=_(
                 u'help_show_description',
                 default=u"Show description in page composition."
             )
@@ -78,9 +78,9 @@ CollageSchema = atapi.BaseContent.schema.copy() + atapi.Schema((
                         u"terms appearing in a contained item. "
                         u"Note: Checking this option may slow down the system "
                         u"while editing the collage."
-                )
             )
         )
+    )
 
 
 ))

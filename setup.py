@@ -13,21 +13,21 @@ setup(
     long_description='\n\n'.join([
         _textOfModuleFile(name)
         for name in (
-             'README.rst',
-             os.path.join('docs', 'DEVELOPERS.txt'),
-             'CHANGES.rst'
+            'README.rst',
+            os.path.join('docs', 'DEVELOPERS.txt'),
+            'CHANGES.rst'
         )
     ]),
     # Get more strings from http://www.python.org/pypi?%3Aaction=list_
     # classifiers
     classifiers=[
-      "Programming Language :: Python",
-      "Framework :: Plone",
-      "Framework :: Plone :: 4.3",
-      "Programming Language :: Python :: 2.7",
-      "License :: OSI Approved :: GNU General Public License (GPL)",
-      "Development Status :: 5 - Production/Stable",
-      ],
+        "Programming Language :: Python",
+        "Framework :: Plone",
+        "Framework :: Plone :: 4.3",
+        "Programming Language :: Python :: 2.7",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
+        "Development Status :: 5 - Production/Stable",
+    ],
     keywords='plone layout composition',
     author='Malthe Borch',
     author_email='mborch@gmail.com',
@@ -45,8 +45,8 @@ setup(
     extras_require={
         'test': [
             'Products.PloneTestCase',
-            ],
-        },
+        ],
+    },
     entry_points="""
     # -*- Entry points: -*-
     [z3c.autoinclude.plugin]

@@ -63,10 +63,10 @@ The document receives a title.
 
 We add a Danish translation of that document.
 
-    >>> doc.addTranslation('da')
+    >>> doc_da = doc.addTranslation('da')
+    >>> doc_da
     <ATDocument at /plone/Members/test_user_1_/doc-da>
 
-    >>> doc_da = doc.getTranslation('da')
     >>> doc_da.Language()
     'da'
 

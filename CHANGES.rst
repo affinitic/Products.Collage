@@ -4,6 +4,9 @@ Changelog
 1.4.0 (unreleased)
 -------------------
 
+- Fix test: return value of LinguaPlone was in output and not checked.
+  [jensens]
+
 - Change CSS rendering mode to link, so it can be merged with other
   link-rendered resources.
   [thet]

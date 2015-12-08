@@ -60,8 +60,10 @@ class IPortletSkin(interface.Interface):
 class ICollageSiteOptions(interface.Interface):
 
     ref_browser_empty = schema.Bool(
-        title=_(u'label_ref_browser_empty',
-                default=u"Open reference Browser without initial item listing"),
+        title=_(
+            u'label_ref_browser_empty',
+            default=u"Open reference Browser without initial item listing"
+        ),
         description=_(u'help_ref_browser_empty',
                       default=u"Use this if you have lots of items in your "
                               u"containers."),
@@ -109,11 +111,11 @@ class ICollageSiteOptions(interface.Interface):
 
     batch_size = schema.Int(
         title=_(u'label_batch_size', default=u"Number of Columns"),
-        description=_(u'help_batch_size',
-                      default=u"If the number of Columns in a row exceeds this number, "
-                      """"Collage will put these in a new "batch". """
-                      "The new batch will be displayed below the first batch, "
-                      "but it's technically still the same row. "),
+        description=_(
+            u'help_batch_size',
+            default=u"If the number of Columns in a row exceeds this number, "
+                    u"The new batch will be displayed below the first batch, "
+                    u"but it's technically still the same row. "),
         required=False,
         default=3,
     )

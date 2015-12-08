@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from zope.interface import (
     Interface, implements, providedBy, directlyProvidedBy,
     directlyProvides)
@@ -122,8 +123,8 @@ class DynamicViewManager(object):
 def mark_request(context, request):
     """ Marks the request with general and theme-specific Collage browser layers.
 
-        Returns the initial set of request marker interfaces so that you can restore
-        them using directlyProvides(request, ifaces).
+        Returns the initial set of request marker interfaces so that you can
+        restore them using directlyProvides(request, ifaces).
     """
     initial_ifaces = directlyProvidedBy(request)
 

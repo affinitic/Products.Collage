@@ -9,8 +9,6 @@ from Products.ATContentTypes.config import HAS_LINGUA_PLONE
 from Products.Collage.tests.base import CollageFunctionalTestCase
 from Testing.ZopeTestCase import FunctionalDocFileSuite as Suite
 import doctest
-import glob
-import os
 import unittest
 
 
@@ -18,22 +16,27 @@ OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
                doctest.ELLIPSIS |
                doctest.NORMALIZE_WHITESPACE)
 
-
-def list_doctests():
-    this_dir = os.path.dirname(os.path.abspath(__file__))
-    filenames = [filename for filename in glob.glob(
-        os.path.sep.join([this_dir, '*.rst']))]
-    if not HAS_LINGUA_PLONE:
-        filenames = [filename for filename in filenames
-                     if not filename.endswith('multilingual_support.txt')]
-    return filenames
+doc_tests = [
+    'collage_helper.rst',
+    'controlpanel.rst',
+    'indexing.rst',
+    'kss.rst',
+    'orphanaliaslayout.rst',
+    'viewlets.rst',
+]
+if HAS_LINGUA_PLONE:
+    doc_tests += 'multilingual_support.rst'
 
 
 def test_suite():
     return unittest.TestSuite(
-        [Suite(os.path.basename(filename),
-               optionflags=OPTIONFLAGS,
-               package='Products.Collage.tests',
-               test_class=CollageFunctionalTestCase)
-         for filename in list_doctests()]
+        [
+            Suite(
+                filename,
+                optionflags=OPTIONFLAGS,
+                package='Products.Collage.tests',
+                test_class=CollageFunctionalTestCase
+            )
+            for filename in doc_tests
+        ]
     )

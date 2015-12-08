@@ -1,40 +1,36 @@
 # -*- coding: utf-8 -*-
-# $Id$
-
-from zope.component import getMultiAdapter
-from zope.component import getUtility, queryUtility
-
-try:
-    from zope.schema.interfaces import IVocabularyFactory
-except ImportError:
-    from zope.app.schema.vocabulary import IVocabularyFactory
-
-from plone.memoize.view import memoize_contextless
-from plone.i18n.normalizer.interfaces import IIDNormalizer
-
 from Acquisition import aq_inner
-from Products.Five import BrowserView
+from plone.i18n.normalizer.interfaces import IIDNormalizer
+from plone.memoize.view import memoize_contextless
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone import PloneMessageFactory as p_
 from Products.CMFPlone import utils
 from Products.CMFPlone.interfaces import IHideFromBreadcrumbs
+from Products.CMFPlone.utils import getSiteEncoding
+from Products.Collage.browser.utils import escape_to_entities
+from Products.Collage.utilities import getCollageSiteOptions
+from Products.Five import BrowserView
+from Products.ZCTextIndex.ParseTree import ParseError
+from urllib import unquote
+from zope.component import getMultiAdapter
+from zope.component import getUtility
+from zope.component import queryUtility
+import pkg_resources
 
 try:
     from Products.CMFPlone import Batch
 except ImportError:
     from Products.CMFPlone.PloneBatch import Batch
 
-from Products.Collage.browser.utils import escape_to_entities
-from Products.Collage.utilities import getCollageSiteOptions
-from Products.ZCTextIndex.ParseTree import ParseError
+try:
+    from zope.schema.interfaces import IVocabularyFactory
+except ImportError:
+    from zope.app.schema.vocabulary import IVocabularyFactory
 
 try:
     from plone.app.layout.navigation.interfaces import INavigationRoot
 except ImportError:
     from Products.CMFPlone.interfaces import IPloneSiteRoot as INavigationRoot
-
-import pkg_resources
 
 try:
     pkg_resources.get_distribution('plone.app.multilingual')
@@ -42,8 +38,6 @@ except pkg_resources.DistributionNotFound:
     HAS_PAM = False
 else:
     HAS_PAM = True
-
-from urllib import unquote
 
 
 class ExistingItemsView(BrowserView):
@@ -94,11 +88,13 @@ class ExistingItemsView(BrowserView):
         if not options.ref_browser_types:
             return list()
         ret = [{'title': '', 'value': '', 'selected': False}]
-        factory = getUtility(IVocabularyFactory,
-                             name=u'collage.vocabularies.CollageUserFriendlyTypes')
+        factory = getUtility(
+            IVocabularyFactory,
+            name=u'collage.vocabularies.CollageUserFriendlyTypes'
+        )
         for term in factory(self.context):
             if options.use_whitelist:
-                if not term.value in options.alias_whitelist:
+                if term.value not in options.alias_whitelist:
                     continue
             selected = self.request.form.get('portal_type') == term.value \
                 and True or False
@@ -135,26 +131,30 @@ class ExistingItemsView(BrowserView):
     def listEnabledTypes(self):
         """Enabled types in a Collage as list of dicts.
         """
-        actual_portal_type = self.request.get('portal_type', None)
+        actual_type = self.request.get('portal_type', None)
         collage_options = getCollageSiteOptions()
         ttool = getToolByName(self.context, 'portal_types', None)
         if ttool is None:
             return None
-        return [{'id': pt.getId(),
-                 'title': p_(pt.Title()),
-                 'selected': pt.getId() == actual_portal_type and 'selected' or None}
-                for pt in ttool.listTypeInfo()
-                if collage_options.enabledAlias(pt.getId())]
+        return [
+            {
+                'id': pt.getId(),
+                'title': p_(pt.Title()),
+                'selected': pt.getId() == actual_type and 'selected' or None
+            }
+            for pt in ttool.listTypeInfo()
+            if collage_options.enabledAlias(pt.getId())
+        ]
 
     @property
     def readitems(self):
         options = getCollageSiteOptions()
-        if (options.ref_browser_empty
-                and self.request.form.get('portal_type', '') == ''
-                and self.request.form.get('path', '') == ''
-                and self.request.form.get('b_start', None) is None):
-            return False
-        return True
+        return not (
+            options.ref_browser_empty and
+            self.request.form.get('portal_type', '') == '' and
+            self.request.form.get('path', '') == '' and
+            self.request.form.get('b_start', None) is None
+        )
 
     def _data(self):
         portal_types = self.request.get('portal_type', None)
@@ -207,7 +207,11 @@ class ExistingItemsView(BrowserView):
                 'UID': result.UID,
                 'icon': result.getIcon,
                 'title': result.Title or result.getId,
-                'description': cropText(result.Description, desc_length, desc_ellipsis),
+                'description': cropText(
+                    result.Description,
+                    desc_length,
+                    desc_ellipsis
+                ),
                 'type': result.Type,
                 'folderish': result.is_folderish,
                 'target_url': result.getURL(),

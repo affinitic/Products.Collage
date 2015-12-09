@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-# $Id$
-
-from Products.Archetypes.atapi import listTypes, process_types
+from config import DEFAULT_ADD_CONTENT_PERMISSION
+from config import PROJECTNAME
+from Products.Archetypes.atapi import listTypes
+from Products.Archetypes.atapi import process_types
 
 GLOBALS = globals()
-
-from config import DEFAULT_ADD_CONTENT_PERMISSION, PROJECTNAME
 
 
 def initialize(context):

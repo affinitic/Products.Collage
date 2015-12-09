@@ -1,25 +1,22 @@
-# $Id$
+# -*- coding: utf-8 -*-
+from AccessControl import getSecurityManager
+from AccessControl import Unauthorized
+from DateTime import DateTime
+from Products.CMFCore.permissions import AccessInactivePortalContent
+from Products.CMFCore.utils import _checkPermission
+from Products.Collage.interfaces import ICollageAlias
+from Products.Collage.interfaces import IDynamicViewManager
+from Products.Collage.utilities import isTranslatable
+from Products.Collage.viewmanager import mark_request
+from Products.Five.browser import BrowserView
+from zope.component import ComponentLookupError
+from zope.component import getMultiAdapter
+from zope.interface import directlyProvides
 
-from AccessControl import getSecurityManager, Unauthorized
 try:
     from App.special_dtml import DTMLFile
 except ImportError:
     from Globals import DTMLFile
-from DateTime import DateTime
-
-from zope.interface import directlyProvides
-from zope.component import getMultiAdapter
-from zope.component import ComponentLookupError
-
-from Products.Five.browser import BrowserView
-
-from Products.CMFCore.permissions import AccessInactivePortalContent
-from Products.CMFCore.utils import _checkPermission
-
-from Products.Collage.interfaces import IDynamicViewManager
-from Products.Collage.interfaces import ICollageAlias
-from Products.Collage.utilities import isTranslatable
-from Products.Collage.viewmanager import mark_request
 
 
 class SimpleContainerRenderer(BrowserView):
@@ -62,7 +59,12 @@ class SimpleContainerRenderer(BrowserView):
 
                 # verify that target is accessible
                 try:
-                    getSecurityManager().validate(self, self, target.getId(), target)
+                    getSecurityManager().validate(
+                        self,
+                        self,
+                        target.getId(),
+                        target
+                    )
                 except Unauthorized:
                     continue
 
@@ -75,14 +77,22 @@ class SimpleContainerRenderer(BrowserView):
                 if target.Language() not in (language, ''):
                     # Discard the object, if it is not the canonical version
                     # or a translation is available in the requested language.
-                    if not target.isCanonical() or target.getTranslation(language) in contents:
+                    if (
+                        not target.isCanonical() or
+                        target.getTranslation(language) in contents
+                    ):
                         continue
-                # If the target is a translation, get the layout defined on the canonical
-                # object, unless a layout has already been defined on the translation.
+                # If the target is a translation, get the layout defined on
+                # the canonical object, unless a layout has already been
+                # defined on the translation.
                 # Fallback to default layout.
                 if not target.isCanonical():
                     canmanager = IDynamicViewManager(target.getCanonical())
-                    layout = manager.getLayout() or canmanager.getLayout() or layout
+                    layout = (
+                        manager.getLayout() or
+                        canmanager.getLayout() or
+                        layout
+                    )
 
             # don't assume that a layout is always available; note
             # that we can't use ``queryMultiAdapter`` because even
@@ -91,7 +101,9 @@ class SimpleContainerRenderer(BrowserView):
                 view = getMultiAdapter((target, self.request), name=layout)
             except ComponentLookupError:
                 view = getMultiAdapter(
-                    (target, self.request), name='error_collage-view-not-found')
+                    (target, self.request),
+                    name='error_collage-view-not-found'
+                )
                 view.notfoundlayoutname = layout
 
             # store reference to alias if applicable

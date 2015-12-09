@@ -1,21 +1,20 @@
 # -*- coding: utf-8 -*-
-# $Id$
-
-from zope.component import getMultiAdapter
-from zope.component import getSiteManager
-from zope.component import ComponentLookupError
-from zope.interface import providedBy
-from zope.interface import Interface
-from zope.i18n import translate
 from plone.memoize.view import memoize_contextless
 from Products.CMFCore.utils import getToolByName
-from Products.Collage.interfaces import IDynamicViewManager, IPortletSkin
 from Products.Collage.interfaces import ICollageBrowserLayer
+from Products.Collage.interfaces import IDynamicViewManager
+from Products.Collage.interfaces import IPortletSkin
 from Products.Collage.utilities import CollageMessageFactory as _
 from Products.Collage.utilities import getCollageSiteOptions
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
+from zope.component import ComponentLookupError
+from zope.component import getMultiAdapter
+from zope.component import getSiteManager
+from zope.i18n import translate
+from zope.interface import Interface
+from zope.interface import providedBy
 
 
 try:
@@ -119,7 +118,8 @@ class RowView(BaseView):
     def getColumnBatches(self, bsize=None):
         """Rows with more than *bsize* columns are split.
 
-        @param bsize: number of max. allowed columns per row. 0 for no batching.
+        @param bsize: number of max. allowed columns per row.
+                      0 for no batching.
 
         @return: list of columns, each containing a list of rows.
         """

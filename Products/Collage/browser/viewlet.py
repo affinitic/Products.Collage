@@ -1,20 +1,15 @@
 # -*- coding: utf-8 -*-
-# $Id$
-
-from ZODB.POSException import ConflictError
-
-from OFS.CopySupport import _cb_decode
 from OFS import Moniker
-
+from OFS.CopySupport import _cb_decode
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Collage.interfaces import IDynamicViewManager
-from Products.Collage.utilities import getCollageSiteOptions
 from Products.Collage.utilities import CollageMessageFactory as _
-
-from zope.component import getMultiAdapter, queryUtility
-
-from plone.i18n.normalizer.interfaces import IIDNormalizer
+from Products.Collage.utilities import getCollageSiteOptions
+from ZODB.POSException import ConflictError
+from zope.component import getMultiAdapter
+from zope.component import queryUtility
 
 
 class SimpleContentMenuViewlet(object):
@@ -115,7 +110,7 @@ class InsertNewItemViewlet(object):
             allowed_types = [i for i in factories_view.addable_types() if
                              collage_options.enabledType(i['id'])]
             return allowed_types
-        except:
+        except Exception:
             # BBB Not completely implemented as it seems.
             # This code is probably dead, because nothing is returned?
             portal_url = getToolByName(self.context, 'portal_url')()
@@ -124,12 +119,19 @@ class InsertNewItemViewlet(object):
                 if collage_options.enabledType(t.getId()):
                     cssId = idnormalizer.normalize(t.getId())
                     cssClass = 'contenttype-%s' % cssId
-                    results.append({'title': t.Title(),
-                                    'description': t.Description(),
-                                    'icon': '%s/%s' % (portal_url, t.getIcon()),
-                                    'extra': {'id': cssId, 'separator': None,
-                                              'class': cssClass},
-                                    'id': t.getId()})
+                    results.append(
+                        {
+                            'id': t.getId(),
+                            'title': t.Title(),
+                            'description': t.Description(),
+                            'icon': '%s/%s' % (portal_url, t.getIcon()),
+                            'extra': {
+                                'id': cssId,
+                                'separator': None,
+                                'class': cssClass,
+                            },
+                        }
+                    )
 
 
 class SplitColumnViewlet(object):

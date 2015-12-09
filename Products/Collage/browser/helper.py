@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-# $Id$
-
-from zope.interface import Interface
-
-from Acquisition import aq_inner, aq_parent
-
+from Acquisition import aq_inner
+from Acquisition import aq_parent
 from Products.Collage.interfaces import ICollage
+from zope.interface import Interface
 
 
 class ICollageHelper(Interface):

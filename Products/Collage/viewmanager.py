@@ -1,28 +1,28 @@
 # -*- coding: utf-8 -*-
-from zope.interface import (
-    Interface, implements, providedBy, directlyProvidedBy,
-    directlyProvides)
-
-from zope.component import (
-    getSiteManager, getMultiAdapter, getUtilitiesFor, queryUtility)
-from zope.component import ComponentLookupError
-
-from zope.annotation.interfaces import IAnnotations
 from persistent.dict import PersistentDict
-
-from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName
-
-from interfaces import IDynamicViewManager
-from interfaces import ICollageAlias
-from interfaces import ICollageBrowserLayer
-from interfaces import ICollageBrowserLayerType
+from Products.Collage.interfaces import ICollageAlias
+from Products.Collage.interfaces import ICollageBrowserLayer
+from Products.Collage.interfaces import ICollageBrowserLayerType
+from Products.Collage.interfaces import IDynamicViewManager
+from Products.Five import BrowserView
+from zope.annotation.interfaces import IAnnotations
+from zope.component import ComponentLookupError
+from zope.component import getMultiAdapter
+from zope.component import getSiteManager
+from zope.component import getUtilitiesFor
+from zope.component import queryUtility
+from zope.interface import directlyProvidedBy
+from zope.interface import directlyProvides
+from zope.interface import implementer
+from zope.interface import Interface
+from zope.interface import providedBy
 
 ANNOTATIONS_KEY = u'Collage'
 
 
+@implementer(IDynamicViewManager)
 class DynamicViewManager(object):
-    implements(IDynamicViewManager)
 
     def __init__(self, context):
         self.context = context

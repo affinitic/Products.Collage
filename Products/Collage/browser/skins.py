@@ -1,4 +1,4 @@
-# $Id$
+# -*- coding: utf-8 -*-
 
 from Products.Collage.utilities import CollageMessageFactory as _
 

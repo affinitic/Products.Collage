@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
-# $Id$
-
-from zope.interface import alsoProvides
-from zope.interface import noLongerProvides
-
 from Acquisition import aq_base
-
-from Products.Five.browser import BrowserView
 from Products.CMFPlone.interfaces import INonStructuralFolder
 from Products.Collage.interfaces import ICollageEditLayer
+from Products.Five.browser import BrowserView
+from zope.interface import alsoProvides
+from zope.interface import noLongerProvides
 
 
 class CollageView(BrowserView):

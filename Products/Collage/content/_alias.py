@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from AccessControl import ClassSecurityInfo
+from plone import api
 from Products.Archetypes.ReferenceEngine import Reference
 from Products.ATContentTypes.content.base import ATCTContent
 from Products.CMFCore.utils import getToolByName
@@ -84,14 +85,19 @@ class CollageAlias(BrowserDefaultMixin, LayoutContainer, ATCTContent):
 
     def get_target(self):
         res = self.getRefs(self.getField('target').relationship)
-        if res:
-            res = res[0]
-        else:
-            res = None
+        if not res:
+            return
+        res = res[0]
         if isTranslatable(res):
-            lang = getToolByName(
-                self, 'portal_languages').getPreferredLanguage()
-            res = res.getTranslation(lang) or res
+            try:
+                portal_state = api.content.get_view(
+                    'plone_portal_state',
+                    self,
+                    self.REQUEST
+                )
+            except Exception:
+                return res
+            res = res.getTranslation(portal_state.language()) or res
         return res
 
 atapi.registerType(CollageAlias, 'Collage')

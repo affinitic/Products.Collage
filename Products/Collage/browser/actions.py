@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
-# $Id$
-
+from plone.protect.postonly import check
+from Products.CMFPlone import utils as cmfutils
+from Products.Collage.interfaces import IDynamicViewManager
+from Products.Collage.utilities import CollageMessageFactory as _
+from Products.Collage.utilities import findFirstAvailableInteger
+from Products.Collage.utilities import generateNewId
+from Products.Five.browser import BrowserView
 from zope import event
 from zope.lifecycleevent import ObjectModifiedEvent
-
-from Products.Five.browser import BrowserView
-from Products.CMFPlone import utils as cmfutils
-from Products.Collage.utilities import CollageMessageFactory as _
-from Products.Collage.utilities import generateNewId, findFirstAvailableInteger
-from Products.Collage.interfaces import IDynamicViewManager
-
-from plone.protect.postonly import check
 
 
 def protect(func):

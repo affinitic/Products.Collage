@@ -1,14 +1,11 @@
-from Products.Five.browser import BrowserView
-
-from Products.Collage.interfaces import IDynamicViewManager
-from Products.Collage.interfaces import ICollageAlias
-from Products.Collage.viewmanager import mark_request
-
-from zope.interface import Interface, directlyProvides
-
-from zope.component import getMultiAdapter
-
+# -*- coding: utf-8 -*-
 from Acquisition import aq_inner
+from Products.Collage.interfaces import ICollageAlias
+from Products.Collage.interfaces import IDynamicViewManager
+from Products.Collage.viewmanager import mark_request
+from Products.Five.browser import BrowserView
+from zope.component import getMultiAdapter
+from zope.interface import Interface, directlyProvides
 
 
 class IKSSHelper(Interface):
@@ -38,14 +35,16 @@ class KSSHelper(BrowserView):
 
         # choose appropriate kss class generator depending on rendering mode
         if self.request.get('URL').endswith('/replaceField'):
-            f = kss.getKssClasses
+            get_classes = kss.getKssClasses
         else:
-            f = kss.getKssClassesInlineEditable
+            get_classes = kss.getKssClassesInlineEditable
 
-        editing_classes = f(field_name,
-                            templateId='kss_collage_macro_proxy',
-                            macro=field_name,
-                            target="%s-%s" % (field_name, self.getUniqueIdentifier()))
+        editing_classes = get_classes(
+            field_name,
+            templateId='kss_collage_macro_proxy',
+            macro=field_name,
+            target="%s-%s" % (field_name, self.getUniqueIdentifier())
+        )
         uid_class = kss.getKssUIDClass()
         return " ".join((editing_classes, uid_class))
 

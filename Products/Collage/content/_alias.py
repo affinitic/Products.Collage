@@ -61,7 +61,9 @@ CollageAliasSchema['title'].required = False
 CollageAliasSchema['excludeFromNav'].default = True
 
 CollageAliasSchema['relatedItems'].widget.visible = {
-    'edit': 'invisible', 'view': 'invisible'}
+    'edit': 'invisible',
+    'view': 'invisible'
+}
 
 
 @implementer(ICollageAlias)

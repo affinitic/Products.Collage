@@ -80,9 +80,12 @@ class CollageUserFriendlyTypesVocabulary(object):
         ttool = getToolByName(context, 'portal_types', None)
         if ttool is None:
             return None
-        items = [(t, t, ttool[t].Title())
-                 for t in ttool.listContentTypes()
-                 if t not in BAD_TYPES + list(COLLAGE_TYPES)]
+        CHECK_TYPES = list(BAD_TYPES) + list(COLLAGE_TYPES)
+        items = [
+            (t, t, ttool[t].Title())
+            for t in ttool.listContentTypes()
+            if t not in CHECK_TYPES
+        ]
         items = [SimpleTerm(*v) for v in items]
         return SimpleVocabulary(items)
 

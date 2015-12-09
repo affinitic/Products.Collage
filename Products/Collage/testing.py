@@ -32,9 +32,9 @@ class CollageLayer(PloneSandboxLayer):
         z2.installProduct(app, 'Products.Collage')
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'Products.Collage:default')
         if HAS_LINGUA_PLONE:
-            applyProfile(portal, 'Products.LinguaPlone:default')
+            applyProfile(portal, 'Products.LinguaPlone:LinguaPlone')
+        applyProfile(portal, 'Products.Collage:default')
         login(portal, TEST_USER_NAME)
         setRoles(portal, TEST_USER_ID, ['Site Administrator'])
         portal.invokeFactory(id='folder', type_name='Folder')

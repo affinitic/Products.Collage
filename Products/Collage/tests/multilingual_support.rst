@@ -9,6 +9,8 @@ Setting up
 First of all, check if LinguaPlone is available::
 
     >>> from Products.LinguaPlone.interfaces import ITranslatable
+    >>> folder = layer['portal'].folder
+
 
 Build a basic Collage::
 
@@ -24,7 +26,7 @@ Build a basic Collage::
 We need the language tool for this. Make sure start_neutral is set to 0 (it's the default,
 but using belts and suspenders won't harm us...)::
 
-    >>> ltool = self.portal.portal_languages
+    >>> ltool = layer['portal'].portal_languages
     >>> ltool.start_neutral = 0
 
 Add two more language beside English to the language tool::
@@ -60,7 +62,7 @@ We add a Danish translation of that document::
 
     >>> doc_da = doc.addTranslation('da')
     >>> doc_da
-    <ATDocument at /plone/Members/test_user_1_/doc-da>
+    <ATDocument at /plone/folder/doc-da>
 
     >>> doc_da.Language()
     'da'
@@ -89,7 +91,7 @@ Important: we have to invalidate the language binding, or else the new language 
 If LinguaPlone is installed we will get the Danish title,
 or the default English title if it is not::
 
-    >>> alias.get_target(foo=1).Title()
+    >>> alias.get_target().Title()
     'Danish title'
 
 Now we switch the preferred language to German::
@@ -153,6 +155,8 @@ The renderer now returns one item::
 We add a Danish translation of the document. The translation will be contained inside column2::
 
     >>> localdoc.addTranslation('da')
+    <ATDocument at /plone/folder/collage/row/column2/localdoc-da>
+
     >>> localdoc_da = localdoc.getTranslation('da')
     >>> localdoc_da.Language()
     'da'

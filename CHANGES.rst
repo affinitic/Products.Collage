@@ -4,6 +4,15 @@ Changelog
 1.4.0 (unreleased)
 -------------------
 
+- Fix: Site Administrator can add a Collage.
+  [jensens]
+
+- Improvement: Use plone.api and cleanup utilities.
+  [jensens]
+
+- Code-Style: more pep8, make code-analysis happy, sorted imports.
+  [jensens]
+
 - Fix test: return value of LinguaPlone was in output and not checked.
   [jensens]
 

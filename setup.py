@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
+from setuptools import find_packages
+from setuptools import setup
 import os
-from setuptools import setup, find_packages
 
 
 def _textOfModuleFile(filename):
@@ -38,9 +39,9 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'setuptools',
-        # -*- Extra requirements: -*-
+        'plone.api',
         'Products.Archetypes',
+        'setuptools',
     ],
     extras_require={
         'test': [

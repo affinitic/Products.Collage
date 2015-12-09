@@ -1,10 +1,25 @@
 # -*- coding: utf-8 -*-
-# $Id$
-"""Misc utilities"""
-
+from plone import api
+from Products.CMFPlone.utils import versionTupleFromString
+from Products.Collage.config import I18N_DOMAIN
+from Products.Collage.config import PACKAGE_HOME
+from Products.Collage.config import PROJECTNAME
+from Products.Collage.interfaces import ICollageSiteOptions
+from zope.component import getAdapter
+from zope.i18nmessageid import MessageFactory
+import logging
 import re
+import warnings
 
-isNumber = re.compile(r"^\d+$")
+try:
+    from Products.LinguaPlone.interfaces import ITranslatable
+except ImportError:
+    HAS_LINGUAPLONE = False
+else:
+    HAS_LINGUAPLONE = True
+
+logger = logging.getLogger(PROJECTNAME)
+CollageMessageFactory = MessageFactory(I18N_DOMAIN)
 
 
 def findFirstAvailableInteger(ids):
@@ -15,79 +30,35 @@ def findFirstAvailableInteger(ids):
         i += 1
 
 
+_isNumber = re.compile(r"^\d+$")
+
+
 def generateNewId(container):
     parent_contents = container.objectValues()
     contentIDs = map(lambda x: x.getId(), parent_contents)
-    numericalIDs = filter(isNumber.match, contentIDs)
+    numericalIDs = filter(_isNumber.match, contentIDs)
     return str(findFirstAvailableInteger(numericalIDs))
 
 
-###
-# Our i18n message factory
-###
-
-from zope.i18nmessageid import MessageFactory
-from Products.Collage.config import I18N_DOMAIN
-
-CollageMessageFactory = MessageFactory(I18N_DOMAIN)
-
-###
-# Detects translatable objects when LP installed
-###
-
-# FIXME: Should we check that LP is installed in this site too ?
-try:
-    from Products.LinguaPlone.interfaces import ITranslatable
-except ImportError:
-    HAS_LINGUAPLONE = False
-else:
-    HAS_LINGUAPLONE = True
-
-
 def isTranslatable(content):
+    """Detects translatable objects when LP installed"""
+    # FIXME: Should we check that LP is installed in this site too ?
     if HAS_LINGUAPLONE:
         return ITranslatable.providedBy(content)
-    return False
-
-###
-# Logging utility
-###
-
-from Products.Collage.config import PROJECTNAME
-import logging
-logger = logging.getLogger(PROJECTNAME)
-
-###
-# Get the portal object without context/request
-###
-
-from zope.component import getUtility
-from Products.CMFCore.interfaces import ISiteRoot
 
 
 def getPortal():
-    return getUtility(ISiteRoot)
-
-###
-# Get Collage site options
-###
-
-from zope.component import getAdapter
-from Products.Collage.interfaces import ICollageSiteOptions
+    """Get the portal object without context/request"""
+    warnings.warn(
+        "getPortal is deprecated, use plone.api.portal.get instead",
+        DeprecationWarning
+    )
+    return api.portal.get()
 
 
 def getCollageSiteOptions():
     """Collage site options from contol panel"""
-
-    return getAdapter(getPortal(), ICollageSiteOptions)
-
-###
-# Version of Collage
-# Other components that rely on Collage (skinning, templating, ...) may need this
-###
-
-from Products.Collage.config import PACKAGE_HOME
-from Products.CMFPlone.utils import versionTupleFromString
+    return getAdapter(api.portal.get(), ICollageSiteOptions)
 
 
 def getFSVersionTuple():

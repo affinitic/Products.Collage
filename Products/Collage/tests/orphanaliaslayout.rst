@@ -13,9 +13,11 @@ Some inits
 ----------
 
   >>> from zope.component import getMultiAdapter
-  >>> request = self.app.REQUEST
+  >>> request = layer['request']
   >>> request.environ['REQUEST_METHOD'] = 'POST'
   >>> from Products.Collage.interfaces import IDynamicViewManager
+  >>> folder = layer['portal'].folder
+
 
 Creating our Collage
 --------------------

@@ -12,6 +12,8 @@ Set up a test request
   >>> from Products.Collage.tests.utils import TestRequest
   >>> request = TestRequest("en")
 
+  >>> folder = layer['portal'].folder
+
 Let's add some content:
 
   >>> _ = folder.invokeFactory(id='collage', type_name='Collage')
@@ -43,8 +45,10 @@ Viewlets are registered on a custom layer and available only to users with
 permission to modify the context.
 
   >>> from Products.Collage.interfaces import ICollageEditLayer
+  >>> from plone.app.testing import setRoles
+  >>> from plone.app.testing import TEST_USER_ID
   >>> alsoProvides(request, ICollageEditLayer)
-  >>> self.setRoles(['Manager'])
+  >>> setRoles(layer['portal'], TEST_USER_ID, ['Site Administrator'])
 
 
 Actions
@@ -72,12 +76,12 @@ least some specific keys:
   ...   if not set(info.keys()).issuperset(set(['id', 'description', 'icon', 'title'])): raise ValueError(info.keys())
 
 Insert an event item
-  
+
   >>> _ = column.invokeFactory(id='test_event', type_name='Event')
   >>> column[_].setTitle('test event')
   >>> 'test event' in column.restrictedTraverse('@@renderer')()
   True
-  
+
 
 
 
@@ -92,11 +96,11 @@ that the form output contains the front page content object's UID
 string:
 
   >>> view = column.restrictedTraverse('@@existing-items-form')
-  >>> front_page_uid = self.portal['front-page'].UID()
-  >>> front_page_uid in view()
+  >>> folder_uid = layer['portal']['folder'].UID()
+  >>> folder_uid in view()
   True
 
-  
+
 
 Copy/paste
 ----------
@@ -107,7 +111,7 @@ Let's setup the clipboard as if we'd copied the front-page element:
 
   >>> from OFS.CopySupport import _cb_encode
   >>> from OFS import Moniker
-  >>> __cp = _cb_encode((0, [Moniker.Moniker(portal['front-page']).dump()]))
+  >>> __cp = _cb_encode((0, [Moniker.Moniker(layer['portal']['folder']).dump()]))
 
 For some reason there's two different request objects; let's set the clipboard on both:
 
@@ -119,5 +123,4 @@ Let's examine the paste viewlet:
   >>> viewlet.clipboard_data_valid
   1
   >>> viewlet._get_clipboard_item()
-  <ATDocument at /plone/front-page>
-  
+  <ATFolder at /plone/folder>

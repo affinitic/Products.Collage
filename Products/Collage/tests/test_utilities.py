@@ -1,17 +1,24 @@
-# $Id$
-"""Testing Collage utilities"""
-
-from Products.Collage.tests.base import CollageTestCase
-from Products.Collage.tests import utils as ctc_utils
+# -*- coding: utf-8 -*-
 from Products.Collage import utilities as cu
+from Products.Collage.testing import COLLAGE_INTEGRATION_TESTING
+import unittest
 
 
-class UtilitiesTestCase(CollageTestCase):
+class UtilitiesTestCase(unittest.TestCase):
+
+    layer = COLLAGE_INTEGRATION_TESTING
+
+    def _makeCollage(self, newid, title):
+        effectiveid = self.layer['portal'].invokeFactory(
+            id=newid,
+            type_name='Collage',
+            title=title,
+        )
+        return self.layer['portal'][effectiveid]
 
     def testGenerateNewId(self):
-        self.loginAsPortalOwner()
-        self.portal.REQUEST.environ['REQUEST_METHOD'] = 'POST'
-        foo_collage = ctc_utils.addCollage(self.portal, 'foo', 'Foo')
+        self.layer['request'].environ['REQUEST_METHOD'] = 'POST'
+        foo_collage = self._makeCollage('foo', 'Foo')
 
         new_id = cu.generateNewId(foo_collage)
         self.failUnlessEqual(new_id, '1')
@@ -29,18 +36,10 @@ class UtilitiesTestCase(CollageTestCase):
         return
 
     def testIsTranslatable(self):
-        self.loginAsPortalOwner()
-        self.portal.invokeFactory('Document', 'doc', title="Doc")
-        doc = getattr(self.portal, 'doc')
+        self.layer['portal'].invokeFactory('Document', 'doc', title="Doc")
+        doc = getattr(self.layer['portal'], 'doc')
         if cu.HAS_LINGUAPLONE:
             self.failUnless(cu.isTranslatable(doc))
         else:
             self.failIf(cu.isTranslatable(doc))
         return
-
-
-def test_suite():
-    from unittest import TestSuite, makeSuite
-    suite = TestSuite()
-    suite.addTest(makeSuite(UtilitiesTestCase))
-    return suite

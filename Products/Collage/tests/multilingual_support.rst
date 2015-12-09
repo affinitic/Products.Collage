@@ -89,7 +89,7 @@ Important: we have to invalidate the language binding, or else the new language 
 If LinguaPlone is installed we will get the Danish title,
 or the default English title if it is not::
 
-    >>> alias.get_target().Title()
+    >>> alias.get_target(foo=1).Title()
     'Danish title'
 
 Now we switch the preferred language to German::

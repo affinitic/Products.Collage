@@ -1,35 +1,37 @@
-# $Id$
-"""
-Testing... the test framework
-"""
-import time
+# -*- coding: utf-8 -*-
 from DateTime import DateTime
-
-from Products.Collage.tests.base import CollageTestCase
 from Products.Collage.browser.renderer import SimpleContainerRenderer
 from Products.Collage.browser.renderer import WithPublishDateRenderer
+from Products.Collage.testing import COLLAGE_INTEGRATION_TESTING
+import time
+import unittest
 
 
-class SimpleContainerRendererTestCase(CollageTestCase):
+class SimpleContainerRendererTestCase(unittest.TestCase):
     """We test utilities for testcases"""
 
-    def afterSetUp(self):
+    layer = COLLAGE_INTEGRATION_TESTING
+
+    def setUp(self):
+        self.folder = self.layer['portal'].folder
         _ = self.folder.invokeFactory(id='collage', type_name='Collage')
         self.collage = self.folder[_]
+
         _ = self.collage.invokeFactory(id='row', type_name='CollageRow')
         self.row = self.collage[_]
+
         _ = self.row.invokeFactory(id='column', type_name='CollageColumn')
         self.column = self.row[_]
-        _ = self.column.invokeFactory(id='alias', type_name='CollageAlias')
-        self.alias = self.column[_]
 
         _ = self.folder.invokeFactory(id='doc', type_name='Document')
         self.doc = self.folder[_]
+
+        _ = self.column.invokeFactory(id='alias', type_name='CollageAlias')
+        self.alias = self.column[_]
         self.alias.set_target(self.doc.UID())
 
     def _makeOne(self, context):
-        request = self.app.REQUEST
-        return SimpleContainerRenderer(context, request)
+        return SimpleContainerRenderer(context, self.layer['request'])
 
     def test_getItemsCollage(self):
         view = self._makeOne(self.collage)
@@ -49,20 +51,38 @@ class SimpleContainerRendererTestCase(CollageTestCase):
         self.assertEqual(items[0].__name__, 'standard')
 
 
-class WithPublishDateRendererTestCase(SimpleContainerRendererTestCase):
+class WithPublishDateRendererTestCase(unittest.TestCase):
 
-    def afterSetUp(self):
+    layer = COLLAGE_INTEGRATION_TESTING
+
+    def setUp(self):
+        self.folder = self.layer['portal'].folder
+        _ = self.folder.invokeFactory(id='collage', type_name='Collage')
+        self.collage = self.folder[_]
+
+        _ = self.collage.invokeFactory(id='row', type_name='CollageRow')
+        self.row = self.collage[_]
+
+        _ = self.row.invokeFactory(id='column', type_name='CollageColumn')
+        self.column = self.row[_]
+
+        _ = self.folder.invokeFactory(id='doc', type_name='Document')
+        self.doc = self.folder[_]
+
+        _ = self.column.invokeFactory(id='alias', type_name='CollageAlias')
+        self.alias = self.column[_]
+        self.alias.set_target(self.doc.UID())
         # By default this permission is also given to Owner, but that
         # defeats our test purpose.  Alternatively, we could make sure
         # Anonymous can view the collage, maybe simply by doing a
         # workflow transition, but that may depend on the workflow.
-        self.portal.manage_permission(
-            'Access inactive portal content', ['Manager'])
-        super(WithPublishDateRendererTestCase, self).afterSetUp()
+        self.layer['portal'].manage_permission(
+            'Access inactive portal content',
+            ['Manager']
+        )
 
     def _makeOne(self, context):
-        request = self.app.REQUEST
-        return WithPublishDateRenderer(context, request)
+        return WithPublishDateRenderer(context, self.layer['request'])
 
     def test_rowfilter(self):
         view = self._makeOne(self.collage)
@@ -98,11 +118,3 @@ class WithPublishDateRendererTestCase(SimpleContainerRendererTestCase):
 
         items = view.getItems()
         self.assertEqual(len(items), 1)
-
-
-def test_suite():
-    from unittest import TestSuite, makeSuite
-    suite = TestSuite()
-    suite.addTest(makeSuite(SimpleContainerRendererTestCase))
-    suite.addTest(makeSuite(WithPublishDateRendererTestCase))
-    return suite

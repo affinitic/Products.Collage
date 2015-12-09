@@ -45,10 +45,12 @@ setup(
     ],
     extras_require={
         'test': [
-            'Products.PloneTestCase',
+            'interlude',
+            'ipdb',
+            'plone.app.contenttypes',
+            'plone.app.testing',
         ],
-    },
-    entry_points="""
+    },    entry_points="""
     # -*- Entry points: -*-
     [z3c.autoinclude.plugin]
     target = plone

@@ -3,7 +3,8 @@ Collage helper
 
 Let's create our Collage object.
 
-  >>> catalog = self.portal.portal_catalog
+  >>> catalog = layer['portal'].portal_catalog
+  >>> folder = layer['portal'].folder
   >>> _ = folder.invokeFactory(id='collage', type_name='Collage')
   >>> collage = folder[_]
   >>> _ = collage.invokeFactory(id='row', type_name='CollageRow')
@@ -26,16 +27,16 @@ We are in a collage.
 Finding Collage parent.
 
   >>> helper.getCollageObject()
-  <Collage at /plone/Members/test_user_1_/collage>
+  <Collage at /plone/folder/collage>
 
 And its URL.
 
   >>> helper.getCollageObjectURL()
-  'http://nohost/plone/Members/test_user_1_/collage'
+  'http://nohost/plone/folder/collage'
 
-The home page is not in a Collage.
+The folder is not in a Collage.
 
-  >>> homepage = self.portal['front-page']
+  >>> homepage = layer['portal']['folder']
   >>> helper = homepage.restrictedTraverse('@@collage_helper')
   >>> helper.isCollageContent()
   False

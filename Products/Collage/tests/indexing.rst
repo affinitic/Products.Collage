@@ -9,7 +9,8 @@ Settings and utilities
 
 Let's create our Collage object.
 
-  >>> catalog = self.portal.portal_catalog
+  >>> catalog = layer['portal'].portal_catalog
+  >>> folder = layer['portal'].folder
   >>> _ = folder.invokeFactory(id='collage', type_name='Collage')
   >>> collage = folder[_]
   >>> collage.setTitle('collagetitle')
@@ -67,10 +68,10 @@ Document's SearchableText is included in collage.
 
 Collage should already be indexed.
 
-  >>> catalog = self.portal.portal_catalog
+  >>> catalog = layer['portal'].portal_catalog
   >>> brains = catalog.searchResults(SearchableText='doctitle')
   >>> len(brains)
   2
   >>> targets = [b.getURL() for b in brains]
-  >>> 'http://nohost/plone/Members/test_user_1_/collage' in targets
+  >>> 'http://nohost/plone/folder/collage' in targets
   True

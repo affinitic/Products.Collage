@@ -7,43 +7,38 @@
 Overview
 ========
 
-Collage is a product which allows editors to align new or existing
-content from multiple sources in a layout. An example of such a page
-is one that shows a document along with one or more collections.
+Collage is a product which allows editors to align new or existing content from multiple sources in a layout.
+An example of such a page is one that shows a document along with one or more collections.
 
-Several `add-on products
-<http://pypi.python.org/pypi?%3Aaction=search&term=collective.collage&submit=search>`_
-exists which allows you to include portlets, forms or even other
-websites. See the `add-on repository
-<https://svn.plone.org/svn/collective/Products.Collage/addons/>`_ for
-more information.
+Several `add-on products <http://pypi.python.org/pypi?%3Aaction=search&term=collective.collage&submit=search>`_ exists which allows you to include portlets, forms or even other websites.
+
 
 Compatibility
 -------------
 
-* Plone 3.1-4.3
+Tests are running with Plone 4.2 and 4.3
+
 
 Status
 ------
 
 Stable; used in production.
 
+
 Development
 -----------
 
-Please report issues to the `issue tracker
-<http://www.plone.org/products/collage/issues>`_. The file
-``docs/DEVELOPER.txt`` describes how to extend the product with
-support for custom content types and additional renderers.
+Please report issues to the `issue tracker <https://github.com/collective/Products.Collage/issues>`_.
+The file ``docs/DEVELOPER.txt`` describes how to extend the product with support for custom content types and additional renderers.
+
 
 Upgrades
 --------
 
-If you upgraded Products.Collage in the file system, open in ZMI
-/your/plone/site/portal_setup and click the "Upgrades" tab.
+If you upgraded Products.Collage in the file system, open in ZMI ``/your/plone/site/portal_setup`` and click the "Upgrades" tab.
 
-Select the "Products.Collage:default" profile and see if upgrades are
-available. Run them :D
+Select the ``Products.Collage:default`` profile and see if upgrades are available.
+Run them :D
 
 Credits
 -------

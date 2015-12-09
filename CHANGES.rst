@@ -4,6 +4,9 @@ Changelog
 1.4.0 (unreleased)
 -------------------
 
+- Improvement: migrate tests to plone.app.testing
+  [jensens]
+
 - Fix: Site Administrator can add a Collage.
   [jensens]
 

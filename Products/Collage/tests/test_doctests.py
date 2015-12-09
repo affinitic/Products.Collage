@@ -5,38 +5,43 @@ Running doctests
 Ploneboard functional doctests.  This module collects all *.txt
 files in the tests directory and runs them. (stolen from Plone)
 """
-from Products.ATContentTypes.config import HAS_LINGUA_PLONE
-from Products.Collage.tests.base import CollageFunctionalTestCase
-from Testing.ZopeTestCase import FunctionalDocFileSuite as Suite
+from interlude import interact
+from plone.testing import layered
+from Products.Collage.testing import COLLAGE_INTEGRATION_TESTING
+from Products.Collage.testing import HAS_LINGUA_PLONE
 import doctest
+import pprint
 import unittest
-
 
 OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
                doctest.ELLIPSIS |
                doctest.NORMALIZE_WHITESPACE)
 
-doc_tests = [
-    'collage_helper.rst',
-    'controlpanel.rst',
-    'indexing.rst',
-    'kss.rst',
-    'orphanaliaslayout.rst',
-    'viewlets.rst',
+TESTFILES = [
+    ('collage_helper.rst', COLLAGE_INTEGRATION_TESTING),
+    ('controlpanel.rst', COLLAGE_INTEGRATION_TESTING),
+    ('indexing.rst', COLLAGE_INTEGRATION_TESTING),
+    ('kss.rst', COLLAGE_INTEGRATION_TESTING),
+    ('orphanaliaslayout.rst', COLLAGE_INTEGRATION_TESTING),
+    ('viewlets.rst', COLLAGE_INTEGRATION_TESTING),
 ]
 if HAS_LINGUA_PLONE:
-    doc_tests += ['multilingual_support.rst']
+    TESTFILES += [('multilingual_support.rst', COLLAGE_INTEGRATION_TESTING)]
 
 
 def test_suite():
-    return unittest.TestSuite(
-        [
-            Suite(
-                filename,
+    suite = unittest.TestSuite()
+    suite.addTests([
+        layered(
+            doctest.DocFileSuite(
+                docfile,
+                globs={
+                    'pprint': pprint.pprint,
+                    'interact': interact,
+                },
                 optionflags=OPTIONFLAGS,
-                package='Products.Collage.tests',
-                test_class=CollageFunctionalTestCase
-            )
-            for filename in doc_tests
-        ]
-    )
+            ),
+            layer=COLLAGE_INTEGRATION_TESTING,
+        ) for docfile, layer in TESTFILES
+    ])
+    return suite

@@ -1,7 +1,6 @@
 [report]
 include =
-    src/pas/*
+    Products/*
 omit =
     */test*
-    */upgrades/*
 

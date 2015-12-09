@@ -1,29 +1,27 @@
 # -*- coding: utf-8 -*-
-# $Id$
 """Collage site wide options"""
-
+from plone.app.controlpanel.form import ControlPanelForm
+from plone.app.controlpanel.widgets import MultiCheckBoxThreeColumnWidget
+from plone.app.vocabularies.types import BAD_TYPES
+from Products.CMFCore.utils import getToolByName
+from Products.CMFDefault.formlib.schema import ProxyFieldProperty
+from Products.CMFDefault.formlib.schema import SchemaAdapterBase
+from Products.CMFPlone.interfaces import IPloneSiteRoot
+from Products.Collage.config import COLLAGE_TYPES
+from Products.Collage.config import PROPERTYSHEETNAME
+from Products.Collage.interfaces import ICollageSiteOptions
+from Products.Collage.utilities import CollageMessageFactory as _
+from Products.Collage.utilities import getPortal
 from zope.component import adapter
+from zope.formlib.form import FormFields
 from zope.interface import implementer
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
+
 try:
     from zope.schema.interfaces import IVocabularyFactory
 except ImportError:
     from zope.app.schema.vocabulary import IVocabularyFactory
-
-from zope.schema.vocabulary import SimpleVocabulary
-from zope.schema.vocabulary import SimpleTerm
-from zope.formlib.form import FormFields
-from plone.app.vocabularies.types import BAD_TYPES
-from plone.app.controlpanel.form import ControlPanelForm
-from plone.app.controlpanel.widgets import MultiCheckBoxThreeColumnWidget
-from Products.CMFCore.utils import getToolByName
-from Products.CMFDefault.formlib.schema import SchemaAdapterBase
-from Products.CMFDefault.formlib.schema import ProxyFieldProperty
-from Products.CMFPlone.interfaces import IPloneSiteRoot
-from Products.Collage.interfaces import ICollageSiteOptions
-from Products.Collage.config import PROPERTYSHEETNAME
-from Products.Collage.config import COLLAGE_TYPES
-from Products.Collage.utilities import getPortal
-from Products.Collage.utilities import CollageMessageFactory as _
 
 
 @implementer(ICollageSiteOptions)
@@ -64,8 +62,8 @@ class CollageSiteOptions(SchemaAdapterBase):
 class CollageControlPanel(ControlPanelForm):
 
     form_fields = FormFields(ICollageSiteOptions)
-    form_fields['types_whitelist'].custom_widget = MultiCheckBoxThreeColumnWidget
-    form_fields['alias_whitelist'].custom_widget = MultiCheckBoxThreeColumnWidget
+    form_fields['types_whitelist'].custom_widget = MultiCheckBoxThreeColumnWidget  # noqa
+    form_fields['alias_whitelist'].custom_widget = MultiCheckBoxThreeColumnWidget  # noqa
 
     label = form_name = _(u'title_collage_controlpanel',
                           default=u"Collage control panel")
@@ -88,4 +86,4 @@ class CollageUserFriendlyTypesVocabulary(object):
         items = [SimpleTerm(*v) for v in items]
         return SimpleVocabulary(items)
 
-CollageUserFriendlyTypesVocabularyFactory = CollageUserFriendlyTypesVocabulary()
+CollageUserFriendlyTypesVocabularyFactory = CollageUserFriendlyTypesVocabulary()  # noqa

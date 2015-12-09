@@ -25,7 +25,7 @@ doc_tests = [
     'viewlets.rst',
 ]
 if HAS_LINGUA_PLONE:
-    doc_tests += 'multilingual_support.rst'
+    doc_tests += ['multilingual_support.rst']
 
 
 def test_suite():

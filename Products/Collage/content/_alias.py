@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from AccessControl import ClassSecurityInfo
-from Products.Archetypes import atapi
 from Products.Archetypes.ReferenceEngine import Reference
 from Products.ATContentTypes.content.base import ATCTContent
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from Products.Collage.content.common import LayoutContainer
-from Products.Collage.interfaces import ICollageAlias, IDynamicViewManager
+from Products.Collage.interfaces import ICollageAlias
+from Products.Collage.interfaces import IDynamicViewManager
 from Products.Collage.utilities import CollageMessageFactory as _
 from Products.Collage.utilities import isTranslatable
 from zope.interface import implementer
@@ -16,6 +16,11 @@ try:
 except ImportError:
     from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import \
         ReferenceBrowserWidget
+
+try:
+    from Products.LinguaPlone import public as atapi
+except ImportError:
+    from Products.Archetypes import atapi
 
 
 class CollageAliasReference(Reference):

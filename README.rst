@@ -1,3 +1,9 @@
+.. image:: https://travis-ci.org/collective/Products.Collage.svg
+    :target: https://travis-ci.org/collective/Products.Collage
+
+.. image:: https://coveralls.io/repos/collective/Products.Collage/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/collective/Products.Collage?branch=master
+
 Overview
 ========
 

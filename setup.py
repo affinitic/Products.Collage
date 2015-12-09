@@ -47,7 +47,6 @@ setup(
         'test': [
             'interlude',
             'ipdb',
-            'plone.app.contenttypes',
             'plone.app.testing',
         ],
     },    entry_points="""

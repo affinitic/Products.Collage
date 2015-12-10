@@ -16,7 +16,7 @@ Several `add-on products <http://pypi.python.org/pypi?%3Aaction=search&term=coll
 Compatibility
 -------------
 
-Tests are running with Plone 4.2 and 4.3
+Tests are running with Plone 4.1.10, 4.2.7 and 4.3.7
 
 
 Status

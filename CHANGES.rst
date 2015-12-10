@@ -4,6 +4,10 @@ Changelog
 1.4.0 (unreleased)
 -------------------
 
+- Improvement: translated aliases w/o an explicit target set are falling back
+  canonicals target now.
+  [jensens]
+
 - Improvement: migrate tests to plone.app.testing
   [jensens]
 

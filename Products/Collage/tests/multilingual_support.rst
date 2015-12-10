@@ -245,3 +245,4 @@ We can switch to any other language, the neutral doc will be displayed::
 
     >>> 'Neutral title' in [x.context.Title() for x in renderer.getItems()]
     True
+

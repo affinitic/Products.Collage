@@ -87,7 +87,13 @@ class CollageAlias(BrowserDefaultMixin, LayoutContainer, ATCTContent):
     def get_target(self):
         res = self.getRefs(self.getField('target').relationship)
         if not res:
-            return
+            if not isTranslatable(self):
+                return
+            # fall back to canonicals target
+            canonical = self.getCanonical()
+            res = canonical.getRefs(self.getField('target').relationship)
+            if not res:
+                return
         res = res[0]
         if isTranslatable(res):
             lt = api.portal.get_tool('portal_languages')

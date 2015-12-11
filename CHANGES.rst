@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.4.0 (unreleased)
--------------------
+1.4.0 (2015-12-11)
+------------------
 
 - Improvement: translated aliases w/o an explicit target set are falling back
   canonicals target now.

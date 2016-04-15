@@ -27,6 +27,14 @@
      permission="cmf.ModifyPortalContent"
      />
 
+  <browser:page
+     name="compose"
+     for="*"
+     class=".collage.CollageComposeView"
+     template="templates/collage_compose.pt"
+     permission="cmf.ModifyPortalContent"
+     />
+
   <browser:viewletManager
      name="collage.ContentManager"
      provides="Products.Collage.interfaces.IContentMenu"

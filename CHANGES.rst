@@ -4,7 +4,8 @@ Changelog
 1.4.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix a problem with default page
+  [mpeeters]
 
 
 1.4.0 (2015-12-11)

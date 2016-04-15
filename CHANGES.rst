@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.1 (unreleased)
+1.4.1 (2016-04-15)
 ------------------
 
 - Fix a problem with default page
